@@ -136,6 +136,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Siri S lain (S22 ke bawah, FE)', 'a-old': 'Siri A lain', 'm-any': 'Telefon siri M', 'f-any': 'Telefon siri F', 'note-old': 'Note lain', 'xcover-old': 'XCover lain', etc: 'Galaxy yang tiada dalam senarai' },
     seriesNames: { s: 'Galaxy siri S', a: 'Galaxy siri A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy siri M', f: 'Galaxy siri F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Lain-lain / tiada dalam senarai' },
   },
+  vi: {
+    h: 'Điện thoại của tôi', none: 'Chưa chọn · hướng dẫn chung',
+    howH: 'Trước hết, tìm kiểu máy và phiên bản phần mềm của điện thoại',
+    how: ['Chạm vào ứng dụng <b>Cài đặt</b>.', 'Chạm vào <b>Thông tin điện thoại</b> ở dưới cùng.', 'Xem <b>tên kiểu máy</b> ở trên cùng (ví dụ Galaxy S26 · SM-S942N).', 'Chạm vào <b>Thông tin phần mềm</b>.', 'Xem <b>phiên bản One UI</b> (ví dụ 9.0).'],
+    howNote: 'Ở một số kiểu máy, menu có tên ‘Thông tin thiết bị’. Bạn cũng có thể gõ ‘Thông tin điện thoại’ vào ô tìm kiếm trong Cài đặt.',
+    practice: 'Luyện tập các bước này', series: 'Dòng máy', model: 'Kiểu máy', oneui: 'Phiên bản One UI', save: 'Lưu điện thoại của tôi', clear: 'Dùng hướng dẫn chung',
+    note: 'Việc chọn là tùy ý. Chỉ lưu trong trình duyệt này và chúng tôi không bao giờ đoán kiểu máy của bạn.',
+    dontKnow: 'Không biết', dontKnowWhich: 'Không biết máy nào', chooseSeries: 'Hãy chọn dòng máy trước', baseVersion: 'phiên bản của các bài học này',
+    saved: 'Đã lưu. Mỗi bài học giờ cho biết có dùng được trên máy bạn không.', cleared: 'Đã xóa. Đang hiện hướng dẫn chung.',
+    modelUnknown: 'Chưa rõ kiểu máy', seriesUnknown: (s) => `${s} (chưa rõ kiểu máy)`, versionUnknown: 'Chưa rõ phiên bản One UI',
+    level: { ok: 'Hỗ trợ', diff: 'Cần kiểm tra', check: 'Cần kiểm tra', no: 'Không hỗ trợ' },
+    text: { ok: 'Đã kiểm tra theo hướng dẫn chính thức', diff: 'Tên menu có thể khác ở phiên bản One UI này', check: 'Chưa kiểm tra trên kiểu máy này', no: 'Không có trên kiểu máy này', min: (v) => `Cần One UI ${v} trở lên` },
+    on: 'trên', change: 'Đổi',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Dòng S khác (S22 trở về trước, FE)', 'a-old': 'Dòng A khác', 'm-any': 'Một máy dòng M', 'f-any': 'Một máy dòng F', 'note-old': 'Note khác', 'xcover-old': 'XCover khác', etc: 'Một máy Galaxy không có trong danh sách' },
+    seriesNames: { s: 'Galaxy dòng S', a: 'Galaxy dòng A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy dòng M', f: 'Galaxy dòng F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Khác / không có trong danh sách' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
