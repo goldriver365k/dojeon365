@@ -153,6 +153,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Dòng S khác (S22 trở về trước, FE)', 'a-old': 'Dòng A khác', 'm-any': 'Một máy dòng M', 'f-any': 'Một máy dòng F', 'note-old': 'Note khác', 'xcover-old': 'XCover khác', etc: 'Một máy Galaxy không có trong danh sách' },
     seriesNames: { s: 'Galaxy dòng S', a: 'Galaxy dòng A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy dòng M', f: 'Galaxy dòng F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Khác / không có trong danh sách' },
   },
+  tr: {
+    h: 'Telefonum', none: 'Seçilmedi · genel rehber',
+    howH: 'Önce telefonunuzun modelini ve yazılım sürümünü bulun',
+    how: ['<b>Ayarlar</b> uygulamasına dokunun.', 'En alttaki <b>Telefon hakkında</b> öğesine dokunun.', 'Üstteki <b>model adına</b> bakın (örneğin Galaxy S26 · SM-S942N).', '<b>Yazılım bilgileri</b> öğesine dokunun.', '<b>One UI sürümü</b>ne bakın (örneğin 9.0).'],
+    howNote: 'Bazı modellerde menünün adı ‘Cihaz hakkında’dır. Ayarlar’daki arama kutusuna ‘Telefon hakkında’ da yazabilirsiniz.',
+    practice: 'Bu adımları alıştırma yapın', series: 'Seri', model: 'Model', oneui: 'One UI sürümü', save: 'Telefonumu kaydet', clear: 'Genel rehberi kullan',
+    note: 'Seçim isteğe bağlıdır. Yalnızca bu tarayıcıda saklanır ve modelinizi asla tahmin etmeyiz.',
+    dontKnow: 'Bilmiyorum', dontKnowWhich: 'Hangisi olduğunu bilmiyorum', chooseSeries: 'Önce seriyi seçin', baseVersion: 'bu derslerin sürümü',
+    saved: 'Kaydedildi. Her ders artık telefonunuzda çalışıp çalışmadığını gösterir.', cleared: 'Temizlendi. Genel rehber gösteriliyor.',
+    modelUnknown: 'Model bilinmiyor', seriesUnknown: (s) => `${s} (model bilinmiyor)`, versionUnknown: 'One UI sürümü bilinmiyor',
+    level: { ok: 'Destekleniyor', diff: 'Kontrol edin', check: 'Kontrol edin', no: 'Desteklenmiyor' },
+    text: { ok: 'Resmî rehbere göre kontrol edildi', diff: 'Menü adları bu One UI sürümünde farklı olabilir', check: 'Bu modelde henüz kontrol edilmedi', no: 'Bu modelde yok', min: (v) => `One UI ${v} veya üstü gerekir` },
+    on: '·', change: 'Değiştir',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Diğer S serisi (S22 ve öncesi, FE)', 'a-old': 'Diğer A serisi', 'm-any': 'Bir M serisi telefon', 'f-any': 'Bir F serisi telefon', 'note-old': 'Diğer Note', 'xcover-old': 'Diğer XCover', etc: 'Listede olmayan bir Galaxy' },
+    seriesNames: { s: 'Galaxy S serisi', a: 'Galaxy A serisi', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M serisi', f: 'Galaxy F serisi', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Diğer / listede yok' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
