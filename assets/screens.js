@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.2111';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.2121';
 
 const W = 360;
 const H = 640;
@@ -94,11 +94,14 @@ function navBar(c, { dark = false } = {}) {
   c.reg('뒤로가기 버튼', 256, 600, 64, 40);
 }
 
+// 해외용 그림에서 국내 전용 앱을 비슷한 역할의 세계 공통 앱으로 바꿔 그린다(누를 곳 이름은 그대로)
+const GLOBAL_APP = { 카카오톡: 'Gmail', 카카오맵: '지도' };
 function appIcon(c, x, y, name, size = 56, labelColor = C.ink) {
   const info = appInfo(name);
   const label = info?.label ?? name;
-  c.add(appIconSvg(name, x, y, size));
-  const seen = tr(label);
+  const drawn = TR && GLOBAL_APP[name] ? GLOBAL_APP[name] : name;
+  c.add(appIconSvg(TR && !appInfo(drawn) ? tr(drawn) : drawn, x, y, size)); // 등록 안 된 앱은 이름 첫 글자 아이콘 → 번역된 이름으로
+  const seen = tr(drawn === name ? label : (appInfo(drawn)?.label ?? drawn));
   const fs = seen.length > 9 ? 11 : seen.length > 5 ? 12.5 : 15;
   const shown = seen.length > 12 ? `${seen.slice(0, 11)}…` : seen;
   c.text(x + size / 2, y + size + 19, shown, { size: fs, anchor: 'middle', weight: 700, fill: labelColor });
@@ -137,9 +140,12 @@ function toggle(c, x, y, on) {
 }
 
 function wrapText(s, max) {
+  // 다른 언어 그림: 줄을 나누기 전에 문장 전체를 번역하고, 로마자는 한글보다 좁아 한 줄 글자 수를 늘린다
+  const src = tr(String(s ?? ''));
+  if (TR) max = Math.round(max * 1.6);
   const out = [];
   let line = '';
-  for (const word of String(s).split(' ')) {
+  for (const word of src.split(' ')) {
     if ((line + ' ' + word).trim().length > max && line) { out.push(line); line = word; } else line = (line + ' ' + word).trim();
   }
   if (line) out.push(line);

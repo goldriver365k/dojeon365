@@ -7,6 +7,8 @@ import { metaOf } from '../data/galaxy/meta.js';
 import { BASE } from '../data/galaxy/helpers.js';
 import { SITE_URL, LANGUAGES } from '../i18n/languages.js';
 import { UI } from '../i18n/en/ui.js';
+import { REVIEWED } from '../i18n/en/review.js';
+import { SITE_CONFIG } from '../i18n/site-config.js';
 import * as EN from '../i18n/en/galaxy.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
 import { tr } from '../i18n/en/screen-terms.js';
@@ -38,7 +40,8 @@ const VERSION = readFileSync(new URL('../assets/version.js', import.meta.url), '
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const two = (n) => String(n).padStart(2, '0');
 const LANG = 'en';
-const status = (id) => EN.LESSONS[id]?.status ?? 'draft';
+const GA = SITE_CONFIG.ga4Id.trim();
+const status = (id) => (REVIEWED[id] ? 'reviewed' : 'draft');
 
 export function globalLessons() {
   return CHAPTERS.map((ch) => ({
@@ -58,7 +61,8 @@ function head({ title, desc, path, index, crumbs }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:${GA ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}; style-src 'self'; script-src 'self'${GA ? ' https://www.googletagmanager.com' : ''}; connect-src 'self'${GA ? ' https://*.google-analytics.com https://*.analytics.google.com' : ''}; base-uri 'none'; form-action 'none'">
+${GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}${SITE_CONFIG.searchConsole ? `<meta name="google-site-verification" content="${esc(SITE_CONFIG.searchConsole)}">\n` : ''}
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${index ? '' : '<meta name="robots" content="noindex, follow">\n'}<link rel="canonical" href="${url}">
@@ -91,8 +95,9 @@ function footer(draft) {
   ${draft ? `<p class="draft">${UI.draft}</p>` : ''}
   <p>${UI.disclaimer}</p>
   <p class="langs">Languages: ${LANGUAGES.filter((l) => l.code !== 'ko').map((l) => l.code === LANG ? `<b>${esc(l.name)}</b>` : `<span title="${UI.soon}">${esc(l.name)}</span>`).join(' · ')} · <a href="/" hreflang="ko" lang="ko">한국어</a></p>
-  <p>© ${UI.brand} · ${UI.slogan}</p>
-</footer>`;
+  <p><a href="/en/privacy/">Privacy</a> · © ${UI.brand} · ${UI.slogan}</p>
+</footer>
+${GA ? `<div class="consent" data-consent hidden role="region" aria-label="Cookie choice"><p>May we count visits with Google Analytics to improve the lessons? No account or personal details are collected by us.</p><div><button type="button" class="btn btn--primary" data-consent-yes>Accept</button><button type="button" class="btn" data-consent-no>No thanks</button></div></div>` : ''}`;
 }
 
 const crumbNav = (crumbs) => `<nav class="crumbs" aria-label="Breadcrumb"><ol>${crumbs.map(([n, p], i) => i === crumbs.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="${p}">${esc(n)}</a></li>`).join('')}</ol></nav>`;
@@ -253,9 +258,30 @@ ${LANGUAGES.map((l) => `<tr><td>${l.code}</td><td>${esc(l.name)}</td><td>${l.sta
 </tbody></table>
 <h2>수업별 상태</h2>
 <table class="rows"><thead><tr><th>분류</th><th>수업</th><th>상태</th><th>그림</th><th>층·지원 조건</th></tr></thead><tbody>
-${rows.map((r) => `<tr><td>${two(r.ch)}</td><td>${r.en ? `<a href="/en/galaxy/${r.slug}/">${esc(r.title)}</a>` : esc(r.title)}<br><small>${r.id}</small></td><td>${r.en ? (r.status === 'reviewed' ? '검수 완료' : '초안') : '미작성'}</td><td>${r.pics}/${r.steps}</td><td>${esc(r.layer)}${r.support ? ` · ${esc(r.support)}` : ''}</td></tr>`).join('')}
+${rows.map((r) => `<tr><td>${two(r.ch)}</td><td>${r.en ? `<a href="/en/galaxy/${r.slug}/">${esc(r.title)}</a>` : esc(r.title)}<br><small>${r.id}</small></td><td>${r.en ? (r.status === 'reviewed' ? `검수 완료<br><small>${esc(REVIEWED[r.id].by)} · ${esc(REVIEWED[r.id].date)}</small>` : '초안') : '미작성'}</td><td>${r.pics}/${r.steps}</td><td>${esc(r.layer)}${r.support ? ` · ${esc(r.support)}` : ''}</td></tr>`).join('')}
 </tbody></table>
 </main></body></html>
+`;
+}
+
+function privacyPage() {
+  return `${head({ title: `Privacy | ${UI.brand}`, desc: 'How DigiStep365 handles your data: no sign-up, lesson progress stays in your browser, optional analytics only with your consent.', path: '/en/privacy/', index: false, crumbs: [[UI.home, '/en/'], ['Privacy', '/en/privacy/']] })}
+<body>
+${header()}
+<main class="page" id="main">
+<h1>Privacy</h1>
+<p class="lead">DigiStep365 works without an account. We do not ask for your name, email or phone number.</p>
+<h2>What is saved on your device</h2>
+<p>Your text size, your lesson position and the phone model you choose are saved only in this browser (local storage). They are never sent to us. Clearing your browser data removes them.</p>
+<h2>Analytics</h2>
+<p>${GA ? 'If you tap “Accept”, Google Analytics 4 counts page visits so we can see which lessons help. Nothing is loaded if you tap “No thanks”. You can change your choice below.' : 'This site currently uses no analytics and no cookies.'}</p>
+${GA ? '<p><button type="button" class="btn" data-consent-reset>Change my analytics choice</button></p>' : ''}
+<h2>Links to other sites</h2>
+<p>Lessons link to Samsung’s official manuals and support pages. Those sites have their own privacy policies.</p>
+</main>
+${footer(false)}
+</body>
+</html>
 `;
 }
 
@@ -286,6 +312,7 @@ ${urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc><xhtml:link rel="alternate" 
 </urlset>
 `);
   out('/admin/', adminPage(groups, rows));
+  out('/en/privacy/', privacyPage());
   writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   return { pages, indexed: urls.length, total: groups.reduce((a, g) => a + g.lessons.length, 0), ...stats };
 }

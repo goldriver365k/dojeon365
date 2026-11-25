@@ -94,3 +94,6 @@ h1 { font-size: clamp(1.6rem, 6vw, 2.1rem); line-height: 1.3; margin: 8px 0; let
 .lessons a { flex-wrap: wrap; row-gap: 2px; }
 .lessons a > span, .lessons a > .sup { white-space: nowrap; }
 .lessons a { overflow-wrap: anywhere; }
+.consent { position: fixed; left: 8px; right: 8px; bottom: 90px; z-index: 20; background: var(--surface); border: 1.5px solid var(--primary); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); }
+.consent p { margin: 0 0 8px; }
+.consent div { display: flex; gap: 8px; flex-wrap: wrap; }

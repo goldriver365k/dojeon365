@@ -1,7 +1,7 @@
 // DigiStep365 global pages: "My phone" picker (series → model → One UI) and support badges.
 // Optional: nothing is forced. Saved only in this browser. The site never guesses the model.
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261125.2111';
-import { metaOf } from '../data/galaxy/meta.js?v=20261125.2111';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261125.2121';
+import { metaOf } from '../data/galaxy/meta.js?v=20261125.2121';
 
 const KEY = 'digistep365.global.v1';
 const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } };

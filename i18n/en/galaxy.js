@@ -1,4 +1,4 @@
-// English (global) Galaxy lessons. status: 'draft' = not yet reviewed by a person → page is noindex and left out of the sitemap.
+// English (global) Galaxy lessons. Every lesson is a draft (noindex, not in the sitemap) until it is listed in review.js.
 // steps[i] matches the Korean card i of the same lesson (tests check the count).
 // UI names follow Samsung's English One UI wording. Practice screens are not shown yet (their labels are Korean).
 
