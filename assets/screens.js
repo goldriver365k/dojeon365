@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0929';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0936';
 
 const W = 360;
 const H = 640;
@@ -1060,6 +1060,151 @@ const KINDS = {
     c.reg('영수증 출구', 146, 436, 112, 34);
     c.text(202, 488, '영수증', { size: 11.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
     c.reg('화면', 66, 14, 228, 238);
+  },
+
+  /**
+   * 코레일톡 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님)
+   * view: 'home' | 'station' | 'date' | 'pax' | 'list' | 'seat' | 'confirm' | 'pay' | 'ticket' | 'mytickets'
+   */
+  korail(c, s) {
+    const BLUE = '#1E5BB8';
+    const NAVY = '#0F2D6B';
+    const v = s.view ?? 'home';
+    c.rect(0, 0, W, H, '#F2F5FA');
+    statusBar(c);
+    // 머리줄
+    c.rect(0, 34, W, 54, NAVY);
+    if (v !== 'home') { c.add('<polyline points="28,52 18,61 28,70" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>'); c.reg('뒤로', 6, 36, 40, 50); }
+    const titles = { home: '승차권 예매', station: '역 선택', date: '출발일 선택', pax: '인원 선택', list: '열차 조회', seat: '좌석 선택', confirm: '예매 확인', pay: '결제', ticket: '승차권 확인', mytickets: '승차권 확인' };
+    c.text(v === 'home' ? 20 : 46, 68, titles[v], { size: 19, fill: '#fff', weight: 800 });
+    c.text(340, 68, '연습 화면', { size: 11, fill: '#BFD3F5', weight: 700, anchor: 'end' });
+    const btn = (label, y, primary = true) => { c.rect(16, y, 328, 52, primary ? BLUE : '#FFFFFF', 10, primary ? '' : `stroke="${BLUE}"`); c.text(180, y + 33, label, { size: 17, fill: primary ? '#fff' : BLUE, weight: 800, anchor: 'middle' }); c.reg(label, 12, y - 4, 336, 60); };
+    const tabs = (cur) => {
+      const items = ['승차권 예매', '승차권 확인', '할인·카드', '전체 메뉴'];
+      c.rect(0, 548, W, 52, '#FFFFFF'); c.add(`<line x1="0" y1="548" x2="${W}" y2="548" stroke="#DADCE0"/>`);
+      items.forEach((t, i) => { const x = 45 + i * 90; c.text(x, 580, t, { size: 12.5, anchor: 'middle', weight: t === cur ? 900 : 600, fill: t === cur ? BLUE : C.sub }); c.reg(t, x - 45, 548, 90, 52); });
+    };
+    if (v === 'home') {
+      c.rect(16, 104, 328, 132, '#FFFFFF', 14, 'stroke="#DCE3EE"');
+      c.text(40, 128, '출발', { size: 13, fill: C.sub, weight: 700 });
+      c.text(250, 128, '도착', { size: 13, fill: C.sub, weight: 700 });
+      c.text(70, 178, s.from ?? '서울', { size: 34, weight: 900, anchor: 'middle', fill: NAVY });
+      c.text(282, 178, s.to ?? '부산', { size: 34, weight: 900, anchor: 'middle', fill: NAVY });
+      c.reg('출발역', 20, 110, 130, 100); c.reg('도착역', 210, 110, 130, 100);
+      c.add(`<circle cx="180" cy="168" r="20" fill="#EAF1FD"/><path d="M170 162h20l-5-5M190 174h-20l5 5" stroke="${BLUE}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`);
+      c.reg('출발역·도착역 바꾸기', 158, 146, 44, 44);
+      c.rect(16, 248, 328, 56, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+      c.text(32, 282, '출발일', { size: 14, fill: C.sub, weight: 700 }); c.text(330, 282, s.date ?? '12월 3일(수) 08시 이후', { size: 15, weight: 800, anchor: 'end' });
+      c.reg('출발일', 16, 248, 328, 56);
+      c.rect(16, 314, 328, 56, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+      c.text(32, 348, '인원', { size: 14, fill: C.sub, weight: 700 }); c.text(330, 348, s.pax ?? '어른 1명', { size: 15, weight: 800, anchor: 'end' });
+      c.reg('인원', 16, 314, 328, 56);
+      btn('열차 조회하기', 392);
+      tabs('승차권 예매');
+    } else if (v === 'station') {
+      c.rect(16, 100, 328, 44, '#FFFFFF', 22, 'stroke="#DCE3EE"'); c.text(40, 128, '역 이름 검색', { size: 14, fill: '#80868B' }); c.reg('역 검색', 16, 100, 328, 44);
+      c.text(20, 172, '주요역', { size: 14, fill: C.sub, weight: 800 });
+      ['서울', '용산', '광명', '대전', '동대구', '부산', '광주송정', '강릉', '전주'].forEach((st, i) => {
+        const x = 16 + (i % 3) * 112; const y = 186 + Math.floor(i / 3) * 56;
+        c.rect(x, y, 104, 46, '#FFFFFF', 10, 'stroke="#DCE3EE"'); c.text(x + 52, y + 29, st, { size: 16, weight: 800, anchor: 'middle' }); c.reg(st, x, y, 104, 46);
+      });
+    } else if (v === 'date') {
+      c.text(180, 122, '2026년 12월', { size: 17, weight: 900, anchor: 'middle' });
+      ['일', '월', '화', '수', '목', '금', '토'].forEach((d, i) => c.text(36 + i * 48, 152, d, { size: 13, anchor: 'middle', fill: i === 0 ? '#C02A1E' : C.sub, weight: 700 }));
+      for (let d = 1; d <= 31; d += 1) {
+        const idx = d + 1; const x = 36 + (idx % 7) * 48; const y = 186 + Math.floor(idx / 7) * 44;
+        const sel = d === 3;
+        if (sel) c.add(`<circle cx="${x}" cy="${y - 6}" r="17" fill="${BLUE}"/>`);
+        c.text(x, y, String(d), { size: 15, anchor: 'middle', weight: 700, fill: sel ? '#fff' : C.ink });
+        c.reg(`${d}일`, x - 22, y - 26, 44, 40);
+      }
+      c.text(20, 444, '출발 시각', { size: 14, fill: C.sub, weight: 800 });
+      ['06시', '08시', '10시', '12시'].forEach((t, i) => { c.rect(16 + i * 84, 456, 76, 38, i === 1 ? BLUE : '#FFFFFF', 19, i === 1 ? '' : 'stroke="#DCE3EE"'); c.text(54 + i * 84, 481, t, { size: 14, anchor: 'middle', weight: 800, fill: i === 1 ? '#fff' : C.ink }); c.reg(t, 16 + i * 84, 456, 76, 38); });
+      btn('확인', 506);
+    } else if (v === 'pax') {
+      [['어른(만 13세 이상)', s.adult ?? 1], ['어린이(만 6~12세)', 0], ['경로(만 65세 이상)', s.senior ?? 0], ['장애인', 0]].forEach(([t, n], i) => {
+        const y = 104 + i * 66;
+        c.rect(16, y, 328, 58, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+        c.text(32, y + 35, t, { size: 15, weight: 800 });
+        c.add(`<circle cx="250" cy="${y + 29}" r="15" fill="#EAF1FD"/><circle cx="318" cy="${y + 29}" r="15" fill="${BLUE}"/>`);
+        c.text(250, y + 35, '−', { size: 18, anchor: 'middle', weight: 900, fill: BLUE }); c.text(284, y + 35, String(n), { size: 16, anchor: 'middle', weight: 900 }); c.text(318, y + 35, '+', { size: 18, anchor: 'middle', weight: 900, fill: '#fff' });
+        c.reg(`${t} 빼기`, 232, y + 10, 36, 38); c.reg(`${t} 더하기`, 300, y + 10, 36, 38);
+      });
+      btn('확인', 400);
+    } else if (v === 'list') {
+      c.rect(0, 88, W, 40, '#FFFFFF'); c.text(180, 114, `${s.from ?? '서울'} → ${s.to ?? '부산'} · 12월 3일(수)`, { size: 14, weight: 800, anchor: 'middle' });
+      const trains = s.trains ?? [['KTX 001', '08:00', '10:40', '59,800원', '83,000원'], ['KTX 003', '09:30', '12:08', '59,800원', '매진'], ['ITX-새마을 1001', '10:05', '14:48', '42,600원', '-'], ['KTX 005', '11:00', '13:42', '매진', '매진']];
+      trains.forEach(([name, dep, arr, gen, first], i) => {
+        const y = 138 + i * 92;
+        c.rect(12, y, 336, 84, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+        c.text(26, y + 24, name, { size: 13, weight: 800, fill: BLUE });
+        c.text(26, y + 56, `${dep} → ${arr}`, { size: 20, weight: 900 });
+        const cell = (label, price, x) => {
+          const soldout = price === '매진' || price === '-';
+          c.rect(x, y + 12, 74, 60, soldout ? '#F1F3F4' : '#EAF1FD', 8, soldout ? '' : `stroke="${BLUE}"`);
+          c.text(x + 37, y + 34, label, { size: 12, anchor: 'middle', weight: 700, fill: soldout ? '#9AA0A6' : C.sub });
+          c.text(x + 37, y + 56, price, { size: 13, anchor: 'middle', weight: 900, fill: soldout ? '#9AA0A6' : BLUE });
+          if (!soldout) c.reg(`${name} ${label}`, x - 2, y + 10, 78, 64);
+        };
+        cell('일반실', gen, 186); cell('특실', first, 266);
+      });
+    } else if (v === 'seat') {
+      c.rect(0, 88, W, 46, '#FFFFFF');
+      ['3호차', '4호차', '5호차', '6호차'].forEach((car, i) => { const on = car === '5호차'; c.rect(14 + i * 84, 96, 76, 30, on ? BLUE : '#FFFFFF', 15, on ? '' : 'stroke="#DCE3EE"'); c.text(52 + i * 84, 116, car, { size: 13, anchor: 'middle', weight: 800, fill: on ? '#fff' : C.ink }); c.reg(car, 14 + i * 84, 92, 76, 38); });
+      c.text(180, 156, '◀ 진행 방향', { size: 12, anchor: 'middle', fill: C.sub, weight: 700 });
+      const cols = ['A', 'B', 'C', 'D'];
+      const taken = s.taken ?? ['1A', '1B', '2C', '3D', '4A', '6B', '6C'];
+      const picked = s.picked ?? [];
+      for (let r = 1; r <= 7; r += 1) {
+        cols.forEach((col, i) => {
+          const id = `${r}${col}`;
+          const x = 66 + i * 50 + (i >= 2 ? 26 : 0); const y = 168 + (r - 1) * 48;
+          const tk = taken.includes(id); const pk = picked.includes(id);
+          c.rect(x, y, 42, 40, pk ? BLUE : tk ? '#C9CDD3' : '#FFFFFF', 8, `stroke="${pk ? BLUE : '#9DB8E6'}"`);
+          c.text(x + 21, y + 25, id, { size: 12.5, anchor: 'middle', weight: 800, fill: pk ? '#fff' : tk ? '#7A7F87' : C.ink });
+          if (!tk) c.reg(id, x - 2, y - 2, 46, 44);
+        });
+      }
+      c.text(20, 520, s.note ?? '경로 1명 · 순방향', { size: 13, fill: C.sub, weight: 700 });
+      c.rect(208, 500, 136, 42, BLUE, 10); c.text(276, 527, '좌석 선택 완료', { size: 14, fill: '#fff', weight: 800, anchor: 'middle' }); c.reg('좌석 선택 완료', 204, 496, 144, 50);
+    } else if (v === 'confirm' || v === 'pay') {
+      c.rect(16, 104, 328, 170, '#FFFFFF', 14, 'stroke="#DCE3EE"');
+      c.text(32, 132, 'KTX 001 · 12월 3일(수)', { size: 13, fill: BLUE, weight: 800 });
+      c.text(32, 170, '서울 08:00 → 부산 10:40', { size: 19, weight: 900 });
+      c.text(32, 204, '5호차 3A · 일반실 · 순방향', { size: 14, fill: C.sub, weight: 700 });
+      c.text(32, 236, '경로 1명', { size: 14, fill: C.sub, weight: 700 });
+      c.text(328, 258, '41,900원', { size: 20, weight: 900, anchor: 'end', fill: BLUE });
+      if (v === 'confirm') {
+        c.text(20, 304, '결제 기한 안에 결제해야 예매가 끝나요.', { size: 13, fill: '#C02A1E', weight: 700 });
+        btn('결제하기', 324);
+        btn('예약 취소', 386, false);
+      } else {
+        [['카드 결제', true], ['간편결제', false], ['포인트', false]].forEach(([t, on], i) => {
+          const y = 292 + i * 54; c.rect(16, y, 328, 46, '#FFFFFF', 10, `stroke="${on ? BLUE : '#DCE3EE'}" stroke-width="${on ? 2 : 1}"`);
+          c.add(`<circle cx="40" cy="${y + 23}" r="9" fill="none" stroke="${on ? BLUE : '#9AA0A6'}" stroke-width="2.4"/>${on ? `<circle cx="40" cy="${y + 23}" r="4.5" fill="${BLUE}"/>` : ''}`);
+          c.text(60, y + 29, t, { size: 15, weight: 800 }); c.reg(t, 16, y, 328, 46);
+        });
+        btn('41,900원 결제하기', 466);
+      }
+    } else if (v === 'ticket') {
+      c.rect(16, 100, 328, 420, '#FFFFFF', 16, 'stroke="#DCE3EE"');
+      c.rect(16, 100, 328, 56, BLUE, 16); c.rect(16, 140, 328, 16, BLUE);
+      c.text(32, 134, '승차권 · KTX 001', { size: 16, fill: '#fff', weight: 800 });
+      c.text(70, 200, '서울', { size: 26, weight: 900, anchor: 'middle' }); c.text(290, 200, '부산', { size: 26, weight: 900, anchor: 'middle' });
+      c.text(70, 226, '08:00', { size: 15, anchor: 'middle', fill: C.sub, weight: 700 }); c.text(290, 226, '10:40', { size: 15, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.add(`<path d="M120 196 h120 l-8 -6 M240 196 l-8 6" stroke="${BLUE}" stroke-width="2.5" fill="none"/>`);
+      c.text(180, 270, '12월 3일(수) · 5호차 3A · 경로', { size: 15, anchor: 'middle', weight: 800 });
+      // QR
+      c.rect(120, 292, 120, 120, '#FFFFFF', 4, 'stroke="#111"');
+      const q = [[0, 0], [1, 0], [3, 0], [5, 1], [0, 2], [2, 2], [4, 2], [1, 3], [3, 3], [5, 3], [0, 4], [2, 4], [4, 5], [1, 5], [3, 5]];
+      for (const [qx, qy] of q) c.rect(132 + qx * 16, 304 + qy * 16, 14, 14, '#111');
+      c.reg('승차권 QR', 116, 288, 128, 128);
+      c.text(180, 440, '검표할 때 이 화면을 보여 주세요', { size: 13, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.rect(32, 462, 140, 42, '#FFFFFF', 10, `stroke="${BLUE}"`); c.text(102, 489, '예매 변경', { size: 14, anchor: 'middle', weight: 800, fill: BLUE }); c.reg('예매 변경', 28, 458, 148, 50);
+      c.rect(188, 462, 140, 42, '#FFFFFF', 10, 'stroke="#C02A1E"'); c.text(258, 489, '반환(취소)', { size: 14, anchor: 'middle', weight: 800, fill: '#C02A1E' }); c.reg('반환(취소)', 184, 458, 148, 50);
+      tabs('승차권 확인');
+    }
+    navBar(c);
   },
 
   /** 출력된 주문 번호 영수증: number, items:[[이름, 금액]], total, store, date */
