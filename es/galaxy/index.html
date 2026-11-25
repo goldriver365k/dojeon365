@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/assets/global.css?v=20261125.2130">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://digistep365.com/es/"},{"@type":"ListItem","position":2,"name":"Clases de Galaxy","item":"https://digistep365.com/es/galaxy/"}]}</script>
 <script src="/assets/global.js?v=20261125.2130" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261125.2130"></script>
 </head>
 <body>
 <header class="top">
@@ -33,7 +34,24 @@
 <nav class="crumbs" aria-label="Ruta de navegación"><ol><li><a href="/es/">Inicio</a></li><li aria-current="page">Clases de Galaxy</li></ol></nav>
 <h1>Clases de móvil Galaxy</h1>
 <p class="lead">Elige un tema. Cada lección muestra una acción cada vez. Por ahora hay 18 de 140 lecciones en español.</p>
-
+<section class="device" id="my-phone" aria-labelledby="dev-h">
+  <h2 id="dev-h">Mi móvil</h2>
+  <p class="device__now" data-device-now>Sin elegir · instrucciones generales</p>
+  <details class="device__how" open>
+    <summary>Primero, busca el modelo y la versión de software de tu móvil</summary>
+    <ol><li>Toca la aplicación <b>Ajustes</b>.</li><li>Toca <b>Acerca del teléfono</b>, abajo del todo.</li><li>Mira el <b>nombre del modelo</b> arriba (por ejemplo, Galaxy S26 · SM-S942N).</li><li>Toca <b>Información de software</b>.</li><li>Mira la <b>versión de One UI</b> (por ejemplo, 9.0).</li></ol>
+    <p>En algunos modelos el menú se llama ‘Acerca del dispositivo’. También puedes escribir ‘Acerca del teléfono’ en la búsqueda de Ajustes.</p>
+    
+  </details>
+  <form class="device__form" data-device-form>
+    <label>Serie <select name="series"></select></label>
+    <label>Modelo <select name="model"></select></label>
+    <label>Versión de One UI <select name="oneui"></select></label>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">Guardar mi móvil</button><button type="button" class="btn" data-clear>Usar instrucciones generales</button></div>
+    <p class="device__saved" data-saved role="status"></p>
+  </form>
+  <p class="device__note">Elegir es opcional. Solo se guarda en este navegador y nunca adivinamos tu modelo.</p>
+</section>
 <section class="group"><h2>Lo básico</h2>
 <section class="cat" id="c01">
   <h3><span class="num">01</span> Encender y apagar el móvil</h3>

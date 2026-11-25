@@ -17,6 +17,7 @@ import * as esUI from '../i18n/es/ui.js';
 import * as esG from '../i18n/es/galaxy.js';
 import * as esR from '../i18n/es/review.js';
 import * as esT from '../i18n/es/screen-terms.js';
+import { deviceSection } from '../i18n/device-strings.js';
 
 /** Languages built here. The first one is x-default. */
 export const LOCALES = {
@@ -204,7 +205,6 @@ ${footer(draft, alternates)}
 `;
 }
 
-const DEVICE_SECTION = readFileSync(new URL('./global-device-section.html', import.meta.url), 'utf8');
 
 function galaxyIndex(groups) {
   const { UI, G } = L;
@@ -220,7 +220,7 @@ ${header()}
 ${crumbNav(crumbs)}
 <h1>${UI.indexH1}</h1>
 <p class="lead">${UI.indexLead(ready, total)}</p>
-${UI.devicePicker ? DEVICE_SECTION : ''}
+${UI.devicePicker ? deviceSection(L.code, G.TITLES['g18-version'] && G.LESSONS['g18-version'] ? `${base}${G.TITLES['g18-version'][0]}/` : null) : ''}
 ${Object.entries(G.GROUPS).map(([gid, gname]) => `<section class="group"><h2>${gname}</h2>
 ${groups.filter((g) => g.ch.group === gid).map(({ ch, lessons }) => {
     const shown = lessons.filter((x) => x.t && (x.en || G.LIST_UNTRANSLATED));

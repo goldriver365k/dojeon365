@@ -49,5 +49,5 @@ export const UI = {
   privacyLinks: 'Las lecciones enlazan a los manuales y páginas de soporte oficiales de Samsung. Esos sitios tienen su propia política de privacidad.',
   consent: '¿Podemos contar las visitas con Google Analytics para mejorar las clases? Nosotros no recogemos cuentas ni datos personales.',
   consentYes: 'Aceptar', consentNo: 'No, gracias', consentLabel: 'Elección de cookies',
-  devicePicker: false, // el selector de móvil llegará cuando se traduzca
+  devicePicker: true,
 };
