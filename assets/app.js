@@ -12,14 +12,17 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0752';
-import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0752';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0752';
-import { renderScreen } from './screens.js?v=20261125.0752';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0752';
-import { VERSION } from './version.js?v=20261125.0752';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0759';
+import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0759';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0759';
+import { renderScreen } from './screens.js?v=20261125.0759';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0759';
+import { VERSION } from './version.js?v=20261125.0759';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
+// 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
+const GROUP_CAT = { basic: 'cat-1', life: 'cat-3', apply: 'cat-2', adv: 'cat-4' };
+const HOME_CAT = ['cat-1', 'cat-3', 'cat-2', 'cat-4', 'cat-1'];
 const app = document.getElementById('app');
 
 /* ---------- 저장 ---------- */
@@ -83,7 +86,7 @@ function viewHome() {
     <p class="lead">천천히, 한 번에 한 가지씩 따라 하면 됩니다.</p>
     <ul class="cat-list">
       ${CATEGORIES.map((c, i) => `<li>
-        <a class="cat ${c.ready ? '' : 'cat--soon'}" href="${c.ready ? c.href : `#/soon/${c.id}`}">
+        <a class="cat ${HOME_CAT[i]} ${c.ready ? '' : 'cat--soon'}" href="${c.ready ? c.href : `#/soon/${c.id}`}">
           <span class="cat__num" aria-hidden="true">${i + 1}</span>
           <span class="cat__body"><span class="cat__title">${esc(c.title)}</span><span class="cat__desc">${esc(c.desc)}</span>${c.ready ? '' : '<span class="badge badge--soon">준비 중</span>'}</span>
           ${ICON.chev}
@@ -146,7 +149,7 @@ function viewGalaxy() {
       <div class="chips" aria-label="자주 찾는 말">${EXAMPLES.map((e) => `<button type="button" class="chip" data-example="${esc(e)}">${esc(e)}</button>`).join('')}</div>
       <div class="search__results" id="results" aria-live="polite"></div>
     </section>
-    ${GROUPS.map((g) => `<section class="toc-group" aria-labelledby="g-${g.id}">
+    ${GROUPS.map((g) => `<section class="toc-group ${GROUP_CAT[g.id]}" aria-labelledby="g-${g.id}">
       <h2 class="toc-group__h" id="g-${g.id}">${esc(g.title)}</h2>
       <ol class="toc">
         ${CHAPTERS.filter((ch) => ch.group === g.id).map((ch) => `<li>
@@ -213,7 +216,7 @@ function lessonHref(lesson) {
 function lessonRow(lesson, chapter, withChapter = false) {
   const st = lessonState(lesson.id);
   const status = st.done ? '<span class="badge badge--done">마침</span>' : store.current?.id === lesson.id ? '<span class="badge badge--doing">하던 중</span>' : '';
-  return `<li><a class="lesson-row" href="${lessonHref(lesson)}">
+  return `<li><a class="lesson-row ${GROUP_CAT[chapter.group] ?? ''}" href="${lessonHref(lesson)}">
     <span class="lesson-row__body">
       ${withChapter ? `<span class="lesson-row__chapter">${two(chapter.num)}. ${esc(chapter.title)}</span>` : ''}
       <span class="lesson-row__title">${esc(lesson.title)}</span>
@@ -227,7 +230,7 @@ function viewChapter(num) {
   document.title = `${two(ch.num)}. ${ch.title} | 갤럭시 휴대폰 사용방법`;
   const group = GROUPS.find((g) => g.id === ch.group);
   return `${topbar({ back: '#/galaxy', backLabel: '목차로' })}
-  <main class="page" id="main">
+  <main class="page ${GROUP_CAT[ch.group] ?? ''}" id="main">
     <p class="eyebrow">${esc(group?.title ?? '')} · 목차 ${two(ch.num)}</p>
     <h1 class="page__title">${two(ch.num)}. ${esc(ch.title)}</h1>
     <p class="lead">배울 수업을 누르세요. 첫 단계부터 시작해요.</p>
@@ -318,7 +321,7 @@ function viewCard(lesson, chapter, idx) {
     <h2 class="instr" id="instr" tabindex="-1"><span class="sr-only">${total}단계 중 ${idx + 1}단계. </span>${esc(card.text)}</h2>
     ${appTag(card)}
     ${card.hint ? `<p class="hint">${esc(card.hint)}</p>` : ''}
-    ${card.note ? `<p class="note"><strong>기종에 따라 달라요</strong> ${esc(card.note)}</p>` : ''}
+    ${card.note ? `<p class="note"><strong>알아두세요</strong> ${esc(card.note)}</p>` : ''}
     <figure class="stage${card.photo || ['side', 'info'].includes(card.screen?.kind) ? ' stage--object' : ''}" data-action="${esc(card.action)}">
       ${cardFigure(card)}
       <figcaption class="stage__cap">${esc(practiceHint(card))}</figcaption>

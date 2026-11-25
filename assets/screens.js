@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0752';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0759';
 
 const W = 360;
 const H = 640;
@@ -141,7 +141,7 @@ const KINDS = {
   /** 휴대폰 앞면과 옆면 버튼 */
   side(c, s) {
     // 갤럭시 S26 실물에 가깝게: 금속 테두리, 얇은 화면 테두리, 전면 카메라 구멍, 오른쪽 옆면 버튼
-    c.rect(0, 0, W, H, '#F4F1EA');
+    c.rect(0, 0, W, H, '#EEF3FB');
     c.add(`<defs>
       <linearGradient id="sv-frame" x1="0" x2="1"><stop offset="0" stop-color="#8A8F98"/><stop offset="0.5" stop-color="#D9DCE1"/><stop offset="1" stop-color="#7C818A"/></linearGradient>
       <linearGradient id="sv-btn" x1="0" x2="1"><stop offset="0" stop-color="#B9BDC4"/><stop offset="0.6" stop-color="#ECEEF1"/><stop offset="1" stop-color="#9AA0A8"/></linearGradient>
@@ -820,7 +820,7 @@ const KINDS = {
 
   /** 설명 그림(실제 휴대폰에서 할 일) */
   info(c, s) {
-    c.rect(0, 0, W, H, '#FFF8E7');
+    c.rect(0, 0, W, H, '#EAF1FD');
     c.add(`<circle cx="180" cy="200" r="86" fill="${s.color ?? '#1A5FD0'}" opacity="0.12"/>`);
     c.text(180, 228, s.icon ?? '!', { size: 76, anchor: 'middle', weight: 800, fill: s.color ?? '#1A5FD0' });
     let y = 340;
