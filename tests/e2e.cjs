@@ -22,9 +22,10 @@ const check = (name, ok, detail = '') => {
 async function main() {
   const { createServer } = await import(path.join(ROOT, 'scripts', 'serve.js'));
   const { CHAPTERS, allLessons } = await import(path.join(ROOT, 'data', 'galaxy', 'index.js'));
+  // E2E_BASE=https://주소 로 배포된 사이트를 점검할 수 있다
   const server = createServer().listen(0, '127.0.0.1');
   await new Promise((r) => server.once('listening', r));
-  const BASE = `http://127.0.0.1:${server.address().port}/`;
+  const BASE = process.env.E2E_BASE ? process.env.E2E_BASE.replace(/\/?$/, '/') : `http://127.0.0.1:${server.address().port}/`;
   fs.mkdirSync(SHOTS, { recursive: true });
 
   const browser = await chromium.launch();
@@ -226,7 +227,7 @@ async function main() {
   const lines = [
     '# 브라우저 점검 결과',
     '',
-    `- 실행: ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC, Chromium(Playwright), 360px 기준`,
+    `- 실행: ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC, Chromium(Playwright), 360px 기준, 대상 ${BASE}`,
     `- 결과: ${pass}/${results.length} 통과`,
     '',
     '| 항목 | 결과 | 비고 |',
@@ -234,7 +235,7 @@ async function main() {
     ...results.map((r) => `| ${r.name} | ${r.ok ? '통과' : '**실패**'} | ${r.ok ? '' : r.detail.replace(/\|/g, '/')} |`),
     '',
   ];
-  fs.writeFileSync(path.join(ROOT, 'docs', 'test-report.md'), lines.join('\n'));
+  fs.writeFileSync(path.join(ROOT, 'docs', process.env.E2E_BASE ? 'test-report-live.md' : 'test-report.md'), lines.join('\n'));
   console.log(`\n${pass}/${results.length} 통과`);
   process.exit(pass === results.length ? 0 : 1);
 }
