@@ -17,12 +17,17 @@ import * as esUI from '../i18n/es/ui.js';
 import * as esG from '../i18n/es/galaxy.js';
 import * as esR from '../i18n/es/review.js';
 import * as esT from '../i18n/es/screen-terms.js';
+import * as ptUI from '../i18n/pt/ui.js';
+import * as ptG from '../i18n/pt/galaxy.js';
+import * as ptR from '../i18n/pt/review.js';
+import * as ptT from '../i18n/pt/screen-terms.js';
 import { deviceSection } from '../i18n/device-strings.js';
 
 /** Languages built here. The first one is x-default. */
 export const LOCALES = {
   en: { code: 'en', og: 'en_US', UI: enUI.UI, G: enG, REVIEWED: enR.REVIEWED, tr: enT.tr },
   es: { code: 'es', og: 'es_ES', UI: esUI.UI, G: esG, REVIEWED: esR.REVIEWED, tr: esT.tr },
+  pt: { code: 'pt', og: 'pt_BR', UI: ptUI.UI, G: ptG, REVIEWED: ptR.REVIEWED, tr: ptT.tr },
 };
 const DEFAULT = 'en';
 

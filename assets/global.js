@@ -58,7 +58,7 @@
     const s = steps[i];
     const text = [s.querySelector('.step__no'), s.querySelector('h2'), s.querySelector('.step__hint')].filter(Boolean).map((n) => n.textContent).join('. ');
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = ({ en: 'en-US', es: 'es-ES' })[document.documentElement.lang] || document.documentElement.lang; u.rate = 0.9;
+    u.lang = ({ en: 'en-US', es: 'es-ES', pt: 'pt-BR' })[document.documentElement.lang] || document.documentElement.lang; u.rate = 0.9;
     speechSynthesis.speak(u);
   });
   list.addEventListener('click', (e) => {

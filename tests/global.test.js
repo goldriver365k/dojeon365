@@ -79,22 +79,26 @@ test('영어 연습 그림에 한글이 남지 않는다(남으면 그림을 빼
   }
 });
 
-test('스페인어: 단계 수 일치, 한 단계 한 문장, noindex, 스페인어 면책 문구, 영어와 hreflang 연결', async () => {
-  const ES = await import('../i18n/es/galaxy.js');
-  const { REVIEWED: ESR } = await import('../i18n/es/review.js');
+const OTHER = {
+  es: { html: 'es', disclaimer: /No está afiliado, patrocinado ni respaldado por Samsung Electronics/ },
+  pt: { html: 'pt', disclaimer: /Não é afiliado, patrocinado nem endossado pela Samsung Electronics/ },
+};
+for (const [code, cfg] of Object.entries(OTHER)) test(`${code}: 단계 수 일치, 한 단계 한 문장, noindex, 면책 문구, 영어와 hreflang 연결`, async () => {
+  const ES = await import(`../i18n/${code}/galaxy.js`);
+  const { REVIEWED: ESR } = await import(`../i18n/${code}/review.js`);
   for (const [id, es] of Object.entries(ES.LESSONS)) {
     if (!findLesson(id)) { assert.ok(EN.LESSONS[id] && EN.LESSONS[id].steps.length === es.steps.length, `해외용 새 수업 단계 수: ${id}`); continue; }
     assert.equal(es.steps.length, findLesson(id).lesson.cards.length, id);
     assert.notEqual(metaOf(id).region, 'KR', id);
-    for (const [text] of es.steps) assert.ok(!/\. [A-ZÁÉÍÓÚ¡¿]/.test(text), `${id} — ${text}`);
-    const html = readFileSync(`es/galaxy/${ES.TITLES[id][0]}/index.html`, 'utf8');
-    assert.match(html, /<html lang="es"/);
+    for (const [text] of es.steps) assert.ok(!/\. [A-ZÁÉÍÓÚÂÊÔÃÕÇ¡¿]/.test(text), `${id} — ${text}`);
+    const html = readFileSync(`${code}/galaxy/${ES.TITLES[id][0]}/index.html`, 'utf8');
+    assert.match(html, new RegExp(`<html lang="${cfg.html}"`));
     if (!ESR[id]) assert.match(html, /<meta name="robots" content="noindex/);
-    assert.match(html, /No está afiliado, patrocinado ni respaldado por Samsung Electronics/);
-    assert.ok(html.includes(`hreflang="en" href="https://digistep365.com/en/galaxy/${EN.TITLES[id][0]}/"`), `es→en ${id}`);
+    assert.match(html, cfg.disclaimer);
+    assert.ok(html.includes(`hreflang="en" href="https://digistep365.com/en/galaxy/${EN.TITLES[id][0]}/"`), `${code}→en ${id}`);
     const en = readFileSync(`en/galaxy/${EN.TITLES[id][0]}/index.html`, 'utf8');
-    assert.ok(en.includes(`hreflang="es" href="https://digistep365.com/es/galaxy/${ES.TITLES[id][0]}/"`), `en→es ${id}`);
+    assert.ok(en.includes(`hreflang="${code}" href="https://digistep365.com/${code}/galaxy/${ES.TITLES[id][0]}/"`), `en→${code} ${id}`);
   }
   const slugs = Object.values(ES.TITLES).map((t) => t[0]);
-  assert.equal(new Set(slugs).size, slugs.length, '스페인어 주소 중복');
+  assert.equal(new Set(slugs).size, slugs.length, `${code} 주소 중복`);
 });
