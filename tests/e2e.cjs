@@ -32,7 +32,8 @@ async function main() {
   const ctx = await browser.newContext({ viewport: { width: 360, height: 760 }, deviceScaleFactor: 2, locale: 'ko-KR', hasTouch: false });
   await ctx.addInitScript(() => {
     window.__spoken = [];
-    const fake = { speak(u) { window.__spoken.push(u.text); setTimeout(() => u.onend && u.onend(), 10); }, cancel() {}, getVoices() { return [{ lang: 'ko-KR', name: 'ko' }]; } };
+    const VOICES = [{ lang: 'ko-KR', name: 'ko-kr-local', voiceURI: 'local', localService: true }, { lang: 'ko-KR', name: 'Google 한국의', voiceURI: 'google', localService: false }];
+    const fake = { speak(u) { window.__spoken.push({ text: u.text, voice: u.voice && u.voice.voiceURI }); setTimeout(() => u.onend && u.onend(), 10); }, cancel() {}, getVoices() { return VOICES; }, addEventListener() {} };
     Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true });
     Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: function (t) { this.text = t; }, configurable: true });
   });
@@ -89,7 +90,7 @@ async function main() {
     for (let i = 0; i < lesson.cards.length; i += 1) {
       await page.waitForFunction((n) => (document.body.dataset.route ?? '').endsWith(`/${n}`), i + 1);
       const step = await page.locator('.step__text').textContent();
-      const instr = (await page.locator('#instr').textContent()).replace(/^\d+단계 중 \d+단계\.\s*/, '');
+      const instr = await page.locator('#instr').evaluate((el) => [...el.childNodes].filter((n) => !(n.classList && n.classList.contains('sr-only'))).map((n) => n.textContent).join(''));
       if (!step.includes(`${lesson.cards.length}단계 중 ${i + 1}단계`) || instr.trim() !== lesson.cards[i].text) textMismatch.push(`${lesson.id}#${i + 1}`);
       if ((await page.locator('#instr').count()) !== 1) multiAction += 1;
       if (!(await noHScroll())) hscroll.push(`${lesson.id}#${i + 1}`);
@@ -175,7 +176,16 @@ async function main() {
   await go('#/lesson/g03-font/1');
   await page.locator('[data-speak]').click();
   const spoken = await page.evaluate(() => window.__spoken);
-  check('‘음성으로 듣기’가 현재 안내 문장을 읽음', spoken.length === 1 && spoken[0].includes('‘설정’ 앱을 누르세요.'), spoken.join(' / '));
+  check('‘음성으로 듣기’가 단계를 ‘첫 번째 단계’로 읽고 안내 문장을 읽음', spoken.length === 1 && spoken[0].text.startsWith('첫 번째 단계.') && spoken[0].text.includes('설정 앱을 누르세요.') && !spoken[0].text.includes('단계 중'), JSON.stringify(spoken));
+  check('가장 선명한 한국어 목소리 자동 선택', spoken[0]?.voice === 'google', spoken[0]?.voice);
+  await page.locator('[data-voice-box] summary').click();
+  await page.locator('[data-voice][value="local"]').check();
+  await page.waitForTimeout(50);
+  await go('#/lesson/g03-font/2');
+  await page.locator('[data-speak]').click();
+  const spoken2 = await page.evaluate(() => window.__spoken);
+  const last = spoken2[spoken2.length - 1];
+  check('고른 목소리를 기억하고 두 번째 단계로 읽음', last.voice === 'local' && last.text.startsWith('두 번째 단계.'), JSON.stringify(last));
   const srcLinks = await page.locator('.meta__src a').evaluateAll((as) => as.map((a) => a.href));
   check('삼성 공식 출처 링크 연결', srcLinks.some((h) => h.startsWith('https://downloadcenter.samsung.com/')), srcLinks.join(' '));
   await go('#/lesson/g21-spen/1');
@@ -202,7 +212,7 @@ async function main() {
   check('연습 버튼·그림에 설명', /전원 끄기/.test(hitLabel) && altText.length > 10, `${hitLabel} / ${altText}`);
   check('이전·다음 버튼 글자 표시', navNames.join('|').includes('이전') && navNames.join('|').includes('다음'), navNames.join('|'));
   const srStep = await page.locator('#instr .sr-only').textContent();
-  check('보조 기술에 진행 순서 제공', srStep.includes('4단계 중 2단계'), srStep);
+  check('보조 기술에 진행 순서 제공', srStep.includes('두 번째 단계') && srStep.includes('모두 4단계'), srStep);
 
   /* 320px·아주 크게 */
   await page.setViewportSize({ width: 320, height: 640 });

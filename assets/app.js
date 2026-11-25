@@ -12,12 +12,13 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0759';
-import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0759';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0759';
-import { renderScreen } from './screens.js?v=20261125.0759';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0759';
-import { VERSION } from './version.js?v=20261125.0759';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0823';
+import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0823';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0823';
+import { renderScreen } from './screens.js?v=20261125.0823';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0823';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0823';
+import { VERSION } from './version.js?v=20261125.0823';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -318,7 +319,7 @@ function viewCard(lesson, chapter, idx) {
     ${lesson.models ? `<p class="badge badge--model">${esc(lesson.models)}</p>` : ''}
     <p class="step" aria-hidden="true"><span class="step__text">${total}단계 중 <strong>${idx + 1}단계</strong></span>
       <span class="step__bar"><span style="width:${((idx + 1) / total) * 100}%"></span></span></p>
-    <h2 class="instr" id="instr" tabindex="-1"><span class="sr-only">${total}단계 중 ${idx + 1}단계. </span>${esc(card.text)}</h2>
+    <h2 class="instr" id="instr" tabindex="-1"><span class="sr-only">${stepWords(idx, total)}, 모두 ${total}단계. </span>${esc(card.text)}</h2>
     ${appTag(card)}
     ${card.hint ? `<p class="hint">${esc(card.hint)}</p>` : ''}
     ${card.note ? `<p class="note"><strong>알아두세요</strong> ${esc(card.note)}</p>` : ''}
@@ -328,6 +329,11 @@ function viewCard(lesson, chapter, idx) {
     </figure>
     <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
     <button type="button" class="btn btn--speak" data-speak>${ICON.speak}<span>음성으로 듣기</span></button>
+    <details class="voice" data-voice-box hidden>
+      <summary>목소리 바꾸기</summary>
+      <p class="voice__help">마음에 드는 목소리를 누르면 바로 들려 드려요. 고른 목소리를 기억해요.</p>
+      <div class="voice__list" role="radiogroup" aria-label="목소리" data-voice-list></div>
+    </details>
     <details class="meta">
       <summary>이 수업의 기준과 출처</summary>
       <dl>
@@ -424,6 +430,7 @@ function route() {
   } else html = viewNotFound();
   app.innerHTML = html;
   document.body.dataset.route = location.hash || '#/';
+  renderVoiceList();
   window.scrollTo(0, 0);
   const target = focusInstr ? document.getElementById('instr') : null;
   if (target) target.focus({ preventScroll: true });
@@ -511,25 +518,52 @@ function onPointerUp(e) {
 
 /* ---------- 이벤트 ---------- */
 
+/* ---------- 음성 ---------- */
+
+let voices = [];
+function loadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  voices = window.speechSynthesis.getVoices() ?? [];
+  renderVoiceList();
+}
+
+/** ‘목소리 바꾸기’: 한국어 목소리가 둘 이상일 때만 보인다 */
+function renderVoiceList() {
+  const box = document.querySelector('[data-voice-box]');
+  const list = document.querySelector('[data-voice-list]');
+  if (!box || !list) return;
+  const ko = koreanVoices(voices);
+  box.hidden = ko.length < 2;
+  if (ko.length < 2) return;
+  const current = pickVoice(voices, store.voice);
+  list.innerHTML = ko.slice(0, 8).map((v, i) => `<label class="voice__opt">
+      <input type="radio" name="voice" value="${esc(v.voiceURI)}" ${v === current ? 'checked' : ''} data-voice>
+      <span>${esc(voiceLabel(v))}${i === 0 ? ' <em>가장 선명</em>' : ''}</span></label>`).join('');
+}
+
+function speak(text, btn) {
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'ko-KR';
+  u.rate = SPEECH.rate;
+  u.pitch = SPEECH.pitch;
+  const v = pickVoice(voices.length ? voices : window.speechSynthesis.getVoices(), store.voice);
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; if (btn) btn.querySelector('span').textContent = '음성으로 듣기'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true;
+  if (btn) btn.querySelector('span').textContent = '듣기 멈추기';
+}
+
 function speakCurrent(btn) {
   if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
     feedback('이 기기에서는 음성 듣기를 쓸 수 없어요.', 'miss');
     return;
   }
   if (speaking) { stopSpeak(); btn.querySelector('span').textContent = '음성으로 듣기'; return; }
-  const instr = document.getElementById('instr');
-  const hint = document.querySelector('.hint');
-  const text = [instr?.textContent, hint?.textContent].filter(Boolean).join(' ');
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'ko-KR';
-  u.rate = 0.9;
-  const ko = window.speechSynthesis.getVoices().find((v) => v.lang?.startsWith('ko'));
-  if (ko) u.voice = ko;
-  u.onend = () => { speaking = false; btn.querySelector('span').textContent = '음성으로 듣기'; };
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(u);
-  speaking = true;
-  btn.querySelector('span').textContent = '듣기 멈추기';
+  if (!currentCard) return;
+  const { card, idx, lesson } = currentCard;
+  speak(speechText({ text: card.text, hint: card.hint, idx, total: lesson.cards.length }), btn);
 }
 
 app.addEventListener('click', (e) => {
@@ -561,6 +595,13 @@ app.addEventListener('click', (e) => {
   if (hit && e.detail === 0 && currentCard) practiceSuccess();
 });
 
+app.addEventListener('change', (e) => {
+  if (!e.target.matches('[data-voice]')) return;
+  store.voice = e.target.value;
+  save();
+  speak('안녕하세요. 이 목소리로 읽어 드릴게요.', document.querySelector('[data-speak]'));
+});
+
 app.addEventListener('submit', (e) => {
   if (!e.target.matches('[data-search]')) return;
   e.preventDefault();
@@ -578,4 +619,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 applyFont();
+if ('speechSynthesis' in window) {
+  loadVoices();
+  window.speechSynthesis.addEventListener?.('voiceschanged', loadVoices);
+}
 route();

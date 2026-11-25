@@ -284,3 +284,11 @@ svg { display: block; }
 .version { margin: 28px 0 0; font-size: 0.9375rem; color: var(--ink-2); }
 .stage--object .stage__frame { border: 0; border-radius: 20px; background: transparent; }
 .stage--object.stage--ok .stage__frame { outline: 4px solid var(--ok); }
+.voice { margin: -4px 0 16px; padding: 10px 14px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.voice summary { min-height: 44px; display: flex; align-items: center; font-weight: 800; cursor: pointer; color: var(--primary); }
+.voice__help { margin: 4px 0 8px; font-size: 1.0625rem; color: var(--ink-2); }
+.voice__list { display: grid; gap: 8px; }
+.voice__opt { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 12px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); cursor: pointer; font-size: 1.125rem; font-weight: 700; }
+.voice__opt input { width: 1.4rem; height: 1.4rem; accent-color: var(--primary); flex: none; }
+.voice__opt:has(input:checked) { border-color: var(--primary); background: var(--surface-2); }
+.voice__opt em { font-style: normal; font-size: 0.9375rem; color: var(--cat-3); margin-left: 6px; }
