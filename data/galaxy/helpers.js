@@ -16,7 +16,7 @@
  * 메뉴 이름은 삼성전자 갤럭시 S26 시리즈 사용 설명서(Android 17, Rev.1.0, 2026년 9월)를 기준으로 한다.
  */
 
-import { appInfo } from '../../assets/apps.js?v=20261125.1201';
+import { appInfo } from '../../assets/apps.js?v=20261125.1206';
 
 /* ---------- 출처 ---------- */
 

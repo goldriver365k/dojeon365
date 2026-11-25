@@ -93,9 +93,9 @@ test('앱을 다루는 카드는 앱 목록의 정확한 이름·아이콘을 �
   assert.equal(appInfo('삼성 노트').label, '노트');
 });
 
-test('생활 디지털 연습장 목차: 21개 목차, 세부 수업 id 중복 없음, 구분 소속', () => {
+test('생활 디지털 연습장 목차: 22개 목차, 세부 수업 id 중복 없음, 구분 소속', () => {
   assert.equal(CATEGORIES[1].href, '#/digital');
-  assert.equal(DIGITAL.CHAPTERS.length, 21);
+  assert.equal(DIGITAL.CHAPTERS.length, 22);
   const ids = new Set();
   DIGITAL.CHAPTERS.forEach((ch, i) => {
     assert.equal(ch.num, i + 1);
