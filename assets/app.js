@@ -12,20 +12,20 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.1227';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.1227';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.1227';
-import * as AI from '../data/ai/index.js?v=20261125.1227';
-import * as SCAM from '../data/scam/index.js?v=20261125.1227';
-import * as CREATIVE from '../data/creative/index.js?v=20261125.1227';
-import * as CAREER from '../data/career/index.js?v=20261125.1227';
+import { CATEGORIES } from '../data/categories.js?v=20261125.1339';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.1339';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.1339';
+import * as AI from '../data/ai/index.js?v=20261125.1339';
+import * as SCAM from '../data/scam/index.js?v=20261125.1339';
+import * as CREATIVE from '../data/creative/index.js?v=20261125.1339';
+import * as CAREER from '../data/career/index.js?v=20261125.1339';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
 const COURSES = { digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.1227';
-import { renderScreen } from './screens.js?v=20261125.1227';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.1227';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.1227';
-import { VERSION } from './version.js?v=20261125.1227';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.1339';
+import { renderScreen } from './screens.js?v=20261125.1339';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.1339';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.1339';
+import { VERSION } from './version.js?v=20261125.1339';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -78,7 +78,7 @@ function fontControl() {
 
 function topbar({ back, backLabel = '뒤로', title = '' } = {}) {
   return `<header class="topbar">
-    ${back ? `<a class="topbar__back" href="${back}">${ICON.prev}<span>${esc(backLabel)}</span></a>` : `<a class="topbar__brand" href="#/" aria-label="도전, 디지털세상 — 홈으로"><img class="logo-mark" src="assets/logo-mark.png" alt="" width="45" height="48"><span class="logo-text" aria-hidden="true">도전, <b>디지털세상</b></span></a>`}
+    ${back ? `<a class="topbar__back" href="${back}">${ICON.prev}<span>${esc(backLabel)}</span></a>` : `<a class="topbar__brand" href="#/" aria-label="DigiStep365 — 홈으로"><img class="logo-mark" src="assets/logo-mark.png" alt="" width="45" height="48"><span class="logo-text" aria-hidden="true">Digi<b>Step</b>365</span></a>`}
     ${title ? `<span class="topbar__title">${esc(title)}</span>` : ''}
     ${fontControl()}
   </header>`;
@@ -87,7 +87,7 @@ function topbar({ back, backLabel = '뒤로', title = '' } = {}) {
 /* ---------- 화면: 홈 ---------- */
 
 function viewHome() {
-  document.title = '도전, 디지털세상 | 편한자판 시니어 교육';
+  document.title = 'DigiStep365 | 편한자판 시니어 교육';
   return `${topbar()}
   <main class="page" id="main">
     <h1 class="page__title">무엇을 배워 볼까요?</h1>
@@ -106,7 +106,7 @@ function viewHome() {
 
 function viewSoon(id) {
   const c = CATEGORIES.find((x) => x.id === id);
-  document.title = `${c?.title ?? '준비 중'} | 도전, 디지털세상`;
+  document.title = `${c?.title ?? '준비 중'} | DigiStep365`;
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(c?.title ?? '준비 중')}</h1>
@@ -405,7 +405,7 @@ function courseLessonRow(lesson, chapter, key) {
 
 function viewCourse(key) {
   const { COURSE, GROUPS: DG, CHAPTERS: DC, allLessons: all } = COURSES[key];
-  document.title = `${COURSE.title} | 도전, 디지털세상`;
+  document.title = `${COURSE.title} | DigiStep365`;
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(COURSE.title)}</h1>
