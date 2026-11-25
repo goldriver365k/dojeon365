@@ -119,6 +119,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Seri S lain (S22 ke bawah, FE)', 'a-old': 'Seri A lain', 'm-any': 'Ponsel seri M', 'f-any': 'Ponsel seri F', 'note-old': 'Note lain', 'xcover-old': 'XCover lain', etc: 'Galaxy yang tidak ada di daftar' },
     seriesNames: { s: 'Galaxy seri S', a: 'Galaxy seri A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy seri M', f: 'Galaxy seri F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Lainnya / tidak ada di daftar' },
   },
+  ms: {
+    h: 'Telefon saya', none: 'Belum dipilih · arahan umum',
+    howH: 'Mula-mula, cari model dan versi perisian telefon anda',
+    how: ['Ketik aplikasi <b>Tetapan</b>.', 'Ketik <b>Perihal telefon</b> di paling bawah.', 'Lihat <b>nama model</b> di atas (contohnya Galaxy S26 · SM-S942N).', 'Ketik <b>Maklumat perisian</b>.', 'Lihat <b>versi One UI</b> (contohnya 9.0).'],
+    howNote: 'Pada sesetengah model menu ini dinamakan ‘Perihal peranti’. Anda juga boleh menaip ‘Perihal telefon’ dalam carian Tetapan.',
+    practice: 'Latih langkah ini', series: 'Siri', model: 'Model', oneui: 'Versi One UI', save: 'Simpan telefon saya', clear: 'Guna arahan umum',
+    note: 'Memilih adalah pilihan. Ia hanya disimpan dalam pelayar ini dan kami tidak pernah meneka model anda.',
+    dontKnow: 'Tidak tahu', dontKnowWhich: 'Tidak tahu yang mana', chooseSeries: 'Pilih siri dahulu', baseVersion: 'versi pelajaran ini',
+    saved: 'Disimpan. Setiap pelajaran kini menunjukkan sama ada ia berfungsi pada telefon anda.', cleared: 'Dipadam. Menunjukkan arahan umum.',
+    modelUnknown: 'Model tidak diketahui', seriesUnknown: (s) => `${s} (model tidak diketahui)`, versionUnknown: 'Versi One UI tidak diketahui',
+    level: { ok: 'Disokong', diff: 'Perlu disemak', check: 'Perlu disemak', no: 'Tidak disokong' },
+    text: { ok: 'Telah disemak dengan manual rasmi', diff: 'Nama menu mungkin berbeza dalam versi One UI ini', check: 'Belum disemak untuk model ini', no: 'Tidak tersedia pada model ini', min: (v) => `Memerlukan One UI ${v} atau lebih baharu` },
+    on: 'pada', change: 'Tukar',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Siri S lain (S22 ke bawah, FE)', 'a-old': 'Siri A lain', 'm-any': 'Telefon siri M', 'f-any': 'Telefon siri F', 'note-old': 'Note lain', 'xcover-old': 'XCover lain', etc: 'Galaxy yang tiada dalam senarai' },
+    seriesNames: { s: 'Galaxy siri S', a: 'Galaxy siri A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy siri M', f: 'Galaxy siri F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Lain-lain / tiada dalam senarai' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */

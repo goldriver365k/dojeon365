@@ -19,7 +19,7 @@ export const LANGUAGES = [
   { code: 'ar', name: 'العربية', status: 'planned', dir: 'rtl', og: 'ar_AR', speech: 'ar-SA' },
   { code: 'ru', name: 'Русский', status: 'planned', og: 'ru_RU', speech: 'ru-RU' },
   { code: 'tr', name: 'Türkçe', status: 'planned', og: 'tr_TR', speech: 'tr-TR' },
-  { code: 'ms', name: 'Bahasa Melayu', status: 'planned', og: 'ms_MY', speech: 'ms-MY' },
+  { code: 'ms', name: 'Bahasa Melayu', status: 'draft', og: 'ms_MY', speech: 'ms-MY' },
   { code: 'fil', name: 'Filipino', status: 'planned', og: 'fil_PH', speech: 'fil-PH' },
   { code: 'bn', name: 'বাংলা', status: 'planned', og: 'bn_BD', speech: 'bn-BD' },
 ];
