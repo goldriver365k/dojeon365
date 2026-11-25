@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0924';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0929';
 
 const W = 360;
 const H = 640;
@@ -982,6 +982,86 @@ const KINDS = {
     c.reg('화면', 70, 32, 220, 232);
   },
 
+  /**
+   * 무인 매장 셀프 계산대: 화면 + 바코드 찍는 곳 + 상품(바코드) + 저울 + 카드 단말기
+   * message, items:[[이름, 금액]], total, buttons, state: 'idle' | 'scan' | 'weigh'
+   */
+  selfcheckout(c, s) {
+    const st = s.state ?? 'idle';
+    const barcode = (x, y, w, h) => {
+      const bars = [3, 1, 2, 1, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1];
+      let bx = x + 4;
+      let out = `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#FFFFFF" rx="2"/>`;
+      bars.forEach((bw, i) => { if (i % 2 === 0 && bx < x + w - 4) out += `<rect x="${bx}" y="${y + 3}" width="${bw * 1.3}" height="${h - 12}" fill="#111"/>`; bx += bw * 1.3 + 0.6; });
+      out += `<text x="${x + w / 2}" y="${y + h - 2}" font-size="6.5" text-anchor="middle" fill="#111">8 801234 567890</text>`;
+      return out;
+    };
+    c.rect(0, 0, W, H, '#EEF2F8');
+    // 화면
+    c.rect(66, 14, 228, 238, '#2B303B', 14);
+    c.rect(74, 22, 212, 222, '#FFFFFF', 8);
+    c.rect(74, 22, 212, 30, '#007A4B', 8);
+    c.rect(74, 42, 212, 10, '#007A4B');
+    c.text(180, 42, '셀프 계산대', { size: 14, fill: '#fff', weight: 800, anchor: 'middle' });
+    let y = 70;
+    if (s.message) { c.text(180, y, s.message, { size: 15, weight: 900, anchor: 'middle', fill: s.warn ? '#C02A1E' : C.ink }); y += 20; }
+    for (const [name, price] of s.items ?? []) {
+      c.text(84, y + 4, name, { size: 12.5, weight: 700 });
+      c.text(276, y + 4, price, { size: 12.5, weight: 700, anchor: 'end' });
+      y += 18;
+    }
+    if (s.total) { c.add(`<line x1="84" y1="${y - 4}" x2="276" y2="${y - 4}" stroke="#DADCE0"/>`); c.text(84, y + 12, '합계', { size: 13, weight: 900 }); c.text(276, y + 12, s.total, { size: 13, weight: 900, anchor: 'end', fill: '#007A4B' }); y += 24; }
+    const btns = s.buttons ?? ['바코드 없는 상품', '봉투 구매', '직원 호출', '결제하기'];
+    const by0 = 244 - Math.ceil(btns.length / 2) * 34 - 4;
+    btns.forEach((b, i) => {
+      const bx = 80 + (i % 2) * 102;
+      const by = by0 + Math.floor(i / 2) * 34;
+      const primary = b === '결제하기';
+      c.rect(bx, by, 98, 30, primary ? '#2563E2' : '#E8F5EE', 8, primary ? '' : 'stroke="#A9E6CC"');
+      c.text(bx + 49, by + 20, b, { size: 11.5, weight: 800, anchor: 'middle', fill: primary ? '#fff' : C.ink });
+      c.reg(b, bx - 2, by - 2, 102, 34);
+    });
+    // 계산대 상판
+    c.rect(16, 270, 328, 210, '#C9CED8', 16);
+    c.rect(16, 270, 328, 14, '#B4BAC6', 8);
+    // 저울(봉투 놓는 곳)
+    c.rect(28, 300, 104, 120, '#AEB4C0', 10);
+    c.rect(36, 308, 88, 104, '#D9DDE4', 6);
+    c.text(80, 436, st === 'weigh' ? '저울' : '봉투 놓는 곳', { size: 12.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
+    c.reg('저울', 28, 300, 104, 120);
+    if (st === 'weigh') {
+      c.add('<circle cx="80" cy="350" r="24" fill="#E53935"/><path d="M80 326 q4 -10 12 -12" stroke="#5D4037" stroke-width="3" fill="none"/><ellipse cx="90" cy="320" rx="8" ry="4" fill="#43A047"/>');
+      c.rect(52, 384, 56, 20, '#0E1430', 4);
+      c.text(80, 398, '0.42kg', { size: 11, fill: '#7CFC9A', weight: 800, anchor: 'middle' });
+    }
+    // 바코드 찍는 곳
+    c.rect(146, 318, 112, 64, '#1C2029', 10);
+    c.rect(154, 326, 96, 48, '#3B1012', 6);
+    c.add('<path d="M160 350 h84 M166 340 l72 20 M166 360 l72 -20" stroke="#FF3B30" stroke-width="2" opacity="0.85"/>');
+    c.text(202, 400, '바코드 찍는 곳', { size: 12.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
+    c.reg('바코드 스캐너', 144, 314, 116, 72);
+    // 상품(우유 팩)과 바코드
+    const px = st === 'scan' ? 170 : 274;
+    const py = st === 'scan' ? 238 : 296;
+    c.add(`<path d="M${px} ${py + 20} l14 -18 h36 l14 18 v84 h-64 z" fill="#FFFFFF" stroke="#9AA0A6"/>`);
+    c.add(`<path d="M${px} ${py + 20} h64" stroke="#9AA0A6"/>`);
+    c.rect(px + 6, py + 26, 52, 22, '#2F7DF6', 4);
+    c.text(px + 32, py + 42, '우유', { size: 13, fill: '#fff', weight: 900, anchor: 'middle' });
+    c.add(barcode(px + 8, py + 62, 48, 36));
+    c.reg('상품 바코드', px + 4, py + 58, 56, 44);
+    if (st === 'scan') c.add(`<rect x="${px + 8}" y="${py + 78}" width="48" height="2.5" fill="#FF3B30"/>`);
+    // 카드 단말기·영수증
+    c.rect(278, 416, 56, 52, '#2B303B', 8);
+    c.rect(286, 430, 40, 6, '#0B0D12', 3);
+    c.text(306, 456, '카드', { size: 11, fill: '#E7EBF7', weight: 800, anchor: 'middle' });
+    c.reg('카드 투입구', 276, 412, 60, 58);
+    c.rect(146, 440, 112, 26, '#2B303B', 6);
+    c.rect(160, 451, 84, 5, '#0B0D12', 2);
+    c.reg('영수증 출구', 146, 436, 112, 34);
+    c.text(202, 488, '영수증', { size: 11.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
+    c.reg('화면', 66, 14, 228, 238);
+  },
+
   /** 출력된 주문 번호 영수증: number, items:[[이름, 금액]], total, store, date */
   receipt(c, s) {
     c.rect(0, 0, W, H, '#EEF2F8');
@@ -1096,7 +1176,7 @@ export function renderScreen(screen = { kind: 'info' }, target, action) {
   const gm = screen.mark ?? action;
   if (gm && (gm.startsWith('swipe') || gm.startsWith('pinch'))) mark += gestureMark(gm, t);
   const defs = '<defs><marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#D7263D"/></marker></defs>';
-  const vh = { kiosk: 572, receipt: 620 }[kind] ?? H;
+  const vh = { kiosk: 572, receipt: 620, selfcheckout: 500 }[kind] ?? H;
   const svg = `<svg viewBox="0 0 ${W} ${vh}" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" font-family="Pretendard Variable, Pretendard, Noto Sans KR, sans-serif">${defs}${body}${mark}</svg>`;
   return { svg, width: W, height: vh, targets, target: t };
 }

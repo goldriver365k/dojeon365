@@ -12,14 +12,14 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0924';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0924';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.0924';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0924';
-import { renderScreen } from './screens.js?v=20261125.0924';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0924';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0924';
-import { VERSION } from './version.js?v=20261125.0924';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0929';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0929';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.0929';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0929';
+import { renderScreen } from './screens.js?v=20261125.0929';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0929';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0929';
+import { VERSION } from './version.js?v=20261125.0929';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -334,7 +334,7 @@ function viewCard(lesson, chapter, idx) {
     ${appTag(card)}
     ${card.hint ? `<p class="hint">${esc(card.hint)}</p>` : ''}
     ${card.note ? `<p class="note"><strong>알아두세요</strong> ${esc(card.note)}</p>` : ''}
-    <figure class="stage${card.photo || ['side', 'info', 'kiosk', 'receipt'].includes(card.screen?.kind) ? ' stage--object' : ''}" data-action="${esc(card.action)}">
+    <figure class="stage${card.photo || ['side', 'info', 'kiosk', 'receipt', 'selfcheckout'].includes(card.screen?.kind) ? ' stage--object' : ''}" data-action="${esc(card.action)}">
       ${cardFigure(card)}
       <figcaption class="stage__cap">${esc(practiceHint(card))}</figcaption>
     </figure>
