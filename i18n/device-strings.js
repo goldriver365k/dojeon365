@@ -85,6 +85,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Autre série S (S22 ou antérieur, FE)', 'a-old': 'Autre série A', 'm-any': 'Un téléphone de la série M', 'f-any': 'Un téléphone de la série F', 'note-old': 'Autre Note', 'xcover-old': 'Autre XCover', etc: 'Un Galaxy absent de la liste' },
     seriesNames: { s: 'Galaxy série S', a: 'Galaxy série A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy série M', f: 'Galaxy série F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Autre / absent de la liste' },
   },
+  it: {
+    h: 'Il mio telefono', none: 'Non scelto · istruzioni generali',
+    howH: 'Prima trova il modello e la versione software del telefono',
+    how: ['Tocca l’app <b>Impostazioni</b>.', 'Tocca <b>Info sul telefono</b>, in fondo.', 'Guarda il <b>nome del modello</b> in alto (per esempio Galaxy S26 · SM-S942N).', 'Tocca <b>Informazioni software</b>.', 'Guarda la <b>versione One UI</b> (per esempio 9.0).'],
+    howNote: 'Su alcuni modelli il menu si chiama ‘Info sul dispositivo’. Puoi anche scrivere ‘Info sul telefono’ nella ricerca delle Impostazioni.',
+    practice: 'Esercitati con questi passi', series: 'Serie', model: 'Modello', oneui: 'Versione One UI', save: 'Salva il mio telefono', clear: 'Usa istruzioni generali',
+    note: 'La scelta è facoltativa. Viene salvata solo in questo browser e non indoviniamo mai il tuo modello.',
+    dontKnow: 'Non lo so', dontKnowWhich: 'Non so quale', chooseSeries: 'Scegli prima una serie', baseVersion: 'versione di queste lezioni',
+    saved: 'Salvato. Ogni lezione ora indica se funziona sul tuo telefono.', cleared: 'Cancellato. Istruzioni generali.',
+    modelUnknown: 'Modello sconosciuto', seriesUnknown: (s) => `${s} (modello sconosciuto)`, versionUnknown: 'Versione One UI sconosciuta',
+    level: { ok: 'Supportato', diff: 'Da verificare', check: 'Da verificare', no: 'Non supportato' },
+    text: { ok: 'Verificato con il manuale ufficiale', diff: 'I menu possono cambiare in questa versione di One UI', check: 'Non ancora verificato su questo modello', no: 'Non disponibile su questo modello', min: (v) => `Richiede One UI ${v} o successiva` },
+    on: 'su', change: 'Cambia',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Altro serie S (S22 o precedente, FE)', 'a-old': 'Altro serie A', 'm-any': 'Un telefono serie M', 'f-any': 'Un telefono serie F', 'note-old': 'Altro Note', 'xcover-old': 'Altro XCover', etc: 'Un Galaxy non in elenco' },
+    seriesNames: { s: 'Galaxy serie S', a: 'Galaxy serie A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy serie M', f: 'Galaxy serie F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Altro / non in elenco' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */

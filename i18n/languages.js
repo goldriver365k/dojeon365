@@ -15,7 +15,7 @@ export const LANGUAGES = [
   { code: 'ja', name: '日本語', status: 'planned', og: 'ja_JP', speech: 'ja-JP' },
   { code: 'zh-Hans', name: '简体中文', status: 'planned', og: 'zh_CN', speech: 'zh-CN' },
   { code: 'zh-Hant', name: '繁體中文', status: 'planned', og: 'zh_TW', speech: 'zh-TW' },
-  { code: 'it', name: 'Italiano', status: 'planned', og: 'it_IT', speech: 'it-IT' },
+  { code: 'it', name: 'Italiano', status: 'draft', og: 'it_IT', speech: 'it-IT' },
   { code: 'ar', name: 'العربية', status: 'planned', dir: 'rtl', og: 'ar_AR', speech: 'ar-SA' },
   { code: 'ru', name: 'Русский', status: 'planned', og: 'ru_RU', speech: 'ru-RU' },
   { code: 'tr', name: 'Türkçe', status: 'planned', og: 'tr_TR', speech: 'tr-TR' },
