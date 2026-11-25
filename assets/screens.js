@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0916';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0924';
 
 const W = 360;
 const H = 640;
@@ -912,6 +912,106 @@ const KINDS = {
     navBar(c);
   },
 
+  /**
+   * 서 있는 키오스크 기계: 위 화면 + 카드 단말기 + 영수증 출구
+   * screenTitle, message, buttons(화면 속 버튼), state: 'menu' | 'insert' | 'paying' | 'remove' | 'print'
+   */
+  kiosk(c, s) {
+    const st = s.state ?? 'menu';
+    c.rect(0, 0, W, H, '#EEF2F8');
+    c.add('<ellipse cx="180" cy="558" rx="120" ry="9" fill="#1E2A5A" opacity="0.12"/>');
+    // 몸체
+    c.rect(52, 14, 256, 540, '#3A4150', 26);
+    c.rect(58, 20, 244, 528, '#4A5263', 22);
+    // 화면
+    c.rect(70, 32, 220, 232, '#0E1430', 12);
+    c.rect(76, 38, 208, 220, '#FFFFFF', 8);
+    c.rect(76, 38, 208, 34, s.color ?? '#2563E2', 8);
+    c.rect(76, 60, 208, 12, s.color ?? '#2563E2');
+    c.text(180, 61, s.screenTitle ?? '주문하기', { size: 15, fill: '#fff', weight: 800, anchor: 'middle' });
+    const msg = s.message ?? (st === 'insert' ? '카드를 넣어 주세요' : st === 'paying' ? '결제 중입니다' : st === 'remove' ? '카드를 빼 주세요' : st === 'print' ? '영수증을 가져가세요' : '');
+    let y = 96;
+    if (msg) { for (const line of wrapText(msg, 12)) { c.text(180, y + 12, line, { size: 19, weight: 900, anchor: 'middle', fill: st === 'remove' ? '#C02A1E' : C.ink }); y += 28; } y += 6; }
+    if (s.amount) { c.text(180, y + 8, s.amount, { size: 16, weight: 800, anchor: 'middle', fill: C.blue }); y += 26; }
+    for (const b of s.buttons ?? []) {
+      c.rect(90, y, 180, 40, '#E8F0FE', 10, `stroke="#A8C2F0"`);
+      c.text(180, y + 26, b, { size: 15, weight: 800, anchor: 'middle' });
+      c.reg(b, 86, y - 2, 188, 44);
+      y += 48;
+    }
+    if (st === 'insert' || st === 'paying' || st === 'remove') {
+      // 화면 속 안내 그림: 카드 아래 방향
+      c.rect(150, Math.max(y, 176), 60, 38, '#7CB3FF', 6);
+      c.rect(150, Math.max(y, 176) + 8, 60, 7, '#1E2A5A');
+      c.add(`<path d="M180 ${Math.max(y, 176) + 46} l-9 -9 h18 z" fill="#2563E2"/>`);
+    }
+    // 카드 단말기
+    c.rect(84, 278, 192, 132, '#2B303B', 14);
+    c.text(180, 300, '카드 넣는 곳', { size: 13, fill: '#E7EBF7', weight: 800, anchor: 'middle' });
+    c.rect(110, 334, 140, 12, '#0B0D12', 6);
+    c.add('<path d="M100 340 h8 M252 340 h8" stroke="#FFD54F" stroke-width="3" stroke-linecap="round"/>');
+    c.reg('카드 투입구', 100, 318, 160, 44);
+    // 카드 그림(상태별)
+    const card = (cy, h = 60) => {
+      c.rect(130, cy, 100, h, '#3D8BF2', 8, 'stroke="#1E5BC8" stroke-width="2"');
+      c.rect(146, cy + 10, 22, 16, '#FFD54F', 3);
+      c.rect(140, cy + h - 16, 70, 6, '#BFD8FF', 3);
+    };
+    if (st === 'insert') {
+      card(366, 54);
+      c.add('<path d="M268 400 v-46" stroke="#D7263D" stroke-width="5" stroke-linecap="round"/><path d="M268 344 l-9 12 h18 z" fill="#D7263D"/>');
+    } else if (st === 'paying') {
+      card(346, 40);
+    } else if (st === 'remove') {
+      card(346, 40);
+      c.reg('꽂힌 카드', 120, 334, 120, 64);
+      c.add('<path d="M268 354 v46" stroke="#D7263D" stroke-width="5" stroke-linecap="round"/><path d="M268 410 l-9 -12 h18 z" fill="#D7263D"/>');
+    }
+    c.add('<circle cx="250" cy="300" r="5" fill="' + (st === 'paying' ? '#FFD54F' : st === 'remove' ? '#C02A1E' : '#29982F') + '"/>');
+    // 영수증 출구
+    c.rect(100, 430, 160, 40, '#2B303B', 10);
+    c.rect(116, 446, 128, 7, '#0B0D12', 3);
+    c.text(180, 486, '영수증 나오는 곳', { size: 13, fill: '#E7EBF7', weight: 800, anchor: 'middle' });
+    c.reg('영수증 출구', 100, 424, 160, 70);
+    if (st === 'print') {
+      c.add('<path d="M124 449 h112 v66 l-8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5z" fill="#FFFFFF" stroke="#C9CDD3"/>');
+      c.text(180, 478, '주문 번호', { size: 11, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.text(180, 500, s.number ?? '123', { size: 20, anchor: 'middle', weight: 900 });
+      c.reg('영수증', 118, 442, 124, 80);
+    }
+    c.reg('화면', 70, 32, 220, 232);
+  },
+
+  /** 출력된 주문 번호 영수증: number, items:[[이름, 금액]], total, store, date */
+  receipt(c, s) {
+    c.rect(0, 0, W, H, '#EEF2F8');
+    c.add('<ellipse cx="184" cy="610" rx="120" ry="10" fill="#1E2A5A" opacity="0.12"/>');
+    const top = 40;
+    const bottom = 590;
+    let zig = `M60 ${top} H300 V${bottom}`;
+    for (let x = 300; x > 60; x -= 12) zig += ` L${x - 6} ${bottom - 7} L${x - 12} ${bottom}`;
+    c.add(`<path d="${zig} Z" fill="#FFFFFF" stroke="#D5D9E0"/>`);
+    c.text(180, top + 34, s.store ?? '○○버거 키오스크', { size: 16, anchor: 'middle', weight: 800 });
+    c.text(180, top + 56, s.date ?? '2026-12-03 12:31', { size: 13, anchor: 'middle', fill: C.sub, weight: 600 });
+    c.add(`<line x1="78" y1="${top + 72}" x2="282" y2="${top + 72}" stroke="#9AA0A6" stroke-dasharray="4 4"/>`);
+    c.text(180, top + 104, s.label ?? '매장 식사 · 주문 번호', { size: 15, anchor: 'middle', fill: C.sub, weight: 700 });
+    c.text(180, top + 176, s.number ?? '123', { size: 76, anchor: 'middle', weight: 900 });
+    c.reg('주문 번호', 90, top + 110, 180, 84);
+    c.add(`<line x1="78" y1="${top + 206}" x2="282" y2="${top + 206}" stroke="#9AA0A6" stroke-dasharray="4 4"/>`);
+    let y = top + 236;
+    for (const [name, price] of s.items ?? [['불고기버거 세트', '6,800원'], ['  콜라(보통)', '0원']]) {
+      c.text(80, y, name, { size: 15, weight: 600 });
+      c.text(280, y, price, { size: 15, weight: 600, anchor: 'end' });
+      y += 26;
+    }
+    c.add(`<line x1="78" y1="${y}" x2="282" y2="${y}" stroke="#9AA0A6" stroke-dasharray="4 4"/>`);
+    c.text(80, y + 30, '합계', { size: 17, weight: 900 });
+    c.text(280, y + 30, s.total ?? '6,800원', { size: 17, weight: 900, anchor: 'end' });
+    c.text(80, y + 56, '신용카드 결제', { size: 13, fill: C.sub, weight: 600 });
+    c.text(280, y + 56, '승인 완료', { size: 13, fill: C.sub, weight: 600, anchor: 'end' });
+    c.text(180, bottom - 40, '번호가 화면에 나오면 받아 가세요', { size: 13, anchor: 'middle', fill: C.sub, weight: 700 });
+  },
+
   /** 손동작 설명(밀기·확대 등) */
   gesture(c, s) {
     const base = s.on ?? 'page';
@@ -996,8 +1096,9 @@ export function renderScreen(screen = { kind: 'info' }, target, action) {
   const gm = screen.mark ?? action;
   if (gm && (gm.startsWith('swipe') || gm.startsWith('pinch'))) mark += gestureMark(gm, t);
   const defs = '<defs><marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#D7263D"/></marker></defs>';
-  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" font-family="Pretendard Variable, Pretendard, Noto Sans KR, sans-serif">${defs}${body}${mark}</svg>`;
-  return { svg, width: W, height: H, targets, target: t };
+  const vh = { kiosk: 572, receipt: 620 }[kind] ?? H;
+  const svg = `<svg viewBox="0 0 ${W} ${vh}" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" font-family="Pretendard Variable, Pretendard, Noto Sans KR, sans-serif">${defs}${body}${mark}</svg>`;
+  return { svg, width: W, height: vh, targets, target: t };
 }
 
 export const SCREEN_KINDS = Object.keys(KINDS);

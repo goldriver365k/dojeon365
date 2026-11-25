@@ -1,5 +1,5 @@
 /** [병원과 건강] 08~10, [은행과 돈] 11~14 */
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb } from './kit.js?v=20261125.0916';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, kiosk, kioskPay } from './kit.js?v=20261125.0924';
 
 const MONEY = '실제로 돈이 오가는 일이에요. 먼저 연습 화면으로 끝까지 해 보세요. 연습 화면에서는 돈이 나가지 않아요.';
 
@@ -58,7 +58,7 @@ export const CHAPTERS_2 = [
     L('d08-pay', '진료비 무인 수납하기', ['수납', '진료비', '처방전'], [
       LK('진료비를 확인하세요.', H_PAY),
       T('카드 결제', H_PAY, '‘카드 결제’를 누르세요.'),
-      S('카드를 꽂고 결제가 끝나면 빼세요.', '💳', '영수증이 필요하면 출력해요.'),
+      ...kioskPay({ amount: '4,600원', title: '진료비 수납', color: '#6728CD', noReceiptNumber: true }).slice(1),
       T('처방전 출력', H_PAY, '약국에 갈 처방전은 ‘처방전 출력’을 누르세요.'),
     ], [SRC.hira]),
   ] },
