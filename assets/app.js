@@ -12,13 +12,14 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0823';
-import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0823';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0823';
-import { renderScreen } from './screens.js?v=20261125.0823';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0823';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0823';
-import { VERSION } from './version.js?v=20261125.0823';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0836';
+import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0836';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.0836';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0836';
+import { renderScreen } from './screens.js?v=20261125.0836';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0836';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0836';
+import { VERSION } from './version.js?v=20261125.0836';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -89,7 +90,7 @@ function viewHome() {
       ${CATEGORIES.map((c, i) => `<li>
         <a class="cat ${HOME_CAT[i]} ${c.ready ? '' : 'cat--soon'}" href="${c.ready ? c.href : `#/soon/${c.id}`}">
           <span class="cat__num" aria-hidden="true">${i + 1}</span>
-          <span class="cat__body"><span class="cat__title">${esc(c.title)}</span><span class="cat__desc">${esc(c.desc)}</span>${c.ready ? '' : '<span class="badge badge--soon">준비 중</span>'}</span>
+          <span class="cat__body"><span class="cat__title">${esc(c.title)}</span><span class="cat__desc">${esc(c.desc)}</span>${!c.ready ? '<span class="badge badge--soon">준비 중</span>' : c.preparing ? '<span class="badge badge--doing">목차 공개 · 수업 준비 중</span>' : ''}</span>
           ${ICON.chev}
         </a></li>`).join('')}
     </ul>
@@ -374,6 +375,53 @@ function viewDone(lesson, chapter) {
   </main>`;
 }
 
+/* ---------- 생활 디지털 연습장 ---------- */
+
+function digitalLessonRow(lesson) {
+  const ready = lesson.cards.length > 0;
+  return `<li><div class="lesson-row lesson-row--soon" aria-disabled="true">
+    <span class="lesson-row__body"><span class="lesson-row__title">${esc(lesson.title)}</span>
+      <span class="lesson-row__meta">${ready ? `${lesson.cards.length}단계` : '<span class="badge badge--soon">수업 준비 중</span>'}</span></span></div></li>`;
+}
+
+function viewDigital() {
+  const { COURSE, GROUPS: DG, CHAPTERS: DC, allLessons: all } = DIGITAL;
+  document.title = `${COURSE.title} | 편한자판 시니어 교육`;
+  return `${topbar({ back: '#/', backLabel: '홈으로' })}
+  <main class="page" id="main">
+    <h1 class="page__title">${esc(COURSE.title)}</h1>
+    <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.</p>
+    <p class="notice">${esc(COURSE.safety)}</p>
+    ${DG.map((g) => `<section class="toc-group ${g.cat}" aria-labelledby="dg-${g.id}">
+      <h2 class="toc-group__h" id="dg-${g.id}">${esc(g.title)}</h2>
+      <ol class="toc">
+        ${DC.filter((ch) => ch.group === g.id).map((ch) => `<li>
+          <a class="toc__row" href="#/digital/${two(ch.num)}">
+            <span class="toc__num">${two(ch.num)}</span>
+            <span class="toc__body"><span class="toc__title">${esc(ch.title)}</span>
+              <span class="toc__meta">${esc(ch.desc)} · 수업 ${ch.lessons.length}개</span></span>
+            ${ICON.chev}
+          </a></li>`).join('')}
+      </ol>
+    </section>`).join('')}
+  </main>`;
+}
+
+function viewDigitalChapter(num) {
+  const { CHAPTERS: DC, GROUPS: DG, COURSE } = DIGITAL;
+  const ch = DC.find((c) => c.num === Number(num));
+  if (!ch) return viewNotFound();
+  const g = DG.find((x) => x.id === ch.group);
+  document.title = `${two(ch.num)}. ${ch.title} | ${COURSE.title}`;
+  return `${topbar({ back: '#/digital', backLabel: '목차로' })}
+  <main class="page ${g?.cat ?? ''}" id="main">
+    <p class="eyebrow">${esc(g?.title ?? '')} · 목차 ${two(ch.num)}</p>
+    <h1 class="page__title">${two(ch.num)}. ${esc(ch.title)}</h1>
+    <p class="lead">${esc(ch.desc)}. 연습 화면 수업을 준비하고 있어요.</p>
+    <ul class="lesson-list">${ch.lessons.map(digitalLessonRow).join('')}</ul>
+  </main>`;
+}
+
 function viewNotFound() {
   document.title = '찾을 수 없어요';
   return `${topbar({ back: '#/galaxy', backLabel: '목차로' })}<main class="page" id="main"><h1 class="page__title">화면을 찾을 수 없어요</h1><a class="btn btn--primary btn--block" href="#/galaxy">목차로 가기</a></main>`;
@@ -412,6 +460,8 @@ function route() {
   else if (parts[0] === 'soon') html = viewSoon(parts[1]);
   else if (parts[0] === 'galaxy' && !parts[1]) html = viewGalaxy();
   else if (parts[0] === 'galaxy') html = viewChapter(parts[1]);
+  else if (parts[0] === 'digital' && !parts[1]) html = viewDigital();
+  else if (parts[0] === 'digital') html = viewDigitalChapter(parts[1]);
   else if (parts[0] === 'lesson') {
     const found = findLesson(parts[1]);
     if (!found) html = viewNotFound();

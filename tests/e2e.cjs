@@ -65,6 +65,22 @@ async function main() {
   check('처음에는 ‘이어서 하기’ 없음', (await page.locator('.resume').count()) === 0);
   await shot('02-galaxy-360');
 
+  /* 생활 디지털 연습장 목차 */
+  const DIGITAL = await import(path.join(ROOT, 'data', 'digital', 'index.js'));
+  await go('#/');
+  await page.locator('.cat').nth(1).click();
+  await page.waitForSelector('.toc__row');
+  check('생활 디지털 연습장 목차 20개 표시', (await page.locator('.toc__row').count()) === DIGITAL.CHAPTERS.length, await page.locator('.toc__row').count());
+  await shot('13-digital-360');
+  let dOk = true;
+  for (const ch of DIGITAL.CHAPTERS) {
+    await go(`#/digital/${String(ch.num).padStart(2, '0')}`);
+    if ((await page.locator('.lesson-row').count()) !== ch.lessons.length || !(await noHScroll())) dOk = false;
+  }
+  check('생활 디지털 연습장 목차별 세부 수업 목록 표시', dOk);
+  await go('#/digital/01');
+  await shot('14-digital-chapter01-360');
+
   for (const ch of CHAPTERS) {
     await go(`#/galaxy/${String(ch.num).padStart(2, '0')}`);
     const n = await page.locator('.lesson-row').count();

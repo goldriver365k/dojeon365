@@ -292,3 +292,6 @@ svg { display: block; }
 .voice__opt input { width: 1.4rem; height: 1.4rem; accent-color: var(--primary); flex: none; }
 .voice__opt:has(input:checked) { border-color: var(--primary); background: var(--surface-2); }
 .voice__opt em { font-style: normal; font-size: 0.9375rem; color: var(--cat-3); margin-left: 6px; }
+.notice { margin: 0 0 24px; padding: 14px 16px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); font-size: 1.125rem; }
+.lesson-row--soon { cursor: default; }
+.lesson-row--soon:hover { transform: none; border-color: var(--line); }

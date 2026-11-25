@@ -3,6 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { CHAPTERS, GROUPS, allLessons, findLesson } from '../data/galaxy/index.js';
 import { CATEGORIES } from '../data/categories.js';
+import * as DIGITAL from '../data/digital/index.js';
 import { renderScreen, SCREEN_KINDS } from '../assets/screens.js';
 import { appInfo } from '../assets/apps.js';
 
@@ -89,4 +90,16 @@ test('앱을 다루는 카드는 앱 목록의 정확한 이름·아이콘을 �
   assert.equal(appInfo('플레이 스토어').label, 'Play 스토어');
   assert.equal(appInfo('갤럭시 스토어').label, '스토어');
   assert.equal(appInfo('삼성 노트').label, '노트');
+});
+
+test('생활 디지털 연습장 목차: 20개 목차, 세부 수업 id 중복 없음, 구분 소속', () => {
+  assert.equal(CATEGORIES[1].href, '#/digital');
+  assert.equal(DIGITAL.CHAPTERS.length, 20);
+  const ids = new Set();
+  DIGITAL.CHAPTERS.forEach((ch, i) => {
+    assert.equal(ch.num, i + 1);
+    assert.ok(DIGITAL.GROUPS.some((g) => g.id === ch.group), `${ch.num} 구분`);
+    assert.ok(ch.lessons.length >= 4, `${ch.num} 수업 수`);
+    for (const l of ch.lessons) { assert.ok(!ids.has(l.id), l.id); ids.add(l.id); assert.ok(l.title); }
+  });
 });
