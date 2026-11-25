@@ -40,8 +40,8 @@ test('수업 id가 겹치지 않고, 출처·검색어·카드가 있다', () =>
   }
 });
 
-test('카드마다 안내 문장 하나·그림·설명·완료 조건이 있다', () => {
-  for (const { lesson } of allLessons()) {
+test('카드마다 안내 문장 하나·그림·설명·완료 조건이 있다(두 과정 모두)', () => {
+  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons()]) {
     lesson.cards.forEach((c, i) => {
       const where = `${lesson.id} 카드 ${i + 1} “${c.text}”`;
       assert.ok(c.text && /[.요]$/.test(c.text.trim()), `${where}: 문장`);
@@ -100,6 +100,11 @@ test('생활 디지털 연습장 목차: 20개 목차, 세부 수업 id 중복 �
     assert.equal(ch.num, i + 1);
     assert.ok(DIGITAL.GROUPS.some((g) => g.id === ch.group), `${ch.num} 구분`);
     assert.ok(ch.lessons.length >= 4, `${ch.num} 수업 수`);
-    for (const l of ch.lessons) { assert.ok(!ids.has(l.id), l.id); ids.add(l.id); assert.ok(l.title); }
+    for (const l of ch.lessons) {
+      assert.ok(!ids.has(l.id), l.id); ids.add(l.id); assert.ok(l.title);
+      assert.ok(l.cards.length >= 2, `${l.id} 카드`);
+      assert.ok(l.src.length >= 1 && l.src.every((x) => /^https:\/\//.test(x.url)), `${l.id} 출처`);
+      assert.ok(l.q.length >= 1, `${l.id} 검색어`);
+    }
   });
 });

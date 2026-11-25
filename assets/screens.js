@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0836';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0848';
 
 const W = 360;
 const H = 640;
@@ -798,6 +798,117 @@ const KINDS = {
       c.reg(s.fab, 274, (s.tabs ? 500 : 548) - 32, 64, 64);
     }
     if (s.tabs) tabs(c, s.tabs, s.tab);
+    navBar(c);
+  },
+
+  /** 메뉴판·상품 타일(키오스크, 배달, 쇼핑): tabs, tiles:[{t, s, color, mark}], total, button */
+  tiles(c, s) {
+    c.rect(0, 0, W, H, '#F5F7FB');
+    statusBar(c);
+    header(c, s.title ?? '메뉴', { back: s.back !== false, actions: s.actions ?? [] });
+    let y = 92;
+    if (s.tabs) {
+      const tw = (W - 16) / s.tabs.length;
+      s.tabs.forEach((t, i) => {
+        const on = t === s.tab;
+        c.rect(8 + tw * i + 2, y, tw - 4, 40, on ? C.blue : '#FFFFFF', 20, on ? '' : `stroke="${C.line}"`);
+        c.text(8 + tw * i + tw / 2, y + 26, t, { size: 15, weight: 800, anchor: 'middle', fill: on ? '#fff' : C.ink });
+        c.reg(t, 8 + tw * i, y - 2, tw, 44);
+      });
+      y += 54;
+    }
+    if (s.top) { c.text(16, y + 16, s.top, { size: 15, fill: C.sub, weight: 600 }); y += 28; }
+    const cols = s.cols ?? 2;
+    const gw = (W - 24 - (cols - 1) * 10) / cols;
+    const gh = s.tileH ?? 118;
+    const bottom = s.button ? 520 : 596;
+    (s.tiles ?? []).forEach((tile, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const x = 12 + col * (gw + 10);
+      const ty = y + row * (gh + 10);
+      if (ty + gh > bottom) return;
+      c.rect(x, ty, gw, gh, '#FFFFFF', 14, `stroke="${tile.selected ? C.blue : C.line}" stroke-width="${tile.selected ? 3 : 1}"`);
+      c.rect(x + 10, ty + 10, gw - 20, gh - 62, tile.color ?? '#E3EAF8', 10);
+      if (tile.mark) c.text(x + gw / 2, ty + 10 + (gh - 62) / 2 + 8, tile.mark, { size: 22, anchor: 'middle', weight: 800, fill: '#5F6B85' });
+      c.text(x + 12, ty + gh - 30, tile.t, { size: 15, weight: 800 });
+      if (tile.s) c.text(x + 12, ty + gh - 11, tile.s, { size: 13.5, fill: C.sub, weight: 600 });
+      c.reg(tile.t, x, ty, gw, gh);
+    });
+    if (s.button) {
+      c.rect(0, 528, W, 72, '#FFFFFF');
+      c.add(`<line x1="0" y1="528" x2="${W}" y2="528" stroke="${C.line}"/>`);
+      if (s.cartLabel !== false) { c.text(16, 556, s.cartLabel ?? '장바구니', { size: 14, fill: C.sub, weight: 700 }); c.reg(s.cartLabel ?? '장바구니', 8, 532, 120, 62); }
+      c.text(16, 582, s.total ?? '0원', { size: 19, weight: 900 });
+      const bw = 170;
+      c.rect(W - bw - 12, 538, bw, 52, C.blue, 14);
+      c.text(W - bw / 2 - 12, 570, s.button, { size: 17, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.reg(s.button, W - bw - 16, 534, bw + 8, 60);
+    }
+    navBar(c);
+  },
+
+  /** 좌석 고르기(기차·버스·영화): rows, cols, taken:['1A'], picked:['3B'], button */
+  seats(c, s) {
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    header(c, s.title ?? '좌석 선택', { back: true });
+    const rows = s.rows ?? 8;
+    const cols = s.cols ?? ['A', 'B', 'C', 'D'];
+    c.text(180, 112, s.front ?? '앞쪽', { size: 14, fill: C.sub, anchor: 'middle', weight: 700 });
+    c.rect(60, 120, 240, 6, '#DADCE0', 3);
+    const size = 40;
+    const gap = 10;
+    const aisle = cols.length === 4 ? 24 : 0;
+    const totalW = cols.length * size + (cols.length - 1) * gap + aisle;
+    const x0 = (W - totalW) / 2;
+    for (let r = 1; r <= rows; r += 1) {
+      cols.forEach((col, i) => {
+        const id = `${r}${col}`;
+        const x = x0 + i * (size + gap) + (aisle && i >= cols.length / 2 ? aisle : 0);
+        const y = 140 + (r - 1) * (size + 8);
+        if (y + size > 500) return;
+        const taken = (s.taken ?? []).includes(id);
+        const picked = (s.picked ?? []).includes(id);
+        c.rect(x, y, size, size, picked ? C.blue : taken ? '#C9CDD3' : '#E8F0FE', 9, `stroke="${picked ? C.blue : '#A8C2F0'}"`);
+        c.text(x + size / 2, y + 26, id, { size: 13, anchor: 'middle', weight: 800, fill: picked ? '#fff' : taken ? '#7A7F87' : C.ink });
+        if (!taken) c.reg(id, x - 2, y - 2, size + 4, size + 4);
+      });
+    }
+    c.rect(24, 510, 16, 16, '#E8F0FE', 4, 'stroke="#A8C2F0"'); c.text(46, 523, '빈 자리', { size: 13, fill: C.sub, weight: 700 });
+    c.rect(120, 510, 16, 16, '#C9CDD3', 4); c.text(142, 523, '팔린 자리', { size: 13, fill: C.sub, weight: 700 });
+    c.rect(226, 510, 16, 16, C.blue, 4); c.text(248, 523, '고른 자리', { size: 13, fill: C.sub, weight: 700 });
+    if (s.button) {
+      c.rect(20, 540, 320, 52, C.blue, 14);
+      c.text(180, 572, s.button, { size: 17, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.reg(s.button, 16, 536, 328, 60);
+    }
+    navBar(c);
+  },
+
+  /** 숫자판(금액·비밀번호·인원): label, value, masked, button */
+  numpad(c, s) {
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    header(c, s.title ?? '', { back: s.back !== false });
+    c.text(180, 132, s.label ?? '숫자를 누르세요', { size: 17, anchor: 'middle', fill: C.sub, weight: 700 });
+    c.text(180, 184, s.value ?? '', { size: 34, anchor: 'middle', weight: 800 });
+    c.add(`<line x1="50" y1="200" x2="310" y2="200" stroke="${C.line}" stroke-width="2"/>`);
+    if (s.value) c.reg('입력한 숫자', 50, 150, 260, 54);
+    const keys = s.keys ?? ['1', '2', '3', '4', '5', '6', '7', '8', '9', '지움', '0', '←'];
+    keys.forEach((k, i) => {
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      const x = 24 + col * 108;
+      const y = 226 + row * 66;
+      c.rect(x, y, 96, 56, '#F1F3F7', 12);
+      c.text(x + 48, y + 37, k, { size: k.length > 1 ? 17 : 26, anchor: 'middle', weight: 700 });
+      c.reg(k, x, y, 96, 56);
+    });
+    const bt = s.button ?? '확인';
+    c.rect(24, 498, 312, 54, C.blue, 14);
+    c.text(180, 532, bt, { size: 18, fill: '#fff', weight: 800, anchor: 'middle' });
+    c.reg(bt, 20, 494, 320, 62);
     navBar(c);
   },
 

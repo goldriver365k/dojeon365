@@ -12,14 +12,14 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0836';
-import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0836';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.0836';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0836';
-import { renderScreen } from './screens.js?v=20261125.0836';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0836';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0836';
-import { VERSION } from './version.js?v=20261125.0836';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0848';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0848';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.0848';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0848';
+import { renderScreen } from './screens.js?v=20261125.0848';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0848';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0848';
+import { VERSION } from './version.js?v=20261125.0848';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -111,13 +111,22 @@ function viewSoon(id) {
 
 /* ---------- 화면: 22개 목차 ---------- */
 
+/** 두 과정(갤럭시·생활 디지털)에서 수업 찾기 */
+function findLesson(id) {
+  const g = findGalaxyLesson(id);
+  if (g) return g;
+  const d = DIGITAL.allLessons().find((e) => e.lesson.id === id);
+  return d ? { ...d, chapter: { ...d.chapter, course: 'digital' } } : null;
+}
+const chapterHref = (chapter) => `${chapter.course === 'digital' ? '#/digital' : '#/galaxy'}/${two(chapter.num)}`;
+
 function lessonState(id) { return store.lessons[id] ?? { card: 0, done: false }; }
 
-function resumeBox() {
+function resumeBox(course = 'galaxy') {
   const cur = store.current;
   if (!cur) return '';
   const found = findLesson(cur.id);
-  if (!found) return '';
+  if (!found || (found.chapter.course ?? 'galaxy') !== course) return '';
   const { lesson, chapter } = found;
   const n = Math.min(cur.card, lesson.cards.length - 1) + 1;
   return `<section class="resume" aria-labelledby="resume-h">
@@ -218,7 +227,8 @@ function lessonHref(lesson) {
 function lessonRow(lesson, chapter, withChapter = false) {
   const st = lessonState(lesson.id);
   const status = st.done ? '<span class="badge badge--done">마침</span>' : store.current?.id === lesson.id ? '<span class="badge badge--doing">하던 중</span>' : '';
-  return `<li><a class="lesson-row ${GROUP_CAT[chapter.group] ?? ''}" href="${lessonHref(lesson)}">
+  const cat = GROUP_CAT[chapter.group] ?? DIGITAL.GROUPS.find((g) => g.id === chapter.group)?.cat ?? '';
+  return `<li><a class="lesson-row ${cat}" href="${lessonHref(lesson)}">
     <span class="lesson-row__body">
       ${withChapter ? `<span class="lesson-row__chapter">${two(chapter.num)}. ${esc(chapter.title)}</span>` : ''}
       <span class="lesson-row__title">${esc(lesson.title)}</span>
@@ -246,7 +256,7 @@ function viewIntro(lesson, chapter) {
   const i = lesson.intro;
   document.title = `${lesson.title} | 시작하기 전에`;
   const pic = renderScreen(i.screen, i.target);
-  return `${topbar({ back: `#/galaxy/${two(chapter.num)}`, backLabel: '수업 목록' })}
+  return `${topbar({ back: `${chapterHref(chapter)}`, backLabel: '수업 목록' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(lesson.title)}</h1>
     <section class="intro">
@@ -311,7 +321,7 @@ function viewCard(lesson, chapter, idx) {
   document.title = `${idx + 1}/${total} ${lesson.title} | 갤럭시 휴대폰 사용방법`;
   return `<div class="lesson">
   <header class="lesson__top">
-    <a class="lesson__close" href="#/galaxy/${two(chapter.num)}">${ICON.close}<span>닫기</span></a>
+    <a class="lesson__close" href="${chapterHref(chapter)}">${ICON.close}<span>닫기</span></a>
     <span class="lesson__chapter">${two(chapter.num)}. ${esc(chapter.title)}</span>
     ${fontControl()}
   </header>
@@ -349,7 +359,7 @@ function viewCard(lesson, chapter, idx) {
   </main>
   <nav class="navbar" aria-label="단계 이동">
     ${idx === 0
-      ? `<a class="btn btn--nav" href="#/galaxy/${two(chapter.num)}">${ICON.prev}<span>목록</span></a>`
+      ? `<a class="btn btn--nav" href="${chapterHref(chapter)}">${ICON.prev}<span>목록</span></a>`
       : `<a class="btn btn--nav" href="#/lesson/${lesson.id}/${idx}" data-nav="prev">${ICON.prev}<span>이전</span></a>`}
     ${isLast
       ? `<a class="btn btn--nav btn--primary" href="#/lesson/${lesson.id}/done" data-nav="done">${ICON.done}<span>${esc(doneLabel)}</span></a>`
@@ -362,14 +372,14 @@ function viewDone(lesson, chapter) {
   document.title = `수업을 마쳤어요 | ${lesson.title}`;
   const list = chapter.lessons;
   const nextLesson = list[list.findIndex((l) => l.id === lesson.id) + 1];
-  return `${topbar({ back: `#/galaxy/${two(chapter.num)}`, backLabel: '수업 목록' })}
+  return `${topbar({ back: `${chapterHref(chapter)}`, backLabel: '수업 목록' })}
   <main class="page page--done" id="main">
     <div class="done-mark" aria-hidden="true">${ICON.done}</div>
     <h1 class="page__title" tabindex="-1" id="instr">수업을 마쳤어요</h1>
     <p class="lead">‘${esc(lesson.title)}’ ${lesson.cards.length}단계를 모두 따라 했어요.</p>
     <div class="done-actions">
       <a class="btn btn--block" href="${lessonHref(lesson)}" data-again>다시 배우기</a>
-      <a class="btn btn--primary btn--block" href="#/galaxy/${two(chapter.num)}">수업 목록으로</a>
+      <a class="btn btn--primary btn--block" href="${chapterHref(chapter)}">수업 목록으로</a>
       ${nextLesson ? `<a class="btn btn--block btn--ghost" href="${lessonHref(nextLesson)}">다음 수업: ${esc(nextLesson.title)} ${ICON.next}</a>` : ''}
     </div>
   </main>`;
@@ -377,11 +387,11 @@ function viewDone(lesson, chapter) {
 
 /* ---------- 생활 디지털 연습장 ---------- */
 
-function digitalLessonRow(lesson) {
-  const ready = lesson.cards.length > 0;
+function digitalLessonRow(lesson, chapter) {
+  if (lesson.cards.length > 0) return lessonRow(lesson, { ...chapter, course: 'digital' });
   return `<li><div class="lesson-row lesson-row--soon" aria-disabled="true">
     <span class="lesson-row__body"><span class="lesson-row__title">${esc(lesson.title)}</span>
-      <span class="lesson-row__meta">${ready ? `${lesson.cards.length}단계` : '<span class="badge badge--soon">수업 준비 중</span>'}</span></span></div></li>`;
+      <span class="lesson-row__meta"><span class="badge badge--soon">수업 준비 중</span></span></span></div></li>`;
 }
 
 function viewDigital() {
@@ -392,6 +402,7 @@ function viewDigital() {
     <h1 class="page__title">${esc(COURSE.title)}</h1>
     <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.</p>
     <p class="notice">${esc(COURSE.safety)}</p>
+    ${resumeBox('digital')}
     ${DG.map((g) => `<section class="toc-group ${g.cat}" aria-labelledby="dg-${g.id}">
       <h2 class="toc-group__h" id="dg-${g.id}">${esc(g.title)}</h2>
       <ol class="toc">
@@ -417,8 +428,8 @@ function viewDigitalChapter(num) {
   <main class="page ${g?.cat ?? ''}" id="main">
     <p class="eyebrow">${esc(g?.title ?? '')} · 목차 ${two(ch.num)}</p>
     <h1 class="page__title">${two(ch.num)}. ${esc(ch.title)}</h1>
-    <p class="lead">${esc(ch.desc)}. 연습 화면 수업을 준비하고 있어요.</p>
-    <ul class="lesson-list">${ch.lessons.map(digitalLessonRow).join('')}</ul>
+    <p class="lead">${esc(ch.desc)}. 배울 수업을 누르세요. 모두 연습 화면이에요.</p>
+    <ul class="lesson-list">${ch.lessons.map((l) => digitalLessonRow(l, ch)).join('')}</ul>
   </main>`;
 }
 

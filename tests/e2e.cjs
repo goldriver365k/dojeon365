@@ -78,6 +78,27 @@ async function main() {
     if ((await page.locator('.lesson-row').count()) !== ch.lessons.length || !(await noHScroll())) dOk = false;
   }
   check('생활 디지털 연습장 목차별 세부 수업 목록 표시', dOk);
+  // 생활 디지털 연습장 98개 수업: 첫 카드 → 완료
+  const dBad = [];
+  let dCards = 0;
+  for (const { lesson, chapter } of DIGITAL.allLessons()) {
+    await go(`#/digital/${String(chapter.num).padStart(2, '0')}`);
+    await page.locator('.lesson-row', { hasText: lesson.title }).first().click();
+    for (let i = 0; i < lesson.cards.length; i += 1) {
+      await page.waitForFunction((n) => (document.body.dataset.route ?? '').endsWith(`/${n}`), i + 1);
+      const instr = await page.locator('#instr').evaluate((el) => [...el.childNodes].filter((n) => !(n.classList && n.classList.contains('sr-only'))).map((n) => n.textContent).join(''));
+      if (instr.trim() !== lesson.cards[i].text || !(await noHScroll())) dBad.push(`${lesson.id}#${i + 1}`);
+      dCards += 1;
+      await page.locator(i === lesson.cards.length - 1 ? '[data-nav="done"]' : '[data-nav="next"]').click();
+    }
+    await page.waitForSelector('.page--done');
+    if ((await page.locator('a', { hasText: '수업 목록으로' }).getAttribute('href')) !== `#/digital/${String(chapter.num).padStart(2, '0')}`) dBad.push(`${lesson.id} 목록 링크`);
+  }
+  check(`생활 디지털 연습장 ${DIGITAL.allLessons().length}개 수업, 카드 ${dCards}장 첫 카드부터 완료까지`, dBad.length === 0, dBad.slice(0, 8).join(', '));
+  await go('#/lesson/d01-pay/3');
+  await shot('15-digital-kiosk-card-360');
+  await go('#/lesson/d04-seat/3');
+  await shot('16-digital-seat-card-360');
   await go('#/digital/01');
   await shot('14-digital-chapter01-360');
 
