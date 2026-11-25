@@ -5,6 +5,7 @@ import { CHAPTERS, GROUPS, allLessons, findLesson } from '../data/galaxy/index.j
 import { CATEGORIES } from '../data/categories.js';
 import * as DIGITAL from '../data/digital/index.js';
 import * as AI from '../data/ai/index.js';
+import * as SCAM from '../data/scam/index.js';
 import { renderScreen, SCREEN_KINDS } from '../assets/screens.js';
 import { appInfo } from '../assets/apps.js';
 
@@ -13,8 +14,8 @@ const EXPECTED = [5, 7, 6, 6, 5, 7, 6, 6, 7, 9, 8, 9, 6, 5, 8, 6, 6, 7, 7, 6, 7,
 // 한 카드에 동작 두 개를 이어 쓴 문장(예: “설정을 열고 디스플레이를 누르세요”)을 찾는 표현
 const TWO_ACTIONS = /(열고|누르고|적고|고르고|켜고|끄고|밀고|들어가|선택하고)\s|\s후\s|→/;
 
-test('홈 카테고리 5개, 첫 번째가 갤럭시 휴대폰 사용방법', () => {
-  assert.equal(CATEGORIES.length, 5);
+test('홈 카테고리 6개, 첫 번째가 갤럭시 휴대폰 사용방법', () => {
+  assert.equal(CATEGORIES.length, 6);
   assert.equal(CATEGORIES[0].title, '갤럭시 휴대폰 사용방법');
   assert.ok(CATEGORIES[0].ready);
 });
@@ -42,7 +43,7 @@ test('수업 id가 겹치지 않고, 출처·검색어·카드가 있다', () =>
 });
 
 test('카드마다 안내 문장 하나·그림·설명·완료 조건이 있다(두 과정 모두)', () => {
-  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons()]) {
+  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons(), ...SCAM.allLessons()]) {
     lesson.cards.forEach((c, i) => {
       const where = `${lesson.id} 카드 ${i + 1} “${c.text}”`;
       assert.ok(c.text && /[.요]$/.test(c.text.trim()), `${where}: 문장`);
@@ -93,9 +94,9 @@ test('앱을 다루는 카드는 앱 목록의 정확한 이름·아이콘을 �
   assert.equal(appInfo('삼성 노트').label, '노트');
 });
 
-test('생활 디지털 연습장 목차: 22개 목차, 세부 수업 id 중복 없음, 구분 소속', () => {
-  assert.equal(CATEGORIES[1].href, '#/digital');
-  assert.equal(DIGITAL.CHAPTERS.length, 22);
+test('생활 디지털 연습장 목차: 21개 목차, 세부 수업 id 중복 없음, 구분 소속', () => {
+  assert.equal(CATEGORIES.find((c) => c.id === 'digital-life').href, '#/digital');
+  assert.equal(DIGITAL.CHAPTERS.length, 21);
   const ids = new Set();
   DIGITAL.CHAPTERS.forEach((ch, i) => {
     assert.equal(ch.num, i + 1);
@@ -111,7 +112,7 @@ test('생활 디지털 연습장 목차: 22개 목차, 세부 수업 id 중복 �
 });
 
 test('시니어 AI 교실: 목차·수업 id·출처·카드', () => {
-  assert.equal(CATEGORIES[2].href, '#/ai');
+  assert.equal(CATEGORIES.find((c) => c.id === 'ai').href, '#/ai');
   assert.ok(AI.CHAPTERS.length >= 6);
   const all = new Set([...allLessons(), ...DIGITAL.allLessons()].map((e) => e.lesson.id));
   AI.CHAPTERS.forEach((ch, i) => {
@@ -121,5 +122,16 @@ test('시니어 AI 교실: 목차·수업 id·출처·카드', () => {
       assert.ok(!all.has(l.id), `중복 id ${l.id}`); all.add(l.id);
       assert.ok(l.cards.length >= 2 && l.src.length >= 1 && l.q.length >= 1, l.id);
     }
+  });
+});
+
+test('전화 사기 예방 교실: 홈 2번째 큰 카테고리, 목차·수업', () => {
+  assert.equal(CATEGORIES[1].href, '#/scam');
+  assert.ok(SCAM.CHAPTERS.length >= 5);
+  const ids = new Set([...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons()].map((e) => e.lesson.id));
+  SCAM.CHAPTERS.forEach((ch, i) => {
+    assert.equal(ch.num, i + 1);
+    assert.ok(SCAM.GROUPS.some((g) => g.id === ch.group));
+    for (const l of ch.lessons) { assert.ok(!ids.has(l.id), l.id); ids.add(l.id); assert.ok(l.cards.length >= 2 && l.src.length >= 1); }
   });
 });

@@ -53,7 +53,7 @@ async function main() {
   /* 1. 홈·목차 */
   await go('#/');
   const cats = await page.locator('.cat').allTextContents();
-  check('홈 카테고리 5개', cats.length === 5, cats.length);
+  check('홈 카테고리 6개', cats.length === 6, cats.length);
   check('첫 카테고리 = 갤럭시 휴대폰 사용방법', cats[0]?.includes('갤럭시 휴대폰 사용방법'), cats[0]);
   await shot('01-home-360');
   await page.locator('.cat').first().click();
@@ -68,7 +68,7 @@ async function main() {
   /* 생활 디지털 연습장 목차 */
   const DIGITAL = await import(path.join(ROOT, 'data', 'digital', 'index.js'));
   await go('#/');
-  await page.locator('.cat').nth(1).click();
+  await page.locator('a.cat[href="#/digital"]').click();
   await page.waitForSelector('.toc__row');
   check(`생활 디지털 연습장 목차 ${DIGITAL.CHAPTERS.length}개 표시`, (await page.locator('.toc__row').count()) === DIGITAL.CHAPTERS.length, await page.locator('.toc__row').count());
   await shot('13-digital-360');
@@ -98,7 +98,7 @@ async function main() {
   // 시니어 AI 교실: 목차 → 모든 수업 첫 카드 → 완료
   const AIC = await import(path.join(ROOT, 'data', 'ai', 'index.js'));
   await go('#/');
-  await page.locator('.cat').nth(2).click();
+  await page.locator('a.cat[href="#/ai"]').click();
   await page.waitForSelector('.toc__row');
   check(`시니어 AI 교실 목차 ${AIC.CHAPTERS.length}개 표시`, (await page.locator('.toc__row').count()) === AIC.CHAPTERS.length);
   await shot('17-ai-360');
@@ -118,6 +118,29 @@ async function main() {
     if ((await page.locator('a', { hasText: '수업 목록으로' }).getAttribute('href')) !== `#/ai/${String(chapter.num).padStart(2, '0')}`) aBad.push(`${lesson.id} 목록 링크`);
   }
   check(`시니어 AI 교실 ${AIC.allLessons().length}개 수업, 카드 ${aCards}장 첫 카드부터 완료까지`, aBad.length === 0, aBad.slice(0, 8).join(', '));
+  // 전화 사기 예방 교실: 목차 → 모든 수업 첫 카드 → 완료
+  const SCC = await import(path.join(ROOT, 'data', 'scam', 'index.js'));
+  await go('#/');
+  await page.locator('a.cat[href="#/scam"]').click();
+  await page.waitForSelector('.toc__row');
+  check(`전화 사기 예방 교실 목차 ${SCC.CHAPTERS.length}개 표시`, (await page.locator('.toc__row').count()) === SCC.CHAPTERS.length);
+  await shot('18-scam-360');
+  const sBad = [];
+  let sCards = 0;
+  for (const { lesson, chapter } of SCC.allLessons()) {
+    await go(`#/scam/${String(chapter.num).padStart(2, '0')}`);
+    await page.locator('.lesson-row', { hasText: lesson.title }).first().click();
+    for (let i = 0; i < lesson.cards.length; i += 1) {
+      await page.waitForFunction((n) => (document.body.dataset.route ?? '').endsWith(`/${n}`), i + 1);
+      const instr = await page.locator('#instr').evaluate((el) => [...el.childNodes].filter((n) => !(n.classList && n.classList.contains('sr-only'))).map((n) => n.textContent).join(''));
+      if (instr.trim() !== lesson.cards[i].text || !(await noHScroll())) sBad.push(`${lesson.id}#${i + 1}`);
+      sCards += 1;
+      await page.locator(i === lesson.cards.length - 1 ? '[data-nav="done"]' : '[data-nav="next"]').click();
+    }
+    await page.waitForSelector('.page--done');
+    if ((await page.locator('a', { hasText: '수업 목록으로' }).getAttribute('href')) !== `#/scam/${String(chapter.num).padStart(2, '0')}`) sBad.push(`${lesson.id} 목록 링크`);
+  }
+  check(`전화 사기 예방 교실 ${SCC.allLessons().length}개 수업, 카드 ${sCards}장 첫 카드부터 완료까지`, sBad.length === 0, sBad.slice(0, 8).join(', '));
   await go('#/lesson/d01-pay/3');
   await shot('15-digital-kiosk-card-360');
   await go('#/lesson/d04-seat/5');
