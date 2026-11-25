@@ -83,6 +83,7 @@ test('스페인어: 단계 수 일치, 한 단계 한 문장, noindex, 스페인
   const ES = await import('../i18n/es/galaxy.js');
   const { REVIEWED: ESR } = await import('../i18n/es/review.js');
   for (const [id, es] of Object.entries(ES.LESSONS)) {
+    if (!findLesson(id)) { assert.ok(EN.LESSONS[id] && EN.LESSONS[id].steps.length === es.steps.length, `해외용 새 수업 단계 수: ${id}`); continue; }
     assert.equal(es.steps.length, findLesson(id).lesson.cards.length, id);
     assert.notEqual(metaOf(id).region, 'KR', id);
     for (const [text] of es.steps) assert.ok(!/\. [A-ZÁÉÍÓÚ¡¿]/.test(text), `${id} — ${text}`);

@@ -1,6 +1,10 @@
 // Lecciones de Galaxy en español (borrador, sin revisar → noindex y fuera del sitemap).
-// Piloto: capítulos 01–03. steps[i] corresponde a la tarjeta coreana i de la misma lección.
+// Todas las lecciones internacionales. steps[i] corresponde a la tarjeta coreana i de la misma lección.
 import { open, item, settings } from './kit.js';
+import { TITLES_04_08, STEPS_04_08 } from './steps-04-08.js';
+import { TITLES_09_12, STEPS_09_12 } from './steps-09-12.js';
+import { TITLES_14_18, STEPS_14_18 } from './steps-14-18.js';
+import { TITLES_19_22, STEPS_19_22 } from './steps-19-22.js';
 
 export const GROUPS = { basic: 'Lo básico', life: 'Uso diario', apply: 'Más funciones', adv: 'Avanzado y solución de problemas' };
 
@@ -49,6 +53,10 @@ export const TITLES = {
   'g03-bright': ['ajustar-brillo', 'Ajustar el brillo'],
   'g03-timeout': ['tiempo-de-pantalla', 'Cambiar cuánto tarda en apagarse la pantalla'],
   'g03-sound': ['volumen-y-vibracion', 'Ajustar el volumen del tono y la vibración'],
+  ...TITLES_04_08,
+  ...TITLES_09_12,
+  ...TITLES_14_18,
+  ...TITLES_19_22,
 };
 
 export const LESSONS = {
@@ -202,4 +210,8 @@ export const LESSONS = {
       ['Toca el interruptor ‘Vibrar al sonar’ para activarlo.', 'Te avisan el sonido y la vibración a la vez.'],
     ],
   },
+  ...STEPS_04_08,
+  ...STEPS_09_12,
+  ...STEPS_14_18,
+  ...STEPS_19_22,
 };
