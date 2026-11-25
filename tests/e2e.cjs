@@ -414,6 +414,27 @@ async function main() {
   await page.goto(`${BASE}en/galaxy/`);
   check('영어 13번 분류: 새 수업 3개', (await page.locator('#c13 a').count()) === 3);
 
+  // 모든 해외용 페이지: 320px·아주 크게에서 가로 스크롤 없음(긴 낱말 언어 포함)
+  {
+    const langs = fs.readdirSync(ROOT).filter((d) => fs.existsSync(path.join(ROOT, d, 'galaxy', 'index.html')));
+    await page.setViewportSize({ width: 320, height: 700 });
+    await page.goto(`${BASE}en/`);
+    await page.evaluate(() => localStorage.setItem('digistep365.global.v1', JSON.stringify({ size: 'xlarge' })));
+    const wide = [];
+    let n = 0;
+    for (const lang of langs) {
+      const dirs = fs.readdirSync(path.join(ROOT, lang, 'galaxy'), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => `${d.name}/`);
+      for (const d of ['', ...dirs]) {
+        await page.goto(`${BASE}${lang}/galaxy/${d}`);
+        n++;
+        const w = await page.evaluate(() => document.documentElement.scrollWidth);
+        if (w > 320) wide.push(`${lang}/${d} ${w}`);
+      }
+    }
+    check(`해외용 ${n}쪽 320px·아주 크게 가로 스크롤 없음 (${langs.join(',')})`, wide.length === 0, wide.slice(0, 5).join(' | '));
+    await page.evaluate(() => localStorage.removeItem('digistep365.global.v1'));
+  }
+
   check('자바스크립트 오류 없음', errors.length === 0, errors.slice(0, 5).join(' | '));
 
   await browser.close();

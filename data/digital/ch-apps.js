@@ -1,6 +1,6 @@
 /** [필수 앱 준비] 01 필수 앱 내려받기 — Play 스토어에서 진짜 앱을 찾아 설치하기 */
-import { app as openApp, obj } from '../galaxy/helpers.js?v=20261125.2159';
-import { L, T, S, LK, SRC, list, pop } from './kit.js?v=20261125.2159';
+import { app as openApp, obj } from '../galaxy/helpers.js?v=20261125.2202';
+import { L, T, S, LK, SRC, list, pop } from './kit.js?v=20261125.2202';
 
 const PLAY_SRC = { label: 'Google Play 고객센터(앱 설치)', url: 'https://support.google.com/googleplay/' };
 

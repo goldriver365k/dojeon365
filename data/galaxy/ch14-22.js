@@ -1,5 +1,5 @@
 /** [응용] 14~18, [고급 및 문제 해결] 19~22 */
-import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, openQuick, M, SRC, MENUS, SIDE, HOME, QUICK, PRACTICE_ONLY } from './helpers.js?v=20261125.2159';
+import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, openQuick, M, SRC, MENUS, SIDE, HOME, QUICK, PRACTICE_ONLY } from './helpers.js?v=20261125.2202';
 
 const WALLET = { kind: 'app', title: '월렛', back: false, actions: ['추가'], hero: '결제 카드 ●●●● 1234', heroName: '결제 카드', heroColor: '#283593', lines: ['교통 카드 · 멤버십 · 모바일 신분증'] };
 const WALLET_ADD = { kind: 'dialog', style: 'sheet', title: '추가', buttons: ['결제 카드', '교통 카드', '모바일 신분증', '멤버십', '티켓·쿠폰'] };
