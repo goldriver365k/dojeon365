@@ -12,11 +12,12 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js';
-import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js';
-import { BASE } from '../data/galaxy/helpers.js';
-import { renderScreen } from './screens.js';
-import { appInfo, appIconStandalone } from './apps.js';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0747';
+import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0747';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0747';
+import { renderScreen } from './screens.js?v=20261125.0747';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0747';
+import { VERSION } from './version.js?v=20261125.0747';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 const app = document.getElementById('app');
@@ -88,6 +89,7 @@ function viewHome() {
           ${ICON.chev}
         </a></li>`).join('')}
     </ul>
+    <p class="version">버전 ${esc(VERSION)} · 화면이 예전과 같으면 새로고침해 주세요.</p>
   </main>`;
 }
 
