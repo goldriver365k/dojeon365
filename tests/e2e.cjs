@@ -357,6 +357,28 @@ async function main() {
   await go('#/lesson/g03-font/5');
   await page.screenshot({ path: path.join(SHOTS, '12-card-desktop.png'), fullPage: false });
 
+  // 해외용(영어) 정적 페이지
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto(`${BASE}en/galaxy/change-font-size/`);
+  await page.waitForSelector('.bar:not([hidden])');
+  const visibleSteps = () => page.locator('.step:visible').count();
+  check('영어 수업: 한 번에 한 단계', (await visibleSteps()) === 1);
+  check('영어 수업: 검수 전 noindex', (await page.getAttribute('meta[name=robots]', 'content'))?.includes('noindex'));
+  for (let k = 0; k < 5; k++) await page.click('[data-next]');
+  check('영어 수업: 마지막 단계 버튼 Done', (await page.textContent('[data-next]')).trim() === 'Done');
+  await page.click('[data-next]');
+  check('영어 수업: 완료 안내', await page.isVisible('[data-finish]'));
+  await page.click('[data-restart]');
+  check('영어 수업: 처음부터 다시 보기', (await page.textContent('.step.is-on .step__no')).includes('Step 1'));
+  await page.click('[data-all]');
+  check('영어 수업: 전체 단계 보기', (await visibleSteps()) === 6);
+  await page.click('button[data-size=xlarge]');
+  check('영어 수업: 아주 크게에서 가로 스크롤 없음', (await page.evaluate(() => document.documentElement.scrollWidth)) <= 360);
+  await page.goto(`${BASE}en/galaxy/`);
+  check('영어 목차: 22개 분류', (await page.locator('.cat').count()) === 22);
+  check('영어 목차: 면책 문구', (await page.textContent('.foot')).includes('Not affiliated with'));
+  await page.screenshot({ path: path.join(SHOTS, '22-en-galaxy-360.png') });
+
   check('자바스크립트 오류 없음', errors.length === 0, errors.slice(0, 5).join(' | '));
 
   await browser.close();

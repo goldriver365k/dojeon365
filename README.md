@@ -133,3 +133,11 @@ tap('측면 버튼', SIDE, {
 - 삼성전자 갤럭시 S26 시리즈 사용 설명서(Android 17, Rev.1.0, 2026년 9월, 한국어) — 삼성전자 고객지원 SM-S942N 페이지의 매뉴얼
 - 수업마다 관련 설명서 쪽 링크(`…pdf#page=쪽`)와 기준 기종·소프트웨어·확인 날짜를 카드 아래 ‘이 수업의 기준과 출처’에 표시
 - 설명서에 없는 앱(카카오톡·편한자판·Google 지도 등)과 화면 이름이 확실하지 않은 부분은 수업에 `check`로 표시 → 실제 화면으로 확인 후 지우면 됩니다
+
+## 해외용 영어 사이트(DigiStep365)
+
+- 주소: `/en/`(홈), `/en/galaxy/`(22개 분류), `/en/galaxy/<영어 주소>/`(수업마다 실제 페이지). 국내 주소(`/#/…`)는 그대로
+- 내용: `i18n/en/galaxy.js`(분류·제목·주소·단계), 화면 문구 `i18n/en/ui.js`, 20개 언어 상태 `i18n/languages.js`
+- 만들기: `npm run build:global` → `en/`, `sitemap.xml`, `robots.txt`를 새로 만든 뒤 함께 커밋(Netlify 설정은 그대로)
+- 검수 전(`status`가 `reviewed`가 아닌) 수업은 `noindex`이고 사이트맵에서 빠짐. 사람이 검수한 뒤 `status: 'reviewed'`로 바꾸고 다시 만들기
+- 한국 전용 수업(카카오톡 등)은 `data/galaxy/meta.js`의 `region: 'KR'`로 해외용에서 빠짐

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://digistep365.com/sitemap.xml

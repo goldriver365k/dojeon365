@@ -4,10 +4,13 @@
   "private": true,
   "description": "편한자판 시니어 교육 플랫폼 — 갤럭시 휴대폰 사용방법",
   "type": "module",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node scripts/serve.js",
     "test": "node --test tests/*.test.js",
-    "test:e2e": "node tests/e2e.cjs"
+    "test:e2e": "node tests/e2e.cjs",
+    "build:global": "node scripts/build-global.mjs"
   }
 }
