@@ -246,3 +246,5 @@ svg { display: block; }
 }
 
 .version { margin: 28px 0 0; font-size: 0.9375rem; color: var(--ink-2); }
+.stage--object .stage__frame { border: 0; border-radius: 20px; background: transparent; }
+.stage--object.stage--ok .stage__frame { outline: 4px solid var(--ok); }

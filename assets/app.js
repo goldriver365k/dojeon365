@@ -12,12 +12,12 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0747';
-import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0747';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0747';
-import { renderScreen } from './screens.js?v=20261125.0747';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0747';
-import { VERSION } from './version.js?v=20261125.0747';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0752';
+import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0752';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0752';
+import { renderScreen } from './screens.js?v=20261125.0752';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0752';
+import { VERSION } from './version.js?v=20261125.0752';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 const app = document.getElementById('app');
@@ -247,7 +247,7 @@ function viewIntro(lesson, chapter) {
     <section class="intro">
       <h2 class="intro__h" tabindex="-1" id="instr">${esc(i.title)}</h2>
       <p class="intro__text">${esc(i.text)}</p>
-      <figure class="stage stage--small"><div class="stage__frame"><div class="stage__pic" role="img" aria-label="${esc(i.alt)}">${pic.svg}</div></div></figure>
+      <figure class="stage stage--small stage--object"><div class="stage__frame"><div class="stage__pic" role="img" aria-label="${esc(i.alt)}">${pic.svg}</div></div></figure>
       <p class="intro__text">${esc(i.after)}</p>
     </section>
     <div class="intro__choices">
@@ -319,7 +319,7 @@ function viewCard(lesson, chapter, idx) {
     ${appTag(card)}
     ${card.hint ? `<p class="hint">${esc(card.hint)}</p>` : ''}
     ${card.note ? `<p class="note"><strong>기종에 따라 달라요</strong> ${esc(card.note)}</p>` : ''}
-    <figure class="stage" data-action="${esc(card.action)}">
+    <figure class="stage${card.photo || ['side', 'info'].includes(card.screen?.kind) ? ' stage--object' : ''}" data-action="${esc(card.action)}">
       ${cardFigure(card)}
       <figcaption class="stage__cap">${esc(practiceHint(card))}</figcaption>
     </figure>

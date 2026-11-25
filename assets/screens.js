@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0747';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0752';
 
 const W = 360;
 const H = 640;
@@ -140,33 +140,55 @@ function wrapText(s, max) {
 const KINDS = {
   /** 휴대폰 앞면과 옆면 버튼 */
   side(c, s) {
-    c.rect(0, 0, W, H, '#EEF1F5');
-    c.rect(60, 60, 170, 520, '#2B2D31', 28);
-    c.rect(68, 68, 154, 504, s.screenOff ? '#0B0B0D' : '#3B4F6B', 22);
-    c.add('<circle cx="145" cy="84" r="5" fill="#111"/>');
-    if (!s.screenOff) {
-      c.text(145, 170, '10:00', { size: 40, fill: '#fff', weight: 300, anchor: 'middle' });
-      c.text(145, 194, '11월 25일 수', { size: 12, fill: '#DCE3EE', anchor: 'middle' });
-    }
-    // 오른쪽 옆면 버튼(위에서부터 음량(상), 음량(하), 측면 버튼). 이름표는 테두리 바깥에 둔다.
-    const btn = (name, label, y, h) => {
-      c.rect(230, y, 14, h, '#55585E', 4);
-      c.reg(name, 222, y - 6, 34, h + 12);
-      c.text(268, y + h / 2 + 6, label, { size: 16, fill: C.ink, weight: 700 });
+    // 갤럭시 S26 실물에 가깝게: 금속 테두리, 얇은 화면 테두리, 전면 카메라 구멍, 오른쪽 옆면 버튼
+    c.rect(0, 0, W, H, '#F4F1EA');
+    c.add(`<defs>
+      <linearGradient id="sv-frame" x1="0" x2="1"><stop offset="0" stop-color="#8A8F98"/><stop offset="0.5" stop-color="#D9DCE1"/><stop offset="1" stop-color="#7C818A"/></linearGradient>
+      <linearGradient id="sv-btn" x1="0" x2="1"><stop offset="0" stop-color="#B9BDC4"/><stop offset="0.6" stop-color="#ECEEF1"/><stop offset="1" stop-color="#9AA0A8"/></linearGradient>
+      <linearGradient id="sv-wall" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#1F3B73"/><stop offset="0.55" stop-color="#4E6FB5"/><stop offset="1" stop-color="#C9A4D8"/></linearGradient>
+      <filter id="sv-shadow" x="-20%" y="-10%" width="140%" height="120%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000" flood-opacity="0.22"/></filter>
+    </defs>`);
+    const X = 58; const Y = s.cable ? -260 : 40; const PW = 182; // 충전 카드는 아래쪽이 보이게 올려 그림
+    const ph = 556; // 휴대폰 높이(가로:세로 ≈ 1:2.1)
+    // 오른쪽 옆면 버튼(테두리보다 살짝 튀어나옴): 위에서부터 음량(상)·음량(하) 한 줄 버튼, 그 아래 측면 버튼
+    const bx = X + PW - 1;
+    const btn = (name, y, h) => {
+      c.add(`<rect x="${bx}" y="${y}" width="9" height="${h}" rx="3.5" fill="url(#sv-btn)" stroke="#80858D" stroke-width="0.8"/>`);
+      c.reg(name, bx - 10, y - 6, 34, h + 12);
     };
-    btn('음량(상) 버튼', '음량(상)', 170, 46);
-    btn('음량(하) 버튼', '음량(하)', 222, 46);
-    btn('측면 버튼', '측면 버튼', 292, 58);
-    c.reg('측면 버튼과 음량(하) 버튼', 220, 212, 38, 146);
-    // 아래쪽 충전 연결잭
-    c.rect(125, 576, 40, 8, '#111', 4);
-    c.reg('충전 연결잭', 105, 568, 80, 40);
-    if (s.cable) {
-      c.rect(131, 588, 28, 30, '#E0E0E0', 4);
-      c.rect(139, 618, 12, 22, '#BDBDBD', 3);
-      c.text(196, 612, '충전 연결잭', { size: 15, fill: C.ink, weight: 700 });
+    c.add(`<g filter="url(#sv-shadow)"><rect x="${X}" y="${Y}" width="${PW}" height="${ph}" rx="30" fill="url(#sv-frame)"/></g>`);
+    btn('음량(상) 버튼', Y + 118, 40);
+    btn('음량(하) 버튼', Y + 160, 40);
+    btn('측면 버튼', Y + 226, 46);
+    c.add(`<rect x="${X}" y="${Y}" width="${PW}" height="${ph}" rx="30" fill="url(#sv-frame)"/>`);
+    c.add(`<rect x="${X + 4}" y="${Y + 4}" width="${PW - 8}" height="${ph - 8}" rx="27" fill="#0C0D10"/>`);
+    // 화면
+    const sx = X + 9; const sy = Y + 9; const sw = PW - 18; const sh = ph - 18;
+    c.add(s.screenOff ? `<rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="22" fill="#050506"/>` : `<rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="22" fill="url(#sv-wall)"/>`);
+    c.add(`<circle cx="${X + PW / 2}" cy="${sy + 16}" r="6" fill="#050506"/><circle cx="${X + PW / 2}" cy="${sy + 16}" r="2.4" fill="#1C2333"/>`);
+    if (!s.screenOff) {
+      c.text(X + PW / 2, sy + 110, '10:00', { size: 46, fill: '#fff', weight: 300, anchor: 'middle' });
+      c.text(X + PW / 2, sy + 136, '11월 25일 수요일', { size: 13, fill: '#E8ECF5', anchor: 'middle', weight: 600 });
+      c.add(`<circle cx="${X + PW / 2}" cy="${sy + sh - 70}" r="15" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2"/>`);
     }
-    if (s.caption) c.text(180, 40, s.caption, { size: 16, anchor: 'middle', weight: 700, fill: C.ink });
+    // 버튼 이름표: 가는 선으로 이어서 테두리 밖에 표시
+    const tag = (label, y) => {
+      c.add(`<line x1="${bx + 14}" y1="${y}" x2="${bx + 34}" y2="${y}" stroke="#5F6368" stroke-width="1.6"/>`);
+      c.text(bx + 38, y + 6, label, { size: 17, fill: C.ink, weight: 800 });
+    };
+    tag('음량(상)', Y + 138);
+    tag('음량(하)', Y + 180);
+    tag('측면 버튼', Y + 249);
+    c.reg('측면 버튼과 음량(하) 버튼', bx - 10, Y + 154, 34, 124);
+    // 아래쪽 USB-C 충전 연결잭
+    const px = X + PW / 2;
+    c.add(`<rect x="${px - 16}" y="${Y + ph - 6}" width="32" height="8" rx="4" fill="#2A2C31"/>`);
+    c.reg('충전 연결잭', px - 40, Y + ph - 26, 80, 44);
+    if (s.cable) {
+      c.add(`<rect x="${px - 13}" y="${Y + ph + 4}" width="26" height="22" rx="5" fill="#F2F2F2" stroke="#C9CCD1"/><rect x="${px - 6}" y="${Y + ph + 26}" width="12" height="20" rx="4" fill="#E2E4E8"/>`);
+      c.add(`<line x1="${px + 22}" y1="${Y + ph + 12}" x2="${px + 44}" y2="${Y + ph + 12}" stroke="#5F6368" stroke-width="1.6"/>`);
+      c.text(px + 48, Y + ph + 18, '충전 연결잭', { size: 16, fill: C.ink, weight: 800 });
+    }
   },
 
   /** 홈 화면 또는 앱스 화면 */
