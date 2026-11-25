@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { CHAPTERS, GROUPS, allLessons, findLesson } from '../data/galaxy/index.js';
 import { CATEGORIES } from '../data/categories.js';
 import * as DIGITAL from '../data/digital/index.js';
+import * as AI from '../data/ai/index.js';
 import { renderScreen, SCREEN_KINDS } from '../assets/screens.js';
 import { appInfo } from '../assets/apps.js';
 
@@ -41,7 +42,7 @@ test('수업 id가 겹치지 않고, 출처·검색어·카드가 있다', () =>
 });
 
 test('카드마다 안내 문장 하나·그림·설명·완료 조건이 있다(두 과정 모두)', () => {
-  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons()]) {
+  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons()]) {
     lesson.cards.forEach((c, i) => {
       const where = `${lesson.id} 카드 ${i + 1} “${c.text}”`;
       assert.ok(c.text && /[.요]$/.test(c.text.trim()), `${where}: 문장`);
@@ -105,6 +106,20 @@ test('생활 디지털 연습장 목차: 21개 목차, 세부 수업 id 중복 �
       assert.ok(l.cards.length >= 2, `${l.id} 카드`);
       assert.ok(l.src.length >= 1 && l.src.every((x) => /^https:\/\//.test(x.url)), `${l.id} 출처`);
       assert.ok(l.q.length >= 1, `${l.id} 검색어`);
+    }
+  });
+});
+
+test('시니어 AI 교실: 목차·수업 id·출처·카드', () => {
+  assert.equal(CATEGORIES[2].href, '#/ai');
+  assert.ok(AI.CHAPTERS.length >= 6);
+  const all = new Set([...allLessons(), ...DIGITAL.allLessons()].map((e) => e.lesson.id));
+  AI.CHAPTERS.forEach((ch, i) => {
+    assert.equal(ch.num, i + 1);
+    assert.ok(AI.GROUPS.some((g) => g.id === ch.group));
+    for (const l of ch.lessons) {
+      assert.ok(!all.has(l.id), `중복 id ${l.id}`); all.add(l.id);
+      assert.ok(l.cards.length >= 2 && l.src.length >= 1 && l.q.length >= 1, l.id);
     }
   });
 });

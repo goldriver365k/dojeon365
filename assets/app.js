@@ -12,14 +12,17 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.1131';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.1131';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.1131';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.1131';
-import { renderScreen } from './screens.js?v=20261125.1131';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.1131';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.1131';
-import { VERSION } from './version.js?v=20261125.1131';
+import { CATEGORIES } from '../data/categories.js?v=20261125.1153';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.1153';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.1153';
+import * as AI from '../data/ai/index.js?v=20261125.1153';
+/** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
+const COURSES = { digital: DIGITAL, ai: AI };
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.1153';
+import { renderScreen } from './screens.js?v=20261125.1153';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.1153';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.1153';
+import { VERSION } from './version.js?v=20261125.1153';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -115,10 +118,13 @@ function viewSoon(id) {
 function findLesson(id) {
   const g = findGalaxyLesson(id);
   if (g) return g;
-  const d = DIGITAL.allLessons().find((e) => e.lesson.id === id);
-  return d ? { ...d, chapter: { ...d.chapter, course: 'digital' } } : null;
+  for (const [key, mod] of Object.entries(COURSES)) {
+    const d = mod.allLessons().find((e) => e.lesson.id === id);
+    if (d) return { ...d, chapter: { ...d.chapter, course: key } };
+  }
+  return null;
 }
-const chapterHref = (chapter) => `${chapter.course === 'digital' ? '#/digital' : '#/galaxy'}/${two(chapter.num)}`;
+const chapterHref = (chapter) => `#/${chapter.course && COURSES[chapter.course] ? chapter.course : 'galaxy'}/${two(chapter.num)}`;
 
 function lessonState(id) { return store.lessons[id] ?? { card: 0, done: false }; }
 
@@ -227,7 +233,7 @@ function lessonHref(lesson) {
 function lessonRow(lesson, chapter, withChapter = false) {
   const st = lessonState(lesson.id);
   const status = st.done ? '<span class="badge badge--done">마침</span>' : store.current?.id === lesson.id ? '<span class="badge badge--doing">하던 중</span>' : '';
-  const cat = GROUP_CAT[chapter.group] ?? DIGITAL.GROUPS.find((g) => g.id === chapter.group)?.cat ?? '';
+  const cat = GROUP_CAT[chapter.group] ?? (COURSES[chapter.course]?.GROUPS ?? []).find((g) => g.id === chapter.group)?.cat ?? '';
   return `<li><a class="lesson-row ${cat}" href="${lessonHref(lesson)}">
     <span class="lesson-row__body">
       ${withChapter ? `<span class="lesson-row__chapter">${two(chapter.num)}. ${esc(chapter.title)}</span>` : ''}
@@ -385,29 +391,29 @@ function viewDone(lesson, chapter) {
   </main>`;
 }
 
-/* ---------- 생활 디지털 연습장 ---------- */
+/* ---------- 목차형 과정(생활 디지털 연습장·시니어 AI 교실) ---------- */
 
-function digitalLessonRow(lesson, chapter) {
-  if (lesson.cards.length > 0) return lessonRow(lesson, { ...chapter, course: 'digital' });
+function courseLessonRow(lesson, chapter, key) {
+  if (lesson.cards.length > 0) return lessonRow(lesson, { ...chapter, course: key });
   return `<li><div class="lesson-row lesson-row--soon" aria-disabled="true">
     <span class="lesson-row__body"><span class="lesson-row__title">${esc(lesson.title)}</span>
       <span class="lesson-row__meta"><span class="badge badge--soon">수업 준비 중</span></span></span></div></li>`;
 }
 
-function viewDigital() {
-  const { COURSE, GROUPS: DG, CHAPTERS: DC, allLessons: all } = DIGITAL;
+function viewCourse(key) {
+  const { COURSE, GROUPS: DG, CHAPTERS: DC, allLessons: all } = COURSES[key];
   document.title = `${COURSE.title} | 도전, 디지털세상`;
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(COURSE.title)}</h1>
     <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.</p>
     <p class="notice">${esc(COURSE.safety)}</p>
-    ${resumeBox('digital')}
+    ${resumeBox(key)}
     ${DG.map((g) => `<section class="toc-group ${g.cat}" aria-labelledby="dg-${g.id}">
       <h2 class="toc-group__h" id="dg-${g.id}">${esc(g.title)}</h2>
       <ol class="toc">
         ${DC.filter((ch) => ch.group === g.id).map((ch) => `<li>
-          <a class="toc__row" href="#/digital/${two(ch.num)}">
+          <a class="toc__row" href="#/${key}/${two(ch.num)}">
             <span class="toc__num">${two(ch.num)}</span>
             <span class="toc__body"><span class="toc__title">${esc(ch.title)}</span>
               <span class="toc__meta">${esc(ch.desc)} · 수업 ${ch.lessons.length}개</span></span>
@@ -418,18 +424,18 @@ function viewDigital() {
   </main>`;
 }
 
-function viewDigitalChapter(num) {
-  const { CHAPTERS: DC, GROUPS: DG, COURSE } = DIGITAL;
+function viewCourseChapter(key, num) {
+  const { CHAPTERS: DC, GROUPS: DG, COURSE } = COURSES[key];
   const ch = DC.find((c) => c.num === Number(num));
   if (!ch) return viewNotFound();
   const g = DG.find((x) => x.id === ch.group);
   document.title = `${two(ch.num)}. ${ch.title} | ${COURSE.title}`;
-  return `${topbar({ back: '#/digital', backLabel: '목차로' })}
+  return `${topbar({ back: `#/${key}`, backLabel: '목차로' })}
   <main class="page ${g?.cat ?? ''}" id="main">
     <p class="eyebrow">${esc(g?.title ?? '')} · 목차 ${two(ch.num)}</p>
     <h1 class="page__title">${two(ch.num)}. ${esc(ch.title)}</h1>
     <p class="lead">${esc(ch.desc)}. 배울 수업을 누르세요. 모두 연습 화면이에요.</p>
-    <ul class="lesson-list">${ch.lessons.map((l) => digitalLessonRow(l, ch)).join('')}</ul>
+    <ul class="lesson-list">${ch.lessons.map((l) => courseLessonRow(l, ch, key)).join('')}</ul>
   </main>`;
 }
 
@@ -471,8 +477,8 @@ function route() {
   else if (parts[0] === 'soon') html = viewSoon(parts[1]);
   else if (parts[0] === 'galaxy' && !parts[1]) html = viewGalaxy();
   else if (parts[0] === 'galaxy') html = viewChapter(parts[1]);
-  else if (parts[0] === 'digital' && !parts[1]) html = viewDigital();
-  else if (parts[0] === 'digital') html = viewDigitalChapter(parts[1]);
+  else if (COURSES[parts[0]] && !parts[1]) html = viewCourse(parts[0]);
+  else if (COURSES[parts[0]]) html = viewCourseChapter(parts[0], parts[1]);
   else if (parts[0] === 'lesson') {
     const found = findLesson(parts[1]);
     if (!found) html = viewNotFound();

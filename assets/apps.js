@@ -99,6 +99,7 @@ export const APPS = {
   지도: { full: 'Google 지도', bg: '#FFFFFF', icon: G.pin(), src: '사용 설명서 83쪽' },
   Gmail: { full: 'Gmail', bg: '#FFFFFF', icon: G.mail(), src: '사용 설명서 83쪽' },
   Gemini: { full: 'Gemini', bg: '#FFFFFF', icon: G.sparkle(), src: '사용 설명서 83쪽' },
+  ChatGPT: { full: 'ChatGPT(OpenAI)', bg: '#FFFFFF', icon: G.letter('AI', '#10A37F', 36), src: 'OpenAI(아이콘 그림은 연습용)' },
   카카오톡: { full: '카카오톡(KakaoTalk)', bg: '#FAE100', icon: G.kakao(), src: '카카오 고객센터' },
   '카카오 T': { full: '카카오 T(카카오택시 호출 앱)', bg: '#FFD43B', icon: G.car(), src: '카카오모빌리티(아이콘 그림은 연습용, 실제 앱 확인 필요)' },
   코레일톡: { full: '코레일톡(한국철도공사 승차권 예매 앱)', bg: '#1E5BB8', icon: G.train(), src: '한국철도공사(아이콘 그림은 연습용, 실제 앱 확인 필요)' },
