@@ -1,0 +1,10 @@
+{
+  "name": "편한자판 시니어 교육",
+  "short_name": "편한자판 교실",
+  "lang": "ko",
+  "start_url": "./#/",
+  "display": "standalone",
+  "background_color": "#fbf6ea",
+  "theme_color": "#fbf6ea",
+  "icons": [{ "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
