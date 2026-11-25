@@ -70,7 +70,7 @@ async function main() {
   await go('#/');
   await page.locator('.cat').nth(1).click();
   await page.waitForSelector('.toc__row');
-  check('생활 디지털 연습장 목차 20개 표시', (await page.locator('.toc__row').count()) === DIGITAL.CHAPTERS.length, await page.locator('.toc__row').count());
+  check(`생활 디지털 연습장 목차 ${DIGITAL.CHAPTERS.length}개 표시`, (await page.locator('.toc__row').count()) === DIGITAL.CHAPTERS.length, await page.locator('.toc__row').count());
   await shot('13-digital-360');
   let dOk = true;
   for (const ch of DIGITAL.CHAPTERS) {
@@ -97,7 +97,7 @@ async function main() {
   check(`생활 디지털 연습장 ${DIGITAL.allLessons().length}개 수업, 카드 ${dCards}장 첫 카드부터 완료까지`, dBad.length === 0, dBad.slice(0, 8).join(', '));
   await go('#/lesson/d01-pay/3');
   await shot('15-digital-kiosk-card-360');
-  await go('#/lesson/d04-seat/3');
+  await go('#/lesson/d04-seat/5');
   await shot('16-digital-seat-card-360');
   await go('#/digital/01');
   await shot('14-digital-chapter01-360');

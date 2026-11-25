@@ -7,9 +7,10 @@
  * - 세부 수업의 카드(cards)는 갤럭시 수업과 같은 형식이다(ch01-07.js, ch08-14.js, ch15-20.js). cards 가 없으면 ‘준비 중’으로 보인다.
  */
 
-import { CHAPTERS_1 } from './ch01-07.js?v=20261125.0951';
-import { CHAPTERS_2 } from './ch08-14.js?v=20261125.0951';
-import { CHAPTERS_3 } from './ch15-20.js?v=20261125.0951';
+import { CHAPTERS_0 } from './ch-apps.js?v=20261125.1131';
+import { CHAPTERS_1 } from './ch01-07.js?v=20261125.1131';
+import { CHAPTERS_2 } from './ch08-14.js?v=20261125.1131';
+import { CHAPTERS_3 } from './ch15-20.js?v=20261125.1131';
 
 export const COURSE = {
   id: 'digital',
@@ -19,6 +20,7 @@ export const COURSE = {
 };
 
 export const GROUPS = [
+  { id: 'apps', title: '필수 앱 준비', cat: 'cat-2' },
   { id: 'shop', title: '가게와 식당', cat: 'cat-1' },
   { id: 'move', title: '교통과 이동', cat: 'cat-3' },
   { id: 'health', title: '병원과 건강', cat: 'cat-2' },
@@ -27,7 +29,7 @@ export const GROUPS = [
   { id: 'leisure', title: '쇼핑과 여가', cat: 'cat-3' },
 ];
 
-export const CHAPTERS = [...CHAPTERS_1, ...CHAPTERS_2, ...CHAPTERS_3].sort((a, b) => a.num - b.num);
+export const CHAPTERS = [...CHAPTERS_0, ...CHAPTERS_1, ...CHAPTERS_2, ...CHAPTERS_3].sort((a, b) => a.num - b.num);
 
 export function allLessons() {
   return CHAPTERS.flatMap((chapter) => chapter.lessons.map((lesson) => ({ lesson, chapter })));

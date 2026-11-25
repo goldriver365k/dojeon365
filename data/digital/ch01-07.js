@@ -1,6 +1,6 @@
 /** [가게와 식당] 01~03, [교통과 이동] 04~07 */
-import { app as openApp } from '../galaxy/helpers.js?v=20261125.0951';
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats, swipe, kiosk, receipt, kioskPay } from './kit.js?v=20261125.0951';
+import { app as openApp } from '../galaxy/helpers.js?v=20261125.1131';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats, swipe, kiosk, receipt, kioskPay } from './kit.js?v=20261125.1131';
 
 /* ---------- 01 키오스크 ---------- */
 const K_HOME = app('주문하기', { hero: '어서 오세요! 화면을 눌러 주문하세요', heroColor: '#2563E2', buttons: ['매장에서 먹기', '포장하기'] });
@@ -78,7 +78,7 @@ const STOP = list('정류장 · 시청앞', [{ t: '402번', s: '3분 뒤 도착 
 const SUBWAY = list('지하철 길 찾기', [{ t: '출발', v: '시청' }, { t: '도착', v: '강남' }, { t: '빠른 길', s: '32분 · 환승 1번(교대역)' }, { t: '막차 시간', v: '23:52' }], { button: '경로 보기' });
 
 export const CHAPTERS_1 = [
-  { num: 1, group: 'shop', title: '키오스크로 음식 주문하기', desc: '패스트푸드점·분식집 주문 기계', lessons: [
+  { num: 2, group: 'shop', title: '키오스크로 음식 주문하기', desc: '패스트푸드점·분식집 주문 기계', lessons: [
     L('d01-start', '처음 화면에서 매장·포장 고르기', ['키오스크', '무인 주문', '햄버거 주문'], [
       LK('키오스크 첫 화면을 보세요.', K_HOME, '큰 화면에 ‘매장에서 먹기’와 ‘포장하기’가 있어요. 천천히 눌러도 괜찮아요.'),
       T('매장에서 먹기', K_HOME, '가게에서 먹으려면 ‘매장에서 먹기’를 누르세요.', '가져가려면 ‘포장하기’를 눌러요.'),
@@ -121,7 +121,7 @@ export const CHAPTERS_1 = [
       ...KIOSK_PAY('6,800원', '124'),
     ], [SRC.nia], { caution: '실제로 돈이 나가는 일이에요. 먼저 연습 화면으로 끝까지 해 보세요.' }),
   ] },
-  { num: 2, group: 'shop', title: '카페 주문과 테이블 QR 주문', desc: '카페 키오스크, 식탁의 QR코드 주문', lessons: [
+  { num: 3, group: 'shop', title: '카페 주문과 테이블 QR 주문', desc: '카페 키오스크, 식탁의 QR코드 주문', lessons: [
     L('d02-cafe', '카페 키오스크로 음료 주문하기', ['카페 주문', '커피 주문'], [
       T('아메리카노', C_MENU(), '마실 음료(아메리카노)를 누르세요.'),
       T('담기', C_OPT, '‘담기’를 누르세요.', '옵션은 다음 수업에서 바꿔 봐요.'),
@@ -155,7 +155,7 @@ export const CHAPTERS_1 = [
       ...QR_PAY('7,000원'),
     ]),
   ] },
-  { num: 3, group: 'shop', title: '무인 계산대와 셀프 서비스', desc: '마트 셀프 계산대, 무인 가게', lessons: [
+  { num: 4, group: 'shop', title: '무인 계산대와 셀프 서비스', desc: '마트 셀프 계산대, 무인 가게', lessons: [
     L('d03-scan', '바코드 찍어 물건 담기', ['셀프 계산대', '바코드', '무인 계산', '무인 매장'], [
       LK('셀프 계산대를 살펴보세요.', SC_HOME, '위는 화면, 가운데 빨간 불빛이 바코드 찍는 곳, 왼쪽이 봉투 놓는 곳이에요.'),
       T('상품 바코드', SC_HOME, '물건에서 줄무늬 바코드를 찾아 누르세요.', '바코드는 보통 상자 옆면이나 바닥에 있어요.'),
@@ -185,7 +185,7 @@ export const CHAPTERS_1 = [
       S('직원이 올 때까지 기다리세요.', '🙋', '계산대 위 불빛이 깜빡이면 직원이 와요.'),
     ]),
   ] },
-  { num: 4, group: 'move', title: '기차표 예매하기', desc: '코레일톡 앱으로 기차표 예매(연습 화면)', lessons: [
+  { num: 5, group: 'move', title: '기차표 예매하기', desc: '코레일톡 앱으로 기차표 예매(연습 화면)', lessons: [
     L('d04-search', '출발역·도착역과 날짜 고르기', ['기차표', 'KTX', '열차 예매', '기차 예매', '코레일', '코레일톡'], [
       openApp('코레일톡', { hint: '코레일톡은 한국철도공사의 기차표 예매 앱이에요. 없으면 Play 스토어에서 ‘코레일톡’을 찾아 설치해요.' }),
       T('출발역', KR('home'), '‘출발’ 아래 역 이름(서울)을 누르세요.'),
@@ -224,7 +224,7 @@ export const CHAPTERS_1 = [
       T('반환하기', pop('승차권 반환', '반환 수수료를 확인했어요.', ['닫기', '반환하기']), '‘반환하기’를 누르세요.', '누르기 전에 수수료를 확인하세요.'),
     ], [SRC.korail], KR_INFO),
   ] },
-  { num: 5, group: 'move', title: '고속·시외버스 예매하기', desc: '버스 예매 앱과 터미널 무인 발권기', lessons: [
+  { num: 6, group: 'move', title: '고속·시외버스 예매하기', desc: '버스 예매 앱과 터미널 무인 발권기', lessons: [
     L('d05-search', '터미널과 날짜 고르기', ['고속버스', '시외버스', '버스 예매'], [
       T('출발 터미널', BUS_HOME, '‘출발 터미널’을 누르세요.'),
       T('도착 터미널', BUS_HOME, '‘도착 터미널’을 누르세요.'),
@@ -252,7 +252,7 @@ export const CHAPTERS_1 = [
       T('12월 5일 10:00 대전복합 취소하기', list('예매 내역', [{ t: '12월 5일 10:00 대전복합', s: '4A · 15,200원', btn: '취소하기' }]), '취소할 표 옆 ‘취소하기’를 누르세요.', '출발 시간에 가까우면 수수료가 있어요.'),
     ], [SRC.kobus, SRC.txbus]),
   ] },
-  { num: 6, group: 'move', title: '택시 부르기', desc: '카카오 T로 택시 부르기(연습 화면)', lessons: [
+  { num: 7, group: 'move', title: '택시 부르기', desc: '카카오 T로 택시 부르기(연습 화면)', lessons: [
     L('d06-where', '출발지와 목적지 넣기', ['택시', '택시 부르기', '카카오택시', '카카오 T', '택시 앱'], [
       openApp('카카오 T', { hint: '카카오택시는 ‘카카오 T’ 앱에서 불러요. 없으면 Play 스토어에서 ‘카카오 T’를 찾아 설치해요.' }),
       T('택시', KT('home'), '‘택시’를 누르세요.'),
@@ -284,7 +284,7 @@ export const CHAPTERS_1 = [
       S('콜택시 전화번호를 연락처에 저장해 두세요.', '☎', '앱이 어려우면 전화로 불러도 돼요.'),
     ], [KAKAO_T_SRC], KT_INFO),
   ] },
-  { num: 7, group: 'move', title: '버스·지하철 정보 보기', desc: '도착 정보, 길 찾기, 교통카드 잔액', lessons: [
+  { num: 8, group: 'move', title: '버스·지하철 정보 보기', desc: '도착 정보, 길 찾기, 교통카드 잔액', lessons: [
     L('d07-arrive', '버스 도착 시간 보기', ['버스 도착', '정류장', '버스 언제 와'], [
       T('검색창', STOP, '위쪽 검색 칸을 누르세요.'),
       S('정류장 이름이나 버스 번호를 적으세요.', '⌨', '예: 시청앞, 402'),

@@ -1,5 +1,5 @@
 /** [관공서와 생활 서비스] 15~17, [쇼핑과 여가] 18~20 */
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats } from './kit.js?v=20261125.0951';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats } from './kit.js?v=20261125.1131';
 
 const MONEY = '실제로 돈이 오가는 일이에요. 먼저 연습 화면으로 끝까지 해 보세요. 연습 화면에서는 돈이 나가지 않아요.';
 
@@ -38,7 +38,7 @@ const MSEAT = seats('좌석 선택 · 3관', { cols: ['A', 'B', 'C', 'D', 'E'], 
 const LIB = list('도서관(연습)', [{ t: '할머니의 정원', s: '대출 가능 · 2층 문학', btn: '예약' }, { t: '건강한 밥상', s: '대출 중 · 반납 예정 12/10', btn: '예약' }], { searchBar: '책 이름 검색', back: false });
 
 export const CHAPTERS_3 = [
-  { num: 15, group: 'public', title: '민원 서류 떼기', desc: '정부 민원 서비스와 무인 민원발급기', lessons: [
+  { num: 16, group: 'public', title: '민원 서류 떼기', desc: '정부 민원 서비스와 무인 민원발급기', lessons: [
     L('d15-online', '휴대폰으로 민원 서류 신청하기', ['주민등록등본', '민원 서류', '등본 떼기'], [
       T('주민등록표 등본', GOV, '필요한 서류(주민등록표 등본)를 누르세요.'),
       T('신청하기', GOV_APPLY, '‘신청하기’를 누르세요.', '누르기 전에 발급 형태를 확인하세요. 로그인(간편 인증)이 필요해요.'),
@@ -59,7 +59,7 @@ export const CHAPTERS_3 = [
       S('보낼 곳에 파일을 첨부해 보내세요.', '📎', '개인정보가 담긴 서류는 꼭 필요한 곳에만 보내세요.'),
     ], [SRC.gov]),
   ] },
-  { num: 16, group: 'public', title: '공과금과 생활 요금 내기', desc: '전기·가스·수도 요금, 관리비', lessons: [
+  { num: 17, group: 'public', title: '공과금과 생활 요금 내기', desc: '전기·가스·수도 요금, 관리비', lessons: [
     L('d16-bill', '모바일 고지서 확인하기', ['고지서', '공과금', '전기 요금'], [
       LK('이번 달 요금을 확인하세요.', BILL, '납부 기한을 꼭 확인해요.'),
       T('전기 요금', BILL, '자세히 볼 요금(전기 요금)을 누르세요.'),
@@ -78,7 +78,7 @@ export const CHAPTERS_3 = [
       LK('항목별 금액을 보세요.', list('관리비', [{ t: '일반 관리비', v: '62,000원' }, { t: '전기', v: '38,000원' }, { t: '난방', v: '82,000원' }], { top: '12월 합계 182,000원' }), '궁금한 항목은 관리사무소에 물어보세요.'),
     ], [SRC.giro]),
   ] },
-  { num: 17, group: 'public', title: '복지 혜택 찾아보기', desc: '어르신이 받을 수 있는 혜택 찾기', lessons: [
+  { num: 18, group: 'public', title: '복지 혜택 찾아보기', desc: '어르신이 받을 수 있는 혜택 찾기', lessons: [
     L('d17-find', '나에게 맞는 복지 서비스 찾기', ['복지', '혜택', '지원금'], [
       LK('내 나이와 사는 곳이 맞는지 보세요.', WELFARE),
       T('맞춤 서비스 찾기', WELFARE, '‘맞춤 서비스 찾기’를 누르세요.'),
@@ -98,7 +98,7 @@ export const CHAPTERS_3 = [
       S('복지 상담은 보건복지상담센터 129로도 할 수 있어요.', '☎', '국번 없이 129예요.'),
     ], [SRC.bokjiro]),
   ] },
-  { num: 18, group: 'leisure', title: '배달 앱으로 음식 시키기', desc: '배달 앱의 공통 순서', lessons: [
+  { num: 19, group: 'leisure', title: '배달 앱으로 음식 시키기', desc: '배달 앱의 공통 순서', lessons: [
     L('d18-address', '배달 받을 주소 넣기', ['배달', '배달 주소', '주소 등록'], [
       T('배달 주소', list('주소 설정', [{ t: '배달 주소', v: '입력' }, { t: '현재 위치로 찾기' }]), '‘배달 주소’를 누르세요.'),
       S('도로명 주소와 동·호수를 적으세요.', '🏠', '공동현관 비밀번호는 꼭 필요할 때만 적어요.'),
@@ -126,7 +126,7 @@ export const CHAPTERS_3 = [
       T('가게에 전화', app('주문 현황', { hero: '배달 중 · 10분 뒤 도착', heroColor: '#007A4B', buttons: ['가게에 전화', '고객센터 문의'] }), '늦거나 잘못 오면 ‘가게에 전화’를 누르세요.'),
     ], [SRC.kca]),
   ] },
-  { num: 19, group: 'leisure', title: '온라인 쇼핑하기', desc: '물건 찾기부터 반품까지', lessons: [
+  { num: 20, group: 'leisure', title: '온라인 쇼핑하기', desc: '물건 찾기부터 반품까지', lessons: [
     L('d19-search', '물건 검색하고 비교하기', ['쇼핑', '인터넷 쇼핑', '물건 찾기'], [
       T('검색창', SHOP, '위쪽 검색 칸을 누르세요.'),
       S('살 물건 이름을 적으세요.', '⌨', '예: 보온 물병'),
@@ -159,7 +159,7 @@ export const CHAPTERS_3 = [
       S('피해가 생기면 한국소비자원(1372)에 상담하세요.', '☎', '국번 없이 1372예요.'),
     ], [SRC.kca, SRC.ftc]),
   ] },
-  { num: 20, group: 'leisure', title: '영화·공연 예매와 여가', desc: '예매 앱, 무인 발권기, 도서관', lessons: [
+  { num: 21, group: 'leisure', title: '영화·공연 예매와 여가', desc: '예매 앱, 무인 발권기, 도서관', lessons: [
     L('d20-movie', '영화 시간과 좌석 예매하기', ['영화 예매', '영화표'], [
       T('영화', MOVIE, '‘영화’를 눌러 볼 영화를 고르세요.'),
       T('시간', MOVIE, '‘시간’을 눌러 상영 시간을 고르세요.'),
