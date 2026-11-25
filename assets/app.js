@@ -16,6 +16,7 @@ import { CATEGORIES } from '../data/categories.js';
 import { CHAPTERS, GROUPS, findLesson, allLessons } from '../data/galaxy/index.js';
 import { BASE } from '../data/galaxy/helpers.js';
 import { renderScreen } from './screens.js';
+import { appInfo, appIconStandalone } from './apps.js';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 const app = document.getElementById('app');
@@ -279,6 +280,13 @@ function cardFigure(card) {
     ${practice ? `<button type="button" class="hit hit--${card.action}" style="left:${pct(t.x, pic.width)};top:${pct(t.y, pic.height)};width:${pct(t.w, pic.width)};height:${pct(t.h, pic.height)}" aria-label="연습: ${esc(card.target)} ${verb}"></button>` : ''}</div>`;
 }
 
+/** 앱을 다루는 카드: 실제 앱 아이콘 모양과 화면에 보이는 이름·공식 이름 */
+function appTag(card) {
+  const info = card.app ? appInfo(card.app) : null;
+  if (!info) return '';
+  return `<p class="app-tag">${appIconStandalone(info.label, 48)}<span class="app-tag__body"><span class="app-tag__label">화면에 보이는 이름</span><strong class="app-tag__name">${esc(info.label)}</strong>${info.full !== info.label ? `<span class="app-tag__full">공식 이름: ${esc(info.full)}</span>` : ''}</span></p>`;
+}
+
 function practiceHint(card) {
   if (card.done !== 'practice') return '실제 휴대폰에서 직접 해 보고 ‘다음’을 누르세요.';
   if (card.action === 'hold') return '연습: 빨간 테두리 안을 손가락으로 길게 눌러 보세요.';
@@ -306,6 +314,7 @@ function viewCard(lesson, chapter, idx) {
     <p class="step" aria-hidden="true"><span class="step__text">${total}단계 중 <strong>${idx + 1}단계</strong></span>
       <span class="step__bar"><span style="width:${((idx + 1) / total) * 100}%"></span></span></p>
     <h2 class="instr" id="instr" tabindex="-1"><span class="sr-only">${total}단계 중 ${idx + 1}단계. </span>${esc(card.text)}</h2>
+    ${appTag(card)}
     ${card.hint ? `<p class="hint">${esc(card.hint)}</p>` : ''}
     ${card.note ? `<p class="note"><strong>기종에 따라 달라요</strong> ${esc(card.note)}</p>` : ''}
     <figure class="stage" data-action="${esc(card.action)}">

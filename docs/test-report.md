@@ -1,6 +1,6 @@
 # 브라우저 점검 결과
 
-- 실행: 2026-11-25 07:17 UTC, Chromium(Playwright), 360px 기준
+- 실행: 2026-11-25 07:39 UTC, Chromium(Playwright), 360px 기준
 - 결과: 59/59 통과
 
 | 항목 | 결과 | 비고 |

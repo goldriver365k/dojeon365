@@ -33,3 +33,20 @@ const md = [
 ];
 fs.writeFileSync(new URL('../docs/image-replacement.md', import.meta.url), md.join('\n'));
 console.log(`${rows.length}장 (1순위 ${count('1 실물 사진')}, 2순위 ${count('2 앱 화면 확인')}, 3순위 ${count('3 화면 캡처')})`);
+
+// 앱 이름표 목록 → docs/app-names.md
+const { APPS } = await import('../assets/apps.js');
+const appMd = [
+  '# 앱 이름과 아이콘 목록',
+  '',
+  '수업에서 앱을 안내할 때는 **휴대폰 화면에 보이는 이름**을 그대로 쓰고, 공식 이름이 다르면 카드의 ‘앱 이름표’에 함께 보여 줍니다.',
+  '삼성 앱 이름은 갤럭시 S26 사용 설명서(Android 17, One UI 9)가 부르는 이름(예: ‘노트’ 앱, ‘스토어’ 앱)을 따릅니다.',
+  '아이콘은 실제 앱 아이콘의 색과 모양을 본뜬 연습용 그림이며(assets/apps.js), 실제 화면 캡처로 바꿀 수 있습니다.',
+  '',
+  '| 화면에 보이는 이름 | 공식 이름 | 이름을 확인한 곳 |',
+  '|---|---|---|',
+  ...Object.values(APPS).map((a) => `| ${a.label} | ${a.full} | ${a.src || '-'} |`),
+  '',
+];
+fs.writeFileSync(new URL('../docs/app-names.md', import.meta.url), appMd.join('\n'));
+console.log(`앱 ${Object.keys(APPS).length}개`);

@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { CHAPTERS, GROUPS, allLessons, findLesson } from '../data/galaxy/index.js';
 import { CATEGORIES } from '../data/categories.js';
 import { renderScreen, SCREEN_KINDS } from '../assets/screens.js';
+import { appInfo } from '../assets/apps.js';
 
 // 지시서의 목차별 세부 수업 수
 const EXPECTED = [5, 7, 6, 6, 5, 7, 6, 6, 7, 9, 8, 9, 6, 5, 8, 6, 6, 7, 7, 6, 7, 8];
@@ -69,4 +70,23 @@ test('첫 수업 ‘휴대폰 끄고 다시 켜기’는 지시서의 네 장 �
   assert.equal(lesson.cards[3].realDoneLabel, '다시 켰어요');
   assert.ok(lesson.intro, '실습 전 다시 켜는 방법 안내');
   assert.equal(lesson.cards[3].target, '측면 버튼');
+});
+
+test('앱을 다루는 카드는 앱 목록의 정확한 이름·아이콘을 쓴다', () => {
+  for (const { lesson } of allLessons()) {
+    lesson.cards.forEach((c, i) => {
+      const where = `${lesson.id} 카드 ${i + 1}`;
+      const sc = c.screen ?? {};
+      const names = [sc.find, ...(sc.kind === 'home' ? [...(sc.grid ?? []), ...(sc.dock ?? [])] : []), ...(sc.kind === 'recent' ? sc.apps ?? [] : []), ...(sc.kind === 'dialog' && sc.style === 'grid' && sc.title === '공유' ? sc.buttons : [])].filter(Boolean);
+      for (const n of names) assert.ok(appInfo(n), `${where}: 앱 목록에 없는 앱 ${n}`);
+      if (c.app) {
+        const info = appInfo(c.app);
+        assert.ok(info, `${where}: 앱 ${c.app}`);
+        assert.equal(c.text, `‘${info.label}’ 앱을 누르세요.`, `${where}: 화면에 보이는 앱 이름으로 안내`);
+      }
+    });
+  }
+  assert.equal(appInfo('플레이 스토어').label, 'Play 스토어');
+  assert.equal(appInfo('갤럭시 스토어').label, '스토어');
+  assert.equal(appInfo('삼성 노트').label, '노트');
 });

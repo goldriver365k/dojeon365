@@ -16,6 +16,8 @@
  * 메뉴 이름은 삼성전자 갤럭시 S26 시리즈 사용 설명서(Android 17, Rev.1.0, 2026년 9월)를 기준으로 한다.
  */
 
+import { appInfo } from '../../assets/apps.js';
+
 /* ---------- 출처 ---------- */
 
 export const MANUAL_URL = 'https://downloadcenter.samsung.com/content/UM/202609/20260921172131084/SM-S94X_S93X_S92X_S91X_UG_17_Kor_Rev.1.0_260918.pdf';
@@ -109,12 +111,16 @@ function card(o) {
 
 /** 앱 열기: ‘설정’ 앱을 누르세요. */
 export function app(name, extra = {}) {
+  const info = appInfo(name);
+  if (!info) throw new Error(`앱 목록(assets/apps.js)에 없는 앱: ${name}`);
+  const label = info.label;
   return card({
-    text: `‘${name}’ 앱을 누르세요.`,
+    text: `‘${label}’ 앱을 누르세요.`,
     hint: '홈 화면에 없으면 화면을 위로 밀어 앱스 화면에서 찾으세요.',
-    screen: { kind: 'home', apps: true, find: name },
-    target: name,
-    alt: `앱스 화면. ‘${name}’ 앱 아이콘에 빨간 테두리가 있습니다.`,
+    screen: { kind: 'home', apps: true, find: label },
+    target: label,
+    app: label,
+    alt: `앱스 화면. ${info.full !== label ? `${info.full} 앱인 ` : ''}‘${label}’ 앱 아이콘에 빨간 테두리가 있습니다.`,
     ...extra,
   });
 }

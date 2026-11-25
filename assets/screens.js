@@ -9,6 +9,8 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js';
+
 const W = 360;
 const H = 640;
 
@@ -66,6 +68,7 @@ function canvas() {
 function statusBar(c, { dark = false } = {}) {
   const f = dark ? '#FFFFFF' : C.ink;
   c.text(18, 24, '10:00', { size: 14, fill: f, weight: 600 });
+  c.add('<circle cx="180" cy="17" r="7" fill="#0B0B0D"/>'); // 전면 카메라 구멍
   c.add(`<g fill="${f}"><rect x="290" y="13" width="4" height="10" rx="1"/><rect x="296" y="10" width="4" height="13" rx="1"/><rect x="302" y="7" width="4" height="16" rx="1"/><rect x="314" y="9" width="26" height="13" rx="3" fill="none" stroke="${f}" stroke-width="2"/><rect x="317" y="12" width="17" height="7" rx="1"/></g>`);
   c.reg('상태표시줄', 0, 0, W, 34);
 }
@@ -81,13 +84,15 @@ function navBar(c, { dark = false } = {}) {
   c.reg('뒤로가기 버튼', 256, 600, 64, 40);
 }
 
-function appIcon(c, x, y, name, size = 56) {
-  const color = APP_COLORS[name] ?? '#607D8B';
-  const glyph = name.replace(/^(삼성|갤럭시|구글)\s*/, '').slice(0, name === '플레이 스토어' ? 2 : 2);
-  c.rect(x, y, size, size, color, size * 0.32);
-  c.text(x + size / 2, y + size / 2 + 6, glyph, { size: size * 0.3, fill: name === '카카오톡' ? '#3A1D1D' : '#FFFFFF', weight: 700, anchor: 'middle' });
-  c.text(x + size / 2, y + size + 19, name.length > 6 ? `${name.slice(0, 6)}…` : name, { size: 15, anchor: 'middle', weight: 700 });
+function appIcon(c, x, y, name, size = 56, labelColor = C.ink) {
+  const info = appInfo(name);
+  const label = info?.label ?? name;
+  c.add(appIconSvg(name, x, y, size));
+  const fs = label.length > 9 ? 11 : label.length > 5 ? 12.5 : 15;
+  const shown = label.length > 12 ? `${label.slice(0, 11)}…` : label;
+  c.text(x + size / 2, y + size + 19, shown, { size: fs, anchor: 'middle', weight: 700, fill: labelColor });
   c.reg(name, x - 8, y - 4, size + 16, size + 28);
+  c.reg(label, x - 8, y - 4, size + 16, size + 28);
 }
 
 function header(c, title, { back = true, actions = [], y = 40 } = {}) {
@@ -138,7 +143,11 @@ const KINDS = {
     c.rect(0, 0, W, H, '#EEF1F5');
     c.rect(60, 60, 170, 520, '#2B2D31', 28);
     c.rect(68, 68, 154, 504, s.screenOff ? '#0B0B0D' : '#3B4F6B', 22);
-    c.add('<circle cx="145" cy="88" r="5" fill="#111"/>');
+    c.add('<circle cx="145" cy="84" r="5" fill="#111"/>');
+    if (!s.screenOff) {
+      c.text(145, 170, '10:00', { size: 40, fill: '#fff', weight: 300, anchor: 'middle' });
+      c.text(145, 194, '11월 25일 수', { size: 12, fill: '#DCE3EE', anchor: 'middle' });
+    }
     // 오른쪽 옆면 버튼(위에서부터 음량(상), 음량(하), 측면 버튼). 이름표는 테두리 바깥에 둔다.
     const btn = (name, label, y, h) => {
       c.rect(230, y, 14, h, '#55585E', 4);
@@ -173,20 +182,25 @@ const KINDS = {
       c.text(48, 76, '검색', { size: 15, fill: '#E8EAED' });
       c.reg('검색', 24, 50, 312, 40);
     }
-    const grid = s.grid ?? (s.apps ? ['갤러리', '설정', '플레이 스토어', '캘린더', '시계', '연락처', '내 파일', '삼성 노트', '계산기', '날씨', '음성 녹음', '카카오톡'] : ['갤러리', '플레이 스토어', '설정', '카카오톡']);
+    const grid = s.grid ?? (s.apps ? ['갤러리', '설정', 'Play 스토어', '캘린더', '시계', '연락처', '내 파일', '노트', '계산기', '날씨', '음성 녹음', '카카오톡'] : ['갤러리', 'Play 스토어', '설정', '카카오톡']);
     const list = [...grid];
     if (s.find && !list.includes(s.find) && !(s.dock ?? []).includes(s.find)) list[list.length - 1] = s.find;
     const startY = s.apps ? 120 : 330;
     list.forEach((name, i) => {
       const col = i % 4;
       const row = Math.floor(i / 4);
-      appIcon(c, 26 + col * 82, startY + row * 100, name);
+      appIcon(c, 26 + col * 82, startY + row * 100, name, 56, '#FFFFFF');
       // 앱 이름 글자색(어두운 배경)
     });
     c.add(''); // 자리 표시
     if (!s.apps) {
       const dock = s.dock ?? ['전화', '메시지', '브라우저', '카메라'];
-      dock.forEach((name, i) => appIcon(c, 26 + i * 82, 500, name));
+      dock.forEach((name, i) => appIcon(c, 26 + i * 82, 500, name, 56, '#FFFFFF'));
+      // 구글 검색창 위젯(갤럭시 기본 홈 화면)
+      c.rect(24, 446, 312, 40, 'rgba(255,255,255,0.92)', 20);
+      c.add(appIconSvg('Google', 34, 452, 28));
+      c.text(72, 472, '검색', { size: 15, fill: C.sub });
+      c.reg('Google 검색창', 24, 446, 312, 40);
       c.reg('빈 공간', 20, 170, 320, 140);
     }
     navBar(c, { dark: true });
@@ -239,8 +253,11 @@ const KINDS = {
       if (y + rowH > bottomLimit) break;
       const it = typeof raw === 'string' ? { t: raw } : raw;
       const hasSub = Boolean(it.s);
-      c.text(30, y + (hasSub ? 27 : 39), it.t, { size: 21, weight: 700, fill: it.off ? '#9AA0A6' : C.ink });
-      if (hasSub) c.text(30, y + 50, it.s, { size: 15, fill: it.sBlue ? C.blue : C.sub });
+      const icon = (s.title === '설정' || it.icon) ? settingIconSvg(it.icon ?? it.t, 24, y + rowH / 2 - 17, 34) : null;
+      if (icon) c.add(icon);
+      const tx = icon ? 70 : 30;
+      c.text(tx, y + (hasSub ? 27 : 39), it.t, { size: 21, weight: 700, fill: it.off ? '#9AA0A6' : C.ink });
+      if (hasSub) c.text(tx, y + 50, it.s, { size: 15, fill: it.sBlue ? C.blue : C.sub });
       if (it.sw !== undefined) { toggle(c, 290, y + rowH / 2 - 12, it.sw); c.reg(`${it.t} 스위치`, 280, y + 4, 66, rowH - 8); }
       if (it.r !== undefined) {
         c.add(`<circle cx="318" cy="${y + rowH / 2}" r="10" fill="none" stroke="${it.r ? C.blue : '#9AA0A6'}" stroke-width="2.4"/>${it.r ? `<circle cx="318" cy="${y + rowH / 2}" r="5" fill="${C.blue}"/>` : ''}`);
@@ -718,7 +735,10 @@ const KINDS = {
     apps.slice(0, 2).forEach((a, i) => {
       const x = 40 + i * 170;
       c.rect(x, 140, 150, 330, '#F5F5F5', 18);
-      appIcon(c, x + 47, 90, a, 40);
+      c.text(x + 14, 172, (appInfo(a)?.label ?? a), { size: 14, weight: 800 });
+      for (let k = 0; k < 7; k += 1) c.rect(x + 12, 200 + k * 34, 126 - (k % 3) * 24, 14, '#DDE1E6', 6);
+      c.rect(x + 12, 440 - 30, 126, 40, '#E3EAF8', 10);
+      c.add(appIconSvg(a, x + 55, 92, 40)); // 실제 화면처럼 앱 화면 위에 아이콘만
       c.reg(`${a} 아이콘`, x + 37, 80, 60, 56);
       c.reg(`${a} 화면`, x, 140, 150, 330);
     });
@@ -834,7 +854,7 @@ export function renderScreen(screen = { kind: 'info' }, target, action) {
   if (t) {
     mark += `<rect class="target-ring" x="${t.x + 2}" y="${t.y + 2}" width="${t.w - 4}" height="${t.h - 4}" rx="12" fill="none" stroke="#D7263D" stroke-width="5"/>`;
     // ‘여기’ 표시: 대상 위나 아래에 말풍선
-    const above = t.y > 90;
+    const above = t.y > 150 || t.y + t.h > 520;
     const by = above ? t.y - 44 : t.y + t.h + 8;
     const bx = Math.min(Math.max(t.x + t.w / 2 - 34, 6), W - 74);
     mark += `<g class="target-tag"><rect x="${bx}" y="${by}" width="68" height="34" rx="17" fill="#D7263D"/><text x="${bx + 34}" y="${by + 23}" font-size="17" font-weight="800" fill="#fff" text-anchor="middle">${action === 'hold' ? '길게' : '여기'}</text>`
