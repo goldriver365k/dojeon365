@@ -9,7 +9,7 @@ export const LANGUAGES = [
   { code: 'de', name: 'Deutsch', status: 'draft', og: 'de_DE', speech: 'de-DE' },
   { code: 'fr', name: 'Français', status: 'draft', og: 'fr_FR', speech: 'fr-FR' },
   { code: 'hi', name: 'हिन्दी', status: 'planned', og: 'hi_IN', speech: 'hi-IN' },
-  { code: 'id', name: 'Bahasa Indonesia', status: 'planned', og: 'id_ID', speech: 'id-ID' },
+  { code: 'id', name: 'Bahasa Indonesia', status: 'draft', og: 'id_ID', speech: 'id-ID' },
   { code: 'vi', name: 'Tiếng Việt', status: 'planned', og: 'vi_VN', speech: 'vi-VN' },
   { code: 'th', name: 'ไทย', status: 'planned', og: 'th_TH', speech: 'th-TH' },
   { code: 'ja', name: '日本語', status: 'planned', og: 'ja_JP', speech: 'ja-JP' },

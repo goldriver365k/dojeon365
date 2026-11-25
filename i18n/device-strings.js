@@ -102,6 +102,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Altro serie S (S22 o precedente, FE)', 'a-old': 'Altro serie A', 'm-any': 'Un telefono serie M', 'f-any': 'Un telefono serie F', 'note-old': 'Altro Note', 'xcover-old': 'Altro XCover', etc: 'Un Galaxy non in elenco' },
     seriesNames: { s: 'Galaxy serie S', a: 'Galaxy serie A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy serie M', f: 'Galaxy serie F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Altro / non in elenco' },
   },
+  id: {
+    h: 'Ponsel saya', none: 'Belum dipilih · petunjuk umum',
+    howH: 'Pertama, cari model dan versi perangkat lunak ponsel Anda',
+    how: ['Ketuk aplikasi <b>Pengaturan</b>.', 'Ketuk <b>Tentang ponsel</b> di paling bawah.', 'Lihat <b>nama model</b> di atas (misalnya Galaxy S26 · SM-S942N).', 'Ketuk <b>Informasi perangkat lunak</b>.', 'Lihat <b>versi One UI</b> (misalnya 9.0).'],
+    howNote: 'Di beberapa model menunya bernama ‘Tentang perangkat’. Anda juga bisa mengetik ‘Tentang ponsel’ di pencarian Pengaturan.',
+    practice: 'Latih langkah ini', series: 'Seri', model: 'Model', oneui: 'Versi One UI', save: 'Simpan ponsel saya', clear: 'Pakai petunjuk umum',
+    note: 'Memilih tidak wajib. Hanya disimpan di peramban ini, dan kami tidak pernah menebak model Anda.',
+    dontKnow: 'Tidak tahu', dontKnowWhich: 'Tidak tahu yang mana', chooseSeries: 'Pilih seri dulu', baseVersion: 'versi pelajaran ini',
+    saved: 'Tersimpan. Setiap pelajaran kini menunjukkan apakah berfungsi di ponsel Anda.', cleared: 'Dihapus. Menampilkan petunjuk umum.',
+    modelUnknown: 'Model tidak diketahui', seriesUnknown: (s) => `${s} (model tidak diketahui)`, versionUnknown: 'Versi One UI tidak diketahui',
+    level: { ok: 'Didukung', diff: 'Perlu dicek', check: 'Perlu dicek', no: 'Tidak didukung' },
+    text: { ok: 'Sudah dicek dengan panduan resmi', diff: 'Nama menu bisa berbeda di versi One UI ini', check: 'Belum dicek untuk model ini', no: 'Tidak tersedia di model ini', min: (v) => `Perlu One UI ${v} atau lebih baru` },
+    on: 'di', change: 'Ubah',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Seri S lain (S22 ke bawah, FE)', 'a-old': 'Seri A lain', 'm-any': 'Ponsel seri M', 'f-any': 'Ponsel seri F', 'note-old': 'Note lain', 'xcover-old': 'XCover lain', etc: 'Galaxy yang tidak ada di daftar' },
+    seriesNames: { s: 'Galaxy seri S', a: 'Galaxy seri A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy seri M', f: 'Galaxy seri F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Lainnya / tidak ada di daftar' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
