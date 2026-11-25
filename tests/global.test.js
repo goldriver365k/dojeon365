@@ -44,3 +44,10 @@ test('검수 전 페이지는 noindex, 사이트맵에 없음, 면책 문구 있
   }
   assert.equal(LANGUAGES.length, 20);
 });
+
+test('국내 앱 그림은 번역 장치의 영향을 받지 않는다', async () => {
+  const S = await import('../assets/screens.js');
+  S.setTranslator(null);
+  const c = findLesson('g03-font').lesson.cards[2];
+  assert.match(S.renderScreen(c.screen, c.target, c.action).svg, /글자 크기와 스타일/);
+});

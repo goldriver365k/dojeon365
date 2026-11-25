@@ -61,6 +61,11 @@
     u.lang = 'en-US'; u.rate = 0.9;
     speechSynthesis.speak(u);
   });
+  list.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-hit]') || all) return;
+    if (!e.target.closest('.step').classList.contains('is-on')) return;
+    next.click();
+  });
   document.addEventListener('keydown', (e) => {
     if (all) return;
     if (e.key === 'ArrowRight') next.click();

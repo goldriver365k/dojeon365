@@ -8,6 +8,31 @@ import { BASE } from '../data/galaxy/helpers.js';
 import { SITE_URL, LANGUAGES } from '../i18n/languages.js';
 import { UI } from '../i18n/en/ui.js';
 import * as EN from '../i18n/en/galaxy.js';
+import { renderScreen, setTranslator } from '../assets/screens.js';
+import { tr } from '../i18n/en/screen-terms.js';
+
+setTranslator(tr);
+const HANGUL = /[\uac00-\ud7a3\u3131-\u318e]/;
+const stats = { pictures: 0, steps: 0 };
+
+/** Practice picture for one step, in English. Returns '' when any word in it is still Korean (never show a half-translated picture). */
+function picture(card) {
+  stats.steps++;
+  if (card.photo) return '';
+  const pic = renderScreen(card.screen, card.target, card.action);
+  const texts = [...pic.svg.matchAll(/>([^<>]+)</g)].map((m) => m[1]);
+  if (texts.some((t) => HANGUL.test(t))) return '';
+  stats.pictures++;
+  const t = pic.target;
+  const name = card.target && !HANGUL.test(tr(card.target)) ? tr(card.target) : '';
+  const alt = t ? `Picture of the phone screen. ${name ? `‘${name}’ is` : 'The spot to use is'} marked with a red box.` : 'Picture of the phone screen.';
+  let svg = pic.svg;
+  if (t && card.done === 'practice') {
+    // tap the marked spot in the picture to go to the next step (keyboard users use the Next button)
+    svg = svg.replace('</svg>', `<rect class="hit" data-hit x="${t.x}" y="${t.y}" width="${t.w}" height="${t.h}" fill="transparent"/></svg>`);
+  }
+  return `<figure class="pic${card.done === 'practice' && t ? ' pic--practice' : ''}" role="img" aria-label="${esc(alt)}">${svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</figure>`;
+}
 
 const VERSION = readFileSync(new URL('../assets/version.js', import.meta.url), 'utf8').match(/'([\d.]+)'/)[1];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -50,6 +75,7 @@ ${index ? '' : '<meta name="robots" content="noindex, follow">\n'}<link rel="can
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/global.css?v=${VERSION}">
 ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>
+<script type="module" src="/assets/global-device.js?v=${VERSION}"></script>
 </head>`;
 }
 
@@ -91,11 +117,12 @@ function lessonPage(ch, l, t, en, all) {
   return `${head({ title: `${t[1]} on a Samsung Galaxy phone | ${UI.brand}`, desc: en.desc, path, index: !draft, crumbs })}
 <body>
 ${header()}
-<main class="page" id="main">
+<main class="page" id="main" data-lesson="${l.id}">
 ${crumbNav(crumbs)}
 <h1>${esc(t[1])}</h1>
 <p class="lead">${esc(en.desc)}</p>
 <p class="based">${UI.basedOn}</p>
+<p class="support" data-support hidden></p>
 <div class="tools" hidden>
   <button type="button" class="btn" data-restart>${UI.restart}</button>
   <button type="button" class="btn" data-all aria-pressed="false">${UI.all}</button>
@@ -106,6 +133,7 @@ ${en.steps.map(([text, hint, note], i) => `<li class="step" id="step-${i + 1}">
   <h2 class="step__text">${esc(text)}</h2>
   ${hint ? `<p class="step__hint">${esc(hint)}</p>` : ''}
   ${note ? `<p class="step__note"><strong>Good to know</strong> ${esc(note)}</p>` : ''}
+  ${picture(l.cards[i])}
 </li>`).join('\n')}
 </ol>
 <p class="finish" data-finish hidden>Well done! You finished this lesson.${nextLesson ? ` Next: <a href="/en/galaxy/${nextLesson.t[0]}/">${esc(nextLesson.t[1])}</a>` : ''}</p>
@@ -138,11 +166,35 @@ ${header()}
 ${crumbNav(crumbs)}
 <h1>Galaxy phone lessons</h1>
 <p class="lead">Choose a topic. Each lesson shows one action at a time. ${ready} of ${total} lessons are available in English so far.</p>
+<section class="device" id="my-phone" aria-labelledby="dev-h">
+  <h2 id="dev-h">My phone</h2>
+  <p class="device__now" data-device-now>Not chosen · showing common instructions</p>
+  <details class="device__how" open>
+    <summary>First, find your phone’s model and software version</summary>
+    <ol>
+      <li>Tap the <b>Settings</b> app.</li>
+      <li>Tap <b>About phone</b> at the very bottom.</li>
+      <li>Check the <b>model name</b> at the top (for example, Galaxy S26 · SM-S942N).</li>
+      <li>Tap <b>Software information</b>.</li>
+      <li>Check the <b>One UI version</b> (for example, 9.0).</li>
+    </ol>
+    <p>On some models the menu is called ‘About device’. You can also type ‘About phone’ in the Settings search.</p>
+    <a href="/en/galaxy/check-model-and-one-ui-version/">Practice these steps</a>
+  </details>
+  <form class="device__form" data-device-form>
+    <label>Series <select name="series"></select></label>
+    <label>Model <select name="model"></select></label>
+    <label>One UI version <select name="oneui"></select></label>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">Save my phone</button><button type="button" class="btn" data-clear>Use common instructions</button></div>
+    <p class="device__saved" data-saved role="status"></p>
+  </form>
+  <p class="device__note">Choosing is optional. It is saved only in this browser, and we never guess your model.</p>
+</section>
 ${byGroup.map(([gid, gname]) => `<section class="group"><h2>${gname}</h2>
 ${groups.filter((g) => g.ch.group === gid).map(({ ch, lessons }) => `<section class="cat" id="c${two(ch.num)}">
   <h3><span class="num">${two(ch.num)}</span> ${esc(EN.CATEGORIES[ch.num][0])}</h3>
   <p class="cat__desc">${esc(EN.CATEGORIES[ch.num][1])}</p>
-  <ul class="lessons">${lessons.length ? lessons.map(({ t, en }) => en ? `<li><a href="/en/galaxy/${t[0]}/">${esc(t[1])}<span>${en.steps.length} steps</span></a></li>` : `<li class="soon">${esc(t[1])}<span>${UI.soon}</span></li>`).join('') : `<li class="soon">${UI.soon}</li>`}</ul>
+  <ul class="lessons">${lessons.length ? lessons.map(({ l, t, en }) => en ? `<li><a href="/en/galaxy/${t[0]}/" data-id="${l.id}">${esc(t[1])}<span>${en.steps.length} steps</span></a></li>` : `<li class="soon">${esc(t[1])}<span>${UI.soon}</span></li>`).join('') : `<li class="soon">${UI.soon}</li>`}</ul>
 </section>`).join('\n')}
 </section>`).join('\n')}
 </main>
@@ -174,6 +226,39 @@ ${footer(true)}
 `;
 }
 
+function adminPage(groups, rows) {
+  const total = rows.length;
+  const done = rows.filter((r) => r.en).length;
+  const reviewed = rows.filter((r) => r.status === 'reviewed').length;
+  const pics = rows.reduce((a, r) => a + r.pics, 0);
+  const steps = rows.reduce((a, r) => a + r.steps, 0);
+  return `<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'none'">
+<title>콘텐츠 현황 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${VERSION}"></head>
+<body><main class="page admin">
+<h1>콘텐츠 현황(읽기 전용)</h1>
+<p class="lead">빌드할 때 자동으로 만들어지는 현황표입니다. 내용 수정은 저장소의 <code>i18n/</code>·<code>data/</code> 파일에서 합니다. 검색엔진에는 노출되지 않습니다.</p>
+<table class="sum"><tbody>
+<tr><th>해외용 갤럭시 수업</th><td>${total}개 (한국 전용 제외)</td></tr>
+<tr><th>영어 단계 작성</th><td>${done} / ${total}</td></tr>
+<tr><th>영어 검수 완료(검색 노출)</th><td>${reviewed} / ${total}</td></tr>
+<tr><th>영어 연습 그림</th><td>${pics} / ${steps}단계 (${Math.round((pics / steps) * 100)}%)</td></tr>
+<tr><th>기준</th><td>${esc(BASE.model)} · ${esc(BASE.software)} · 확인 ${esc(BASE.checked)}</td></tr>
+</tbody></table>
+<h2>언어</h2>
+<table><thead><tr><th>코드</th><th>언어</th><th>상태</th></tr></thead><tbody>
+${LANGUAGES.map((l) => `<tr><td>${l.code}</td><td>${esc(l.name)}</td><td>${l.status === 'live' ? '운영' : l.status === 'draft' ? '초안(noindex)' : '예정'}</td></tr>`).join('')}
+</tbody></table>
+<h2>수업별 상태</h2>
+<table class="rows"><thead><tr><th>분류</th><th>수업</th><th>상태</th><th>그림</th><th>층·지원 조건</th></tr></thead><tbody>
+${rows.map((r) => `<tr><td>${two(r.ch)}</td><td>${r.en ? `<a href="/en/galaxy/${r.slug}/">${esc(r.title)}</a>` : esc(r.title)}<br><small>${r.id}</small></td><td>${r.en ? (r.status === 'reviewed' ? '검수 완료' : '초안') : '미작성'}</td><td>${r.pics}/${r.steps}</td><td>${esc(r.layer)}${r.support ? ` · ${esc(r.support)}` : ''}</td></tr>`).join('')}
+</tbody></table>
+</main></body></html>
+`;
+}
+
 export function build() {
   const groups = globalLessons();
   rmSync(new URL('../en/', import.meta.url), { recursive: true, force: true });
@@ -182,11 +267,15 @@ export function build() {
   out('/en/galaxy/', galaxyIndex(groups));
   const urls = [];
   let pages = 0;
+  const rows = [];
   for (const { ch, lessons } of groups) {
     for (const x of lessons) {
       if (!x.en) continue;
+      const before = stats.pictures;
       out(`/en/galaxy/${x.t[0]}/`, lessonPage(ch, x.l, x.t, x.en, lessons));
       pages++;
+      const m = metaOf(x.l.id);
+      rows.push({ ch: ch.num, id: x.l.id, slug: x.t[0], title: x.t[1], en: true, status: status(x.l.id), pics: stats.pictures - before, steps: x.en.steps.length, layer: m.layer ?? 'A', support: m.support ? JSON.stringify({ minOneUI: m.support.minOneUI, only: m.support.only?.join(',') }).replace(/"/g, '') : '' });
       if (status(x.l.id) === 'reviewed') urls.push(`/en/galaxy/${x.t[0]}/`);
     }
   }
@@ -196,8 +285,9 @@ export function build() {
 ${urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc><xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}${u}"/></url>`).join('\n')}
 </urlset>
 `);
-  writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
-  return { pages, indexed: urls.length, total: groups.reduce((a, g) => a + g.lessons.length, 0) };
+  out('/admin/', adminPage(groups, rows));
+  writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  return { pages, indexed: urls.length, total: groups.reduce((a, g) => a + g.lessons.length, 0), ...stats };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) console.log(build());

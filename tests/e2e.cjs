@@ -379,6 +379,28 @@ async function main() {
   check('영어 목차: 면책 문구', (await page.textContent('.foot')).includes('Not affiliated with'));
   await page.screenshot({ path: path.join(SHOTS, '22-en-galaxy-360.png') });
 
+  // 5차: 영어 연습 그림·내 휴대폰·관리 현황
+  await page.goto(`${BASE}en/galaxy/change-font-size/`);
+  await page.waitForSelector('.bar:not([hidden])');
+  await page.click('[data-restart]');
+  check('영어 연습 그림 표시', await page.locator('.step.is-on .pic svg').count() === 1);
+  check('영어 연습 그림에 한글 없음', !/[가-힣]/.test(await page.locator('.step.is-on .pic').innerHTML()));
+  await page.click('.step.is-on [data-hit]');
+  check('영어 연습 그림: 표시된 곳 누르면 다음 단계', (await page.textContent('.step.is-on .step__no')).includes('Step 2'));
+  await page.goto(`${BASE}en/galaxy/`);
+  await page.waitForSelector('select[name=series] option[value=s]', { state: 'attached' });
+  await page.selectOption('select[name=series]', 's');
+  await page.selectOption('select[name=model]', 's23');
+  await page.selectOption('select[name=oneui]', '6.0');
+  await page.click('text=Save my phone');
+  check('영어 내 휴대폰 저장', (await page.textContent('[data-device-now]')).includes('Galaxy S23'));
+  check('영어 지원 표시: Galaxy AI는 One UI 6.0 미지원', (await page.textContent('a[data-id="g19-photo"]')).includes('Not supported'));
+  check('영어 내 휴대폰: 360px 가로 스크롤 없음', (await page.evaluate(() => document.documentElement.scrollWidth)) <= 360);
+  await page.click('[data-clear]');
+  check('영어 공통 사용법으로 되돌리기', (await page.locator('a[data-id] .sup').count()) === 0);
+  await page.goto(`${BASE}admin/`);
+  check('관리 현황 페이지(noindex)', (await page.getAttribute('meta[name=robots]', 'content'))?.includes('noindex'));
+
   check('자바스크립트 오류 없음', errors.length === 0, errors.slice(0, 5).join(' | '));
 
   await browser.close();

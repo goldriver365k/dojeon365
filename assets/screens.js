@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.2100';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.2111';
 
 const W = 360;
 const H = 640;
@@ -46,6 +46,16 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
+/* ---------- 다른 언어로 그리기 ----------
+ * 해외용 페이지를 만들 때 setTranslator(한국어 → 다른 언어 함수)를 부르면 그림 속 글자만 바뀐다.
+ * 누를 곳 이름(target)은 그대로 한국어로 둔다. 국내 앱은 번역 함수를 쓰지 않는다. */
+let TR = null;
+export function setTranslator(fn) { TR = fn; }
+const tr = (v) => (TR && typeof v === 'string' ? TR(v) : v);
+const glyph = (v) => tr(v).slice(0, 2);
+// 홈 화면 기본 앱: 국내는 카카오톡, 해외용 그림은 국내 전용 앱 대신 유튜브
+const LOCAL_CHAT = () => (TR ? 'YouTube' : '카카오톡');
+
 /** 그림 조각을 모으고, 누를 수 있는 곳을 기록하는 작은 도구 */
 function canvas() {
   const parts = [];
@@ -57,7 +67,7 @@ function canvas() {
       parts.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" ${extra}/>`);
     },
     text(x, y, s, { size = 16, fill = C.ink, weight = 500, anchor = 'start' } = {}) {
-      parts.push(`<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${anchor}">${esc(s)}</text>`);
+      parts.push(`<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${anchor}">${esc(tr(s))}</text>`);
     },
     out() { return { body: parts.join(''), targets }; },
   };
@@ -88,8 +98,9 @@ function appIcon(c, x, y, name, size = 56, labelColor = C.ink) {
   const info = appInfo(name);
   const label = info?.label ?? name;
   c.add(appIconSvg(name, x, y, size));
-  const fs = label.length > 9 ? 11 : label.length > 5 ? 12.5 : 15;
-  const shown = label.length > 12 ? `${label.slice(0, 11)}…` : label;
+  const seen = tr(label);
+  const fs = seen.length > 9 ? 11 : seen.length > 5 ? 12.5 : 15;
+  const shown = seen.length > 12 ? `${seen.slice(0, 11)}…` : seen;
   c.text(x + size / 2, y + size + 19, shown, { size: fs, anchor: 'middle', weight: 700, fill: labelColor });
   c.reg(name, x - 8, y - 4, size + 16, size + 28);
   c.reg(label, x - 8, y - 4, size + 16, size + 28);
@@ -117,7 +128,7 @@ function drawAction(c, x, y, a) {
   else if (a === '편집') c.add(`<path d="M${x - 9} ${y + 9} l3 -9 l12 -12 l6 6 l-12 12 z" ${s}/>`);
   else if (a === '공유') c.add(`<circle cx="${x + 7}" cy="${y - 8}" r="3.5" ${s}/><circle cx="${x - 7}" cy="${y}" r="3.5" ${s}/><circle cx="${x + 7}" cy="${y + 8}" r="3.5" ${s}/><line x1="${x - 4}" y1="${y - 2}" x2="${x + 4}" y2="${y - 6}" ${s}/><line x1="${x - 4}" y1="${y + 2}" x2="${x + 4}" y2="${y + 6}" ${s}/>`);
   else if (a === '메뉴') c.add(`<g ${s}><line x1="${x - 10}" y1="${y - 7}" x2="${x + 10}" y2="${y - 7}"/><line x1="${x - 10}" y1="${y}" x2="${x + 10}" y2="${y}"/><line x1="${x - 10}" y1="${y + 7}" x2="${x + 10}" y2="${y + 7}"/></g>`);
-  else c.text(x, y + 6, a.slice(0, 2), { size: 14, anchor: 'middle', weight: 700 });
+  else c.text(x, y + 6, glyph(a), { size: 14, anchor: 'middle', weight: 700 });
 }
 
 function toggle(c, x, y, on) {
@@ -204,7 +215,7 @@ const KINDS = {
       c.text(48, 76, '검색', { size: 15, fill: '#E8EAED' });
       c.reg('검색', 24, 50, 312, 40);
     }
-    const grid = s.grid ?? (s.apps ? ['갤러리', '설정', 'Play 스토어', '캘린더', '시계', '연락처', '내 파일', '노트', '계산기', '날씨', '음성 녹음', '카카오톡'] : ['갤러리', 'Play 스토어', '설정', '카카오톡']);
+    const grid = s.grid ?? (s.apps ? ['갤러리', '설정', 'Play 스토어', '캘린더', '시계', '연락처', '내 파일', '노트', '계산기', '날씨', '음성 녹음', LOCAL_CHAT()] : ['갤러리', 'Play 스토어', '설정', LOCAL_CHAT()]);
     const list = [...grid];
     if (s.find && !list.includes(s.find) && !(s.dock ?? []).includes(s.find)) list[list.length - 1] = s.find;
     const startY = s.apps ? 120 : 330;
@@ -431,7 +442,7 @@ const KINDS = {
       const cx = 70 + col * 110;
       const cy = 280 + row * 110;
       c.add(`<circle cx="${cx}" cy="${cy}" r="30" fill="#FFFFFF" stroke="${C.line}"/>`);
-      c.text(cx, cy + 6, b.slice(0, 2), { size: 15, anchor: 'middle', weight: 700, fill: C.sub });
+      c.text(cx, cy + 6, glyph(b), { size: 15, anchor: 'middle', weight: 700, fill: C.sub });
       c.text(cx, cy + 54, b, { size: 15, anchor: 'middle', weight: 600 });
       c.reg(b, cx - 50, cy - 36, 100, 104);
     });
@@ -460,9 +471,11 @@ const KINDS = {
         const y = 92 + row * 104;
         const on = (s.on ?? ['Wi-Fi', '소리', '모바일 데이터']).includes(t);
         c.add(`<circle cx="${x + 32}" cy="${y + 30}" r="28" fill="${on ? '#4C8DF6' : '#3A4253'}"/>`);
-        c.text(x + 32, y + 36, t.slice(0, 2), { size: 15, fill: '#fff', weight: 700, anchor: 'middle' });
-        const label = t.length > 6 ? `${t.slice(0, 6)}…` : t;
-        c.text(x + 32, y + 82, label, { size: 15, fill: '#FFFFFF', anchor: 'middle', weight: 700 });
+        c.text(x + 32, y + 36, glyph(t), { size: 15, fill: '#fff', weight: 700, anchor: 'middle' });
+        const lt = tr(t);
+        const max = TR ? 9 : 6;
+        const label = lt.length > max ? `${lt.slice(0, max)}…` : lt;
+        c.text(x + 32, y + 82, label, { size: TR ? 12.5 : 15, fill: '#FFFFFF', anchor: 'middle', weight: 700 });
         c.reg(t, x - 4, y - 4, 76, 100);
       });
       const by = 92 + Math.ceil(tiles.length / 4) * 104 + 6;
@@ -475,7 +488,7 @@ const KINDS = {
       const notes = s.notes ?? [
         { app: '메시지', t: '김영희', s: '저녁 같이 먹어요' },
         { app: '전화', t: '부재중 전화', s: '010-0000-0000' },
-        { app: '카카오톡', t: '가족방', s: '사진을 보냈습니다.' },
+        TR ? { app: '메시지', t: '영희', s: '사진을 보냈습니다.' } : { app: '카카오톡', t: '가족방', s: '사진을 보냈습니다.' },
       ];
       let y = 92;
       for (const n of notes) {
@@ -510,7 +523,7 @@ const KINDS = {
     opts.forEach((o, i) => {
       const x = 60 + i * 120;
       c.add(`<circle cx="${x}" cy="30" r="17" fill="rgba(255,255,255,0.15)"/>`);
-      c.text(x, 36, o === '퀵 컨트롤' ? '⌄' : o.slice(0, 2), { size: 13, fill: '#fff', anchor: 'middle', weight: 700 });
+      c.text(x, 36, o === '퀵 컨트롤' ? '⌄' : glyph(o), { size: 13, fill: '#fff', anchor: 'middle', weight: 700 });
       c.reg(o, x - 30, 8, 60, 46);
     });
     if (s.qr) {
@@ -628,7 +641,7 @@ const KINDS = {
         const x = 48 + col * 88;
         const yy = 410 + row * 70;
         c.add(`<circle cx="${x}" cy="${yy}" r="22" fill="#ECEFF4"/>`);
-        c.text(x, yy + 5, a.slice(0, 2), { size: 13, anchor: 'middle', weight: 700, fill: C.sub });
+        c.text(x, yy + 5, glyph(a), { size: 13, anchor: 'middle', weight: 700, fill: C.sub });
         c.text(x, yy + 42, a, { size: 15, anchor: 'middle', weight: 700 });
         c.reg(a, x - 40, yy - 26, 80, 76);
       });
@@ -662,7 +675,7 @@ const KINDS = {
       c.reg(t === '음성 입력' ? '음성 입력 아이콘' : t === '어시스트' ? '어시스트 아이콘' : t, x - 30, top + 2, 60, 38);
     });
     const rows = s.symbols ? [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'], ['+', '×', '÷', '=', '/', '_', '<', '>', '[', ']'], ['!', '@', '#', '₩', '%', '^', '&', '*', '(', ')']]
-      : s.english ? [['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], ['z', 'x', 'c', 'v', 'b', 'n', 'm']]
+      : (s.english || TR) ? [['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], ['z', 'x', 'c', 'v', 'b', 'n', 'm']]
         : [['ㅂ', 'ㅈ', 'ㄷ', 'ㄱ', 'ㅅ', 'ㅛ', 'ㅕ', 'ㅑ', 'ㅐ', 'ㅔ'], ['ㅁ', 'ㄴ', 'ㅇ', 'ㄹ', 'ㅎ', 'ㅗ', 'ㅓ', 'ㅏ', 'ㅣ'], ['ㅋ', 'ㅌ', 'ㅊ', 'ㅍ', 'ㅠ', 'ㅜ', 'ㅡ']];
     rows.forEach((row, r) => {
       const kw = 34;
@@ -1678,7 +1691,7 @@ export function renderScreen(screen = { kind: 'info' }, target, action) {
     const above = t.y > 150 || t.y + t.h > 520;
     const by = above ? t.y - 44 : t.y + t.h + 8;
     const bx = Math.min(Math.max(t.x + t.w / 2 - 34, 6), W - 74);
-    mark += `<g class="target-tag"><rect x="${bx}" y="${by}" width="68" height="34" rx="17" fill="#D7263D"/><text x="${bx + 34}" y="${by + 23}" font-size="17" font-weight="800" fill="#fff" text-anchor="middle">${action === 'hold' ? '길게' : '여기'}</text>`
+    mark += `<g class="target-tag"><rect x="${bx}" y="${by}" width="68" height="34" rx="17" fill="#D7263D"/><text x="${bx + 34}" y="${by + 23}" font-size="17" font-weight="800" fill="#fff" text-anchor="middle">${esc(tr(action === 'hold' ? '길게' : '여기'))}</text>`
       + `<path d="M${bx + 26} ${above ? by + 34 : by} l8 ${above ? 9 : -9} l8 ${above ? -9 : 9}z" fill="#D7263D"/></g>`;
   }
   const gm = screen.mark ?? action;

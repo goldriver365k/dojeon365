@@ -60,3 +60,37 @@ h1 { font-size: clamp(1.6rem, 6vw, 2.1rem); line-height: 1.3; margin: 8px 0; let
 .points { padding-left: 1.2rem; display: grid; gap: 8px; }
 .foot { max-width: 40rem; margin: 0 auto; padding: 16px var(--gutter) 140px; color: var(--ink-2); font-size: .85rem; border-top: 1px solid var(--line); }
 .draft { padding: 8px 12px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-text); font-weight: 700; }
+.pic { margin: 12px 0 0; padding: 10px; border-radius: var(--radius); background: #e9edf5; display: flex; justify-content: center; }
+.pic__svg { width: 100%; max-width: 300px; height: auto; display: block; }
+.pic--practice .hit { cursor: pointer; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pic { background: #0b1026; } }
+.device { margin: 16px 0 8px; padding: 16px; background: var(--surface); border: 1.5px solid var(--primary); border-radius: var(--radius); display: grid; gap: 10px; }
+.device h2 { margin: 0; font-size: 1.3rem; }
+.device__now { margin: 0; font-weight: 800; color: var(--primary); }
+.device__how { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; }
+.device__how summary { font-weight: 800; cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+.device__how ol { margin: 6px 0; padding-left: 1.4em; display: grid; gap: 4px; }
+.device__how p { margin: 6px 0; font-size: .9rem; color: var(--ink-2); }
+.device__form { display: grid; gap: 10px; }
+.device__form label { display: grid; gap: 4px; font-weight: 700; }
+.device__form select { min-height: 52px; font: inherit; font-weight: 600; padding: 0 10px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); max-width: 100%; }
+.device__form select:disabled { opacity: .6; }
+.device__btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.device__saved { margin: 0; color: var(--ok); font-weight: 700; min-height: 1.2em; }
+.device__note { margin: 0; font-size: .85rem; color: var(--ink-2); }
+.support { padding: 10px 12px; border-radius: 10px; font-size: .95rem; background: var(--warn-bg); color: var(--warn-text); border: 1.5px solid var(--warn-line); }
+.support--ok { background: #e1f9ef; color: #00603b; border-color: #8fd9b6; }
+.support--no { background: #fdecea; color: #a3241a; border-color: #f0a39b; }
+.sup { font-style: normal; font-size: .75rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: var(--warn-bg); color: var(--warn-text); margin-left: auto; white-space: nowrap; }
+.sup--ok { background: #e1f9ef; color: #00603b; }
+.sup--no { background: #fdecea; color: #a3241a; }
+.device, .device__form, .device__form label { min-width: 0; }
+.device__form select { width: 100%; }
+.admin table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: .85rem; background: var(--surface); }
+.admin th, .admin td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+.admin .rows { display: block; overflow-x: auto; }
+.admin small { color: var(--ink-2); }
+.lessons li { min-width: 0; }
+.lessons a { flex-wrap: wrap; row-gap: 2px; }
+.lessons a > span, .lessons a > .sup { white-space: nowrap; }
+.lessons a { overflow-wrap: anywhere; }
