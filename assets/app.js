@@ -12,15 +12,15 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0856';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0856';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.0856';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0856';
-import { renderScreen } from './screens.js?v=20261125.0856';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0856';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0856';
-import { logoSvg } from './logo.js?v=20261125.0856';
-import { VERSION } from './version.js?v=20261125.0856';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0859';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0859';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.0859';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0859';
+import { renderScreen } from './screens.js?v=20261125.0859';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0859';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0859';
+import { logoSvg } from './logo.js?v=20261125.0859';
+import { VERSION } from './version.js?v=20261125.0859';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
