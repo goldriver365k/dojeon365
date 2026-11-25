@@ -31,4 +31,14 @@ export const TERMS = {
   '알림 진동': 'Vibración de notificación', '진동 세기': 'Intensidad de vibración', 미디어: 'Multimedia', 시스템: 'Sistema', 진동: 'Vibrar', 무음: 'Silencio',
   '전화벨이 울릴 때 진동도 울림': 'Vibrar al sonar',
 };
-export const tr = (s) => TERMS[s] ?? s;
+// Lo que no está arriba se toma del vocabulario inglés traducido al español (from-en.js).
+import { TERMS as EN_TERMS } from '../en/screen-terms.js';
+import { ES_FROM_EN, SAME } from './from-en.js';
+const SAME_SET = new Set(SAME);
+export const tr = (s) => {
+  if (s in TERMS) return TERMS[s];
+  const en = EN_TERMS[s];
+  if (en === undefined) return s;
+  if (en in ES_FROM_EN) return ES_FROM_EN[en];
+  return SAME_SET.has(en) ? en : s; // sin traducción española → se queda en coreano y la imagen no se muestra
+};
