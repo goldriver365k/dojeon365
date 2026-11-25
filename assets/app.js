@@ -12,20 +12,22 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.1339';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.1339';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.1339';
-import * as AI from '../data/ai/index.js?v=20261125.1339';
-import * as SCAM from '../data/scam/index.js?v=20261125.1339';
-import * as CREATIVE from '../data/creative/index.js?v=20261125.1339';
-import * as CAREER from '../data/career/index.js?v=20261125.1339';
+import { CATEGORIES } from '../data/categories.js?v=20261125.1351';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.1351';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.1351';
+import * as AI from '../data/ai/index.js?v=20261125.1351';
+import * as SCAM from '../data/scam/index.js?v=20261125.1351';
+import * as CREATIVE from '../data/creative/index.js?v=20261125.1351';
+import * as CAREER from '../data/career/index.js?v=20261125.1351';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
 const COURSES = { digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.1339';
-import { renderScreen } from './screens.js?v=20261125.1339';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.1339';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.1339';
-import { VERSION } from './version.js?v=20261125.1339';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.1351';
+import { renderScreen } from './screens.js?v=20261125.1351';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.1351';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.1351';
+import { VERSION } from './version.js?v=20261125.1351';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261125.1351';
+import { metaOf } from '../data/galaxy/meta.js?v=20261125.1351';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -38,9 +40,9 @@ const app = document.getElementById('app');
 function load() {
   try {
     const v = JSON.parse(localStorage.getItem(STORE_KEY) ?? '{}');
-    return { lessons: {}, current: null, font: 'normal', mode: {}, ...v };
+    return { lessons: {}, current: null, font: 'normal', mode: {}, device: null, ...v };
   } catch {
-    return { lessons: {}, current: null, font: 'normal', mode: {} };
+    return { lessons: {}, current: null, font: 'normal', mode: {}, device: null };
   }
 }
 let store = load();
@@ -78,7 +80,7 @@ function fontControl() {
 
 function topbar({ back, backLabel = '뒤로', title = '' } = {}) {
   return `<header class="topbar">
-    ${back ? `<a class="topbar__back" href="${back}">${ICON.prev}<span>${esc(backLabel)}</span></a>` : `<a class="topbar__brand" href="#/" aria-label="DigiStep365 — 홈으로"><img class="logo-mark" src="assets/logo-mark.png" alt="" width="45" height="48"><span class="logo-text" aria-hidden="true">Digi<b>Step</b>365</span></a>`}
+    ${back ? `<a class="topbar__back" href="${back}">${ICON.prev}<span>${esc(backLabel)}</span></a>` : `<a class="topbar__brand" href="#/" aria-label="도전, 디지털세상 — 홈으로"><img class="logo-mark" src="assets/logo-mark.png" alt="" width="45" height="48"><span class="logo-text" aria-hidden="true">도전, <b>디지털세상</b></span></a>`}
     ${title ? `<span class="topbar__title">${esc(title)}</span>` : ''}
     ${fontControl()}
   </header>`;
@@ -87,7 +89,7 @@ function topbar({ back, backLabel = '뒤로', title = '' } = {}) {
 /* ---------- 화면: 홈 ---------- */
 
 function viewHome() {
-  document.title = 'DigiStep365 | 편한자판 시니어 교육';
+  document.title = '도전, 디지털세상 | 편한자판 시니어 교육';
   return `${topbar()}
   <main class="page" id="main">
     <h1 class="page__title">무엇을 배워 볼까요?</h1>
@@ -106,7 +108,7 @@ function viewHome() {
 
 function viewSoon(id) {
   const c = CATEGORIES.find((x) => x.id === id);
-  document.title = `${c?.title ?? '준비 중'} | DigiStep365`;
+  document.title = `${c?.title ?? '준비 중'} | 도전, 디지털세상`;
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(c?.title ?? '준비 중')}</h1>
@@ -158,6 +160,7 @@ function viewGalaxy() {
   <main class="page" id="main">
     <h1 class="page__title">갤럭시 휴대폰 사용방법</h1>
     <p class="lead">22개 목차 중 배우고 싶은 것을 누르세요.</p>
+    ${deviceBox()}
     ${resumeBox()}
     <section class="search" aria-labelledby="search-h">
       <h2 id="search-h" class="search__h">무엇이 궁금하세요?</h2>
@@ -182,6 +185,90 @@ function viewGalaxy() {
       </ol>
     </section>`).join('')}
   </main>`;
+}
+
+/* ---------- 내 휴대폰(기종·One UI 버전) ---------- */
+// 고르지 않아도 모든 수업을 볼 수 있다(공통 사용법). 고른 값은 이 기기 브라우저에만 저장.
+
+function deviceBox() {
+  const label = deviceLabel(store.device);
+  return `<section class="device-box" aria-labelledby="dev-h">
+    <h2 class="device-box__h" id="dev-h">내 휴대폰</h2>
+    <p class="device-box__now">${label ? esc(label) : '고르지 않음 · 공통 사용법으로 보는 중'}</p>
+    <p class="device-box__help">${label ? '수업마다 이 휴대폰에서 되는지 표시해 드려요.' : '기종과 One UI 버전을 고르면 수업마다 되는지 알려 드려요. 고르지 않아도 됩니다.'}</p>
+    <a class="btn btn--block" href="#/device">${label ? '내 휴대폰 바꾸기' : '내 휴대폰 고르기'}</a>
+  </section>`;
+}
+
+function supportBadge(lesson) {
+  const s = supportFor(metaOf(lesson.id), store.device);
+  return s ? `<span class="badge badge--sup-${s.level}" title="${esc(s.text)}">${esc(SUPPORT_LABEL[s.level])}</span>` : '';
+}
+
+function supportNotice(lesson) {
+  const s = supportFor(metaOf(lesson.id), store.device);
+  if (!s || s.level === 'ok') return '';
+  return `<p class="sup-note sup-note--${s.level}"><strong>${esc(SUPPORT_LABEL[s.level])}</strong> ${esc(deviceLabel(store.device))}: ${esc(s.text)}. 이 수업은 ${esc(BASE.model)} · ${esc(BASE.software)} 화면 기준이에요.</p>`;
+}
+
+function optRow(dev, val, title, desc, pressed = false) {
+  return `<li><button type="button" class="opt" data-dev="${dev}" data-val="${esc(val)}" aria-pressed="${pressed}">
+    <span class="opt__body"><span class="opt__title">${esc(title)}</span>${desc ? `<span class="opt__desc">${esc(desc)}</span>` : ''}</span>${ICON.chev}</button></li>`;
+}
+
+function viewDevice(step) {
+  const d = store.device ?? {};
+  const help = `<a class="btn btn--block" href="#/lesson/g18-version/1">기종·버전 확인하는 방법 보기</a>`;
+  document.title = '내 휴대폰 고르기 | 도전, 디지털세상';
+  if (step === 'oneui') {
+    const m = modelOf(d.model);
+    return `${topbar({ back: d.series && d.series !== 'etc' ? `#/device/${d.series}` : '#/device', backLabel: '이전' })}
+    <main class="page" id="main">
+      <h1 class="page__title">One UI 버전을 고르세요</h1>
+      <p class="lead">${m ? esc(m.name) : '기종 모름'} · 설정 → 휴대전화 정보 → 소프트웨어 정보에서 볼 수 있어요.</p>
+      <ul class="opt-list">${ONEUI.map((o) => optRow('oneui', o.v, `One UI ${o.v}`, `Android ${o.android}${o.v === BASE_ONEUI ? ' · 이 사이트 수업의 기준 버전' : ''}`, d.oneui === o.v)).join('')}
+        ${optRow('oneui', '', 'One UI 버전을 모르겠습니다', '버전과 상관없는 공통 설명으로 볼게요', d.model !== undefined && !d.oneui)}</ul>
+      ${help}
+    </main>`;
+  }
+  const series = seriesOf(step);
+  if (series) {
+    const list = MODELS.filter((m) => m.series === series.id);
+    return `${topbar({ back: '#/device', backLabel: '이전' })}
+    <main class="page" id="main">
+      <h1 class="page__title">${esc(series.name)}</h1>
+      <p class="lead">내 휴대폰 이름을 누르세요.</p>
+      <ul class="opt-list">${list.map((m) => optRow('model', m.id, m.name, m.code ? `모델 번호 ${m.code}…` : '', d.model === m.id)).join('')}
+        ${optRow('model', `?${series.id}`, '이 중에서 내 기종을 모르겠습니다', '시리즈만 기억할게요', d.series === series.id && !d.model)}</ul>
+      ${help}
+    </main>`;
+  }
+  return `${topbar({ back: '#/galaxy', backLabel: '목차로' })}
+  <main class="page" id="main">
+    <h1 class="page__title">내 휴대폰 고르기</h1>
+    <p class="lead">고르지 않아도 모든 수업을 볼 수 있어요. 고르면 수업마다 내 휴대폰에서 되는지 알려 드려요.</p>
+    ${deviceLabel(d) ? `<p class="device-box__now">지금: ${esc(deviceLabel(d))}</p>` : ''}
+    <h2 class="sub-h">갤럭시 시리즈</h2>
+    <ul class="opt-list">${SERIES.map((s) => `<li><a class="opt" href="#/device/${s.id}" aria-current="${d.series === s.id}"><span class="opt__body"><span class="opt__title">${esc(s.name)}</span></span>${ICON.chev}</a></li>`).join('')}</ul>
+    <h2 class="sub-h">잘 모르겠다면</h2>
+    <ul class="opt-list">
+      ${optRow('model', '?', '내 휴대폰 기종을 모르겠습니다', '다음 화면에서 One UI 버전만 고를 수 있어요')}
+      ${optRow('reset', '', '공통 사용법으로 시작하기', '기종을 고르지 않고 모든 수업을 봐요', !deviceLabel(d))}
+    </ul>
+    ${help}
+    <p class="hint">휴대폰 정보는 이 기기의 브라우저에만 저장하고 어디에도 보내지 않아요. 저희가 기종을 짐작해서 정하지 않아요.</p>
+  </main>`;
+}
+
+function chooseDevice(kind, val) {
+  const d = { ...(store.device ?? {}) };
+  if (kind === 'reset') { store.device = null; save(); location.hash = '#/galaxy'; return; }
+  if (kind === 'model') {
+    if (val.startsWith('?')) { d.model = null; d.series = val.slice(1) || null; }
+    else { d.model = val; d.series = modelOf(val)?.series ?? null; }
+    store.device = d; save(); location.hash = '#/device/oneui'; return;
+  }
+  if (kind === 'oneui') { d.oneui = val || null; if (d.model === undefined) d.model = null; store.device = d; save(); location.hash = '#/galaxy'; }
 }
 
 /* ---------- 검색 ---------- */
@@ -241,7 +328,7 @@ function lessonRow(lesson, chapter, withChapter = false) {
     <span class="lesson-row__body">
       ${withChapter ? `<span class="lesson-row__chapter">${two(chapter.num)}. ${esc(chapter.title)}</span>` : ''}
       <span class="lesson-row__title">${esc(lesson.title)}</span>
-      <span class="lesson-row__meta">${lesson.cards.length}단계${lesson.models ? ` · <span class="badge badge--model">${esc(lesson.models)}</span>` : ''} ${status}</span>
+      <span class="lesson-row__meta">${lesson.cards.length}단계${lesson.models ? ` · <span class="badge badge--model">${esc(lesson.models)}</span>` : ''} ${status} ${chapter.course ? '' : supportBadge(lesson)}</span>
     </span>${ICON.chev}</a></li>`;
 }
 
@@ -337,6 +424,7 @@ function viewCard(lesson, chapter, idx) {
   <main class="lesson__main" id="main">
     <h1 class="lesson__title">${esc(lesson.title)}</h1>
     ${lesson.models ? `<p class="badge badge--model">${esc(lesson.models)}</p>` : ''}
+    ${chapter.course ? '' : supportNotice(lesson)}
     <p class="step" aria-hidden="true"><span class="step__text">${total}단계 중 <strong>${idx + 1}단계</strong></span>
       <span class="step__bar"><span style="width:${((idx + 1) / total) * 100}%"></span></span></p>
     <h2 class="instr" id="instr" tabindex="-1"><span class="sr-only">${stepWords(idx, total)}, 모두 ${total}단계. </span>${esc(card.text)}</h2>
@@ -361,6 +449,7 @@ function viewCard(lesson, chapter, idx) {
         <dt>확인한 소프트웨어</dt><dd>${esc(lesson.software ?? BASE.software)}</dd>
         <dt>확인한 날짜</dt><dd>${esc(lesson.checked ?? BASE.checked)}</dd>
         ${lesson.models ? `<dt>지원 기종</dt><dd>${esc(lesson.models)}</dd>` : ''}
+        ${!chapter.course && deviceLabel(store.device) ? `<dt>내 휴대폰</dt><dd>${esc(deviceLabel(store.device))} — ${esc(supportFor(metaOf(lesson.id), store.device).text)}</dd>` : ''}
         ${lesson.check ? `<dt>확인 상태</dt><dd>${esc(lesson.check)}</dd>` : ''}
       </dl>
       <ul class="meta__src">${lesson.src.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join('')}</ul>
@@ -405,7 +494,7 @@ function courseLessonRow(lesson, chapter, key) {
 
 function viewCourse(key) {
   const { COURSE, GROUPS: DG, CHAPTERS: DC, allLessons: all } = COURSES[key];
-  document.title = `${COURSE.title} | DigiStep365`;
+  document.title = `${COURSE.title} | 도전, 디지털세상`;
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(COURSE.title)}</h1>
@@ -478,6 +567,7 @@ function route() {
   let focusInstr = false;
   if (parts.length === 0) html = viewHome();
   else if (parts[0] === 'soon') html = viewSoon(parts[1]);
+  else if (parts[0] === 'device') html = viewDevice(parts[1]);
   else if (parts[0] === 'galaxy' && !parts[1]) html = viewGalaxy();
   else if (parts[0] === 'galaxy') html = viewChapter(parts[1]);
   else if (COURSES[parts[0]] && !parts[1]) html = viewCourse(parts[0]);
@@ -645,6 +735,8 @@ app.addEventListener('click', (e) => {
     document.querySelectorAll('.font-ctl__btn').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.font === store.font)));
     return;
   }
+  const dev = e.target.closest('[data-dev]');
+  if (dev) { e.preventDefault(); chooseDevice(dev.dataset.dev, dev.dataset.val); return; }
   const speakBtn = e.target.closest('[data-speak]');
   if (speakBtn) { speakCurrent(speakBtn); return; }
   const ex = e.target.closest('[data-example]');

@@ -103,7 +103,7 @@ lesson('g03-font', '글씨 크게 보기', {
 
 ## 로고
 
-- ‘DigiStep365’ 로고(파란 D와 초록 새싹): 원본 `images/brand/dojeon-logo-original.png`
+- ‘도전, 디지털세상’ 로고(해외용 이름: DigiStep365)(파란 D와 초록 새싹): 원본 `images/brand/dojeon-logo-original.png`
 - 머리줄용 투명 배경 `assets/logo-mark.png`, 파비콘 `assets/favicon-32.png`·`favicon-48.png`, 홈 화면 아이콘 `assets/apple-touch-icon.png`·`icon-192.png`·`icon-512.png`·`icon-maskable-512.png`
 - 로고 색: 파랑 #102BB7, 초록 #29982F, 줄기 #1D7F2C
 
