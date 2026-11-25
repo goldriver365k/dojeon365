@@ -18,7 +18,7 @@ export const LOCALES = Object.fromEntries(await Promise.all(CODES.map(async (cod
   const imp = (f) => import(`../i18n/${code}/${f}.js`);
   const [ui, G, rv, terms] = await Promise.all([imp('ui'), imp('galaxy'), imp('review'), imp('screen-terms')]);
   const meta = LANGUAGES.find((l) => l.code === code);
-  return [code, { code, og: meta.og, speech: meta.speech, UI: ui.UI, G, REVIEWED: rv.REVIEWED, tr: terms.tr }];
+  return [code, { code, og: meta.og, speech: meta.speech, dir: meta.dir, wrap: meta.wrap, UI: ui.UI, G, REVIEWED: rv.REVIEWED, tr: terms.tr }];
 })));
 const enG = LOCALES.en.G;
 const DEFAULT = 'en';
@@ -326,7 +326,7 @@ export function build() {
   for (const code of Object.keys(LOCALES)) {
     L = LOCALES[code];
     stats[code] = { pictures: 0, steps: 0 };
-    setTranslator(L.tr);
+    setTranslator(L.tr, { locale: code, ...(L.wrap ?? {}) });
     rmSync(new URL(`../${code}/`, import.meta.url), { recursive: true, force: true });
     const groups = globalLessons(code);
     out(`/${code}/`, homePage());

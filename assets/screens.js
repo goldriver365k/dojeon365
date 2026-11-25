@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.2258';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.2308';
 
 const W = 360;
 const H = 640;
@@ -50,7 +50,13 @@ function esc(s) {
  * 해외용 페이지를 만들 때 setTranslator(한국어 → 다른 언어 함수)를 부르면 그림 속 글자만 바뀐다.
  * 누를 곳 이름(target)은 그대로 한국어로 둔다. 국내 앱은 번역 함수를 쓰지 않는다. */
 let TR = null;
-export function setTranslator(fn) { TR = fn; }
+// 띄어쓰기 없는 언어(일본어·중국어·태국어)는 단어 단위로 끊고, 글자 폭에 맞춰 한 줄 길이를 정한다
+let TR_OPT = { scale: 1.6, seg: null };
+export function setTranslator(fn, opt = {}) {
+  TR = fn;
+  const seg = opt.noSpace && typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter(opt.locale, { granularity: 'word' }) : null;
+  TR_OPT = { scale: opt.scale ?? 1.6, seg, noSpace: Boolean(opt.noSpace) };
+}
 const tr = (v) => (TR && typeof v === 'string' ? TR(v) : v);
 const glyph = (v) => tr(v).slice(0, 2);
 // 홈 화면 기본 앱: 국내는 카카오톡, 해외용 그림은 국내 전용 앱 대신 유튜브
@@ -142,9 +148,17 @@ function toggle(c, x, y, on) {
 function wrapText(s, max) {
   // 다른 언어 그림: 줄을 나누기 전에 문장 전체를 번역하고, 로마자는 한글보다 좁아 한 줄 글자 수를 늘린다
   const src = tr(String(s ?? ''));
-  if (TR) max = Math.round(max * 1.6);
+  if (TR) max = Math.round(max * TR_OPT.scale);
   const out = [];
   let line = '';
+  if (TR && TR_OPT.noSpace) {
+    const parts = TR_OPT.seg ? [...TR_OPT.seg.segment(src)].map((x) => x.segment) : [...src];
+    for (const part of parts) {
+      if ((line + part).length > max && line.trim()) { out.push(line.trim()); line = part.trimStart(); } else line += part;
+    }
+    if (line.trim()) out.push(line.trim());
+    return out;
+  }
   for (const word of src.split(' ')) {
     if ((line + ' ' + word).trim().length > max && line) { out.push(line); line = word; } else line = (line + ' ' + word).trim();
   }

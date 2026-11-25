@@ -1,7 +1,7 @@
 # 브라우저 점검 결과
 
-- 실행: 2026-11-25 23:02 UTC, Chromium(Playwright), 360px 기준, 대상 http://127.0.0.1:42189/
-- 결과: 96/96 통과
+- 실행: 2026-11-25 23:11 UTC, Chromium(Playwright), 360px 기준, 대상 http://127.0.0.1:36417/
+- 결과: 95/96 통과
 
 | 항목 | 결과 | 비고 |
 |---|---|---|
@@ -99,5 +99,5 @@
 | 스페인어: 영어 페이지로 가는 언어 링크 | 통과 |  |
 | 스페인어 목차: 22개 분류 | 통과 |  |
 | 영어 13번 분류: 새 수업 3개 | 통과 |  |
-| 해외용 1410쪽 320px·아주 크게 가로 스크롤 없음 (de,en,es,fr,id,it,ms,pt,tr,vi) | 통과 |  |
+| 해외용 1551쪽 320px·아주 크게 가로 스크롤 없음 (de,en,es,fil,fr,id,it,ms,pt,tr,vi) | **실패** | fil/ 339 / fil/ai-sa-larawan/ 339 / fil/alarm-at-timer/ 339 / fil/always-on-display/ 339 / fil/app-sa-home-screen/ 339 |
 | 자바스크립트 오류 없음 | 통과 |  |

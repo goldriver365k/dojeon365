@@ -170,6 +170,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Diğer S serisi (S22 ve öncesi, FE)', 'a-old': 'Diğer A serisi', 'm-any': 'Bir M serisi telefon', 'f-any': 'Bir F serisi telefon', 'note-old': 'Diğer Note', 'xcover-old': 'Diğer XCover', etc: 'Listede olmayan bir Galaxy' },
     seriesNames: { s: 'Galaxy S serisi', a: 'Galaxy A serisi', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M serisi', f: 'Galaxy F serisi', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Diğer / listede yok' },
   },
+  fil: {
+    h: 'Aking telepono', none: 'Hindi pa napili · pangkalahatang gabay',
+    howH: 'Una, hanapin ang modelo at bersyon ng software ng iyong telepono',
+    how: ['I-tap ang app na <b>Mga Setting</b>.', 'I-tap ang <b>Tungkol sa telepono</b> sa pinakaibaba.', 'Tingnan ang <b>pangalan ng modelo</b> sa itaas (halimbawa, Galaxy S26 · SM-S942N).', 'I-tap ang <b>Impormasyon ng software</b>.', 'Tingnan ang <b>bersyon ng One UI</b> (halimbawa, 9.0).'],
+    howNote: 'Sa ilang modelo, ‘Tungkol sa device’ ang pangalan ng menu. Maaari mo ring i-type ang ‘Tungkol sa telepono’ sa paghahanap sa Mga Setting.',
+    practice: 'Sanayin ang mga hakbang na ito', series: 'Serye', model: 'Modelo', oneui: 'Bersyon ng One UI', save: 'I-save ang aking telepono', clear: 'Gamitin ang pangkalahatang gabay',
+    note: 'Opsyonal ang pagpili. Sa browser na ito lang ito naka-save at hindi namin hinuhulaan ang iyong modelo.',
+    dontKnow: 'Hindi ko alam', dontKnowWhich: 'Hindi ko alam kung alin', chooseSeries: 'Pumili muna ng serye', baseVersion: 'bersyon ng mga araling ito',
+    saved: 'Na-save. Ipinapakita na ng bawat aralin kung gagana ito sa telepono mo.', cleared: 'Na-clear. Ipinapakita ang pangkalahatang gabay.',
+    modelUnknown: 'Hindi alam ang modelo', seriesUnknown: (s) => `${s} (hindi alam ang modelo)`, versionUnknown: 'Hindi alam ang bersyon ng One UI',
+    level: { ok: 'Suportado', diff: 'Suriin', check: 'Suriin', no: 'Hindi suportado' },
+    text: { ok: 'Nasuri ayon sa opisyal na gabay', diff: 'Maaaring iba ang pangalan ng menu sa bersyong ito ng One UI', check: 'Hindi pa nasusuri sa modelong ito', no: 'Wala sa modelong ito', min: (v) => `Kailangan ng One UI ${v} o mas bago` },
+    on: 'sa', change: 'Baguhin',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Ibang S series (S22 at mas luma, FE)', 'a-old': 'Ibang A series', 'm-any': 'Isang M series na telepono', 'f-any': 'Isang F series na telepono', 'note-old': 'Ibang Note', 'xcover-old': 'Ibang XCover', etc: 'Isang Galaxy na wala sa listahan' },
+    seriesNames: { s: 'Galaxy S series', a: 'Galaxy A series', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M series', f: 'Galaxy F series', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Iba / wala sa listahan' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
