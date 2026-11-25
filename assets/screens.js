@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0936';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0944';
 
 const W = 360;
 const H = 640;
@@ -1203,6 +1203,120 @@ const KINDS = {
       c.rect(32, 462, 140, 42, '#FFFFFF', 10, `stroke="${BLUE}"`); c.text(102, 489, '예매 변경', { size: 14, anchor: 'middle', weight: 800, fill: BLUE }); c.reg('예매 변경', 28, 458, 148, 50);
       c.rect(188, 462, 140, 42, '#FFFFFF', 10, 'stroke="#C02A1E"'); c.text(258, 489, '반환(취소)', { size: 14, anchor: 'middle', weight: 800, fill: '#C02A1E' }); c.reg('반환(취소)', 184, 458, 148, 50);
       tabs('승차권 확인');
+    }
+    navBar(c);
+  },
+
+  /**
+   * 카카오 T(택시) 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님)
+   * view: 'home' | 'taxi' | 'search' | 'options' | 'matching' | 'matched' | 'riding' | 'history'
+   */
+  kakaot(c, s) {
+    const Y = '#FFD43B';
+    const INK = '#1F1F1F';
+    const v = s.view ?? 'home';
+    const map = (h = 600) => {
+      c.rect(0, 0, W, h, '#EAF0E4');
+      c.add(`<g stroke="#FFFFFF" stroke-width="16"><line x1="-10" y1="230" x2="370" y2="190"/><line x1="110" y1="0" x2="150" y2="${h}"/><line x1="-10" y1="420" x2="370" y2="460"/><line x1="260" y1="0" x2="300" y2="${h}"/></g>`);
+      c.add('<g fill="#D6E2CC"><rect x="20" y="40" width="70" height="120" rx="6"/><rect x="170" y="250" width="70" height="140" rx="6"/><rect x="310" y="60" width="50" height="110" rx="6"/></g>');
+    };
+    const pin = (x, y, color = INK, label) => {
+      c.add(`<path d="M${x} ${y} q-18 -26 0 -40 q18 14 0 40z" fill="${color}"/><circle cx="${x}" cy="${y - 24}" r="6" fill="#fff"/>`);
+      if (label) { c.rect(x - 44, y - 74, 88, 26, '#FFFFFF', 13, 'stroke="#DADCE0"'); c.text(x, y - 56, label, { size: 12.5, weight: 800, anchor: 'middle' }); }
+    };
+    const sheetTop = (y) => { c.rect(0, y, W, 600 - y, '#FFFFFF', 22); c.rect(160, y + 8, 40, 5, '#D5D8DC', 3); };
+    const ybtn = (label, y) => { c.rect(16, y, 328, 54, Y, 12); c.text(180, y + 34, label, { size: 17, weight: 900, anchor: 'middle', fill: INK }); c.reg(label, 12, y - 4, 336, 62); };
+    if (v === 'home') {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.text(20, 76, '카카오 T', { size: 22, weight: 900 });
+      c.text(340, 76, '연습 화면', { size: 11, fill: C.sub, weight: 700, anchor: 'end' });
+      const svc = [['택시', '🚕'], ['대리', '🚗'], ['주차', 'P'], ['바이크', '🚲'], ['기차', '🚆'], ['항공', '✈'], ['퀵·배송', '📦'], ['전체', '⋯']];
+      svc.forEach(([t, m], i) => {
+        const x = 18 + (i % 4) * 82; const y = 100 + Math.floor(i / 4) * 100;
+        c.rect(x, y, 70, 70, i === 0 ? Y : '#F4F5F7', 18);
+        c.text(x + 35, y + 44, m, { size: 26, anchor: 'middle', weight: 800 });
+        c.text(x + 35, y + 90, t, { size: 13.5, anchor: 'middle', weight: 800 });
+        c.reg(t, x - 4, y - 4, 78, 104);
+      });
+      c.rect(16, 318, 328, 64, '#F4F5F7', 14);
+      c.text(32, 356, '어디로 갈까요?', { size: 17, weight: 800, fill: '#6B6F76' });
+      c.reg('어디로 갈까요?', 16, 318, 328, 64);
+    } else if (v === 'taxi' || v === 'options' || v === 'matching') {
+      map();
+      statusBar(c);
+      pin(150, 300, INK, '여기서 타요');
+      if (v === 'taxi') {
+        c.rect(14, 46, 332, 50, '#FFFFFF', 14, 'stroke="#DADCE0"');
+        c.add('<circle cx="34" cy="71" r="5" fill="#1F1F1F"/>');
+        c.text(48, 77, '현재 위치 · 시청앞', { size: 15, weight: 700 });
+        c.reg('출발지', 14, 46, 332, 50);
+        sheetTop(392);
+        c.text(20, 432, '택시', { size: 18, weight: 900 });
+        c.rect(16, 446, 328, 58, '#F4F5F7', 14);
+        c.text(36, 482, '어디로 갈까요?', { size: 17, weight: 800, fill: '#6B6F76' });
+        c.reg('어디로 갈까요?', 16, 446, 328, 58);
+        c.text(20, 534, '최근: 서울역 · ○○병원', { size: 13, fill: C.sub, weight: 700 });
+      } else if (v === 'options') {
+        pin(250, 170, '#2F7DF6', '서울역');
+        sheetTop(300);
+        c.text(20, 336, '시청앞 → 서울역', { size: 15, weight: 800 });
+        const types = [['일반호출', '예상 6,800원', '가까운 택시를 불러요'], ['블루', '예상 9,800원', '+ 호출료'], ['모범', '예상 11,500원', '넓고 조용한 차']];
+        types.forEach(([t, f, d], i) => {
+          const y = 350 + i * 58; const on = (s.pick ?? '일반호출') === t;
+          c.rect(16, y, 328, 50, on ? '#FFF6CC' : '#FFFFFF', 12, `stroke="${on ? '#E0B400' : '#E3E5E8'}" stroke-width="${on ? 2 : 1}"`);
+          c.text(32, y + 23, t, { size: 15, weight: 900 }); c.text(32, y + 41, d, { size: 11.5, fill: C.sub, weight: 600 });
+          c.text(330, y + 31, f, { size: 14, weight: 800, anchor: 'end' });
+          c.reg(t, 16, y, 328, 50);
+        });
+        ybtn('호출하기', 528);
+      } else {
+        sheetTop(380);
+        c.text(180, 440, '택시를 찾고 있어요', { size: 19, weight: 900, anchor: 'middle' });
+        c.text(180, 468, '가까운 기사님께 요청 중…', { size: 14, fill: C.sub, weight: 700, anchor: 'middle' });
+        c.rect(110, 500, 140, 44, '#F4F5F7', 22); c.text(180, 528, '호출 취소', { size: 15, weight: 800, anchor: 'middle' }); c.reg('호출 취소', 106, 496, 148, 52);
+      }
+    } else if (v === 'search') {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.add('<polyline points="28,58 18,67 28,76" fill="none" stroke="#1F1F1F" stroke-width="2.6" stroke-linecap="round"/>');
+      c.rect(48, 44, 298, 46, '#F4F5F7', 12);
+      c.text(62, 74, s.query ?? '도착지 검색', { size: 16, weight: 700, fill: s.query ? INK : '#8A8F98' });
+      c.reg('도착지 검색', 48, 44, 298, 46);
+      const res = s.results ?? [['서울역', '서울 용산구 · 1.9km'], ['서울역 버스환승센터', '서울 중구 · 2.0km'], ['서울역 공항철도', '서울 용산구 · 2.1km']];
+      res.forEach(([t, d], i) => {
+        const y = 108 + i * 68;
+        c.add(`<circle cx="30" cy="${y + 28}" r="11" fill="#F4F5F7"/><path d="M30 ${y + 34} q-7 -9 0 -14 q7 5 0 14z" fill="#6B6F76"/>`);
+        c.text(52, y + 26, t, { size: 16, weight: 800 }); c.text(52, y + 47, d, { size: 12.5, fill: C.sub, weight: 600 });
+        c.add(`<line x1="16" y1="${y + 64}" x2="344" y2="${y + 64}" stroke="#EEF0F2"/>`);
+        c.reg(t, 0, y, W, 64);
+      });
+    } else if (v === 'matched' || v === 'riding') {
+      map();
+      statusBar(c);
+      pin(150, 300, INK, '여기서 타요');
+      c.add('<g transform="translate(70 330)"><rect width="44" height="22" rx="6" fill="#FFD43B" stroke="#1F1F1F"/><circle cx="10" cy="22" r="5" fill="#1F1F1F"/><circle cx="34" cy="22" r="5" fill="#1F1F1F"/></g>');
+      sheetTop(340);
+      c.text(20, 378, v === 'matched' ? (s.eta ?? '3분 뒤 도착해요') : '서울역까지 약 9분', { size: 19, weight: 900 });
+      c.rect(16, 394, 328, 86, '#F7F8FA', 14);
+      c.text(32, 428, s.plate ?? '서울 12가 3456', { size: 22, weight: 900 });
+      c.text(32, 454, '흰색 쏘나타 · 김○○ 기사님', { size: 13.5, fill: C.sub, weight: 700 });
+      c.reg('차 번호', 16, 394, 328, 86);
+      const acts = v === 'matched' ? ['전화하기', '메시지', '호출 취소'] : ['안심 공유', '전화하기', '신고'];
+      acts.forEach((a, i) => { const x = 16 + i * 112; c.rect(x, 494, 104, 46, '#FFFFFF', 12, 'stroke="#DADCE0"'); c.text(x + 52, 523, a, { size: 14, weight: 800, anchor: 'middle' }); c.reg(a, x, 490, 104, 54); });
+    } else if (v === 'history') {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.add('<polyline points="28,58 18,67 28,76" fill="none" stroke="#1F1F1F" stroke-width="2.6" stroke-linecap="round"/>');
+      c.text(46, 74, '이용 내역', { size: 19, weight: 900 });
+      c.rect(16, 100, 328, 176, '#F7F8FA', 14);
+      c.text(32, 132, '12월 3일(수) 10:12', { size: 13, fill: C.sub, weight: 700 });
+      c.text(32, 162, '시청앞 → 서울역', { size: 17, weight: 900 });
+      c.text(32, 190, '일반호출 · 서울 12가 3456', { size: 13.5, fill: C.sub, weight: 700 });
+      c.text(32, 238, '결제 금액', { size: 14, weight: 700 }); c.text(328, 238, '6,700원', { size: 20, weight: 900, anchor: 'end' });
+      c.text(32, 262, '자동결제 완료', { size: 12.5, fill: '#007A4B', weight: 800 });
+      c.reg('영수증', 16, 100, 328, 176);
+      c.rect(16, 292, 328, 48, '#FFFFFF', 12, 'stroke="#DADCE0"'); c.text(180, 322, '영수증 보기', { size: 15, weight: 800, anchor: 'middle' }); c.reg('영수증 보기', 16, 288, 328, 56);
     }
     navBar(c);
   },

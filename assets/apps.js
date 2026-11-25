@@ -54,6 +54,7 @@ const G = {
   dots: (c = W) => [0, 1, 2].map((i) => `<circle cx="${30 + i * 20}" cy="50" r="7" fill="${c}"/>`).join(''),
   mail: () => '<rect x="16" y="26" width="68" height="50" rx="6" fill="#FFFFFF" stroke="#DADCE0" stroke-width="2"/><path d="M16 30l34 26 34-26" fill="none" stroke="#EA4335" stroke-width="7"/>',
   share: (c = W) => `<circle cx="66" cy="30" r="9" fill="${c}"/><circle cx="34" cy="50" r="9" fill="${c}"/><circle cx="66" cy="70" r="9" fill="${c}"/><path d="M42 46l16-10M42 54l16 10" stroke="${c}" stroke-width="5"/>`,
+  car: () => '<path d="M22 58l6-18c2-5 6-8 11-8h22c5 0 9 3 11 8l6 18v16H22z" fill="#1F1F1F"/><rect x="30" y="38" width="40" height="14" rx="3" fill="#FFD43B"/><circle cx="34" cy="74" r="7" fill="#1F1F1F"/><circle cx="66" cy="74" r="7" fill="#1F1F1F"/><rect x="42" y="22" width="16" height="8" rx="2" fill="#1F1F1F"/>',
   train: (c = W) => `<rect x="26" y="18" width="48" height="56" rx="14" fill="${c}"/><rect x="33" y="28" width="34" height="18" rx="4" fill="#1E5BB8"/><circle cx="38" cy="60" r="4.5" fill="#1E5BB8"/><circle cx="62" cy="60" r="4.5" fill="#1E5BB8"/><path d="M34 74l-8 10M66 74l8 10" stroke="${c}" stroke-width="6" stroke-linecap="round"/>`,
   tv: (c = W) => `<rect x="14" y="26" width="72" height="44" rx="6" fill="${c}"/><path d="M38 80h24" stroke="${c}" stroke-width="6" stroke-linecap="round"/>`,
 };
@@ -99,6 +100,7 @@ export const APPS = {
   Gmail: { full: 'Gmail', bg: '#FFFFFF', icon: G.mail(), src: '사용 설명서 83쪽' },
   Gemini: { full: 'Gemini', bg: '#FFFFFF', icon: G.sparkle(), src: '사용 설명서 83쪽' },
   카카오톡: { full: '카카오톡(KakaoTalk)', bg: '#FAE100', icon: G.kakao(), src: '카카오 고객센터' },
+  '카카오 T': { full: '카카오 T(카카오택시 호출 앱)', bg: '#FFD43B', icon: G.car(), src: '카카오모빌리티(아이콘 그림은 연습용, 실제 앱 확인 필요)' },
   코레일톡: { full: '코레일톡(한국철도공사 승차권 예매 앱)', bg: '#1E5BB8', icon: G.train(), src: '한국철도공사(아이콘 그림은 연습용, 실제 앱 확인 필요)' },
   편한자판: { full: '편한자판', bg: '#7B1FA2', icon: G.keyboard(), src: '편한자판(아이콘 그림은 실제 앱 확인 필요)' },
   '퀵 셰어': { full: '퀵 셰어', bg: '#1A73E8', icon: G.share(), src: '사용 설명서 82쪽' },
