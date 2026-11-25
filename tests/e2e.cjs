@@ -164,6 +164,29 @@ async function main() {
     if ((await page.locator('a', { hasText: '수업 목록으로' }).getAttribute('href')) !== `#/creative/${String(chapter.num).padStart(2, '0')}`) cBad.push(`${lesson.id} 목록 링크`);
   }
   check(`시니어 창작교실 ${CRC.allLessons().length}개 수업, 카드 ${cCards}장 첫 카드부터 완료까지`, cBad.length === 0, cBad.slice(0, 8).join(', '));
+  // 시니어 재취업·창업교실: 목차 → 모든 수업 첫 카드 → 완료
+  const CAC = await import(path.join(ROOT, 'data', 'career', 'index.js'));
+  await go('#/');
+  await page.locator('a.cat[href="#/career"]').click();
+  await page.waitForSelector('.toc__row');
+  check(`시니어 재취업·창업교실 목차 ${CAC.CHAPTERS.length}개 표시`, (await page.locator('.toc__row').count()) === CAC.CHAPTERS.length);
+  await shot('20-career-360');
+  const jBad = [];
+  let jCards = 0;
+  for (const { lesson, chapter } of CAC.allLessons()) {
+    await go(`#/career/${String(chapter.num).padStart(2, '0')}`);
+    await page.locator('.lesson-row', { hasText: lesson.title }).first().click();
+    for (let i = 0; i < lesson.cards.length; i += 1) {
+      await page.waitForFunction((n) => (document.body.dataset.route ?? '').endsWith(`/${n}`), i + 1);
+      const instr = await page.locator('#instr').evaluate((el) => [...el.childNodes].filter((n) => !(n.classList && n.classList.contains('sr-only'))).map((n) => n.textContent).join(''));
+      if (instr.trim() !== lesson.cards[i].text || !(await noHScroll())) jBad.push(`${lesson.id}#${i + 1}`);
+      jCards += 1;
+      await page.locator(i === lesson.cards.length - 1 ? '[data-nav="done"]' : '[data-nav="next"]').click();
+    }
+    await page.waitForSelector('.page--done');
+    if ((await page.locator('a', { hasText: '수업 목록으로' }).getAttribute('href')) !== `#/career/${String(chapter.num).padStart(2, '0')}`) jBad.push(`${lesson.id} 목록 링크`);
+  }
+  check(`시니어 재취업·창업교실 ${CAC.allLessons().length}개 수업, 카드 ${jCards}장 첫 카드부터 완료까지`, jBad.length === 0, jBad.slice(0, 8).join(', '));
   await go('#/lesson/d01-pay/3');
   await shot('15-digital-kiosk-card-360');
   await go('#/lesson/d04-seat/5');

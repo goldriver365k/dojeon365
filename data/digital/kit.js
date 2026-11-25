@@ -1,5 +1,5 @@
 /** 생활 디지털 연습장 수업을 쓰는 도구 */
-import { tap, self, look, swipe, hold } from '../galaxy/helpers.js?v=20261125.1218';
+import { tap, self, look, swipe, hold } from '../galaxy/helpers.js?v=20261125.1227';
 
 export { tap, self, look, swipe, hold };
 

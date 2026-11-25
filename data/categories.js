@@ -5,5 +5,5 @@ export const CATEGORIES = [
   { id: 'digital-life', title: '생활 디지털 연습장', desc: '키오스크·교통·병원·은행 앱을 안전하게 연습해요', href: '#/digital', ready: true },
   { id: 'ai', title: '시니어 AI 교실', desc: 'AI에게 묻고 글·사진·말로 도움받기, AI 사기 막기', href: '#/ai', ready: true },
   { id: 'creative', title: '시니어 창작교실', desc: '사진·영상·글·그림으로 나만의 작품 만들기', href: '#/creative', ready: true },
-  { id: 'career', title: '시니어 재취업·창업교실', desc: '일자리 찾기와 작은 창업 준비', ready: false },
+  { id: 'career', title: '시니어 재취업·창업교실', desc: '일자리 찾기·이력서·면접, 작은 창업과 온라인 판매', href: '#/career', ready: true },
 ];

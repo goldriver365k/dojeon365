@@ -7,6 +7,7 @@ import * as DIGITAL from '../data/digital/index.js';
 import * as AI from '../data/ai/index.js';
 import * as SCAM from '../data/scam/index.js';
 import * as CREATIVE from '../data/creative/index.js';
+import * as CAREER from '../data/career/index.js';
 import { renderScreen, SCREEN_KINDS } from '../assets/screens.js';
 import { appInfo } from '../assets/apps.js';
 
@@ -44,7 +45,7 @@ test('수업 id가 겹치지 않고, 출처·검색어·카드가 있다', () =>
 });
 
 test('카드마다 안내 문장 하나·그림·설명·완료 조건이 있다(두 과정 모두)', () => {
-  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons(), ...SCAM.allLessons(), ...CREATIVE.allLessons()]) {
+  for (const { lesson } of [...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons(), ...SCAM.allLessons(), ...CREATIVE.allLessons(), ...CAREER.allLessons()]) {
     lesson.cards.forEach((c, i) => {
       const where = `${lesson.id} 카드 ${i + 1} “${c.text}”`;
       assert.ok(c.text && /[.요]$/.test(c.text.trim()), `${where}: 문장`);
@@ -143,6 +144,17 @@ test('시니어 창작교실: 목차·수업 id·출처', () => {
   CREATIVE.CHAPTERS.forEach((ch, i) => {
     assert.equal(ch.num, i + 1);
     assert.ok(CREATIVE.GROUPS.some((g) => g.id === ch.group));
+    for (const l of ch.lessons) { assert.ok(!ids.has(l.id), l.id); ids.add(l.id); assert.ok(l.cards.length >= 2 && l.src.length >= 1); }
+  });
+});
+
+test('시니어 재취업·창업교실: 목차·수업 id·출처, 홈 카테고리 모두 열림', () => {
+  assert.equal(CATEGORIES.find((c) => c.id === 'career').href, '#/career');
+  assert.ok(CATEGORIES.every((c) => c.ready && c.href));
+  const ids = new Set([...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons(), ...SCAM.allLessons(), ...CREATIVE.allLessons()].map((e) => e.lesson.id));
+  CAREER.CHAPTERS.forEach((ch, i) => {
+    assert.equal(ch.num, i + 1);
+    assert.ok(CAREER.GROUPS.some((g) => g.id === ch.group));
     for (const l of ch.lessons) { assert.ok(!ids.has(l.id), l.id); ids.add(l.id); assert.ok(l.cards.length >= 2 && l.src.length >= 1); }
   });
 });
