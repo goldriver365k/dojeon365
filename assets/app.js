@@ -12,15 +12,14 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.0906';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0906';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.0906';
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.0906';
-import { renderScreen } from './screens.js?v=20261125.0906';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.0906';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0906';
-import { logoSvg } from './logo.js?v=20261125.0906';
-import { VERSION } from './version.js?v=20261125.0906';
+import { CATEGORIES } from '../data/categories.js?v=20261125.0916';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.0916';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.0916';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.0916';
+import { renderScreen } from './screens.js?v=20261125.0916';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.0916';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.0916';
+import { VERSION } from './version.js?v=20261125.0916';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -73,7 +72,7 @@ function fontControl() {
 
 function topbar({ back, backLabel = '뒤로', title = '' } = {}) {
   return `<header class="topbar">
-    ${back ? `<a class="topbar__back" href="${back}">${ICON.prev}<span>${esc(backLabel)}</span></a>` : `<a class="topbar__brand" href="#/" aria-label="도전, 디지털세상 — 홈으로">${logoSvg({ height: 44 })}</a>`}
+    ${back ? `<a class="topbar__back" href="${back}">${ICON.prev}<span>${esc(backLabel)}</span></a>` : `<a class="topbar__brand" href="#/" aria-label="도전, 디지털세상 — 홈으로"><img class="logo-mark" src="assets/logo-mark.png" alt="" width="45" height="48"><span class="logo-text" aria-hidden="true">도전, <b>디지털세상</b></span></a>`}
     ${title ? `<span class="topbar__title">${esc(title)}</span>` : ''}
     ${fontControl()}
   </header>`;

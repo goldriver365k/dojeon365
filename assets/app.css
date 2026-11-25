@@ -295,8 +295,15 @@ svg { display: block; }
 .notice { margin: 0 0 24px; padding: 14px 16px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); font-size: 1.125rem; }
 .lesson-row--soon { cursor: default; }
 .lesson-row--soon:hover { transform: none; border-color: var(--line); }
-.topbar__brand .logo { display: block; height: 2.75rem; width: auto; max-width: 70vw; }
+
+.topbar__brand { gap: 10px; }
+.logo-mark { display: block; height: 2.6rem; width: auto; flex: none; }
+.logo-text { font-size: 1.375rem; font-weight: 900; letter-spacing: -0.03em; color: #102BB7; white-space: nowrap; }
+.logo-text b { font-weight: 900; color: #29982F; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .logo__a { fill: #E7EBF7; }
-  :root:not([data-theme="light"]) .logo__b { fill: #7AA5FF; }
+  :root:not([data-theme="light"]) .logo-text { color: #8FA4FF; }
+  :root:not([data-theme="light"]) .logo-text b { color: #6BD475; }
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo-mark { background: #ffffff; border-radius: 10px; padding: 3px 4px; box-sizing: content-box; height: 2.3rem; }
 }

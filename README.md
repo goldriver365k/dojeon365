@@ -101,6 +101,12 @@ lesson('g03-font', '글씨 크게 보기', {
 
 자주 쓰는 도구: `app('설정')`, `path('디스플레이', '글자 크기와 스타일')`(설정 → 각 메뉴 카드를 한 장씩), `menu(부모, 항목)`, `tap(이름, 화면)`, `toggle(화면 제목, 스위치 이름)`, `hold(이름, 화면)`, `swipe('up', 문장, 화면)`, `self(문장)`, `look(문장, 화면)`.
 
+## 로고
+
+- ‘도전, 디지털세상’ 로고(파란 D와 초록 새싹): 원본 `images/brand/dojeon-logo-original.png`
+- 머리줄용 투명 배경 `assets/logo-mark.png`, 파비콘 `assets/favicon-32.png`·`favicon-48.png`, 홈 화면 아이콘 `assets/apple-touch-icon.png`·`icon-192.png`·`icon-512.png`·`icon-maskable-512.png`
+- 로고 색: 파랑 #102BB7, 초록 #29982F, 줄기 #1D7F2C
+
 ## 앱 이름과 아이콘
 
 - 앱 목록은 `assets/apps.js` 한 곳에서 관리합니다. 안내 문장, 연습 화면의 아이콘, 카드의 ‘앱 이름표’가 모두 여기서 이름과 그림을 가져옵니다.
