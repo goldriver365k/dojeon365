@@ -79,10 +79,8 @@ test('영어 연습 그림에 한글이 남지 않는다(남으면 그림을 빼
   }
 });
 
-const OTHER = {
-  es: { html: 'es', disclaimer: /No está afiliado, patrocinado ni respaldado por Samsung Electronics/ },
-  pt: { html: 'pt', disclaimer: /Não é afiliado, patrocinado nem endossado pela Samsung Electronics/ },
-};
+const { LOCALES } = await import('../scripts/build-global.mjs');
+const OTHER = Object.fromEntries(Object.entries(LOCALES).filter(([c]) => c !== 'en').map(([c, L]) => [c, { html: c, disclaimer: L.UI.disclaimer }]));
 for (const [code, cfg] of Object.entries(OTHER)) test(`${code}: 단계 수 일치, 한 단계 한 문장, noindex, 면책 문구, 영어와 hreflang 연결`, async () => {
   const ES = await import(`../i18n/${code}/galaxy.js`);
   const { REVIEWED: ESR } = await import(`../i18n/${code}/review.js`);
@@ -94,7 +92,7 @@ for (const [code, cfg] of Object.entries(OTHER)) test(`${code}: 단계 수 일�
     const html = readFileSync(`${code}/galaxy/${ES.TITLES[id][0]}/index.html`, 'utf8');
     assert.match(html, new RegExp(`<html lang="${cfg.html}"`));
     if (!ESR[id]) assert.match(html, /<meta name="robots" content="noindex/);
-    assert.match(html, cfg.disclaimer);
+    assert.ok(html.includes(cfg.disclaimer), `${code} 면책 문구`);
     assert.ok(html.includes(`hreflang="en" href="https://digistep365.com/en/galaxy/${EN.TITLES[id][0]}/"`), `${code}→en ${id}`);
     const en = readFileSync(`en/galaxy/${EN.TITLES[id][0]}/index.html`, 'utf8');
     assert.ok(en.includes(`hreflang="${code}" href="https://digistep365.com/${code}/galaxy/${ES.TITLES[id][0]}/"`), `en→${code} ${id}`);

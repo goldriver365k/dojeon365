@@ -9,26 +9,18 @@ import { BASE } from '../data/galaxy/helpers.js';
 import { SITE_URL, LANGUAGES } from '../i18n/languages.js';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
-import * as enUI from '../i18n/en/ui.js';
-import * as enG from '../i18n/en/galaxy.js';
-import * as enR from '../i18n/en/review.js';
-import * as enT from '../i18n/en/screen-terms.js';
-import * as esUI from '../i18n/es/ui.js';
-import * as esG from '../i18n/es/galaxy.js';
-import * as esR from '../i18n/es/review.js';
-import * as esT from '../i18n/es/screen-terms.js';
-import * as ptUI from '../i18n/pt/ui.js';
-import * as ptG from '../i18n/pt/galaxy.js';
-import * as ptR from '../i18n/pt/review.js';
-import * as ptT from '../i18n/pt/screen-terms.js';
+import { existsSync } from 'node:fs';
 import { deviceSection } from '../i18n/device-strings.js';
 
-/** Languages built here. The first one is x-default. */
-export const LOCALES = {
-  en: { code: 'en', og: 'en_US', UI: enUI.UI, G: enG, REVIEWED: enR.REVIEWED, tr: enT.tr },
-  es: { code: 'es', og: 'es_ES', UI: esUI.UI, G: esG, REVIEWED: esR.REVIEWED, tr: esT.tr },
-  pt: { code: 'pt', og: 'pt_BR', UI: ptUI.UI, G: ptG, REVIEWED: ptR.REVIEWED, tr: ptT.tr },
-};
+/** Languages built here: every language in i18n/languages.js (except ko) that has a folder i18n/<code>/ with ui.js. en is x-default. */
+const CODES = LANGUAGES.map((l) => l.code).filter((c) => c !== 'ko' && existsSync(new URL(`../i18n/${c}/ui.js`, import.meta.url)));
+export const LOCALES = Object.fromEntries(await Promise.all(CODES.map(async (code) => {
+  const imp = (f) => import(`../i18n/${code}/${f}.js`);
+  const [ui, G, rv, terms] = await Promise.all([imp('ui'), imp('galaxy'), imp('review'), imp('screen-terms')]);
+  const meta = LANGUAGES.find((l) => l.code === code);
+  return [code, { code, og: meta.og, speech: meta.speech, UI: ui.UI, G, REVIEWED: rv.REVIEWED, tr: terms.tr }];
+})));
+const enG = LOCALES.en.G;
 const DEFAULT = 'en';
 
 const HANGUL = /[가-힣ㄱ-ㆎ]/;
@@ -101,6 +93,7 @@ function head({ title, desc, path, index, crumbs, alternates }) {
 <html lang="${L.code}" dir="${LANGUAGES.find((x) => x.code === L.code)?.dir ?? 'ltr'}">
 <head>
 <meta charset="utf-8">
+<meta name="speech-lang" content="${L.speech ?? L.code}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:${GA ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}; style-src 'self'; script-src 'self'${GA ? ' https://www.googletagmanager.com' : ''}; connect-src 'self'${GA ? ' https://*.google-analytics.com https://*.analytics.google.com' : ''}; base-uri 'none'; form-action 'none'">
 ${GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}${SITE_CONFIG.searchConsole ? `<meta name="google-site-verification" content="${esc(SITE_CONFIG.searchConsole)}">\n` : ''}<title>${esc(title)}</title>
