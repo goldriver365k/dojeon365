@@ -7,7 +7,7 @@ export const LANGUAGES = [
   { code: 'es', name: 'Español', status: 'draft', og: 'es_ES', speech: 'es-ES' },
   { code: 'pt', name: 'Português (Brasil)', status: 'draft', og: 'pt_BR', speech: 'pt-BR' },
   { code: 'de', name: 'Deutsch', status: 'draft', og: 'de_DE', speech: 'de-DE' },
-  { code: 'fr', name: 'Français', status: 'planned', og: 'fr_FR', speech: 'fr-FR' },
+  { code: 'fr', name: 'Français', status: 'draft', og: 'fr_FR', speech: 'fr-FR' },
   { code: 'hi', name: 'हिन्दी', status: 'planned', og: 'hi_IN', speech: 'hi-IN' },
   { code: 'id', name: 'Bahasa Indonesia', status: 'planned', og: 'id_ID', speech: 'id-ID' },
   { code: 'vi', name: 'Tiếng Việt', status: 'planned', og: 'vi_VN', speech: 'vi-VN' },
