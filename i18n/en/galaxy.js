@@ -171,11 +171,11 @@ export const TITLES = {
 };
 
 /* ---------- Steps (one action per step) ---------- */
-const FIND = 'If it is not on the Home screen, swipe up to find it on the Apps screen.';
-const SCROLL = 'If you cannot see it, swipe up to find it.';
-const open = (app) => [`Tap the ‘${app}’ app.`, FIND];
-const item = (name) => [`Tap ‘${name}’.`, SCROLL];
-const settings = (...names) => [open('Settings'), ...names.map(item)];
+import { open, item, settings } from './kit.js';
+import { STEPS_04_08 } from './steps-04-08.js';
+import { STEPS_09_12 } from './steps-09-12.js';
+import { STEPS_14_18 } from './steps-14-18.js';
+import { STEPS_19_22 } from './steps-19-22.js';
 
 export const LESSONS = {
   'g01-buttons': {
@@ -328,4 +328,8 @@ export const LESSONS = {
       ['Tap the ‘Vibrate while ringing’ switch to turn it on.', 'Sound and vibration both alert you.'],
     ],
   },
+  ...STEPS_04_08,
+  ...STEPS_09_12,
+  ...STEPS_14_18,
+  ...STEPS_19_22,
 };
