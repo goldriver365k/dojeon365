@@ -1,6 +1,6 @@
 /** [가게와 식당] 01~03, [교통과 이동] 04~07 */
-import { app as openApp } from '../galaxy/helpers.js?v=20261125.0944';
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats, swipe, kiosk, receipt, kioskPay } from './kit.js?v=20261125.0944';
+import { app as openApp } from '../galaxy/helpers.js?v=20261125.0951';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats, swipe, kiosk, receipt, kioskPay } from './kit.js?v=20261125.0951';
 
 /* ---------- 01 키오스크 ---------- */
 const K_HOME = app('주문하기', { hero: '어서 오세요! 화면을 눌러 주문하세요', heroColor: '#2563E2', buttons: ['매장에서 먹기', '포장하기'] });
@@ -258,7 +258,7 @@ export const CHAPTERS_1 = [
       T('택시', KT('home'), '‘택시’를 누르세요.'),
       LK('지도에서 ‘여기서 타요’ 위치를 확인하세요.', KT('taxi'), '위치가 틀리면 지도를 밀어 타는 곳을 맞춰요. 위치가 꺼져 있으면 설정에서 켜요.'),
       T('어디로 갈까요?', KT('taxi'), '아래쪽 ‘어디로 갈까요?’를 누르세요.'),
-      S('갈 곳 이름을 적으세요.', '⌨', '예: 서울역, ○○병원'),
+      LK('목적지의 이름 또는 주소를 적으세요.', kb('도착지 검색', '서울역'), '예: 서울역, ○○병원, 세종대로 110'),
       T('서울역', KT('search', { query: '서울역' }), '검색 결과에서 갈 곳(서울역)을 누르세요.'),
     ], [KAKAO_T_SRC], KT_INFO),
     L('d06-call', '택시 종류 고르고 호출하기', ['호출', '택시 종류', '블루', '일반호출'], [

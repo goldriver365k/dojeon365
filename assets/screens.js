@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0944';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.0951';
 
 const W = 360;
 const H = 640;
