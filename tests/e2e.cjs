@@ -401,6 +401,19 @@ async function main() {
   await page.goto(`${BASE}admin/`);
   check('관리 현황 페이지(noindex)', (await page.getAttribute('meta[name=robots]', 'content'))?.includes('noindex'));
 
+  // 7차: 스페인어·해외용 13번 분류
+  await page.goto(`${BASE}es/galaxy/letra-mas-grande/`);
+  await page.waitForSelector('.bar:not([hidden])');
+  await page.click('[data-restart]');
+  check('스페인어 수업: 한 번에 한 단계', (await page.locator('.step:visible').count()) === 1);
+  check('스페인어 수업: 버튼 문구', (await page.textContent('[data-next]')).trim() === 'Siguiente');
+  check('스페인어 연습 그림(한글 없음)', (await page.locator('.step.is-on .pic svg').count()) === 1 && !/[가-힣]/.test(await page.locator('.step.is-on .pic').innerHTML()));
+  check('스페인어: 영어 페이지로 가는 언어 링크', (await page.getAttribute('.langs a[hreflang="en"]', 'href')) === '/en/galaxy/change-font-size/');
+  await page.goto(`${BASE}es/galaxy/`);
+  check('스페인어 목차: 22개 분류', (await page.locator('.cat').count()) === 22);
+  await page.goto(`${BASE}en/galaxy/`);
+  check('영어 13번 분류: 새 수업 3개', (await page.locator('#c13 a').count()) === 3);
+
   check('자바스크립트 오류 없음', errors.length === 0, errors.slice(0, 5).join(' | '));
 
   await browser.close();

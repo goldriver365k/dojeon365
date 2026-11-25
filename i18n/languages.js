@@ -4,7 +4,7 @@ export const SITE_URL = 'https://digistep365.com';
 export const LANGUAGES = [
   { code: 'ko', name: '한국어', status: 'live', note: 'Korean site at / (도전, 디지털세상)' },
   { code: 'en', name: 'English', status: 'draft' },
-  { code: 'es', name: 'Español', status: 'planned' },
+  { code: 'es', name: 'Español', status: 'draft' },
   { code: 'pt', name: 'Português', status: 'planned' },
   { code: 'de', name: 'Deutsch', status: 'planned' },
   { code: 'fr', name: 'Français', status: 'planned' },

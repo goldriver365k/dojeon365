@@ -17,7 +17,7 @@ export const CATEGORIES = {
   10: ['Take photos and videos', 'Camera basics, selfies, zoom, timer and video'],
   11: ['Organize photos and files', 'Gallery, editing, restoring and My Files'],
   12: ['Home screen and everyday tools', 'Apps, folders, wallpaper, alarms, calendar and notes'],
-  13: ['Share photos with family', 'Lessons for messaging apps used outside Korea are being written'],
+  13: ['Share photos with family', 'Email photos, send videos and make video calls'],
   14: ['Pay with Samsung Wallet', 'Opening Wallet and choosing a card'],
   15: ['Keep your phone safe', 'Screen lock, biometrics, permissions and emergency SOS'],
   16: ['Move to a new phone', 'Setup, accounts, Smart Switch and backups'],
@@ -31,6 +31,9 @@ export const CATEGORIES = {
 
 // id → [slug, title]  (every global lesson; lessons without `steps` below are shown as "coming soon")
 export const TITLES = {
+  'x13-gmail': ['email-photos-with-gmail', 'Email photos with Gmail'],
+  'x13-video': ['send-a-video-to-family', 'Send a video to family'],
+  'x13-meet': ['video-call-with-google-meet', 'Make a video call with Google Meet'],
   'g01-buttons': ['find-side-buttons', 'Find the side buttons'],
   'g01-charge': ['charge-your-phone', 'Charge your phone'],
   'g01-power': ['turn-off-and-on', 'Turn your phone off and on again'],
@@ -333,3 +336,52 @@ export const LESSONS = {
   ...STEPS_14_18,
   ...STEPS_19_22,
 };
+
+/* ---------- Global-only lessons (no Korean original: Korean chapter 13 uses KakaoTalk) ---------- */
+const GMAIL_SRC = { label: 'Gmail Help · Attach files', url: 'https://support.google.com/mail/answer/6584?hl=en&co=GENIE.Platform%3DAndroid' };
+const MEET_SRC = { label: 'Google Meet Help', url: 'https://support.google.com/meet/?hl=en' };
+const GALLERY_SRC = { label: 'Samsung support', url: 'https://www.samsung.com/us/support/' };
+export const EXTRA = [
+  { id: 'x13-gmail', chapter: 13, src: [GMAIL_SRC] },
+  { id: 'x13-video', chapter: 13, src: [GALLERY_SRC] },
+  { id: 'x13-meet', chapter: 13, src: [MEET_SRC] },
+];
+const CHECK = 'New lesson written for the global site. Screens of Google apps change often, so check on a real phone.';
+Object.assign(LESSONS, {
+  'x13-gmail': {
+    desc: 'Send photos to family by email with the Gmail app on a Galaxy phone.',
+    check: CHECK,
+    steps: [
+      open('Gmail'),
+      ['Tap ‘Compose’ at the bottom right.'],
+      ['Type the email address of the person in the ‘To’ box.'],
+      ['Tap the paper clip (Attach) at the top.'],
+      ['Tap the photo you want to send.', 'You can tap more than one photo.'],
+      ['Type a short subject.'],
+      ['Tap the Send button (paper plane) at the top.'],
+    ],
+  },
+  'x13-video': {
+    desc: 'Send a video from Gallery to a family member with the Messages app.',
+    check: CHECK,
+    steps: [
+      open('Gallery'),
+      ['Tap the video you want to send.'],
+      ['Tap ‘Share’ at the bottom.'],
+      ['Tap ‘Messages’.'],
+      ['Choose the person to send it to.'],
+      ['Tap the Send button.', '', 'Long videos may be too big for a text message. Then use Quick Share or email instead.'],
+    ],
+  },
+  'x13-meet': {
+    desc: 'Make a video call to family with the Google Meet app.',
+    check: CHECK,
+    steps: [
+      open('Meet'),
+      ['Tap ‘New’.'],
+      ['Tap the name of the person to call.', 'They also need the Google Meet app or a Google account.'],
+      ['Tap the video call button.'],
+      ['When you finish, tap the red End call button.'],
+    ],
+  },
+});

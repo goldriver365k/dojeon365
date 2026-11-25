@@ -136,8 +136,10 @@ tap('측면 버튼', SIDE, {
 
 ## 해외용 영어 사이트(DigiStep365)
 
-- 주소: `/en/`(홈), `/en/galaxy/`(22개 분류), `/en/galaxy/<영어 주소>/`(수업마다 실제 페이지). 국내 주소(`/#/…`)는 그대로
+- 주소: `/<언어>/`(홈), `/<언어>/galaxy/`(22개 분류), `/<언어>/galaxy/<주소>/`(수업마다 실제 페이지). 지금 언어: `en`(137+해외용 새 수업 3), `es`(시범 18). 국내 주소(`/#/…`)는 그대로
+- 언어 추가: `i18n/<언어>/`에 `ui.js`·`galaxy.js`·`review.js`·`screen-terms.js`를 만들고 `scripts/build-global.mjs`의 `LOCALES`에 한 줄 추가. 같은 수업이 있는 언어끼리 hreflang이 자동으로 연결됨
+- 해외용 새 수업(국내 원본 없음): `i18n/en/galaxy.js`의 `EXTRA`
 - 내용: `i18n/en/galaxy.js`(분류·제목·주소·단계), 화면 문구 `i18n/en/ui.js`, 20개 언어 상태 `i18n/languages.js`
 - 만들기: `npm run build:global` → `en/`, `sitemap.xml`, `robots.txt`를 새로 만든 뒤 함께 커밋(Netlify 설정은 그대로)
-- 검수 전(`status`가 `reviewed`가 아닌) 수업은 `noindex`이고 사이트맵에서 빠짐. 사람이 검수한 뒤 `status: 'reviewed'`로 바꾸고 다시 만들기
+- 검수 전 수업은 `noindex`이고 사이트맵에서 빠짐. 사람이 검수한 뒤 `i18n/<언어>/review.js`에 기록하고 다시 만들기(`docs/review-checklist-en.md`)
 - 한국 전용 수업(카카오톡 등)은 `data/galaxy/meta.js`의 `region: 'KR'`로 해외용에서 빠짐

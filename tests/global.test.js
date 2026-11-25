@@ -16,7 +16,9 @@ test('해외용 수업마다 영어 제목·주소가 있고 한국 전용 수�
     assert.match(t[0], /^[a-z0-9-]+$/, t[0]);
     assert.ok(!slugs.has(t[0]), `주소 중복: ${t[0]}`); slugs.add(t[0]);
   }
+  const extra = new Set((EN.EXTRA ?? []).map((x) => x.id));
   for (const id of Object.keys(EN.TITLES)) {
+    if (extra.has(id)) { assert.ok(!findLesson(id), `해외용 새 수업 id가 국내 수업과 겹침: ${id}`); continue; }
     assert.ok(findLesson(id), `없는 수업: ${id}`);
     assert.notEqual(metaOf(id).region, 'KR', `한국 전용 수업이 해외용에 있음: ${id}`);
   }
@@ -24,6 +26,7 @@ test('해외용 수업마다 영어 제목·주소가 있고 한국 전용 수�
 
 test('영어 단계 수는 한국어 카드 수와 같고, 한 단계에 문장 하나', () => {
   for (const [id, en] of Object.entries(EN.LESSONS)) {
+    if (!findLesson(id)) { assert.ok((EN.EXTRA ?? []).some((x) => x.id === id), `원본 없는 수업: ${id}`); continue; }
     assert.equal(en.steps.length, findLesson(id).lesson.cards.length, id);
     assert.ok(en.desc && en.desc.length <= 160, `설명 길이: ${id}`);
     for (const [text] of en.steps) assert.ok(!/\. [A-Z]/.test(text), `한 단계에 두 문장: ${id} — ${text}`);
@@ -74,4 +77,23 @@ test('영어 연습 그림에 한글이 남지 않는다(남으면 그림을 빼
     const pics = html.match(/<figure class="pic[\s\S]*?<\/figure>/g) ?? [];
     for (const p of pics) assert.ok(!/[\uac00-\ud7a3]/.test(p.replace(/aria-label="[^"]*"/, '')), id);
   }
+});
+
+test('스페인어: 단계 수 일치, 한 단계 한 문장, noindex, 스페인어 면책 문구, 영어와 hreflang 연결', async () => {
+  const ES = await import('../i18n/es/galaxy.js');
+  const { REVIEWED: ESR } = await import('../i18n/es/review.js');
+  for (const [id, es] of Object.entries(ES.LESSONS)) {
+    assert.equal(es.steps.length, findLesson(id).lesson.cards.length, id);
+    assert.notEqual(metaOf(id).region, 'KR', id);
+    for (const [text] of es.steps) assert.ok(!/\. [A-ZÁÉÍÓÚ¡¿]/.test(text), `${id} — ${text}`);
+    const html = readFileSync(`es/galaxy/${ES.TITLES[id][0]}/index.html`, 'utf8');
+    assert.match(html, /<html lang="es"/);
+    if (!ESR[id]) assert.match(html, /<meta name="robots" content="noindex/);
+    assert.match(html, /No está afiliado, patrocinado ni respaldado por Samsung Electronics/);
+    assert.ok(html.includes(`hreflang="en" href="https://digistep365.com/en/galaxy/${EN.TITLES[id][0]}/"`), `es→en ${id}`);
+    const en = readFileSync(`en/galaxy/${EN.TITLES[id][0]}/index.html`, 'utf8');
+    assert.ok(en.includes(`hreflang="es" href="https://digistep365.com/es/galaxy/${ES.TITLES[id][0]}/"`), `en→es ${id}`);
+  }
+  const slugs = Object.values(ES.TITLES).map((t) => t[0]);
+  assert.equal(new Set(slugs).size, slugs.length, '스페인어 주소 중복');
 });
