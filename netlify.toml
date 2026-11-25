@@ -1,0 +1,16 @@
+# 편한자판 시니어 교육 — Netlify 설정
+# 빌드 없이 저장소 폴더를 그대로 배포한다(정적 사이트, 주소는 #/ 해시 방식).
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
