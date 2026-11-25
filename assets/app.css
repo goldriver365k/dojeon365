@@ -330,3 +330,9 @@ svg { display: block; }
 .badge--sup-no { background: var(--miss-bg); color: var(--miss); }
 .sup-note { margin: 0 0 12px; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 1.0625rem; border: 1.5px solid var(--warn-line); background: var(--warn-bg); color: var(--warn-text); }
 .sup-note--no { border-color: var(--miss); background: var(--miss-bg); color: var(--miss); }
+.howto { margin: 0 0 8px; padding: 16px; border-radius: var(--radius); background: var(--surface-2); border: 1.5px solid var(--primary); display: grid; gap: 10px; }
+.howto__h { font-size: 1.375rem; margin: 0; line-height: 1.4; }
+.howto__lead, .howto__note { margin: 0; font-size: 1.0625rem; color: var(--ink-2); }
+.howto__steps { margin: 0; padding-left: 1.6em; display: grid; gap: 8px; font-size: 1.1875rem; line-height: 1.5; }
+.howto__steps b { color: var(--primary); }
+.howto .btn--block { margin: 4px 0 0; }

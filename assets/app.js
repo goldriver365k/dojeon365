@@ -12,22 +12,22 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261125.2055';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.2055';
-import * as DIGITAL from '../data/digital/index.js?v=20261125.2055';
-import * as AI from '../data/ai/index.js?v=20261125.2055';
-import * as SCAM from '../data/scam/index.js?v=20261125.2055';
-import * as CREATIVE from '../data/creative/index.js?v=20261125.2055';
-import * as CAREER from '../data/career/index.js?v=20261125.2055';
+import { CATEGORIES } from '../data/categories.js?v=20261125.2100';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261125.2100';
+import * as DIGITAL from '../data/digital/index.js?v=20261125.2100';
+import * as AI from '../data/ai/index.js?v=20261125.2100';
+import * as SCAM from '../data/scam/index.js?v=20261125.2100';
+import * as CREATIVE from '../data/creative/index.js?v=20261125.2100';
+import * as CAREER from '../data/career/index.js?v=20261125.2100';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
 const COURSES = { digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261125.2055';
-import { renderScreen } from './screens.js?v=20261125.2055';
-import { appInfo, appIconStandalone } from './apps.js?v=20261125.2055';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.2055';
-import { VERSION } from './version.js?v=20261125.2055';
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261125.2055';
-import { metaOf } from '../data/galaxy/meta.js?v=20261125.2055';
+import { BASE } from '../data/galaxy/helpers.js?v=20261125.2100';
+import { renderScreen } from './screens.js?v=20261125.2100';
+import { appInfo, appIconStandalone } from './apps.js?v=20261125.2100';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261125.2100';
+import { VERSION } from './version.js?v=20261125.2100';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261125.2100';
+import { metaOf } from '../data/galaxy/meta.js?v=20261125.2100';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -225,7 +225,7 @@ function viewDevice(step) {
     return `${topbar({ back: d.series && d.series !== 'etc' ? `#/device/${d.series}` : '#/device', backLabel: '이전' })}
     <main class="page" id="main">
       <h1 class="page__title">One UI 버전을 고르세요</h1>
-      <p class="lead">${m ? esc(m.name) : '기종 모름'} · 설정 → 휴대전화 정보 → 소프트웨어 정보에서 볼 수 있어요.</p>
+      <p class="lead">${m ? esc(m.name) : '기종 모름'} · 설정 → 폰 정보 → 소프트웨어 정보 → ‘One UI 버전’에서 볼 수 있어요.</p>
       <ul class="opt-list">${ONEUI.map((o) => optRow('oneui', o.v, `One UI ${o.v}`, `Android ${o.android}${o.v === BASE_ONEUI ? ' · 이 사이트 수업의 기준 버전' : ''}`, d.oneui === o.v)).join('')}
         ${optRow('oneui', '', 'One UI 버전을 모르겠습니다', '버전과 상관없는 공통 설명으로 볼게요', d.model !== undefined && !d.oneui)}</ul>
       ${help}
@@ -248,14 +248,26 @@ function viewDevice(step) {
     <h1 class="page__title">내 휴대폰 고르기</h1>
     <p class="lead">고르지 않아도 모든 수업을 볼 수 있어요. 고르면 수업마다 내 휴대폰에서 되는지 알려 드려요.</p>
     ${deviceLabel(d) ? `<p class="device-box__now">지금: ${esc(deviceLabel(d))}</p>` : ''}
-    <h2 class="sub-h">갤럭시 시리즈</h2>
+    <section class="howto" aria-labelledby="howto-h">
+      <h2 class="howto__h" id="howto-h">먼저 내 휴대폰 정보를 확인하세요</h2>
+      <p class="howto__lead">휴대폰에서 아래 순서대로 누르면 기종 이름과 소프트웨어(One UI) 버전이 나와요.</p>
+      <ol class="howto__steps">
+        <li><b>설정</b> 앱을 누르세요.</li>
+        <li>맨 아래쪽 <b>폰 정보</b>를 누르세요.</li>
+        <li>맨 위에 나온 <b>기종 이름</b>(예: Galaxy S26)과 <b>모델명</b>(예: SM-S942N)을 확인하세요.</li>
+        <li><b>소프트웨어 정보</b>를 누르세요.</li>
+        <li><b>One UI 버전</b>(예: 9.0)을 확인하세요.</li>
+      </ol>
+      <p class="howto__note">메뉴 이름은 기종에 따라 ‘휴대전화 정보’나 ‘디바이스 정보’로 보일 수 있어요. 설정 맨 위 검색(돋보기)에 ‘폰 정보’를 적어도 찾을 수 있어요.</p>
+      <a class="btn btn--primary btn--block" href="#/lesson/g18-version/1">연습 화면으로 따라 해 보기</a>
+    </section>
+    <h2 class="sub-h">확인했으면 시리즈를 고르세요</h2>
     <ul class="opt-list">${SERIES.map((s) => `<li><a class="opt" href="#/device/${s.id}" aria-current="${d.series === s.id}"><span class="opt__body"><span class="opt__title">${esc(s.name)}</span></span>${ICON.chev}</a></li>`).join('')}</ul>
     <h2 class="sub-h">잘 모르겠다면</h2>
     <ul class="opt-list">
       ${optRow('model', '?', '내 휴대폰 기종을 모르겠습니다', '다음 화면에서 One UI 버전만 고를 수 있어요')}
       ${optRow('reset', '', '공통 사용법으로 시작하기', '기종을 고르지 않고 모든 수업을 봐요', !deviceLabel(d))}
     </ul>
-    ${help}
     <p class="hint">휴대폰 정보는 이 기기의 브라우저에만 저장하고 어디에도 보내지 않아요. 저희가 기종을 짐작해서 정하지 않아요.</p>
   </main>`;
 }
