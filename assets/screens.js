@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.1153';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261125.1201';
 
 const W = 360;
 const H = 640;
@@ -1319,6 +1319,255 @@ const KINDS = {
       c.rect(16, 292, 328, 48, '#FFFFFF', 12, 'stroke="#DADCE0"'); c.text(180, 322, '영수증 보기', { size: 15, weight: 800, anchor: 'middle' }); c.reg('영수증 보기', 16, 288, 328, 56);
     }
     navBar(c);
+  },
+
+  /**
+   * Gemini 앱 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님, 공식 로고 미사용)
+   * view: 'welcome' | 'account' | 'terms' | 'home' | 'chat' | 'attach' | 'menu' | 'upgrade' | 'voice'
+   */
+  gemini(c, s) {
+    const v = s.view ?? 'home';
+    const GRAD = '<linearGradient id="gm-grad" x1="0" x2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient>';
+    c.add(`<defs>${GRAD}</defs>`);
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    const pillInput = (y = 524) => {
+      c.rect(12, y, 336, 64, '#F0F4F9', 32);
+      c.add(`<circle cx="40" cy="${y + 32}" r="14" fill="#FFFFFF"/><path d="M33 ${y + 32}h14M40 ${y + 25}v14" stroke="#444746" stroke-width="2.4" stroke-linecap="round"/>`);
+      c.reg('추가 아이콘', 20, y + 8, 44, 48);
+      c.text(66, y + 38, s.typed ?? 'Gemini에게 물어보기', { size: 15, fill: s.typed ? '#1F1F1F' : '#5F6368', weight: s.typed ? 600 : 500 });
+      c.reg('입력창', 64, y + 8, 196, 48);
+      if (s.typed) {
+        c.add(`<circle cx="318" cy="${y + 32}" r="20" fill="#1F1F1F"/><path d="M310 ${y + 33}l8 -8 8 8M318 ${y + 26}v16" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>`);
+        c.reg('전송 아이콘', 294, y + 8, 50, 48);
+      } else {
+        c.add(`<rect x="264" y="${y + 21}" width="10" height="16" rx="5" fill="#444746"/><path d="M260 ${y + 33}a9 9 0 0 0 18 0M269 ${y + 42}v5" stroke="#444746" stroke-width="2" fill="none"/>`);
+        c.reg('음성 메시지 아이콘', 250, y + 8, 40, 48);
+        c.add(`<circle cx="318" cy="${y + 32}" r="18" fill="#FFFFFF"/><path d="M308 ${y + 32}h3M313 ${y + 26}v12M318 ${y + 22}v20M323 ${y + 26}v12M328 ${y + 32}h-1" stroke="#1F1F1F" stroke-width="2.4" stroke-linecap="round"/>`);
+        c.reg('Live 아이콘', 296, y + 8, 46, 48);
+      }
+    };
+    const top = () => {
+      c.add('<g stroke="#444746" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="56" x2="36" y2="56"/><line x1="18" y1="63" x2="36" y2="63"/><line x1="18" y1="70" x2="30" y2="70"/></g>');
+      c.reg('메뉴', 8, 42, 40, 44);
+      c.text(54, 70, 'Gemini', { size: 20, weight: 700, fill: '#1F1F1F' });
+      c.text(124, 69, '▾', { size: 13, fill: '#5F6368' });
+      c.reg('모델 선택', 50, 46, 100, 36);
+      c.add('<circle cx="330" cy="63" r="15" fill="#7CACF8"/>');
+      c.text(330, 69, '영', { size: 14, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.reg('내 계정', 312, 46, 36, 36);
+      c.text(240, 69, '연습 화면', { size: 10.5, fill: '#9AA0A6', weight: 700, anchor: 'end' });
+    };
+    const blueBtn = (label, y) => { c.rect(24, y, 312, 50, '#0B57D0', 25); c.text(180, y + 32, label, { size: 16, fill: '#fff', weight: 700, anchor: 'middle' }); c.reg(label, 20, y - 4, 320, 58); };
+    if (v === 'welcome') {
+      c.text(180, 200, 'Gemini', { size: 44, weight: 700, anchor: 'middle', fill: 'url(#gm-grad)' });
+      c.text(180, 246, 'Google의 AI 도우미와', { size: 18, anchor: 'middle', weight: 600 });
+      c.text(180, 272, '대화해 보세요', { size: 18, anchor: 'middle', weight: 600 });
+      c.text(180, 330, '연습 화면', { size: 12, anchor: 'middle', fill: '#9AA0A6', weight: 700 });
+      blueBtn('시작하기', 500);
+    } else if (v === 'account') {
+      c.text(180, 120, '계정 선택', { size: 22, weight: 700, anchor: 'middle' });
+      c.text(180, 148, 'Gemini에서 사용할 Google 계정', { size: 14, anchor: 'middle', fill: '#5F6368' });
+      const rows = [['영희', 'younghee@gmail.com'], ['다른 계정 추가', '']];
+      rows.forEach(([n, e], i) => {
+        const y = 180 + i * 72;
+        c.rect(20, y, 320, 62, '#FFFFFF', 12, 'stroke="#DADCE0"');
+        c.add(`<circle cx="50" cy="${y + 31}" r="16" fill="${i ? '#E8EAED' : '#7CACF8'}"/>`);
+        c.text(50, y + 37, i ? '+' : '영', { size: 15, anchor: 'middle', weight: 800, fill: i ? '#444746' : '#fff' });
+        c.text(78, y + (e ? 27 : 37), n, { size: 16, weight: 700 }); if (e) c.text(78, y + 48, e, { size: 13, fill: '#5F6368' });
+        c.reg(e || n, 20, y, 320, 62);
+      });
+    } else if (v === 'terms') {
+      c.text(24, 116, 'Gemini 앱 개인정보', { size: 21, weight: 700 });
+      c.text(24, 142, '보호 안내', { size: 21, weight: 700 });
+      ['대화 내용이 Google 계정에 저장될 수 있어요.', '민감한 정보는 입력하지 마세요.', '활동 기록은 설정에서 끌 수 있어요.'].forEach((t, i) => {
+        c.add(`<circle cx="32" cy="${190 + i * 44}" r="4" fill="#0B57D0"/>`);
+        c.text(46, 195 + i * 44, t, { size: 14.5, weight: 600 });
+      });
+      c.text(24, 350, '자세히 보기', { size: 14, fill: '#0B57D0', weight: 700 });
+      blueBtn('동의', 500);
+      c.text(180, 576, '나중에', { size: 15, fill: '#0B57D0', weight: 700, anchor: 'middle' }); c.reg('나중에', 120, 556, 120, 34);
+    } else if (v === 'home' || v === 'attach') {
+      top();
+      c.text(24, 200, `안녕하세요, ${s.name ?? '영희'}님`, { size: 30, weight: 700, fill: 'url(#gm-grad)' });
+      c.text(24, 238, '무엇을 도와드릴까요?', { size: 26, weight: 600, fill: '#C4C7C5' });
+      const chips = ['글쓰기 도움', '계획 세우기', '사진으로 묻기'];
+      let cx = 14;
+      chips.forEach((t) => { const w = t.length * 15 + 28; c.rect(cx, 470, w, 40, '#FFFFFF', 20, 'stroke="#DADCE0"'); c.text(cx + w / 2, 495, t, { size: 13.5, weight: 600, anchor: 'middle' }); c.reg(t, cx, 466, w, 48); cx += w + 8; });
+      pillInput();
+      if (v === 'attach') {
+        c.rect(0, 360, W, 240, '#FFFFFF', 24, 'stroke="#DADCE0"');
+        [['카메라', '📷'], ['갤러리', '🖼'], ['파일', '📄']].forEach(([t, m], i) => {
+          const x = 30 + i * 104;
+          c.rect(x, 400, 88, 88, '#F0F4F9', 20); c.text(x + 44, 452, m, { size: 30, anchor: 'middle' });
+          c.text(x + 44, 512, t, { size: 14, anchor: 'middle', weight: 700 });
+          c.reg(t, x, 396, 88, 130);
+        });
+      }
+    } else if (v === 'chat') {
+      top();
+      let y = 104;
+      for (const b of s.bubbles ?? []) {
+        const lines = wrapText(b.text, b.from === 'me' ? 15 : 19);
+        if (b.from === 'me') {
+          const w = Math.min(260, Math.max(...lines.map((l) => l.length)) * 15 + 30);
+          const h = lines.length * 22 + 18;
+          c.rect(344 - w, y, w, h, '#E9EEF6', 18);
+          lines.forEach((l, i) => c.text(344 - w + 15, y + 26 + i * 22, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 344 - w, y, w, h);
+          y += h + 18;
+        } else {
+          c.add(`<path d="M28 ${y + 2}c2 9 7 14 16 16-9 2-14 7-16 16-2-9-7-14-16-16 9-2 14-7 16-16z" fill="url(#gm-grad)"/>`);
+          lines.forEach((l, i) => c.text(52, y + 16 + i * 23, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 48, y, 296, lines.length * 23 + 8);
+          y += lines.length * 23 + 22;
+          if (y < 470) {
+            ['👍', '👎', '⟳', '⋮'].forEach((ic, k) => { c.text(60 + k * 34, y, ic, { size: 14, fill: '#5F6368' }); });
+            y += 22;
+          }
+        }
+      }
+      pillInput();
+    } else if (v === 'menu') {
+      c.rect(0, 0, W, H, 'rgba(0,0,0,0.25)');
+      c.rect(0, 0, 290, H, '#F0F4F9');
+      statusBar(c);
+      c.rect(16, 52, 140, 44, '#DDE3EA', 22); c.text(86, 80, '+ 새 채팅', { size: 15, weight: 700, anchor: 'middle' }); c.reg('새 채팅', 16, 48, 140, 52);
+      c.text(20, 130, '최근', { size: 13, fill: '#5F6368', weight: 700 });
+      ['손녀 생일 축하 문자', '된장찌개 끓이는 법', '경주 나들이 일정'].forEach((t, i) => { c.text(20, 162 + i * 38, t, { size: 15, weight: 500 }); c.reg(t, 8, 140 + i * 38, 270, 36); });
+      c.add('<line x1="16" y1="440" x2="274" y2="440" stroke="#DADCE0"/>');
+      c.text(20, 474, '⚙ 설정 및 도움말', { size: 15, weight: 600 }); c.reg('설정 및 도움말', 8, 452, 270, 36);
+      c.rect(16, 500, 258, 44, '#FFFFFF', 22, 'stroke="#DADCE0"'); c.text(145, 528, 'Gemini 업그레이드(유료)', { size: 14, weight: 700, anchor: 'middle', fill: '#0B57D0' }); c.reg('Gemini 업그레이드(유료)', 16, 496, 258, 52);
+    } else if (v === 'upgrade') {
+      c.add('<path d="M330 50l-14 14M316 50l14 14" stroke="#444746" stroke-width="2.4" stroke-linecap="round"/>');
+      c.reg('닫기', 304, 38, 44, 40);
+      c.text(24, 110, '요금제', { size: 22, weight: 700 });
+      c.rect(16, 130, 328, 120, '#FFFFFF', 16, 'stroke="#0B57D0" stroke-width="2"');
+      c.text(32, 162, '무료', { size: 18, weight: 800 }); c.text(328, 162, '현재 요금제', { size: 13, weight: 700, fill: '#0B57D0', anchor: 'end' });
+      c.text(32, 192, '질문·글쓰기·사진 묻기 등 기본 기능', { size: 13.5, fill: '#444746' });
+      c.text(32, 216, '돈이 들지 않아요', { size: 13.5, fill: '#137333', weight: 700 });
+      c.rect(16, 266, 328, 150, '#F8FAFD', 16, 'stroke="#DADCE0"');
+      c.text(32, 298, '유료 요금제', { size: 18, weight: 800 });
+      c.text(32, 326, '더 높은 기능·사용량(매달 요금)', { size: 13.5, fill: '#444746' });
+      c.rect(32, 350, 296, 44, '#0B57D0', 22); c.text(180, 378, '구독하기(유료)', { size: 15, fill: '#fff', weight: 700, anchor: 'middle' }); c.reg('구독하기(유료)', 28, 346, 304, 52);
+      c.text(180, 452, '무료로 쓰려면 오른쪽 위 ×를 누르세요', { size: 13.5, anchor: 'middle', fill: '#5F6368', weight: 700 });
+    } else if (v === 'voice') {
+      c.rect(0, 0, W, H, '#0E1117');
+      statusBar(c, { dark: true });
+      c.text(180, 120, 'Live', { size: 20, fill: '#fff', weight: 700, anchor: 'middle' });
+      c.add('<ellipse cx="180" cy="560" rx="220" ry="90" fill="url(#gm-grad)" opacity="0.55"/>');
+      c.text(180, 300, '듣고 있어요…', { size: 18, fill: '#E3E3E3', weight: 600, anchor: 'middle' });
+      c.add('<circle cx="120" cy="520" r="28" fill="#2A2F37"/><circle cx="240" cy="520" r="28" fill="#D93025"/>');
+      c.text(120, 527, '⏸', { size: 18, fill: '#fff', anchor: 'middle' }); c.text(240, 527, '✕', { size: 18, fill: '#fff', anchor: 'middle', weight: 800 });
+      c.reg('일시 정지', 90, 490, 60, 60); c.reg('끝내기', 210, 490, 60, 60);
+    }
+    navBar(c, { dark: v === 'voice' });
+  },
+
+  /**
+   * ChatGPT 앱 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님, 공식 로고 미사용)
+   * view: 'welcome' | 'home' | 'chat' | 'attach' | 'menu' | 'upgrade' | 'voice'
+   */
+  chatgpt(c, s) {
+    const v = s.view ?? 'home';
+    const dark = v === 'welcome' || v === 'voice';
+    c.rect(0, 0, W, H, dark ? '#000000' : '#FFFFFF');
+    statusBar(c, { dark });
+    const input = (y = 520) => {
+      c.rect(12, y, 336, 68, '#F4F4F4', 30, 'stroke="#E5E5E5"');
+      c.add(`<path d="M30 ${y + 34}h16M38 ${y + 26}v16" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round"/>`);
+      c.reg('추가 아이콘', 16, y + 10, 44, 48);
+      c.text(62, y + 40, s.typed ?? '무엇이든 물어보세요', { size: 15, fill: s.typed ? '#0D0D0D' : '#8E8E8E', weight: s.typed ? 600 : 500 });
+      c.reg('입력창', 60, y + 10, 196, 48);
+      if (s.typed) {
+        c.add(`<circle cx="320" cy="${y + 34}" r="18" fill="#0D0D0D"/><path d="M313 ${y + 35}l7 -7 7 7M320 ${y + 29}v13" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>`);
+        c.reg('전송 아이콘', 298, y + 10, 46, 48);
+      } else {
+        c.add(`<rect x="266" y="${y + 25}" width="9" height="15" rx="4.5" fill="#0D0D0D"/><path d="M262 ${y + 36}a8.5 8.5 0 0 0 17 0" stroke="#0D0D0D" stroke-width="2" fill="none"/>`);
+        c.reg('음성 메시지 아이콘', 252, y + 10, 40, 48);
+        c.add(`<circle cx="320" cy="${y + 34}" r="18" fill="#0D0D0D"/><path d="M312 ${y + 34}v0M316 ${y + 29}v10M320 ${y + 26}v16M324 ${y + 29}v10M328 ${y + 34}v0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>`);
+        c.reg('음성 모드', 298, y + 10, 46, 48);
+      }
+    };
+    const top = () => {
+      c.add('<g stroke="#0D0D0D" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="58" x2="36" y2="58"/><line x1="18" y1="68" x2="30" y2="68"/></g>');
+      c.reg('메뉴', 8, 42, 40, 44);
+      c.text(180, 70, 'ChatGPT ▾', { size: 18, weight: 700, anchor: 'middle' });
+      c.reg('모델 선택', 120, 46, 120, 36);
+      c.add('<path d="M322 54h-10a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4v-10M318 66l14-14" stroke="#0D0D0D" stroke-width="2" fill="none" stroke-linecap="round"/>');
+      c.reg('새 채팅', 300, 44, 44, 40);
+      c.text(180, 90, '연습 화면', { size: 10.5, fill: '#9AA0A6', weight: 700, anchor: 'middle' });
+    };
+    if (v === 'welcome') {
+      c.text(180, 250, 'ChatGPT', { size: 40, weight: 700, anchor: 'middle', fill: '#FFFFFF' });
+      c.text(180, 290, '연습 화면', { size: 12, anchor: 'middle', fill: '#8E8E8E', weight: 700 });
+      const btns = [['Google로 계속하기', '#FFFFFF', '#0D0D0D'], ['이메일로 가입하기', '#2F2F2F', '#FFFFFF'], ['로그인', '#000000', '#FFFFFF']];
+      btns.forEach(([t, bg, fg], i) => { const y = 412 + i * 60; c.rect(24, y, 312, 50, bg, 25, i === 2 ? 'stroke="#5E5E5E"' : ''); c.text(180, y + 32, t, { size: 16, fill: fg, weight: 700, anchor: 'middle' }); c.reg(t, 20, y - 4, 320, 58); });
+    } else if (v === 'home' || v === 'attach') {
+      top();
+      c.text(180, 300, '무엇을 도와드릴까요?', { size: 24, weight: 700, anchor: 'middle' });
+      input();
+      if (v === 'attach') {
+        c.rect(0, 380, W, 220, '#FFFFFF', 22, 'stroke="#E5E5E5"');
+        [['카메라', '📷'], ['사진', '🖼'], ['파일', '📄']].forEach(([t, m], i) => {
+          const x = 30 + i * 104;
+          c.rect(x, 410, 88, 80, '#F4F4F4', 18); c.text(x + 44, 458, m, { size: 28, anchor: 'middle' });
+          c.text(x + 44, 512, t, { size: 14, anchor: 'middle', weight: 700 });
+          c.reg(t, x, 406, 88, 122);
+        });
+      }
+    } else if (v === 'chat') {
+      top();
+      let y = 110;
+      for (const b of s.bubbles ?? []) {
+        const lines = wrapText(b.text, b.from === 'me' ? 15 : 20);
+        if (b.from === 'me') {
+          const w = Math.min(260, Math.max(...lines.map((l) => l.length)) * 15 + 30);
+          const h = lines.length * 22 + 18;
+          c.rect(344 - w, y, w, h, '#F4F4F4', 20);
+          lines.forEach((l, i) => c.text(344 - w + 15, y + 26 + i * 22, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 344 - w, y, w, h);
+          y += h + 18;
+        } else {
+          lines.forEach((l, i) => c.text(18, y + 16 + i * 23, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 12, y, 330, lines.length * 23 + 8);
+          y += lines.length * 23 + 20;
+          if (y < 470) { ['⧉', '👍', '👎', '🔊', '⟳'].forEach((ic, k) => c.text(22 + k * 30, y, ic, { size: 13, fill: '#8E8E8E' })); y += 22; }
+        }
+      }
+      input();
+    } else if (v === 'menu') {
+      c.rect(0, 0, W, H, 'rgba(0,0,0,0.3)');
+      c.rect(0, 0, 290, H, '#F9F9F9');
+      statusBar(c);
+      c.rect(14, 50, 262, 40, '#ECECEC', 20); c.text(40, 75, '🔍 검색', { size: 14, fill: '#8E8E8E' });
+      c.text(20, 124, '✎ 새 채팅', { size: 15, weight: 700 }); c.reg('새 채팅', 8, 104, 270, 32);
+      c.text(20, 162, '최근', { size: 13, fill: '#8E8E8E', weight: 700 });
+      ['안부 문자 부탁', '김장 장보기 목록', '일본어 통역'].forEach((t, i) => { c.text(20, 192 + i * 36, t, { size: 15, weight: 500 }); c.reg(t, 8, 172 + i * 36, 270, 34); });
+      c.rect(14, 470, 262, 44, '#FFFFFF', 22, 'stroke="#E5E5E5"'); c.text(145, 498, 'Plus로 업그레이드(유료)', { size: 14, weight: 700, anchor: 'middle' }); c.reg('Plus로 업그레이드(유료)', 14, 466, 262, 52);
+      c.add('<circle cx="34" cy="550" r="14" fill="#10A37F"/>'); c.text(34, 556, '영', { size: 13, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.text(58, 556, '영희 · 무료', { size: 14, weight: 700 }); c.reg('내 계정', 8, 532, 270, 40);
+    } else if (v === 'upgrade') {
+      c.add('<path d="M330 50l-14 14M316 50l14 14" stroke="#0D0D0D" stroke-width="2.4" stroke-linecap="round"/>');
+      c.reg('닫기', 304, 38, 44, 40);
+      c.text(24, 110, '요금제 업그레이드', { size: 22, weight: 700 });
+      c.rect(16, 130, 328, 120, '#FFFFFF', 16, 'stroke="#0D0D0D" stroke-width="2"');
+      c.text(32, 162, 'Free(무료)', { size: 18, weight: 800 }); c.text(328, 162, '현재 요금제', { size: 13, weight: 700, anchor: 'end' });
+      c.text(32, 192, '기본 대화·글쓰기·사진 묻기(사용량 제한)', { size: 13.5, fill: '#5D5D5D' });
+      c.text(32, 216, '돈이 들지 않아요', { size: 13.5, fill: '#10A37F', weight: 700 });
+      c.rect(16, 266, 328, 150, '#F9F9F9', 16, 'stroke="#E5E5E5"');
+      c.text(32, 298, 'Plus(유료)', { size: 18, weight: 800 });
+      c.text(32, 326, '더 많은 사용량·기능(매달 요금)', { size: 13.5, fill: '#5D5D5D' });
+      c.rect(32, 350, 296, 44, '#0D0D0D', 22); c.text(180, 378, 'Plus 구독하기(유료)', { size: 15, fill: '#fff', weight: 700, anchor: 'middle' }); c.reg('Plus 구독하기(유료)', 28, 346, 304, 52);
+      c.text(180, 452, '무료로 쓰려면 오른쪽 위 ×를 누르세요', { size: 13.5, anchor: 'middle', fill: '#5D5D5D', weight: 700 });
+    } else if (v === 'voice') {
+      c.add('<circle cx="180" cy="300" r="90" fill="#3B82F6" opacity="0.85"/><circle cx="180" cy="300" r="60" fill="#93C5FD"/>');
+      c.text(180, 440, '듣고 있어요…', { size: 18, fill: '#E5E5E5', weight: 600, anchor: 'middle' });
+      c.add('<circle cx="120" cy="530" r="28" fill="#2F2F2F"/><circle cx="240" cy="530" r="28" fill="#2F2F2F"/>');
+      c.text(120, 537, '🎤', { size: 18, anchor: 'middle' }); c.text(240, 537, '✕', { size: 18, fill: '#fff', anchor: 'middle', weight: 800 });
+      c.reg('마이크 끄기', 90, 500, 60, 60); c.reg('끝내기', 210, 500, 60, 60);
+    }
+    navBar(c, { dark });
   },
 
   /** 출력된 주문 번호 영수증: number, items:[[이름, 금액]], total, store, date */

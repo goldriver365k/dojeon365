@@ -4,8 +4,8 @@
  * - 연습 화면은 특정 앱을 그대로 옮긴 것이 아니라 AI 대화 앱의 공통 모양이다.
  * - AI 답은 틀릴 수 있다는 것, 개인정보를 넣지 않는 것을 수업마다 강조한다.
  */
-import { app as openApp } from '../galaxy/helpers.js?v=20261125.1153';
-import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261125.1153';
+import { app as openApp } from '../galaxy/helpers.js?v=20261125.1201';
+import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261125.1201';
 
 export const COURSE = {
   id: 'ai',
@@ -29,16 +29,32 @@ const AI_INFO = {
 };
 const L = (id, title, q, cards, src = [GOOGLE_AI], extra = {}) => baseL(id, title, q, cards, src, { ...AI_INFO, ...extra });
 
-/** AI 대화 화면 */
-const chat = (bubbles = [], o = {}) => ({ kind: 'chat', title: 'AI 도우미', bubbles, actions: ['옵션 더보기'], ...o });
+/** Gemini 화면(기본 AI 앱) */
+const GM = (view, o = {}) => ({ kind: 'gemini', view, ...o });
+/** ChatGPT 화면 */
+const CG = (view, o = {}) => ({ kind: 'chatgpt', view, ...o });
+/** 대화 화면: 말풍선이 없으면 첫 화면, attach 가 있으면 첨부 메뉴 */
+const chat = (bubbles = [], o = {}, kind = 'gemini') => {
+  const { attach, ...rest } = o;
+  return { kind, view: attach ? 'attach' : bubbles.length ? 'chat' : 'home', bubbles, ...rest };
+};
 const me = (text) => ({ from: 'me', text });
 const ai = (text) => ({ from: 'you', text });
-const typed = (text, bubbles = []) => chat(bubbles, { typed: text });
-const ASK = (q, a, extraHint) => [
-  T('입력창', chat([ai('무엇을 도와드릴까요?')]), '아래쪽 입력칸을 누르세요.'),
-  LK(`‘${q}’라고 적으세요.`, { kind: 'keyboard', title: 'AI 도우미', text: q }, '말하듯이 편하게 적어도 돼요.'),
-  T('전송 아이콘', typed(q, [ai('무엇을 도와드릴까요?')]), '오른쪽 보내기 버튼을 누르세요.'),
-  LK('AI의 답을 읽어 보세요.', chat([me(q), ai(a)]), extraHint ?? '답이 길면 위아래로 밀어 읽어요.'),
+const typed = (text, bubbles = [], kind = 'gemini') => chat(bubbles, { typed: text }, kind);
+const ASK = (q, a, extraHint, kind = 'gemini') => [
+  T('입력창', chat([], {}, kind), `아래쪽 ‘${kind === 'gemini' ? 'Gemini에게 물어보기' : '무엇이든 물어보세요'}’ 칸을 누르세요.`),
+  LK(`‘${q}’라고 적으세요.`, { kind: 'keyboard', title: kind === 'gemini' ? 'Gemini' : 'ChatGPT', text: q }, '말하듯이 편하게 적어도 돼요.'),
+  T('전송 아이콘', typed(q, [], kind), '오른쪽 보내기(↑) 버튼을 누르세요.'),
+  LK('AI의 답을 읽어 보세요.', chat([me(q), ai(a)], {}, kind), extraHint ?? '답이 길면 위아래로 밀어 읽어요.'),
+];
+const FREE_INFO = { check: '두 앱의 실제 화면을 이 작업 환경에서 열어볼 수 없어 화면 구성을 따라 그린 연습 화면이에요. 요금제 이름·무료 사용량은 자주 바뀌니 실제 앱 화면과 대조 필요' };
+const PLAY_SUBS = [
+  openApp('Play 스토어'),
+  S('오른쪽 위 내 계정 동그라미를 누르세요.', '◉', 'Google Play 메뉴가 열려요.'),
+  T('결제 및 정기 결제', list('Google Play', ['결제 및 정기 결제', '앱 및 기기 관리', '설정', '도움말 및 의견'], { back: false }), '‘결제 및 정기 결제’를 누르세요.'),
+  T('정기 결제', list('결제 및 정기 결제', ['결제 수단', '정기 결제', '예산 및 기록']), '‘정기 결제’를 누르세요.'),
+  LK('정기 결제 목록을 확인하세요.', list('정기 결제', [{ t: '활성 정기 결제 없음', s: '돈이 매달 나가는 구독이 없어요' }]), '아무것도 없으면 유료 구독을 하지 않은 거예요.'),
+  S('원하지 않는 구독이 있으면 눌러서 ‘정기 결제 취소’를 하세요.', '✕', '모르면 가족에게 물어보세요.'),
 ];
 
 export const CHAPTERS = [
@@ -62,29 +78,70 @@ export const CHAPTERS = [
     L('a01-privacy', '개인정보 넣지 않기', ['개인정보', '주민번호', '비밀번호', 'AI 보안'], [
       S('주민등록번호·계좌번호·카드번호·비밀번호는 적지 마세요.', '🔒', 'AI와 나눈 대화는 저장될 수 있어요.'),
       S('가족 이름·주소·전화번호도 꼭 필요할 때만 적으세요.', '👪', '“손녀”처럼 바꿔 적어도 충분해요.'),
-      T('옵션 더보기', chat([ai('무엇을 도와드릴까요?')]), '오른쪽 위 점 세 개를 누르면 대화 기록 설정을 찾을 수 있어요.', '앱마다 ‘활동 기록’, ‘대화 삭제’ 같은 메뉴가 있어요.'),
+      T('내 계정', chat([]), '오른쪽 위 내 계정 그림을 누르면 활동 기록 설정을 찾을 수 있어요.', '앱마다 ‘활동 기록’, ‘대화 삭제’ 같은 메뉴가 있어요.'),
     ], [GOOGLE_AI, SRC.kisa]),
   ] },
-  { num: 2, group: 'start', title: 'AI 앱 준비하기', desc: 'Gemini 열기, 다른 AI 앱 설치, 말로 묻기', lessons: [
-    L('a02-gemini', 'Gemini 열기', ['제미나이', 'Gemini', '구글 AI'], [
+  { num: 2, group: 'start', title: 'Gemini 가입하고 무료로 쓰기', desc: 'Google 계정으로 시작, 무료 사용, 말로 묻기', lessons: [
+    L('a02-gemini', 'Gemini 열고 가입하기', ['제미나이', 'Gemini', '제미나이 가입', '구글 AI'], [
       openApp('Gemini', { hint: '갤럭시에 기본으로 들어 있는 Google의 AI 앱이에요. 없으면 Play 스토어에서 ‘Gemini’를 찾아 설치해요.' }),
-      LK('첫 화면을 살펴보세요.', chat([ai('안녕하세요! 무엇을 도와드릴까요?')], { title: 'Gemini' }), '아래쪽 칸에 묻고 싶은 것을 적어요.'),
-      S('처음에는 Google 계정으로 로그인하라는 안내가 나올 수 있어요.', '🔑', '휴대폰에 쓰는 Google 계정을 고르면 돼요.'),
-    ], [GOOGLE_AI, { label: '삼성전자 사용 설명서 83쪽 · Google 앱(Gemini)', url: 'https://downloadcenter.samsung.com/content/UM/202609/20260921172131084/SM-S94X_S93X_S92X_S91X_UG_17_Kor_Rev.1.0_260918.pdf#page=83' }]),
-    L('a02-install', '다른 AI 앱 설치하기', ['ChatGPT', '챗GPT', 'AI 앱 설치'], [
+      T('시작하기', GM('welcome'), '‘시작하기’를 누르세요.'),
+      T('younghee@gmail.com', GM('account'), '쓸 Google 계정을 누르세요.', 'Gemini는 따로 회원가입 없이 휴대폰의 Google 계정으로 써요. 계정이 없으면 ‘다른 계정 추가’에서 만들어요.'),
+      T('동의', GM('terms'), '안내를 읽고 ‘동의’를 누르세요.', '대화 내용이 계정에 저장될 수 있다는 안내예요.'),
+      LK('Gemini 첫 화면이 나왔는지 보세요.', GM('home'), '‘안녕하세요, ○○님’ 아래 칸에 묻고 싶은 것을 적어요.'),
+    ], [GOOGLE_AI], FREE_INFO),
+    L('a02-first', 'Gemini에게 첫 질문하기', ['제미나이 질문', 'Gemini 사용법', '첫 질문'], [
+      ...ASK('오늘 저녁 반찬 추천해 줘', '두부조림, 시금치나물, 달걀말이는 어떠세요? 집에 있는 재료를 알려 주시면 맞춰서 추천해 드릴게요.'),
+      T('새 채팅', GM('menu'), '다른 이야기를 새로 하려면 메뉴에서 ‘새 채팅’을 누르세요.', '왼쪽 위 줄 세 개를 누르면 메뉴가 열려요.'),
+    ], [GOOGLE_AI], FREE_INFO),
+    L('a02-free', 'Gemini 무료로 쓰기', ['제미나이 무료', 'Gemini 무료', '무료 사용', '유료 결제'], [
+      S('Google 계정만 있으면 Gemini 기본 기능은 무료예요.', '🆓', '질문하기, 글쓰기, 사진으로 묻기를 돈 내지 않고 쓸 수 있어요.'),
+      T('메뉴', GM('home'), '왼쪽 위 줄 세 개(메뉴)를 누르세요.'),
+      LK('‘업그레이드’라고 적힌 버튼은 돈을 내는 요금제예요.', GM('menu'), '무료로 쓰려면 누르지 않아도 돼요.'),
+      LK('요금제 화면이 나오면 ‘무료’가 현재 요금제인지 보세요.', GM('upgrade'), '‘구독하기’를 누르지 않으면 돈이 나가지 않아요.'),
+      T('닫기', GM('upgrade'), '오른쪽 위 ×(닫기)를 누르세요.'),
+    ], [GOOGLE_AI], FREE_INFO),
+    L('a02-sub', '실수로 유료 구독했는지 확인하기', ['정기 결제', '구독 확인', '구독 취소', '돈이 나가요'], PLAY_SUBS, [{ label: 'Google Play 고객센터(정기 결제 취소)', url: 'https://support.google.com/googleplay/' }], { check: 'Play 스토어 메뉴 이름은 버전에 따라 달라 실제 화면 확인 필요' }),
+    L('a02-voice', '말로 묻고 대화하기(Live)', ['음성으로 묻기', '말로 질문', '마이크', 'Gemini Live'], [
+      T('음성 메시지 아이콘', GM('home'), '입력칸 오른쪽 마이크를 누르세요.'),
+      LK('휴대폰에 대고 천천히 물어보세요.', { kind: 'keyboard', title: 'Gemini', listening: true }, '예: “오늘 서울 날씨 어때?”'),
+      T('전송 아이콘', GM('home', { typed: '오늘 서울 날씨 어때' }), '보내기 버튼을 누르세요.', '틀린 글자는 고친 뒤 보내요.'),
+      T('Live 아이콘', GM('home'), '말로 주고받으려면 오른쪽 물결 모양(Live)을 누르세요.', '사람과 이야기하듯 대화할 수 있어요.'),
+      T('끝내기', GM('voice'), '대화를 마치려면 빨간 ×를 누르세요.'),
+    ], [GOOGLE_AI], FREE_INFO),
+  ] },
+  { num: 3, group: 'start', title: 'ChatGPT 가입하고 무료로 쓰기', desc: '설치, 가입, 무료 사용, 음성 모드', lessons: [
+    L('a02-install', 'ChatGPT 설치하기', ['ChatGPT', '챗GPT', 'AI 앱 설치', '챗지피티'], [
       openApp('Play 스토어'),
       T('검색창', list('Google Play', [{ t: '추천 앱' }], { searchBar: '앱 및 게임 검색', back: false }), '위쪽 검색창을 누르세요.'),
       LK('‘ChatGPT’를 적으세요.', { kind: 'keyboard', title: '앱 검색', text: 'ChatGPT', english: true }, '영어로 적어요.'),
       T('ChatGPT 설치', list('검색 결과', [{ t: 'ChatGPT', s: 'OpenAI · ★4.7', btn: '설치' }, { t: 'AI 챗봇 무료 대화', s: '광고 앱 · ★3.0' }]), '개발자가 ‘OpenAI’인 ChatGPT 옆 ‘설치’를 누르세요.', '이름이 비슷한 다른 앱이 많아요. 개발자를 꼭 확인해요.'),
-    ], [{ label: 'Google Play 고객센터(앱 설치)', url: 'https://support.google.com/googleplay/' }]),
-    L('a02-voice', '말로 묻기', ['음성으로 묻기', '말로 질문', '마이크'], [
-      T('음성 메시지 아이콘', chat([ai('무엇을 도와드릴까요?')]), '입력칸 오른쪽 마이크를 누르세요.', '앱에 따라 마이크 모양 버튼이 다른 곳에 있을 수 있어요.'),
-      LK('휴대폰에 대고 천천히 물어보세요.', { kind: 'keyboard', title: 'AI 도우미', listening: true }, '예: “오늘 서울 날씨 어때?”'),
-      LK('말한 내용이 글자로 바뀌었는지 보세요.', typed('오늘 서울 날씨 어때', [ai('무엇을 도와드릴까요?')]), '틀린 글자는 고친 뒤 보내요.'),
-      T('전송 아이콘', typed('오늘 서울 날씨 어때', [ai('무엇을 도와드릴까요?')]), '보내기 버튼을 누르세요.'),
-    ]),
+    ], [{ label: 'Google Play 고객센터(앱 설치)', url: 'https://support.google.com/googleplay/' }, { label: 'OpenAI 도움말 센터', url: 'https://help.openai.com/' }], FREE_INFO),
+    L('a03-signup', 'ChatGPT 가입하기', ['챗GPT 가입', 'ChatGPT 가입', '회원가입'], [
+      openApp('ChatGPT'),
+      T('Google로 계속하기', CG('welcome'), '‘Google로 계속하기’를 누르세요.', '이메일로 가입하려면 ‘이메일로 가입하기’를 눌러요.'),
+      T('younghee@gmail.com', list('계정 선택', [{ t: 'younghee@gmail.com', s: '영희' }, { t: '다른 계정 추가' }]), '쓸 Google 계정을 누르세요.'),
+      S('이름과 생년월일을 적으세요.', '✎', '화면 안내에 따라 적고 ‘계속’을 눌러요.'),
+      LK('ChatGPT 첫 화면이 나왔는지 보세요.', CG('home'), '‘무엇을 도와드릴까요?’ 아래 칸에 물어봐요.'),
+    ], [{ label: 'OpenAI 도움말 센터', url: 'https://help.openai.com/' }], FREE_INFO),
+    L('a03-first', 'ChatGPT에 첫 질문하기', ['챗GPT 질문', 'ChatGPT 사용법'], [
+      ...ASK('손주와 할 수 있는 실내 놀이 알려 줘', '종이접기, 블록 쌓기, 끝말잇기, 그림 그리기 놀이가 좋아요. 아이 나이를 알려 주시면 더 맞춰 드릴게요.', undefined, 'chatgpt'),
+      T('새 채팅', CG('home'), '새 이야기를 하려면 오른쪽 위 연필 모양(새 채팅)을 누르세요.'),
+    ], [{ label: 'OpenAI 도움말 센터', url: 'https://help.openai.com/' }], FREE_INFO),
+    L('a03-free', 'ChatGPT 무료로 쓰기', ['챗GPT 무료', 'ChatGPT 무료', 'Plus', '유료'], [
+      S('가입만 하면 ChatGPT를 무료(Free)로 쓸 수 있어요.', '🆓', '많이 쓰면 잠시 뒤에 다시 쓰라는 안내가 나올 수 있어요.'),
+      T('메뉴', CG('home'), '왼쪽 위 줄 두 개(메뉴)를 누르세요.'),
+      LK('아래쪽 ‘Plus로 업그레이드’는 돈을 내는 요금제예요.', CG('menu'), '이름 옆에 ‘무료’라고 나오면 무료로 쓰는 중이에요.'),
+      LK('요금제 화면이 나오면 ‘Free(무료)’가 현재 요금제인지 보세요.', CG('upgrade'), '‘구독하기’를 누르지 않으면 돈이 나가지 않아요.'),
+      T('닫기', CG('upgrade'), '오른쪽 위 ×(닫기)를 누르세요.'),
+      S('혹시 구독했는지 걱정되면 Play 스토어 ‘정기 결제’를 확인하세요.', '🔎', '이 교실 02 ‘실수로 유료 구독했는지 확인하기’를 보세요.'),
+    ], [{ label: 'OpenAI 도움말 센터', url: 'https://help.openai.com/' }], FREE_INFO),
+    L('a03-voice', 'ChatGPT 음성 모드로 말하기', ['음성 모드', '말로 대화', 'ChatGPT 음성'], [
+      T('음성 모드', CG('home'), '입력칸 오른쪽 검은 동그라미(음성 모드)를 누르세요.', '처음에는 마이크 사용을 허용해 달라는 창이 나와요.'),
+      LK('휴대폰에 대고 말하세요.', CG('voice'), 'AI가 소리로 대답해요.'),
+      T('끝내기', CG('voice'), '마치려면 ×를 누르세요.'),
+    ], [{ label: 'OpenAI 도움말 센터', url: 'https://help.openai.com/' }], FREE_INFO),
   ] },
-  { num: 3, group: 'life', title: '궁금한 것 물어보기', desc: '생활 정보, 모르는 말, 뉴스 쉽게 듣기', lessons: [
+  { num: 4, group: 'life', title: '궁금한 것 물어보기', desc: '생활 정보, 모르는 말, 뉴스 쉽게 듣기', lessons: [
     L('a03-word', '모르는 말 뜻 물어보기', ['단어 뜻', '모르는 말', '외래어'], [
       ...ASK('‘키오스크’가 무슨 뜻이야?', '가게나 역에 있는 무인 주문·안내 기계예요. 화면을 눌러 주문하고 결제할 수 있어요.'),
     ]),
@@ -102,7 +159,7 @@ export const CHAPTERS = [
       S('AI 답으로 약을 바꾸거나 끊지 마세요.', '💊', '증상이 계속되면 꼭 병원에 가세요.'),
     ], [GOOGLE_AI, SRC.hira]),
   ] },
-  { num: 4, group: 'life', title: '글쓰기 도움 받기', desc: '안부 문자, 축하 글, 맞춤법, 요약', lessons: [
+  { num: 5, group: 'life', title: '글쓰기 도움 받기', desc: '안부 문자, 축하 글, 맞춤법, 요약', lessons: [
     L('a04-msg', '안부 문자 써 달라기', ['문자 쓰기', '안부 문자', '편지'], [
       ...ASK('친구에게 보낼 안부 문자 써 줘. 따뜻하게', '영숙아, 요즘 날이 많이 춥지? 감기 조심하고, 따뜻한 차 한잔하며 우리 곧 얼굴 보자.'),
       S('마음에 들면 글을 길게 눌러 복사하세요.', '📋', '문자나 카톡에 붙여넣어 보내요.'),
@@ -121,16 +178,16 @@ export const CHAPTERS = [
       LK('요약된 내용을 읽어 보세요.', chat([me('세 줄로 요약해 줘'), ai('1. 12월 10일 물탱크 청소로 단수됩니다. 2. 오전 9시~오후 1시예요. 3. 물을 미리 받아 두세요.')]), '중요한 날짜는 원래 글에서 한 번 더 확인해요.'),
     ]),
   ] },
-  { num: 5, group: 'life', title: '사진으로 묻기', desc: '사진 보여 주고 묻기, 글자 번역', lessons: [
+  { num: 6, group: 'life', title: '사진으로 묻기', desc: '사진 보여 주고 묻기, 글자 번역', lessons: [
     L('a05-photo', '사진 보여 주고 물어보기', ['사진 질문', '이게 뭐야', '식물 이름'], [
-      T('추가 아이콘', chat([ai('무엇을 도와드릴까요?')]), '입력칸 왼쪽 ‘+’를 누르세요.', '앱에 따라 카메라 모양 버튼일 수 있어요.'),
+      T('추가 아이콘', chat([ai('무엇을 도와드릴까요?')]), '입력칸 왼쪽 ‘+’를 누르세요.'),
       T('카메라', chat([ai('무엇을 도와드릴까요?')], { attach: ['카메라', '사진', '파일'] }), '‘카메라’를 누르세요.'),
       S('궁금한 것을 찍으세요.', '📷', '예: 화분의 꽃, 처음 보는 물건'),
       LK('‘이게 뭐야?’라고 묻고 답을 보세요.', chat([me('[사진] 이 꽃 이름이 뭐야?'), ai('사진 속 꽃은 수국으로 보여요. 물을 좋아해서 흙이 마르지 않게 해 주세요.')]), '사진만으로는 틀릴 수 있어요.'),
     ]),
     L('a05-translate', '외국어 글자 번역하기', ['번역', '메뉴판 번역', '영어 읽기'], [
       T('추가 아이콘', chat([ai('무엇을 도와드릴까요?')]), '입력칸 왼쪽 ‘+’를 누르세요.'),
-      T('사진', chat([ai('무엇을 도와드릴까요?')], { attach: ['카메라', '사진', '파일'] }), '찍어 둔 사진을 고르려면 ‘사진’을 누르세요.'),
+      T('갤러리', chat([ai('무엇을 도와드릴까요?')], { attach: ['카메라', '갤러리', '파일'] }), '찍어 둔 사진을 고르려면 ‘갤러리’를 누르세요.'),
       LK('‘한국말로 번역해 줘’라고 보내세요.', chat([me('[사진] 한국말로 번역해 줘'), ai('메뉴: 소고기 국수 9달러, 새우 볶음밥 11달러, 망고 주스 4달러')])),
       S('갤럭시 카메라로도 글자를 바로 번역할 수 있어요.', '🌐', '갤럭시 수업 19와 사용 설명서 51쪽을 보세요.'),
     ], [GOOGLE_AI, GALAXY_AI]),
@@ -140,7 +197,7 @@ export const CHAPTERS = [
       S('아래에 나온 검색 결과를 읽어 보세요.', '🔎', '자세한 내용은 갤럭시 수업 19를 보세요.'),
     ], [GALAXY_AI]),
   ] },
-  { num: 6, group: 'life', title: '말로 대화하고 계획 세우기', desc: '음성 대화, 통역, 일상 계획', lessons: [
+  { num: 7, group: 'life', title: '말로 대화하고 계획 세우기', desc: '음성 대화, 통역, 일상 계획', lessons: [
     L('a06-talk', '말로 대화하기', ['음성 대화', '말동무', '대화 모드'], [
       S('AI 앱의 ‘음성 대화’ 버튼을 누르세요.', '🎙', 'Gemini는 ‘Live’, 다른 앱은 ‘음성 모드’처럼 이름이 달라요.'),
       S('사람과 이야기하듯 말하세요.', '💬', 'AI가 소리로 대답해요. 중간에 말을 끊어도 돼요.'),
@@ -158,7 +215,7 @@ export const CHAPTERS = [
       S('목록을 복사해 노트 앱에 붙여 두세요.', '📝', '장 볼 때 보면서 지우면 편해요.'),
     ]),
   ] },
-  { num: 7, group: 'safe', title: 'AI 사기 조심하기', desc: '가짜 목소리·가짜 영상·AI 사칭', lessons: [
+  { num: 8, group: 'safe', title: 'AI 사기 조심하기', desc: '가짜 목소리·가짜 영상·AI 사칭', lessons: [
     L('a07-voice', '가짜 목소리 전화 알아차리기', ['딥보이스', '가짜 목소리', '목소리 사기'], [
       S('AI로 가족 목소리를 흉내 낼 수 있어요.', '🎭', '“엄마, 나 사고 났어. 돈 보내 줘” 같은 전화는 의심하세요.'),
       S('전화를 끊고 가족 번호로 직접 다시 거세요.', '☎', '가족끼리 비밀 질문(암호)을 정해 두면 좋아요.'),
