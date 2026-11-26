@@ -1,6 +1,6 @@
 # 브라우저 점검 결과
 
-- 실행: 2026-11-26 11:45 UTC, Chromium(Playwright), 360px 기준, 대상 http://127.0.0.1:37529/
+- 실행: 2026-11-26 11:51 UTC, Chromium(Playwright), 360px 기준, 대상 http://127.0.0.1:35993/
 - 결과: 105/105 통과
 
 | 항목 | 결과 | 비고 |
@@ -104,7 +104,7 @@
 | 관리자 편집: 저장 안 한 변경 표시 | 통과 |  |
 | 관리자 편집: GitHub에 i18n/es/edits.json 저장 | 통과 |  |
 | 관리자 편집: 저장 뒤 변경 비움 | 통과 |  |
-| 해외용 2827쪽 320px·아주 크게 가로 스크롤 없음 (ar,bn,de,en,es,fil,fr,hi,id,it,ja,learn,ms,pt,ru,th,tr,vi,zh-Hans,zh-Hant) | 통과 |  |
+| 해외용 2827쪽 320px·아주 크게 가로 스크롤 없음 (ar,bn,de,en,es,fil,fr,hi,id,it,ja,learn,ms,pt,ru,th,tr,vi,zh-hans,zh-hant) | 통과 |  |
 | 자바스크립트 오류 없음 | 통과 |  |
 | 방문 통계: 새 방문자에게 동의 상자가 보임 | 통과 |  |
 | 방문 통계: 동의 전 기본값은 쿠키 거부 | 통과 |  |

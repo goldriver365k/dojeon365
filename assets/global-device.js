@@ -1,8 +1,8 @@
 // DigiStep365 global pages: "My phone" picker (series → model → One UI) and support badges, in the page language.
 // Optional: nothing is forced. Saved only in this browser. The site never guesses the model.
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261126.1140';
-import { metaOf } from '../data/galaxy/meta.js?v=20261126.1140';
-import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261126.1140';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261126.1152';
+import { metaOf } from '../data/galaxy/meta.js?v=20261126.1152';
+import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261126.1152';
 
 const LANG = document.documentElement.lang in DEVICE_STRINGS ? document.documentElement.lang : 'en';
 const D = DEVICE_STRINGS[LANG];
@@ -38,7 +38,7 @@ function render() {
   if (main && box) {
     const s = support(main.dataset.lesson, d);
     box.hidden = !s;
-    if (s) { box.className = `support support--${s.level}`; box.innerHTML = `<strong>${s.label}</strong> ${D.on} ${esc(label(d))}: ${esc(s.text)}. <a href="/${LANG}/galaxy/#my-phone">${D.change}</a>`; }
+    if (s) { box.className = `support support--${s.level}`; box.innerHTML = `<strong>${s.label}</strong> ${D.on} ${esc(label(d))}: ${esc(s.text)}. <a href="/${LANG.toLowerCase()}/galaxy/#my-phone">${D.change}</a>`; }
   }
   document.querySelectorAll('a[data-id]').forEach((a) => {
     a.querySelector('.sup')?.remove();

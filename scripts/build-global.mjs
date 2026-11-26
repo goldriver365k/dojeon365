@@ -64,11 +64,13 @@ export function globalLessons(lang = DEFAULT) {
 const KO_GALAXY = new Set(CHAPTERS.flatMap((c) => c.lessons.map((l) => l.id)));
 function lessonAlternates(id) {
   const out = KO_GALAXY.has(id) ? { ko: koLessonPath('galaxy', id) } : {};
-  for (const [code, L] of Object.entries(LOCALES)) if (L.G.LESSONS[id] && L.G.TITLES[id]) out[code] = `/${code}/galaxy/${L.G.TITLES[id][0]}/`;
+  for (const [code, L] of Object.entries(LOCALES)) if (L.G.LESSONS[id] && L.G.TITLES[id]) out[code] = `/${seg(code)}/galaxy/${L.G.TITLES[id][0]}/`;
   return out;
 }
 const KO_EQUIV = { '': '/', 'galaxy/': '/learn/galaxy/' };
-const allLangs = (suffix) => ({ ...(KO_EQUIV[suffix] ? { ko: KO_EQUIV[suffix] } : {}), ...Object.fromEntries(Object.keys(LOCALES).map((c) => [c, `/${c}/${suffix}`])) });
+/** 주소에 쓰는 언어 폴더 이름: 넷리파이는 대문자 주소를 소문자로 301 이동시키므로 처음부터 소문자(zh-Hans → zh-hans). hreflang 값은 그대로 */
+export const seg = (code) => code.toLowerCase();
+const allLangs = (suffix) => ({ ...(KO_EQUIV[suffix] ? { ko: KO_EQUIV[suffix] } : {}), ...Object.fromEntries(Object.keys(LOCALES).map((c) => [c, `/${seg(c)}/${suffix}`])) });
 
 /* ---------- page parts (use the current language L) ---------- */
 let L = LOCALES[DEFAULT];
@@ -151,7 +153,7 @@ ${UI.devicePicker ? `<script type="module" src="/assets/global-device.js?v=${VER
 function header() {
   const { UI } = L;
   return `<header class="top">
-  <a class="brand" href="/${L.code}/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
+  <a class="brand" href="/${seg(L.code)}/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
   <div class="size" role="group" aria-label="${UI.textSize}">${Object.entries(UI.sizes).map(([k, v]) => `<button type="button" class="size--${k}" data-size="${k}" aria-pressed="${k === 'normal'}" aria-label="${esc(v)}" title="${esc(v)}"><span aria-hidden="true">A</span></button>`).join('')}</div>
 </header>`;
 }
@@ -167,7 +169,7 @@ function footer(draft, alternates = {}) {
   ${draft ? `<p class="draft">${UI.draft}</p>` : ''}
   <p>${UI.disclaimer}</p>
   <p class="langs">${UI.languages}: ${langs.join(' · ')} · <a href="/" hreflang="ko" lang="ko">한국어</a></p>
-  <p><a href="/${L.code}/privacy/">${UI.privacy}</a> · © ${UI.brand} · ${UI.slogan}</p>
+  <p><a href="/${seg(L.code)}/privacy/">${UI.privacy}</a> · © ${UI.brand} · ${UI.slogan}</p>
 </footer>
 ${AN ? `<div class="consent" data-consent hidden role="region" aria-label="${UI.consentLabel}"><p>${UI.consent}</p><div><button type="button" class="btn btn--primary" data-consent-yes>${UI.consentYes}</button><button type="button" class="btn" data-consent-no>${UI.consentNo}</button></div></div>` : ''}`;
 }
@@ -188,9 +190,9 @@ const status = (id) => (L.REVIEWED[id] ? 'reviewed' : 'draft');
 
 function lessonPage(ch, l, t, en, all) {
   const { UI, G } = L;
-  const base = `/${L.code}/galaxy/`;
+  const base = `/${seg(L.code)}/galaxy/`;
   const path = `${base}${t[0]}/`;
-  const crumbs = [[UI.home, `/${L.code}/`], [UI.galaxy, base], [G.CATEGORIES[ch.num][0], `${base}#c${two(ch.num)}`], [t[1], path]];
+  const crumbs = [[UI.home, `/${seg(L.code)}/`], [UI.galaxy, base], [G.CATEGORIES[ch.num][0], `${base}#c${two(ch.num)}`], [t[1], path]];
   const n = en.steps.length;
   const sibling = all.filter((x) => x.en);
   const nextLesson = sibling[sibling.findIndex((x) => x.l.id === l.id) + 1];
@@ -242,8 +244,8 @@ ${footer(draft, alternates)}
 
 function galaxyIndex(groups) {
   const { UI, G } = L;
-  const base = `/${L.code}/galaxy/`;
-  const crumbs = [[UI.home, `/${L.code}/`], [UI.galaxy, base]];
+  const base = `/${seg(L.code)}/galaxy/`;
+  const crumbs = [[UI.home, `/${seg(L.code)}/`], [UI.galaxy, base]];
   const ready = groups.reduce((a, g) => a + g.lessons.filter((x) => x.en && x.t).length, 0);
   const total = groups.reduce((a, g) => a + g.lessons.length, 0);
   const alternates = allLangs('galaxy/');
@@ -277,7 +279,7 @@ ${footer(true, alternates)}
 const POPULAR = ['g03-font', 'g04-call', 'g06-send', 'g10-open'];
 function homeShowcase() {
   const { UI, G } = L;
-  const base = `/${L.code}/galaxy/`;
+  const base = `/${seg(L.code)}/galaxy/`;
   const demoId = 'g03-font';
   const card = CHAPTERS.flatMap((c) => c.lessons).find((l) => l.id === demoId)?.cards?.[0];
   let fig = '';
@@ -296,14 +298,14 @@ function homeShowcase() {
 function homePage() {
   const { UI } = L;
   const alternates = allLangs('');
-  return `${head({ title: `${UI.brand} — ${BRAND_TAGLINE}`, desc: UI.homeDesc, path: `/${L.code}/`, index: false, crumbs: null, alternates })}
+  return `${head({ title: `${UI.brand} — ${BRAND_TAGLINE}`, desc: UI.homeDesc, path: `/${seg(L.code)}/`, index: false, crumbs: null, alternates })}
 <body>
 ${header()}
 <main class="page" id="main">
 <p class="eyebrow">${UI.slogan}</p>
 <h1>${UI.homeH1}</h1>
 <p class="lead">${UI.homeLead}</p>
-<a class="btn btn--primary btn--block" href="/${L.code}/galaxy/">${UI.homeCta}</a>
+<a class="btn btn--primary btn--block" href="/${seg(L.code)}/galaxy/">${UI.homeCta}</a>
 ${homeShowcase()}
 <ul class="points">
 ${UI.homePoints.map(([b, t]) => `  <li><b>${b}</b> — ${t}</li>`).join('\n')}
@@ -318,8 +320,8 @@ ${footer(true, alternates)}
 function privacyPage() {
   const { UI } = L;
   const alternates = allLangs('privacy/');
-  const path = `/${L.code}/privacy/`;
-  return `${head({ title: `${UI.privacy} | ${UI.brand}`, desc: UI.privacyDesc, path, index: false, crumbs: [[UI.home, `/${L.code}/`], [UI.privacy, path]], alternates })}
+  const path = `/${seg(L.code)}/privacy/`;
+  return `${head({ title: `${UI.privacy} | ${UI.brand}`, desc: UI.privacyDesc, path, index: false, crumbs: [[UI.home, `/${seg(L.code)}/`], [UI.privacy, path]], alternates })}
 <body>
 ${header()}
 <main class="page" id="main">
@@ -440,7 +442,7 @@ function editData(code) {
       const e = X.G.LESSONS[l.id];
       if (!t || !e) continue;
       lessons.push({
-        id: l.id, ch: ch.num, cat: X.G.CATEGORIES[ch.num][0], slug: t[0], path: `/${code}/galaxy/${t[0]}/`,
+        id: l.id, ch: ch.num, cat: X.G.CATEGORIES[ch.num][0], slug: t[0], path: `/${seg(code)}/galaxy/${t[0]}/`,
         title: t[1], desc: e.desc, steps: e.steps.map((s) => [s[0] ?? '', s[1] ?? '', s[2] ?? '']),
         ko: l.cards.map((c) => c.text ?? ''), en: code === 'en' ? null : (enG.LESSONS[l.id]?.steps ?? []).map((s) => s[0]),
         reviewed: X.REVIEWED[l.id] ?? null, inRepo: Boolean(X.REPO_REVIEWED[l.id]), edited: X.EDITED.has(l.id), extra: Boolean(l.extra),
@@ -485,10 +487,11 @@ export function build() {
     stats[code] = { pictures: 0, steps: 0 };
     setTranslator(L.tr, { locale: code, ...(L.wrap ?? {}) });
     rmSync(new URL(`../${code}/`, import.meta.url), { recursive: true, force: true });
+    rmSync(new URL(`../${seg(code)}/`, import.meta.url), { recursive: true, force: true });
     const groups = globalLessons(code);
-    out(`/${code}/`, homePage());
-    out(`/${code}/galaxy/`, galaxyIndex(groups));
-    out(`/${code}/privacy/`, privacyPage());
+    out(`/${seg(code)}/`, homePage());
+    out(`/${seg(code)}/galaxy/`, galaxyIndex(groups));
+    out(`/${seg(code)}/privacy/`, privacyPage());
     let pages = 0;
     for (const { ch, lessons } of groups) {
       for (const x of lessons) {
@@ -499,7 +502,7 @@ export function build() {
         if (!x.en || !x.t) continue;
         const before = stats[code].pictures;
         const beforeSteps = stats[code].steps;
-        const path = `/${code}/galaxy/${x.t[0]}/`;
+        const path = `/${seg(code)}/galaxy/${x.t[0]}/`;
         out(path, lessonPage(ch, x.l, x.t, x.en, lessons));
         pages++;
         rowsById.get(x.l.id).langs[code] = { path, status: status(x.l.id), pics: stats[code].pictures - before, steps: stats[code].steps - beforeSteps };

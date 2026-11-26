@@ -49,6 +49,7 @@ test('국내 갤럭시 수업 ↔ 해외 언어 hreflang이 서로 연결된다(
   const alts = [...ko.matchAll(/hreflang="([^"]+)" href="([^"]+)"/g)];
   assert.ok(alts.length >= 20, `hreflang ${alts.length}개`);
   assert.ok(alts.some(([, c]) => c === 'x-default'));
+  for (const [, c, href] of alts) assert.equal(href, href.toLowerCase(), `${c}: 주소에 대문자가 있으면 넷리파이가 301 이동시켜 canonical·hreflang이 어긋남`);
   const en = alts.find(([, c]) => c === 'en')[2].replace(SITE, '');
   assert.match(read(en), /hreflang="ko" href="https:\/\/digistep365\.com\/learn\/galaxy\/g01-charge\/"/);
 });

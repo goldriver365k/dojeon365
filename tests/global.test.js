@@ -90,14 +90,15 @@ for (const [code, cfg] of Object.entries(OTHER)) test(`${code}: 단계 수 일�
     assert.equal(es.steps.length, findLesson(id).lesson.cards.length, id);
     assert.notEqual(metaOf(id).region, 'KR', id);
     for (const [text] of es.steps) assert.ok(!/\. [A-ZÁÉÍÓÚÂÊÔÃÕÇ¡¿]/.test(text), `${id} — ${text}`);
-    const html = readFileSync(`${code}/galaxy/${ES.TITLES[id][0]}/index.html`, 'utf8');
+    const html = readFileSync(`${code.toLowerCase()}/galaxy/${ES.TITLES[id][0]}/index.html`, 'utf8');
     assert.match(html, new RegExp(`<html lang="${cfg.html}"`));
     if (!ESR[id]) assert.match(html, /<meta name="robots" content="noindex/);
     assert.ok(html.includes(cfg.disclaimer), `${code} 면책 문구`);
     assert.ok(html.includes(`hreflang="en" href="https://digistep365.com/en/galaxy/${EN.TITLES[id][0]}/"`), `${code}→en ${id}`);
     const en = readFileSync(`en/galaxy/${EN.TITLES[id][0]}/index.html`, 'utf8');
-    assert.ok(en.includes(`hreflang="${code}" href="https://digistep365.com/${code}/galaxy/${ES.TITLES[id][0]}/"`), `en→${code} ${id}`);
+    assert.ok(en.includes(`hreflang="${code}" href="https://digistep365.com/${code.toLowerCase()}/galaxy/${ES.TITLES[id][0]}/"`), `en→${code} ${id}`);
   }
+  assert.ok(!existsSync(`${code}/`) || code === code.toLowerCase() || !existsSync(`${code}/galaxy/`), `${code}: 대문자 폴더가 남아 있음(넷리파이가 소문자로 이동시킴)`);
   const slugs = Object.values(ES.TITLES).map((t) => t[0]);
   assert.equal(new Set(slugs).size, slugs.length, `${code} 주소 중복`);
 });
