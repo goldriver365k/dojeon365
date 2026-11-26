@@ -9,7 +9,7 @@
  * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
  */
 
-import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261126.0341';
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261126.0348';
 
 const W = 360;
 const H = 640;
@@ -154,7 +154,9 @@ function wrapText(s, max) {
   if (TR && TR_OPT.noSpace) {
     const parts = TR_OPT.seg ? [...TR_OPT.seg.segment(src)].map((x) => x.segment) : [...src];
     for (const part of parts) {
-      if ((line + part).length > max && line.trim()) { out.push(line.trim()); line = part.trimStart(); } else line += part;
+      // 줄 첫머리에 붙임표·닫는 문장부호가 오지 않게 한다
+      const glue = /^[-–.,!?:;)\]」』。、，！？：；）]/.test(part) || /[-(「『（]$/.test(line);
+      if ((line + part).length > max && line.trim() && !glue) { out.push(line.trim()); line = part.trimStart(); } else line += part;
     }
     if (line.trim()) out.push(line.trim());
     return out;

@@ -255,6 +255,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': '其他 S 系列（S22 及更早、FE）', 'a-old': '其他 A 系列', 'm-any': 'M 系列手機', 'f-any': 'F 系列手機', 'note-old': '其他 Note', 'xcover-old': '其他 XCover', etc: '列表中沒有的 Galaxy' },
     seriesNames: { s: 'Galaxy S 系列', a: 'Galaxy A 系列', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M 系列', f: 'Galaxy F 系列', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: '其他 / 列表中沒有' },
   },
+  th: {
+    h: 'โทรศัพท์ของฉัน', none: 'ยังไม่ได้เลือก · คำแนะนำทั่วไป',
+    howH: 'ก่อนอื่น หารุ่นและเวอร์ชันซอฟต์แวร์ของโทรศัพท์คุณ',
+    how: ['แตะแอป <b>การตั้งค่า</b>', 'แตะ <b>เกี่ยวกับโทรศัพท์</b> ที่ด้านล่างสุด', 'ดู <b>ชื่อรุ่น</b> ด้านบน (เช่น Galaxy S26 · SM-S942N)', 'แตะ <b>ข้อมูลซอฟต์แวร์</b>', 'ดู <b>เวอร์ชัน One UI</b> (เช่น 9.0)'],
+    howNote: 'บางรุ่นเมนูชื่อ ‘เกี่ยวกับอุปกรณ์’ หรือพิมพ์ ‘เกี่ยวกับโทรศัพท์’ ในช่องค้นหาของการตั้งค่าก็ได้',
+    practice: 'ฝึกขั้นตอนเหล่านี้', series: 'ซีรีส์', model: 'รุ่น', oneui: 'เวอร์ชัน One UI', save: 'บันทึกโทรศัพท์ของฉัน', clear: 'ใช้คำแนะนำทั่วไป',
+    note: 'จะเลือกหรือไม่ก็ได้ บันทึกไว้ในเบราว์เซอร์นี้เท่านั้น และเราไม่เดารุ่นของคุณ',
+    dontKnow: 'ไม่ทราบ', dontKnowWhich: 'ไม่ทราบว่ารุ่นไหน', chooseSeries: 'เลือกซีรีส์ก่อน', baseVersion: 'เวอร์ชันของบทเรียนนี้',
+    saved: 'บันทึกแล้ว แต่ละบทจะแสดงว่าใช้กับโทรศัพท์ของคุณได้หรือไม่', cleared: 'ล้างแล้ว กำลังแสดงคำแนะนำทั่วไป',
+    modelUnknown: 'ไม่ทราบรุ่น', seriesUnknown: (s) => `${s} (ไม่ทราบรุ่น)`, versionUnknown: 'ไม่ทราบเวอร์ชัน One UI',
+    level: { ok: 'รองรับ', diff: 'ควรตรวจ', check: 'ควรตรวจ', no: 'ไม่รองรับ' },
+    text: { ok: 'ตรวจตามคู่มือทางการแล้ว', diff: 'ชื่อเมนูอาจต่างใน One UI เวอร์ชันนี้', check: 'ยังไม่ได้ตรวจในรุ่นนี้', no: 'รุ่นนี้ไม่มี', min: (v) => `ต้องใช้ One UI ${v} ขึ้นไป` },
+    on: '·', change: 'เปลี่ยน',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'ซีรีส์ S อื่น (S22 และเก่ากว่า, FE)', 'a-old': 'ซีรีส์ A อื่น', 'm-any': 'โทรศัพท์ซีรีส์ M', 'f-any': 'โทรศัพท์ซีรีส์ F', 'note-old': 'Note อื่น', 'xcover-old': 'XCover อื่น', etc: 'Galaxy ที่ไม่อยู่ในรายการ' },
+    seriesNames: { s: 'Galaxy ซีรีส์ S', a: 'Galaxy ซีรีส์ A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy ซีรีส์ M', f: 'Galaxy ซีรีส์ F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'อื่นๆ / ไม่อยู่ในรายการ' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */

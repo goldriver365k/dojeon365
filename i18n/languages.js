@@ -11,7 +11,7 @@ export const LANGUAGES = [
   { code: 'hi', name: 'हिन्दी', status: 'planned', og: 'hi_IN', speech: 'hi-IN', wrap: { scale: 1.35 } },
   { code: 'id', name: 'Bahasa Indonesia', status: 'draft', og: 'id_ID', speech: 'id-ID' },
   { code: 'vi', name: 'Tiếng Việt', status: 'draft', og: 'vi_VN', speech: 'vi-VN' },
-  { code: 'th', name: 'ไทย', status: 'planned', og: 'th_TH', speech: 'th-TH', wrap: { noSpace: true, scale: 1.5 } },
+  { code: 'th', name: 'ไทย', status: 'draft', og: 'th_TH', speech: 'th-TH', wrap: { noSpace: true, scale: 1.5 } },
   { code: 'ja', name: '日本語', status: 'draft', og: 'ja_JP', speech: 'ja-JP', wrap: { noSpace: true, scale: 1.05 } },
   { code: 'zh-Hans', name: '简体中文', status: 'draft', og: 'zh_CN', speech: 'zh-CN', wrap: { noSpace: true, scale: 1.05 } },
   { code: 'zh-Hant', name: '繁體中文', status: 'draft', og: 'zh_TW', speech: 'zh-TW', wrap: { noSpace: true, scale: 1.05 } },

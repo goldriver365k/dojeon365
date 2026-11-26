@@ -12,22 +12,22 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261126.0341';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261126.0341';
-import * as DIGITAL from '../data/digital/index.js?v=20261126.0341';
-import * as AI from '../data/ai/index.js?v=20261126.0341';
-import * as SCAM from '../data/scam/index.js?v=20261126.0341';
-import * as CREATIVE from '../data/creative/index.js?v=20261126.0341';
-import * as CAREER from '../data/career/index.js?v=20261126.0341';
+import { CATEGORIES } from '../data/categories.js?v=20261126.0348';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261126.0348';
+import * as DIGITAL from '../data/digital/index.js?v=20261126.0348';
+import * as AI from '../data/ai/index.js?v=20261126.0348';
+import * as SCAM from '../data/scam/index.js?v=20261126.0348';
+import * as CREATIVE from '../data/creative/index.js?v=20261126.0348';
+import * as CAREER from '../data/career/index.js?v=20261126.0348';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
 const COURSES = { digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261126.0341';
-import { renderScreen } from './screens.js?v=20261126.0341';
-import { appInfo, appIconStandalone } from './apps.js?v=20261126.0341';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261126.0341';
-import { VERSION } from './version.js?v=20261126.0341';
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261126.0341';
-import { metaOf } from '../data/galaxy/meta.js?v=20261126.0341';
+import { BASE } from '../data/galaxy/helpers.js?v=20261126.0348';
+import { renderScreen } from './screens.js?v=20261126.0348';
+import { appInfo, appIconStandalone } from './apps.js?v=20261126.0348';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261126.0348';
+import { VERSION } from './version.js?v=20261126.0348';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261126.0348';
+import { metaOf } from '../data/galaxy/meta.js?v=20261126.0348';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
