@@ -11,6 +11,7 @@ import { SITE_CONFIG } from '../i18n/site-config.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
 import { deviceSection } from '../i18n/device-strings.js';
+import { applyEdits } from '../i18n/edits.js';
 
 /** Languages built here: every language in i18n/languages.js (except ko) that has a folder i18n/<code>/ with ui.js. en is x-default. */
 const CODES = LANGUAGES.map((l) => l.code).filter((c) => c !== 'ko' && existsSync(new URL(`../i18n/${c}/ui.js`, import.meta.url)));
@@ -18,7 +19,11 @@ export const LOCALES = Object.fromEntries(await Promise.all(CODES.map(async (cod
   const imp = (f) => import(`../i18n/${code}/${f}.js`);
   const [ui, G, rv, terms] = await Promise.all([imp('ui'), imp('galaxy'), imp('review'), imp('screen-terms')]);
   const meta = LANGUAGES.find((l) => l.code === code);
-  return [code, { code, og: meta.og, speech: meta.speech, dir: meta.dir, wrap: meta.wrap, UI: ui.UI, G, REVIEWED: rv.REVIEWED, tr: terms.tr }];
+  // 관리자 화면에서 고친 내용(i18n/<code>/edits.json)을 덮어쓴다
+  const editsFile = new URL(`../i18n/${code}/edits.json`, import.meta.url);
+  const raw = existsSync(editsFile) ? JSON.parse(readFileSync(editsFile, 'utf8')) : {};
+  const ed = applyEdits(G, rv.REVIEWED, raw);
+  return [code, { code, name: meta.name, og: meta.og, speech: meta.speech, dir: meta.dir, wrap: meta.wrap, UI: ui.UI, G: ed.G, REVIEWED: ed.REVIEWED, REPO_REVIEWED: rv.REVIEWED, EDITED: new Set(ed.edited), tr: terms.tr }];
 })));
 const enG = LOCALES.en.G;
 const DEFAULT = 'en';
@@ -292,12 +297,14 @@ function adminPage(rows) {
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'none'">
 <title>콘텐츠 현황 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${VERSION}"></head>
 <body><main class="page admin">
-<h1>콘텐츠 현황(읽기 전용)</h1>
-<p class="lead">빌드할 때 자동으로 만들어지는 현황표입니다. 내용 수정은 저장소의 <code>i18n/</code>·<code>data/</code> 파일에서 합니다. 검색엔진에는 노출되지 않습니다.</p>
+<h1>콘텐츠 현황</h1>
+<p class="lead">빌드할 때 자동으로 만들어지는 현황표입니다. 검색엔진에는 노출되지 않습니다.</p>
+<p><a class="btn btn--primary" href="/admin/edit/">수업 편집·검수하기</a></p>
 <table class="sum"><thead><tr><th>항목</th>${codes.map((c) => `<th>${c}</th>`).join('')}</tr></thead><tbody>
 <tr><th>해외용 갤럭시 수업(한국 전용 제외)</th>${codes.map(() => `<td>${total}</td>`).join('')}</tr>
 <tr><th>단계 작성</th>${codes.map((c) => `<td>${count(c, (x) => x)} / ${total}</td>`).join('')}</tr>
 <tr><th>검수 완료(검색 노출)</th>${codes.map((c) => `<td>${count(c, (x) => x?.status === 'reviewed')}</td>`).join('')}</tr>
+<tr><th>관리자 화면에서 고친 수업</th>${codes.map((c) => `<td>${LOCALES[c].EDITED.size}</td>`).join('')}</tr>
 <tr><th>연습 그림</th>${codes.map((c) => `<td>${stats[c].pictures} / ${stats[c].steps}</td>`).join('')}</tr>
 </tbody></table>
 <p>기준: ${esc(BASE.model)} · ${esc(BASE.software)} · 확인 ${esc(BASE.checked)}</p>
@@ -316,6 +323,77 @@ ${rows.map((r) => `<tr><td>${two(r.ch)}</td><td>${esc(r.title)}<br><small>${r.id
 </tbody></table>
 </main></body></html>
 `;
+}
+
+/** 관리자 편집 화면(정적 껍데기). 내용은 /admin/data/<언어>.json을 읽어 assets/admin-edit.js가 그린다. */
+function editPage() {
+  const langs = Object.values(LOCALES).map((x) => `<option value="${x.code}">${esc(x.name)} (${x.code})</option>`).join('');
+  return `<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:">
+<title>수업 편집 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${VERSION}"></head>
+<body><main class="page admin edit" data-editor>
+<p><a href="/admin/">← 콘텐츠 현황</a></p>
+<h1>수업 편집·검수</h1>
+<p class="lead">해외용 수업의 제목·설명·단계 문장을 고치고, 원어민 검수를 기록합니다. 고친 내용은 이 브라우저에 임시 저장되며, <b>GitHub에 저장</b>하면 사이트가 다시 만들어져 1~3분 뒤 반영됩니다.</p>
+<details class="edit__help"><summary>사용 방법과 주의</summary>
+<ol>
+<li>언어와 수업을 고릅니다. 한국어 원문과 영어 기준 문장을 보면서 그 언어 문장을 고칩니다.</li>
+<li>한 단계에는 한 문장만 씁니다. 단계 수와 주소는 바꿀 수 없습니다(연습 그림·링크와 짝이 맞아야 함).</li>
+<li>실제 그 언어로 설정한 갤럭시에서 모든 단계를 확인했다면 <b>검수 완료</b>를 체크하고 검수자·날짜·기기를 적습니다. 검수 완료된 수업만 검색에 노출됩니다(<a href="/docs/review-checklist-en.md" target="_blank">검수 기준</a>).</li>
+<li><b>GitHub에 저장</b>: 저장소 쓰기 권한이 있는 개인 액세스 토큰이 필요합니다(Contents: Read and write). 토큰은 이 탭에만 기억되고 다른 곳으로 보내지 않습니다.</li>
+<li>토큰이 없으면 <b>파일 내려받기</b>로 <code>edits.json</code>을 받아 저장소의 <code>i18n/&lt;언어&gt;/edits.json</code>에 넣으면 됩니다.</li>
+</ol></details>
+<noscript><p class="step__note">이 화면은 자바스크립트가 필요합니다.</p></noscript>
+<div class="edit__bar">
+  <label>언어 <select data-lang>${langs}</select></label>
+  <label>보기 <select data-filter><option value="all">전체</option><option value="draft">초안</option><option value="reviewed">검수 완료</option><option value="edited">고친 수업</option><option value="pending">저장 안 한 변경</option></select></label>
+  <label>찾기 <input type="search" data-search placeholder="제목·id"></label>
+</div>
+<div class="edit__grid">
+  <nav class="edit__list" aria-label="수업 목록"><p data-count></p><ul data-list></ul></nav>
+  <section class="edit__form" data-form aria-live="polite"><p>목록에서 수업을 고르세요.</p></section>
+</div>
+<section class="edit__save">
+  <h2>저장</h2>
+  <p data-pending>저장 안 한 변경이 없습니다.</p>
+  <div class="edit__actions">
+    <button type="button" class="btn" data-download>파일 내려받기(edits.json)</button>
+    <button type="button" class="btn" data-discard>이 언어의 변경 버리기</button>
+  </div>
+  <fieldset class="edit__gh"><legend>GitHub에 저장</legend>
+    <label>저장소 <input data-repo value="goldriver365k/dojeon365" autocomplete="off"></label>
+    <label>배포 브랜치 <input data-branch value="claude/wizardly-dirac-fd5679" autocomplete="off"></label>
+    <label>개인 액세스 토큰 <input type="password" data-token autocomplete="off" placeholder="github_pat_…"></label>
+    <button type="button" class="btn btn--primary" data-commit>GitHub에 저장</button>
+  </fieldset>
+  <p class="edit__msg" data-msg role="status"></p>
+</section>
+</main>
+<script type="module" src="/assets/admin-edit.js?v=${VERSION}"></script>
+</body></html>
+`;
+}
+
+/** 편집 화면이 읽는 언어별 자료: 지금 반영된 제목·설명·단계, 한국어 원문, 영어 기준, 검수 상태. */
+function editData(code) {
+  const X = LOCALES[code];
+  const lessons = [];
+  for (const { ch, lessons: ls } of masterLessons()) {
+    for (const l of ls) {
+      const t = X.G.TITLES[l.id];
+      const e = X.G.LESSONS[l.id];
+      if (!t || !e) continue;
+      lessons.push({
+        id: l.id, ch: ch.num, cat: X.G.CATEGORIES[ch.num][0], slug: t[0], path: `/${code}/galaxy/${t[0]}/`,
+        title: t[1], desc: e.desc, steps: e.steps.map((s) => [s[0] ?? '', s[1] ?? '', s[2] ?? '']),
+        ko: l.cards.map((c) => c.text ?? ''), en: code === 'en' ? null : (enG.LESSONS[l.id]?.steps ?? []).map((s) => s[0]),
+        reviewed: X.REVIEWED[l.id] ?? null, inRepo: Boolean(X.REPO_REVIEWED[l.id]), edited: X.EDITED.has(l.id), extra: Boolean(l.extra),
+      });
+    }
+  }
+  return { code, name: X.name, dir: X.dir ?? 'ltr', file: `i18n/${code}/edits.json`, version: VERSION, lessons };
 }
 
 export function build() {
@@ -360,6 +438,9 @@ ${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${reviewedA
 </urlset>
 `);
   out('/admin/', adminPage([...rowsById.values()]));
+  out('/admin/edit/', editPage());
+  mkdirSync(new URL('../admin/data/', import.meta.url), { recursive: true });
+  for (const code of Object.keys(LOCALES)) writeFileSync(new URL(`../admin/data/${code}.json`, import.meta.url), JSON.stringify(editData(code)));
   writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   return { ...result, indexed: sitemap.length, total: rowsById.size };
 }

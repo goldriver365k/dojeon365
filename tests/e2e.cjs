@@ -414,6 +414,37 @@ async function main() {
   await page.goto(`${BASE}en/galaxy/`);
   check('영어 13번 분류: 새 수업 3개', (await page.locator('#c13 a').count()) === 3);
 
+  // 관리자 편집: 수업 고르기 → 단계 고치기·검수 기록 → GitHub 저장(가짜 API)
+  {
+    let put = null;
+    await page.route('https://api.github.com/**', (route) => {
+      if (route.request().method() === 'GET') {
+        const existing = Buffer.from(JSON.stringify({ lessons: { 'g01-charge': { title: 'Antes' } }, reviewed: {} })).toString('base64');
+        return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ sha: 'abc123', content: existing }) });
+      }
+      put = JSON.parse(route.request().postData());
+      return route.fulfill({ status: 201, contentType: 'application/json', body: '{}' });
+    });
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(`${BASE}admin/edit/`);
+    await page.selectOption('[data-lang]', 'es');
+    await page.waitForSelector('.edit__item');
+    check('관리자 편집: 140개 수업 목록', (await page.textContent('[data-count]')).includes('140'));
+    await page.click('.edit__item >> nth=0');
+    await page.locator('.edit__step textarea').first().fill('Mira el borde derecho del teléfono.');
+    await page.check('.edit__check input');
+    await page.locator('.edit__review input').nth(1).fill('Revisor');
+    check('관리자 편집: 저장 안 한 변경 표시', (await page.textContent('[data-pending]')).includes('1개 수업'));
+    await page.fill('[data-token]', 'github_pat_test');
+    await page.click('[data-commit]');
+    await page.waitForFunction(() => /저장했습니다|저장하지 못했습니다/.test(document.querySelector('[data-msg]').textContent));
+    const sent = put && JSON.parse(Buffer.from(put.content, 'base64').toString('utf8'));
+    check('관리자 편집: GitHub에 i18n/es/edits.json 저장', Boolean(sent?.lessons?.['g01-buttons']?.steps?.['0']?.[0] === 'Mira el borde derecho del teléfono.' && sent.reviewed['g01-buttons']?.by === 'Revisor' && sent.lessons['g01-charge']?.title === 'Antes' && put.sha === 'abc123'));
+    check('관리자 편집: 저장 뒤 변경 비움', (await page.textContent('[data-pending]')).includes('없습니다'));
+    await page.unroute('https://api.github.com/**');
+    await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
+  }
+
   // 모든 해외용 페이지: 320px·아주 크게에서 가로 스크롤 없음(긴 낱말 언어 포함)
   {
     const langs = fs.readdirSync(ROOT).filter((d) => fs.existsSync(path.join(ROOT, d, 'galaxy', 'index.html')));

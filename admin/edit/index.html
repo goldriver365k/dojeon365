@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:">
+<title>수업 편집 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=20261126.0650"></head>
+<body><main class="page admin edit" data-editor>
+<p><a href="/admin/">← 콘텐츠 현황</a></p>
+<h1>수업 편집·검수</h1>
+<p class="lead">해외용 수업의 제목·설명·단계 문장을 고치고, 원어민 검수를 기록합니다. 고친 내용은 이 브라우저에 임시 저장되며, <b>GitHub에 저장</b>하면 사이트가 다시 만들어져 1~3분 뒤 반영됩니다.</p>
+<details class="edit__help"><summary>사용 방법과 주의</summary>
+<ol>
+<li>언어와 수업을 고릅니다. 한국어 원문과 영어 기준 문장을 보면서 그 언어 문장을 고칩니다.</li>
+<li>한 단계에는 한 문장만 씁니다. 단계 수와 주소는 바꿀 수 없습니다(연습 그림·링크와 짝이 맞아야 함).</li>
+<li>실제 그 언어로 설정한 갤럭시에서 모든 단계를 확인했다면 <b>검수 완료</b>를 체크하고 검수자·날짜·기기를 적습니다. 검수 완료된 수업만 검색에 노출됩니다(<a href="/docs/review-checklist-en.md" target="_blank">검수 기준</a>).</li>
+<li><b>GitHub에 저장</b>: 저장소 쓰기 권한이 있는 개인 액세스 토큰이 필요합니다(Contents: Read and write). 토큰은 이 탭에만 기억되고 다른 곳으로 보내지 않습니다.</li>
+<li>토큰이 없으면 <b>파일 내려받기</b>로 <code>edits.json</code>을 받아 저장소의 <code>i18n/&lt;언어&gt;/edits.json</code>에 넣으면 됩니다.</li>
+</ol></details>
+<noscript><p class="step__note">이 화면은 자바스크립트가 필요합니다.</p></noscript>
+<div class="edit__bar">
+  <label>언어 <select data-lang><option value="en">English (en)</option><option value="es">Español (es)</option><option value="pt">Português (Brasil) (pt)</option><option value="de">Deutsch (de)</option><option value="fr">Français (fr)</option><option value="hi">हिन्दी (hi)</option><option value="id">Bahasa Indonesia (id)</option><option value="vi">Tiếng Việt (vi)</option><option value="th">ไทย (th)</option><option value="ja">日本語 (ja)</option><option value="zh-Hans">简体中文 (zh-Hans)</option><option value="zh-Hant">繁體中文 (zh-Hant)</option><option value="it">Italiano (it)</option><option value="ar">العربية (ar)</option><option value="ru">Русский (ru)</option><option value="tr">Türkçe (tr)</option><option value="ms">Bahasa Melayu (ms)</option><option value="fil">Filipino (fil)</option><option value="bn">বাংলা (bn)</option></select></label>
+  <label>보기 <select data-filter><option value="all">전체</option><option value="draft">초안</option><option value="reviewed">검수 완료</option><option value="edited">고친 수업</option><option value="pending">저장 안 한 변경</option></select></label>
+  <label>찾기 <input type="search" data-search placeholder="제목·id"></label>
+</div>
+<div class="edit__grid">
+  <nav class="edit__list" aria-label="수업 목록"><p data-count></p><ul data-list></ul></nav>
+  <section class="edit__form" data-form aria-live="polite"><p>목록에서 수업을 고르세요.</p></section>
+</div>
+<section class="edit__save">
+  <h2>저장</h2>
+  <p data-pending>저장 안 한 변경이 없습니다.</p>
+  <div class="edit__actions">
+    <button type="button" class="btn" data-download>파일 내려받기(edits.json)</button>
+    <button type="button" class="btn" data-discard>이 언어의 변경 버리기</button>
+  </div>
+  <fieldset class="edit__gh"><legend>GitHub에 저장</legend>
+    <label>저장소 <input data-repo value="goldriver365k/dojeon365" autocomplete="off"></label>
+    <label>배포 브랜치 <input data-branch value="claude/wizardly-dirac-fd5679" autocomplete="off"></label>
+    <label>개인 액세스 토큰 <input type="password" data-token autocomplete="off" placeholder="github_pat_…"></label>
+    <button type="button" class="btn btn--primary" data-commit>GitHub에 저장</button>
+  </fieldset>
+  <p class="edit__msg" data-msg role="status"></p>
+</section>
+</main>
+<script type="module" src="/assets/admin-edit.js?v=20261126.0650"></script>
+</body></html>

@@ -105,3 +105,43 @@ h1 { font-size: clamp(1.6rem, 6vw, 2.1rem); line-height: 1.3; margin: 8px 0; let
 .page, .foot { overflow-wrap: anywhere; }
 h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .step, .cat, .device { min-width: 0; }
+
+/* 관리자 편집 화면 */
+.admin.edit { max-width: 1200px; }
+.edit__help { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 12px; margin: 8px 0 16px; }
+.edit__help ol { padding-inline-start: 1.3em; display: grid; gap: 4px; }
+.edit__bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: end; margin-bottom: 12px; }
+.edit__bar label, .edit__gh label, .edit__field { display: grid; gap: 4px; font-weight: 700; font-size: .9rem; }
+.admin.edit input, .admin.edit select, .admin.edit textarea { font: inherit; font-weight: 400; font-size: 1rem; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); min-height: 44px; width: 100%; box-sizing: border-box; }
+.admin.edit textarea { resize: vertical; line-height: 1.5; }
+.admin.edit input:disabled { opacity: .55; }
+.admin.edit :focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.edit__grid { display: grid; grid-template-columns: minmax(220px, 320px) 1fr; gap: 16px; align-items: start; }
+.edit__list { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px; max-height: 75vh; overflow-y: auto; position: sticky; top: 8px; }
+.edit__list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.edit__cat { font-size: .8rem; font-weight: 800; color: var(--ink-2); padding: 10px 6px 2px; }
+.edit__item { width: 100%; text-align: start; display: grid; gap: 2px; padding: 8px; border: 0; border-radius: 10px; background: transparent; color: var(--ink); font: inherit; cursor: pointer; min-height: 44px; }
+.edit__item:hover { background: var(--surface-2); }
+.edit__item.is-on { background: var(--surface-2); outline: 2px solid var(--primary); }
+.edit__item small { color: var(--ink-2); }
+.edit__badges { display: flex; flex-wrap: wrap; gap: 4px; }
+.edit .b { font-style: normal; font-size: .72rem; font-weight: 800; padding: 1px 7px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); }
+.edit .b--ok { background: #dff3e1; color: #1b6b25; }
+.edit .b--ed { background: #e3e9ff; color: #1f3b9b; }
+.edit .b--pend { background: var(--warn-bg); color: var(--warn-text); }
+.edit__form { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; display: grid; gap: 12px; min-width: 0; }
+.edit__form h2 { margin: 0; }
+.edit__meta { color: var(--ink-2); font-size: .85rem; overflow-wrap: anywhere; margin: 0; }
+.edit__steps { padding-inline-start: 1.4em; display: grid; gap: 16px; margin: 0; }
+.edit__step { display: grid; gap: 6px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+.edit__ref { margin: 0; font-size: .85rem; color: var(--ink-2); background: var(--surface-2); padding: 4px 8px; border-radius: 8px; }
+.edit__warn { color: var(--warn-text); font-weight: 700; }
+.edit__review, .edit__gh { border: 1.5px solid var(--line); border-radius: var(--radius); padding: 10px 12px; display: grid; gap: 8px; }
+.edit__check { display: flex; gap: 8px; align-items: center; font-weight: 700; }
+.admin.edit .edit__check input { width: 22px; min-height: 22px; height: 22px; }
+.edit__save { margin-top: 20px; display: grid; gap: 10px; }
+.edit__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.edit__msg { font-weight: 700; color: #1b6b25; min-height: 1.5em; }
+.edit__msg.is-bad { color: #b3261e; }
+@media (max-width: 760px) { .edit__grid { grid-template-columns: 1fr; } .edit__list { position: static; max-height: 40vh; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .edit .b--ok { background: #12391a; color: #9be3a6; } :root:not([data-theme="light"]) .edit .b--ed { background: #1c2a5c; color: #b9c8ff; } }
