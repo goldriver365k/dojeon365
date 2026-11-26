@@ -60,7 +60,15 @@ test('첫 화면은 자바스크립트 없이도 과정 링크가 읽히고, 방
   const on = SITE_CONFIG.gtmId || SITE_CONFIG.ga4Id;
   assert.equal(/data-consent/.test(html), Boolean(on));
   assert.equal(html.includes(`content="${SITE_CONFIG.gtmId}"`), Boolean(SITE_CONFIG.gtmId));
-  assert.doesNotMatch(html, /<script[^>]+googletagmanager/, '구글 스크립트를 직접 넣지 않음(동의 후 analytics.js가 불러옴)');
+  if (SITE_CONFIG.gtmId) {
+    // GTM은 머리에 바로(구글 태그 확인 도구가 찾도록), 단 동의 모드 기본값(쿠키 거부)이 먼저 실행된다
+    const a = html.indexOf('/assets/gtm-head.js'); const b = html.indexOf(`gtm.js?id=${SITE_CONFIG.gtmId}`);
+    assert.ok(a > 0 && b > a && b < html.indexOf('</head>'), '동의 모드 → gtm.js 순서로 head 안에');
+    assert.ok(html.indexOf('Content-Security-Policy') < a, '보안 정책이 스크립트보다 먼저');
+    const js = readFileSync(new URL('../assets/gtm-head.js', import.meta.url), 'utf8');
+    assert.match(js, /analytics_storage: choice === 'yes' \? 'granted' : 'denied'/);
+    assert.match(js, /ad_storage: 'denied'/);
+  } else assert.doesNotMatch(html, /<script[^>]+googletagmanager/);
   assert.equal(/google-site-verification/.test(html), Boolean(SITE_CONFIG.searchConsole));
 });
 

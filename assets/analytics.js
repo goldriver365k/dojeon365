@@ -10,6 +10,11 @@
   let loaded = false;
   const load = () => {
     if (loaded) return; loaded = true;
+    if (window.__dsGtmHead) {
+      // GTM is already on the page (Consent Mode): just allow analytics cookies.
+      window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      return;
+    }
     window.dataLayer = window.dataLayer || [];
     if (gtm) {
       // Google Tag Manager: set up the GA4 tag (and others) inside the GTM container.
@@ -33,6 +38,7 @@
   const banner = document.querySelector('[data-consent]');
   const choice = get();
   if (choice === 'yes') load();
+  if (window.__dsGtmHead) window.addEventListener('hashchange', () => window.dataLayer.push({ event: 'virtual_page_view', page_location: location.href, page_title: document.title }));
   else if (!choice && banner) banner.hidden = false;
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-consent-yes]')) { set('yes'); banner.hidden = true; load(); }

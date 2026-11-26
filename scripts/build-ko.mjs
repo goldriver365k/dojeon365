@@ -27,9 +27,11 @@ export const koCsp = (base) => base
   .replace("script-src 'self'", `script-src 'self'${AN ? ' https://www.googletagmanager.com' : ''}`)
   .replace(/connect-src '[a-z]+'/, (m) => (AN ? "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com" : m));
 /** 검색 등록·분석용 머리 태그(값이 없으면 빈 문자열) */
-export const koSeoMeta = () => `${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
+/** GTM은 머리에 바로 넣는다(동의 모드: 동의 전엔 쿠키 없이) — 구글 태그 확인 도구가 찾을 수 있게 */
+const gtmHead = () => (GTM ? `<script src="/assets/gtm-head.js?v=${VERSION_REF.v}"></script>\n<script async src="https://www.googletagmanager.com/gtm.js?id=${esc(GTM)}"></script>\n` : '');
+export const koSeoMeta = () => `${gtmHead()}${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
 /** 방문 통계 동의 상자(분석 ID가 있을 때만) */
-export const koConsent = () => (AN ? `<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 구글 애널리틱스(구글 태그 관리자)로 방문 수를 세도 될까요? 저희는 회원 정보나 개인 정보를 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
+export const koConsent = () => (AN ? `<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 방문 통계 쿠키(구글 애널리틱스)를 써도 될까요? 거절해도 쿠키 없이 대략적인 방문 수만 세요. 회원 정보나 개인 정보는 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
 <script src="/assets/analytics.js?v=${VERSION_REF.v}" defer></script>` : '');
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -222,7 +224,7 @@ ${crumbNav(crumbs)}
 <h1>개인정보 안내</h1>
 <p>DigiStep365는 회원 가입이 없어요. 이름·전화번호 같은 개인 정보를 받지 않아요.</p>
 <p>글씨 크기와 수업 진도는 지금 쓰는 휴대폰(브라우저)에만 저장되고, 저희 서버로 보내지 않아요.</p>
-<p>${AN ? '수업을 더 좋게 만들려고, ‘좋아요’를 누른 분에 한해 구글 애널리틱스(구글 태그 관리자)로 방문 수와 많이 본 수업을 세요. ‘괜찮아요’를 누르면 아무것도 불러오지 않아요.' : '방문 통계 도구를 쓰지 않아요.'}</p>
+<p>${AN ? (GTM ? '수업을 더 좋게 만들려고 구글 태그 관리자·구글 애널리틱스로 방문 수와 많이 본 수업을 세요. ‘좋아요’를 누른 분만 방문 통계 쿠키를 쓰고, ‘괜찮아요’를 누르거나 고르지 않으면 쿠키 없이 대략적인 방문 수만 구글에 보내요(광고용 정보는 보내지 않아요).' : '수업을 더 좋게 만들려고, ‘좋아요’를 누른 분에 한해 구글 애널리틱스(구글 태그 관리자)로 방문 수와 많이 본 수업을 세요. ‘괜찮아요’를 누르면 아무것도 불러오지 않아요.') : '방문 통계 도구를 쓰지 않아요.'}</p>
 ${AN ? '<p><button type="button" class="btn" data-consent-reset>방문 통계 선택 다시 하기</button></p>' : ''}
 <p>연습 화면은 실제 은행·앱이 아니에요. 비밀번호나 카드 번호를 넣지 마세요.</p>
 </main>
