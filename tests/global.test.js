@@ -8,6 +8,7 @@ import { globalLessons } from '../scripts/build-global.mjs';
 import { LANGUAGES } from '../i18n/languages.js';
 import { REVIEWED } from '../i18n/en/review.js';
 import { SITE_CONFIG } from '../i18n/site-config.js';
+import { FOOTER } from '../i18n/footer.js';
 
 test('해외용 수업마다 영어 제목·주소가 있고 한국 전용 수업은 빠진다', () => {
   const slugs = new Set();
@@ -41,7 +42,7 @@ test('검수 전 페이지는 noindex, 사이트맵에 없음, 면책 문구 있
     const html = readFileSync(f, 'utf8');
     assert.match(html, /<link rel="canonical" href="https:\/\/digistep365\.com\/en\/galaxy\//);
     assert.match(html, /hreflang="x-default"/);
-    assert.match(html, /Not affiliated with, sponsored, or endorsed by Samsung Electronics/);
+    assert.ok(html.includes(FOOTER.en.notice), '영어 하단 안내 문구');
     if (!REVIEWED[id]) {
       assert.match(html, /<meta name="robots" content="noindex/);
       assert.ok(!sitemap.includes(`/en/galaxy/${EN.TITLES[id][0]}/`), id);
@@ -81,7 +82,7 @@ test('영어 연습 그림에 한글이 남지 않는다(남으면 그림을 빼
 });
 
 const { LOCALES } = await import('../scripts/build-global.mjs');
-const OTHER = Object.fromEntries(Object.entries(LOCALES).filter(([c]) => c !== 'en').map(([c, L]) => [c, { html: c, disclaimer: L.UI.disclaimer }]));
+const OTHER = Object.fromEntries(Object.entries(LOCALES).filter(([c]) => c !== 'en').map(([c, L]) => [c, { html: c, disclaimer: FOOTER[c].notice.replace(/&/g, '&amp;') }]));
 for (const [code, cfg] of Object.entries(OTHER)) test(`${code}: 단계 수 일치, 한 단계 한 문장, noindex, 면책 문구, 영어와 hreflang 연결`, async () => {
   const ES = await import(`../i18n/${code}/galaxy.js`);
   const { REVIEWED: ESR } = await import(`../i18n/${code}/review.js`);

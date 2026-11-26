@@ -378,7 +378,7 @@ async function main() {
   check('영어 수업: 아주 크게에서 가로 스크롤 없음', (await page.evaluate(() => document.documentElement.scrollWidth)) <= 360);
   await page.goto(`${BASE}en/galaxy/`);
   check('영어 목차: 22개 분류', (await page.locator('.cat').count()) === 22);
-  check('영어 목차: 면책 문구', (await page.textContent('.foot')).includes('Not affiliated with'));
+  check('영어 목차: 하단 안내 문구', (await page.textContent('.sfoot')).includes('not an official Samsung Electronics service'));
   await page.screenshot({ path: path.join(SHOTS, '22-en-galaxy-360.png') });
 
   // 5차: 영어 연습 그림·내 휴대폰·관리 현황
@@ -412,7 +412,7 @@ async function main() {
   check('스페인어 수업: 한 번에 한 단계', (await page.locator('.step:visible').count()) === 1);
   check('스페인어 수업: 버튼 문구', (await page.textContent('[data-next]')).trim() === 'Siguiente');
   check('스페인어 연습 그림(한글 없음)', (await page.locator('.step.is-on .pic svg').count()) === 1 && !/[가-힣]/.test(await page.locator('.step.is-on .pic').innerHTML()));
-  check('스페인어: 영어 페이지로 가는 언어 링크', (await page.getAttribute('.langs a[hreflang="en"]', 'href')) === '/en/galaxy/change-font-size/');
+  check('스페인어: 영어 페이지로 가는 언어 링크', (await page.getAttribute('.sfoot__langs a[hreflang="en"]', 'href')) === '/en/galaxy/change-font-size/');
   await page.goto(`${BASE}es/galaxy/`);
   check('스페인어 목차: 22개 분류', (await page.locator('.cat').count()) === 22);
   await page.goto(`${BASE}en/galaxy/`);
@@ -489,6 +489,44 @@ async function main() {
       if (gtmHead) check('방문 통계: ‘좋아요’ 뒤 쿠키 허용으로 바뀜', await p2.evaluate(() => window.dataLayer.some((x) => x[0] === 'consent' && x[1] === 'update' && x[2].analytics_storage === 'granted')));
     }
     await c2.close();
+  }
+  // 하단 공유 아이콘: 6개 모두 실제로 동작(밖으로 나가는 주소는 가로채서 확인만)
+  for (const mobile of [false, true]) {
+    const c3 = await browser.newContext({ viewport: mobile ? { width: 390, height: 844 } : { width: 1280, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'], userAgent: mobile ? 'Mozilla/5.0 (Linux; Android 15; SM-S942N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Mobile Safari/537.36' : undefined });
+    await c3.addInitScript(() => {
+      try { localStorage.setItem('digistep365.consent', 'no'); } catch { /* ignore */ }
+      window.__opened = []; window.open = (u) => { window.__opened.push(u); return {}; };
+      window.__shared = [];
+      Object.defineProperty(navigator, 'share', { configurable: true, value: async (d) => { window.__shared.push(d); } });
+    });
+    const p3 = await c3.newPage();
+    const tag = mobile ? '모바일' : 'PC';
+    for (const url of [BASE, `${BASE}en/galaxy/`]) {
+      await p3.goto(url); await p3.waitForTimeout(200);
+      const where = url === BASE ? '국내' : '영어';
+      await p3.click('[data-share="facebook"]');
+      await p3.click('[data-share="whatsapp"]');
+      const opened = await p3.evaluate(() => window.__opened);
+      const home = url === BASE ? 'https://digistep365.com/' : 'https://digistep365.com/en/';
+      check(`${tag} ${where} 공유: 페이스북 공유 창`, opened[0] === `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(home)}`);
+      check(`${tag} ${where} 공유: WhatsApp 공유 창(주소 포함)`, opened[1]?.startsWith('https://wa.me/?text=') && decodeURIComponent(opened[1]).includes(home));
+      await p3.click('[data-share="copy"]');
+      check(`${tag} ${where} 공유: 주소 복사`, (await p3.evaluate(() => navigator.clipboard.readText())) === home && await p3.isVisible('[data-toast]'));
+      await p3.click('[data-share="qr"]');
+      check(`${tag} ${where} 공유: QR 창 열림`, await p3.isVisible('[data-qr] img[src="/assets/qr-digistep365.svg"]'));
+      await p3.click('[data-qr-close]');
+      check(`${tag} ${where} 공유: QR 창 닫힘`, !(await p3.isVisible('[data-qr]')));
+      await p3.click('[data-share="more"]');
+      check(`${tag} ${where} 공유: 휴대폰 기본 공유`, (await p3.evaluate(() => window.__shared.at(-1)?.url)) === home);
+      await p3.evaluate(() => { window.__shared = []; return navigator.clipboard.writeText(''); });
+      await p3.click('[data-share="kakao"]');
+      const kakao = mobile ? (await p3.evaluate(() => window.__shared.at(-1)?.url)) === home : (await p3.evaluate(() => navigator.clipboard.readText())) === home;
+      check(`${tag} ${where} 공유: 카카오톡(${mobile ? '공유 창에서 카카오톡 선택' : '주소 복사 후 붙여 넣기'})`, kakao);
+      const year = await p3.textContent('[data-year]');
+      check(`${tag} ${where} 하단: 저작권 연도 = 올해`, year === String(new Date().getFullYear()));
+      check(`${tag} ${where} 하단: 문의 메일 링크`, (await p3.getAttribute('.sfoot a[href^="mailto:"]', 'href')) === 'mailto:goldriver365@gmail.com');
+    }
+    await c3.close();
   }
   await browser.close();
   server.close();

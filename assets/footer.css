@@ -1,0 +1,57 @@
+/* DigiStep365 site footer — shared by the Korean app, /learn/ pages and the 19 global language sites.
+   Uses each page's own color tokens (--ink, --ink-2, --line, --surface, --primary). */
+.sfoot {
+  max-width: 40rem; margin: 24px auto 0; padding: 24px 16px calc(32px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line, #e2e7f2); color: var(--ink, #1e2a5a);
+  font-size: 1rem; line-height: 1.6; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; text-align: center; justify-items: center;
+}
+.sfoot p { margin: 0; }
+.sfoot a { color: var(--ink, #1e2a5a); text-underline-offset: 3px; }
+.sfoot a:hover { color: var(--primary, #2563e2); }
+.sfoot__brand { display: flex; align-items: center; gap: 10px; text-align: start; }
+.sfoot__brand img { width: 40px; height: auto; flex: none; }
+.sfoot__brand p { display: grid; line-height: 1.25; }
+.sfoot__brand b { font-size: 1.3rem; font-weight: 800; letter-spacing: -.01em; color: var(--navy, #172149); }
+.sfoot__brand b i { font-style: normal; color: #2a9d3a; }
+.sfoot__brand span { font-size: .95rem; color: var(--ink-2, #56608a); font-weight: 600; }
+.sfoot__slogan { font-size: 1.05rem; font-weight: 700; color: var(--primary, #2563e2); }
+
+/* share icons: one row of six on wide screens, 3 × 2 on narrow phones */
+.sfoot__share { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px 6px; width: 100%; max-width: 32rem; margin: 4px 0; }
+.share { display: grid; justify-items: center; align-content: start; gap: 6px; padding: 4px 2px; background: none; border: 0; font: inherit; color: var(--ink, #1e2a5a); cursor: pointer; border-radius: 12px; min-width: 0; }
+.share:focus-visible { outline: 3px solid var(--primary, #2563e2); outline-offset: 2px; }
+.share__ic { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; box-shadow: 0 1px 2px rgb(23 33 73 / .15); transition: transform .12s ease; }
+.share:hover .share__ic, .share:active .share__ic { transform: translateY(-2px); }
+.share__ic svg { display: block; }
+.share__ic--kakao { background: #fee500; fill: #191919; }
+.share__ic--facebook { background: #0866ff; fill: #fff; }
+.share__ic--whatsapp { background: #25d366; fill: #fff; }
+.share__ic--copy, .share__ic--qr, .share__ic--more { background: var(--navy, #172149); fill: #fff; }
+.share__t { font-size: .85rem; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; color: var(--ink, #1e2a5a); }
+@media (max-width: 479px) { .sfoot__share { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 20rem; } }
+
+.sfoot__notice { margin-top: 4px !important; font-size: .9rem; color: var(--ink-2, #56608a); max-width: 34rem; overflow-wrap: anywhere; }
+.sfoot__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 20px; font-size: .95rem; }
+.sfoot__links a { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 .4em; min-height: 44px; padding: 0 2px; min-width: 0; overflow-wrap: anywhere; }
+.sfoot__links { max-width: 100%; }
+.sfoot > * { max-width: 100%; }
+.sfoot__langs { font-size: .9rem; color: var(--ink-2, #56608a); max-width: 100%; }
+.sfoot__langs summary { cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; font-weight: 700; }
+.sfoot__langs p { line-height: 2; overflow-wrap: anywhere; }
+.sfoot__langs a { color: var(--ink-2, #56608a); }
+.sfoot__copy { font-size: .85rem; color: var(--ink-2, #56608a); }
+.sfoot .draft { font-size: .9rem; }
+
+/* QR dialog + toast */
+.qr { border: 0; border-radius: 20px; padding: 24px 20px; max-width: min(92vw, 360px); text-align: center; color: var(--ink, #1e2a5a); box-shadow: 0 12px 40px rgb(23 33 73 / .3); }
+.qr::backdrop { background: rgb(23 33 73 / .55); }
+.qr h2 { margin: 0 0 12px; font-size: 1.25rem; }
+.qr img { width: 220px; height: 220px; max-width: 100%; border: 1px solid var(--line, #e2e7f2); border-radius: 12px; }
+.qr p { margin: 10px 0 0; font-size: 1rem; }
+.qr__url { font-weight: 800; color: var(--primary, #2563e2); }
+.qr__close { margin-top: 16px; width: 100%; min-height: 52px; border-radius: 12px; border: 0; background: var(--primary, #2563e2); color: #fff; font: inherit; font-weight: 800; font-size: 1.1rem; cursor: pointer; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 60; width: max-content; max-width: calc(100vw - 32px); margin: 0; padding: 12px 18px; border-radius: 14px; background: var(--navy, #172149); color: #fff; font-size: 1rem; font-weight: 700; text-align: center; box-shadow: 0 6px 20px rgb(23 33 73 / .3); }
+.toast[hidden] { display: none; }
+
+/* practice screens keep the whole screen for the lesson */
+body[data-route^="#/lesson/"] .sfoot, body[data-route^="#/lesson/"] .site-links { display: none; }

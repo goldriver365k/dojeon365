@@ -11,6 +11,7 @@ import { SITE_CONFIG } from '../i18n/site-config.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { siteFooter, FOOTER, CONTACT_EMAIL, TERMS_DATE } from '../i18n/footer.js';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
 import { UI_EXTRA, SEO } from '../i18n/ui-extra.js';
@@ -67,7 +68,7 @@ function lessonAlternates(id) {
   for (const [code, L] of Object.entries(LOCALES)) if (L.G.LESSONS[id] && L.G.TITLES[id]) out[code] = `/${seg(code)}/galaxy/${L.G.TITLES[id][0]}/`;
   return out;
 }
-const KO_EQUIV = { '': '/', 'galaxy/': '/learn/galaxy/' };
+const KO_EQUIV = { '': '/', 'galaxy/': '/learn/galaxy/', 'privacy/': '/privacy/', 'terms/': '/terms/' };
 /** 주소에 쓰는 언어 폴더 이름: 넷리파이는 대문자 주소를 소문자로 301 이동시키므로 처음부터 소문자(zh-Hans → zh-hans). hreflang 값은 그대로 */
 export const seg = (code) => code.toLowerCase();
 const allLangs = (suffix) => ({ ...(KO_EQUIV[suffix] ? { ko: KO_EQUIV[suffix] } : {}), ...Object.fromEntries(Object.keys(LOCALES).map((c) => [c, `/${seg(c)}/${suffix}`])) });
@@ -146,7 +147,9 @@ ${Object.entries(alts).map(([c, p]) => `<link rel="alternate" hreflang="${c}" hr
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/global.css?v=${VERSION}">
-${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>${AN ? `\n<script src="/assets/analytics.js?v=${VERSION}" defer></script>` : ''}
+<link rel="stylesheet" href="/assets/footer.css?v=${VERSION}">
+${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>
+<script src="/assets/share.js?v=${VERSION}" defer></script>${AN ? `\n<script src="/assets/analytics.js?v=${VERSION}" defer></script>` : ''}
 ${UI.devicePicker ? `<script type="module" src="/assets/global-device.js?v=${VERSION}"></script>\n` : ''}</head>`;
 }
 
@@ -165,12 +168,15 @@ function footer(draft, alternates = {}) {
     const p = alternates[x.code];
     return p ? `<a href="${p}" hreflang="${x.code}" lang="${x.code}">${esc(x.name)}</a>` : `<span lang="${x.code}">${esc(x.name)}</span>`;
   });
-  return `<footer class="foot">
-  ${draft ? `<p class="draft">${UI.draft}</p>` : ''}
-  <p>${UI.disclaimer}</p>
-  <p class="langs">${UI.languages}: ${langs.join(' · ')} · <a href="/" hreflang="ko" lang="ko">한국어</a></p>
-  <p><a href="/${seg(L.code)}/privacy/">${UI.privacy}</a> · © ${UI.brand} · ${UI.slogan}</p>
-</footer>
+  return `${siteFooter({
+    lang: L.code,
+    privacyHref: `/${seg(L.code)}/privacy/`,
+    termsHref: `/${seg(L.code)}/terms/`,
+    shareUrl: `${SITE_URL}/${seg(L.code)}/`,
+    languagesLabel: UI.languages,
+    langLinks: `${langs.join(' · ')} · <a href="${alternates.ko ?? '/'}" hreflang="ko" lang="ko">한국어</a>`,
+    extra: draft ? `<p class="draft">${UI.draft}</p>` : '',
+  })}
 ${AN ? `<div class="consent" data-consent hidden role="region" aria-label="${UI.consentLabel}"><p>${UI.consent}</p><div><button type="button" class="btn btn--primary" data-consent-yes>${UI.consentYes}</button><button type="button" class="btn" data-consent-no>${UI.consentNo}</button></div></div>` : ''}`;
 }
 
@@ -321,19 +327,44 @@ function privacyPage() {
   const { UI } = L;
   const alternates = allLangs('privacy/');
   const path = `/${seg(L.code)}/privacy/`;
-  return `${head({ title: `${UI.privacy} | ${UI.brand}`, desc: UI.privacyDesc, path, index: false, crumbs: [[UI.home, `/${seg(L.code)}/`], [UI.privacy, path]], alternates })}
+  const F = { ...FOOTER.en, ...FOOTER[L.code] };
+  return `${head({ title: `${F.privacy} | ${UI.brand}`, desc: UI.privacyDesc, path, index: false, crumbs: [[UI.home, `/${seg(L.code)}/`], [F.privacy, path]], alternates })}
 <body>
 ${header()}
 <main class="page" id="main">
-<h1>${UI.privacy}</h1>
+<h1>${F.privacy}</h1>
 <p class="lead">${UI.privacyLead}</p>
 <h2>${UI.privacySavedH}</h2>
 <p>${UI.privacySaved}</p>
 <h2>${UI.privacyAnalyticsH}</h2>
 <p>${AN ? UI.privacyAnalyticsOn : UI.privacyAnalyticsOff}</p>
 ${AN ? `<p><button type="button" class="btn" data-consent-reset>${UI.privacyReset}</button></p>` : ''}
+<h2>${F.privacyShareH}</h2>
+<p>${F.privacyShare}</p>
 <h2>${UI.privacyLinksH}</h2>
 <p>${UI.privacyLinks}</p>
+<h2>${F.privacyContactH}</h2>
+<p>${F.privacyContact} <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></p>
+<p class="based">${F.effective}: ${TERMS_DATE}</p>
+</main>
+${footer(false, alternates)}
+</body>
+</html>
+`;
+}
+
+function termsPage() {
+  const { UI } = L;
+  const alternates = allLangs('terms/');
+  const path = `/${seg(L.code)}/terms/`;
+  const F = { ...FOOTER.en, ...FOOTER[L.code] };
+  return `${head({ title: `${F.terms} | ${UI.brand}`, desc: F.termsDesc, path, index: false, crumbs: [[UI.home, `/${seg(L.code)}/`], [F.terms, path]], alternates })}
+<body>
+${header()}
+<main class="page" id="main">
+<h1>${F.terms}</h1>
+${F.termsItems.map(([h, p], i) => `<h2>${i + 1}. ${esc(h)}</h2>\n<p>${esc(p)}${i === F.termsItems.length - 1 ? ` <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>` : ''}</p>`).join('\n')}
+<p class="based">${F.effective}: ${TERMS_DATE}</p>
 </main>
 ${footer(false, alternates)}
 </body>
@@ -492,6 +523,7 @@ export function build() {
     out(`/${seg(code)}/`, homePage());
     out(`/${seg(code)}/galaxy/`, galaxyIndex(groups));
     out(`/${seg(code)}/privacy/`, privacyPage());
+    out(`/${seg(code)}/terms/`, termsPage());
     let pages = 0;
     for (const { ch, lessons } of groups) {
       for (const x of lessons) {
