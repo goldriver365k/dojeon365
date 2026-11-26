@@ -121,4 +121,6 @@ export const ZH_HANS_FROM_EN = {
   Tips: '提示', Community: '社区', Support: '支持', 'Phone diagnostics': '手机诊断', 'Send feedback': '发送反馈', 'Service center': '维修中心',
   'Follow the screen to test the display, sound, buttons and more.': '按照屏幕提示检测屏幕、声音、按键等。', 'e.g. The screen flickers only while charging.': '例：只在充电时屏幕闪烁。',
   'Back up photos and contacts before you go.': '去之前先备份照片和联系人。',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: '收件箱', Compose: '写邮件', To: '收件人', Subject: '主题', Attach: '附件', Send: '发送', New: '新建', 'Compose email': '邮件正文',
 };

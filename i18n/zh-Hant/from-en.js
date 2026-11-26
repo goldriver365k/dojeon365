@@ -121,4 +121,6 @@ export const ZH_HANT_FROM_EN = {
   Tips: '提示', Community: '社群', Support: '支援', 'Phone diagnostics': '手機診斷', 'Send feedback': '傳送反饋', 'Service center': '維修中心',
   'Follow the screen to test the display, sound, buttons and more.': '按照螢幕提示檢測螢幕、聲音、按鍵等。', 'e.g. The screen flickers only while charging.': '例：只在充電時螢幕閃爍。',
   'Back up photos and contacts before you go.': '去之前先備份照片和聯絡人。',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: '收件匣', Compose: '撰寫', To: '收件者', Subject: '主旨', Attach: '附件', Send: '傳送', New: '新增', 'Compose email': '郵件內文',
 };

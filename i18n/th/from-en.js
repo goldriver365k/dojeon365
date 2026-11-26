@@ -121,4 +121,6 @@ export const TH_FROM_EN = {
   Tips: 'เคล็ดลับ', Community: 'ชุมชน', Support: 'การสนับสนุน', 'Phone diagnostics': 'การวินิจฉัยโทรศัพท์', 'Send feedback': 'ส่งความคิดเห็น', 'Service center': 'ศูนย์บริการ',
   'Follow the screen to test the display, sound, buttons and more.': 'ทำตามหน้าจอเพื่อทดสอบจอ เสียง ปุ่ม และอื่นๆ', 'e.g. The screen flickers only while charging.': 'เช่น หน้าจอกะพริบเฉพาะตอนชาร์จ',
   'Back up photos and contacts before you go.': 'สำรองรูปและรายชื่อก่อนไป',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'กล่องจดหมาย', Compose: 'เขียน', To: 'ถึง', Subject: 'หัวเรื่อง', Attach: 'แนบ', Send: 'ส่ง', New: 'ใหม่', 'Compose email': 'เขียนอีเมล',
 };

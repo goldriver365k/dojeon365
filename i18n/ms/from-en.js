@@ -38,8 +38,11 @@ const WORDS = [
   ['Nomor', 'Nombor'], ['nomor', 'nombor'], ['bisa', 'boleh'], ['Bisa', 'Boleh'], ['merusak', 'merosakkan'], ['petunjuk', 'arahan'], ['Petunjuk', 'Arahan'], ['Email', 'E-mel'],
   ['mengisi daya', 'mengecas'], ['Mengisi daya', 'Mengecas'], ['pengisi daya', 'pengecas'], ['Pengisi daya', 'Pengecas'], ['pengisian daya', 'pengecasan'], ['Mencolok', 'Memasang'],
   ['lubang', 'port'], ['tak terjawab', 'terlepas'], ['nirkabel', 'tanpa wayar'], ['Nirkabel', 'Tanpa wayar'], ['berkedip', 'berkelip'], ['semua suara', 'semua bunyi'], ['lebih baru', 'lebih baharu'],
+  ['Telepon', 'Telefon'], ['telepon', 'telefon'], ['menit', 'minit'], ['Menit', 'Minit'], ['Edit', 'Sunting'], ['Lainnya', 'Lagi'], ['lainnya', 'lagi'], ['Nada', 'Ton'],
+  ['Judul', 'Tajuk'], ['judul', 'tajuk'], ['Timer', 'Pemasa'], ['timer', 'pemasa'], ['Alarm', 'Penggera'], ['alarm', 'penggera'], ['sebelumnya', 'sebelum'],
 ];
 const FIX = {
+  Inbox: 'Peti Masuk', Compose: 'Karang', To: 'Kepada', Subject: 'Subjek', Attach: 'Lampirkan', Send: 'Hantar', New: 'Baharu', 'Compose email': 'Karang e-mel',
   'Wednesday, November 25': 'Rabu, 25 November', Display: 'Paparan', 'Home screen': 'Skrin Utama', Connections: 'Sambungan', 'Lock screen and AOD': 'Skrin kunci dan AOD',
   'Mobile 010-0000-0000': 'Telefon bimbit 012-000 0000', 'Carrier · 010-0000-0000': 'Pembawa · 012-000 0000', Emma: 'Aminah', 'Messages · Emma': 'Mesej · Aminah', 'Emma’s contact': 'Kenalan Aminah',
   'Seoul weather': 'Cuaca Kuala Lumpur', 'Seoul weather - forecast': 'Cuaca Kuala Lumpur - ramalan', 'Seoul 12° Sunny': 'Kuala Lumpur 31° Cerah', 'Tomorrow 14° · Next day 9°': 'Esok 30° · Lusa 29°',

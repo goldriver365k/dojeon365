@@ -43,7 +43,7 @@ function masterLessons() {
     ch,
     lessons: [
       ...ch.lessons.filter((l) => metaOf(l.id).region !== 'KR'),
-      ...extra.filter((x) => x.chapter === ch.num).map((x) => ({ id: x.id, cards: [], src: x.src, extra: true })),
+      ...extra.filter((x) => x.chapter === ch.num).map((x) => ({ id: x.id, cards: x.cards ?? [], src: x.src, extra: true })),
     ],
   }));
 }
@@ -71,16 +71,37 @@ const allLangs = (suffix) => ({ ...(KO_EQUIV[suffix] ? { ko: KO_EQUIV[suffix] } 
 let L = LOCALES[DEFAULT];
 const stats = {};
 
-function picture(card) {
+/** 단계 문장에 따옴표로 적힌 이름이 하나뿐이면 그것(예: ‘Connect’, 「設定」, «الإعدادات»)을 돌려준다 */
+// ’ 뒤에 글자가 이어지면 따옴표가 아니라 아포스트로피(l’écran, dell’app)다
+const QUOTED = /‘(.{1,60}?)’(?!\p{L})|«\s?([^»]{1,60}?)\s?»|「([^」]{1,60})」|“([^”]{1,60})”/gu;
+export function quotedName(text) {
+  const all = [...String(text ?? '').matchAll(QUOTED)].map((m) => (m[1] ?? m[2] ?? m[3] ?? m[4]).trim());
+  return all.length === 1 ? all[0] : null;
+}
+const KEEP_SHORT = new Set(['5초']); // 선택지 모양(2s·5s·10s)을 그대로 둔다
+const normName = (s) => s.toLocaleLowerCase().replace(/[‘’“”«»「」『』"'()（）.。,…]/g, '').replace(/\s+/g, ' ').trim();
+
+/** 연습 그림. stepText를 주면, 그림 속 누를 곳 이름이 단계 문장의 따옴표 이름과 다를 때 문장 쪽에 맞춘다
+ *  (한국어 한 낱말이 여러 뜻일 때: 연결 = Connections/Connect, 알림 = Notifications/Reminder 등) */
+function picture(card, stepText) {
   const st = stats[L.code];
   st.steps++;
   if (!card || card.photo) return '';
+  let label = card.target ? L.tr(card.target) : '';
+  const q = quotedName(stepText);
+  if (card.target && q && !/^[0-9０-９২-৯٠-٩]+$/.test(q) && normName(q) !== normName(label) && !KEEP_SHORT.has(card.target)) {
+    label = q;
+    st.aligned = (st.aligned ?? 0) + 1;
+    if (process.env.ALIGN_LOG) console.error(`ALIGN ${L.code} ${card.target} | ${L.tr(card.target)} → ${q}`);
+    setTranslator((ko) => (ko === card.target ? q : L.tr(ko)), { locale: L.code, ...(L.wrap ?? {}) });
+  }
   const pic = renderScreen(card.screen, card.target, card.action);
+  setTranslator(L.tr, { locale: L.code, ...(L.wrap ?? {}) });
   const texts = [...pic.svg.matchAll(/>([^<>]+)</g)].map((m) => m[1]);
   if (texts.some((t) => HANGUL.test(t))) return ''; // never show a half-translated picture
   st.pictures++;
   const t = pic.target;
-  const name = card.target && !HANGUL.test(L.tr(card.target)) ? L.tr(card.target) : '';
+  const name = label && !HANGUL.test(label) ? label : '';
   const alt = L.UI.pictureAlt(Boolean(t), name);
   let svg = pic.svg;
   if (t && card.done === 'practice') {
@@ -189,7 +210,7 @@ ${en.steps.map(([text, hint, note], i) => `<li class="step" id="step-${i + 1}">
   <h2 class="step__text">${esc(text)}</h2>
   ${hint ? `<p class="step__hint">${esc(hint)}</p>` : ''}
   ${note ? `<p class="step__note"><strong>${UI.goodToKnow}</strong> ${esc(note)}</p>` : ''}
-  ${picture(l.cards[i])}
+  ${picture(l.cards[i], text)}
 </li>`).join('\n')}
 </ol>
 <div class="tools" hidden>

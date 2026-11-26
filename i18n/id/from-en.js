@@ -130,4 +130,6 @@ export const ID_FROM_EN = {
   'Water resistance can weaken over time.': 'Ketahanan air bisa berkurang seiring waktu.', 'Samsung support: samsung.com/support': 'Dukungan Samsung: samsung.com/support', Tips: 'Tips', Community: 'Komunitas', Support: 'Dukungan',
   'Phone diagnostics': 'Diagnostik ponsel', 'Send feedback': 'Kirim masukan', 'Service center': 'Pusat servis', 'Follow the screen to test the display, sound, buttons and more.': 'Ikuti layar untuk menguji layar, suara, tombol, dan lainnya.',
   'e.g. The screen flickers only while charging.': 'mis. Layar berkedip hanya saat mengisi daya.', 'Back up photos and contacts before you go.': 'Cadangkan foto dan kontak sebelum pergi.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Kotak Masuk', Compose: 'Tulis', To: 'Kepada', Subject: 'Subjek', Attach: 'Lampirkan', Send: 'Kirim', New: 'Baru', 'Compose email': 'Tulis email',
 };

@@ -205,5 +205,7 @@ export const TERMS = {
   '김영희 연락처': 'Emma’s contact', 'Galaxy S26 · 모델명': 'Galaxy S26 · Model name', '모바일 신분증': 'Mobile ID', '교통 카드 · 멤버십 · 모바일 신분증': 'Transit cards · Memberships · More',
   '서울시 중구 세종대로 110': '110 Main Street', 안녕: 'Hello', '안녕 123': 'Hello 123', '내일 병원 같이 가줄수 잇니': 'can you come to the doctor with me tomorow',
   '안녕하세요 잘 지냇어요': 'Hello how are yuo', 안녕하세요: 'Hello', 안녕하세용: 'Helo',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  받은편지함: 'Inbox', 편지쓰기: 'Compose', 받는사람: 'To', '메일 제목': 'Subject', '파일 첨부': 'Attach', 보내기: 'Send', '새로 만들기': 'New', '메일 내용': 'Compose email',
 };
 export const tr = (s) => TERMS[s] ?? s;

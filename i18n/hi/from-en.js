@@ -121,4 +121,6 @@ export const HI_FROM_EN = {
   Tips: 'सुझाव', Community: 'समुदाय', Support: 'सहायता', 'Phone diagnostics': 'फ़ोन डायग्नोस्टिक्स', 'Send feedback': 'फ़ीडबैक भेजें', 'Service center': 'सर्विस सेंटर',
   'Follow the screen to test the display, sound, buttons and more.': 'डिस्प्ले, आवाज़, बटन वगैरह जाँचने के लिए स्क्रीन के निर्देश मानें।', 'e.g. The screen flickers only while charging.': 'जैसे सिर्फ़ चार्ज होते समय स्क्रीन टिमटिमाती है।',
   'Back up photos and contacts before you go.': 'जाने से पहले फ़ोटो और संपर्कों का बैकअप लें।',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'इनबॉक्स', Compose: 'लिखें', To: 'प्रति', Subject: 'विषय', Attach: 'अटैच करें', Send: 'भेजें', New: 'नया', 'Compose email': 'ईमेल लिखें',
 };

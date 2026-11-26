@@ -2,6 +2,7 @@
 // steps[i] matches the Korean card i of the same lesson (tests check the count).
 // UI names follow Samsung's English One UI wording. Practice screens are not shown yet (their labels are Korean).
 
+import { findLesson } from '../../data/galaxy/index.js';
 export const GROUPS = { basic: 'Basics', life: 'Everyday use', apply: 'More features', adv: 'Advanced and troubleshooting' };
 
 export const CATEGORIES = {
@@ -341,10 +342,33 @@ export const LESSONS = {
 const GMAIL_SRC = { label: 'Gmail Help · Attach files', url: 'https://support.google.com/mail/answer/6584?hl=en&co=GENIE.Platform%3DAndroid' };
 const MEET_SRC = { label: 'Google Meet Help', url: 'https://support.google.com/meet/?hl=en' };
 const GALLERY_SRC = { label: 'Samsung support', url: 'https://www.samsung.com/us/support/' };
+// 해외용 새 수업의 연습 그림. 그림 속 글자는 한국어로 적고 언어별 단어표로 옮긴다(국내 수업과 같은 방식).
+// 같은 동작은 국내 수업의 카드를 그대로 쓴다(이미 19개 언어 단어표가 있음).
+const ko = (id, i) => findLesson(id).lesson.cards[i];
+const tap = (screen, target) => ({ screen, target, action: 'tap', done: 'practice' });
+const COMPOSE = (target) => tap({ kind: 'list', title: '편지쓰기', items: ['받는사람', '메일 제목', '메일 내용'] }, target);
+const COMPOSE_BAR = (target) => tap({ kind: 'app', title: '편지쓰기', buttons: [target], primary: '보내기' }, target); // one button so the hint bubble never covers another
 export const EXTRA = [
-  { id: 'x13-gmail', chapter: 13, src: [GMAIL_SRC] },
-  { id: 'x13-video', chapter: 13, src: [GALLERY_SRC] },
-  { id: 'x13-meet', chapter: 13, src: [MEET_SRC] },
+  { id: 'x13-gmail', chapter: 13, src: [GMAIL_SRC], cards: [
+    tap({ kind: 'home', apps: true, find: '카카오톡' }, '카카오톡'),
+    tap({ kind: 'app', title: '받은편지함', fab: '편지쓰기' }, '편지쓰기'),
+    COMPOSE('받는사람'),
+    COMPOSE_BAR('파일 첨부'),
+    ko('g06-photo', 4),
+    COMPOSE('메일 제목'),
+    COMPOSE_BAR('보내기'),
+  ] },
+  { id: 'x13-video', chapter: 13, src: [GALLERY_SRC], cards: [
+    ko('g11-multi', 0), ko('g11-latest', 1), ko('g11-multi', 3), ko('g05-share', 3), ko('g05-share', 4),
+    tap({ kind: 'chat', title: '아들' }, '전송 아이콘'),
+  ] },
+  { id: 'x13-meet', chapter: 13, src: [MEET_SRC], cards: [
+    tap({ kind: 'home', apps: true, find: 'Meet' }, 'Meet'),
+    tap({ kind: 'app', title: 'Meet', buttons: ['새로 만들기'], primary: '새로 만들기' }, '새로 만들기'),
+    tap({ kind: 'list', title: 'Meet', items: ['김영희', '아들'] }, '김영희'),
+    tap({ kind: 'app', title: '김영희', buttons: ['영상통화'], primary: '영상통화' }, '영상통화'),
+    ko('g04-call', 4),
+  ] },
 ];
 const CHECK = 'New lesson written for the global site. Screens of Google apps change often, so check on a real phone.';
 Object.assign(LESSONS, {

@@ -121,4 +121,6 @@ export const AR_FROM_EN = {
   Tips: 'نصائح', Community: 'المجتمع', Support: 'الدعم', 'Phone diagnostics': 'تشخيص الهاتف', 'Send feedback': 'إرسال ملاحظات', 'Service center': 'مركز الصيانة',
   'Follow the screen to test the display, sound, buttons and more.': 'اتبع الشاشة لاختبار العرض والصوت والأزرار والمزيد.', 'e.g. The screen flickers only while charging.': 'مثال: تومض الشاشة أثناء الشحن فقط.',
   'Back up photos and contacts before you go.': 'انسخ الصور وجهات الاتصال احتياطيًا قبل الذهاب.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'البريد الوارد', Compose: 'إنشاء', To: 'إلى', Subject: 'الموضوع', Attach: 'إرفاق', Send: 'إرسال', New: 'جديد', 'Compose email': 'كتابة رسالة',
 };

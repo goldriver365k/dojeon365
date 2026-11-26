@@ -121,4 +121,6 @@ export const FIL_FROM_EN = {
   Tips: 'Mga Tip', Community: 'Komunidad', Support: 'Suporta', 'Phone diagnostics': 'Phone diagnostics', 'Send feedback': 'Magpadala ng feedback', 'Service center': 'Service center',
   'Follow the screen to test the display, sound, buttons and more.': 'Sundin ang screen para subukan ang display, tunog, mga button at iba pa.', 'e.g. The screen flickers only while charging.': 'Hal. Kumikislap ang screen habang nagcha-charge lang.',
   'Back up photos and contacts before you go.': 'I-back up ang mga larawan at contact bago pumunta.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Inbox', Compose: 'Mag-compose', To: 'Para kay', Subject: 'Paksa', Attach: 'I-attach', Send: 'Ipadala', New: 'Bago', 'Compose email': 'Sumulat ng email',
 };

@@ -121,4 +121,6 @@ export const TR_FROM_EN = {
   Tips: 'İpuçları', Community: 'Topluluk', Support: 'Destek', 'Phone diagnostics': 'Telefon tanılama', 'Send feedback': 'Geri bildirim gönder', 'Service center': 'Servis merkezi',
   'Follow the screen to test the display, sound, buttons and more.': 'Ekranı, sesi, tuşları ve daha fazlasını test etmek için ekranı izleyin.', 'e.g. The screen flickers only while charging.': 'Örn. Ekran yalnızca şarj olurken titriyor.',
   'Back up photos and contacts before you go.': 'Gitmeden önce fotoğrafları ve kişileri yedekleyin.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Gelen Kutusu', Compose: 'Oluştur', To: 'Alıcı', Subject: 'Konu', Attach: 'Ekle', Send: 'Gönder', New: 'Yeni', 'Compose email': 'E-posta yaz',
 };

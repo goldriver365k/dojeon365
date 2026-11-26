@@ -124,3 +124,14 @@ test('해외 수업 제목은 검색어 말투(언어별)이고 한국어 페이
   assert.match(html, /<title>How to make text bigger on a Samsung Galaxy phone \| DigiStep365<\/title>/);
   assert.match(html, /hreflang="ko" href="https:\/\/digistep365\.com\/learn\/galaxy\/g03-font\/"/);
 });
+
+test('해외 갤럭시: 모든 언어에서 모든 단계에 그림이 있고, 따옴표 이름 하나만 그림에 맞춘다', async () => {
+  const { build, quotedName } = await import('../scripts/build-global.mjs');
+  assert.equal(quotedName('Tap ‘Connect’.'), 'Connect');
+  assert.equal(quotedName('Touchez l’écran puis «Connexion».'), 'Connexion');
+  assert.equal(quotedName('Tap ‘A’ then ‘B’.'), null);
+  const r = await build();
+  for (const [code, s] of Object.entries(r)) {
+    if (s && typeof s === 'object' && 'pictures' in s) assert.equal(s.pictures, s.steps, code);
+  }
+});

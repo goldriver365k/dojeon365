@@ -126,4 +126,6 @@ export const VI_FROM_EN = {
   'Water resistance can weaken over time.': 'Khả năng chống nước có thể giảm theo thời gian.', 'Samsung support: samsung.com/support': 'Hỗ trợ Samsung: samsung.com/support', Tips: 'Mẹo', Community: 'Cộng đồng', Support: 'Hỗ trợ',
   'Phone diagnostics': 'Chẩn đoán điện thoại', 'Send feedback': 'Gửi phản hồi', 'Service center': 'Trung tâm bảo hành', 'Follow the screen to test the display, sound, buttons and more.': 'Làm theo màn hình để kiểm tra màn hình, âm thanh, phím và hơn nữa.',
   'e.g. The screen flickers only while charging.': 'VD: Màn hình nhấp nháy chỉ khi sạc.', 'Back up photos and contacts before you go.': 'Sao lưu ảnh và danh bạ trước khi đi.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Hộp thư đến', Compose: 'Soạn thư', To: 'Đến', Subject: 'Tiêu đề', Attach: 'Đính kèm', Send: 'Gửi', New: 'Mới', 'Compose email': 'Soạn email',
 };

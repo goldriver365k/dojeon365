@@ -121,4 +121,6 @@ export const RU_FROM_EN = {
   Tips: 'Советы', Community: 'Сообщество', Support: 'Поддержка', 'Phone diagnostics': 'Диагностика телефона', 'Send feedback': 'Отправить отзыв', 'Service center': 'Сервисный центр',
   'Follow the screen to test the display, sound, buttons and more.': 'Следуйте подсказкам, чтобы проверить экран, звук, кнопки и другое.', 'e.g. The screen flickers only while charging.': 'Напр. Экран мигает только во время зарядки.',
   'Back up photos and contacts before you go.': 'Перед визитом сохраните копию фото и контактов.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Входящие', Compose: 'Написать', To: 'Кому', Subject: 'Тема', Attach: 'Прикрепить', Send: 'Отправить', New: 'Новый', 'Compose email': 'Написать письмо',
 };

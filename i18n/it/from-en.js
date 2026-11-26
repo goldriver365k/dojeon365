@@ -131,4 +131,6 @@ export const IT_FROM_EN = {
   'Water resistance can weaken over time.': 'La resistenza all’acqua può ridursi col tempo.', 'Samsung support: samsung.com/support': 'Assistenza Samsung: samsung.com/support', Tips: 'Consigli', Community: 'Community',
   Support: 'Supporto', 'Phone diagnostics': 'Diagnostica telefono', 'Send feedback': 'Invia feedback', 'Service center': 'Centro assistenza', 'Follow the screen to test the display, sound, buttons and more.': 'Segui lo schermo per provare display, suono, tasti e altro.',
   'e.g. The screen flickers only while charging.': 'es. Lo schermo sfarfalla solo in ricarica.', 'Back up photos and contacts before you go.': 'Fai il backup di foto e contatti prima di andare.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Posta in arrivo', Compose: 'Scrivi', To: 'A', Subject: 'Oggetto', Attach: 'Allega', Send: 'Invia', New: 'Nuova', 'Compose email': 'Scrivi email',
 };

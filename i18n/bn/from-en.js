@@ -121,4 +121,6 @@ export const BN_FROM_EN = {
   Tips: 'টিপস', Community: 'কমিউনিটি', Support: 'সহায়তা', 'Phone diagnostics': 'ফোন ডায়াগনস্টিকস', 'Send feedback': 'মতামত পাঠান', 'Service center': 'সার্ভিস সেন্টার',
   'Follow the screen to test the display, sound, buttons and more.': 'ডিসপ্লে, শব্দ, বোতাম ইত্যাদি পরীক্ষা করতে স্ক্রিনের নির্দেশনা মানুন।', 'e.g. The screen flickers only while charging.': 'যেমন শুধু চার্জের সময় স্ক্রিন ঝলমল করে।',
   'Back up photos and contacts before you go.': 'যাওয়ার আগে ছবি ও পরিচিতির ব্যাকআপ নিন।',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'ইনবক্স', Compose: 'লিখুন', To: 'প্রতি', Subject: 'বিষয়', Attach: 'সংযুক্ত করুন', Send: 'পাঠান', New: 'নতুন', 'Compose email': 'ইমেল লিখুন',
 };

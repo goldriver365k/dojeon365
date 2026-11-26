@@ -121,4 +121,6 @@ export const JA_FROM_EN = {
   Tips: 'ヒント', Community: 'コミュニティ', Support: 'サポート', 'Phone diagnostics': '端末診断', 'Send feedback': 'フィードバックを送信', 'Service center': '修理窓口',
   'Follow the screen to test the display, sound, buttons and more.': '画面の案内に従って、画面・音・ボタンなどを確かめます。', 'e.g. The screen flickers only while charging.': '例：充電中だけ画面がちらつく。',
   'Back up photos and contacts before you go.': '持っていく前に写真と連絡先をバックアップします。',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: '受信トレイ', Compose: '作成', To: 'To', Subject: '件名', Attach: '添付', Send: '送信', New: '新規', 'Compose email': 'メールを作成',
 };

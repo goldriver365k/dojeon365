@@ -144,4 +144,6 @@ export const ES_FROM_EN = {
   Tips: 'Consejos', Community: 'Comunidad', Support: 'Soporte', 'Phone diagnostics': 'Diagnóstico del teléfono', 'Send feedback': 'Enviar comentarios', 'Service center': 'Servicio técnico',
   'Follow the screen to test the display, sound, buttons and more.': 'Sigue la pantalla para probar la pantalla, el sonido, los botones y más.',
   'e.g. The screen flickers only while charging.': 'p. ej. La pantalla parpadea solo al cargar.', 'Back up photos and contacts before you go.': 'Haz copia de fotos y contactos antes de ir.',
+  // 해외용 새 수업(Gmail·Meet) 그림
+  Inbox: 'Recibidos', Compose: 'Redactar', To: 'Para', Subject: 'Asunto', Attach: 'Adjuntar', Send: 'Enviar', New: 'Nueva', 'Compose email': 'Redactar correo',
 };

@@ -1,2 +1,2 @@
 /** 배포 버전(scripts/bump-version.mjs 가 적음) */
-export const VERSION = '20261126.0952';
+export const VERSION = '20261126.1027';
