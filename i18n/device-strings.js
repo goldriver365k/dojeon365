@@ -272,6 +272,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'ซีรีส์ S อื่น (S22 และเก่ากว่า, FE)', 'a-old': 'ซีรีส์ A อื่น', 'm-any': 'โทรศัพท์ซีรีส์ M', 'f-any': 'โทรศัพท์ซีรีส์ F', 'note-old': 'Note อื่น', 'xcover-old': 'XCover อื่น', etc: 'Galaxy ที่ไม่อยู่ในรายการ' },
     seriesNames: { s: 'Galaxy ซีรีส์ S', a: 'Galaxy ซีรีส์ A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy ซีรีส์ M', f: 'Galaxy ซีรีส์ F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'อื่นๆ / ไม่อยู่ในรายการ' },
   },
+  hi: {
+    h: 'मेरा फ़ोन', none: 'नहीं चुना · सामान्य गाइड',
+    howH: 'पहले अपने फ़ोन का मॉडल और सॉफ़्टवेयर वर्शन ढूँढें',
+    how: ['<b>सेटिंग्स</b> ऐप पर टैप करें।', 'सबसे नीचे <b>फ़ोन के बारे में</b> पर टैप करें।', 'ऊपर <b>मॉडल का नाम</b> देखें (जैसे Galaxy S26 · SM-S942N)।', '<b>सॉफ़्टवेयर जानकारी</b> पर टैप करें।', '<b>One UI वर्शन</b> देखें (जैसे 9.0)।'],
+    howNote: 'कुछ मॉडल में मेनू का नाम ‘डिवाइस के बारे में’ है। सेटिंग्स की खोज में ‘फ़ोन के बारे में’ भी टाइप कर सकते हैं।',
+    practice: 'ये चरण अभ्यास करें', series: 'सीरीज़', model: 'मॉडल', oneui: 'One UI वर्शन', save: 'मेरा फ़ोन सेव करें', clear: 'सामान्य गाइड इस्तेमाल करें',
+    note: 'चुनना ज़रूरी नहीं है। यह सिर्फ़ इसी ब्राउज़र में सेव होता है, और हम आपके मॉडल का अंदाज़ा कभी नहीं लगाते।',
+    dontKnow: 'पता नहीं', dontKnowWhich: 'पता नहीं कौन-सा', chooseSeries: 'पहले सीरीज़ चुनें', baseVersion: 'इन पाठों का वर्शन',
+    saved: 'सेव हो गया। अब हर पाठ बताता है कि वह आपके फ़ोन पर चलता है या नहीं।', cleared: 'हटा दिया। सामान्य गाइड दिख रही है।',
+    modelUnknown: 'मॉडल पता नहीं', seriesUnknown: (s) => `${s} (मॉडल पता नहीं)`, versionUnknown: 'One UI वर्शन पता नहीं',
+    level: { ok: 'समर्थित', diff: 'जाँचें', check: 'जाँचें', no: 'समर्थित नहीं' },
+    text: { ok: 'आधिकारिक गाइड से जाँचा गया', diff: 'इस One UI वर्शन में मेनू के नाम अलग हो सकते हैं', check: 'इस मॉडल पर अभी जाँचा नहीं गया', no: 'इस मॉडल में नहीं है', min: (v) => `One UI ${v} या नया चाहिए` },
+    on: '·', change: 'बदलें',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'दूसरी S सीरीज़ (S22 और पुराने, FE)', 'a-old': 'दूसरी A सीरीज़', 'm-any': 'M सीरीज़ का फ़ोन', 'f-any': 'F सीरीज़ का फ़ोन', 'note-old': 'दूसरा Note', 'xcover-old': 'दूसरा XCover', etc: 'सूची में न होने वाला Galaxy' },
+    seriesNames: { s: 'Galaxy S सीरीज़', a: 'Galaxy A सीरीज़', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M सीरीज़', f: 'Galaxy F सीरीज़', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'अन्य / सूची में नहीं' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */

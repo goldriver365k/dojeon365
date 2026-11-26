@@ -8,7 +8,7 @@ export const LANGUAGES = [
   { code: 'pt', name: 'Português (Brasil)', status: 'draft', og: 'pt_BR', speech: 'pt-BR' },
   { code: 'de', name: 'Deutsch', status: 'draft', og: 'de_DE', speech: 'de-DE' },
   { code: 'fr', name: 'Français', status: 'draft', og: 'fr_FR', speech: 'fr-FR' },
-  { code: 'hi', name: 'हिन्दी', status: 'planned', og: 'hi_IN', speech: 'hi-IN', wrap: { scale: 1.35 } },
+  { code: 'hi', name: 'हिन्दी', status: 'draft', og: 'hi_IN', speech: 'hi-IN', wrap: { scale: 1.35 } },
   { code: 'id', name: 'Bahasa Indonesia', status: 'draft', og: 'id_ID', speech: 'id-ID' },
   { code: 'vi', name: 'Tiếng Việt', status: 'draft', og: 'vi_VN', speech: 'vi-VN' },
   { code: 'th', name: 'ไทย', status: 'draft', og: 'th_TH', speech: 'th-TH', wrap: { noSpace: true, scale: 1.5 } },

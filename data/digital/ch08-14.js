@@ -1,5 +1,5 @@
 /** [병원과 건강] 08~10, [은행과 돈] 11~14 */
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, kiosk, kioskPay } from './kit.js?v=20261126.0348';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, kiosk, kioskPay } from './kit.js?v=20261126.0355';
 
 const MONEY = '실제로 돈이 오가는 일이에요. 먼저 연습 화면으로 끝까지 해 보세요. 연습 화면에서는 돈이 나가지 않아요.';
 
