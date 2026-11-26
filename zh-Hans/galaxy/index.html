@@ -41,11 +41,11 @@
 <meta property="og:locale" content="zh_CN">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://digistep365.com/zh-Hans/"},{"@type":"ListItem","position":2,"name":"Galaxy 课程","item":"https://digistep365.com/zh-Hans/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>未选择 · 通用说明</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">选择我的手机</summary>
+  <h3 class="device__step">1. 从通用使用方法开始</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>从通用使用方法开始</span><small>不选机型，查看全部课程</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. 选择我的手机</h3>
   <details class="device__how">
     <summary>先查一查您手机的机型和软件版本</summary>
     <ol><li>点按<b>设置</b>应用程序。</li><li>点按最下面的<b>关于手机</b>。</li><li>看上方的<b>型号名称</b>（例如 Galaxy S26 · SM-S942N）。</li><li>点按<b>软件信息</b>。</li><li>看<b>One UI 版本</b>（例如 9.0）。</li></ol>
@@ -71,8 +75,7 @@
     <label>系列 <select name="series"></select></label>
     <label>机型 <select name="model"></select></label>
     <label>One UI 版本 <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">保存我的手机</button><button type="button" class="btn" data-clear>使用通用说明</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">保存我的手机</button></div>
   </form>
   <p class="device__note">可以不选。只保存在本浏览器中，我们绝不会猜测您的机型。</p>
   </details>

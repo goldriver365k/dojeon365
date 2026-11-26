@@ -41,11 +41,11 @@
 <meta property="og:locale" content="vi_VN">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://digistep365.com/vi/"},{"@type":"ListItem","position":2,"name":"Bài học Galaxy","item":"https://digistep365.com/vi/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>Chưa chọn · hướng dẫn chung</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">Chọn điện thoại của tôi</summary>
+  <h3 class="device__step">1. Bắt đầu với hướng dẫn chung</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>Bắt đầu với hướng dẫn chung</span><small>Xem tất cả bài học mà không cần chọn mẫu máy</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. Chọn điện thoại của tôi</h3>
   <details class="device__how">
     <summary>Trước hết, tìm kiểu máy và phiên bản phần mềm của điện thoại</summary>
     <ol><li>Chạm vào ứng dụng <b>Cài đặt</b>.</li><li>Chạm vào <b>Thông tin điện thoại</b> ở dưới cùng.</li><li>Xem <b>tên kiểu máy</b> ở trên cùng (ví dụ Galaxy S26 · SM-S942N).</li><li>Chạm vào <b>Thông tin phần mềm</b>.</li><li>Xem <b>phiên bản One UI</b> (ví dụ 9.0).</li></ol>
@@ -71,8 +75,7 @@
     <label>Dòng máy <select name="series"></select></label>
     <label>Kiểu máy <select name="model"></select></label>
     <label>Phiên bản One UI <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">Lưu điện thoại của tôi</button><button type="button" class="btn" data-clear>Dùng hướng dẫn chung</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">Lưu điện thoại của tôi</button></div>
   </form>
   <p class="device__note">Việc chọn là tùy ý. Chỉ lưu trong trình duyệt này và chúng tôi không bao giờ đoán kiểu máy của bạn.</p>
   </details>

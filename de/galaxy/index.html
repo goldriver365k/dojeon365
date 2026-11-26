@@ -41,11 +41,11 @@
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://digistep365.com/de/"},{"@type":"ListItem","position":2,"name":"Galaxy-Kurse","item":"https://digistep365.com/de/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>Nicht gewählt · allgemeine Anleitung</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">Mein Handy wählen</summary>
+  <h3 class="device__step">1. Mit der allgemeinen Anleitung beginnen</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>Mit der allgemeinen Anleitung beginnen</span><small>Alle Lektionen ansehen, ohne ein Modell zu wählen</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. Mein Handy wählen</h3>
   <details class="device__how">
     <summary>Zuerst Modell und Softwareversion Ihres Handys finden</summary>
     <ol><li>Tippen Sie auf die App <b>Einstellungen</b>.</li><li>Tippen Sie ganz unten auf <b>Telefoninfo</b>.</li><li>Sehen Sie oben den <b>Modellnamen</b> (z. B. Galaxy S26 · SM-S942N).</li><li>Tippen Sie auf <b>Softwareinformationen</b>.</li><li>Sehen Sie die <b>One UI-Version</b> (z. B. 9.0).</li></ol>
@@ -71,8 +75,7 @@
     <label>Serie <select name="series"></select></label>
     <label>Modell <select name="model"></select></label>
     <label>One UI-Version <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">Mein Handy speichern</button><button type="button" class="btn" data-clear>Allgemeine Anleitung nutzen</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">Mein Handy speichern</button></div>
   </form>
   <p class="device__note">Die Auswahl ist freiwillig. Sie wird nur in diesem Browser gespeichert, und wir raten Ihr Modell nie.</p>
   </details>

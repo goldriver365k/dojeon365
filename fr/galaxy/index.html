@@ -41,11 +41,11 @@
 <meta property="og:locale" content="fr_FR">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://digistep365.com/fr/"},{"@type":"ListItem","position":2,"name":"Cours Galaxy","item":"https://digistep365.com/fr/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>Non choisi · instructions générales</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">Choisir mon téléphone</summary>
+  <h3 class="device__step">1. Commencer avec les instructions générales</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>Commencer avec les instructions générales</span><small>Voir toutes les leçons sans choisir de modèle</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. Choisir mon téléphone</h3>
   <details class="device__how">
     <summary>D’abord, trouvez le modèle et la version logicielle de votre téléphone</summary>
     <ol><li>Touchez l’appli <b>Paramètres</b>.</li><li>Touchez <b>À propos du téléphone</b>, tout en bas.</li><li>Regardez le <b>nom du modèle</b> en haut (par exemple Galaxy S26 · SM-S942N).</li><li>Touchez <b>Informations sur le logiciel</b>.</li><li>Regardez la <b>version de One UI</b> (par exemple 9.0).</li></ol>
@@ -71,8 +75,7 @@
     <label>Série <select name="series"></select></label>
     <label>Modèle <select name="model"></select></label>
     <label>Version de One UI <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">Enregistrer mon téléphone</button><button type="button" class="btn" data-clear>Instructions générales</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">Enregistrer mon téléphone</button></div>
   </form>
   <p class="device__note">Ce choix est facultatif. Il est enregistré seulement dans ce navigateur et nous ne devinons jamais votre modèle.</p>
   </details>

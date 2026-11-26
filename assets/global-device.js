@@ -1,8 +1,8 @@
 // DigiStep365 global pages: "My phone" picker (series → model → One UI) and support badges, in the page language.
 // Optional: nothing is forced. Saved only in this browser. The site never guesses the model.
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261126.1132';
-import { metaOf } from '../data/galaxy/meta.js?v=20261126.1132';
-import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261126.1132';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261126.1140';
+import { metaOf } from '../data/galaxy/meta.js?v=20261126.1140';
+import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261126.1140';
 
 const LANG = document.documentElement.lang in DEVICE_STRINGS ? document.documentElement.lang : 'en';
 const D = DEVICE_STRINGS[LANG];
@@ -31,6 +31,8 @@ function support(id, d) {
 
 function render() {
   const d = read().device ?? null;
+  // ‘1. 공통 사용법’은 기종을 고르지 않았을 때 선택된 것으로 표시
+  document.querySelector('[data-clear]')?.setAttribute('aria-pressed', String(!label(d)));
   const main = document.querySelector('[data-lesson]');
   const box = document.querySelector('[data-support]');
   if (main && box) {
@@ -51,6 +53,8 @@ function picker() {
   const form = document.querySelector('[data-device-form]');
   if (!form) return;
   const [series, model, oneui] = ['series', 'model', 'oneui'].map((n) => form.elements[n]);
+  const saved = document.querySelector('[data-saved]');
+  const common = document.querySelector('[data-clear]');
   const d = read().device ?? {};
   series.innerHTML = `<option value="">${D.dontKnow}</option>${SERIES.map((s) => `<option value="${s.id}">${esc(seriesName(s))}</option>`).join('')}`;
   oneui.innerHTML = `<option value="">${D.dontKnow}</option>${ONEUI.map((o) => `<option value="${o.v}">One UI ${o.v} (Android ${o.android})${o.v === BASE_ONEUI ? ` — ${D.baseVersion}` : ''}</option>`).join('')}`;
@@ -70,13 +74,13 @@ function picker() {
     next.device = series.value || oneui.value ? { series: series.value || null, model: model.value || null, oneui: oneui.value || null } : null;
     write(next);
     render();
-    form.querySelector('[data-saved]').textContent = D.saved;
+    saved.textContent = D.saved;
   });
-  form.querySelector('[data-clear]').addEventListener('click', () => {
+  common?.addEventListener('click', () => {
     const next = read(); next.device = null; write(next);
     series.value = ''; fillModels(); oneui.value = '';
     render();
-    form.querySelector('[data-saved]').textContent = D.cleared;
+    saved.textContent = D.cleared;
   });
 }
 

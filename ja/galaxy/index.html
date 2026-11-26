@@ -41,11 +41,11 @@
 <meta property="og:locale" content="ja_JP">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://digistep365.com/ja/"},{"@type":"ListItem","position":2,"name":"Galaxyレッスン","item":"https://digistep365.com/ja/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>未選択 · 一般的な説明</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">私のスマホを選ぶ</summary>
+  <h3 class="device__step">1. 共通の使い方で始める</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>共通の使い方で始める</span><small>機種を選ばずにすべてのレッスンを見る</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. 私のスマホを選ぶ</h3>
   <details class="device__how">
     <summary>まず、スマホの機種とソフトウェアのバージョンを調べましょう</summary>
     <ol><li><b>設定</b>アプリをタップします。</li><li>いちばん下の<b>端末情報</b>をタップします。</li><li>上にある<b>モデル名</b>を見ます（例：Galaxy S26 · SM-S942N）。</li><li><b>ソフトウェア情報</b>をタップします。</li><li><b>One UIバージョン</b>を見ます（例：9.0）。</li></ol>
@@ -71,8 +75,7 @@
     <label>シリーズ <select name="series"></select></label>
     <label>機種 <select name="model"></select></label>
     <label>One UIバージョン <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">私のスマホを保存</button><button type="button" class="btn" data-clear>一般的な説明を使う</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">私のスマホを保存</button></div>
   </form>
   <p class="device__note">選ぶかどうかは自由です。このブラウザにだけ保存され、機種を推測することはありません。</p>
   </details>

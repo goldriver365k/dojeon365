@@ -41,11 +41,11 @@
 <meta property="og:locale" content="zh_TW">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://digistep365.com/zh-Hant/"},{"@type":"ListItem","position":2,"name":"Galaxy 課程","item":"https://digistep365.com/zh-Hant/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>未選擇 · 通用說明</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">選擇我的手機</summary>
+  <h3 class="device__step">1. 從通用使用方法開始</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>從通用使用方法開始</span><small>不選機型，查看全部課程</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. 選擇我的手機</h3>
   <details class="device__how">
     <summary>先查一查您手機的機型和軟體版本</summary>
     <ol><li>輕觸<b>設定</b>應用程式。</li><li>輕觸最下面的<b>關於手機</b>。</li><li>看上方的<b>型號名稱</b>（例如 Galaxy S26 · SM-S942N）。</li><li>輕觸<b>軟體資訊</b>。</li><li>看<b>One UI 版本</b>（例如 9.0）。</li></ol>
@@ -71,8 +75,7 @@
     <label>系列 <select name="series"></select></label>
     <label>機型 <select name="model"></select></label>
     <label>One UI 版本 <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">儲存我的手機</button><button type="button" class="btn" data-clear>使用通用說明</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">儲存我的手機</button></div>
   </form>
   <p class="device__note">可以不選。只儲存在本瀏覽器中，我們絕不會猜測您的機型。</p>
   </details>

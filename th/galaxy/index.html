@@ -41,11 +41,11 @@
 <meta property="og:locale" content="th_TH">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://digistep365.com/th/"},{"@type":"ListItem","position":2,"name":"บทเรียน Galaxy","item":"https://digistep365.com/th/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>ยังไม่ได้เลือก · คำแนะนำทั่วไป</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">เลือกโทรศัพท์ของฉัน</summary>
+  <h3 class="device__step">1. เริ่มด้วยวิธีใช้ทั่วไป</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>เริ่มด้วยวิธีใช้ทั่วไป</span><small>ดูบทเรียนทั้งหมดโดยไม่ต้องเลือกรุ่น</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. เลือกโทรศัพท์ของฉัน</h3>
   <details class="device__how">
     <summary>ก่อนอื่น หารุ่นและเวอร์ชันซอฟต์แวร์ของโทรศัพท์คุณ</summary>
     <ol><li>แตะแอป <b>การตั้งค่า</b></li><li>แตะ <b>เกี่ยวกับโทรศัพท์</b> ที่ด้านล่างสุด</li><li>ดู <b>ชื่อรุ่น</b> ด้านบน (เช่น Galaxy S26 · SM-S942N)</li><li>แตะ <b>ข้อมูลซอฟต์แวร์</b></li><li>ดู <b>เวอร์ชัน One UI</b> (เช่น 9.0)</li></ol>
@@ -71,8 +75,7 @@
     <label>ซีรีส์ <select name="series"></select></label>
     <label>รุ่น <select name="model"></select></label>
     <label>เวอร์ชัน One UI <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">บันทึกโทรศัพท์ของฉัน</button><button type="button" class="btn" data-clear>ใช้คำแนะนำทั่วไป</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">บันทึกโทรศัพท์ของฉัน</button></div>
   </form>
   <p class="device__note">จะเลือกหรือไม่ก็ได้ บันทึกไว้ในเบราว์เซอร์นี้เท่านั้น และเราไม่เดารุ่นของคุณ</p>
   </details>

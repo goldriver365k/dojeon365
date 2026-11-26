@@ -41,11 +41,11 @@
 <meta property="og:locale" content="id_ID">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1132">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1140">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://digistep365.com/id/"},{"@type":"ListItem","position":2,"name":"Kursus Galaxy","item":"https://digistep365.com/id/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1132" defer></script>
-<script src="/assets/analytics.js?v=20261126.1132" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1132"></script>
+<script src="/assets/global.js?v=20261126.1140" defer></script>
+<script src="/assets/analytics.js?v=20261126.1140" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1140"></script>
 </head>
 <body>
 <header class="top">
@@ -61,6 +61,10 @@
   <p class="device__now" data-device-now>Belum dipilih · petunjuk umum</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">Pilih ponsel saya</summary>
+  <h3 class="device__step">1. Mulai dengan petunjuk umum</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>Mulai dengan petunjuk umum</span><small>Lihat semua pelajaran tanpa memilih model</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. Pilih ponsel saya</h3>
   <details class="device__how">
     <summary>Pertama, cari model dan versi perangkat lunak ponsel Anda</summary>
     <ol><li>Ketuk aplikasi <b>Pengaturan</b>.</li><li>Ketuk <b>Tentang ponsel</b> di paling bawah.</li><li>Lihat <b>nama model</b> di atas (misalnya Galaxy S26 · SM-S942N).</li><li>Ketuk <b>Informasi perangkat lunak</b>.</li><li>Lihat <b>versi One UI</b> (misalnya 9.0).</li></ol>
@@ -71,8 +75,7 @@
     <label>Seri <select name="series"></select></label>
     <label>Model <select name="model"></select></label>
     <label>Versi One UI <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">Simpan ponsel saya</button><button type="button" class="btn" data-clear>Pakai petunjuk umum</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">Simpan ponsel saya</button></div>
   </form>
   <p class="device__note">Memilih tidak wajib. Hanya disimpan di peramban ini, dan kami tidak pernah menebak model Anda.</p>
   </details>

@@ -1,6 +1,7 @@
 // Strings for the "My phone" picker on the global pages (used in the browser and at build time).
 export const DEVICE_STRINGS = {
   en: {
+    startCommon: 'Start with common instructions', startCommonSub: 'See every lesson without choosing a model',
     h: 'My phone', none: 'Not chosen · showing common instructions',
     howH: 'First, find your phone’s model and software version',
     how: ['Tap the <b>Settings</b> app.', 'Tap <b>About phone</b> at the very bottom.', 'Check the <b>model name</b> at the top (for example, Galaxy S26 · SM-S942N).', 'Tap <b>Software information</b>.', 'Check the <b>One UI version</b> (for example, 9.0).'],
@@ -18,6 +19,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S series', a: 'Galaxy A series', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M series', f: 'Galaxy F series', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Other / not listed' },
   },
   es: {
+    startCommon: 'Empezar con las instrucciones generales', startCommonSub: 'Ver todas las lecciones sin elegir modelo',
     h: 'Mi móvil', none: 'Sin elegir · instrucciones generales',
     howH: 'Primero, busca el modelo y la versión de software de tu móvil',
     how: ['Toca la aplicación <b>Ajustes</b>.', 'Toca <b>Acerca del teléfono</b>, abajo del todo.', 'Mira el <b>nombre del modelo</b> arriba (por ejemplo, Galaxy S26 · SM-S942N).', 'Toca <b>Información de software</b>.', 'Mira la <b>versión de One UI</b> (por ejemplo, 9.0).'],
@@ -35,6 +37,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy serie S', a: 'Galaxy serie A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy serie M', f: 'Galaxy serie F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Otro / no está en la lista' },
   },
   pt: {
+    startCommon: 'Começar com as instruções gerais', startCommonSub: 'Ver todas as aulas sem escolher o modelo',
     h: 'Meu celular', none: 'Não escolhido · instruções gerais',
     howH: 'Primeiro, veja o modelo e a versão de software do seu celular',
     how: ['Toque no app <b>Configurações</b>.', 'Toque em <b>Sobre o telefone</b>, lá embaixo.', 'Veja o <b>nome do modelo</b> em cima (por exemplo, Galaxy S26 · SM-S942N).', 'Toque em <b>Informações do software</b>.', 'Veja a <b>versão do One UI</b> (por exemplo, 9.0).'],
@@ -52,6 +55,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy série S', a: 'Galaxy série A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy série M', f: 'Galaxy série F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Outro / fora da lista' },
   },
   de: {
+    startCommon: 'Mit der allgemeinen Anleitung beginnen', startCommonSub: 'Alle Lektionen ansehen, ohne ein Modell zu wählen',
     h: 'Mein Handy', none: 'Nicht gewählt · allgemeine Anleitung',
     howH: 'Zuerst Modell und Softwareversion Ihres Handys finden',
     how: ['Tippen Sie auf die App <b>Einstellungen</b>.', 'Tippen Sie ganz unten auf <b>Telefoninfo</b>.', 'Sehen Sie oben den <b>Modellnamen</b> (z. B. Galaxy S26 · SM-S942N).', 'Tippen Sie auf <b>Softwareinformationen</b>.', 'Sehen Sie die <b>One UI-Version</b> (z. B. 9.0).'],
@@ -69,6 +73,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S-Serie', a: 'Galaxy A-Serie', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M-Serie', f: 'Galaxy F-Serie', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Andere / nicht aufgeführt' },
   },
   fr: {
+    startCommon: 'Commencer avec les instructions générales', startCommonSub: 'Voir toutes les leçons sans choisir de modèle',
     h: 'Mon téléphone', none: 'Non choisi · instructions générales',
     howH: 'D’abord, trouvez le modèle et la version logicielle de votre téléphone',
     how: ['Touchez l’appli <b>Paramètres</b>.', 'Touchez <b>À propos du téléphone</b>, tout en bas.', 'Regardez le <b>nom du modèle</b> en haut (par exemple Galaxy S26 · SM-S942N).', 'Touchez <b>Informations sur le logiciel</b>.', 'Regardez la <b>version de One UI</b> (par exemple 9.0).'],
@@ -86,6 +91,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy série S', a: 'Galaxy série A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy série M', f: 'Galaxy série F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Autre / absent de la liste' },
   },
   it: {
+    startCommon: 'Inizia con le istruzioni generali', startCommonSub: 'Vedi tutte le lezioni senza scegliere il modello',
     h: 'Il mio telefono', none: 'Non scelto · istruzioni generali',
     howH: 'Prima trova il modello e la versione software del telefono',
     how: ['Tocca l’app <b>Impostazioni</b>.', 'Tocca <b>Info sul telefono</b>, in fondo.', 'Guarda il <b>nome del modello</b> in alto (per esempio Galaxy S26 · SM-S942N).', 'Tocca <b>Informazioni software</b>.', 'Guarda la <b>versione One UI</b> (per esempio 9.0).'],
@@ -103,6 +109,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy serie S', a: 'Galaxy serie A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy serie M', f: 'Galaxy serie F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Altro / non in elenco' },
   },
   id: {
+    startCommon: 'Mulai dengan petunjuk umum', startCommonSub: 'Lihat semua pelajaran tanpa memilih model',
     h: 'Ponsel saya', none: 'Belum dipilih · petunjuk umum',
     howH: 'Pertama, cari model dan versi perangkat lunak ponsel Anda',
     how: ['Ketuk aplikasi <b>Pengaturan</b>.', 'Ketuk <b>Tentang ponsel</b> di paling bawah.', 'Lihat <b>nama model</b> di atas (misalnya Galaxy S26 · SM-S942N).', 'Ketuk <b>Informasi perangkat lunak</b>.', 'Lihat <b>versi One UI</b> (misalnya 9.0).'],
@@ -120,6 +127,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy seri S', a: 'Galaxy seri A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy seri M', f: 'Galaxy seri F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Lainnya / tidak ada di daftar' },
   },
   ms: {
+    startCommon: 'Mula dengan arahan umum', startCommonSub: 'Lihat semua pelajaran tanpa memilih model',
     h: 'Telefon saya', none: 'Belum dipilih · arahan umum',
     howH: 'Mula-mula, cari model dan versi perisian telefon anda',
     how: ['Ketik aplikasi <b>Tetapan</b>.', 'Ketik <b>Perihal telefon</b> di paling bawah.', 'Lihat <b>nama model</b> di atas (contohnya Galaxy S26 · SM-S942N).', 'Ketik <b>Maklumat perisian</b>.', 'Lihat <b>versi One UI</b> (contohnya 9.0).'],
@@ -137,6 +145,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy siri S', a: 'Galaxy siri A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy siri M', f: 'Galaxy siri F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Lain-lain / tiada dalam senarai' },
   },
   vi: {
+    startCommon: 'Bắt đầu với hướng dẫn chung', startCommonSub: 'Xem tất cả bài học mà không cần chọn mẫu máy',
     h: 'Điện thoại của tôi', none: 'Chưa chọn · hướng dẫn chung',
     howH: 'Trước hết, tìm kiểu máy và phiên bản phần mềm của điện thoại',
     how: ['Chạm vào ứng dụng <b>Cài đặt</b>.', 'Chạm vào <b>Thông tin điện thoại</b> ở dưới cùng.', 'Xem <b>tên kiểu máy</b> ở trên cùng (ví dụ Galaxy S26 · SM-S942N).', 'Chạm vào <b>Thông tin phần mềm</b>.', 'Xem <b>phiên bản One UI</b> (ví dụ 9.0).'],
@@ -154,6 +163,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy dòng S', a: 'Galaxy dòng A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy dòng M', f: 'Galaxy dòng F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Khác / không có trong danh sách' },
   },
   tr: {
+    startCommon: 'Genel talimatlarla başla', startCommonSub: 'Model seçmeden tüm dersleri gör',
     h: 'Telefonum', none: 'Seçilmedi · genel rehber',
     howH: 'Önce telefonunuzun modelini ve yazılım sürümünü bulun',
     how: ['<b>Ayarlar</b> uygulamasına dokunun.', 'En alttaki <b>Telefon hakkında</b> öğesine dokunun.', 'Üstteki <b>model adına</b> bakın (örneğin Galaxy S26 · SM-S942N).', '<b>Yazılım bilgileri</b> öğesine dokunun.', '<b>One UI sürümü</b>ne bakın (örneğin 9.0).'],
@@ -171,6 +181,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S serisi', a: 'Galaxy A serisi', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M serisi', f: 'Galaxy F serisi', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Diğer / listede yok' },
   },
   fil: {
+    startCommon: 'Magsimula sa pangkalahatang gabay', startCommonSub: 'Tingnan ang lahat ng aralin nang hindi pumipili ng modelo',
     h: 'Aking telepono', none: 'Hindi pa napili · pangkalahatang gabay',
     howH: 'Una, hanapin ang modelo at bersyon ng software ng iyong telepono',
     how: ['I-tap ang app na <b>Mga Setting</b>.', 'I-tap ang <b>Tungkol sa telepono</b> sa pinakaibaba.', 'Tingnan ang <b>pangalan ng modelo</b> sa itaas (halimbawa, Galaxy S26 · SM-S942N).', 'I-tap ang <b>Impormasyon ng software</b>.', 'Tingnan ang <b>bersyon ng One UI</b> (halimbawa, 9.0).'],
@@ -188,6 +199,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S series', a: 'Galaxy A series', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M series', f: 'Galaxy F series', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Iba / wala sa listahan' },
   },
   ru: {
+    startCommon: 'Начать с общих инструкций', startCommonSub: 'Смотреть все уроки, не выбирая модель',
     h: 'Мой телефон', none: 'Не выбран · общее руководство',
     howH: 'Сначала узнайте модель и версию ПО вашего телефона',
     how: ['Нажмите приложение <b>Настройки</b>.', 'Нажмите <b>Сведения о телефоне</b> в самом низу.', 'Посмотрите <b>название модели</b> вверху (например, Galaxy S26 · SM-S942N).', 'Нажмите <b>Сведения о ПО</b>.', 'Посмотрите <b>версию One UI</b> (например, 9.0).'],
@@ -205,6 +217,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy серии S', a: 'Galaxy серии A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy серии M', f: 'Galaxy серии F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Другое / нет в списке' },
   },
   ja: {
+    startCommon: '共通の使い方で始める', startCommonSub: '機種を選ばずにすべてのレッスンを見る',
     h: '私のスマホ', none: '未選択 · 一般的な説明',
     howH: 'まず、スマホの機種とソフトウェアのバージョンを調べましょう',
     how: ['<b>設定</b>アプリをタップします。', 'いちばん下の<b>端末情報</b>をタップします。', '上にある<b>モデル名</b>を見ます（例：Galaxy S26 · SM-S942N）。', '<b>ソフトウェア情報</b>をタップします。', '<b>One UIバージョン</b>を見ます（例：9.0）。'],
@@ -222,6 +235,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy Sシリーズ', a: 'Galaxy Aシリーズ', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy Mシリーズ', f: 'Galaxy Fシリーズ', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'その他 / 一覧にない' },
   },
   'zh-Hans': {
+    startCommon: '从通用使用方法开始', startCommonSub: '不选机型，查看全部课程',
     h: '我的手机', none: '未选择 · 通用说明',
     howH: '先查一查您手机的机型和软件版本',
     how: ['点按<b>设置</b>应用程序。', '点按最下面的<b>关于手机</b>。', '看上方的<b>型号名称</b>（例如 Galaxy S26 · SM-S942N）。', '点按<b>软件信息</b>。', '看<b>One UI 版本</b>（例如 9.0）。'],
@@ -239,6 +253,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S 系列', a: 'Galaxy A 系列', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M 系列', f: 'Galaxy F 系列', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: '其他 / 列表中没有' },
   },
   'zh-Hant': {
+    startCommon: '從通用使用方法開始', startCommonSub: '不選機型，查看全部課程',
     h: '我的手機', none: '未選擇 · 通用說明',
     howH: '先查一查您手機的機型和軟體版本',
     how: ['輕觸<b>設定</b>應用程式。', '輕觸最下面的<b>關於手機</b>。', '看上方的<b>型號名稱</b>（例如 Galaxy S26 · SM-S942N）。', '輕觸<b>軟體資訊</b>。', '看<b>One UI 版本</b>（例如 9.0）。'],
@@ -256,6 +271,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S 系列', a: 'Galaxy A 系列', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M 系列', f: 'Galaxy F 系列', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: '其他 / 列表中沒有' },
   },
   th: {
+    startCommon: 'เริ่มด้วยวิธีใช้ทั่วไป', startCommonSub: 'ดูบทเรียนทั้งหมดโดยไม่ต้องเลือกรุ่น',
     h: 'โทรศัพท์ของฉัน', none: 'ยังไม่ได้เลือก · คำแนะนำทั่วไป',
     howH: 'ก่อนอื่น หารุ่นและเวอร์ชันซอฟต์แวร์ของโทรศัพท์คุณ',
     how: ['แตะแอป <b>การตั้งค่า</b>', 'แตะ <b>เกี่ยวกับโทรศัพท์</b> ที่ด้านล่างสุด', 'ดู <b>ชื่อรุ่น</b> ด้านบน (เช่น Galaxy S26 · SM-S942N)', 'แตะ <b>ข้อมูลซอฟต์แวร์</b>', 'ดู <b>เวอร์ชัน One UI</b> (เช่น 9.0)'],
@@ -273,6 +289,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy ซีรีส์ S', a: 'Galaxy ซีรีส์ A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy ซีรีส์ M', f: 'Galaxy ซีรีส์ F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'อื่นๆ / ไม่อยู่ในรายการ' },
   },
   hi: {
+    startCommon: 'सामान्य निर्देशों से शुरू करें', startCommonSub: 'मॉडल चुने बिना सभी पाठ देखें',
     h: 'मेरा फ़ोन', none: 'नहीं चुना · सामान्य गाइड',
     howH: 'पहले अपने फ़ोन का मॉडल और सॉफ़्टवेयर वर्शन ढूँढें',
     how: ['<b>सेटिंग्स</b> ऐप पर टैप करें।', 'सबसे नीचे <b>फ़ोन के बारे में</b> पर टैप करें।', 'ऊपर <b>मॉडल का नाम</b> देखें (जैसे Galaxy S26 · SM-S942N)।', '<b>सॉफ़्टवेयर जानकारी</b> पर टैप करें।', '<b>One UI वर्शन</b> देखें (जैसे 9.0)।'],
@@ -290,6 +307,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S सीरीज़', a: 'Galaxy A सीरीज़', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M सीरीज़', f: 'Galaxy F सीरीज़', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'अन्य / सूची में नहीं' },
   },
   bn: {
+    startCommon: 'সাধারণ নির্দেশনা দিয়ে শুরু করুন', startCommonSub: 'মডেল না বেছে সব পাঠ দেখুন',
     h: 'আমার ফোন', none: 'বাছা হয়নি · সাধারণ নির্দেশিকা',
     howH: 'আগে আপনার ফোনের মডেল ও সফটওয়্যার সংস্করণ খুঁজে নিন',
     how: ['<b>সেটিংস</b> অ্যাপে ট্যাপ করুন।', 'একদম নিচে <b>ফোন সম্পর্কে</b>-তে ট্যাপ করুন।', 'উপরে <b>মডেলের নাম</b> দেখুন (যেমন Galaxy S26 · SM-S942N)।', '<b>সফটওয়্যার তথ্য</b>-এ ট্যাপ করুন।', '<b>One UI সংস্করণ</b> দেখুন (যেমন 9.0)।'],
@@ -307,6 +325,7 @@ export const DEVICE_STRINGS = {
     seriesNames: { s: 'Galaxy S সিরিজ', a: 'Galaxy A সিরিজ', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M সিরিজ', f: 'Galaxy F সিরিজ', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'অন্যান্য / তালিকায় নেই' },
   },
   ar: {
+    startCommon: 'البدء بالإرشادات العامة', startCommonSub: 'عرض كل الدروس دون اختيار الطراز',
     h: 'هاتفي', none: 'لم يُختَر · دليل عام',
     howH: 'أولًا، اعرف طراز هاتفك وإصدار برنامجه',
     how: ['اضغط تطبيق <b>الإعدادات</b>.', 'اضغط <b>حول الهاتف</b> في الأسفل تمامًا.', 'انظر إلى <b>اسم الطراز</b> في الأعلى (مثل Galaxy S26 · SM-S942N).', 'اضغط <b>معلومات البرنامج</b>.', 'انظر إلى <b>إصدار One UI</b> (مثل 9.0).'],
@@ -334,6 +353,10 @@ export function deviceSection(lang, checkHref, chooseLabel) {
   <p class="device__now" data-device-now>${D.none}</p></div>
   <details class="device__pick" data-device-pick>
   <summary class="btn">${chooseLabel ?? D.change}</summary>
+  <h3 class="device__step">1. ${D.startCommon}</h3>
+  <button type="button" class="device__common" data-clear aria-pressed="true"><span>${D.startCommon}</span><small>${D.startCommonSub}</small></button>
+  <p class="device__saved" data-saved role="status"></p>
+  <h3 class="device__step">2. ${chooseLabel ?? D.change}</h3>
   <details class="device__how">
     <summary>${D.howH}</summary>
     <ol>${D.how.map((x) => `<li>${x}</li>`).join('')}</ol>
@@ -344,8 +367,7 @@ export function deviceSection(lang, checkHref, chooseLabel) {
     <label>${D.series} <select name="series"></select></label>
     <label>${D.model} <select name="model"></select></label>
     <label>${D.oneui} <select name="oneui"></select></label>
-    <div class="device__btns"><button type="submit" class="btn btn--primary">${D.save}</button><button type="button" class="btn" data-clear>${D.clear}</button></div>
-    <p class="device__saved" data-saved role="status"></p>
+    <div class="device__btns"><button type="submit" class="btn btn--primary">${D.save}</button></div>
   </form>
   <p class="device__note">${D.note}</p>
   </details>
