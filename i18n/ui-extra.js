@@ -22,3 +22,28 @@ export const UI_EXTRA = {
   bn: { indexLeadAll: 'একটি বিষয় বেছে নিন। প্রতিটি পাঠ একবারে একটি কাজ দেখায়।', popular: 'জনপ্রিয় পাঠ', tryIt: 'প্রতিটি ধাপে স্ক্রিন আর কোথায় ট্যাপ করবেন তা দেখানো হয়।', choosePhone: 'আমার ফোন বেছে নিন' },
   ar: { indexLeadAll: 'اختر موضوعًا. يعرض كل درس إجراءً واحدًا في كل مرة.', popular: 'الدروس الأكثر مشاهدة', tryIt: 'تعرض كل خطوة الشاشة ومكان الضغط.', choosePhone: 'اختيار هاتفي' },
 };
+
+// 검색 결과 제목·설명: 사람들이 실제로 검색하는 말투로(브랜드는 빌드에서 뒤에 붙임).
+// how(t): 일반 수업, help(t): 문제 해결 수업(22번 분류: ‘~할 때’), tail: 설명 끝에 붙이는 한 문장
+const lc = (t) => (t.length > 1 && t[1] === t[1].toUpperCase() && /[A-Z]/.test(t[1]) ? t : t[0].toLowerCase() + t.slice(1));
+export const SEO = {
+  en: { how: (t) => `How to ${lc(t)} on a Samsung Galaxy phone`, help: (t) => `${t}: Samsung Galaxy help`, tail: 'Free step-by-step guide with pictures.' },
+  es: { how: (t) => `Cómo ${lc(t)} en un Samsung Galaxy`, help: (t) => `${t}: ayuda para Samsung Galaxy`, tail: 'Guía gratis paso a paso con imágenes.' },
+  pt: { how: (t) => `Como ${lc(t)} no Samsung Galaxy`, help: (t) => `${t}: ajuda para Samsung Galaxy`, tail: 'Guia grátis passo a passo com imagens.' },
+  de: { how: (t) => `${t} am Samsung Galaxy – Anleitung`, help: (t) => `${t} – Hilfe für Samsung Galaxy`, tail: 'Kostenlose Schritt-für-Schritt-Anleitung mit Bildern.' },
+  fr: { how: (t) => `Comment ${lc(t)} sur un Samsung Galaxy`, help: (t) => `${t} : aide Samsung Galaxy`, tail: 'Guide gratuit pas à pas avec images.' },
+  it: { how: (t) => `Come ${lc(t)} su Samsung Galaxy`, help: (t) => `${t}: aiuto per Samsung Galaxy`, tail: 'Guida gratuita passo passo con immagini.' },
+  id: { how: (t) => `Cara ${lc(t)} di HP Samsung Galaxy`, help: (t) => `${t}: bantuan Samsung Galaxy`, tail: 'Panduan gratis langkah demi langkah dengan gambar.' },
+  ms: { how: (t) => `Cara ${lc(t)} pada telefon Samsung Galaxy`, help: (t) => `${t}: bantuan Samsung Galaxy`, tail: 'Panduan percuma langkah demi langkah bergambar.' },
+  vi: { how: (t) => `Cách ${lc(t)} trên điện thoại Samsung Galaxy`, help: (t) => `${t}: hướng dẫn Samsung Galaxy`, tail: 'Hướng dẫn miễn phí từng bước có hình.' },
+  tr: { how: (t) => `Samsung Galaxy’de ${lc(t)} nasıl yapılır?`, help: (t) => `${t}: Samsung Galaxy yardım`, tail: 'Resimli, adım adım ücretsiz rehber.' },
+  fil: { how: (t) => `${t} sa Samsung Galaxy: madaling gabay`, help: (t) => `${t}: tulong para sa Samsung Galaxy`, tail: 'Libreng gabay na may larawan, hakbang-hakbang.' },
+  ru: { how: (t) => `${t} на Samsung Galaxy — пошаговая инструкция`, help: (t) => `${t}: что делать на Samsung Galaxy`, tail: 'Бесплатная пошаговая инструкция с картинками.' },
+  ja: { how: (t) => `${t}方法【Samsung Galaxy】`, help: (t) => `${t}の対処法【Samsung Galaxy】`, tail: '画像つきで一歩ずつ、無料で学べます。', join: '' },
+  'zh-Hans': { how: (t) => `${t} - 三星 Galaxy 手机使用教程（图解）`, help: (t) => `${t}怎么办？三星 Galaxy 手机教程`, tail: '免费图解，一步一步学。', join: '' },
+  'zh-Hant': { how: (t) => `${t} - 三星 Galaxy 手機使用教學（圖解）`, help: (t) => `${t}怎麼辦？三星 Galaxy 手機教學`, tail: '免費圖解，一步一步學。', join: '' },
+  th: { how: (t) => `วิธี${t} บนมือถือ Samsung Galaxy`, help: (t) => `${t} ต้องทำอย่างไร - Samsung Galaxy`, tail: 'คู่มือฟรีทีละขั้นพร้อมภาพ' },
+  hi: { how: (t) => `Samsung Galaxy फ़ोन में ${t}: आसान तरीका`, help: (t) => `${t} क्या करें? Samsung Galaxy`, tail: 'तस्वीरों के साथ मुफ़्त, कदम-दर-कदम गाइड।' },
+  bn: { how: (t) => `Samsung Galaxy ফোনে ${t}: সহজ নিয়ম`, help: (t) => `${t} কী করবেন? Samsung Galaxy`, tail: 'ছবিসহ বিনামূল্যে ধাপে ধাপে গাইড।' },
+  ar: { how: (t) => `طريقة ${t} في هاتف سامسونج Galaxy`, help: (t) => `${t}: ماذا تفعل في هاتف سامسونج Galaxy`, tail: 'دليل مجاني خطوة بخطوة بالصور.' },
+};

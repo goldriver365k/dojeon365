@@ -195,3 +195,9 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .popular h2 { font-size: 1.2rem; margin: 8px 0; }
 .popular { margin-bottom: 16px; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .demo__pic { background: #0b1026; } }
+/* 국내 정적 수업 페이지(/learn/) */
+.ko-words { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 4px 0 12px; font-size: .9rem; color: var(--ink-2); }
+.ko-words b { color: var(--ink); margin-inline-end: 4px; }
+.ko-words span { background: var(--surface-2); border-radius: 999px; padding: 2px 10px; }
+.ko-steps .step { display: block !important; }
+.cat h3 a { color: var(--ink); }

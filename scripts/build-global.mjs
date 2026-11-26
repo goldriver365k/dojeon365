@@ -12,7 +12,8 @@ import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
-import { UI_EXTRA } from '../i18n/ui-extra.js';
+import { UI_EXTRA, SEO } from '../i18n/ui-extra.js';
+import { buildKo, koLessonPath } from './build-ko.mjs';
 
 /** Languages built here: every language in i18n/languages.js (except ko) that has a folder i18n/<code>/ with ui.js. en is x-default. */
 const CODES = LANGUAGES.map((l) => l.code).filter((c) => c !== 'ko' && existsSync(new URL(`../i18n/${c}/ui.js`, import.meta.url)));
@@ -57,12 +58,14 @@ export function globalLessons(lang = DEFAULT) {
 }
 
 /** Paths of a lesson in every language that has it (for hreflang). */
+const KO_GALAXY = new Set(CHAPTERS.flatMap((c) => c.lessons.map((l) => l.id)));
 function lessonAlternates(id) {
-  const out = {};
+  const out = KO_GALAXY.has(id) ? { ko: koLessonPath('galaxy', id) } : {};
   for (const [code, L] of Object.entries(LOCALES)) if (L.G.LESSONS[id] && L.G.TITLES[id]) out[code] = `/${code}/galaxy/${L.G.TITLES[id][0]}/`;
   return out;
 }
-const allLangs = (suffix) => Object.fromEntries(Object.keys(LOCALES).map((c) => [c, `/${c}/${suffix}`]));
+const KO_EQUIV = { '': '/', 'galaxy/': '/learn/galaxy/' };
+const allLangs = (suffix) => ({ ...(KO_EQUIV[suffix] ? { ko: KO_EQUIV[suffix] } : {}), ...Object.fromEntries(Object.keys(LOCALES).map((c) => [c, `/${c}/${suffix}`])) });
 
 /* ---------- page parts (use the current language L) ---------- */
 let L = LOCALES[DEFAULT];
@@ -169,7 +172,10 @@ function lessonPage(ch, l, t, en, all) {
   const nextLesson = sibling[sibling.findIndex((x) => x.l.id === l.id) + 1];
   const draft = status(l.id) !== 'reviewed';
   const alternates = lessonAlternates(l.id);
-  return `${head({ title: `${UI.lessonTitle(t[1])} | ${UI.brand}`, desc: en.desc, path, index: !draft, crumbs, alternates })}
+  const seo = SEO[L.code];
+  const seoTitle = seo ? (l.id.startsWith('g22-') ? seo.help(t[1]) : seo.how(t[1])) : UI.lessonTitle(t[1]);
+  const seoDesc = seo && en.desc.length + seo.tail.length < 158 ? `${en.desc}${seo.join ?? ' '}${seo.tail}` : en.desc;
+  return `${head({ title: `${seoTitle} | ${UI.brand}`, desc: seoDesc, path, index: !draft, crumbs, alternates })}
 <body>
 ${header()}
 <main class="page" id="main" data-lesson="${l.id}">
@@ -454,10 +460,17 @@ export function build() {
     result[code] = { pages, ...stats[code] };
   }
   setTranslator(null);
-  const reviewedAlt = (id) => Object.entries(lessonAlternates(id)).filter(([c]) => LOCALES[c].REVIEWED[id]);
+  const koPages = buildKo({ version: VERSION, alternatesFor: (id) => { const a = lessonAlternates(id); delete a.ko; return a; } });
+  const reviewedAlt = (id) => Object.entries(lessonAlternates(id)).filter(([c]) => c === 'ko' || LOCALES[c].REVIEWED[id]);
   writeFileSync(new URL('../sitemap.xml', import.meta.url), `<?xml version="1.0" encoding="UTF-8"?>
-<!-- Only reviewed pages are listed. Draft translations are noindex and stay out of the sitemap. -->
+<!-- Korean site (live) + reviewed global pages. Draft translations are noindex and stay out of the sitemap. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>${SITE_URL}/</loc></url>
+${koPages.map(({ path }) => {
+    const id = path.match(/^\/learn\/galaxy\/([^/]+)\/$/)?.[1];
+    const alts = id ? reviewedAlt(id) : [];
+    return `  <url><loc>${SITE_URL}${path}</loc>${alts.length > 1 ? alts.map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('') : ''}</url>`;
+  }).join('\n')}
 ${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${reviewedAlt(id).map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('')}</url>`).join('\n')}
 </urlset>
 `);
@@ -466,7 +479,7 @@ ${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${reviewedA
   mkdirSync(new URL('../admin/data/', import.meta.url), { recursive: true });
   for (const code of Object.keys(LOCALES)) writeFileSync(new URL(`../admin/data/${code}.json`, import.meta.url), JSON.stringify(editData(code)));
   writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
-  return { ...result, indexed: sitemap.length, total: rowsById.size };
+  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) console.log(build());

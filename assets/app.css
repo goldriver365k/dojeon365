@@ -338,3 +338,7 @@ svg { display: block; }
 .howto__steps { margin: 0; padding-left: 1.6em; display: grid; gap: 8px; font-size: 1.1875rem; line-height: 1.5; }
 .howto__steps b { color: var(--primary); }
 .howto .btn--block { margin: 4px 0 0; }
+
+/* 검색용 수업 목록 링크(모든 화면 맨 아래) */
+.site-links { max-width: 40rem; margin: 0 auto; padding: 0 16px 32px; font-size: 1rem; }
+.site-links a { color: var(--ink-2); }

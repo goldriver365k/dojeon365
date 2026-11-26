@@ -44,7 +44,7 @@ test('검수 전 페이지는 noindex, 사이트맵에 없음, 면책 문구 있
     assert.match(html, /Not affiliated with, sponsored, or endorsed by Samsung Electronics/);
     if (!REVIEWED[id]) {
       assert.match(html, /<meta name="robots" content="noindex/);
-      assert.ok(!sitemap.includes(EN.TITLES[id][0]), id);
+      assert.ok(!sitemap.includes(`/en/galaxy/${EN.TITLES[id][0]}/`), id);
     }
   }
   assert.equal(LANGUAGES.length, 20);
@@ -99,4 +99,28 @@ for (const [code, cfg] of Object.entries(OTHER)) test(`${code}: 단계 수 일�
   }
   const slugs = Object.values(ES.TITLES).map((t) => t[0]);
   assert.equal(new Set(slugs).size, slugs.length, `${code} 주소 중복`);
+});
+
+test('국내 사이트: 수업마다 검색용 정적 페이지가 있고 사이트맵에 들어 있다', async () => {
+  const { KO_COURSES, koLessonPath, howTo } = await import('../scripts/build-ko.mjs');
+  const sitemap = readFileSync('sitemap.xml', 'utf8');
+  let n = 0;
+  for (const c of KO_COURSES) for (const ch of c.chapters) for (const l of ch.lessons) {
+    const p = koLessonPath(c.key, l.id);
+    const html = readFileSync(`.${p}index.html`, 'utf8');
+    assert.doesNotMatch(html, /name="robots" content="noindex/, p);
+    assert.match(html, /<link rel="canonical" href="https:\/\/digistep365\.com\/learn\//);
+    assert.ok(html.includes(`/#/lesson/${l.id}/`), `${p} → 연습 화면 링크`);
+    assert.ok(sitemap.includes(`https://digistep365.com${p}</loc>`), `${p} 사이트맵`);
+    n++;
+  }
+  assert.ok(n > 300);
+  assert.equal(howTo('충전하기'), '충전하는 방법');
+  assert.equal(howTo('앨범 만들기'), '앨범 만드는 방법');
+});
+
+test('해외 수업 제목은 검색어 말투(언어별)이고 한국어 페이지와 hreflang으로 연결된다', () => {
+  const html = readFileSync(`en/galaxy/${EN.TITLES['g03-font'][0]}/index.html`, 'utf8');
+  assert.match(html, /<title>How to make text bigger on a Samsung Galaxy phone \| DigiStep365<\/title>/);
+  assert.match(html, /hreflang="ko" href="https:\/\/digistep365\.com\/learn\/galaxy\/g03-font\/"/);
 });

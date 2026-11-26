@@ -2,7 +2,7 @@
 // region: 'KR' = 한국 전용 앱·서비스를 다루는 수업 → 해외용 사이트에서 숨김
 // support: 공식 자료로 확인한 지원 조건(only: 지원 기종 id, minOneUI: 최소 버전)
 // layer: A 공통 / B 버전별 / C 기종별 / D 국가별
-import { MODELS } from '../devices.js?v=20261126.0935';
+import { MODELS } from '../devices.js?v=20261126.0952';
 
 const ULTRA = MODELS.filter((m) => m.spen).map((m) => m.id);
 const S24UP = MODELS.filter((m) => m.covered && !m.id.startsWith('s23')).map((m) => m.id);
