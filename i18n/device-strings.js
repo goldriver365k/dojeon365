@@ -326,12 +326,15 @@ export const DEVICE_STRINGS = {
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
-export function deviceSection(lang, checkHref) {
+export function deviceSection(lang, checkHref, chooseLabel) {
   const D = DEVICE_STRINGS[lang];
+  // 목록 맨 위를 차지하지 않도록 한 줄 요약만 보이고, 고르기·확인 방법은 눌러서 펼친다
   return `<section class="device" id="my-phone" aria-labelledby="dev-h">
-  <h2 id="dev-h">${D.h}</h2>
-  <p class="device__now" data-device-now>${D.none}</p>
-  <details class="device__how" open>
+  <div class="device__head"><h2 id="dev-h">${D.h}</h2>
+  <p class="device__now" data-device-now>${D.none}</p></div>
+  <details class="device__pick" data-device-pick>
+  <summary class="btn">${chooseLabel ?? D.change}</summary>
+  <details class="device__how">
     <summary>${D.howH}</summary>
     <ol>${D.how.map((x) => `<li>${x}</li>`).join('')}</ol>
     <p>${D.howNote}</p>
@@ -345,5 +348,6 @@ export function deviceSection(lang, checkHref) {
     <p class="device__saved" data-saved role="status"></p>
   </form>
   <p class="device__note">${D.note}</p>
+  </details>
 </section>`;
 }

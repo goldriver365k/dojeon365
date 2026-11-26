@@ -1,8 +1,8 @@
 // DigiStep365 global pages: "My phone" picker (series → model → One UI) and support badges, in the page language.
 // Optional: nothing is forced. Saved only in this browser. The site never guesses the model.
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261126.0922';
-import { metaOf } from '../data/galaxy/meta.js?v=20261126.0922';
-import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261126.0922';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261126.0935';
+import { metaOf } from '../data/galaxy/meta.js?v=20261126.0935';
+import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261126.0935';
 
 const LANG = document.documentElement.lang in DEVICE_STRINGS ? document.documentElement.lang : 'en';
 const D = DEVICE_STRINGS[LANG];
@@ -82,3 +82,9 @@ function picker() {
 
 picker();
 render();
+
+// 수업 화면의 ‘바꾸기’ 링크(#my-phone)로 왔으면 고르기 상자를 펼쳐 둔다
+const pick = document.querySelector('[data-device-pick]');
+const openPick = () => { if (pick && location.hash === '#my-phone') { pick.open = true; pick.scrollIntoView({ block: 'start' }); } };
+openPick();
+window.addEventListener('hashchange', openPick);

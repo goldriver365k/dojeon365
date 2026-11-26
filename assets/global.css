@@ -149,3 +149,49 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .admin .sum { display: block; overflow-x: auto; }
 .admin table { overflow-wrap: normal; }
 .admin .sum th, .admin .sum td { white-space: nowrap; }
+
+/* 화면 개선 2026-11-26 */
+/* 머리글: 글씨 크기는 모든 언어에서 같은 ‘A’ 세 개라 로고 옆 한 줄에 들어간다 */
+.top { flex-wrap: nowrap; }
+.brand { min-width: 0; }
+.size { flex-wrap: nowrap; flex: none; }
+.size button { width: 44px; padding: 0; display: inline-grid; place-items: center; font-weight: 900; line-height: 1; }
+.size--normal span { font-size: .85rem; }
+.size--large span { font-size: 1.05rem; }
+.size--xlarge span { font-size: 1.3rem; }
+/* 데스크톱: 아래 버튼 막대를 본문 폭에 맞춘다 */
+.bar { padding-inline: max(var(--gutter), calc((100% - 40rem) / 2 + var(--gutter))); }
+/* 수업: 그림이 첫 화면에 보이도록 위쪽을 가볍게 */
+.page > .lead { margin-bottom: 8px; }
+.tools { margin-top: 4px; }
+.based { margin: 12px 0 0; font-size: .85rem; }
+/* 줄바꿈: 일본어는 낱말 단위, 모든 언어에서 마지막 한 글자만 남는 줄을 줄인다 */
+:lang(ja) .page, :lang(ja) .foot { word-break: auto-phrase; line-break: strict; }
+:lang(zh) .page, :lang(zh) .foot { line-break: strict; }
+.page p, .page li, .foot p { text-wrap: pretty; }
+.page h1, .page h2, .step__text { text-wrap: balance; }
+/* 휴대폰: 위치 표시는 바로 위 단계 하나만 */
+@media (max-width: 640px) {
+  .crumbs li { display: none; }
+  .crumbs li:nth-last-child(2) { display: block; }
+  .crumbs li:nth-last-child(2)::before { content: "‹ "; margin: 0; }
+  [dir="rtl"] .crumbs li:nth-last-child(2)::before { content: "› "; }
+}
+/* 수업 목록: ‘내 휴대폰’은 한 줄 요약, 눌러서 펼침 */
+.device { gap: 8px; padding: 12px 14px; }
+.device__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.device__head h2 { font-size: 1.1rem; }
+.device__now { font-size: .95rem; }
+.device__pick { display: grid; gap: 10px; }
+.device__pick > summary { list-style: none; min-height: 48px; width: fit-content; }
+.device__pick > summary::-webkit-details-marker { display: none; }
+.device__pick[open] > summary { background: var(--surface-2); border-color: var(--primary); margin-bottom: 10px; }
+/* 홈: 연습 그림 한 장과 자주 보는 수업 */
+.demo { margin: 8px 0 20px; display: grid; gap: 8px; }
+.demo__pic { display: flex; justify-content: center; padding: 10px; border-radius: var(--radius); background: #e9edf5; }
+.demo__pic .pic__svg { max-width: 190px; }
+.demo figcaption { color: var(--ink-2); font-size: .95rem; }
+.demo figcaption b { color: var(--ink); display: block; font-size: 1.05rem; }
+.popular h2 { font-size: 1.2rem; margin: 8px 0; }
+.popular { margin-bottom: 16px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .demo__pic { background: #0b1026; } }

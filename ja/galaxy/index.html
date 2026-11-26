@@ -38,24 +38,26 @@
 <meta property="og:locale" content="ja_JP">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.0922">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.0935">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://digistep365.com/ja/"},{"@type":"ListItem","position":2,"name":"Galaxyレッスン","item":"https://digistep365.com/ja/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.0922" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.0922"></script>
+<script src="/assets/global.js?v=20261126.0935" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.0935"></script>
 </head>
 <body>
 <header class="top">
   <a class="brand" href="/ja/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">Easy Digital Lesson</small></span></a>
-  <div class="size" role="group" aria-label="文字の大きさ"><button type="button" data-size="normal" aria-pressed="true">標準</button><button type="button" data-size="large" aria-pressed="false">大</button><button type="button" data-size="xlarge" aria-pressed="false">特大</button></div>
+  <div class="size" role="group" aria-label="文字の大きさ"><button type="button" class="size--normal" data-size="normal" aria-pressed="true" aria-label="標準" title="標準"><span aria-hidden="true">A</span></button><button type="button" class="size--large" data-size="large" aria-pressed="false" aria-label="大" title="大"><span aria-hidden="true">A</span></button><button type="button" class="size--xlarge" data-size="xlarge" aria-pressed="false" aria-label="特大" title="特大"><span aria-hidden="true">A</span></button></div>
 </header>
 <main class="page" id="main">
 <nav class="crumbs" aria-label="現在地"><ol><li><a href="/ja/">ホーム</a></li><li aria-current="page">Galaxyレッスン</li></ol></nav>
 <h1>Galaxyスマホ教室</h1>
-<p class="lead">テーマを選んでください。どのレッスンも一度に1つの操作だけを説明します。現在、140件中140件が日本語です。</p>
+<p class="lead">テーマを選んでください。どのレッスンも一度に1つの操作だけを説明します。</p>
 <section class="device" id="my-phone" aria-labelledby="dev-h">
-  <h2 id="dev-h">私のスマホ</h2>
-  <p class="device__now" data-device-now>未選択 · 一般的な説明</p>
-  <details class="device__how" open>
+  <div class="device__head"><h2 id="dev-h">私のスマホ</h2>
+  <p class="device__now" data-device-now>未選択 · 一般的な説明</p></div>
+  <details class="device__pick" data-device-pick>
+  <summary class="btn">私のスマホを選ぶ</summary>
+  <details class="device__how">
     <summary>まず、スマホの機種とソフトウェアのバージョンを調べましょう</summary>
     <ol><li><b>設定</b>アプリをタップします。</li><li>いちばん下の<b>端末情報</b>をタップします。</li><li>上にある<b>モデル名</b>を見ます（例：Galaxy S26 · SM-S942N）。</li><li><b>ソフトウェア情報</b>をタップします。</li><li><b>One UIバージョン</b>を見ます（例：9.0）。</li></ol>
     <p>機種によってはメニュー名が「デバイス情報」です。設定の検索で「端末情報」と入力しても探せます。</p>
@@ -69,6 +71,7 @@
     <p class="device__saved" data-saved role="status"></p>
   </form>
   <p class="device__note">選ぶかどうかは自由です。このブラウザにだけ保存され、機種を推測することはありません。</p>
+  </details>
 </section>
 <section class="group"><h2>基本</h2>
 <section class="cat" id="c01">

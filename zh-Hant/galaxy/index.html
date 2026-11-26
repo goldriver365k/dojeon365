@@ -38,24 +38,26 @@
 <meta property="og:locale" content="zh_TW">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.0922">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.0935">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://digistep365.com/zh-Hant/"},{"@type":"ListItem","position":2,"name":"Galaxy 課程","item":"https://digistep365.com/zh-Hant/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.0922" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.0922"></script>
+<script src="/assets/global.js?v=20261126.0935" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.0935"></script>
 </head>
 <body>
 <header class="top">
   <a class="brand" href="/zh-Hant/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">Easy Digital Lesson</small></span></a>
-  <div class="size" role="group" aria-label="字型大小"><button type="button" data-size="normal" aria-pressed="true">標準</button><button type="button" data-size="large" aria-pressed="false">大</button><button type="button" data-size="xlarge" aria-pressed="false">特大</button></div>
+  <div class="size" role="group" aria-label="字型大小"><button type="button" class="size--normal" data-size="normal" aria-pressed="true" aria-label="標準" title="標準"><span aria-hidden="true">A</span></button><button type="button" class="size--large" data-size="large" aria-pressed="false" aria-label="大" title="大"><span aria-hidden="true">A</span></button><button type="button" class="size--xlarge" data-size="xlarge" aria-pressed="false" aria-label="特大" title="特大"><span aria-hidden="true">A</span></button></div>
 </header>
 <main class="page" id="main">
 <nav class="crumbs" aria-label="當前位置"><ol><li><a href="/zh-Hant/">首頁</a></li><li aria-current="page">Galaxy 課程</li></ol></nav>
 <h1>Galaxy 手機課程</h1>
-<p class="lead">請選擇一個主題。每節課一次只講一個操作。目前 140 節課中有 140 節提供中文。</p>
+<p class="lead">請選擇一個主題。每節課一次只講一個操作。</p>
 <section class="device" id="my-phone" aria-labelledby="dev-h">
-  <h2 id="dev-h">我的手機</h2>
-  <p class="device__now" data-device-now>未選擇 · 通用說明</p>
-  <details class="device__how" open>
+  <div class="device__head"><h2 id="dev-h">我的手機</h2>
+  <p class="device__now" data-device-now>未選擇 · 通用說明</p></div>
+  <details class="device__pick" data-device-pick>
+  <summary class="btn">選擇我的手機</summary>
+  <details class="device__how">
     <summary>先查一查您手機的機型和軟體版本</summary>
     <ol><li>輕觸<b>設定</b>應用程式。</li><li>輕觸最下面的<b>關於手機</b>。</li><li>看上方的<b>型號名稱</b>（例如 Galaxy S26 · SM-S942N）。</li><li>輕觸<b>軟體資訊</b>。</li><li>看<b>One UI 版本</b>（例如 9.0）。</li></ol>
     <p>部分機型的選單名稱是「關於裝置」。也可以在設定的搜尋框中輸入「關於手機」。</p>
@@ -69,6 +71,7 @@
     <p class="device__saved" data-saved role="status"></p>
   </form>
   <p class="device__note">可以不選。只儲存在本瀏覽器中，我們絕不會猜測您的機型。</p>
+  </details>
 </section>
 <section class="group"><h2>基礎</h2>
 <section class="cat" id="c01">

@@ -38,24 +38,26 @@
 <meta property="og:locale" content="th_TH">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.0922">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.0935">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://digistep365.com/th/"},{"@type":"ListItem","position":2,"name":"บทเรียน Galaxy","item":"https://digistep365.com/th/galaxy/"}]}</script>
-<script src="/assets/global.js?v=20261126.0922" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.0922"></script>
+<script src="/assets/global.js?v=20261126.0935" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.0935"></script>
 </head>
 <body>
 <header class="top">
   <a class="brand" href="/th/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">Easy Digital Lesson</small></span></a>
-  <div class="size" role="group" aria-label="ขนาดตัวอักษร"><button type="button" data-size="normal" aria-pressed="true">ปกติ</button><button type="button" data-size="large" aria-pressed="false">ใหญ่</button><button type="button" data-size="xlarge" aria-pressed="false">ใหญ่มาก</button></div>
+  <div class="size" role="group" aria-label="ขนาดตัวอักษร"><button type="button" class="size--normal" data-size="normal" aria-pressed="true" aria-label="ปกติ" title="ปกติ"><span aria-hidden="true">A</span></button><button type="button" class="size--large" data-size="large" aria-pressed="false" aria-label="ใหญ่" title="ใหญ่"><span aria-hidden="true">A</span></button><button type="button" class="size--xlarge" data-size="xlarge" aria-pressed="false" aria-label="ใหญ่มาก" title="ใหญ่มาก"><span aria-hidden="true">A</span></button></div>
 </header>
 <main class="page" id="main">
 <nav class="crumbs" aria-label="คุณอยู่ที่"><ol><li><a href="/th/">หน้าแรก</a></li><li aria-current="page">บทเรียน Galaxy</li></ol></nav>
 <h1>บทเรียนโทรศัพท์ Galaxy</h1>
-<p class="lead">เลือกหัวข้อ แต่ละบทแสดงทีละหนึ่งอย่าง ตอนนี้มีภาษาไทย 140 บทจาก 140 บท</p>
+<p class="lead">เลือกหัวข้อ แต่ละบทแสดงทีละหนึ่งอย่าง</p>
 <section class="device" id="my-phone" aria-labelledby="dev-h">
-  <h2 id="dev-h">โทรศัพท์ของฉัน</h2>
-  <p class="device__now" data-device-now>ยังไม่ได้เลือก · คำแนะนำทั่วไป</p>
-  <details class="device__how" open>
+  <div class="device__head"><h2 id="dev-h">โทรศัพท์ของฉัน</h2>
+  <p class="device__now" data-device-now>ยังไม่ได้เลือก · คำแนะนำทั่วไป</p></div>
+  <details class="device__pick" data-device-pick>
+  <summary class="btn">เลือกโทรศัพท์ของฉัน</summary>
+  <details class="device__how">
     <summary>ก่อนอื่น หารุ่นและเวอร์ชันซอฟต์แวร์ของโทรศัพท์คุณ</summary>
     <ol><li>แตะแอป <b>การตั้งค่า</b></li><li>แตะ <b>เกี่ยวกับโทรศัพท์</b> ที่ด้านล่างสุด</li><li>ดู <b>ชื่อรุ่น</b> ด้านบน (เช่น Galaxy S26 · SM-S942N)</li><li>แตะ <b>ข้อมูลซอฟต์แวร์</b></li><li>ดู <b>เวอร์ชัน One UI</b> (เช่น 9.0)</li></ol>
     <p>บางรุ่นเมนูชื่อ ‘เกี่ยวกับอุปกรณ์’ หรือพิมพ์ ‘เกี่ยวกับโทรศัพท์’ ในช่องค้นหาของการตั้งค่าก็ได้</p>
@@ -69,6 +71,7 @@
     <p class="device__saved" data-saved role="status"></p>
   </form>
   <p class="device__note">จะเลือกหรือไม่ก็ได้ บันทึกไว้ในเบราว์เซอร์นี้เท่านั้น และเราไม่เดารุ่นของคุณ</p>
+  </details>
 </section>
 <section class="group"><h2>พื้นฐาน</h2>
 <section class="cat" id="c01">

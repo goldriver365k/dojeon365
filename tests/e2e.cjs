@@ -389,6 +389,8 @@ async function main() {
   check('영어 연습 그림: 표시된 곳 누르면 다음 단계', (await page.textContent('.step.is-on .step__no')).includes('Step 2'));
   await page.goto(`${BASE}en/galaxy/`);
   await page.waitForSelector('select[name=series] option[value=s]', { state: 'attached' });
+  check('수업 목록: 내 휴대폰 고르기는 접혀 있음', !(await page.isVisible('select[name=series]')));
+  await page.click('[data-device-pick] > summary');
   await page.selectOption('select[name=series]', 's');
   await page.selectOption('select[name=model]', 's23');
   await page.selectOption('select[name=oneui]', '6.0');

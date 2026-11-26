@@ -12,6 +12,7 @@ import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
+import { UI_EXTRA } from '../i18n/ui-extra.js';
 
 /** Languages built here: every language in i18n/languages.js (except ko) that has a folder i18n/<code>/ with ui.js. en is x-default. */
 const CODES = LANGUAGES.map((l) => l.code).filter((c) => c !== 'ko' && existsSync(new URL(`../i18n/${c}/ui.js`, import.meta.url)));
@@ -23,7 +24,7 @@ export const LOCALES = Object.fromEntries(await Promise.all(CODES.map(async (cod
   const editsFile = new URL(`../i18n/${code}/edits.json`, import.meta.url);
   const raw = existsSync(editsFile) ? JSON.parse(readFileSync(editsFile, 'utf8')) : {};
   const ed = applyEdits(G, rv.REVIEWED, raw);
-  return [code, { code, name: meta.name, og: meta.og, speech: meta.speech, dir: meta.dir, wrap: meta.wrap, UI: ui.UI, G: ed.G, REVIEWED: ed.REVIEWED, REPO_REVIEWED: rv.REVIEWED, EDITED: new Set(ed.edited), tr: terms.tr }];
+  return [code, { code, name: meta.name, og: meta.og, speech: meta.speech, dir: meta.dir, wrap: meta.wrap, UI: { ...ui.UI, ...(UI_EXTRA[code] ?? {}) }, G: ed.G, REVIEWED: ed.REVIEWED, REPO_REVIEWED: rv.REVIEWED, EDITED: new Set(ed.edited), tr: terms.tr }];
 })));
 const enG = LOCALES.en.G;
 const DEFAULT = 'en';
@@ -124,7 +125,7 @@ function header() {
   const { UI } = L;
   return `<header class="top">
   <a class="brand" href="/${L.code}/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
-  <div class="size" role="group" aria-label="${UI.textSize}">${Object.entries(UI.sizes).map(([k, v]) => `<button type="button" data-size="${k}" aria-pressed="${k === 'normal'}">${v}</button>`).join('')}</div>
+  <div class="size" role="group" aria-label="${UI.textSize}">${Object.entries(UI.sizes).map(([k, v]) => `<button type="button" class="size--${k}" data-size="${k}" aria-pressed="${k === 'normal'}" aria-label="${esc(v)}" title="${esc(v)}"><span aria-hidden="true">A</span></button>`).join('')}</div>
 </header>`;
 }
 
@@ -175,13 +176,7 @@ ${header()}
 ${crumbNav(crumbs)}
 <h1>${esc(t[1])}</h1>
 <p class="lead">${esc(en.desc)}</p>
-<p class="based">${UI.basedOn}</p>
-${en.check ? `<p class="step__note">${esc(en.check)}</p>` : ''}
 ${UI.devicePicker ? '<p class="support" data-support hidden></p>' : ''}
-<div class="tools" hidden>
-  <button type="button" class="btn" data-restart>${UI.restart}</button>
-  <button type="button" class="btn" data-all aria-pressed="false">${UI.all}</button>
-</div>
 <ol class="steps" data-steps>
 ${en.steps.map(([text, hint, note], i) => `<li class="step" id="step-${i + 1}">
   <p class="step__no">${UI.stepOf(i + 1, n)}</p>
@@ -191,6 +186,12 @@ ${en.steps.map(([text, hint, note], i) => `<li class="step" id="step-${i + 1}">
   ${picture(l.cards[i])}
 </li>`).join('\n')}
 </ol>
+<div class="tools" hidden>
+  <button type="button" class="btn" data-restart>${UI.restart}</button>
+  <button type="button" class="btn" data-all aria-pressed="false">${UI.all}</button>
+</div>
+<p class="based">${UI.basedOn}</p>
+${en.check ? `<p class="step__note">${esc(en.check)}</p>` : ''}
 <p class="finish" data-finish hidden>${UI.finished}${nextLesson ? ` ${UI.nextLesson} <a href="${base}${nextLesson.t[0]}/">${esc(nextLesson.t[1])}</a>` : ''}</p>
 <details class="meta"><summary>${UI.sources}</summary>
   <p>${UI.refModel}: ${l.extra ? '—' : `Galaxy S26 (SM-S942N) · ${esc(BASE.software)}`} · ${UI.reviewed}: ${esc(en.checked ?? BASE.checked)}</p>
@@ -222,8 +223,8 @@ ${header()}
 <main class="page" id="main">
 ${crumbNav(crumbs)}
 <h1>${UI.indexH1}</h1>
-<p class="lead">${UI.indexLead(ready, total)}</p>
-${UI.devicePicker ? deviceSection(L.code, G.TITLES['g18-version'] && G.LESSONS['g18-version'] ? `${base}${G.TITLES['g18-version'][0]}/` : null) : ''}
+<p class="lead">${ready === total && UI.indexLeadAll ? UI.indexLeadAll : UI.indexLead(ready, total)}</p>
+${UI.devicePicker ? deviceSection(L.code, G.TITLES['g18-version'] && G.LESSONS['g18-version'] ? `${base}${G.TITLES['g18-version'][0]}/` : null, UI.choosePhone) : ''}
 ${Object.entries(G.GROUPS).map(([gid, gname]) => `<section class="group"><h2>${gname}</h2>
 ${groups.filter((g) => g.ch.group === gid).map(({ ch, lessons }) => {
     const shown = lessons.filter((x) => x.t && (x.en || G.LIST_UNTRANSLATED));
@@ -242,6 +243,26 @@ ${footer(true, alternates)}
 `;
 }
 
+/** 홈: 실제 수업의 연습 그림 한 장과 자주 보는 수업 바로가기 */
+const POPULAR = ['g03-font', 'g04-call', 'g06-send', 'g10-open'];
+function homeShowcase() {
+  const { UI, G } = L;
+  const base = `/${L.code}/galaxy/`;
+  const demoId = 'g03-font';
+  const card = CHAPTERS.flatMap((c) => c.lessons).find((l) => l.id === demoId)?.cards?.[0];
+  let fig = '';
+  if (card && G.LESSONS[demoId] && G.TITLES[demoId]) {
+    const pic = renderScreen(card.screen, card.target, card.action);
+    const texts = [...pic.svg.matchAll(/>([^<>]+)</g)].map((m) => m[1]);
+    if (!texts.some((t) => HANGUL.test(t))) {
+      fig = `<figure class="demo"><a href="${base}${G.TITLES[demoId][0]}/" class="demo__pic">${pic.svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</a>
+<figcaption><b>${esc(G.LESSONS[demoId].steps[0][0])}</b> ${UI.tryIt ?? ''}</figcaption></figure>`;
+    }
+  }
+  const items = POPULAR.filter((id) => G.TITLES[id] && G.LESSONS[id]).map((id) => `<li><a href="${base}${G.TITLES[id][0]}/">${esc(G.TITLES[id][1])}<span>${UI.steps(G.LESSONS[id].steps.length)}</span></a></li>`).join('');
+  return `${fig}${items && UI.popular ? `<section class="popular"><h2>${UI.popular}</h2><ul class="lessons">${items}</ul></section>` : ''}`;
+}
+
 function homePage() {
   const { UI } = L;
   const alternates = allLangs('');
@@ -253,6 +274,7 @@ ${header()}
 <h1>${UI.homeH1}</h1>
 <p class="lead">${UI.homeLead}</p>
 <a class="btn btn--primary btn--block" href="/${L.code}/galaxy/">${UI.homeCta}</a>
+${homeShowcase()}
 <ul class="points">
 ${UI.homePoints.map(([b, t]) => `  <li><b>${b}</b> — ${t}</li>`).join('\n')}
 </ul>
