@@ -3,7 +3,7 @@
  * 기관·가족 사칭, 대출·택배·지원금 미끼, 인증번호·원격 앱 요구를 알아보고, 미리 막고 대처하는 방법을 연습한다.
  * 전화·문자 예시는 실제 수법을 바탕으로 꾸민 것이다.
  */
-import { L, T, S, LK, SRC } from '../digital/kit.js?v=20261126.0333';
+import { L, T, S, LK, SRC } from '../digital/kit.js?v=20261126.0341';
 
 const MSAFER = { label: '명의도용방지서비스 엠세이퍼(M-Safer)', url: 'https://www.msafer.or.kr/', unverified: true };
 const PAYINFO = { label: '계좌정보통합관리서비스(어카운트인포·페이인포)', url: 'https://www.payinfo.or.kr/', unverified: true };
