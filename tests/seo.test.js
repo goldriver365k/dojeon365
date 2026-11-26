@@ -70,11 +70,14 @@ test('첫 화면은 자바스크립트 없이도 과정 링크가 읽히고, 방
     assert.match(js, /ad_storage: 'denied'/);
   } else assert.doesNotMatch(html, /<script[^>]+googletagmanager/);
   assert.equal(/google-site-verification/.test(html), Boolean(SITE_CONFIG.searchConsole));
+  assert.equal(html.includes(`<meta name="naver-site-verification" content="${SITE_CONFIG.naverVerification}">`), Boolean(SITE_CONFIG.naverVerification));
+  assert.ok(html.indexOf('naver-site-verification') < html.indexOf('</head>'));
 });
 
 test('Search Console 코드·GA4 ID 정리: 태그째 붙여 넣어도 되고, 엉뚱한 값은 끈다', () => {
   assert.equal(cleanVerification('<meta name="google-site-verification" content="abcDEF1234567890_-xyz" />'), 'abcDEF1234567890_-xyz');
   assert.equal(cleanVerification(' abcDEF1234567890 '), 'abcDEF1234567890');
+  assert.equal(cleanVerification('<meta name="naver-site-verification" content="8b2d92ad32e6f8c8243d9b37802356810afd4e33" />'), '8b2d92ad32e6f8c8243d9b37802356810afd4e33');
   assert.equal(cleanVerification('"><script>'), '');
   assert.equal(cleanGa4(' g-abc123xyz '), 'G-ABC123XYZ');
   assert.equal(cleanGa4('UA-12345-1'), '');

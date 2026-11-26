@@ -129,7 +129,7 @@ function head({ title, desc, path, index, crumbs, alternates }) {
 <meta name="speech-lang" content="${L.speech ?? L.code}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:${AN ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}; style-src 'self'; script-src 'self'${AN ? ' https://www.googletagmanager.com' : ''}; connect-src 'self'${AN ? ' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com' : ''}; base-uri 'none'; form-action 'none'">
-${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}${SITE_CONFIG.searchConsole ? `<meta name="google-site-verification" content="${esc(SITE_CONFIG.searchConsole)}">\n` : ''}<title>${esc(title)}</title>
+${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}${SITE_CONFIG.searchConsole ? `<meta name="google-site-verification" content="${esc(SITE_CONFIG.searchConsole)}">\n` : ''}${SITE_CONFIG.naverVerification ? `<meta name="naver-site-verification" content="${esc(SITE_CONFIG.naverVerification)}">\n` : ''}<title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${index ? '' : '<meta name="robots" content="noindex, follow">\n'}<link rel="canonical" href="${url}">
 ${Object.entries(alts).map(([c, p]) => `<link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}">`).join('\n')}

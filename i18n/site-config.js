@@ -7,6 +7,7 @@
 //        GA4_ID                    e.g. G-XXXXXXXXXX
 //        GOOGLE_SITE_VERIFICATION  the content="..." value of Search Console's HTML tag
 //        GTM_ID                    e.g. GTM-XXXXXXX (Google Tag Manager container)
+//        NAVER_SITE_VERIFICATION   the content="..." value of Naver Search Advisor's HTML tag
 //      then redeploy. Environment variables win over the values below.
 const RAW = {
   // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'. Loaded only after the visitor taps "Accept".
@@ -16,6 +17,8 @@ const RAW = {
   gtmId: 'GTM-KQXTB99T',
   // Google Search Console HTML-tag verification code (the content="..." value only).
   searchConsole: '',
+  // Naver Search Advisor (서치어드바이저) HTML-tag verification code. Pasting the whole <meta> tag also works.
+  naverVerification: '8b2d92ad32e6f8c8243d9b37802356810afd4e33',
 };
 
 const env = (typeof process !== 'undefined' && process.env) || {};
@@ -42,4 +45,5 @@ export const SITE_CONFIG = {
   gtmId: cleanGtm(env.GTM_ID || RAW.gtmId),
   ga4Id: cleanGa4(env.GA4_ID || RAW.ga4Id),
   searchConsole: cleanVerification(env.GOOGLE_SITE_VERIFICATION || RAW.searchConsole),
+  naverVerification: cleanVerification(env.NAVER_SITE_VERIFICATION || RAW.naverVerification),
 };

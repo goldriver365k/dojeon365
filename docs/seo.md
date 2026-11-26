@@ -34,6 +34,9 @@
 - GA4: `G-`로 시작하는 측정 ID만 받는다(다른 값은 꺼짐). 방문자가 ‘좋아요’를 누른 뒤에만 불러오고(동의 상자), 국내 앱의 `#/` 화면 이동도 페이지 보기로 센다. 보안 정책(CSP)은 ID가 있을 때만 구글 주소를 연다.
 - 개인정보 안내: `/privacy/`(국내), `/<언어>/privacy/`(해외). 분석을 켜면 ‘선택 다시 하기’ 버튼이 생긴다.
 
+- **네이버 서치어드바이저 소유 확인 태그 적용됨**(`naver-site-verification`, 2026-11-26). 모든 페이지 head에 들어간다. 바꿀 때는 `i18n/site-config.js`의 `naverVerification` 또는 환경 변수 `NAVER_SITE_VERIFICATION`.
+  - 네이버 로봇(Yeti)도 robots.txt에서 허용됨. 서치어드바이저 → 요청 → 사이트맵 제출에 `https://digistep365.com/sitemap.xml`
+
 ## 자바스크립트 없이 읽히게
 - `/learn/` 페이지는 모두 순수 HTML(단계 글·그림이 HTML 안에 있음).
 - 국내 첫 화면(`index.html`)의 `<div id="app">` 안에 과정 6개 링크와 소개 글을 미리 넣는다(빌드가 `<!-- ssr:start -->`~`<!-- ssr:end -->` 사이를 만듦). 앱이 뜨면 평소 화면으로 바뀌므로 보이는 디자인은 그대로다.

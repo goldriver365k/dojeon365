@@ -21,6 +21,7 @@ const GA = SITE_CONFIG.ga4Id;
 const GTM = SITE_CONFIG.gtmId;
 const AN = Boolean(GA || GTM); // 방문 통계(GA4 또는 GTM) 켜짐
 const GSC = SITE_CONFIG.searchConsole;
+const NAVER = SITE_CONFIG.naverVerification;
 /** 국내 페이지 보안 정책: 분석 ID가 있을 때만 구글 주소를 연다 */
 export const koCsp = (base) => base
   .replace("img-src 'self' data:", `img-src 'self' data:${AN ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}`)
@@ -29,7 +30,7 @@ export const koCsp = (base) => base
 /** 검색 등록·분석용 머리 태그(값이 없으면 빈 문자열) */
 /** GTM은 머리에 바로 넣는다(동의 모드: 동의 전엔 쿠키 없이) — 구글 태그 확인 도구가 찾을 수 있게 */
 const gtmHead = () => (GTM ? `<script src="/assets/gtm-head.js?v=${VERSION_REF.v}"></script>\n<script async src="https://www.googletagmanager.com/gtm.js?id=${esc(GTM)}"></script>\n` : '');
-export const koSeoMeta = () => `${gtmHead()}${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
+export const koSeoMeta = () => `${gtmHead()}${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${NAVER ? `<meta name="naver-site-verification" content="${esc(NAVER)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
 /** 방문 통계 동의 상자(분석 ID가 있을 때만) */
 export const koConsent = () => (AN ? `<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 방문 통계 쿠키(구글 애널리틱스)를 써도 될까요? 거절해도 쿠키 없이 대략적인 방문 수만 세요. 회원 정보나 개인 정보는 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
 <script src="/assets/analytics.js?v=${VERSION_REF.v}" defer></script>` : '');
