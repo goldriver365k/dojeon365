@@ -187,6 +187,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Ibang S series (S22 at mas luma, FE)', 'a-old': 'Ibang A series', 'm-any': 'Isang M series na telepono', 'f-any': 'Isang F series na telepono', 'note-old': 'Ibang Note', 'xcover-old': 'Ibang XCover', etc: 'Isang Galaxy na wala sa listahan' },
     seriesNames: { s: 'Galaxy S series', a: 'Galaxy A series', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M series', f: 'Galaxy F series', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Iba / wala sa listahan' },
   },
+  ru: {
+    h: 'Мой телефон', none: 'Не выбран · общее руководство',
+    howH: 'Сначала узнайте модель и версию ПО вашего телефона',
+    how: ['Нажмите приложение <b>Настройки</b>.', 'Нажмите <b>Сведения о телефоне</b> в самом низу.', 'Посмотрите <b>название модели</b> вверху (например, Galaxy S26 · SM-S942N).', 'Нажмите <b>Сведения о ПО</b>.', 'Посмотрите <b>версию One UI</b> (например, 9.0).'],
+    howNote: 'На некоторых моделях пункт называется «Сведения об устройстве». Можно также ввести «Сведения о телефоне» в поиске в Настройках.',
+    practice: 'Потренироваться', series: 'Серия', model: 'Модель', oneui: 'Версия One UI', save: 'Сохранить мой телефон', clear: 'Общее руководство',
+    note: 'Выбор необязателен. Он сохраняется только в этом браузере, и мы никогда не угадываем вашу модель.',
+    dontKnow: 'Не знаю', dontKnowWhich: 'Не знаю, какой', chooseSeries: 'Сначала выберите серию', baseVersion: 'версия этих уроков',
+    saved: 'Сохранено. Теперь в каждом уроке видно, работает ли он на вашем телефоне.', cleared: 'Сброшено. Показано общее руководство.',
+    modelUnknown: 'Модель неизвестна', seriesUnknown: (s) => `${s} (модель неизвестна)`, versionUnknown: 'Версия One UI неизвестна',
+    level: { ok: 'Поддерживается', diff: 'Проверьте', check: 'Проверьте', no: 'Не поддерживается' },
+    text: { ok: 'Проверено по официальному руководству', diff: 'В этой версии One UI названия меню могут отличаться', check: 'На этой модели ещё не проверено', no: 'На этой модели нет', min: (v) => `Нужна One UI ${v} или новее` },
+    on: '·', change: 'Изменить',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'Другая серия S (S22 и старше, FE)', 'a-old': 'Другая серия A', 'm-any': 'Телефон серии M', 'f-any': 'Телефон серии F', 'note-old': 'Другой Note', 'xcover-old': 'Другой XCover', etc: 'Galaxy, которого нет в списке' },
+    seriesNames: { s: 'Galaxy серии S', a: 'Galaxy серии A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy серии M', f: 'Galaxy серии F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Другое / нет в списке' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
