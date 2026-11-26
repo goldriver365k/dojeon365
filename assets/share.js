@@ -30,8 +30,9 @@
     return ok;
   };
   const open = (href) => {
-    const w = window.open(href, '_blank', 'noopener,noreferrer,width=600,height=640');
-    if (!w) location.href = href; // popup blocked: go there in this tab
+    // ('noopener' would make window.open return null even when it worked, so cut the link to this page by hand)
+    const w = window.open(href, '_blank', 'width=600,height=640');
+    if (w) { try { w.opener = null; } catch { /* cross-origin */ } } else location.href = href; // popup blocked: go there in this tab
   };
   const nativeShare = async () => {
     if (!navigator.share) return false;

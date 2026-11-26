@@ -495,15 +495,21 @@ async function main() {
     const c3 = await browser.newContext({ viewport: mobile ? { width: 390, height: 844 } : { width: 1280, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'], userAgent: mobile ? 'Mozilla/5.0 (Linux; Android 15; SM-S942N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Mobile Safari/537.36' : undefined });
     await c3.addInitScript(() => {
       try { localStorage.setItem('digistep365.consent', 'no'); } catch { /* ignore */ }
-      window.__opened = []; window.open = (u) => { window.__opened.push(u); return {}; };
+      window.__realOpen = window.open; window.__opened = []; window.open = (u) => { window.__opened.push(u); return {}; };
       window.__shared = [];
       Object.defineProperty(navigator, 'share', { configurable: true, value: async (d) => { window.__shared.push(d); } });
     });
+    await c3.route(/facebook\.com|wa\.me/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<p>share</p>' }));
     const p3 = await c3.newPage();
     const tag = mobile ? '모바일' : 'PC';
     for (const url of [BASE, `${BASE}en/galaxy/`]) {
       await p3.goto(url); await p3.waitForTimeout(200);
       const where = url === BASE ? '국내' : '영어';
+      // 새 창이 열리면(실제 window.open) 지금 페이지는 그대로여야 한다
+      const [fbPage] = await Promise.all([c3.waitForEvent('page'), p3.evaluate(() => { const real = window.__realOpen; window.open = real; document.querySelector('[data-share="facebook"]').click(); })]);
+      check(`${tag} ${where} 공유: 페이스북 새 창, 지금 페이지 유지`, fbPage.url().includes('facebook.com/sharer/sharer.php') && p3.url() === url);
+      await fbPage.close();
+      await p3.evaluate(() => { window.open = (u) => { window.__opened.push(u); return {}; }; });
       await p3.click('[data-share="facebook"]');
       await p3.click('[data-share="whatsapp"]');
       const opened = await p3.evaluate(() => window.__opened);
