@@ -306,6 +306,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'অন্য S সিরিজ (S22 ও পুরোনো, FE)', 'a-old': 'অন্য A সিরিজ', 'm-any': 'M সিরিজের ফোন', 'f-any': 'F সিরিজের ফোন', 'note-old': 'অন্য Note', 'xcover-old': 'অন্য XCover', etc: 'তালিকায় নেই এমন Galaxy' },
     seriesNames: { s: 'Galaxy S সিরিজ', a: 'Galaxy A সিরিজ', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy M সিরিজ', f: 'Galaxy F সিরিজ', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'অন্যান্য / তালিকায় নেই' },
   },
+  ar: {
+    h: 'هاتفي', none: 'لم يُختَر · دليل عام',
+    howH: 'أولًا، اعرف طراز هاتفك وإصدار برنامجه',
+    how: ['اضغط تطبيق <b>الإعدادات</b>.', 'اضغط <b>حول الهاتف</b> في الأسفل تمامًا.', 'انظر إلى <b>اسم الطراز</b> في الأعلى (مثل Galaxy S26 · SM-S942N).', 'اضغط <b>معلومات البرنامج</b>.', 'انظر إلى <b>إصدار One UI</b> (مثل 9.0).'],
+    howNote: 'في بعض الطرازات يكون اسم القائمة «حول الجهاز». يمكنك أيضًا كتابة «حول الهاتف» في بحث الإعدادات.',
+    practice: 'تدرّب على هذه الخطوات', series: 'السلسلة', model: 'الطراز', oneui: 'إصدار One UI', save: 'حفظ هاتفي', clear: 'استخدام الدليل العام',
+    note: 'الاختيار اختياري. يُحفظ في هذا المتصفح فقط، ولا نخمّن طرازك أبدًا.',
+    dontKnow: 'لا أعرف', dontKnowWhich: 'لا أعرف أيّها', chooseSeries: 'اختر السلسلة أولًا', baseVersion: 'إصدار هذه الدروس',
+    saved: 'تم الحفظ. يوضّح كل درس الآن هل يعمل على هاتفك.', cleared: 'تم المسح. يُعرض الدليل العام.',
+    modelUnknown: 'الطراز غير معروف', seriesUnknown: (s) => `${s} (الطراز غير معروف)`, versionUnknown: 'إصدار One UI غير معروف',
+    level: { ok: 'مدعوم', diff: 'تحقق', check: 'تحقق', no: 'غير مدعوم' },
+    text: { ok: 'تم التحقق وفق الدليل الرسمي', diff: 'قد تختلف أسماء القوائم في إصدار One UI هذا', check: 'لم يُتحقق منه بعد على هذا الطراز', no: 'غير متوفر في هذا الطراز', min: (v) => `يتطلب One UI ${v} أو أحدث` },
+    on: '·', change: 'تغيير',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'سلسلة S أخرى (S22 وما قبله، FE)', 'a-old': 'سلسلة A أخرى', 'm-any': 'هاتف من سلسلة M', 'f-any': 'هاتف من سلسلة F', 'note-old': 'Note آخر', 'xcover-old': 'XCover آخر', etc: 'هاتف Galaxy غير موجود في القائمة' },
+    seriesNames: { s: 'Galaxy سلسلة S', a: 'Galaxy سلسلة A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy سلسلة M', f: 'Galaxy سلسلة F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'أخرى / غير موجود في القائمة' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */

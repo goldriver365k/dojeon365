@@ -16,7 +16,7 @@ export const LANGUAGES = [
   { code: 'zh-Hans', name: '简体中文', status: 'draft', og: 'zh_CN', speech: 'zh-CN', wrap: { noSpace: true, scale: 1.05 } },
   { code: 'zh-Hant', name: '繁體中文', status: 'draft', og: 'zh_TW', speech: 'zh-TW', wrap: { noSpace: true, scale: 1.05 } },
   { code: 'it', name: 'Italiano', status: 'draft', og: 'it_IT', speech: 'it-IT' },
-  { code: 'ar', name: 'العربية', status: 'planned', dir: 'rtl', og: 'ar_AR', speech: 'ar-SA', wrap: { scale: 1.5 } },
+  { code: 'ar', name: 'العربية', status: 'draft', dir: 'rtl', og: 'ar_AR', speech: 'ar-SA', wrap: { scale: 1.5 } },
   { code: 'ru', name: 'Русский', status: 'draft', og: 'ru_RU', speech: 'ru-RU', wrap: { scale: 1.45 } },
   { code: 'tr', name: 'Türkçe', status: 'draft', og: 'tr_TR', speech: 'tr-TR' },
   { code: 'ms', name: 'Bahasa Melayu', status: 'draft', og: 'ms_MY', speech: 'ms-MY' },

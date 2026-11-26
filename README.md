@@ -136,8 +136,8 @@ tap('측면 버튼', SIDE, {
 
 ## 해외용 영어 사이트(DigiStep365)
 
-- 주소: `/<언어>/`(홈), `/<언어>/galaxy/`(22개 분류), `/<언어>/galaxy/<주소>/`(수업마다 실제 페이지). 지금 언어: `en`(137+해외용 새 수업 3), `es`(시범 18). 국내 주소(`/#/…`)는 그대로
-- 언어 추가: `i18n/<언어>/`에 `ui.js`·`galaxy.js`·`review.js`·`screen-terms.js`를 만들고 `scripts/build-global.mjs`의 `LOCALES`에 한 줄 추가. 같은 수업이 있는 언어끼리 hreflang이 자동으로 연결됨
+- 주소: `/<언어>/`(홈), `/<언어>/galaxy/`(22개 분류), `/<언어>/galaxy/<주소>/`(수업마다 실제 페이지). 지금 언어: 한국어를 뺀 19개 언어 모두 140개 수업(137+해외용 새 수업 3), 진행 현황 `docs/global-languages-status.md`. 국내 주소(`/#/…`)는 그대로
+- 언어 추가: `i18n/<언어>/`에 `ui.js`·`kit.js`·`galaxy.js`·`review.js`·`screen-terms.js`·`from-en.js`를 만들고 `i18n/device-strings.js`에 한 덩어리, `i18n/languages.js` 상태를 `draft`로(띄어쓰기 없는 언어는 `wrap`, 아랍어는 `dir: 'rtl'`). 빌드가 자동으로 찾고, 같은 수업이 있는 언어끼리 hreflang이 연결됨
 - 해외용 새 수업(국내 원본 없음): `i18n/en/galaxy.js`의 `EXTRA`
 - 내용: `i18n/en/galaxy.js`(분류·제목·주소·단계), 화면 문구 `i18n/en/ui.js`, 20개 언어 상태 `i18n/languages.js`
 - 만들기: `npm run build:global` → `en/`, `sitemap.xml`, `robots.txt`를 새로 만든 뒤 함께 커밋(Netlify 설정은 그대로)
