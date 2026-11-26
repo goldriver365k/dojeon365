@@ -472,6 +472,24 @@ async function main() {
 
   check('자바스크립트 오류 없음', errors.length === 0, errors.slice(0, 5).join(' | '));
 
+  // 방문 통계 동의(새 방문자): 동의 상자가 보이고, ‘좋아요’를 누르면 쿠키 허용으로 바뀐다(구글은 가짜 응답)
+  {
+    const c2 = await browser.newContext({ viewport: { width: 360, height: 760 }, locale: 'ko-KR' });
+    await c2.route(/googletagmanager\.com|google-analytics\.com/, (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
+    const p2 = await c2.newPage();
+    await p2.goto(BASE);
+    const on = await p2.$('meta[name="gtm-id"], meta[name="ga4-id"]');
+    if (on) {
+      await p2.waitForSelector('[data-consent]', { state: 'visible', timeout: 5000 }).catch(() => {});
+      check('방문 통계: 새 방문자에게 동의 상자가 보임', await p2.isVisible('[data-consent]'));
+      const gtmHead = await p2.evaluate(() => Boolean(window.__dsGtmHead));
+      if (gtmHead) check('방문 통계: 동의 전 기본값은 쿠키 거부', await p2.evaluate(() => window.dataLayer.some((x) => x[0] === 'consent' && x[1] === 'default' && x[2].analytics_storage === 'denied' && x[2].ad_storage === 'denied')));
+      await p2.click('[data-consent-yes]');
+      check('방문 통계: ‘좋아요’ 뒤 상자가 닫힘', !(await p2.isVisible('[data-consent]')));
+      if (gtmHead) check('방문 통계: ‘좋아요’ 뒤 쿠키 허용으로 바뀜', await p2.evaluate(() => window.dataLayer.some((x) => x[0] === 'consent' && x[1] === 'update' && x[2].analytics_storage === 'granted')));
+    }
+    await c2.close();
+  }
   await browser.close();
   server.close();
 

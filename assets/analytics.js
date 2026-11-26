@@ -37,8 +37,8 @@
   };
   const banner = document.querySelector('[data-consent]');
   const choice = get();
-  if (choice === 'yes') load();
   if (window.__dsGtmHead) window.addEventListener('hashchange', () => window.dataLayer.push({ event: 'virtual_page_view', page_location: location.href, page_title: document.title }));
+  if (choice === 'yes') load();
   else if (!choice && banner) banner.hidden = false;
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-consent-yes]')) { set('yes'); banner.hidden = true; load(); }
