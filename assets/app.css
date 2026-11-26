@@ -298,8 +298,10 @@ svg { display: block; }
 
 .topbar__brand { gap: 10px; }
 .logo-mark { display: block; height: 2.6rem; width: auto; flex: none; }
-.logo-text { font-size: 1.375rem; font-weight: 900; letter-spacing: -0.03em; color: #102BB7; white-space: nowrap; }
+.logo-text { display: grid; line-height: 1.15; color: #102BB7; white-space: nowrap; }
+.logo-name { font-size: 1.375rem; font-weight: 900; letter-spacing: -0.02em; }
 .logo-text b { font-weight: 900; color: #29982F; }
+.logo-sub { font-size: .85rem; font-weight: 500; color: var(--ink-2, #4a5568); letter-spacing: 0; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .logo-text { color: #8FA4FF; }
   :root:not([data-theme="light"]) .logo-text b { color: #6BD475; }

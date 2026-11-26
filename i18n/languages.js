@@ -4,7 +4,7 @@ export const SITE_URL = 'https://digistep365.com';
 // 로고 옆 문구: 모든 언어에서 똑같이 쓴다(로고 통일). 화면 읽기 프로그램을 위해 lang="en"으로 표시한다.
 export const BRAND_TAGLINE = 'Easy Digital Lesson';
 export const LANGUAGES = [
-  { code: 'ko', name: '한국어', status: 'live', note: 'Korean site at / (도전, 디지털세상)', og: 'ko_KR', speech: 'ko-KR' },
+  { code: 'ko', name: '한국어', status: 'live', note: 'Korean site at / (DigiStep365)', og: 'ko_KR', speech: 'ko-KR' },
   { code: 'en', name: 'English', status: 'draft', og: 'en_US', speech: 'en-US' },
   { code: 'es', name: 'Español', status: 'draft', og: 'es_ES', speech: 'es-ES' },
   { code: 'pt', name: 'Português (Brasil)', status: 'draft', og: 'pt_BR', speech: 'pt-BR' },
