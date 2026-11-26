@@ -6,7 +6,7 @@ import { mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { CHAPTERS } from '../data/galaxy/index.js';
 import { metaOf } from '../data/galaxy/meta.js';
 import { BASE } from '../data/galaxy/helpers.js';
-import { SITE_URL, LANGUAGES } from '../i18n/languages.js';
+import { SITE_URL, LANGUAGES, BRAND_TAGLINE } from '../i18n/languages.js';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
@@ -123,7 +123,7 @@ ${UI.devicePicker ? `<script type="module" src="/assets/global-device.js?v=${VER
 function header() {
   const { UI } = L;
   return `<header class="top">
-  <a class="brand" href="/${L.code}/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small>${UI.subtitle}</small></span></a>
+  <a class="brand" href="/${L.code}/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
   <div class="size" role="group" aria-label="${UI.textSize}">${Object.entries(UI.sizes).map(([k, v]) => `<button type="button" data-size="${k}" aria-pressed="${k === 'normal'}">${v}</button>`).join('')}</div>
 </header>`;
 }
@@ -245,7 +245,7 @@ ${footer(true, alternates)}
 function homePage() {
   const { UI } = L;
   const alternates = allLangs('');
-  return `${head({ title: `${UI.brand} — ${UI.subtitle}`, desc: UI.homeDesc, path: `/${L.code}/`, index: false, crumbs: null, alternates })}
+  return `${head({ title: `${UI.brand} — ${BRAND_TAGLINE}`, desc: UI.homeDesc, path: `/${L.code}/`, index: false, crumbs: null, alternates })}
 <body>
 ${header()}
 <main class="page" id="main">
@@ -297,6 +297,7 @@ function adminPage(rows) {
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'none'">
 <title>콘텐츠 현황 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${VERSION}"></head>
 <body><main class="page admin">
+<a class="brand admin__brand" href="/admin/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
 <h1>콘텐츠 현황</h1>
 <p class="lead">빌드할 때 자동으로 만들어지는 현황표입니다. 검색엔진에는 노출되지 않습니다.</p>
 <p><a class="btn btn--primary" href="/admin/edit/">수업 편집·검수하기</a></p>
@@ -310,7 +311,7 @@ function adminPage(rows) {
 <p>기준: ${esc(BASE.model)} · ${esc(BASE.software)} · 확인 ${esc(BASE.checked)}</p>
 <h2>언어</h2>
 <table><thead><tr><th>코드</th><th>언어</th><th>상태</th></tr></thead><tbody>
-${LANGUAGES.map((x) => `<tr><td>${x.code}</td><td>${esc(x.name)}</td><td>${x.status === 'live' ? '운영' : x.status === 'draft' ? '초안(noindex)' : '예정'}</td></tr>`).join('')}
+${LANGUAGES.map((x) => `<tr><td>${x.code}</td><td lang="${x.code}"${x.dir ? ` dir="${x.dir}"` : ''}>${esc(x.name)}</td><td>${x.status === 'live' ? '운영' : x.status === 'draft' ? '초안(noindex)' : '예정'}</td></tr>`).join('')}
 </tbody></table>
 <h2>수업별 상태</h2>
 <table class="rows"><thead><tr><th>분류</th><th>수업</th>${codes.map((c) => `<th>${c}</th>`).join('')}<th>층·지원 조건</th></tr></thead><tbody>
@@ -334,6 +335,7 @@ function editPage() {
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:">
 <title>수업 편집 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${VERSION}"></head>
 <body><main class="page admin edit" data-editor>
+<a class="brand admin__brand" href="/admin/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
 <p><a href="/admin/">← 콘텐츠 현황</a></p>
 <h1>수업 편집·검수</h1>
 <p class="lead">해외용 수업의 제목·설명·단계 문장을 고치고, 원어민 검수를 기록합니다. 고친 내용은 이 브라우저에 임시 저장되며, <b>GitHub에 저장</b>하면 사이트가 다시 만들어져 1~3분 뒤 반영됩니다.</p>

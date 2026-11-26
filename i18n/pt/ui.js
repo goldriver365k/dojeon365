@@ -1,7 +1,7 @@
 // Portuguese (Brazil) UI (draft — needs review by a native speaker before any page is indexed).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Aulas fáceis de celular',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Aprenda passo a passo.',
   disclaimer: 'Site educativo independente. Não é afiliado, patrocinado nem endossado pela Samsung Electronics. Galaxy é uma marca registrada da Samsung Electronics.',
   draft: 'Esta aula em português é um rascunho e ainda não foi revisada.',

@@ -1,7 +1,7 @@
 // Bahasa Indonesia (draf — perlu ditinjau penutur asli sebelum diindeks).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Kursus Ponsel yang Mudah',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Belajar langkah demi langkah.',
   disclaimer: 'Situs edukasi independen. Tidak berafiliasi dengan, disponsori, atau didukung oleh Samsung Electronics. Galaxy adalah merek dagang Samsung Electronics.',
   draft: 'Pelajaran berbahasa Indonesia ini masih draf dan belum ditinjau.',

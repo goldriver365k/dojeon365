@@ -1,7 +1,7 @@
 // Filipino (draft — kailangang suriin ng katutubong nagsasalita bago i-index).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Madadaling Aralin sa Smartphone',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Matuto nang paisa-isang hakbang.',
   disclaimer: 'Isang independiyenteng site na pang-edukasyon. Hindi kaanib, hindi sinusuportahan, at hindi inaprubahan ng Samsung Electronics. Ang Galaxy ay trademark ng Samsung Electronics.',
   draft: 'Draft pa ang araling ito sa Filipino at hindi pa nasusuri.',

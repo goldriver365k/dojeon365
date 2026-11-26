@@ -1,7 +1,7 @@
 // বাংলা (খসড়া — ইনডেক্স করার আগে মাতৃভাষী কারও পর্যালোচনা প্রয়োজন)।
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'সহজ স্মার্টফোন পাঠ',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'ধাপে ধাপে শিখুন।',
   disclaimer: 'একটি স্বাধীন শিক্ষামূলক সাইট। Samsung Electronics-এর সঙ্গে যুক্ত নয়, তাদের দ্বারা স্পনসর বা অনুমোদিত নয়। Galaxy হলো Samsung Electronics-এর ট্রেডমার্ক।',
   draft: 'এই বাংলা পাঠটি খসড়া এবং এখনও পর্যালোচনা করা হয়নি।',

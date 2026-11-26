@@ -1,7 +1,7 @@
 // Tiếng Việt (bản nháp — cần người bản ngữ xem lại trước khi lập chỉ mục).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Học điện thoại thật dễ',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Học từng bước một.',
   disclaimer: 'Trang giáo dục độc lập. Không liên kết, không được tài trợ hay chứng thực bởi Samsung Electronics. Galaxy là nhãn hiệu của Samsung Electronics.',
   draft: 'Bài học tiếng Việt này là bản nháp và chưa được xem lại.',

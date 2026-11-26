@@ -1,7 +1,7 @@
 // Deutsch (Entwurf — muss vor der Indexierung von Muttersprachlern geprüft werden).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Einfache Handy-Kurse',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Schritt für Schritt lernen.',
   disclaimer: 'Unabhängige Lernseite. Nicht mit Samsung Electronics verbunden, von Samsung Electronics gesponsert oder empfohlen. Galaxy ist eine Marke von Samsung Electronics.',
   draft: 'Diese deutsche Lektion ist ein Entwurf und wurde noch nicht geprüft.',

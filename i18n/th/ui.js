@@ -1,7 +1,7 @@
 // ภาษาไทย (ฉบับร่าง — ต้องให้เจ้าของภาษาตรวจก่อนจัดทำดัชนี)
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'บทเรียนสมาร์ทโฟนแบบง่าย',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'เรียนรู้ทีละขั้น',
   disclaimer: 'เว็บไซต์การศึกษาอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการสนับสนุนหรือรับรองจาก Samsung Electronics Galaxy เป็นเครื่องหมายการค้าของ Samsung Electronics',
   draft: 'บทเรียนภาษาไทยนี้เป็นฉบับร่างและยังไม่ได้ตรวจทาน',

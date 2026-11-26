@@ -1,7 +1,7 @@
 // हिन्दी (मसौदा — इंडेक्स करने से पहले किसी मूल वक्ता से जाँच ज़रूरी)।
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'आसान स्मार्टफ़ोन पाठ',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'कदम-दर-कदम सीखें।',
   disclaimer: 'एक स्वतंत्र शैक्षिक साइट। Samsung Electronics से संबद्ध नहीं है, न ही उसके द्वारा प्रायोजित या अनुमोदित है। Galaxy, Samsung Electronics का ट्रेडमार्क है।',
   draft: 'यह हिन्दी पाठ मसौदा है और अभी इसकी जाँच नहीं हुई है।',

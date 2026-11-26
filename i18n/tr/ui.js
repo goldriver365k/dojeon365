@@ -1,7 +1,7 @@
 // Türkçe (taslak — dizine eklenmeden önce anadili Türkçe olan biri tarafından gözden geçirilmeli).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Kolay Telefon Dersleri',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Adım adım öğrenin.',
   disclaimer: 'Bağımsız eğitim sitesi. Samsung Electronics ile bağlantılı değildir; Samsung Electronics tarafından desteklenmez veya onaylanmaz. Galaxy, Samsung Electronics’in ticari markasıdır.',
   draft: 'Bu Türkçe ders bir taslaktır ve henüz gözden geçirilmedi.',

@@ -1,7 +1,7 @@
 // Français (brouillon — à faire relire par un locuteur natif avant toute indexation).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Cours faciles de smartphone',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Apprendre pas à pas.',
   disclaimer: 'Site éducatif indépendant. Non affilié à Samsung Electronics, ni sponsorisé ni approuvé par Samsung Electronics. Galaxy est une marque de Samsung Electronics.',
   draft: 'Cette leçon en français est un brouillon et n’a pas encore été relue.',

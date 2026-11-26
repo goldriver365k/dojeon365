@@ -1,7 +1,7 @@
 // 日本語（下書き — インデックス登録の前にネイティブ話者の確認が必要）。
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'やさしいスマホ教室',
+  subtitle: 'Easy Digital Lesson',
   slogan: '一歩ずつ学びましょう。',
   disclaimer: '独立した教育サイトです。Samsung Electronicsとは提携しておらず、Samsung Electronicsの後援・承認を受けていません。GalaxyはSamsung Electronicsの商標です。',
   draft: 'この日本語のレッスンは下書きで、まだ確認されていません。',

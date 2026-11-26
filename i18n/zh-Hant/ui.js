@@ -1,7 +1,7 @@
 // 繁體中文（草稿 — 編入索引前需由母語人士審校）。
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: '輕鬆學手機',
+  subtitle: 'Easy Digital Lesson',
   slogan: '一步一步學。',
   disclaimer: '獨立的教育網站。與 Samsung Electronics 無關聯，未獲 Samsung Electronics 贊助或認可。Galaxy 是 Samsung Electronics 的商標。',
   draft: '本繁體中文課程為草稿（由簡體中文轉換），尚未審校。',

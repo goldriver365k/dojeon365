@@ -145,3 +145,7 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .edit__msg.is-bad { color: #b3261e; }
 @media (max-width: 760px) { .edit__grid { grid-template-columns: 1fr; } .edit__list { position: static; max-height: 40vh; } }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .edit .b--ok { background: #12391a; color: #9be3a6; } :root:not([data-theme="light"]) .edit .b--ed { background: #1c2a5c; color: #b9c8ff; } }
+.admin__brand { margin: 4px 0 12px; }
+.admin .sum { display: block; overflow-x: auto; }
+.admin table { overflow-wrap: normal; }
+.admin .sum th, .admin .sum td { white-space: nowrap; }

@@ -1,7 +1,7 @@
 // Italiano (bozza — da far rivedere a un madrelingua prima dell'indicizzazione).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Lezioni facili di smartphone',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Impara passo dopo passo.',
   disclaimer: 'Sito educativo indipendente. Non affiliato, sponsorizzato o approvato da Samsung Electronics. Galaxy è un marchio di Samsung Electronics.',
   draft: 'Questa lezione in italiano è una bozza e non è ancora stata revisionata.',

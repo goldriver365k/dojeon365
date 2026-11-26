@@ -1,7 +1,7 @@
 // Русский (черновик — перед индексацией должен проверить носитель языка).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Простые уроки по смартфону',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Учитесь шаг за шагом.',
   disclaimer: 'Независимый образовательный сайт. Не связан с Samsung Electronics, не спонсируется и не одобрен ею. Galaxy — товарный знак Samsung Electronics.',
   draft: 'Этот урок на русском — черновик, он ещё не проверен.',

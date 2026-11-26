@@ -1,7 +1,7 @@
 // Bahasa Melayu (draf — perlu disemak oleh penutur asli sebelum diindeks).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Kelas Telefon yang Mudah',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Belajar langkah demi langkah.',
   disclaimer: 'Laman pendidikan bebas. Tidak bergabung dengan, ditaja atau disokong oleh Samsung Electronics. Galaxy ialah tanda dagangan Samsung Electronics.',
   draft: 'Pelajaran Bahasa Melayu ini masih draf dan belum disemak.',

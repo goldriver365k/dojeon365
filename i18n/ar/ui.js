@@ -1,7 +1,7 @@
 // العربية (مسودة — يجب أن يراجعها متحدث أصلي قبل الفهرسة).
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'دروس سهلة للهاتف الذكي',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'تعلّم خطوة بخطوة.',
   disclaimer: 'موقع تعليمي مستقل. غير تابع لشركة Samsung Electronics وغير مدعوم أو معتمد منها. Galaxy علامة تجارية لشركة Samsung Electronics.',
   draft: 'هذا الدرس العربي مسودة ولم تتم مراجعته بعد.',

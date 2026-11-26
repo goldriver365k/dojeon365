@@ -1,6 +1,6 @@
 export const UI = {
   brand: 'DigiStep365',
-  subtitle: 'Easy Smartphone Lessons',
+  subtitle: 'Easy Digital Lesson',
   slogan: 'Learn. Step by Step.',
   disclaimer: 'Independent educational site. Not affiliated with, sponsored, or endorsed by Samsung Electronics. Galaxy is a trademark of Samsung Electronics.',
   draft: 'This English lesson is a draft and has not been reviewed by our editors yet.',
