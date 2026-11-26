@@ -10,6 +10,7 @@ import { SITE_URL, LANGUAGES, BRAND_TAGLINE } from '../i18n/languages.js';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
 import { UI_EXTRA, SEO } from '../i18n/ui-extra.js';
@@ -141,7 +142,7 @@ ${Object.entries(alts).map(([c, p]) => `<link rel="alternate" hreflang="${c}" hr
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/global.css?v=${VERSION}">
-${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>
+${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>${GA ? `\n<script src="/assets/analytics.js?v=${VERSION}" defer></script>` : ''}
 ${UI.devicePicker ? `<script type="module" src="/assets/global-device.js?v=${VERSION}"></script>\n` : ''}</head>`;
 }
 
@@ -447,6 +448,31 @@ function editData(code) {
   return { code, name: X.name, dir: X.dir ?? 'ltr', file: `i18n/${code}/edits.json`, version: VERSION, lessons };
 }
 
+/**
+ * 사이트맵 lastmod: 페이지 내용이 실제로 바뀐 날만 기록한다(버전 번호만 바뀐 것은 무시).
+ * data/seo-lastmod.json에 주소별 {h: 내용 지문, d: 날짜}를 둔다.
+ */
+function lastmodFor(paths) {
+  const file = new URL('../data/seo-lastmod.json', import.meta.url);
+  let old = {};
+  try { old = JSON.parse(readFileSync(file, 'utf8')); } catch { old = {}; }
+  const today = new Date().toISOString().slice(0, 10);
+  const next = {};
+  const out = {};
+  for (const path of paths) {
+    let html;
+    try { html = readFileSync(new URL(`..${path}index.html`, import.meta.url), 'utf8'); } catch { continue; }
+    // 본문·제목·설명만 본다(버전 번호, 검색 등록·분석 태그처럼 배포 설정에 따라 달라지는 부분은 빼고)
+    const body = [/<title>[\s\S]*?<\/title>/, /<meta name="description"[^>]*>/, /<main[\s\S]*?<\/main>|<div id="app">[\s\S]*?<\/div>\s*<p class="site-links">/]
+      .map((re) => html.match(re)?.[0] ?? '').join('\n').replace(/\?v=[\d.]+/g, '');
+    const h = createHash('sha1').update(body).digest('hex').slice(0, 12);
+    next[path] = old[path]?.h === h ? old[path] : { h, d: today };
+    out[path] = next[path].d;
+  }
+  writeFileSync(file, `${JSON.stringify(next, null, 0).replace(/\},"/g, '},\n"')}\n`);
+  return out;
+}
+
 export function build() {
   const out = (p, html) => { const f = new URL(`..${p}index.html`, import.meta.url); mkdirSync(new URL('.', f), { recursive: true }); writeFileSync(f, html); };
   const rowsById = new Map();
@@ -482,17 +508,19 @@ export function build() {
   }
   setTranslator(null);
   const koPages = buildKo({ version: VERSION, alternatesFor: (id) => { const a = lessonAlternates(id); delete a.ko; return a; } });
+  const lastmod = lastmodFor(['/', ...koPages.map((x) => x.path), ...sitemap.map((x) => x.path)]);
+  const lm = (path) => (lastmod[path] ? `<lastmod>${lastmod[path]}</lastmod>` : '');
   const reviewedAlt = (id) => Object.entries(lessonAlternates(id)).filter(([c]) => c === 'ko' || LOCALES[c].REVIEWED[id]);
   writeFileSync(new URL('../sitemap.xml', import.meta.url), `<?xml version="1.0" encoding="UTF-8"?>
 <!-- Korean site (live) + reviewed global pages. Draft translations are noindex and stay out of the sitemap. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>${SITE_URL}/</loc></url>
+  <url><loc>${SITE_URL}/</loc>${lm('/')}</url>
 ${koPages.map(({ path }) => {
     const id = path.match(/^\/learn\/galaxy\/([^/]+)\/$/)?.[1];
     const alts = id ? reviewedAlt(id) : [];
-    return `  <url><loc>${SITE_URL}${path}</loc>${alts.length > 1 ? alts.map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('') : ''}</url>`;
+    return `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}${alts.length > 1 ? alts.map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('') : ''}</url>`;
   }).join('\n')}
-${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${reviewedAlt(id).map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('')}</url>`).join('\n')}
+${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}${reviewedAlt(id).map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('')}</url>`).join('\n')}
 </urlset>
 `);
   out('/admin/', adminPage([...rowsById.values()]));

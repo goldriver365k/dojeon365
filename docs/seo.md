@@ -16,7 +16,33 @@
 - 갤럭시 수업은 한국어 페이지와 hreflang으로 서로 연결(ko ↔ 19개 언어, x-default = en)
 - **검수 전 해외 페이지는 여전히 noindex**: 관리자 화면에서 원어민 검수를 마친 수업만 검색에 나온다.
 
+## 검색 등록·분석 설정 (Search Console · GA4)
+값은 한 곳에만 넣으면 국내 첫 화면, `/learn/` 354쪽, `/privacy/`, 해외 19개 언어 페이지에 모두 들어간다. 비어 있으면 아무 태그도, 아무 스크립트도 넣지 않는다.
+
+| 방법 | 넣는 곳 |
+|---|---|
+| 넷리파이 환경 변수(추천, 코드 수정 없음) | Site configuration → Environment variables → `GOOGLE_SITE_VERIFICATION`, `GA4_ID` → 다시 배포 |
+| 코드 | `i18n/site-config.js`의 `searchConsole`, `ga4Id` |
+
+- Search Console: 'HTML 태그' 방식에서 보여 주는 `<meta name="google-site-verification" content="…">`를 **통째로 붙여 넣어도** content 값만 골라 쓴다.
+- GA4: `G-`로 시작하는 측정 ID만 받는다(다른 값은 꺼짐). 방문자가 ‘좋아요’를 누른 뒤에만 불러오고(동의 상자), 국내 앱의 `#/` 화면 이동도 페이지 보기로 센다. 보안 정책(CSP)은 ID가 있을 때만 구글 주소를 연다.
+- 개인정보 안내: `/privacy/`(국내), `/<언어>/privacy/`(해외). 분석을 켜면 ‘선택 다시 하기’ 버튼이 생긴다.
+
+## 자바스크립트 없이 읽히게
+- `/learn/` 페이지는 모두 순수 HTML(단계 글·그림이 HTML 안에 있음).
+- 국내 첫 화면(`index.html`)의 `<div id="app">` 안에 과정 6개 링크와 소개 글을 미리 넣는다(빌드가 `<!-- ssr:start -->`~`<!-- ssr:end -->` 사이를 만듦). 앱이 뜨면 평소 화면으로 바뀌므로 보이는 디자인은 그대로다.
+
+## 사이트맵·robots
+- `sitemap.xml`: 첫 화면 + `/learn/` 354쪽(6개 과정 전체) + 검수 마친 해외 페이지. 주소마다 `<lastmod>`.
+  - lastmod는 본문·제목·설명이 실제로 바뀐 날만 갱신(`data/seo-lastmod.json`에 내용 지문 보관). 버전 번호나 분석·검색 등록 설정만 바뀐 것은 날짜를 바꾸지 않는다.
+- 검수 전 해외 페이지는 noindex라 사이트맵에 넣지 않는다(넣으면 Search Console이 '제출된 URL에 noindex' 오류를 낸다). 검수하면 자동으로 들어간다.
+- `robots.txt`: 모두 허용, `/admin/`만 막음, 사이트맵 주소 안내.
+- 자동 점검: `tests/seo.test.js`(robots, 사이트맵 전체 수업·lastmod·파일 존재, 페이지마다 고유 제목·설명·자기 canonical·본문 HTML, hreflang 상호 연결, 첫 화면 무JS 링크, 설정값 정리)
+
 ## 남은 일(사람)
-- Search Console 연결(`i18n/site-config.js`), 사이트맵 제출: `https://digistep365.com/sitemap.xml`
-- 도메인 digistep365.com 연결(모든 canonical이 이 주소를 가리킴)
-- 나라별 실제 검색량 조사는 Search Console 데이터가 쌓인 뒤 제목을 다듬는 것이 정확함
+1. Search Console → 속성 추가 → 'URL 접두어' `https://digistep365.com/` → 'HTML 태그' 선택 → 태그를 넷리파이 환경 변수 `GOOGLE_SITE_VERIFICATION`에 붙여 넣고 다시 배포 → '확인'
+   (도메인 전체를 등록하려면 '도메인' 방식의 DNS TXT 레코드를 도메인 업체에 추가)
+2. Search Console → Sitemaps → `sitemap.xml` 제출
+3. URL 검사로 `https://digistep365.com/learn/galaxy/g01-charge/` 등 몇 쪽 '색인 생성 요청'
+4. GA4 속성 만들기 → 웹 스트림 `https://digistep365.com` → 측정 ID(`G-…`)를 환경 변수 `GA4_ID`에 넣고 다시 배포
+5. 나라별 실제 검색량 조사는 Search Console 데이터가 쌓인 뒤 제목을 다듬는 것이 정확함
