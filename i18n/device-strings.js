@@ -204,6 +204,23 @@ export const DEVICE_STRINGS = {
     other: { 's-old': 'Другая серия S (S22 и старше, FE)', 'a-old': 'Другая серия A', 'm-any': 'Телефон серии M', 'f-any': 'Телефон серии F', 'note-old': 'Другой Note', 'xcover-old': 'Другой XCover', etc: 'Galaxy, которого нет в списке' },
     seriesNames: { s: 'Galaxy серии S', a: 'Galaxy серии A', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy серии M', f: 'Galaxy серии F', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'Другое / нет в списке' },
   },
+  ja: {
+    h: '私のスマホ', none: '未選択 · 一般的な説明',
+    howH: 'まず、スマホの機種とソフトウェアのバージョンを調べましょう',
+    how: ['<b>設定</b>アプリをタップします。', 'いちばん下の<b>端末情報</b>をタップします。', '上にある<b>モデル名</b>を見ます（例：Galaxy S26 · SM-S942N）。', '<b>ソフトウェア情報</b>をタップします。', '<b>One UIバージョン</b>を見ます（例：9.0）。'],
+    howNote: '機種によってはメニュー名が「デバイス情報」です。設定の検索で「端末情報」と入力しても探せます。',
+    practice: 'この手順を練習する', series: 'シリーズ', model: '機種', oneui: 'One UIバージョン', save: '私のスマホを保存', clear: '一般的な説明を使う',
+    note: '選ぶかどうかは自由です。このブラウザにだけ保存され、機種を推測することはありません。',
+    dontKnow: 'わからない', dontKnowWhich: 'どれかわからない', chooseSeries: '先にシリーズを選んでください', baseVersion: 'このレッスンのバージョン',
+    saved: '保存しました。各レッスンに、お使いのスマホで使えるかどうかが表示されます。', cleared: '消去しました。一般的な説明を表示しています。',
+    modelUnknown: '機種不明', seriesUnknown: (s) => `${s}（機種不明）`, versionUnknown: 'One UIバージョン不明',
+    level: { ok: '対応', diff: '確認が必要', check: '確認が必要', no: '非対応' },
+    text: { ok: '公式の説明で確認済み', diff: 'このOne UIバージョンではメニュー名が違う場合があります', check: 'この機種ではまだ確認していません', no: 'この機種にはありません', min: (v) => `One UI ${v}以降が必要` },
+    on: '·', change: '変更',
+    words: [['갤럭시 ', 'Galaxy '], ['플립', 'Flip'], ['폴드', 'Fold'], ['노트', 'Note'], ['엑스커버', 'XCover']],
+    other: { 's-old': 'そのほかのSシリーズ（S22以前、FE）', 'a-old': 'そのほかのAシリーズ', 'm-any': 'Mシリーズのスマホ', 'f-any': 'Fシリーズのスマホ', 'note-old': 'そのほかのNote', 'xcover-old': 'そのほかのXCover', etc: '一覧にないGalaxy' },
+    seriesNames: { s: 'Galaxy Sシリーズ', a: 'Galaxy Aシリーズ', flip: 'Galaxy Z Flip', fold: 'Galaxy Z Fold', m: 'Galaxy Mシリーズ', f: 'Galaxy Fシリーズ', note: 'Galaxy Note', xcover: 'Galaxy XCover', etc: 'その他 / 一覧にない' },
+  },
 };
 
 /** Build-time HTML of the picker box. checkHref = the "check your model" lesson in this language (or null). */
