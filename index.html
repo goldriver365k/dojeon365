@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'">
 <!-- seo:start (build-ko.mjs가 만듦) -->
+<meta name="gtm-id" content="GTM-KQXTB99T">
 <!-- seo:end -->
 <meta name="theme-color" content="#ffffff">
 <meta name="description" content="갤럭시 사용법, 전화 사기 예방, 키오스크·은행 앱, AI까지. 어르신이 그림을 보며 혼자서도 한 단계씩 따라 하는 무료 휴대폰 교실입니다.">
@@ -24,9 +25,9 @@
 <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/fonts/pretendard/pretendardvariable-dynamic-subset.css?v=20261126.1045">
-<link rel="stylesheet" href="assets/app.css?v=20261126.1045">
-<script type="module" src="assets/app.js?v=20261126.1045"></script>
+<link rel="stylesheet" href="assets/fonts/pretendard/pretendardvariable-dynamic-subset.css?v=20261126.1055">
+<link rel="stylesheet" href="assets/app.css?v=20261126.1055">
+<script type="module" src="assets/app.js?v=20261126.1055"></script>
 </head>
 <body>
 <a class="sr-only" href="#main">본문 바로가기</a>
@@ -37,5 +38,9 @@
 <noscript><p>연습 화면은 자바스크립트를 켜야 볼 수 있어요. 위 과정을 누르면 수업을 글과 그림으로 볼 수 있어요.</p></noscript></div>
 <!-- ssr:end --></div>
 <p class="site-links"><a href="/learn/">모든 수업을 글과 그림으로 한눈에 보기</a></p>
+<!-- consent:start -->
+<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 구글 애널리틱스(구글 태그 관리자)로 방문 수를 세도 될까요? 저희는 회원 정보나 개인 정보를 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
+<script src="/assets/analytics.js?v=20261126.1055" defer></script>
+<!-- consent:end -->
 </body>
 </html>

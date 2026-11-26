@@ -35,7 +35,9 @@ const HANGUL = /[가-힣ㄱ-ㆎ]/;
 const VERSION = readFileSync(new URL('../assets/version.js', import.meta.url), 'utf8').match(/'([\d.]+)'/)[1];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const two = (n) => String(n).padStart(2, '0');
-const GA = SITE_CONFIG.ga4Id.trim();
+const GA = SITE_CONFIG.ga4Id;
+const GTM = SITE_CONFIG.gtmId;
+const AN = Boolean(GA || GTM); // 방문 통계(GA4 또는 GTM) 켜짐
 
 /** Lessons of the global site: Korean lessons minus Korea-only ones, plus global-only lessons (English master list). */
 function masterLessons() {
@@ -126,8 +128,8 @@ function head({ title, desc, path, index, crumbs, alternates }) {
 <meta charset="utf-8">
 <meta name="speech-lang" content="${L.speech ?? L.code}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:${GA ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}; style-src 'self'; script-src 'self'${GA ? ' https://www.googletagmanager.com' : ''}; connect-src 'self'${GA ? ' https://*.google-analytics.com https://*.analytics.google.com' : ''}; base-uri 'none'; form-action 'none'">
-${GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}${SITE_CONFIG.searchConsole ? `<meta name="google-site-verification" content="${esc(SITE_CONFIG.searchConsole)}">\n` : ''}<title>${esc(title)}</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:${AN ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}; style-src 'self'; script-src 'self'${AN ? ' https://www.googletagmanager.com' : ''}; connect-src 'self'${AN ? ' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com' : ''}; base-uri 'none'; form-action 'none'">
+${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}${SITE_CONFIG.searchConsole ? `<meta name="google-site-verification" content="${esc(SITE_CONFIG.searchConsole)}">\n` : ''}<title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${index ? '' : '<meta name="robots" content="noindex, follow">\n'}<link rel="canonical" href="${url}">
 ${Object.entries(alts).map(([c, p]) => `<link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}">`).join('\n')}
@@ -142,7 +144,7 @@ ${Object.entries(alts).map(([c, p]) => `<link rel="alternate" hreflang="${c}" hr
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/global.css?v=${VERSION}">
-${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>${GA ? `\n<script src="/assets/analytics.js?v=${VERSION}" defer></script>` : ''}
+${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n` : ''}<script src="/assets/global.js?v=${VERSION}" defer></script>${AN ? `\n<script src="/assets/analytics.js?v=${VERSION}" defer></script>` : ''}
 ${UI.devicePicker ? `<script type="module" src="/assets/global-device.js?v=${VERSION}"></script>\n` : ''}</head>`;
 }
 
@@ -167,7 +169,7 @@ function footer(draft, alternates = {}) {
   <p class="langs">${UI.languages}: ${langs.join(' · ')} · <a href="/" hreflang="ko" lang="ko">한국어</a></p>
   <p><a href="/${L.code}/privacy/">${UI.privacy}</a> · © ${UI.brand} · ${UI.slogan}</p>
 </footer>
-${GA ? `<div class="consent" data-consent hidden role="region" aria-label="${UI.consentLabel}"><p>${UI.consent}</p><div><button type="button" class="btn btn--primary" data-consent-yes>${UI.consentYes}</button><button type="button" class="btn" data-consent-no>${UI.consentNo}</button></div></div>` : ''}`;
+${AN ? `<div class="consent" data-consent hidden role="region" aria-label="${UI.consentLabel}"><p>${UI.consent}</p><div><button type="button" class="btn btn--primary" data-consent-yes>${UI.consentYes}</button><button type="button" class="btn" data-consent-no>${UI.consentNo}</button></div></div>` : ''}`;
 }
 
 const crumbNav = (crumbs) => `<nav class="crumbs" aria-label="${L.UI.breadcrumb}"><ol>${crumbs.map(([n, p], i) => i === crumbs.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="${p}">${esc(n)}</a></li>`).join('')}</ol></nav>`;
@@ -326,8 +328,8 @@ ${header()}
 <h2>${UI.privacySavedH}</h2>
 <p>${UI.privacySaved}</p>
 <h2>${UI.privacyAnalyticsH}</h2>
-<p>${GA ? UI.privacyAnalyticsOn : UI.privacyAnalyticsOff}</p>
-${GA ? `<p><button type="button" class="btn" data-consent-reset>${UI.privacyReset}</button></p>` : ''}
+<p>${AN ? UI.privacyAnalyticsOn : UI.privacyAnalyticsOff}</p>
+${AN ? `<p><button type="button" class="btn" data-consent-reset>${UI.privacyReset}</button></p>` : ''}
 <h2>${UI.privacyLinksH}</h2>
 <p>${UI.privacyLinks}</p>
 </main>

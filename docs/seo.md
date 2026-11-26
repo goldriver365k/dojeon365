@@ -22,7 +22,12 @@
 | 방법 | 넣는 곳 |
 |---|---|
 | 넷리파이 환경 변수(추천, 코드 수정 없음) | Site configuration → Environment variables → `GOOGLE_SITE_VERIFICATION`, `GA4_ID` → 다시 배포 |
-| 코드 | `i18n/site-config.js`의 `searchConsole`, `ga4Id` |
+| 코드 | `i18n/site-config.js`의 `searchConsole`, `ga4Id`, `gtmId` |
+
+- **구글 태그 관리자(GTM) `GTM-KQXTB99T` 적용됨**(2026-11-26). 환경 변수 `GTM_ID`로 바꿀 수 있고, 붙여 넣은 `<script>` 조각에서도 ID만 골라 쓴다.
+  - GTM과 GA4 ID를 둘 다 넣으면 GTM만 쓴다 → GA4는 GTM 안에서 'Google 태그'(측정 ID `G-…`)로 만들고 트리거는 'All Pages' + 'History Change'(국내 앱 `#/` 화면 이동).
+  - 화면 이동 때 dataLayer에 `virtual_page_view` 이벤트도 보낸다(맞춤 이벤트 트리거로 써도 됨).
+  - 방문자가 동의 상자에서 ‘좋아요’를 누른 뒤에만 gtm.js를 불러온다. 보안 정책(CSP) 때문에 GTM의 '맞춤 HTML' 태그(인라인 스크립트)는 동작하지 않는다 — GA4 같은 기본 태그를 쓴다.
 
 - Search Console: 'HTML 태그' 방식에서 보여 주는 `<meta name="google-site-verification" content="…">`를 **통째로 붙여 넣어도** content 값만 골라 쓴다.
 - GA4: `G-`로 시작하는 측정 ID만 받는다(다른 값은 꺼짐). 방문자가 ‘좋아요’를 누른 뒤에만 불러오고(동의 상자), 국내 앱의 `#/` 화면 이동도 페이지 보기로 센다. 보안 정책(CSP)은 ID가 있을 때만 구글 주소를 연다.

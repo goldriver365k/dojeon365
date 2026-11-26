@@ -18,16 +18,18 @@ import { SITE_URL, BRAND_TAGLINE } from '../i18n/languages.js';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 
 const GA = SITE_CONFIG.ga4Id;
+const GTM = SITE_CONFIG.gtmId;
+const AN = Boolean(GA || GTM); // 방문 통계(GA4 또는 GTM) 켜짐
 const GSC = SITE_CONFIG.searchConsole;
 /** 국내 페이지 보안 정책: 분석 ID가 있을 때만 구글 주소를 연다 */
 export const koCsp = (base) => base
-  .replace("img-src 'self' data:", `img-src 'self' data:${GA ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}`)
-  .replace("script-src 'self'", `script-src 'self'${GA ? ' https://www.googletagmanager.com' : ''}`)
-  .replace(/connect-src '[a-z]+'/, (m) => (GA ? "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com" : m));
+  .replace("img-src 'self' data:", `img-src 'self' data:${AN ? ' https://www.google-analytics.com https://www.googletagmanager.com' : ''}`)
+  .replace("script-src 'self'", `script-src 'self'${AN ? ' https://www.googletagmanager.com' : ''}`)
+  .replace(/connect-src '[a-z]+'/, (m) => (AN ? "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com" : m));
 /** 검색 등록·분석용 머리 태그(값이 없으면 빈 문자열) */
-export const koSeoMeta = () => `${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
+export const koSeoMeta = () => `${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
 /** 방문 통계 동의 상자(분석 ID가 있을 때만) */
-export const koConsent = () => (GA ? `<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 구글 애널리틱스로 방문 수를 세도 될까요? 저희는 회원 정보나 개인 정보를 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
+export const koConsent = () => (AN ? `<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 구글 애널리틱스(구글 태그 관리자)로 방문 수를 세도 될까요? 저희는 회원 정보나 개인 정보를 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
 <script src="/assets/analytics.js?v=${VERSION_REF.v}" defer></script>` : '');
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -220,8 +222,8 @@ ${crumbNav(crumbs)}
 <h1>개인정보 안내</h1>
 <p>DigiStep365는 회원 가입이 없어요. 이름·전화번호 같은 개인 정보를 받지 않아요.</p>
 <p>글씨 크기와 수업 진도는 지금 쓰는 휴대폰(브라우저)에만 저장되고, 저희 서버로 보내지 않아요.</p>
-<p>${GA ? '수업을 더 좋게 만들려고, ‘좋아요’를 누른 분에 한해 구글 애널리틱스로 방문 수와 많이 본 수업을 세요. ‘괜찮아요’를 누르면 아무것도 불러오지 않아요.' : '방문 통계 도구를 쓰지 않아요.'}</p>
-${GA ? '<p><button type="button" class="btn" data-consent-reset>방문 통계 선택 다시 하기</button></p>' : ''}
+<p>${AN ? '수업을 더 좋게 만들려고, ‘좋아요’를 누른 분에 한해 구글 애널리틱스(구글 태그 관리자)로 방문 수와 많이 본 수업을 세요. ‘괜찮아요’를 누르면 아무것도 불러오지 않아요.' : '방문 통계 도구를 쓰지 않아요.'}</p>
+${AN ? '<p><button type="button" class="btn" data-consent-reset>방문 통계 선택 다시 하기</button></p>' : ''}
 <p>연습 화면은 실제 은행·앱이 아니에요. 비밀번호나 카드 번호를 넣지 마세요.</p>
 </main>
 ${footer()}
@@ -245,7 +247,7 @@ export function updateKoIndex() {
 <noscript><p>연습 화면은 자바스크립트를 켜야 볼 수 있어요. 위 과정을 누르면 수업을 글과 그림으로 볼 수 있어요.</p></noscript></div>
 <!-- ssr:end --></div>`;
   html = html.replace(/<div id="app">(?:<!-- ssr:start -->[\s\S]*?<!-- ssr:end -->|<noscript>[\s\S]*?<\/noscript>)<\/div>/, ssr);
-  html = html.replace(/\n?<!-- consent:start -->[\s\S]*?<!-- consent:end -->/, '').replace('</body>', `${GA ? `<!-- consent:start -->\n${koConsent()}\n<!-- consent:end -->\n` : ''}</body>`);
+  html = html.replace(/\n?<!-- consent:start -->[\s\S]*?<!-- consent:end -->/, '').replace('</body>', `${AN ? `<!-- consent:start -->\n${koConsent()}\n<!-- consent:end -->\n` : ''}</body>`);
   writeFileSync(f, html);
 }
 

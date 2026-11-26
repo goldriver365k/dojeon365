@@ -37,6 +37,8 @@ async function main() {
     Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true });
     Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: function (t) { this.text = t; }, configurable: true });
   });
+  // 방문 통계 동의 상자는 미리 '괜찮아요'로 답해 둔다(버튼을 가리지 않게, 구글 스크립트도 안 불러옴)
+  await ctx.addInitScript(() => { try { localStorage.setItem('digistep365.consent', 'no'); } catch { /* ignore */ } });
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));

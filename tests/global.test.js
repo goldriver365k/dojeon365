@@ -59,7 +59,8 @@ test('국내 앱 그림은 번역 장치의 영향을 받지 않는다', async (
 
 test('분석 도구는 ID가 없으면 아예 불러오지 않고, 개인정보 안내가 있다', () => {
   const html = readFileSync('en/galaxy/change-font-size/index.html', 'utf8');
-  if (!SITE_CONFIG.ga4Id) assert.ok(!html.includes('googletagmanager'), 'ID 없이 GA를 불러옴');
+  if (!SITE_CONFIG.ga4Id && !SITE_CONFIG.gtmId) assert.ok(!html.includes('googletagmanager'), 'ID 없이 GA를 불러옴');
+  assert.doesNotMatch(html, /<script[^>]+googletagmanager/, '구글 스크립트는 동의 후에만 analytics.js가 불러옴');
   assert.match(html, /href="\/en\/privacy\/"/);
   assert.ok(existsSync('en/privacy/index.html'));
 });

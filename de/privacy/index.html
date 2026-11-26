@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="speech-lang" content="de-DE">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; base-uri 'none'; form-action 'none'">
+<meta name="gtm-id" content="GTM-KQXTB99T">
 <title>Datenschutz | DigiStep365</title>
 <meta name="description" content="So geht DigiStep365 mit Ihren Daten um: keine Anmeldung, der Fortschritt bleibt im Browser, Statistik nur mit Ihrer Zustimmung.">
 <meta name="robots" content="noindex, follow">
@@ -38,10 +39,11 @@
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1045">
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1055">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://digistep365.com/de/"},{"@type":"ListItem","position":2,"name":"Datenschutz","item":"https://digistep365.com/de/privacy/"}]}</script>
-<script src="/assets/global.js?v=20261126.1045" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1045"></script>
+<script src="/assets/global.js?v=20261126.1055" defer></script>
+<script src="/assets/analytics.js?v=20261126.1055" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1055"></script>
 </head>
 <body>
 <header class="top">
@@ -54,8 +56,8 @@
 <h2>Was auf Ihrem Gerät gespeichert wird</h2>
 <p>Textgröße, Lektionsstand und das gewählte Handymodell werden nur in diesem Browser gespeichert (lokaler Speicher). Sie werden nie an uns gesendet. Beim Löschen der Browserdaten verschwinden sie.</p>
 <h2>Statistik</h2>
-<p>Diese Seite verwendet derzeit keine Statistik und keine Cookies.</p>
-
+<p>Wenn Sie auf „Zustimmen“ tippen, zählt Google Analytics 4 die Besuche, damit wir sehen, welche Lektionen helfen. Bei „Nein, danke“ wird nichts geladen. Sie können Ihre Wahl unten ändern.</p>
+<p><button type="button" class="btn" data-consent-reset>Statistik-Wahl ändern</button></p>
 <h2>Links zu anderen Seiten</h2>
 <p>Die Lektionen verlinken auf offizielle Handbücher und Supportseiten von Samsung. Diese Seiten haben eigene Datenschutzerklärungen.</p>
 </main>
@@ -65,6 +67,6 @@
   <p class="langs">Sprachen: <a href="/en/privacy/" hreflang="en" lang="en">English</a> · <a href="/es/privacy/" hreflang="es" lang="es">Español</a> · <a href="/pt/privacy/" hreflang="pt" lang="pt">Português (Brasil)</a> · <b>Deutsch</b> · <a href="/fr/privacy/" hreflang="fr" lang="fr">Français</a> · <a href="/hi/privacy/" hreflang="hi" lang="hi">हिन्दी</a> · <a href="/id/privacy/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="/vi/privacy/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="/th/privacy/" hreflang="th" lang="th">ไทย</a> · <a href="/ja/privacy/" hreflang="ja" lang="ja">日本語</a> · <a href="/zh-Hans/privacy/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a> · <a href="/zh-Hant/privacy/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> · <a href="/it/privacy/" hreflang="it" lang="it">Italiano</a> · <a href="/ar/privacy/" hreflang="ar" lang="ar">العربية</a> · <a href="/ru/privacy/" hreflang="ru" lang="ru">Русский</a> · <a href="/tr/privacy/" hreflang="tr" lang="tr">Türkçe</a> · <a href="/ms/privacy/" hreflang="ms" lang="ms">Bahasa Melayu</a> · <a href="/fil/privacy/" hreflang="fil" lang="fil">Filipino</a> · <a href="/bn/privacy/" hreflang="bn" lang="bn">বাংলা</a> · <a href="/" hreflang="ko" lang="ko">한국어</a></p>
   <p><a href="/de/privacy/">Datenschutz</a> · © DigiStep365 · Schritt für Schritt lernen.</p>
 </footer>
-
+<div class="consent" data-consent hidden role="region" aria-label="Cookie-Auswahl"><p>Dürfen wir Besuche mit Google Analytics zählen, um die Kurse zu verbessern? Wir selbst erheben keine Konten oder persönlichen Daten.</p><div><button type="button" class="btn btn--primary" data-consent-yes>Zustimmen</button><button type="button" class="btn" data-consent-no>Nein, danke</button></div></div>
 </body>
 </html>

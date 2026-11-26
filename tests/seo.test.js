@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { cleanVerification, cleanGa4 } from '../i18n/site-config.js';
+import { cleanVerification, cleanGa4, cleanGtm, SITE_CONFIG } from '../i18n/site-config.js';
 import { KO_COURSES } from '../scripts/build-ko.mjs';
 
 const SITE = 'https://digistep365.com';
@@ -53,12 +53,15 @@ test('국내 갤럭시 수업 ↔ 해외 언어 hreflang이 서로 연결된다(
   assert.match(read(en), /hreflang="ko" href="https:\/\/digistep365\.com\/learn\/galaxy\/g01-charge\/"/);
 });
 
-test('첫 화면은 자바스크립트 없이도 과정 링크가 읽히고, 설정이 비면 검색 등록·분석 태그가 없다', () => {
+test('첫 화면은 자바스크립트 없이도 과정 링크가 읽히고, 방문 통계는 설정대로(동의 후에만) 붙는다', () => {
   const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
   for (const c of KO_COURSES) assert.ok(html.includes(`<a href="/learn/${c.key}/">`), c.key);
   assert.match(html, /<h1>[^<]+<\/h1>/);
-  assert.match(html, /<!-- seo:start[^>]*-->\n<!-- seo:end -->/);
-  assert.doesNotMatch(html, /googletagmanager|ga4-id|data-consent/);
+  const on = SITE_CONFIG.gtmId || SITE_CONFIG.ga4Id;
+  assert.equal(/data-consent/.test(html), Boolean(on));
+  assert.equal(html.includes(`content="${SITE_CONFIG.gtmId}"`), Boolean(SITE_CONFIG.gtmId));
+  assert.doesNotMatch(html, /<script[^>]+googletagmanager/, '구글 스크립트를 직접 넣지 않음(동의 후 analytics.js가 불러옴)');
+  assert.equal(/google-site-verification/.test(html), Boolean(SITE_CONFIG.searchConsole));
 });
 
 test('Search Console 코드·GA4 ID 정리: 태그째 붙여 넣어도 되고, 엉뚱한 값은 끈다', () => {
@@ -67,4 +70,6 @@ test('Search Console 코드·GA4 ID 정리: 태그째 붙여 넣어도 되고, �
   assert.equal(cleanVerification('"><script>'), '');
   assert.equal(cleanGa4(' g-abc123xyz '), 'G-ABC123XYZ');
   assert.equal(cleanGa4('UA-12345-1'), '');
+  assert.equal(cleanGtm('<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KQXTB99T"></script>'), 'GTM-KQXTB99T');
+  assert.equal(cleanGtm('G-ABC123'), '');
 });

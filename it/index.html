@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="speech-lang" content="it-IT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; base-uri 'none'; form-action 'none'">
+<meta name="gtm-id" content="GTM-KQXTB99T">
 <title>DigiStep365 — Easy Digital Lesson</title>
 <meta name="description" content="Lezioni gratuite di smartphone, passo dopo passo, per principianti e anziani. Impara il tuo Samsung Galaxy un’azione alla volta. Senza registrazione.">
 <meta name="robots" content="noindex, follow">
@@ -39,9 +40,10 @@
 <meta property="og:locale" content="it_IT">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/global.css?v=20261126.1045">
-<script src="/assets/global.js?v=20261126.1045" defer></script>
-<script type="module" src="/assets/global-device.js?v=20261126.1045"></script>
+<link rel="stylesheet" href="/assets/global.css?v=20261126.1055">
+<script src="/assets/global.js?v=20261126.1055" defer></script>
+<script src="/assets/analytics.js?v=20261126.1055" defer></script>
+<script type="module" src="/assets/global-device.js?v=20261126.1055"></script>
 </head>
 <body>
 <header class="top">
@@ -71,6 +73,6 @@
   <p class="langs">Lingue: <a href="/en/" hreflang="en" lang="en">English</a> · <a href="/es/" hreflang="es" lang="es">Español</a> · <a href="/pt/" hreflang="pt" lang="pt">Português (Brasil)</a> · <a href="/de/" hreflang="de" lang="de">Deutsch</a> · <a href="/fr/" hreflang="fr" lang="fr">Français</a> · <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a> · <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="/th/" hreflang="th" lang="th">ไทย</a> · <a href="/ja/" hreflang="ja" lang="ja">日本語</a> · <a href="/zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a> · <a href="/zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> · <b>Italiano</b> · <a href="/ar/" hreflang="ar" lang="ar">العربية</a> · <a href="/ru/" hreflang="ru" lang="ru">Русский</a> · <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a> · <a href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a> · <a href="/fil/" hreflang="fil" lang="fil">Filipino</a> · <a href="/bn/" hreflang="bn" lang="bn">বাংলা</a> · <a href="/" hreflang="ko" lang="ko">한국어</a></p>
   <p><a href="/it/privacy/">Privacy</a> · © DigiStep365 · Impara passo dopo passo.</p>
 </footer>
-
+<div class="consent" data-consent hidden role="region" aria-label="Scelta dei cookie"><p>Possiamo contare le visite con Google Analytics per migliorare le lezioni? Noi non raccogliamo account né dati personali.</p><div><button type="button" class="btn btn--primary" data-consent-yes>Accetta</button><button type="button" class="btn" data-consent-no>No, grazie</button></div></div>
 </body>
 </html>

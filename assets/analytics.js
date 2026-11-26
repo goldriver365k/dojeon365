@@ -1,14 +1,26 @@
 // DigiStep365 optional analytics (Korean site + global pages).
-// Added to a page only when a GA4 ID is configured, and loaded only after the visitor taps "Accept".
-// Optional analytics: loaded only when a GA4 ID is configured AND the visitor accepts.
+// Added to a page only when a GTM container or GA4 ID is configured, and loaded only after the visitor taps "Accept".
 (() => {
+  const gtm = document.querySelector('meta[name="gtm-id"]')?.content;
   const id = document.querySelector('meta[name="ga4-id"]')?.content;
-  if (!id) return;
+  if (!gtm && !id) return;
   const KEY = 'digistep365.consent';
   const get = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
   const set = (v) => { try { localStorage.setItem(KEY, v); } catch { /* ignore */ } };
+  let loaded = false;
   const load = () => {
+    if (loaded) return; loaded = true;
     window.dataLayer = window.dataLayer || [];
+    if (gtm) {
+      // Google Tag Manager: set up the GA4 tag (and others) inside the GTM container.
+      window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      // Korean practice app uses #/ addresses: GTM's "History change" trigger sees these; this event is a fallback.
+      window.addEventListener('hashchange', () => window.dataLayer.push({ event: 'virtual_page_view', page_location: location.href, page_title: document.title }));
+      const g = document.createElement('script');
+      g.async = true; g.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(gtm)}`;
+      document.head.appendChild(g);
+      return;
+    }
     window.gtag = function gtag() { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
     window.gtag('config', id, { anonymize_ip: true });
