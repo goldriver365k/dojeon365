@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import { FOOTER, CONTACT_EMAIL, SHARE_KINDS } from '../i18n/footer.js';
+import { FOOTER, CONTACT_EMAIL, shareKinds } from '../i18n/footer.js';
 import { LANGUAGES } from '../i18n/languages.js';
 
 const read = (p) => readFileSync(new URL(`..${p}`, import.meta.url), 'utf8');
@@ -31,7 +31,8 @@ test('국내 첫 화면·수업·정책 페이지와 해외 페이지에 같은 
     const html = read(p);
     const lang = p.startsWith('/index') || p.startsWith('/learn') || p.startsWith('/privacy') || p.startsWith('/terms') ? 'ko' : LANGUAGES.find((x) => p.startsWith(`/${x.code.toLowerCase()}/`)).code;
     assert.equal((html.match(/<footer class="sfoot"/g) ?? []).length, 1, `${p} 하단 1개`);
-    for (const k of SHARE_KINDS) assert.ok(html.includes(`data-share="${k}"`), `${p} 공유 ${k}`);
+    for (const k of shareKinds(lang)) assert.ok(html.includes(`data-share="${k}"`), `${p} 공유 ${k}`);
+    assert.equal(html.includes('data-share="kakao"'), lang === 'ko', `${p} 카카오톡 공유는 국내만`);
     assert.ok(html.includes(`href="mailto:${CONTACT_EMAIL}"`), `${p} 메일`);
     assert.match(html, /© <span data-year>\d{4}<\/span> DigiStep365\. All rights reserved\./, `${p} 저작권`);
     assert.ok(html.includes(FOOTER[lang].notice.replace(/&/g, '&amp;')), `${p} 안내 문구(${lang})`);

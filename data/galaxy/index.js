@@ -1,7 +1,7 @@
 /** 갤럭시 휴대폰 사용방법: 22개 목차 */
-import { BASIC } from './ch01-06.js?v=20261127.2156';
-import { LIFE } from './ch07-13.js?v=20261127.2156';
-import { APPLY, ADV } from './ch14-22.js?v=20261127.2156';
+import { BASIC } from './ch01-06.js?v=20261127.2325';
+import { LIFE } from './ch07-13.js?v=20261127.2325';
+import { APPLY, ADV } from './ch14-22.js?v=20261127.2325';
 
 export const GROUPS = [
   { id: 'basic', title: '기초' },

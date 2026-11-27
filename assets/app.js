@@ -12,24 +12,25 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261127.2156';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261127.2156';
-import * as DIGITAL from '../data/digital/index.js?v=20261127.2156';
-import * as AI from '../data/ai/index.js?v=20261127.2156';
-import * as SCAM from '../data/scam/index.js?v=20261127.2156';
-import * as CREATIVE from '../data/creative/index.js?v=20261127.2156';
-import * as CAREER from '../data/career/index.js?v=20261127.2156';
+import { CATEGORIES } from '../data/categories.js?v=20261127.2325';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261127.2325';
+import * as DIGITAL from '../data/digital/index.js?v=20261127.2325';
+import * as AI from '../data/ai/index.js?v=20261127.2325';
+import * as SCAM from '../data/scam/index.js?v=20261127.2325';
+import * as CREATIVE from '../data/creative/index.js?v=20261127.2325';
+import * as CAREER from '../data/career/index.js?v=20261127.2325';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
-import * as KAKAO from '../data/kakaotalk/public.js?v=20261127.2156';
+import * as KAKAO from '../data/kakaotalk/public.js?v=20261127.2325';
 // 카카오톡 사용법: 국내 전용. 공개된(실제 화면·검수 완료) 수업만 카드가 있고 나머지는 ‘수업 준비 중’
 const COURSES = { kakaotalk: KAKAO, digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261127.2156';
-import { renderScreen } from './screens.js?v=20261127.2156';
-import { appInfo, appIconStandalone } from './apps.js?v=20261127.2156';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261127.2156';
-import { VERSION } from './version.js?v=20261127.2156';
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261127.2156';
-import { metaOf } from '../data/galaxy/meta.js?v=20261127.2156';
+import { BASE } from '../data/galaxy/helpers.js?v=20261127.2325';
+import { renderScreen } from './screens.js?v=20261127.2325';
+import { renderKakao } from './kakao-screens.js?v=20261127.2325';
+import { appInfo, appIconStandalone } from './apps.js?v=20261127.2325';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261127.2325';
+import { VERSION } from './version.js?v=20261127.2325';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261127.2325';
+import { metaOf } from '../data/galaxy/meta.js?v=20261127.2325';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -422,7 +423,7 @@ function cardFigure(card) {
       ${t ? `<span class="photo-ring${card.photo.src.startsWith('/images/kakaotalk/') ? ' photo-ring--circle' : ''}" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}
     </div>${t && card.action !== 'self' ? `<button type="button" class="hit" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%" aria-label="연습: ${esc(card.target)} 누르기"></button>` : ''}</div>`;
   }
-  const pic = renderScreen(card.screen, card.target, card.action);
+  const pic = card.k ? renderKakao(card.k, card.target, card.action) : renderScreen(card.screen, card.target, card.action);
   const t = pic.target;
   const pct = (v, total) => `${(v / total) * 100}%`;
   const practice = card.done === 'practice' && t;

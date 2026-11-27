@@ -1,6 +1,8 @@
 // DigiStep365 관리자: 카카오톡 사용법(국내 전용) — 목차·수업·단계 카드·실제 화면 이미지·버전·검수·공개 상태
 // 저장: ① catalog.json 내려받기  ② GitHub API로 이미지(images/kakaotalk/…)와 data/kakaotalk/catalog.json 커밋(토큰은 sessionStorage에만)
 // 공개 조건은 scripts/build-kakaotalk.mjs의 publishProblems()와 같다(빌드가 한 번 더 검사해 미달이면 공개하지 않는다).
+import { renderKakao } from './kakao-screens.js?v=20261127.2325';
+import { renderScreen } from './screens.js?v=20261127.2325';
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const root = $('[data-kadmin]');
@@ -30,7 +32,7 @@ function problems(l) {
   (l.steps ?? []).forEach((s, i) => {
     const n = `${i + 1}단계`;
     if (!String(s.text ?? '').trim()) p.push(`${n} 설명 없음`);
-    if (!s.image?.src) p.push(`${n} 실제 화면 이미지 없음`);
+    if (!s.image?.src && !s.image?.screen) p.push(`${n} 실제 화면 이미지 없음`);
     if (!String(s.image?.alt ?? '').trim()) p.push(`${n} 이미지 설명(alt) 없음`);
     if (!s.imageMeta?.source) p.push(`${n} 이미지 출처 없음`);
     if (!s.imageMeta?.reviewed) p.push(`${n} 이미지 검수 날짜 없음`);
@@ -39,7 +41,11 @@ function problems(l) {
   return p;
 }
 
-function save() { store.set(KEY, { catalog: state.catalog, base: state.base }); renderSum(); renderPending(); }
+function save() {
+  // 사람이 고친 수업은 표시해 두어 원고 자동 채우기(kakaotalk-fill)가 덮어쓰지 않게 한다
+  const hit = state.sel && find(state.sel); if (hit && JSON.stringify(state.catalog) !== state.base) hit.l.edited = true;
+  store.set(KEY, { catalog: state.catalog, base: state.base }); renderSum(); renderPending();
+}
 
 /* ---------- 목록 ---------- */
 function renderSum() {
@@ -82,7 +88,7 @@ function renderEditor() {
   const opts = state.catalog.chapters.map((c, i) => `<option value="${i}" ${c === ch ? 'selected' : ''}>${String(c.num).padStart(2, '0')}. ${esc(c.title)}</option>`).join('');
   pane.innerHTML = `<header class="kedit__head"><p class="eyebrow">${String(ch.num).padStart(2, '0')}. ${esc(ch.title)} · <code>${esc(l.id)}</code></p>
   <h2>${esc(l.title)}</h2>
-  <p class="kedit__tools"><button type="button" data-l-up>↑ 위로</button><button type="button" data-l-down>↓ 아래로</button><label>대분류 이동 <select data-l-move>${opts}</select></label><button type="button" data-l-del>사용법 삭제</button>${PUBLIC.includes(l.status) && !prob.length ? ` <a href="/#/lesson/${esc(l.id)}/1" target="_blank" rel="noopener">홈페이지에서 보기</a>` : ''}</p></header>
+  <p class="kedit__tools"><button type="button" data-l-up>↑ 위로</button><button type="button" data-l-down>↓ 아래로</button><label>대분류 이동 <select data-l-move>${opts}</select></label><button type="button" data-l-del>사용법 삭제</button>${!PUBLIC.includes(l.status) ? ' <button type="button" class="kbtn-ok" data-l-approve>실제 앱과 대조 완료 → 검수·공개</button>' : ''}${PUBLIC.includes(l.status) && !prob.length ? ` <a href="/#/lesson/${esc(l.id)}/1" target="_blank" rel="noopener">홈페이지에서 보기</a>` : ''}</p></header>
   ${l.existing ? `<p class="step__note">이 주제는 기존 <a href="/learn/${esc(l.existing.course)}/${esc(l.existing.id)}/" target="_blank">갤럭시 수업(${esc(l.existing.id)})</a>에도 그림(실제 화면 아님)으로 있어요. 실제 화면 수업을 공개하면 그 수업의 그림을 교체·연결할지 정하세요.</p>` : ''}
   <div class="kgrid">
     ${field('사용법 제목', 'title', l.title)}
@@ -114,7 +120,7 @@ function stepCard(s, i, n) {
   const m = s.imageMeta ?? {};
   const t = img.target;
   return `<li class="kstep" data-step="${i}">
-  <div class="kstep__pic">${img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
+  <div class="kstep__pic">${img.screen && !img.src ? `<div class="kshot kshot--svg" title="코드로 그린 재현 화면">${(img.screen.galaxy ? renderScreen(img.screen.galaxy, s.targetLabel || undefined, 'tap') : renderKakao(img.screen, s.targetLabel || undefined, 'tap')).svg}</div><p class="hint">재현 화면 — 실제 앱과 대조하세요. 실제 캡처로 바꾸려면 아래에서 올리세요.</p>` : img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
     <label class="kfile">실제 화면 올리기<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="${i}"></label>
     ${t ? `<label class="kf">빨간 원 크기 <input type="range" min="6" max="40" value="${Math.round(t.w)}" data-ring="${i}"></label><button type="button" data-ring-del="${i}">빨간 원 지우기</button>` : img.src ? '<p class="hint">그림에서 누를 곳을 누르세요.</p>' : ''}
   </div>
@@ -212,6 +218,18 @@ root.addEventListener('click', (e) => {
     if (b.matches('[data-l-up]') && li > 0) [ch.lessons[li - 1], ch.lessons[li]] = [l, ch.lessons[li - 1]];
     else if (b.matches('[data-l-down]') && li < ch.lessons.length - 1) [ch.lessons[li + 1], ch.lessons[li]] = [l, ch.lessons[li + 1]];
     else if (b.matches('[data-l-del]')) { if (!confirm(`‘${l.title}’을 지울까요?`)) return; ch.lessons.splice(li, 1); state.sel = null; }
+    else if (b.matches('[data-l-approve]')) {
+      // 사람이 실제 갤럭시 카카오톡과 모든 단계를 대조한 뒤에만 누른다
+      const who = prompt('검수자 이름(실제 앱과 모든 단계를 대조했어요)', l.reviewedBy || '');
+      if (!who) return;
+      const ver = prompt('대조한 카카오톡 앱 버전(더보기 › 설정 › 전체 설정 › 기타 › 앱 버전)', l.appVersion || '');
+      if (!ver) return;
+      Object.assign(l, { reviewedBy: who.trim(), appVersion: ver.trim(), lastChecked: today() });
+      l.steps.forEach((st) => { st.imageMeta = { ...(st.imageMeta ?? {}), reviewed: today(), appVersion: ver.trim() }; });
+      const prob = problems(l);
+      if (prob.length) { alert(`아직 공개할 수 없어요:\n- ${prob.join('\n- ')}`); l.status = 'review'; } else l.status = 'published';
+      l.edited = true;
+    }
     else if (b.matches('[data-step-add]')) l.steps.push({ text: '', voice: '', hint: '', targetLabel: '', image: {}, imageMeta: {} });
     else if (b.matches('[data-s-up], [data-s-down], [data-s-del], [data-ring-del]')) {
       const i = Number(b.closest('[data-step]').dataset.step);

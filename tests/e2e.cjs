@@ -513,7 +513,7 @@ async function main() {
     let alerted = '';
     ad.on('dialog', async (d) => { alerted = d.message(); await d.dismiss(); });
     await ad.selectOption('[data-f="status"]', 'published'); await ad.waitForTimeout(200);
-    check('카카오톡 관리자: 실제 화면·검수 없이는 ‘공개’로 못 바꿈', alerted.includes('아직 공개할 수 없어요') && alerted.includes('단계 없음') && (await ad.inputValue('[data-f="status"]')) !== 'published');
+    check('카카오톡 관리자: 실제 화면·검수 없이는 ‘공개’로 못 바꿈', alerted.includes('아직 공개할 수 없어요') && alerted.includes('검수자 없음') && (await ad.inputValue('[data-f="status"]')) !== 'published');
     check('카카오톡 관리자: 162개 목록', (await ad.textContent('[data-sum]')).includes('사용법 162개'));
     check('카카오톡: 화면 오류 없음', errsK.length === 0, errsK.join(' | '));
     await ck.close();
@@ -554,9 +554,11 @@ async function main() {
       await p3.click('[data-share="more"]');
       check(`${tag} ${where} 공유: 휴대폰 기본 공유`, (await p3.evaluate(() => window.__shared.at(-1)?.url)) === home);
       await p3.evaluate(() => { window.__shared = []; return navigator.clipboard.writeText(''); });
+      if (url !== BASE) { check(`${tag} ${where} 하단: 해외 사이트에는 카카오톡 공유 없음`, (await p3.locator('[data-share="kakao"]').count()) === 0); } else {
       await p3.click('[data-share="kakao"]');
       const kakao = mobile ? (await p3.evaluate(() => window.__shared.at(-1)?.url)) === home : (await p3.evaluate(() => navigator.clipboard.readText())) === home;
       check(`${tag} ${where} 공유: 카카오톡(${mobile ? '공유 창에서 카카오톡 선택' : '주소 복사 후 붙여 넣기'})`, kakao);
+      }
       const year = await p3.textContent('[data-year]');
       check(`${tag} ${where} 하단: 저작권 연도 = 올해`, year === String(new Date().getFullYear()));
       check(`${tag} ${where} 하단: 문의 메일 링크`, (await p3.getAttribute('.sfoot a[href^="mailto:"]', 'href')) === 'mailto:goldriver365@gmail.com');

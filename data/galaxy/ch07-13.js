@@ -1,5 +1,5 @@
 /** [생활] 07~13 */
-import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, openQuick, openNoti, M, SRC, MENUS, SIDE, HOME, APPS, QUICK, NOTI, PRACTICE_ONLY } from './helpers.js?v=20261127.2156';
+import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, openQuick, openNoti, M, SRC, MENUS, SIDE, HOME, APPS, QUICK, NOTI, PRACTICE_ONLY } from './helpers.js?v=20261127.2325';
 
 const Q = (on) => ({ ...QUICK, on });
 
@@ -539,7 +539,10 @@ export const ch12 = {
 const KAKAO_TABS = ['친구', '채팅', '쇼핑', '더보기'];
 const KAKAO_LIST = { kind: 'list', title: '채팅', back: false, actions: ['검색', '추가'], items: [{ t: '가족방', s: '사진을 보냈습니다.' }, { t: '김영희', s: '저녁 같이 먹어요' }], tabs: KAKAO_TABS, tab: '채팅' };
 const KCHAT = (title = '가족방', more = {}) => ({ kind: 'chat', app: '카카오톡', title, bubbles: [{ from: 'you', text: '오늘 저녁 어때요?' }], ...more });
-const KAKAO_CHECK = '카카오톡 화면은 앱 업데이트로 자주 바뀌어 실제 화면 확인 필요';
+const KAKAO_CHECK = '카카오톡 화면은 코드로 그린 재현 화면이에요. 앱 업데이트로 바뀔 수 있어 실제 화면 확인 필요';
+// 카카오톡 화면(assets/kakao-screens.js로 그림). 가상의 이름·대화만 씀
+const KROOM = (x = {}) => ({ v: 'room', name: '가족 단톡방', count: 4, from: '아들 민호', msgs: [{ text: '오늘 저녁 어때요?' }], ...x });
+const ktap = (label, k, text, extra = {}) => ({ text, k, screen: { kind: 'info' }, target: label, action: 'tap', done: 'practice', alt: `카카오톡 화면 재현 그림. ‘${label}’에 빨간 테두리가 있어요.`, ...extra });
 
 export const ch13 = {
   num: 13, title: '가족에게 사진과 영상 보내기', group: 'life',
@@ -554,7 +557,7 @@ export const ch13 = {
         self('‘카카오톡’이라고 적으세요.', { screen: { kind: 'keyboard', title: '검색', text: '카카오톡' }, alt: '검색 칸에 카카오톡을 적는 그림.' }),
         tap('카카오톡 설치', PLAY_RESULT, { text: '‘설치’를 누르세요.' }),
         tap('카카오톡 열기', { kind: 'list', title: '카카오톡', items: [{ t: '카카오톡', s: '설치됨', btn: '열기' }] }, { text: '설치가 끝나면 ‘열기’를 누르세요.' }),
-        self('화면 안내에 따라 내 전화번호로 가입하세요.', { icon: 'K', color: '#8a6d00', lines: ['문자로 온 인증번호를 넣어요.'] }),
+        look('처음 화면의 ‘새로운 카카오계정 만들기’로 가입해요.', null, { k: { v: 'form', title: '', heading: '카카오톡에 오신 것을 환영해요', buttons: ['카카오계정으로 로그인', '새로운 카카오계정 만들기'], back: false }, alt: '카카오톡 첫 화면 재현 그림. 로그인과 새 계정 만들기 버튼이 있어요.', hint: '문자로 온 인증번호를 넣어요. 자세한 내용은 ‘카카오톡 사용법’ 교실에서 볼 수 있어요.' }),
       ],
     }),
     lesson('g13-send', '가족에게 카톡 보내기', {
@@ -563,11 +566,11 @@ export const ch13 = {
       check: KAKAO_CHECK,
       cards: [
         app('카카오톡'),
-        tap('채팅', { ...KAKAO_LIST, tab: '친구' }, { text: '아래쪽 ‘채팅’을 누르세요.' }),
-        tap('가족방', KAKAO_LIST, { text: '보낼 대화방을 누르세요.' }),
-        tap('입력창', KCHAT(), { text: '아래쪽 입력칸을 누르세요.' }),
-        self('보낼 말을 적으세요.', { screen: { kind: 'keyboard', title: '가족방', text: '좋아요!' }, alt: '보낼 말을 적는 그림.' }),
-        tap('전송 아이콘', KCHAT('가족방', { typed: '좋아요!' }), { text: '노란 전송 버튼을 누르세요.' }),
+        ktap('채팅 탭', { v: 'tab', tab: 'friends' }, '아래쪽 ‘채팅’을 누르세요.'),
+        ktap('가족 단톡방', { v: 'tab', tab: 'chats' }, '보낼 대화방을 누르세요.'),
+        ktap('입력창', KROOM(), '아래쪽 입력칸을 누르세요.'),
+        { text: '보낼 말을 적으세요.', k: KROOM({ input: '좋아요!' }), screen: { kind: 'info' }, action: 'self', done: 'self', alt: '카카오톡 화면 재현 그림. 입력칸에 ‘좋아요!’가 적혀 있어요.' },
+        ktap('전송 버튼', KROOM({ input: '좋아요!' }), '노란 전송 버튼을 누르세요.'),
       ],
     }),
     lesson('g13-media', '사진과 동영상 보내기', {
@@ -576,11 +579,11 @@ export const ch13 = {
       check: KAKAO_CHECK,
       cards: [
         app('카카오톡'),
-        tap('가족방', KAKAO_LIST, { text: '보낼 대화방을 누르세요.' }),
-        tap('추가 아이콘', KCHAT(), { text: '입력칸 왼쪽 ‘+’를 누르세요.' }),
-        tap('앨범', KCHAT('가족방', { attach: ['앨범', '카메라', '선물하기', '통화하기', '송금', '일정', '파일', '지도'] }), { text: '‘앨범’을 누르세요.' }),
-        tap('첫 번째 사진', { ...GRID, title: '앨범' }, { text: '보낼 사진이나 동영상을 누르세요.', hint: '여러 장을 차례로 눌러 함께 보낼 수 있어요.' }),
-        self('‘전송’을 누르세요.', { icon: '➤', color: '#8a6d00', lines: ['화면 아래 또는 위쪽에 전송 버튼이 있어요.'] }),
+        ktap('가족 단톡방', { v: 'tab', tab: 'chats' }, '보낼 대화방을 누르세요.'),
+        ktap('＋ 버튼', KROOM(), '입력칸 왼쪽 ‘＋’를 누르세요.'),
+        ktap('앨범', KROOM({ plus: true }), '‘앨범’을 누르세요.'),
+        ktap('사진 1', { v: 'gallery', selected: [] }, '보낼 사진이나 동영상을 누르세요.', { hint: '여러 장을 차례로 눌러 함께 보낼 수 있어요.' }),
+        ktap('전송', { v: 'gallery', selected: [0] }, '‘전송’을 누르세요.'),
       ],
     }),
     lesson('g13-facetalk', '영상통화 하기', {
@@ -589,10 +592,10 @@ export const ch13 = {
       check: KAKAO_CHECK,
       cards: [
         app('카카오톡'),
-        tap('김영희', KAKAO_LIST, { text: '통화할 사람의 대화방을 누르세요.' }),
-        tap('추가 아이콘', KCHAT('김영희'), { text: '입력칸 왼쪽 ‘+’를 누르세요.' }),
-        tap('통화하기', KCHAT('김영희', { attach: ['앨범', '카메라', '선물하기', '통화하기', '송금', '일정', '파일', '지도'] }), { text: '‘통화하기’를 누르세요.' }),
-        tap('페이스톡', { kind: 'dialog', style: 'sheet', buttons: ['보이스톡', '페이스톡'] }, { text: '‘페이스톡’을 누르세요.', hint: '와이파이에서 하면 데이터가 들지 않아요.', note: '전화 앱의 키패드에서도 영상통화 아이콘을 눌러 걸 수 있어요.' }),
+        ktap('딸 수진', { v: 'tab', tab: 'chats' }, '통화할 사람의 대화방을 누르세요.'),
+        ktap('＋ 버튼', KROOM({ name: '딸 수진', count: 0, from: '딸 수진' }), '입력칸 왼쪽 ‘＋’를 누르세요.'),
+        ktap('통화하기', KROOM({ name: '딸 수진', count: 0, from: '딸 수진', plus: true }), '‘통화하기’를 누르세요.'),
+        ktap('페이스톡', { v: 'sheet', base: KROOM({ name: '딸 수진', count: 0, from: '딸 수진' }), items: ['보이스톡', '페이스톡'] }, '‘페이스톡’을 누르세요.', { hint: '와이파이에서 하면 데이터가 들지 않아요.', note: '전화 앱의 키패드에서도 영상통화 아이콘을 눌러 걸 수 있어요.' }),
       ],
     }),
     lesson('g13-mute', '단체방 알림 줄이기', {
@@ -601,9 +604,9 @@ export const ch13 = {
       check: KAKAO_CHECK,
       cards: [
         app('카카오톡'),
-        tap('동창회', { ...KAKAO_LIST, items: [{ t: '동창회', s: '새 메시지 99+' }, { t: '가족방', s: '사진을 보냈습니다.' }] }, { text: '알림을 줄일 단체방을 누르세요.' }),
-        tap('메뉴', KCHAT('동창회'), { text: '오른쪽 위 줄 세 개(메뉴)를 누르세요.' }),
-        toggle('채팅방 서랍', '알림', { on: false, items: [{ t: '알림', sw: true }, '사진·동영상', '파일', '나가기'], text: '‘알림’ 스위치를 눌러 끄세요.', hint: '이 방의 알림 소리만 꺼지고 대화는 그대로 볼 수 있어요.' }),
+        ktap('동네 친구들', { v: 'tab', tab: 'chats' }, '알림을 줄일 단체방을 누르세요.'),
+        ktap('채팅방 메뉴', KROOM({ name: '동네 친구들', count: 12, from: '이순자', msgs: [{ text: '모임은 토요일이에요' }] }), '오른쪽 위 줄 세 개(메뉴)를 누르세요.'),
+        ktap('알림 끄기', { v: 'list', title: '채팅방 서랍', rows: [{ label: '사진·동영상' }, { label: '파일' }, { label: '공지' }, { label: '알림 끄기' }, { label: '채팅방 설정' }] }, '‘알림 끄기’를 누르세요.', { hint: '이 방의 알림 소리만 꺼지고 대화는 그대로 볼 수 있어요.' }),
       ],
     }),
     lesson('g13-map', '지도에서 약속 장소 찾기', {

@@ -9,6 +9,7 @@ import * as SCAM from '../data/scam/index.js';
 import * as CREATIVE from '../data/creative/index.js';
 import * as CAREER from '../data/career/index.js';
 import { renderScreen, SCREEN_KINDS } from '../assets/screens.js';
+import { renderKakao } from '../assets/kakao-screens.js';
 import { appInfo } from '../assets/apps.js';
 
 // 지시서의 목차별 세부 수업 수
@@ -52,12 +53,12 @@ test('카드마다 안내 문장 하나·그림·설명·완료 조건이 있다
       assert.ok(c.text && /[.요]$/.test(c.text.trim()), `${where}: 문장`);
       assert.ok(!TWO_ACTIONS.test(c.text), `${where}: 동작 두 개`);
       assert.ok(c.alt && c.alt.length > 4, `${where}: 대체 텍스트`);
-      assert.ok(c.screen || c.photo, `${where}: 그림`);
+      assert.ok(c.screen || c.photo || c.k, `${where}: 그림`);
       assert.ok(!c.screen || SCREEN_KINDS.includes(c.screen.kind), `${where}: 그림 종류 ${c.screen?.kind}`);
       assert.ok(['practice', 'self'].includes(c.done), `${where}: 완료 조건`);
       if (c.done === 'practice') {
         assert.ok(c.target, `${where}: 누를 곳`);
-        const r = renderScreen(c.screen, c.target, c.action);
+        const r = c.k ? renderKakao(c.k, c.target, c.action) : renderScreen(c.screen, c.target, c.action);
         assert.ok(r.target, `${where}: 그림에 ‘${c.target}’ 없음 (있는 이름: ${Object.keys(r.targets).join(', ')})`);
       }
     });

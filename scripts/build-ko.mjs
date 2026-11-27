@@ -14,6 +14,7 @@ import * as CREATIVE from '../data/creative/index.js';
 import * as CAREER from '../data/career/index.js';
 import { BASE } from '../data/galaxy/helpers.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
+import { renderKakao } from '../assets/kakao-screens.js';
 import { SITE_URL, BRAND_TAGLINE, LANGUAGES } from '../i18n/languages.js';
 import { siteFooter, CONTACT_EMAIL, SITE_HOME, TERMS_DATE } from '../i18n/footer.js';
 import { TOPIC, DESC_TAIL, COURSE_SEO, HUB_SEO, HOME_SEO } from '../i18n/ko-seo.js';
@@ -159,7 +160,11 @@ function picture(card) {
   // 실제 화면 이미지(카카오톡): 그림은 그대로, 누를 곳에만 빨간 원
   if (card?.photo) {
     const t = card.photo.target;
-    return `<figure class="pic pic--photo" role="img" aria-label="${esc(card.photo.alt ?? card.alt)}"><img src="${esc(card.photo.src)}" alt="" ${card.photo.w ? `width="${card.photo.w}" height="${card.photo.h}"` : ''} loading="lazy">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</figure>`;
+    return `<figure class="pic pic--photo" role="img" aria-label="${esc(card.photo.alt ?? card.alt)}"><img src="${esc(card.photo.src)}" alt="" ${card.photo.w ? `width="${card.photo.w}" height="${card.photo.h}"` : ''} loading="lazy">${t ? `<svg class="pic__ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="${t.x + t.w / 2}" cy="${t.y + t.h / 2}" rx="${t.w / 2}" ry="${t.h / 2}" fill="none" stroke="#d7263d" stroke-width="6" vector-effect="non-scaling-stroke"/></svg>` : ''}</figure>`;
+  }
+  if (card?.k) {
+    const kp = renderKakao(card.k, card.target, card.action);
+    return `<figure class="pic" role="img" aria-label="${esc(card.alt ?? '카카오톡 화면 그림')}">${kp.svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</figure>`;
   }
   if (!card?.screen) return '';
   const pic = renderScreen(card.screen, card.target, card.action);

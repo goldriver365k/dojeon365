@@ -88,3 +88,36 @@ test('국내 홈 카테고리·관리자 화면·독립 교육 안내 문구', (
   assert.ok(existsSync('assets/admin-kakao.js'));
   assert.match(readFileSync('netlify.toml', 'utf8'), /for = "\/data\/kakaotalk\/\*"[\s\S]*?noindex/);
 });
+
+test('카카오톡 162개 원고: 모든 단계에 화면·한 동작·누를 곳이 화면에 있음, 가상 정보만', async () => {
+  const { draw, TWO, SOURCE } = await import('../scripts/kakaotalk-fill.mjs');
+  let steps = 0;
+  for (const l of all) {
+    if (!l.generated) continue;
+    assert.ok(l.steps.length >= 1, `${l.id} 단계`);
+    l.steps.forEach((s, i) => {
+      steps++;
+      const where = `${l.id} ${i + 1}단계`;
+      assert.ok(s.text && /[.요]$/.test(s.text.trim()), `${where}: 문장 ${s.text}`);
+      assert.doesNotMatch(s.text, TWO, `${where}: 동작 두 개`);
+      assert.ok(s.image?.screen && s.image.alt, `${where}: 화면·alt`);
+      assert.equal(s.imageMeta.source, SOURCE, `${where}: 출처는 재현(검수 필수)`);
+      if (s.targetLabel) assert.ok(draw(s.image.screen, s.targetLabel).target, `${where}: 화면에 ‘${s.targetLabel}’ 없음`);
+      const pressed = s.text.match(/‘([^’]+)’[을를] 누르세요/)?.[1];
+      if (pressed) assert.ok(s.targetLabel, `${where}: ‘${pressed}’를 누르라는데 빨간 테두리 없음`);
+      assert.doesNotMatch(JSON.stringify(s.image.screen), /010-\d{4}-\d{4}(?<!0000-0000)(?<!0000-1234)/, `${where}: 실제처럼 보이는 전화번호`);
+    });
+    assert.ok(!PUBLIC_STATUS_OK(l) || l.reviewedBy, `${l.id}: 검수 없이 공개`);
+  }
+  assert.ok(steps >= 600, `단계 ${steps}장`);
+});
+function PUBLIC_STATUS_OK(l) { return ['published', 'update'].includes(l.status); }
+
+test('기존 그림 카카오톡 수업 5개는 카카오톡 재현 화면으로 바뀌었다', async () => {
+  const G = await import('../data/galaxy/index.js');
+  for (const id of ['g13-send', 'g13-media', 'g13-facetalk', 'g13-mute']) {
+    const { lesson } = G.findLesson(id);
+    assert.ok(lesson.cards.some((c) => c.k), `${id} 카카오톡 화면`);
+    assert.ok(!lesson.cards.some((c) => c.screen?.kind === 'chat' && c.screen.app === '카카오톡'), `${id} 옛 그림 남음`);
+  }
+});

@@ -43,7 +43,7 @@ export function publishProblems(lesson, { root = ROOT } = {}) {
     const n = `${i + 1}단계`;
     if (!String(s.text ?? '').trim()) p.push(`${n} 설명 없음`);
     const img = s.image ?? {};
-    if (!img.src) p.push(`${n} 실제 화면 이미지 없음`);
+    if (img.screen) { /* 코드로 그린 재현 화면: 파일 대신 화면 정의 */ } else if (!img.src) p.push(`${n} 실제 화면 이미지 없음`);
     else if (!/^images\/kakaotalk\/[\w./-]+\.(png|jpe?g|webp)$/i.test(img.src)) p.push(`${n} 이미지 경로가 images/kakaotalk/ 밖`);
     else if (!existsSync(new URL(img.src, root))) p.push(`${n} 이미지 파일 없음(${img.src})`);
     if (!String(img.alt ?? '').trim()) p.push(`${n} 이미지 설명(alt) 없음`);
@@ -67,6 +67,12 @@ export function searchWords(lesson) {
 export function toLesson(l, opt) {
   const open = isPublic(l, opt);
   const cards = open ? l.steps.map((s) => {
+    if (s.image.screen) {
+      // 재현 화면: 카카오톡 화면은 k, 갤럭시 홈·Play 스토어는 screen(갤럭시 그림 도구)
+      const sc = s.image.screen; const t = s.targetLabel || null;
+      return { text: s.text, ...(s.hint ? { hint: s.hint } : {}), ...(s.voice ? { say: s.voice } : {}), alt: s.image.alt, ...(t ? { target: t } : {}),
+        action: t ? 'tap' : 'self', done: t ? 'practice' : 'next', ...(sc.galaxy ? { screen: sc.galaxy } : { k: sc }) };
+    }
     const t = s.image.target;
     return {
       text: s.text, ...(s.hint ? { hint: s.hint } : {}), ...(s.voice ? { say: s.voice } : {}),

@@ -434,6 +434,8 @@ const ICON_PATH = {
   more: 'M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z',
 };
 export const SHARE_KINDS = ['kakao', 'facebook', 'whatsapp', 'copy', 'qr', 'more'];
+/** 카카오톡 공유는 국내(한국어) 사이트에만 — 해외용에는 카카오톡 관련 메뉴를 두지 않는다 */
+export const shareKinds = (lang) => (lang === 'ko' ? SHARE_KINDS : SHARE_KINDS.filter((k) => k !== 'kakao'));
 const icon = (k) => `<span class="share__ic share__ic--${k}" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" focusable="false"><path d="${ICON_PATH[k]}"/></svg></span>`;
 const escF = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -460,8 +462,8 @@ export function siteFooter({ lang, privacyHref, termsHref, shareUrl, langLinks, 
     <p><b>Digi<i>Step</i>365</b><span>${escF(F.tagline)}</span></p>
   </div>
   <p class="sfoot__slogan">${escF(F.slogan)}</p>
-  <div class="sfoot__share" role="group" aria-label="${escF(F.share)}">
-    ${SHARE_KINDS.map((k) => `<button type="button" class="share" data-share="${k}">${icon(k)}<span class="share__t">${escF(F[k])}</span></button>`).join('\n    ')}
+  <div class="sfoot__share" role="group" aria-label="${escF(F.share)}" data-count="${shareKinds(lang).length}">
+    ${shareKinds(lang).map((k) => `<button type="button" class="share" data-share="${k}">${icon(k)}<span class="share__t">${escF(F[k])}</span></button>`).join('\n    ')}
   </div>
   <p class="sfoot__notice">${escF(F.notice)}</p>
   <p class="sfoot__links"><a href="mailto:${CONTACT_EMAIL}">${escF(F.contact)} <span dir="ltr">${CONTACT_EMAIL}</span></a></p>

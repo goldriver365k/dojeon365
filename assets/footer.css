@@ -28,7 +28,8 @@
 .share__ic--whatsapp { background: #25d366; fill: #fff; }
 .share__ic--copy, .share__ic--qr, .share__ic--more { background: var(--navy, #172149); fill: #fff; }
 .share__t { font-size: .85rem; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; color: var(--ink, #1e2a5a); }
-@media (max-width: 479px) { .sfoot__share { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 20rem; } }
+.sfoot__share[data-count="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); max-width: 27rem; }
+@media (max-width: 479px) { .sfoot__share, .sfoot__share[data-count="5"] { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 20rem; } }
 
 .sfoot__notice { margin-top: 4px !important; font-size: .9rem; color: var(--ink-2, #56608a); max-width: 34rem; overflow-wrap: anywhere; }
 .sfoot__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 20px; font-size: .95rem; }

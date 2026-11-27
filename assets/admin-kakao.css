@@ -45,3 +45,6 @@
 .kadmin .edit__bar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; margin: 12px 0; }
 .kadmin .edit__bar label { display: grid; gap: 4px; font-weight: 700; }
 .kadmin .edit__bar select, .kadmin .edit__bar input { font: inherit; min-height: 44px; padding: 0 10px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); min-width: 200px; }
+.kshot--svg { cursor: default; background: #fff; }
+.kshot--svg svg { display: block; width: 100%; height: auto; }
+.kbtn-ok { background: #e1f9ef !important; border-color: #00a35c !important; font-weight: 800; }
