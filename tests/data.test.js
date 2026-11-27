@@ -16,8 +16,9 @@ const EXPECTED = [5, 7, 6, 6, 5, 7, 6, 6, 7, 9, 8, 9, 6, 5, 8, 6, 6, 7, 7, 6, 7,
 // 한 카드에 동작 두 개를 이어 쓴 문장(예: “설정을 열고 디스플레이를 누르세요”)을 찾는 표현
 const TWO_ACTIONS = /(열고|누르고|적고|고르고|켜고|끄고|밀고|들어가|선택하고)\s|\s후\s|→/;
 
-test('홈 카테고리 6개, 첫 번째가 갤럭시 휴대폰 사용방법', () => {
-  assert.equal(CATEGORIES.length, 6);
+test('홈 카테고리 7개, 첫 번째가 갤럭시 휴대폰 사용방법, 두 번째가 카카오톡 사용법(국내 전용)', () => {
+  assert.equal(CATEGORIES.length, 7);
+  assert.equal(CATEGORIES[1].href, '#/kakaotalk');
   assert.equal(CATEGORIES[0].title, '갤럭시 휴대폰 사용방법');
   assert.ok(CATEGORIES[0].ready);
 });
@@ -127,8 +128,8 @@ test('시니어 AI 교실: 목차·수업 id·출처·카드', () => {
   });
 });
 
-test('전화 사기 예방 교실: 홈 2번째 큰 카테고리, 목차·수업', () => {
-  assert.equal(CATEGORIES[1].href, '#/scam');
+test('전화 사기 예방 교실: 홈 3번째 큰 카테고리, 목차·수업', () => {
+  assert.equal(CATEGORIES[2].href, '#/scam');
   assert.ok(SCAM.CHAPTERS.length >= 5);
   const ids = new Set([...allLessons(), ...DIGITAL.allLessons(), ...AI.allLessons()].map((e) => e.lesson.id));
   SCAM.CHAPTERS.forEach((ch, i) => {

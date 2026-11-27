@@ -55,7 +55,7 @@ async function main() {
   /* 1. 홈·목차 */
   await go('#/');
   const cats = await page.locator('.cat').allTextContents();
-  check('홈 카테고리 6개', cats.length === 6, cats.length);
+  check('홈 카테고리 7개', cats.length === 7, cats.length);
   check('첫 카테고리 = 갤럭시 휴대폰 사용방법', cats[0]?.includes('갤럭시 휴대폰 사용방법'), cats[0]);
   await shot('01-home-360');
   await page.locator('.cat').first().click();
@@ -490,6 +490,35 @@ async function main() {
     }
     await c2.close();
   }
+  // 카카오톡 사용법(국내 전용): 홈 카테고리·목차·통합 검색·관리자 공개 조건
+  {
+    const ck = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await ck.addInitScript(() => { try { localStorage.setItem('digistep365.consent', 'no'); } catch { /* ignore */ } });
+    const pk = await ck.newPage();
+    const errsK = []; pk.on('pageerror', (e) => errsK.push(e.message));
+    await pk.goto(BASE); await pk.waitForSelector('.cat-list');
+    check('카카오톡: 홈 두 번째 카테고리(노란색)', (await pk.locator('.cat-list li').nth(1).textContent()).includes('카카오톡 사용법') && await pk.locator('.cat-list li:nth-child(2) .cat.cat-5').count() === 1);
+    await pk.click('.cat-list li:nth-child(2) a'); await pk.waitForSelector('.toc__row');
+    check('카카오톡: 목차 15개', (await pk.locator('.toc__row').count()) === 15);
+    await pk.fill('#q', '카톡 사진 보내기'); await pk.press('#q', 'Enter'); await pk.waitForTimeout(200);
+    check('카카오톡: ‘카톡 사진 보내기’ 검색', (await pk.locator('#results .lesson-row__title').first().textContent()).includes('사진'));
+    await pk.goto(`${BASE}#/kakaotalk/04`); await pk.waitForSelector('.lesson-list');
+    check('카카오톡: 공개 전 수업은 ‘수업 준비 중’', (await pk.locator('.lesson-list .badge--soon').count()) === 12 && (await pk.textContent('main')).includes('카카오와 공식적인 제휴 관계가 없으며'));
+    await pk.goto(`${BASE}#/galaxy`); await pk.waitForSelector('#q');
+    await pk.fill('#q', '카톡 글씨 크게'); await pk.press('#q', 'Enter'); await pk.waitForTimeout(200);
+    check('카카오톡: 갤럭시 목차에서도 통합 검색', (await pk.locator('#results').textContent()).includes('카카오톡 글자 크게 만들기'));
+    const ad = await ck.newPage(); ad.on('pageerror', (e) => errsK.push(`admin ${e.message}`));
+    await ad.setViewportSize({ width: 1280, height: 900 });
+    await ad.goto(`${BASE}admin/kakaotalk/?id=k04-photo-one`); await ad.waitForSelector('[data-f="status"]');
+    let alerted = '';
+    ad.on('dialog', async (d) => { alerted = d.message(); await d.dismiss(); });
+    await ad.selectOption('[data-f="status"]', 'published'); await ad.waitForTimeout(200);
+    check('카카오톡 관리자: 실제 화면·검수 없이는 ‘공개’로 못 바꿈', alerted.includes('아직 공개할 수 없어요') && alerted.includes('단계 없음') && (await ad.inputValue('[data-f="status"]')) !== 'published');
+    check('카카오톡 관리자: 162개 목록', (await ad.textContent('[data-sum]')).includes('사용법 162개'));
+    check('카카오톡: 화면 오류 없음', errsK.length === 0, errsK.join(' | '));
+    await ck.close();
+  }
+
   // 하단 공유 아이콘: 6개 모두 실제로 동작(밖으로 나가는 주소는 가로채서 확인만)
   for (const mobile of [false, true]) {
     const c3 = await browser.newContext({ viewport: mobile ? { width: 390, height: 844 } : { width: 1280, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'], userAgent: mobile ? 'Mozilla/5.0 (Linux; Android 15; SM-S942N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Mobile Safari/537.36' : undefined });

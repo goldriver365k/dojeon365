@@ -18,6 +18,7 @@ import { SITE_URL, BRAND_TAGLINE, LANGUAGES } from '../i18n/languages.js';
 import { siteFooter, CONTACT_EMAIL, SITE_HOME, TERMS_DATE } from '../i18n/footer.js';
 import { TOPIC, DESC_TAIL, COURSE_SEO, HUB_SEO, HOME_SEO } from '../i18n/ko-seo.js';
 import { metaOf } from '../data/galaxy/meta.js';
+import { kakaoCourse, DISCLAIMER as KAKAO_DISCLAIMER } from './build-kakaotalk.mjs';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 
 const GA = SITE_CONFIG.ga4Id;
@@ -43,11 +44,13 @@ const two = (n) => String(n).padStart(2, '0');
 const HANGUL = /[가-힣]/;
 
 /** 과정 목록: 홈 카테고리 순서. key = 국내 앱 주소(#/<key>) */
-const COURSE_DATA = { galaxy: { CHAPTERS: GALAXY }, scam: SCAM, digital: DIGITAL, ai: AI, creative: CREATIVE, career: CAREER };
+// 카카오톡 사용법: 실제 화면·검수를 마친 ‘공개’ 수업만 정적 페이지·사이트맵에 넣는다(없으면 과정 자체를 뺀다)
+const KAKAO = kakaoCourse({ onlyPublic: true });
+const COURSE_DATA = { galaxy: { CHAPTERS: GALAXY }, kakaotalk: KAKAO, scam: SCAM, digital: DIGITAL, ai: AI, creative: CREATIVE, career: CAREER };
 export const KO_COURSES = CATEGORIES.map((c) => {
   const key = c.href.replace('#/', '');
   return { key, title: c.title, desc: c.desc, chapters: COURSE_DATA[key].CHAPTERS, lead: COURSE_DATA[key].COURSE?.lead ?? '' };
-});
+}).filter((c) => c.chapters.length);
 
 /** 갤럭시 수업의 국내 정적 페이지 주소(해외 페이지의 hreflang ko에 쓴다) */
 export const koLessonPath = (course, id) => `/learn/${course}/${id}/`;
@@ -69,6 +72,7 @@ const topicOf = (course, ch) => TOPIC[course.key]?.[ch.num] ?? '';
 const coreWord = (topic) => topic.split(/[ ·(]/)[0];
 function lessonTitle(course, lesson, ch) {
   if (course.key === 'galaxy') return `갤럭시 ${galaxyHow(lesson.title)} — 그림으로 쉽게 | DigiStep365`;
+  if (course.key === 'kakaotalk') return `${/^카카오/.test(lesson.title) ? '' : '카카오톡 '}${galaxyHow(lesson.title)} — 실제 화면으로 쉽게 | DigiStep365`;
   const topic = topicOf(course, ch);
   if (!topic || lesson.title.includes(coreWord(topic))) return `${lesson.title} — ${course.title} | DigiStep365`;
   return `${topic}: ${lesson.title} | DigiStep365`;
@@ -87,7 +91,9 @@ function lessonDesc(course, lesson, ch) {
   const n = lesson.cards.length;
   const subject = `${lesson.title}${josa(lesson.title)}`;
   const kakao = /카카오톡|카톡/.test(`${lesson.title} ${ch.title}`) ? '카카오톡 사용법 — ' : '';
-  const base = course.key === 'galaxy'
+  const base = course.key === 'kakaotalk'
+    ? `카카오톡 사용법 — 갤럭시에서 ${/때$/.test(lesson.title) ? `${lesson.title} 해결하는 방법을` : subject} ${n}단계 실제 화면으로 따라 해요.`
+    : course.key === 'galaxy'
     ? `${kakao}갤럭시 스마트폰에서 ${/때$/.test(lesson.title) ? `${lesson.title} 해결하는 방법을` : subject} ${n}단계 그림으로 따라 해요.`
     : `${topicOf(course, ch) && !lesson.title.includes(coreWord(topicOf(course, ch))) ? `${topicOf(course, ch)} — ` : ''}${subject} ${n}단계 그림으로 따라 해요.`;
   const more = words.length ? ` ${words.join('·')}도 함께 알려 드려요.` : '';
@@ -141,15 +147,20 @@ const header = () => `<header class="top">
   <div class="size" role="group" aria-label="글씨 크기">${[['normal', '보통'], ['large', '크게'], ['xlarge', '아주 크게']].map(([k, v]) => `<button type="button" class="size--${k}" data-size="${k}" aria-pressed="${k === 'normal'}" aria-label="${v}" title="${v}"><span aria-hidden="true">가</span></button>`).join('')}</div>
 </header>`;
 /** 하단(국내): 브랜드·공유 아이콘·안내 문구·문의·정책·언어·저작권 */
-export const koFooter = () => siteFooter({
-  lang: 'ko', privacyHref: '/privacy/', termsHref: '/terms/', shareUrl: SITE_HOME,
+export const koFooter = ({ extra = '' } = {}) => siteFooter({
+  lang: 'ko', extra, privacyHref: '/privacy/', termsHref: '/terms/', shareUrl: SITE_HOME,
   langLinks: LANGUAGES.filter((x) => x.code !== 'ko').map((x) => `<a href="/${x.code.toLowerCase()}/" hreflang="${x.code}" lang="${x.code}">${esc(x.name)}</a>`).join(' · '),
 });
-const footer = () => `${koFooter()}
+const footer = (course) => `${course === 'kakaotalk' ? koFooter({ extra: `<p class="draft brand-note">${esc(KAKAO_DISCLAIMER)}</p>` }) : koFooter()}
 ${koConsent()}`;
 const crumbNav = (crumbs) => `<nav class="crumbs" aria-label="현재 위치"><ol>${crumbs.map(([n, p], i) => i === crumbs.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="${p}">${esc(n)}</a></li>`).join('')}</ol></nav>`;
 
 function picture(card) {
+  // 실제 화면 이미지(카카오톡): 그림은 그대로, 누를 곳에만 빨간 원
+  if (card?.photo) {
+    const t = card.photo.target;
+    return `<figure class="pic pic--photo" role="img" aria-label="${esc(card.photo.alt ?? card.alt)}"><img src="${esc(card.photo.src)}" alt="" ${card.photo.w ? `width="${card.photo.w}" height="${card.photo.h}"` : ''} loading="lazy">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</figure>`;
+  }
   if (!card?.screen) return '';
   const pic = renderScreen(card.screen, card.target, card.action);
   return `<figure class="pic" role="img" aria-label="${esc(card.alt ?? '휴대폰 화면 그림')}">${pic.svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</figure>`;
@@ -165,7 +176,7 @@ function lessonPage(course, ch, lesson, siblings, alternates) {
   const next = siblings[idx + 1];
   const words = (lesson.q ?? []).filter((w) => w !== lesson.title);
   const desc = lessonDesc(course, lesson, ch);
-  const topic = course.key === 'galaxy' ? '갤럭시 스마트폰 사용법' : topicOf(course, ch) || course.title;
+  const topic = course.key === 'galaxy' ? '갤럭시 스마트폰 사용법' : course.key === 'kakaotalk' ? '카카오톡 사용법' : topicOf(course, ch) || course.title;
   const ld = { '@type': 'LearningResource', name: course.key === 'galaxy' ? `갤럭시 ${lesson.title}` : lesson.title, description: desc, url: `${SITE_URL}${path}`, inLanguage: 'ko', isAccessibleForFree: true, educationalLevel: '초급', learningResourceType: '단계별 그림 안내', teaches: topic, audience: { '@type': 'Audience', audienceType: '스마트폰 초보·어르신' }, isPartOf: { '@type': 'Course', name: course.title, url: `${SITE_URL}/learn/${course.key}/` }, provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` } };
   return `${head({ title: lessonTitle(course, lesson, ch), desc, path, crumbs, alternates, ld })}
 <body>
@@ -185,12 +196,12 @@ ${lesson.cards.map((c, i) => `<li class="step">
 </li>`).join('\n')}
 </ol>
 ${lesson.caution ? `<p class="step__note"><strong>주의</strong> ${esc(lesson.caution)}</p>` : ''}
-<p class="based">${course.key === 'galaxy' ? `기준: ${esc(BASE.model)} · ${esc(BASE.software)}. 기종과 버전에 따라 메뉴 이름이 조금 다를 수 있어요.` : '연습 화면은 실제 앱과 조금 다를 수 있어요. 돈이 나가거나 비밀번호가 필요한 일은 연습 화면에서만 해요.'}</p>
+<p class="based">${course.key === 'kakaotalk' ? `기준: ${esc(lesson.model)} · ${esc(lesson.software)} · 확인 ${esc(lesson.checked)}. 카카오톡 업데이트에 따라 메뉴 위치가 바뀔 수 있어요.${lesson.check ? ` ${esc(lesson.check)}` : ''}` : course.key === 'galaxy' ? `기준: ${esc(BASE.model)} · ${esc(BASE.software)}. 기종과 버전에 따라 메뉴 이름이 조금 다를 수 있어요.` : '연습 화면은 실제 앱과 조금 다를 수 있어요. 돈이 나가거나 비밀번호가 필요한 일은 연습 화면에서만 해요.'}</p>
 <a class="btn btn--primary btn--block" href="${appLesson(lesson)}">연습 화면으로 따라 하기</a>
 ${next ? `<p class="finish">다음 수업: <a href="${koLessonPath(course.key, next.id)}">${esc(next.title)}</a></p>` : ''}
 <section class="popular"><h2>같은 목차의 수업</h2><ul class="lessons">${siblings.filter((x) => x.id !== lesson.id).map((x) => `<li><a href="${koLessonPath(course.key, x.id)}">${esc(x.title)}<span>${x.cards.length}단계</span></a></li>`).join('')}</ul></section>
 </main>
-${footer()}
+${footer(course.key)}
 </body>
 </html>
 `;
@@ -222,7 +233,7 @@ ${course.chapters.filter((ch) => !g.id || ch.group === g.id).map((ch) => `<secti
 </section>`).join('\n')}
 </section>`).join('\n')}
 </main>
-${footer()}
+${footer(course.key)}
 </body>
 </html>
 `;

@@ -12,27 +12,31 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261127.2141';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261127.2141';
-import * as DIGITAL from '../data/digital/index.js?v=20261127.2141';
-import * as AI from '../data/ai/index.js?v=20261127.2141';
-import * as SCAM from '../data/scam/index.js?v=20261127.2141';
-import * as CREATIVE from '../data/creative/index.js?v=20261127.2141';
-import * as CAREER from '../data/career/index.js?v=20261127.2141';
+import { CATEGORIES } from '../data/categories.js?v=20261127.2156';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261127.2156';
+import * as DIGITAL from '../data/digital/index.js?v=20261127.2156';
+import * as AI from '../data/ai/index.js?v=20261127.2156';
+import * as SCAM from '../data/scam/index.js?v=20261127.2156';
+import * as CREATIVE from '../data/creative/index.js?v=20261127.2156';
+import * as CAREER from '../data/career/index.js?v=20261127.2156';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
-const COURSES = { digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261127.2141';
-import { renderScreen } from './screens.js?v=20261127.2141';
-import { appInfo, appIconStandalone } from './apps.js?v=20261127.2141';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261127.2141';
-import { VERSION } from './version.js?v=20261127.2141';
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261127.2141';
-import { metaOf } from '../data/galaxy/meta.js?v=20261127.2141';
+import * as KAKAO from '../data/kakaotalk/public.js?v=20261127.2156';
+// 카카오톡 사용법: 국내 전용. 공개된(실제 화면·검수 완료) 수업만 카드가 있고 나머지는 ‘수업 준비 중’
+const COURSES = { kakaotalk: KAKAO, digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
+import { BASE } from '../data/galaxy/helpers.js?v=20261127.2156';
+import { renderScreen } from './screens.js?v=20261127.2156';
+import { appInfo, appIconStandalone } from './apps.js?v=20261127.2156';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261127.2156';
+import { VERSION } from './version.js?v=20261127.2156';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261127.2156';
+import { metaOf } from '../data/galaxy/meta.js?v=20261127.2156';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
 const GROUP_CAT = { basic: 'cat-1', life: 'cat-3', apply: 'cat-2', adv: 'cat-4' };
-const HOME_CAT = ['cat-1', 'cat-4', 'cat-3', 'cat-2', 'cat-1', 'cat-3'];
+const HOME_CAT = { galaxy: 'cat-1', kakaotalk: 'cat-5', scam: 'cat-4', 'digital-life': 'cat-3', ai: 'cat-2', creative: 'cat-1', career: 'cat-3' };
+// 카테고리별 ‘수업 준비 중’ 표시: 카카오톡은 공개 수업이 하나도 없을 때만
+const isPreparing = (c) => (c.id === 'kakaotalk' ? KAKAO.PUBLIC_COUNT === 0 || KAKAO.PUBLIC_COUNT < KAKAO.allLessons().length : c.preparing);
 const app = document.getElementById('app');
 
 /* ---------- 저장 ---------- */
@@ -96,9 +100,9 @@ function viewHome() {
     <p class="lead">천천히, 한 번에 한 가지씩 따라 하면 됩니다.</p>
     <ul class="cat-list">
       ${CATEGORIES.map((c, i) => `<li>
-        <a class="cat ${HOME_CAT[i]} ${c.ready ? '' : 'cat--soon'}" href="${c.ready ? c.href : `#/soon/${c.id}`}">
+        <a class="cat ${HOME_CAT[c.id] ?? 'cat-1'} ${c.ready ? '' : 'cat--soon'}" href="${c.ready ? c.href : `#/soon/${c.id}`}">
           <span class="cat__num" aria-hidden="true">${i + 1}</span>
-          <span class="cat__body"><span class="cat__title">${esc(c.title)}</span><span class="cat__desc">${esc(c.desc)}</span>${!c.ready ? '<span class="badge badge--soon">준비 중</span>' : c.preparing ? '<span class="badge badge--doing">목차 공개 · 수업 준비 중</span>' : ''}</span>
+          <span class="cat__body"><span class="cat__title">${esc(c.title)}</span><span class="cat__desc">${esc(c.desc)}</span>${!c.ready ? '<span class="badge badge--soon">준비 중</span>' : isPreparing(c) ? `<span class="badge badge--doing">${c.id === 'kakaotalk' && KAKAO.PUBLIC_COUNT ? `수업 ${KAKAO.PUBLIC_COUNT}개 공개 · 나머지 준비 중` : '목차 공개 · 수업 준비 중'}</span>` : ''}</span>
           ${ICON.chev}
         </a></li>`).join('')}
     </ul>
@@ -152,6 +156,20 @@ function resumeBox(course = 'galaxy') {
 }
 
 const EXAMPLES = ['글씨가 작아요', '소리가 안 나요', '사진 보내기', '전화 걸기', '와이파이'];
+const KAKAO_EXAMPLES = ['카톡 사진 보내기', '카카오톡 친구 추가', '카톡 글씨 크게', '카톡 영상통화', '카톡 알림 끄기'];
+/** 갤럭시·카카오톡 통합 검색 상자 */
+function searchBox(examples, placeholder) {
+  return `<section class="search" aria-labelledby="search-h">
+      <h2 id="search-h" class="search__h">무엇이 궁금하세요?</h2>
+      <form class="search__form" role="search" data-search>
+        <label class="sr-only" for="q">찾고 싶은 내용</label>
+        <input id="q" name="q" type="search" class="search__input" placeholder="${esc(placeholder)}" autocomplete="off" enterkeyhint="search">
+        <button type="submit" class="btn btn--primary search__btn">${ICON.search}<span>찾기</span></button>
+      </form>
+      <div class="chips" aria-label="자주 찾는 말">${examples.map((e) => `<button type="button" class="chip" data-example="${esc(e)}">${esc(e)}</button>`).join('')}</div>
+      <div class="search__results" id="results" aria-live="polite"></div>
+    </section>`;
+}
 
 function viewGalaxy() {
   document.title = '갤럭시 휴대폰 사용방법 | 편한자판 시니어 교육';
@@ -162,16 +180,7 @@ function viewGalaxy() {
     <p class="lead">22개 목차 중 배우고 싶은 것을 누르세요.</p>
     ${deviceBox()}
     ${resumeBox()}
-    <section class="search" aria-labelledby="search-h">
-      <h2 id="search-h" class="search__h">무엇이 궁금하세요?</h2>
-      <form class="search__form" role="search" data-search>
-        <label class="sr-only" for="q">찾고 싶은 내용</label>
-        <input id="q" name="q" type="search" class="search__input" placeholder="예: 글씨가 작아요" autocomplete="off" enterkeyhint="search">
-        <button type="submit" class="btn btn--primary search__btn">${ICON.search}<span>찾기</span></button>
-      </form>
-      <div class="chips" aria-label="자주 찾는 말">${EXAMPLES.map((e) => `<button type="button" class="chip" data-example="${esc(e)}">${esc(e)}</button>`).join('')}</div>
-      <div class="search__results" id="results" aria-live="polite"></div>
-    </section>
+    ${searchBox(EXAMPLES, '예: 글씨가 작아요')}
     ${GROUPS.map((g) => `<section class="toc-group ${GROUP_CAT[g.id]}" aria-labelledby="g-${g.id}">
       <h2 class="toc-group__h" id="g-${g.id}">${esc(g.title)}</h2>
       <ol class="toc">
@@ -289,7 +298,9 @@ function chooseDevice(kind, val) {
 let INDEX = null;
 function searchIndex() {
   if (INDEX) return INDEX;
-  INDEX = allLessons().map(({ lesson, chapter }) => ({
+  // 국내 통합 검색: 갤럭시 + 카카오톡(준비 중인 카카오톡 수업도 목차로 안내)
+  const kakao = KAKAO.allLessons().map(({ lesson, chapter }) => ({ lesson, chapter: { ...chapter, course: 'kakaotalk' } }));
+  INDEX = [...allLessons(), ...kakao].map(({ lesson, chapter }) => ({
     lesson, chapter,
     title: norm(lesson.title),
     keys: lesson.q.map(norm),
@@ -317,13 +328,25 @@ export function search(query) {
   return scored.sort((a, b) => b.s - a.s || a.chapter.num - b.chapter.num).slice(0, 12);
 }
 
+/** 검색 결과 한 줄: 카드가 없는(준비 중) 카카오톡 수업은 목차로 안내 */
+function searchRow(lesson, chapter) {
+  if (lesson.cards.length) return lessonRow(lesson, chapter, true);
+  return `<li><a class="lesson-row lesson-row--soon cat-5" href="#/${chapter.course}/${two(chapter.num)}">
+    <span class="lesson-row__body"><span class="lesson-row__chapter">카카오톡 · ${two(chapter.num)}. ${esc(chapter.title)}</span>
+      <span class="lesson-row__title">${esc(lesson.title)}</span>
+      <span class="lesson-row__meta"><span class="badge badge--soon">수업 준비 중</span></span></span>${ICON.chev}</a></li>`;
+}
+
+let searchTimer;
 function showResults(query) {
   const box = document.getElementById('results');
   if (!box) return;
   const list = search(query);
+  clearTimeout(searchTimer);
+  if (query.trim()) searchTimer = setTimeout(() => track('ds_search', { search_term: query.trim().slice(0, 40), results: list.length, kakaotalk_results: list.filter((x) => x.chapter.course === 'kakaotalk').length }), 1500);
   if (!query.trim()) { box.innerHTML = ''; return; }
   box.innerHTML = list.length
-    ? `<p class="search__count">‘${esc(query)}’ 수업 ${list.length}개</p><ul class="lesson-list">${list.map(({ lesson, chapter }) => lessonRow(lesson, chapter, true)).join('')}</ul>`
+    ? `<p class="search__count">‘${esc(query)}’ 수업 ${list.length}개</p><ul class="lesson-list">${list.map(({ lesson, chapter }) => searchRow(lesson, chapter)).join('')}</ul>`
     : `<p class="search__count">‘${esc(query)}’에 맞는 수업을 찾지 못했어요. 다른 말로 찾아보거나 아래 목차를 눌러 보세요.</p>`;
 }
 
@@ -392,9 +415,11 @@ function stopSpeak() {
 function cardFigure(card) {
   if (card.photo) {
     const t = card.photo.target;
-    return `<div class="stage__frame"><div class="stage__pic stage__pic--photo" role="img" aria-label="${esc(card.photo.alt ?? card.alt)}">
+    // 세로로 긴 실제 화면 캡처: 한 화면 안에 빨간 원까지 보이게 높이를 줄인다(비율 그대로라 원 위치는 정확)
+    const tall = card.photo.w && card.photo.h > card.photo.w * 1.3 ? ` stage__frame--tall" style="--ar:${card.photo.w / card.photo.h}` : '';
+    return `<div class="stage__frame${tall}"><div class="stage__pic stage__pic--photo" role="img" aria-label="${esc(card.photo.alt ?? card.alt)}">
       <img src="${esc(card.photo.src)}" alt="" />
-      ${t ? `<span class="photo-ring" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}
+      ${t ? `<span class="photo-ring${card.photo.src.startsWith('/images/kakaotalk/') ? ' photo-ring--circle' : ''}" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}
     </div>${t && card.action !== 'self' ? `<button type="button" class="hit" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%" aria-label="연습: ${esc(card.target)} 누르기"></button>` : ''}</div>`;
   }
   const pic = renderScreen(card.screen, card.target, card.action);
@@ -427,7 +452,7 @@ function viewCard(lesson, chapter, idx) {
   const isLast = idx === total - 1;
   const real = store.mode[lesson.id] === 'real';
   const doneLabel = (real && card.realDoneLabel) || card.doneLabel || '완료';
-  document.title = `${idx + 1}/${total} ${lesson.title} | 갤럭시 휴대폰 사용방법`;
+  document.title = `${idx + 1}/${total} ${lesson.title} | ${COURSES[chapter.course]?.COURSE?.title ?? '갤럭시 휴대폰 사용방법'}`;
   return `<div class="lesson">
   <header class="lesson__top">
     <a class="lesson__close" href="${chapterHref(chapter)}">${ICON.close}<span>닫기</span></a>
@@ -467,6 +492,7 @@ function viewCard(lesson, chapter, idx) {
       </dl>
       <ul class="meta__src">${lesson.src.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join('')}</ul>
     </details>
+    ${chapter.course ? brandNote(chapter.course) : ''}
   </main>
   <nav class="navbar" aria-label="단계 이동">
     ${idx === 0
@@ -505,15 +531,19 @@ function courseLessonRow(lesson, chapter, key) {
       <span class="lesson-row__meta"><span class="badge badge--soon">수업 준비 중</span></span></span></div></li>`;
 }
 
+/** 카카오톡 페이지 아래 독립 교육 안내 */
+const brandNote = (key) => (COURSES[key]?.COURSE?.disclaimer ? `<p class="notice notice--brand">${esc(COURSES[key].COURSE.disclaimer)}</p>` : '');
+
 function viewCourse(key) {
   const { COURSE, GROUPS: DG, CHAPTERS: DC, allLessons: all } = COURSES[key];
   document.title = `${COURSE.title} | DigiStep365`;
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(COURSE.title)}</h1>
-    <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.</p>
+    <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.${key === 'kakaotalk' ? ` 실제 카카오톡 화면으로 검수를 마친 수업부터 차례로 열려요(지금 ${KAKAO.PUBLIC_COUNT}개).` : ''}</p>
     <p class="notice">${esc(COURSE.safety)}</p>
     ${resumeBox(key)}
+    ${key === 'kakaotalk' ? searchBox(KAKAO_EXAMPLES, '예: 카톡 사진 보내기') : ''}
     ${DG.map((g) => `<section class="toc-group ${g.cat}" aria-labelledby="dg-${g.id}">
       <h2 class="toc-group__h" id="dg-${g.id}">${esc(g.title)}</h2>
       <ol class="toc">
@@ -526,6 +556,7 @@ function viewCourse(key) {
           </a></li>`).join('')}
       </ol>
     </section>`).join('')}
+    ${brandNote(key)}
   </main>`;
 }
 
@@ -539,8 +570,9 @@ function viewCourseChapter(key, num) {
   <main class="page ${g?.cat ?? ''}" id="main">
     <p class="eyebrow">${esc(g?.title ?? '')} · 목차 ${two(ch.num)}</p>
     <h1 class="page__title">${two(ch.num)}. ${esc(ch.title)}</h1>
-    <p class="lead">${esc(ch.desc)}. 배울 수업을 누르세요. 모두 연습 화면이에요.</p>
+    <p class="lead">${key === 'kakaotalk' ? `사용법 ${ch.lessons.length}가지. 실제 카카오톡 화면으로 검수를 마친 수업부터 열려요.` : `${esc(ch.desc)}. 배울 수업을 누르세요. 모두 연습 화면이에요.`}</p>
     <ul class="lesson-list">${ch.lessons.map((l) => courseLessonRow(l, ch, key)).join('')}</ul>
+    ${brandNote(key)}
   </main>`;
 }
 
@@ -560,7 +592,17 @@ function enterCard(lesson, idx) {
   save();
 }
 
+/* ---------- 방문 통계 이벤트(기존 GTM/GA4 재사용, 개인정보 없음) ---------- */
+// dataLayer가 있을 때만(구글 태그 관리자가 켜진 국내 페이지). 쿠키 동의는 동의 모드가 따로 처리한다.
+function track(event, data) {
+  if (!Array.isArray(window.dataLayer)) return;
+  window.dataLayer.push({ event, ...data });
+}
+const courseOf = (chapter) => chapter?.course ?? 'galaxy';
+
 function finishLesson(lesson) {
+  const f = findLesson(lesson.id);
+  track('ds_lesson_complete', { course: courseOf(f?.chapter), lesson_id: lesson.id, lesson_title: lesson.title, steps: lesson.cards.length });
   store.lessons[lesson.id] = { card: 0, done: true, at: new Date().toISOString().slice(0, 10) };
   if (store.current?.id === lesson.id) store.current = null;
   save();
@@ -596,6 +638,8 @@ function route() {
         const idx = Math.min(Math.max(Number(parts[2]) || 1, 1), lesson.cards.length) - 1;
         enterCard(lesson, idx);
         currentCard = { lesson, chapter, idx, card: lesson.cards[idx] };
+        if (idx === 0) track('ds_lesson_start', { course: courseOf(chapter), lesson_id: lesson.id, lesson_title: lesson.title, steps: lesson.cards.length });
+        track('ds_step_view', { course: courseOf(chapter), lesson_id: lesson.id, step: idx + 1, steps: lesson.cards.length });
         html = viewCard(lesson, chapter, idx);
         focusInstr = true;
       }
@@ -736,7 +780,7 @@ function speakCurrent(btn) {
   if (speaking) { stopSpeak(); btn.querySelector('span').textContent = '음성으로 듣기'; return; }
   if (!currentCard) return;
   const { card, idx, lesson } = currentCard;
-  speak(speechText({ text: card.text, hint: card.hint, idx, total: lesson.cards.length }), btn);
+  speak(speechText({ text: card.say ?? card.text, hint: card.hint, idx, total: lesson.cards.length }), btn);
 }
 
 app.addEventListener('click', (e) => {

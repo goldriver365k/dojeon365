@@ -357,3 +357,12 @@ svg { display: block; }
 .consent div { display: flex; gap: 8px; flex-wrap: wrap; }
 .consent .btn { min-height: 48px; flex: 1; }
 .ssr h2 { font-size: 1.2rem; margin: 16px 0 4px; }
+
+/* 카카오톡 사용법(국내 전용): 노란 포인트 색 — 카카오 공식 디자인과 구별되도록 로고·말풍선 모양은 쓰지 않는다 */
+:root { --cat-5: #7a5600; --cat-5-bg: #fff6d6; --cat-5-line: #f0c94a; --cat-5-dot: #f5c518; }
+.cat-5 { --c: var(--cat-5); --c-bg: var(--cat-5-bg); --c-line: var(--cat-5-line); }
+.cat.cat-5:not(.cat--soon) .cat__num { background: var(--cat-5-dot); color: #2b2000; }
+.photo-ring--circle { border-radius: 50%; border-width: 6px; box-shadow: 0 0 0 3px rgb(255 255 255 / .85); }
+.notice--brand { margin: 24px 0 0; font-size: 1rem; color: var(--ink-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cat-5: #ffd866; --cat-5-bg: #3a2f08; --cat-5-line: #8a6d10; } }
+.stage__frame--tall { width: min(100%, calc(62vh * var(--ar))); margin-inline: auto; }

@@ -1,0 +1,47 @@
+/* 관리자: 카카오톡 수업 관리 */
+.kadmin { max-width: 1200px; }
+.kadmin__sum { margin: 12px 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.kadmin__sum p { margin: 4px 0; }
+.kadmin__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.kchip { padding: 2px 10px; border-radius: 999px; background: var(--surface-2); font-size: .85rem; font-weight: 700; }
+.kchip--published, .kchip--reviewed { background: #e1f9ef; color: #00603b; }
+.kchip--update { background: #fff6d6; color: #6b4b00; }
+.kchip--private { background: #eee; color: #555; }
+.kadmin__cols { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: 16px; align-items: start; }
+@media (max-width: 860px) { .kadmin__cols { grid-template-columns: 1fr; } }
+.kadmin__list { max-height: 80vh; overflow: auto; border: 1px solid var(--line); border-radius: 12px; padding: 8px; background: var(--surface); position: sticky; top: 8px; }
+.kgroup h2 { display: flex; justify-content: space-between; gap: 8px; font-size: 1rem; margin: 10px 4px 4px; }
+.kgroup h2 small { color: var(--ink-2); font-weight: 600; }
+.kgroup__tools { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 4px 4px; }
+.kgroup__tools button, .kedit__tools button, .kstep__tools button, .kstep__pic > button { font: inherit; font-size: .85rem; padding: 4px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; }
+.kgroup ol { list-style: none; margin: 0; padding: 0; }
+.klink { display: grid; grid-template-columns: auto 1fr; column-gap: 6px; width: 100%; text-align: start; font: inherit; font-size: .95rem; padding: 6px 8px; border: 0; border-radius: 8px; background: none; cursor: pointer; color: var(--ink); }
+.klink small { grid-column: 2; color: var(--ink-2); font-size: .8rem; }
+.klink.is-on, .klink:hover { background: var(--surface-2); }
+.kdot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; background: #c5cbe3; }
+.kdot--published { background: #00a35c; } .kdot--update { background: #e9a800; } .kdot--reviewed { background: #5fd6a6; } .kdot--review { background: #7aa5ff; } .kdot--image { background: #f08c8c; } .kdot--private { background: #555; }
+.kadmin__editor { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: var(--surface); min-width: 0; }
+.kedit__head h2 { margin: 4px 0 8px; }
+.kedit__tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.kgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 12px; }
+.kf { display: grid; gap: 4px; font-weight: 700; font-size: .9rem; }
+.kf input, .kf select, .kf textarea { font: inherit; font-weight: 500; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); min-width: 0; }
+.kf--check { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.kbox { border: 1px solid var(--line); border-radius: 10px; margin: 12px 0; padding: 8px 12px; }
+.kbox--s { margin: 8px 0; }
+.kprob { background: #fdecea; border-radius: 10px; padding: 8px 12px; margin: 12px 0; }
+.kok { background: #e1f9ef; border-radius: 10px; padding: 8px 12px; color: #00603b; font-weight: 700; }
+.ksteps { list-style: none; padding: 0; display: grid; gap: 12px; }
+.kstep { display: grid; grid-template-columns: 220px 1fr; gap: 12px; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+@media (max-width: 640px) { .kstep { grid-template-columns: 1fr; } }
+.kstep__pic { display: grid; gap: 6px; align-content: start; }
+.kshot { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); cursor: crosshair; background: #000; }
+.kshot img { display: block; width: 100%; height: auto; user-select: none; }
+.kshot--empty { display: grid; place-items: center; min-height: 260px; background: var(--surface-2); color: var(--ink-2); cursor: default; font-size: .9rem; text-align: center; padding: 8px; }
+.kshot .photo-ring { position: absolute; border: 5px solid #d7263d; pointer-events: none; }
+.kfile { display: inline-block; font-weight: 700; font-size: .9rem; }
+.kfile input { display: block; font-size: .85rem; max-width: 100%; }
+.kstep__tools { display: flex; gap: 6px; }
+.kadmin .edit__bar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; margin: 12px 0; }
+.kadmin .edit__bar label { display: grid; gap: 4px; font-weight: 700; }
+.kadmin .edit__bar select, .kadmin .edit__bar input { font: inherit; min-height: 44px; padding: 0 10px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); min-width: 200px; }

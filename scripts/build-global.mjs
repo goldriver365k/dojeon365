@@ -12,6 +12,7 @@ import { renderScreen, setTranslator } from '../assets/screens.js';
 import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { siteFooter, FOOTER, CONTACT_EMAIL, TERMS_DATE } from '../i18n/footer.js';
+import { buildKakaotalk } from './build-kakaotalk.mjs';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
 import { UI_EXTRA, SEO } from '../i18n/ui-extra.js';
@@ -385,7 +386,7 @@ function adminPage(rows) {
 <a class="brand admin__brand" href="/admin/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
 <h1>콘텐츠 현황</h1>
 <p class="lead">빌드할 때 자동으로 만들어지는 현황표입니다. 검색엔진에는 노출되지 않습니다.</p>
-<p><a class="btn btn--primary" href="/admin/edit/">수업 편집·검수하기</a></p>
+<p><a class="btn btn--primary" href="/admin/edit/">수업 편집·검수하기</a> <a class="btn" href="/admin/kakaotalk/">카카오톡 수업 관리(국내 전용)</a></p>
 <table class="sum"><thead><tr><th>항목</th>${codes.map((c) => `<th>${c}</th>`).join('')}</tr></thead><tbody>
 <tr><th>해외용 갤럭시 수업(한국 전용 제외)</th>${codes.map(() => `<td>${total}</td>`).join('')}</tr>
 <tr><th>단계 작성</th>${codes.map((c) => `<td>${count(c, (x) => x)} / ${total}</td>`).join('')}</tr>
@@ -544,6 +545,7 @@ export function build() {
     result[code] = { pages, ...stats[code] };
   }
   setTranslator(null);
+  const kakaotalk = buildKakaotalk({ version: VERSION, brandTagline: BRAND_TAGLINE });
   const koPages = buildKo({ version: VERSION, alternatesFor: (id) => { const a = lessonAlternates(id); delete a.ko; return a; } });
   const lastmod = lastmodFor(['/', ...koPages.map((x) => x.path), ...sitemap.map((x) => x.path)]);
   const lm = (path) => (lastmod[path] ? `<lastmod>${lastmod[path]}</lastmod>` : '');
@@ -565,7 +567,7 @@ ${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}
   mkdirSync(new URL('../admin/data/', import.meta.url), { recursive: true });
   for (const code of Object.keys(LOCALES)) writeFileSync(new URL(`../admin/data/${code}.json`, import.meta.url), JSON.stringify(editData(code)));
   writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
-  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length };
+  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length, kakaotalk };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) console.log(build());

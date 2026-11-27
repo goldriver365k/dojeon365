@@ -214,3 +214,9 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .seo-intro h2 { font-size: 1.15rem; margin: 0 0 6px; }
 .seo-intro p { margin: 0; color: var(--ink-2); line-height: 1.7; }
 .seo-intro:lang(ko) { word-break: keep-all; overflow-wrap: anywhere; }
+/* 실제 화면 이미지 카드(카카오톡): 그림은 그대로, 누를 곳에만 빨간 원 */
+.pic--photo { position: relative; max-width: 360px; margin: 8px auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+.pic--photo img { display: block; width: 100%; height: auto; }
+.photo-ring { position: absolute; border: 5px solid #d7263d; border-radius: 12px; pointer-events: none; }
+.photo-ring--circle { border-radius: 50%; border-width: 6px; box-shadow: 0 0 0 3px rgb(255 255 255 / .85); }
+.brand-note { font-size: .9rem; }

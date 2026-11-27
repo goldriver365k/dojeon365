@@ -1,0 +1,5379 @@
+{
+ "schema": 1,
+ "meta": {
+  "course": "kakaotalk",
+  "title": "카카오톡 사용법",
+  "subtitle": "처음부터 하나씩 쉽게 배우는 카카오톡",
+  "lang": "ko-KR",
+  "site": "kr",
+  "global": false,
+  "translate": false,
+  "platforms": [
+   "android"
+  ],
+  "basePlatform": "android",
+  "updated": "2026-11-27",
+  "note": "162개는 초기 제작 목표이며 공식 기능 총수가 아님. 최신 앱에서 지원하지 않거나 중복되는 기능은 검수 후 교체."
+ },
+ "chapters": [
+  {
+   "num": 1,
+   "key": "start",
+   "title": "카카오톡 설치 및 시작하기",
+   "group": "basic",
+   "lessons": [
+    {
+     "id": "k01-install",
+     "title": "카카오톡 설치하기",
+     "status": "image",
+     "q": [
+      "카톡 설치",
+      "카톡 깔기",
+      "카카오톡 다운로드"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요.",
+     "existing": {
+      "course": "galaxy",
+      "id": "g13-install"
+     }
+    },
+    {
+     "id": "k01-open",
+     "title": "카카오톡 실행하기",
+     "status": "image",
+     "q": [
+      "카톡 열기",
+      "카톡 켜기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k01-account-create",
+     "title": "카카오계정 만들기",
+     "status": "image",
+     "q": [
+      "카카오 회원가입",
+      "카톡 가입"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k01-phone-verify",
+     "title": "전화번호 인증하기",
+     "status": "image",
+     "q": [
+      "카톡 인증번호",
+      "전화번호 인증"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k01-login",
+     "title": "카카오계정 로그인하기",
+     "status": "image",
+     "q": [
+      "카톡 로그인"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k01-update",
+     "title": "카카오톡 업데이트하기",
+     "status": "image",
+     "q": [
+      "카톡 업데이트"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k01-version",
+     "title": "카카오톡 버전 확인하기",
+     "status": "image",
+     "q": [
+      "카톡 버전"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k01-home-screen",
+     "title": "카카오톡 기본 화면 이해하기",
+     "status": "image",
+     "q": [
+      "카톡 화면",
+      "카톡 메뉴"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "key": "friends",
+   "title": "친구 등록 및 관리",
+   "group": "basic",
+   "lessons": [
+    {
+     "id": "k02-add-phone",
+     "title": "전화번호로 친구 추가하기",
+     "status": "image",
+     "q": [
+      "카카오톡 친구 추가",
+      "카톡 친구 추가",
+      "번호로 친구 추가"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-add-contacts",
+     "title": "연락처로 친구 추가하기",
+     "status": "image",
+     "q": [
+      "연락처 친구 추가"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-add-id",
+     "title": "카카오톡 ID로 친구 추가하기",
+     "status": "image",
+     "q": [
+      "카톡 아이디로 친구 추가"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-add-qr",
+     "title": "QR코드로 친구 추가하기",
+     "status": "image",
+     "q": [
+      "큐알 친구 추가"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-my-qr",
+     "title": "내 QR코드 보여주기",
+     "status": "image",
+     "q": [
+      "내 큐알코드"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-search-friend",
+     "title": "친구 검색하기",
+     "status": "image",
+     "q": [
+      "친구 찾기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-rename-friend",
+     "title": "친구 이름 변경하기",
+     "status": "image",
+     "q": [
+      "친구 이름 바꾸기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-favorite",
+     "title": "즐겨찾는 친구 등록하기",
+     "status": "image",
+     "q": [
+      "즐겨찾기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-hide",
+     "title": "친구 숨기기",
+     "status": "image",
+     "q": [
+      "친구 숨김"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-block",
+     "title": "친구 차단하기",
+     "status": "image",
+     "q": [
+      "카톡 차단"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-unblock",
+     "title": "친구 차단 해제하기",
+     "status": "image",
+     "q": [
+      "차단 풀기"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k02-auto-add",
+     "title": "자동 친구 추가 설정하기",
+     "status": "image",
+     "q": [
+      "자동 친구 추가"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "key": "chat",
+   "title": "채팅 및 메시지 보내기",
+   "group": "basic",
+   "lessons": [
+    {
+     "id": "k03-start-chat",
+     "title": "채팅 시작하기",
+     "status": "image",
+     "q": [
+      "카톡 보내기",
+      "대화 시작"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-send-text",
+     "title": "문자 메시지 보내기",
+     "status": "image",
+     "q": [
+      "카톡 메시지 보내기",
+      "카톡 글 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요.",
+     "existing": {
+      "course": "galaxy",
+      "id": "g13-send"
+     }
+    },
+    {
+     "id": "k03-voice-typing",
+     "title": "음성으로 문자 입력하기",
+     "status": "image",
+     "q": [
+      "말로 카톡 쓰기",
+      "음성 입력"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-read",
+     "title": "받은 메시지 확인하기",
+     "status": "image",
+     "q": [
+      "카톡 확인"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-reply",
+     "title": "메시지에 답장하기",
+     "status": "image",
+     "q": [
+      "카톡 답장"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-copy",
+     "title": "메시지 복사하기",
+     "status": "image",
+     "q": [
+      "카톡 복사"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-paste",
+     "title": "메시지 붙여넣기",
+     "status": "image",
+     "q": [
+      "카톡 붙여넣기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-forward",
+     "title": "메시지 전달하기",
+     "status": "image",
+     "q": [
+      "카톡 전달"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-delete-sent",
+     "title": "잘못 보낸 메시지 삭제하기",
+     "status": "image",
+     "q": [
+      "카톡 보낸 메시지 삭제",
+      "카톡 취소"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-read-count",
+     "title": "메시지 읽음 표시 이해하기",
+     "status": "image",
+     "q": [
+      "숫자 1 사라짐",
+      "읽음 표시"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-search-in-chat",
+     "title": "채팅방에서 메시지 검색하기",
+     "status": "image",
+     "q": [
+      "대화 검색"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-send-link",
+     "title": "링크 보내기",
+     "status": "image",
+     "q": [
+      "주소 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-send-contact",
+     "title": "연락처 보내기",
+     "status": "image",
+     "q": [
+      "전화번호 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-schedule",
+     "title": "메시지 예약 발송하기",
+     "status": "image",
+     "q": [
+      "예약 메시지"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k03-leave-chat",
+     "title": "채팅방 나가기",
+     "status": "image",
+     "q": [
+      "카톡방 나가기",
+      "대화방 나가기"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "key": "media",
+   "title": "사진·동영상·파일 보내기",
+   "group": "basic",
+   "lessons": [
+    {
+     "id": "k04-photo-one",
+     "title": "사진 한 장 보내기",
+     "status": "image",
+     "q": [
+      "카톡 사진 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요.",
+     "existing": {
+      "course": "galaxy",
+      "id": "g13-media"
+     }
+    },
+    {
+     "id": "k04-photo-many",
+     "title": "사진 여러 장 보내기",
+     "status": "image",
+     "q": [
+      "카톡 사진 여러장"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-photo-bundle",
+     "title": "사진 묶어 보내기",
+     "status": "image",
+     "q": [
+      "사진 묶어 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-photo-original",
+     "title": "원본 사진 보내기",
+     "status": "image",
+     "q": [
+      "원본 화질"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-photo-camera",
+     "title": "사진 찍어서 바로 보내기",
+     "status": "image",
+     "q": [
+      "바로 찍어 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-photo-save",
+     "title": "받은 사진 저장하기",
+     "status": "image",
+     "q": [
+      "카톡 사진 저장"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-photo-zoom",
+     "title": "받은 사진 확대하기",
+     "status": "image",
+     "q": [
+      "사진 크게 보기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-video-send",
+     "title": "동영상 보내기",
+     "status": "image",
+     "q": [
+      "카톡 동영상 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요.",
+     "existing": {
+      "course": "galaxy",
+      "id": "g13-media"
+     }
+    },
+    {
+     "id": "k04-video-save",
+     "title": "받은 동영상 저장하기",
+     "status": "image",
+     "q": [
+      "카톡 동영상 저장"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-file-send",
+     "title": "파일 보내기",
+     "status": "image",
+     "q": [
+      "카톡 파일 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-file-open",
+     "title": "받은 파일 열기",
+     "status": "image",
+     "q": [
+      "카톡 파일 열기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k04-media-gallery",
+     "title": "채팅방 사진과 동영상 모아보기",
+     "status": "image",
+     "q": [
+      "사진 모아보기",
+      "서랍"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "key": "call",
+   "title": "음성 메시지·보이스톡·페이스톡",
+   "group": "basic",
+   "lessons": [
+    {
+     "id": "k05-voice-record",
+     "title": "음성 메시지 녹음하기",
+     "status": "image",
+     "q": [
+      "카톡 음성 녹음"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-voice-send",
+     "title": "음성 메시지 보내기",
+     "status": "image",
+     "q": [
+      "음성 메시지"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-voice-listen",
+     "title": "받은 음성 메시지 듣기",
+     "status": "image",
+     "q": [
+      "음성 메시지 듣기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-voicetalk-call",
+     "title": "보이스톡 걸기",
+     "status": "image",
+     "q": [
+      "카카오톡 전화",
+      "카톡 전화 걸기",
+      "무료 전화"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-voicetalk-answer",
+     "title": "보이스톡 받기",
+     "status": "image",
+     "q": [
+      "카톡 전화 받기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-voicetalk-end",
+     "title": "보이스톡 종료하기",
+     "status": "image",
+     "q": [
+      "카톡 전화 끊기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-facetalk-call",
+     "title": "페이스톡 걸기",
+     "status": "image",
+     "q": [
+      "카톡 영상통화",
+      "카카오톡 영상통화"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요.",
+     "existing": {
+      "course": "galaxy",
+      "id": "g13-facetalk"
+     }
+    },
+    {
+     "id": "k05-facetalk-answer",
+     "title": "페이스톡 받기",
+     "status": "image",
+     "q": [
+      "영상통화 받기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-facetalk-camera",
+     "title": "영상통화 중 카메라 전환하기",
+     "status": "image",
+     "q": [
+      "카메라 바꾸기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k05-group-call",
+     "title": "여러 사람과 그룹통화하기",
+     "status": "image",
+     "q": [
+      "그룹콜",
+      "단체 통화"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 6,
+   "key": "group",
+   "title": "단체 채팅방 사용하기",
+   "group": "basic",
+   "lessons": [
+    {
+     "id": "k06-group-create",
+     "title": "단체 채팅방 만들기",
+     "status": "image",
+     "q": [
+      "단톡방 만들기",
+      "단체방 만들기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-group-invite",
+     "title": "단체 채팅방에 친구 초대하기",
+     "status": "image",
+     "q": [
+      "단톡방 초대"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-group-rename",
+     "title": "단체 채팅방 이름 변경하기",
+     "status": "image",
+     "q": [
+      "단톡방 이름"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-group-photo",
+     "title": "단체 채팅방 사진 변경하기",
+     "status": "image",
+     "q": [
+      "단톡방 사진"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-notice-post",
+     "title": "단체 채팅방 공지 등록하기",
+     "status": "image",
+     "q": [
+      "공지 올리기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-notice-read",
+     "title": "공지 확인하기",
+     "status": "image",
+     "q": [
+      "공지 보기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-group-mute",
+     "title": "단체 채팅방 알림 끄기",
+     "status": "image",
+     "q": [
+      "카톡 알림 끄기",
+      "단톡방 알림 끄기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요.",
+     "existing": {
+      "course": "galaxy",
+      "id": "g13-mute"
+     }
+    },
+    {
+     "id": "k06-group-pin",
+     "title": "단체 채팅방 상단 고정하기",
+     "status": "image",
+     "q": [
+      "단톡방 고정"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-members",
+     "title": "단체 채팅방 참여자 확인하기",
+     "status": "image",
+     "q": [
+      "참여자 보기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-mention",
+     "title": "특정 사람을 언급하기",
+     "status": "image",
+     "q": [
+      "멘션",
+      "@"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-group-leave",
+     "title": "단체 채팅방 나가기",
+     "status": "image",
+     "q": [
+      "카톡 단체방 나가기",
+      "단톡방 나가기"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k06-group-leave-quiet",
+     "title": "단체 채팅방 조용히 나가기",
+     "status": "image",
+     "q": [
+      "조용히 나가기"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 7,
+   "key": "profile",
+   "title": "프로필 사진 및 상태 관리",
+   "group": "life",
+   "lessons": [
+    {
+     "id": "k07-profile-view",
+     "title": "내 프로필 확인하기",
+     "status": "image",
+     "q": [
+      "내 프로필"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-photo",
+     "title": "프로필 사진 변경하기",
+     "status": "image",
+     "q": [
+      "카톡 프사 바꾸기",
+      "프사"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-bg",
+     "title": "프로필 배경 변경하기",
+     "status": "image",
+     "q": [
+      "배경 사진"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-name",
+     "title": "프로필 이름 변경하기",
+     "status": "image",
+     "q": [
+      "카톡 이름 바꾸기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-status-msg",
+     "title": "상태 메시지 변경하기",
+     "status": "image",
+     "q": [
+      "상태메시지"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-music",
+     "title": "프로필 음악 설정하기",
+     "status": "image",
+     "q": [
+      "프로필 음악"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-photo-delete",
+     "title": "프로필 사진 삭제하기",
+     "status": "image",
+     "q": [
+      "프사 삭제"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-decorate",
+     "title": "프로필 꾸미기",
+     "status": "image",
+     "q": [
+      "프로필 꾸미기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-multi-profile",
+     "title": "멀티프로필 사용하기",
+     "status": "image",
+     "q": [
+      "멀티 프로필"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k07-profile-privacy",
+     "title": "프로필 공개 범위 관리하기",
+     "status": "image",
+     "q": [
+      "프로필 공개"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 8,
+   "key": "emoticon",
+   "title": "이모티콘 사용하기",
+   "group": "life",
+   "lessons": [
+    {
+     "id": "k08-emoticon-basic",
+     "title": "기본 이모티콘 보내기",
+     "status": "image",
+     "q": [
+      "이모티콘 보내기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-animated",
+     "title": "움직이는 이모티콘 보내기",
+     "status": "image",
+     "q": [
+      "움직이는 이모티콘"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-search",
+     "title": "이모티콘 검색하기",
+     "status": "image",
+     "q": [
+      "이모티콘 찾기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-free",
+     "title": "무료 이모티콘 받기",
+     "status": "image",
+     "q": [
+      "공짜 이모티콘"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-buy",
+     "title": "유료 이모티콘 구매하기",
+     "status": "image",
+     "q": [
+      "이모티콘 사기"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-gift",
+     "title": "이모티콘 선물하기",
+     "status": "image",
+     "q": [
+      "이모티콘 선물"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-order",
+     "title": "이모티콘 순서 변경하기",
+     "status": "image",
+     "q": [
+      "이모티콘 순서"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k08-emoticon-manage",
+     "title": "이모티콘 관리하기",
+     "status": "image",
+     "q": [
+      "이모티콘 정리"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 9,
+   "key": "settings",
+   "title": "채팅방 및 알림 설정",
+   "group": "life",
+   "lessons": [
+    {
+     "id": "k09-font-bigger",
+     "title": "카카오톡 글자 크게 만들기",
+     "status": "image",
+     "q": [
+      "카톡 글씨 크게",
+      "카톡 글자 크기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-font-smaller",
+     "title": "카카오톡 글자 크기 줄이기",
+     "status": "image",
+     "q": [
+      "카톡 글씨 작게"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-chat-bg",
+     "title": "채팅방 배경 변경하기",
+     "status": "image",
+     "q": [
+      "채팅방 배경"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-theme",
+     "title": "카카오톡 테마 변경하기",
+     "status": "image",
+     "q": [
+      "카톡 테마"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-notify-on",
+     "title": "전체 알림 켜기",
+     "status": "image",
+     "q": [
+      "카톡 알림 켜기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-notify-off",
+     "title": "전체 알림 끄기",
+     "status": "image",
+     "q": [
+      "카톡 알림 끄기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-room-mute",
+     "title": "특정 채팅방 알림 끄기",
+     "status": "image",
+     "q": [
+      "채팅방 알림 끄기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-notify-sound",
+     "title": "메시지 알림음 변경하기",
+     "status": "image",
+     "q": [
+      "카톡 알림음"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-notify-preview",
+     "title": "알림 미리보기 설정하기",
+     "status": "image",
+     "q": [
+      "알림 미리보기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-room-pin",
+     "title": "채팅방 상단 고정하기",
+     "status": "image",
+     "q": [
+      "채팅방 고정"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-room-list",
+     "title": "채팅방 목록 관리하기",
+     "status": "image",
+     "q": [
+      "채팅방 정리"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k09-dnd",
+     "title": "방해금지 시간 설정하기",
+     "status": "image",
+     "q": [
+      "방해금지"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 10,
+   "key": "gift",
+   "title": "카카오톡 선물하기",
+   "group": "apply",
+   "lessons": [
+    {
+     "id": "k10-gift-open",
+     "title": "선물하기 실행하기",
+     "status": "image",
+     "q": [
+      "카톡 선물하기"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-search",
+     "title": "선물 검색하기",
+     "status": "image",
+     "q": [
+      "선물 찾기"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-coffee",
+     "title": "친구에게 커피 선물하기",
+     "status": "image",
+     "q": [
+      "커피 쿠폰"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-birthday",
+     "title": "생일 선물 보내기",
+     "status": "image",
+     "q": [
+      "생일 선물"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-pay",
+     "title": "선물 결제하기",
+     "status": "image",
+     "q": [
+      "선물 결제"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-received",
+     "title": "받은 선물 확인하기",
+     "status": "image",
+     "q": [
+      "받은 선물"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-coupon-use",
+     "title": "모바일 상품권 사용하기",
+     "status": "image",
+     "q": [
+      "기프티콘 쓰기",
+      "모바일 쿠폰"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-address",
+     "title": "배송 상품 주소 입력하기",
+     "status": "image",
+     "q": [
+      "배송지 입력"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-expiry",
+     "title": "선물 사용기간 확인하기",
+     "status": "image",
+     "q": [
+      "유효기간"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k10-gift-refund",
+     "title": "선물 취소 및 환불 확인하기",
+     "status": "image",
+     "q": [
+      "선물 환불"
+     ],
+     "caution": "돈이 나가는 기능이에요. 연습할 때는 결제 화면에서 멈추고, 실제 결제 전에는 금액과 받는 사람을 꼭 확인하세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 11,
+   "key": "wallet",
+   "title": "카카오톡 지갑 및 인증",
+   "group": "apply",
+   "lessons": [
+    {
+     "id": "k11-wallet-open",
+     "title": "카카오톡 지갑 확인하기",
+     "status": "image",
+     "q": [
+      "카톡 지갑"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-cert-issue",
+     "title": "카카오 인증서 발급하기",
+     "status": "image",
+     "q": [
+      "카카오 인증서"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-cert-use",
+     "title": "카카오 인증서 사용하기",
+     "status": "image",
+     "q": [
+      "카카오 인증"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-auth-request",
+     "title": "인증 요청 확인하기",
+     "status": "image",
+     "q": [
+      "인증 요청"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-cert-manage",
+     "title": "인증서 관리하기",
+     "status": "image",
+     "q": [
+      "인증서 관리"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-e-certificate",
+     "title": "전자증명서 이용하기",
+     "status": "image",
+     "q": [
+      "전자증명서"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-e-document",
+     "title": "전자문서 확인하기",
+     "status": "image",
+     "q": [
+      "전자문서"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k11-cert-caution",
+     "title": "인증 및 전자문서 이용 시 주의사항",
+     "status": "image",
+     "q": [
+      "인증 주의"
+     ],
+     "caution": "인증서와 전자문서는 내 신분과 같아요. 내가 요청하지 않은 인증 요청은 누르지 말고, 인증번호·비밀번호는 누구에게도 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 12,
+   "key": "openchat",
+   "title": "오픈채팅 사용하기",
+   "group": "apply",
+   "lessons": [
+    {
+     "id": "k12-openchat-about",
+     "title": "오픈채팅 이해하기",
+     "status": "image",
+     "q": [
+      "오픈채팅"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-openchat-search",
+     "title": "오픈채팅방 검색하기",
+     "status": "image",
+     "q": [
+      "오픈채팅 찾기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-openchat-join",
+     "title": "오픈채팅방 참여하기",
+     "status": "image",
+     "q": [
+      "오픈채팅 들어가기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-openchat-create",
+     "title": "오픈채팅방 만들기",
+     "status": "image",
+     "q": [
+      "오픈채팅 만들기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-open-profile",
+     "title": "오픈프로필 설정하기",
+     "status": "image",
+     "q": [
+      "오픈프로필"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-openchat-notify",
+     "title": "오픈채팅 알림 관리하기",
+     "status": "image",
+     "q": [
+      "오픈채팅 알림"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-openchat-leave",
+     "title": "오픈채팅방 나가기",
+     "status": "image",
+     "q": [
+      "오픈채팅 나가기"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k12-openchat-report",
+     "title": "위험한 오픈채팅방 신고하기",
+     "status": "image",
+     "q": [
+      "오픈채팅 신고"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 13,
+   "key": "security",
+   "title": "개인정보 및 보안 설정",
+   "group": "adv",
+   "lessons": [
+    {
+     "id": "k13-account-check",
+     "title": "카카오계정 확인하기",
+     "status": "image",
+     "q": [
+      "카카오계정"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-password",
+     "title": "비밀번호 변경하기",
+     "status": "image",
+     "q": [
+      "카카오톡 비밀번호",
+      "카톡 비밀번호"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-two-step",
+     "title": "2단계 인증 설정하기",
+     "status": "image",
+     "q": [
+      "2단계 인증"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-devices",
+     "title": "로그인 기기 확인하기",
+     "status": "image",
+     "q": [
+      "로그인 기기"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-logout-device",
+     "title": "모르는 기기 로그아웃하기",
+     "status": "image",
+     "q": [
+      "기기 로그아웃"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-screen-lock",
+     "title": "카카오톡 화면 잠금 설정하기",
+     "status": "image",
+     "q": [
+      "카톡 잠금",
+      "카톡 암호"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-biometric",
+     "title": "생체인증 설정하기",
+     "status": "image",
+     "q": [
+      "지문 잠금"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-allow-add-by-phone",
+     "title": "전화번호로 친구 추가 허용 관리하기",
+     "status": "image",
+     "q": [
+      "친구 추가 허용"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-privacy-settings",
+     "title": "개인정보 설정 확인하기",
+     "status": "image",
+     "q": [
+      "개인정보 설정"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-friend-recommend",
+     "title": "친구 추천 설정 관리하기",
+     "status": "image",
+     "q": [
+      "친구 추천"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-connected-services",
+     "title": "연결된 서비스 확인하기",
+     "status": "image",
+     "q": [
+      "연결된 서비스"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k13-hacked",
+     "title": "계정 도용 의심 시 대처하기",
+     "status": "image",
+     "q": [
+      "카톡 해킹",
+      "계정 도용"
+     ],
+     "caution": "계정을 바꾸는 기능이에요. 비밀번호와 인증번호는 다른 사람에게 알려 주지 마세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 14,
+   "key": "backup",
+   "title": "백업·복원·휴대폰 변경",
+   "group": "adv",
+   "lessons": [
+    {
+     "id": "k14-backup-about",
+     "title": "카카오톡 대화 백업 이해하기",
+     "status": "image",
+     "q": [
+      "카톡 백업"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-backup-run",
+     "title": "대화 백업하기",
+     "status": "image",
+     "q": [
+      "카톡 대화 백업"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-backup-password",
+     "title": "백업 비밀번호 설정하기",
+     "status": "image",
+     "q": [
+      "백업 비밀번호"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-backup-status",
+     "title": "백업 상태 확인하기",
+     "status": "image",
+     "q": [
+      "백업 확인"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-new-phone-install",
+     "title": "새 휴대폰에 카카오톡 설치하기",
+     "status": "image",
+     "q": [
+      "폰 바꾸면 카톡"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-new-phone-login",
+     "title": "기존 계정으로 로그인하기",
+     "status": "image",
+     "q": [
+      "새 폰 로그인"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-restore",
+     "title": "대화 내용 복원하기",
+     "status": "image",
+     "q": [
+      "카톡 대화 복구",
+      "카톡 복원"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-media-backup",
+     "title": "사진과 동영상 백업하기",
+     "status": "image",
+     "q": [
+      "사진 백업"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-change-number",
+     "title": "휴대폰 번호 변경하기",
+     "status": "image",
+     "q": [
+      "번호 변경"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k14-backup-error",
+     "title": "백업 및 복원 오류 해결하기",
+     "status": "image",
+     "q": [
+      "복원 안 돼요"
+     ],
+     "caution": "‘대화 백업’과 ‘사진·동영상 백업’은 서로 달라요. 대화 백업에는 사진·동영상이 들어가지 않을 수 있으니, 시작 전에 무엇이 저장되는지 꼭 확인하세요. (공개 전 카카오 고객센터 안내와 대조 필요)",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  },
+  {
+   "num": 15,
+   "key": "safety",
+   "title": "스팸·사기 예방 및 문제 해결",
+   "group": "adv",
+   "lessons": [
+    {
+     "id": "k15-stranger",
+     "title": "모르는 사람의 메시지 대처하기",
+     "status": "image",
+     "q": [
+      "모르는 사람 카톡"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-fake-family",
+     "title": "가족 사칭 메시지 구별하기",
+     "status": "image",
+     "q": [
+      "엄마 나야",
+      "자녀 사칭"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-voice-phishing",
+     "title": "보이스피싱 예방하기",
+     "status": "image",
+     "q": [
+      "보이스피싱"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-smishing",
+     "title": "스미싱 문자 구별하기",
+     "status": "image",
+     "q": [
+      "스미싱"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-bad-link",
+     "title": "위험한 인터넷 링크 확인하기",
+     "status": "image",
+     "q": [
+      "이상한 링크"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-money-request",
+     "title": "송금 요청 사기 예방하기",
+     "status": "image",
+     "q": [
+      "돈 보내 달라"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-auth-code",
+     "title": "인증번호 요구에 대처하기",
+     "status": "image",
+     "q": [
+      "인증번호 달라"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-ad-block",
+     "title": "광고 메시지 차단하기",
+     "status": "image",
+     "q": [
+      "광고 차단"
+     ],
+     "caution": "나가거나 지운 대화는 되돌리기 어려울 수 있어요. 한 번 더 확인하고 누르세요.",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-spam-report",
+     "title": "스팸 메시지 신고하기",
+     "status": "image",
+     "q": [
+      "스팸 신고"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-wont-open",
+     "title": "카카오톡 실행 오류 해결하기",
+     "status": "image",
+     "q": [
+      "카톡이 안 열려요"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-send-fail",
+     "title": "메시지가 전송되지 않을 때",
+     "status": "image",
+     "q": [
+      "카톡 전송 안 됨"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-photo-fail",
+     "title": "사진이 전송되지 않을 때",
+     "status": "image",
+     "q": [
+      "사진 안 보내져요"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-no-notify",
+     "title": "카카오톡 알림이 오지 않을 때",
+     "status": "image",
+     "q": [
+      "카톡 알림 안 와요"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-storage",
+     "title": "카카오톡 저장공간 정리하기",
+     "status": "image",
+     "q": [
+      "카톡 용량 정리"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    },
+    {
+     "id": "k15-help-center",
+     "title": "카카오 고객센터 이용하기",
+     "status": "image",
+     "q": [
+      "카카오 고객센터"
+     ],
+     "caution": "",
+     "menuPath": "",
+     "features": "",
+     "steps": [],
+     "platform": "android",
+     "appVersion": "",
+     "android": "",
+     "oneui": "",
+     "galaxyModel": "",
+     "sources": [
+      {
+       "label": "카카오 더 쉬운 카톡설명서",
+       "url": "https://talktips.kakao.com/"
+      },
+      {
+       "label": "카카오 고객센터",
+       "url": "https://cs.kakao.com/"
+      }
+     ],
+     "lastChecked": "",
+     "reviewedBy": "",
+     "needsUpdate": false,
+     "changes": "",
+     "note": "실제 갤럭시 카카오톡 화면 캡처와 메뉴 경로 확인이 필요해요."
+    }
+   ]
+  }
+ ]
+}
