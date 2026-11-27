@@ -209,3 +209,8 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .device__common[aria-pressed="true"] { background: var(--surface-2); border-color: var(--primary); border-width: 2px; }
 .device__common:hover { border-color: var(--primary); }
 .device__saved:empty { display: none; }
+/* 과정·전체 목록 소개 글(검색에 쓰이는 설명을 사람에게도 보여 줌) */
+.seo-intro { margin: 16px 0 8px; }
+.seo-intro h2 { font-size: 1.15rem; margin: 0 0 6px; }
+.seo-intro p { margin: 0; color: var(--ink-2); line-height: 1.7; }
+.seo-intro:lang(ko) { word-break: keep-all; overflow-wrap: anywhere; }

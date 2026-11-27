@@ -8,6 +8,7 @@
 //        GOOGLE_SITE_VERIFICATION  the content="..." value of Search Console's HTML tag
 //        GTM_ID                    e.g. GTM-XXXXXXX (Google Tag Manager container)
 //        NAVER_SITE_VERIFICATION   the content="..." value of Naver Search Advisor's HTML tag
+//        BING_SITE_VERIFICATION    the content="..." value of Bing Webmaster Tools' msvalidate.01 tag
 //      then redeploy. Environment variables win over the values below.
 const RAW = {
   // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'. Loaded only after the visitor taps "Accept".
@@ -19,6 +20,8 @@ const RAW = {
   searchConsole: '',
   // Naver Search Advisor (서치어드바이저) HTML-tag verification code. Pasting the whole <meta> tag also works.
   naverVerification: '8b2d92ad32e6f8c8243d9b37802356810afd4e33',
+  // Bing Webmaster Tools HTML-tag (msvalidate.01) code. Bing can also import the site from Google Search Console.
+  bingVerification: '',
 };
 
 const env = (typeof process !== 'undefined' && process.env) || {};
@@ -46,4 +49,5 @@ export const SITE_CONFIG = {
   ga4Id: cleanGa4(env.GA4_ID || RAW.ga4Id),
   searchConsole: cleanVerification(env.GOOGLE_SITE_VERIFICATION || RAW.searchConsole),
   naverVerification: cleanVerification(env.NAVER_SITE_VERIFICATION || RAW.naverVerification),
+  bingVerification: cleanVerification(env.BING_SITE_VERIFICATION || RAW.bingVerification),
 };

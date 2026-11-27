@@ -65,3 +65,13 @@
 - 정책: 국내 `/privacy/`(개인정보처리방침: 처리 목적·항목, 보유·파기, 제3자 제공, 위탁·국외 이전, 쿠키, 권리, 안전조치, 책임자), `/terms/`(이용약관 9조). 해외 `/<언어>/privacy/`, `/<언어>/terms/`
 - 국내 연습 화면(`#/lesson/…`)에서는 하단을 숨겨 수업 화면을 넓게 씀
 - 점검: `tests/footer.test.js`, e2e(공유 6개 PC·모바일, 연도, 메일)
+
+## 검색어 점검·최적화 — 2026-11-27
+- 국내 검색어 설계: `i18n/ko-seo.js` (목차별 주제 검색어 `TOPIC`, 과정·전체·첫 화면 제목/설명/소개 글). meta keywords는 쓰지 않음
+- 수업 제목: 갤럭시 “갤럭시 ○○하는 방법”(문제 해결은 “~할 때 해결 방법”), 그 밖의 과정 “주제 검색어: 수업 이름”(수업 이름에 이미 있으면 생략)
+- 수업 설명: 과정별 문장 + 수업마다 있는 검색 동의어(q). 기종·One UI 문구는 기종 제한이 있는 8개 수업에만(One UI 6.1 이상 6개, S펜 울트라, 삼성 파인드 S24 이상)
+- 과정·전체 목록 페이지에 소개 H2+본문, 첫 화면 무JS 영역에 H2
+- 구조화 데이터: 첫 화면 WebSite·EducationalOrganization·ItemList, 전체 목록 ItemList, 과정 Course, 수업 LearningResource(+BreadcrumbList)
+- hreflang: 국내 첫 화면·갤럭시 목록·개인정보·약관 ↔ 19개 언어 상호 연결(이전에는 영어만), 해외 첫 화면 제목을 언어별 검색 문구로
+- Bing: `BING_SITE_VERIFICATION`(또는 site-config `bingVerification`) 넣으면 msvalidate.01 태그가 모든 페이지에
+- 점검 스크립트(세션 스크래치): 사이트맵 전 페이지 title/desc/H1/H2/본문/alt/중복/구조화 데이터/검색어 분포, 해외 2,736쪽 hreflang 상호 연결, 내부 링크 97,810개

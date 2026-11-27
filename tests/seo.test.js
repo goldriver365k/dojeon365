@@ -85,3 +85,49 @@ test('Search Console 코드·GA4 ID 정리: 태그째 붙여 넣어도 되고, �
   assert.equal(cleanGtm('<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KQXTB99T"></script>'), 'GTM-KQXTB99T');
   assert.equal(cleanGtm('G-ABC123'), '');
 });
+
+test('검색어: 핵심 검색어가 실제 내용과 맞는 페이지의 제목·설명에 들어 있다(meta keywords 없음)', () => {
+  const td = (p) => { const h = read(p); return `${h.match(/<title>([^<]+)/)[1]} ${h.match(/<meta name="description" content="([^"]+)"/)[1]}`; };
+  const expect = {
+    '/': ['스마트폰', '어르신', '갤럭시 사용법', '카카오톡', '키오스크', '챗GPT', '보이스피싱', '50대'],
+    '/learn/': ['시니어 스마트폰 교육', '무료 스마트폰 교육', '재취업', '창업'],
+    '/learn/galaxy/': ['갤럭시 사용법', '삼성 스마트폰', '사용설명서', '휴대폰 사용법'],
+    '/learn/scam/': ['보이스피싱 예방', '스미싱'],
+    '/learn/digital/': ['키오스크 사용법', '모바일뱅킹'],
+    '/learn/ai/': ['챗GPT', 'Gemini', 'AI 교육'],
+    '/learn/creative/': ['스마트폰 사진 잘 찍는 법', '영상'],
+    '/learn/career/': ['시니어 재취업', '창업', '노인일자리'],
+    '/learn/galaxy/g13-install/': ['카카오톡 사용법'],
+    '/learn/ai/a03-first/': ['챗GPT'],
+  };
+  for (const [p, words] of Object.entries(expect)) { const t = td(p); for (const w of words) assert.ok(t.includes(w), `${p}: ${w}`); }
+  for (const p of locs) assert.doesNotMatch(read(p), /<meta name="keywords"/, p);
+});
+
+test('기종·One UI 검색어는 실제로 기종 제한이 있는 수업에만 쓴다', () => {
+  for (const p of locs.filter((x) => x.startsWith('/learn/galaxy/g'))) {
+    const d = read(p).match(/<meta name="description" content="([^"]+)"/)[1];
+    const id = p.split('/')[3];
+    const limited = ['g06-translate', 'g15-find', 'g19-circle', 'g19-interpret', 'g19-write', 'g19-transcribe', 'g19-photo', 'g21-spen'].includes(id);
+    assert.equal(/One UI \d|울트라|S24 시리즈/.test(d), limited, `${p}: ${d}`);
+  }
+});
+
+test('구조화 데이터: 첫 화면 WebSite·기관, 과정 Course, 수업 LearningResource, 모든 페이지 H2 있음', () => {
+  const ld = (p) => [...read(p).matchAll(/"@type":"([A-Za-z]+)"/g)].map((m) => m[1]);
+  assert.ok(['WebSite', 'EducationalOrganization'].every((t) => ld('/').includes(t)));
+  for (const c of KO_COURSES) assert.ok(ld(`/learn/${c.key}/`).includes('Course'), c.key);
+  for (const p of locs.filter((x) => x.split('/').length === 5)) { assert.ok(ld(p).includes('LearningResource'), p); }
+  for (const p of locs) assert.match(read(p), /<h2[\s>]/, `${p} H2`);
+});
+
+test('첫 화면·정책·갤럭시 목록은 19개 언어와 hreflang으로 서로 연결된다', () => {
+  for (const [p, sub] of [['/', ''], ['/learn/galaxy/', 'galaxy/'], ['/privacy/', 'privacy/'], ['/terms/', 'terms/']]) {
+    const h = read(p);
+    for (const code of ['en', 'ja', 'zh-Hans', 'ar']) {
+      const href = `${SITE}/${code.toLowerCase()}/${sub}`;
+      assert.ok(h.includes(`hreflang="${code}" href="${href}"`), `${p} → ${code}`);
+      assert.ok(read(`/${code.toLowerCase()}/${sub}`).includes(`href="${SITE}${p}"`), `${code} → ${p}`);
+    }
+  }
+});

@@ -16,6 +16,8 @@ import { BASE } from '../data/galaxy/helpers.js';
 import { renderScreen, setTranslator } from '../assets/screens.js';
 import { SITE_URL, BRAND_TAGLINE, LANGUAGES } from '../i18n/languages.js';
 import { siteFooter, CONTACT_EMAIL, SITE_HOME, TERMS_DATE } from '../i18n/footer.js';
+import { TOPIC, DESC_TAIL, COURSE_SEO, HUB_SEO, HOME_SEO } from '../i18n/ko-seo.js';
+import { metaOf } from '../data/galaxy/meta.js';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 
 const GA = SITE_CONFIG.ga4Id;
@@ -31,7 +33,7 @@ export const koCsp = (base) => base
 /** 검색 등록·분석용 머리 태그(값이 없으면 빈 문자열) */
 /** GTM은 머리에 바로 넣는다(동의 모드: 동의 전엔 쿠키 없이) — 구글 태그 확인 도구가 찾을 수 있게 */
 const gtmHead = () => (GTM ? `<script src="/assets/gtm-head.js?v=${VERSION_REF.v}"></script>\n<script async src="https://www.googletagmanager.com/gtm.js?id=${esc(GTM)}"></script>\n` : '');
-export const koSeoMeta = () => `${gtmHead()}${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${NAVER ? `<meta name="naver-site-verification" content="${esc(NAVER)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
+export const koSeoMeta = () => `${gtmHead()}${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">\n` : ''}${NAVER ? `<meta name="naver-site-verification" content="${esc(NAVER)}">\n` : ''}${SITE_CONFIG.bingVerification ? `<meta name="msvalidate.01" content="${esc(SITE_CONFIG.bingVerification)}">\n` : ''}${GTM ? `<meta name="gtm-id" content="${esc(GTM)}">\n` : GA ? `<meta name="ga4-id" content="${esc(GA)}">\n` : ''}`;
 /** 방문 통계 동의 상자(분석 ID가 있을 때만) */
 export const koConsent = () => (AN ? `<div class="consent" data-consent hidden role="region" aria-label="방문 통계 동의"><p>수업을 더 좋게 만들려고 방문 통계 쿠키(구글 애널리틱스)를 써도 될까요? 거절해도 쿠키 없이 대략적인 방문 수만 세요. 회원 정보나 개인 정보는 모으지 않아요. <a href="/privacy/">자세히</a></p><div><button type="button" class="btn btn--primary" data-consent-yes>좋아요</button><button type="button" class="btn" data-consent-no>괜찮아요</button></div></div>
 <script src="/assets/analytics.js?v=${VERSION_REF.v}" defer></script>` : '');
@@ -60,15 +62,38 @@ export function howTo(title) {
   const fixed = last >= 0 && last <= 11171 && last % 28 === 8 ? stem.slice(0, -1) + String.fromCharCode(0xac00 + last - 8) : stem; // ㄹ 받침은 빠진다
   return `${fixed}는 방법`;
 }
-function lessonTitle(course, lesson) {
-  if (course.key === 'galaxy') return `갤럭시 ${howTo(lesson.title)} — 그림으로 쉽게 | DigiStep365`;
-  return `${lesson.title} — ${course.title} | DigiStep365`;
+/** 문제 해결 수업(‘~할 때’)은 ‘해결 방법’으로 */
+const galaxyHow = (t) => (/때$/.test(t.trim()) ? `${t.trim()} 해결 방법` : howTo(t));
+/** 목차 주제 검색어(갤럭시 제외) — 수업 제목에 이미 들어 있으면 붙이지 않는다 */
+const topicOf = (course, ch) => TOPIC[course.key]?.[ch.num] ?? '';
+const coreWord = (topic) => topic.split(/[ ·(]/)[0];
+function lessonTitle(course, lesson, ch) {
+  if (course.key === 'galaxy') return `갤럭시 ${galaxyHow(lesson.title)} — 그림으로 쉽게 | DigiStep365`;
+  const topic = topicOf(course, ch);
+  if (!topic || lesson.title.includes(coreWord(topic))) return `${lesson.title} — ${course.title} | DigiStep365`;
+  return `${topic}: ${lesson.title} | DigiStep365`;
 }
-function lessonDesc(course, lesson) {
-  const words = (lesson.q ?? []).filter((w) => w !== lesson.title).slice(0, 3);
-  const base = `${lesson.title}${course.key === 'galaxy' ? '을(를) 갤럭시 휴대폰에서' : ''} ${lesson.cards.length}단계 그림으로 따라 해요.`;
+/** 기종·One UI 검색어는 실제로 기종 제한이 있는 수업에만 */
+function supportNote(lesson) {
+  const s = metaOf(lesson.id)?.support;
+  if (!s) return '';
+  if (s.minOneUI) return ` One UI ${s.minOneUI} 이상 갤럭시에서 쓸 수 있어요.`;
+  if (s.only?.every((m) => m.endsWith('u'))) return ' 갤럭시 S 울트라(Ultra) 기종에서 쓸 수 있어요.';
+  if (s.onlyText) return ` ${s.onlyText.replace('설명서 기준 ', '')}해요.`;
+  return '';
+}
+function lessonDesc(course, lesson, ch) {
+  const words = (lesson.q ?? []).filter((w) => w !== lesson.title && !lesson.title.includes(w)).slice(0, 3);
+  const n = lesson.cards.length;
+  const subject = `${lesson.title}${josa(lesson.title)}`;
+  const kakao = /카카오톡|카톡/.test(`${lesson.title} ${ch.title}`) ? '카카오톡 사용법 — ' : '';
+  const base = course.key === 'galaxy'
+    ? `${kakao}갤럭시 스마트폰에서 ${/때$/.test(lesson.title) ? `${lesson.title} 해결하는 방법을` : subject} ${n}단계 그림으로 따라 해요.`
+    : `${topicOf(course, ch) && !lesson.title.includes(coreWord(topicOf(course, ch))) ? `${topicOf(course, ch)} — ` : ''}${subject} ${n}단계 그림으로 따라 해요.`;
   const more = words.length ? ` ${words.join('·')}도 함께 알려 드려요.` : '';
-  return `${base}${more} 어르신도 혼자 배우는 무료 휴대폰 수업.`.replace('을(를)', josa(lesson.title)).slice(0, 158);
+  let out = `${base}${supportNote(lesson)}${more} ${DESC_TAIL[course.key]}`;
+  if (out.length < 80) out += ` 어르신·초보를 위한 무료 ${course.title} 수업이에요.`;
+  return out.length <= 158 ? out : `${base}${supportNote(lesson)} ${DESC_TAIL[course.key]}`.slice(0, 158);
 }
 /** 받침에 맞춰 ‘을/를’ */
 function josa(word) {
@@ -78,9 +103,11 @@ function josa(word) {
   return code % 28 ? '을' : '를';
 }
 
-function head({ title, desc, path, crumbs, alternates }) {
+function head({ title, desc, path, crumbs, alternates, ld: extra }) {
   const url = `${SITE_URL}${path}`;
-  const ld = crumbs && { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${SITE_URL}${p}` })) };
+  const crumbLd = crumbs && { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${SITE_URL}${p}` })) };
+  const nodes = [crumbLd, ...[extra ?? []].flat()].filter(Boolean);
+  const ld = nodes.length ? { '@context': 'https://schema.org', '@graph': nodes } : null;
   const alts = alternates ?? {};
   return `<!doctype html>
 <html lang="ko">
@@ -137,13 +164,16 @@ function lessonPage(course, ch, lesson, siblings, alternates) {
   const idx = siblings.findIndex((x) => x.id === lesson.id);
   const next = siblings[idx + 1];
   const words = (lesson.q ?? []).filter((w) => w !== lesson.title);
-  return `${head({ title: lessonTitle(course, lesson), desc: lessonDesc(course, lesson), path, crumbs, alternates })}
+  const desc = lessonDesc(course, lesson, ch);
+  const topic = course.key === 'galaxy' ? '갤럭시 스마트폰 사용법' : topicOf(course, ch) || course.title;
+  const ld = { '@type': 'LearningResource', name: course.key === 'galaxy' ? `갤럭시 ${lesson.title}` : lesson.title, description: desc, url: `${SITE_URL}${path}`, inLanguage: 'ko', isAccessibleForFree: true, educationalLevel: '초급', learningResourceType: '단계별 그림 안내', teaches: topic, audience: { '@type': 'Audience', audienceType: '스마트폰 초보·어르신' }, isPartOf: { '@type': 'Course', name: course.title, url: `${SITE_URL}/learn/${course.key}/` }, provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` } };
+  return `${head({ title: lessonTitle(course, lesson, ch), desc, path, crumbs, alternates, ld })}
 <body>
 ${header()}
 <main class="page" id="main">
 ${crumbNav(crumbs)}
 <h1>${esc(course.key === 'galaxy' ? `갤럭시 ${lesson.title}` : lesson.title)}</h1>
-<p class="lead">${esc(`${two(ch.num)} ${chapterTitle(ch)}`)} · ${lesson.cards.length}단계 · 그림을 보며 한 단계씩 따라 하세요.</p>
+<p class="lead">${esc(topic)} · ${esc(`${two(ch.num)} ${chapterTitle(ch)}`)} · ${lesson.cards.length}단계 · 그림을 보며 한 단계씩 따라 하세요.</p>
 <a class="btn btn--primary btn--block" href="${appLesson(lesson)}">연습 화면으로 따라 하기</a>
 ${words.length ? `<p class="ko-words"><b>이렇게도 찾아요</b> ${words.map((w) => `<span>${esc(w)}</span>`).join('')}</p>` : ''}
 <ol class="steps ko-steps">
@@ -170,10 +200,12 @@ function coursePage(course) {
   const path = `/learn/${course.key}/`;
   const crumbs = [['처음 화면', '/'], ['모든 수업', '/learn/'], [course.title, path]];
   const total = course.chapters.reduce((a, c) => a + c.lessons.length, 0);
-  const title = course.key === 'galaxy' ? `갤럭시 휴대폰 사용법 ${total}가지 — 그림으로 쉽게 | DigiStep365` : `${course.title} — 수업 ${total}개 | DigiStep365`;
-  const desc = `${course.title}: ${course.desc}. 수업 ${total}개를 그림으로 한 단계씩 따라 해요. 어르신도 혼자 배우는 무료 수업.`.slice(0, 158);
+  const S = COURSE_SEO[course.key];
+  const title = S.title(total);
+  const desc = S.desc(total);
+  const ld = { '@type': 'Course', name: course.title, description: desc, url: `${SITE_URL}${path}`, inLanguage: 'ko', isAccessibleForFree: true, educationalLevel: '초급', audience: { '@type': 'Audience', audienceType: '스마트폰 초보·어르신' }, provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` }, numberOfLessons: total, hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', courseWorkload: 'PT10M' }, offers: { '@type': 'Offer', price: 0, priceCurrency: 'KRW', category: 'Free' } };
   const groups = course.key === 'galaxy' ? GROUPS : [{ id: null, title: '' }];
-  return `${head({ title, desc, path, crumbs, alternates: course.key === 'galaxy' ? { en: '/en/galaxy/' } : null })}
+  return `${head({ title, desc, path, crumbs, alternates: course.key === 'galaxy' ? allAlts('galaxy/') : null, ld })}
 <body>
 ${header()}
 <main class="page" id="main">
@@ -181,6 +213,7 @@ ${crumbNav(crumbs)}
 <h1>${esc(course.title)}</h1>
 <p class="lead">${esc(course.lead || course.desc)}</p>
 <a class="btn btn--primary btn--block" href="/#/${course.key}">연습 화면으로 시작하기</a>
+<section class="seo-intro"><h2>${esc(S.h2)}</h2><p>${esc(S.intro(total, course.chapters.length))}</p></section>
 ${groups.map((g) => `${g.title ? `<section class="group"><h2>${esc(g.title)}</h2>` : '<section class="group">'}
 ${course.chapters.filter((ch) => !g.id || ch.group === g.id).map((ch) => `<section class="cat" id="c${two(ch.num)}">
   <h3><span class="num">${two(ch.num)}</span> ${esc(chapterTitle(ch))}</h3>
@@ -199,7 +232,8 @@ function hubPage() {
   const path = '/learn/';
   const crumbs = [['처음 화면', '/'], ['모든 수업', path]];
   const total = KO_COURSES.reduce((a, c) => a + c.chapters.reduce((b, ch) => b + ch.lessons.length, 0), 0);
-  return `${head({ title: `어르신 휴대폰 교실 — 모든 수업 ${total}개 한눈에 | DigiStep365`, desc: `갤럭시 사용법, 전화 사기 예방, 키오스크·은행 앱 연습, AI, 창작, 재취업까지 무료 수업 ${total}개. 그림을 보며 한 단계씩 따라 해요.`, path, crumbs, alternates: { en: '/en/' } })}
+  const ld = { '@type': 'ItemList', name: '어르신 무료 스마트폰 교육 과정', itemListElement: KO_COURSES.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE_URL}/learn/${c.key}/`, name: c.title })) };
+  return `${head({ title: HUB_SEO.title(total), desc: HUB_SEO.desc(total), path, crumbs, ld })}
 <body>
 ${header()}
 <main class="page" id="main">
@@ -207,6 +241,7 @@ ${crumbNav(crumbs)}
 <h1>모든 수업 한눈에</h1>
 <p class="lead">수업 ${total}개를 글과 그림으로 볼 수 있어요. 따라 하기는 ‘연습 화면’에서 한 단계씩 해요.</p>
 <a class="btn btn--primary btn--block" href="/">연습 화면 처음으로</a>
+<section class="seo-intro"><h2>${esc(HUB_SEO.h2)}</h2><p>${esc(HUB_SEO.intro)}</p></section>
 ${KO_COURSES.map((c) => `<section class="cat">
   <h3><a href="/learn/${c.key}/">${esc(c.title)}</a></h3>
   <p class="cat__desc">${esc(c.desc)} · 수업 ${c.chapters.reduce((a, ch) => a + ch.lessons.length, 0)}개</p>
@@ -219,10 +254,13 @@ ${footer()}
 `;
 }
 
+/** 같은 내용의 19개 언어 주소(hreflang 상호 연결용) */
+const allAlts = (suffix) => Object.fromEntries(LANGUAGES.filter((x) => x.code !== 'ko').map((x) => [x.code, `/${x.code.toLowerCase()}/${suffix}`]));
+
 /** 정책 페이지 공통 틀 */
 function policyPage({ path, title, h1, desc, sections, en }) {
   const crumbs = [['처음 화면', '/'], [h1, path]];
-  return `${head({ title: `${title} | DigiStep365`, desc, path, crumbs, alternates: { en } })}
+  return `${head({ title: `${title} | DigiStep365`, desc, path, crumbs, alternates: allAlts(en.replace(/^\/en\//, '')) })}
 <body>
 ${header()}
 <main class="page policy" id="main">
@@ -288,12 +326,26 @@ export function updateKoIndex() {
   const f = new URL('../index.html', import.meta.url);
   let html = readFileSync(f, 'utf8');
   const total = KO_COURSES.reduce((a, c) => a + c.chapters.reduce((b, ch) => b + ch.lessons.length, 0), 0);
-  const seo = `<!-- seo:start (build-ko.mjs가 만듦) -->\n${koSeoMeta()}<!-- seo:end -->`;
+  const homeLd = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: 'DigiStep365', alternateName: ['디지스텝365', '도전, 디지털세상'], url: `${SITE_URL}/`, inLanguage: 'ko', description: HOME_SEO.desc, publisher: { '@id': `${SITE_URL}/#org` } },
+    { '@type': 'EducationalOrganization', '@id': `${SITE_URL}/#org`, name: 'DigiStep365', url: `${SITE_URL}/`, logo: `${SITE_URL}/assets/icon-512.png`, slogan: '누구나 쉽게, 매일 한 걸음씩.', email: CONTACT_EMAIL, description: '어르신과 스마트폰 초보를 위한 무료 디지털 교육 플랫폼' },
+    { '@type': 'ItemList', name: '교육 과정', itemListElement: KO_COURSES.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE_URL}/learn/${c.key}/`, name: c.title })) },
+  ] };
+  const seo = `<!-- seo:start (build-ko.mjs가 만듦) -->\n${koSeoMeta()}<script type="application/ld+json">${JSON.stringify(homeLd)}</script>\n<!-- seo:end -->`;
+  // 첫 화면 hreflang: 한국어 + 19개 언어 첫 화면(서로 연결), x-default = 영어
+  const homeAlts = [['ko', '/'], ...Object.entries(allAlts('')), ['x-default', '/en/']].map(([c, u]) => `<link rel="alternate" hreflang="${c}" href="${SITE_URL}${u}">`).join('\n');
+  html = html.replace(/(<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?)+/, `${homeAlts}\n`);
+  // 검색 제목·설명(첫 화면)
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${esc(HOME_SEO.title)}</title>`)
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(HOME_SEO.desc)}">`)
+    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(HOME_SEO.ogTitle)}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(HOME_SEO.ogDesc)}">`);
   html = html.replace(/<!-- seo:start[\s\S]*?<!-- seo:end -->|(?=<meta name="theme-color")/, `${seo}\n`).replace(/\n\n<meta name="theme-color"/, '\n<meta name="theme-color"');
   html = html.replace(/(<meta http-equiv="Content-Security-Policy" content=")([^"]+)(")/, (m, a, c, b) => a + koCsp(c.replace(/ https:\/\/[^ ;]+/g, '').replace("connect-src 'self'", "connect-src 'none'")) + b);
   const ssr = `<div id="app"><!-- ssr:start -->
-<div class="ssr"><h1>DigiStep365 어르신 무료 휴대폰 교실</h1>
-<p>갤럭시 사용법부터 전화 사기 예방까지, 수업 ${total}개를 그림을 보며 한 단계씩 따라 해요.</p>
+<div class="ssr"><h1>DigiStep365 어르신 무료 스마트폰 교육</h1>
+<p>스마트폰 사용법을 처음 배우는 50대·60대·70대와 어르신을 위해 갤럭시 사용법, 카카오톡·키오스크, 챗GPT, 보이스피싱 예방까지 수업 ${total}개를 그림을 보며 한 단계씩 따라 해요.</p>
+<h2>배울 수 있는 과정</h2>
 <ul>${KO_COURSES.map((c) => `<li><a href="/learn/${c.key}/">${esc(c.title)}</a> — ${esc(c.desc)} (수업 ${c.chapters.reduce((a, ch) => a + ch.lessons.length, 0)}개)</li>`).join('')}</ul>
 <noscript><p>연습 화면은 자바스크립트를 켜야 볼 수 있어요. 위 과정을 누르면 수업을 글과 그림으로 볼 수 있어요.</p></noscript></div>
 <!-- ssr:end --></div>`;
