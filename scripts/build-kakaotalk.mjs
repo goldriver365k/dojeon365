@@ -87,9 +87,9 @@ export function toLesson(l, opt) {
     src: (l.sources ?? []).map((s) => ({ label: s.label, url: s.url })),
     ...(open ? {
       model: `${l.galaxyModel} · Android ${l.android}${l.oneui ? ` · One UI ${l.oneui}` : ''}`,
-      software: `카카오톡 ${l.appVersion}`,
+      software: l.approvedWithoutCompare ? '카카오톡 안드로이드(그림으로 만든 화면)' : `카카오톡 ${l.appVersion}`,
       checked: l.lastChecked,
-      ...(l.status === 'update' ? { check: '카카오톡 업데이트로 화면이 조금 바뀌었을 수 있어 다시 확인하고 있어요.' } : {}),
+      ...(l.status === 'update' ? { check: '카카오톡 업데이트로 화면이 조금 바뀌었을 수 있어 다시 확인하고 있어요.' } : l.approvedWithoutCompare ? { check: '그림으로 만든 카카오톡 화면이에요. 실제 앱과 메뉴 이름·위치가 조금 다를 수 있어요.' } : {}),
     } : {}),
   };
 }

@@ -43,7 +43,7 @@ export function fill(catalog, lessons = LESSONS) {
     if (!src) { problems.push(`${l.id}: 원고 없음`); continue; }
     const steps = src.steps.flatMap(split);
     steps.forEach(([text, screen, target], i) => { if (TWO.test(text)) problems.push(`${l.id} ${i + 1}단계: 한 카드에 동작 두 개 — ${text}`); if (target && !draw(screen, target).target) problems.push(`${l.id} ${i + 1}단계: 화면에 ‘${target}’ 없음`); });
-    const human = l.edited || (l.steps ?? []).some((s) => s.image?.src);
+    const human = l.edited || ['published', 'update'].includes(l.status) || (l.steps ?? []).some((s) => s.image?.src);
     if (human) continue;
     l.steps = steps.map(([text, screen, target, x = {}]) => ({
       text, voice: x.voice ?? '', hint: x.hint ?? '', targetLabel: target ?? '',

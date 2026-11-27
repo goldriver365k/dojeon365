@@ -56,7 +56,7 @@ test('지금 저장소: 공개 조건을 갖춘 수업만 공개, 공개 수업�
   const pub = kakaoCourse({ catalog: cat, onlyPublic: true }).CHAPTERS.flatMap((c) => c.lessons);
   assert.equal(pub.length, s.public);
   const sm = readFileSync('sitemap.xml', 'utf8');
-  assert.equal((sm.match(/\/learn\/kakaotalk\/[^<]+/g) ?? []).length, s.public ? s.public + 1 : 0);
+  assert.equal((sm.match(/<loc>[^<]*\/learn\/kakaotalk\/[^<]*<\/loc>/g) ?? []).length, s.public ? s.public + 1 : 0);
   assert.equal(existsSync('learn/kakaotalk/index.html'), s.public > 0);
   for (const l of all) assert.equal(existsSync(`learn/kakaotalk/${l.id}/index.html`), pub.some((p) => p.id === l.id), l.id);
   const js = readFileSync('data/kakaotalk/public.js', 'utf8');

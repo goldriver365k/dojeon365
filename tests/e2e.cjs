@@ -503,7 +503,9 @@ async function main() {
     await pk.fill('#q', '카톡 사진 보내기'); await pk.press('#q', 'Enter'); await pk.waitForTimeout(200);
     check('카카오톡: ‘카톡 사진 보내기’ 검색', (await pk.locator('#results .lesson-row__title').first().textContent()).includes('사진'));
     await pk.goto(`${BASE}#/kakaotalk/04`); await pk.waitForSelector('.lesson-list');
-    check('카카오톡: 공개 전 수업은 ‘수업 준비 중’', (await pk.locator('.lesson-list .badge--soon').count()) === 12 && (await pk.textContent('main')).includes('카카오와 공식적인 제휴 관계가 없으며'));
+    check('카카오톡: 04 목차 12개 수업 모두 열림·독립 교육 안내', (await pk.locator('.lesson-list a.lesson-row').count()) === 12 && (await pk.textContent('main')).includes('카카오와 공식적인 제휴 관계가 없으며'));
+    await pk.click('.lesson-list a.lesson-row'); await pk.waitForSelector('.stage__pic svg');
+    check('카카오톡: 수업 카드에 카카오톡 화면 그림·빨간 표시·안내', (await pk.locator('.stage__pic svg .target-ring').count()) === 1 && (await pk.textContent('main')).includes('실제 앱과 메뉴 이름·위치가 조금 다를 수 있어요'));
     await pk.goto(`${BASE}#/galaxy`); await pk.waitForSelector('#q');
     await pk.fill('#q', '카톡 글씨 크게'); await pk.press('#q', 'Enter'); await pk.waitForTimeout(200);
     check('카카오톡: 갤럭시 목차에서도 통합 검색', (await pk.locator('#results').textContent()).includes('카카오톡 글자 크게 만들기'));
@@ -512,8 +514,10 @@ async function main() {
     await ad.goto(`${BASE}admin/kakaotalk/?id=k04-photo-one`); await ad.waitForSelector('[data-f="status"]');
     let alerted = '';
     ad.on('dialog', async (d) => { alerted = d.message(); await d.dismiss(); });
+    await ad.selectOption('[data-f="status"]', 'review'); await ad.waitForTimeout(150);
+    await ad.fill('[data-f="reviewedBy"]', ''); await ad.dispatchEvent('[data-f="reviewedBy"]', 'change'); await ad.waitForTimeout(150);
     await ad.selectOption('[data-f="status"]', 'published'); await ad.waitForTimeout(200);
-    check('카카오톡 관리자: 실제 화면·검수 없이는 ‘공개’로 못 바꿈', alerted.includes('아직 공개할 수 없어요') && alerted.includes('검수자 없음') && (await ad.inputValue('[data-f="status"]')) !== 'published');
+    check('카카오톡 관리자: 검수 기록 없이는 ‘공개’로 못 바꿈', alerted.includes('아직 공개할 수 없어요') && alerted.includes('검수자 없음') && (await ad.inputValue('[data-f="status"]')) !== 'published');
     check('카카오톡 관리자: 162개 목록', (await ad.textContent('[data-sum]')).includes('사용법 162개'));
     check('카카오톡: 화면 오류 없음', errsK.length === 0, errsK.join(' | '));
     await ck.close();

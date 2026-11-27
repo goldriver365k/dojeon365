@@ -73,7 +73,7 @@ const topicOf = (course, ch) => TOPIC[course.key]?.[ch.num] ?? '';
 const coreWord = (topic) => topic.split(/[ ·(]/)[0];
 function lessonTitle(course, lesson, ch) {
   if (course.key === 'galaxy') return `갤럭시 ${galaxyHow(lesson.title)} — 그림으로 쉽게 | DigiStep365`;
-  if (course.key === 'kakaotalk') return `${/^카카오/.test(lesson.title) ? '' : '카카오톡 '}${galaxyHow(lesson.title)} — 실제 화면으로 쉽게 | DigiStep365`;
+  if (course.key === 'kakaotalk') return `${/^카카오/.test(lesson.title) ? '' : '카카오톡 '}${galaxyHow(lesson.title)} — 그림으로 쉽게 | DigiStep365`;
   const topic = topicOf(course, ch);
   if (!topic || lesson.title.includes(coreWord(topic))) return `${lesson.title} — ${course.title} | DigiStep365`;
   return `${topic}: ${lesson.title} | DigiStep365`;
@@ -93,7 +93,7 @@ function lessonDesc(course, lesson, ch) {
   const subject = `${lesson.title}${josa(lesson.title)}`;
   const kakao = /카카오톡|카톡/.test(`${lesson.title} ${ch.title}`) ? '카카오톡 사용법 — ' : '';
   const base = course.key === 'kakaotalk'
-    ? `카카오톡 사용법 — 갤럭시에서 ${/때$/.test(lesson.title) ? `${lesson.title} 해결하는 방법을` : subject} ${n}단계 실제 화면으로 따라 해요.`
+    ? `카카오톡 사용법 — 갤럭시에서 ${/때$/.test(lesson.title) ? `${lesson.title} 해결하는 방법을` : subject} ${n}단계 그림으로 따라 해요.`
     : course.key === 'galaxy'
     ? `${kakao}갤럭시 스마트폰에서 ${/때$/.test(lesson.title) ? `${lesson.title} 해결하는 방법을` : subject} ${n}단계 그림으로 따라 해요.`
     : `${topicOf(course, ch) && !lesson.title.includes(coreWord(topicOf(course, ch))) ? `${topicOf(course, ch)} — ` : ''}${subject} ${n}단계 그림으로 따라 해요.`;
@@ -201,7 +201,7 @@ ${lesson.cards.map((c, i) => `<li class="step">
 </li>`).join('\n')}
 </ol>
 ${lesson.caution ? `<p class="step__note"><strong>주의</strong> ${esc(lesson.caution)}</p>` : ''}
-<p class="based">${course.key === 'kakaotalk' ? `기준: ${esc(lesson.model)} · ${esc(lesson.software)} · 확인 ${esc(lesson.checked)}. 카카오톡 업데이트에 따라 메뉴 위치가 바뀔 수 있어요.${lesson.check ? ` ${esc(lesson.check)}` : ''}` : course.key === 'galaxy' ? `기준: ${esc(BASE.model)} · ${esc(BASE.software)}. 기종과 버전에 따라 메뉴 이름이 조금 다를 수 있어요.` : '연습 화면은 실제 앱과 조금 다를 수 있어요. 돈이 나가거나 비밀번호가 필요한 일은 연습 화면에서만 해요.'}</p>
+<p class="based">${course.key === 'kakaotalk' ? `기준: ${esc(lesson.model)} · ${esc(lesson.software)}. 카카오톡 업데이트에 따라 메뉴 위치가 바뀔 수 있어요.${lesson.check ? ` ${esc(lesson.check)}` : ''}` : course.key === 'galaxy' ? `기준: ${esc(BASE.model)} · ${esc(BASE.software)}. 기종과 버전에 따라 메뉴 이름이 조금 다를 수 있어요.` : '연습 화면은 실제 앱과 조금 다를 수 있어요. 돈이 나가거나 비밀번호가 필요한 일은 연습 화면에서만 해요.'}</p>
 <a class="btn btn--primary btn--block" href="${appLesson(lesson)}">연습 화면으로 따라 하기</a>
 ${next ? `<p class="finish">다음 수업: <a href="${koLessonPath(course.key, next.id)}">${esc(next.title)}</a></p>` : ''}
 <section class="popular"><h2>같은 목차의 수업</h2><ul class="lessons">${siblings.filter((x) => x.id !== lesson.id).map((x) => `<li><a href="${koLessonPath(course.key, x.id)}">${esc(x.title)}<span>${x.cards.length}단계</span></a></li>`).join('')}</ul></section>

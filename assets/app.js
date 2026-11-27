@@ -12,25 +12,25 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261127.2325';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261127.2325';
-import * as DIGITAL from '../data/digital/index.js?v=20261127.2325';
-import * as AI from '../data/ai/index.js?v=20261127.2325';
-import * as SCAM from '../data/scam/index.js?v=20261127.2325';
-import * as CREATIVE from '../data/creative/index.js?v=20261127.2325';
-import * as CAREER from '../data/career/index.js?v=20261127.2325';
+import { CATEGORIES } from '../data/categories.js?v=20261127.2333';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261127.2333';
+import * as DIGITAL from '../data/digital/index.js?v=20261127.2333';
+import * as AI from '../data/ai/index.js?v=20261127.2333';
+import * as SCAM from '../data/scam/index.js?v=20261127.2333';
+import * as CREATIVE from '../data/creative/index.js?v=20261127.2333';
+import * as CAREER from '../data/career/index.js?v=20261127.2333';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
-import * as KAKAO from '../data/kakaotalk/public.js?v=20261127.2325';
+import * as KAKAO from '../data/kakaotalk/public.js?v=20261127.2333';
 // 카카오톡 사용법: 국내 전용. 공개된(실제 화면·검수 완료) 수업만 카드가 있고 나머지는 ‘수업 준비 중’
 const COURSES = { kakaotalk: KAKAO, digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261127.2325';
-import { renderScreen } from './screens.js?v=20261127.2325';
-import { renderKakao } from './kakao-screens.js?v=20261127.2325';
-import { appInfo, appIconStandalone } from './apps.js?v=20261127.2325';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261127.2325';
-import { VERSION } from './version.js?v=20261127.2325';
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261127.2325';
-import { metaOf } from '../data/galaxy/meta.js?v=20261127.2325';
+import { BASE } from '../data/galaxy/helpers.js?v=20261127.2333';
+import { renderScreen } from './screens.js?v=20261127.2333';
+import { renderKakao } from './kakao-screens.js?v=20261127.2333';
+import { appInfo, appIconStandalone } from './apps.js?v=20261127.2333';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261127.2333';
+import { VERSION } from './version.js?v=20261127.2333';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261127.2333';
+import { metaOf } from '../data/galaxy/meta.js?v=20261127.2333';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
@@ -464,6 +464,7 @@ function viewCard(lesson, chapter, idx) {
     <h1 class="lesson__title">${esc(lesson.title)}</h1>
     ${lesson.models ? `<p class="badge badge--model">${esc(lesson.models)}</p>` : ''}
     ${chapter.course ? '' : supportNotice(lesson)}
+    ${chapter.course === 'kakaotalk' && lesson.check ? `<p class="badge badge--model">${esc(lesson.check)}</p>` : ''}
     <p class="step" aria-hidden="true"><span class="step__text">${total}단계 중 <strong>${idx + 1}단계</strong></span>
       <span class="step__bar"><span style="width:${((idx + 1) / total) * 100}%"></span></span></p>
     <h2 class="instr" id="instr" tabindex="-1"><span class="sr-only">${stepWords(idx, total)}, 모두 ${total}단계. </span>${esc(card.text)}</h2>
@@ -541,7 +542,7 @@ function viewCourse(key) {
   return `${topbar({ back: '#/', backLabel: '홈으로' })}
   <main class="page" id="main">
     <h1 class="page__title">${esc(COURSE.title)}</h1>
-    <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.${key === 'kakaotalk' ? ` 실제 카카오톡 화면으로 검수를 마친 수업부터 차례로 열려요(지금 ${KAKAO.PUBLIC_COUNT}개).` : ''}</p>
+    <p class="lead">${esc(COURSE.lead)} 목차 ${DC.length}개, 수업 ${all().length}개예요.${key === 'kakaotalk' ? ' 카카오톡 화면은 그림으로 만들어 실제 앱과 조금 다를 수 있어요.' : ''}</p>
     <p class="notice">${esc(COURSE.safety)}</p>
     ${resumeBox(key)}
     ${key === 'kakaotalk' ? searchBox(KAKAO_EXAMPLES, '예: 카톡 사진 보내기') : ''}
@@ -571,7 +572,7 @@ function viewCourseChapter(key, num) {
   <main class="page ${g?.cat ?? ''}" id="main">
     <p class="eyebrow">${esc(g?.title ?? '')} · 목차 ${two(ch.num)}</p>
     <h1 class="page__title">${two(ch.num)}. ${esc(ch.title)}</h1>
-    <p class="lead">${key === 'kakaotalk' ? `사용법 ${ch.lessons.length}가지. 실제 카카오톡 화면으로 검수를 마친 수업부터 열려요.` : `${esc(ch.desc)}. 배울 수업을 누르세요. 모두 연습 화면이에요.`}</p>
+    <p class="lead">${key === 'kakaotalk' ? `사용법 ${ch.lessons.length}가지. 배울 수업을 누르세요.` : `${esc(ch.desc)}. 배울 수업을 누르세요. 모두 연습 화면이에요.`}</p>
     <ul class="lesson-list">${ch.lessons.map((l) => courseLessonRow(l, ch, key)).join('')}</ul>
     ${brandNote(key)}
   </main>`;
