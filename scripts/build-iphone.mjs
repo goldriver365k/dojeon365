@@ -360,4 +360,6 @@ ${caution ? `<p class="step__note">${esc(caution)}</p>` : ''}
 </nav>`;
 }
 /** 공개 수업의 설명(검색용) */
-export const lessonDesc = (course, item) => `${item.title} — ${course.text.title}. ${course.lang === 'ko' || course.lang === 'en' ? '' : `${course.text.sub}. `}${(course.lang === 'ko' ? item.src.steps.map((s) => s.text) : course.lang === 'en' ? item.src.steps.map((s) => s.textEn) : item.src.steps.map((s) => ipTr(course.lang)?.step(s.textEn) ?? s.textEn)).join(' ')}`.replace(/\s+/g, ' ').slice(0, 155);
+/** 검색 설명: HTML로 바뀐 뒤(&amp; 등)에도 160자 이하 */
+const fitDesc = (d) => { let o = d.slice(0, 155); while (esc(o).length > 158) o = o.slice(0, -1); return o; };
+export const lessonDesc = (course, item) => fitDesc(`${item.title} — ${course.text.title}. ${course.lang === 'ko' || course.lang === 'en' ? '' : `${course.text.sub}. `}${(course.lang === 'ko' ? item.src.steps.map((s) => s.text) : course.lang === 'en' ? item.src.steps.map((s) => s.textEn) : item.src.steps.map((s) => ipTr(course.lang)?.step(s.textEn) ?? s.textEn)).join(' ')}`.replace(/\s+/g, ' '));
