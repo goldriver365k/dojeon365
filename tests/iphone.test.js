@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { CHAPTERS } from '../data/iphone/outline.mjs';
 import { STEPS } from '../data/iphone/steps-essential.mjs';
+import { MORE_STEPS, MORE_SCREENS } from '../data/iphone/more.mjs';
 import { IPHONE_MODELS, IOS_VERSIONS, SERIES, iosFor, modelById } from '../data/iphone/models.js';
 import { loadCatalog, publishProblems, isPublic, iphoneCourse, progress, REQUIRES } from '../scripts/build-iphone.mjs';
 import { hasCourse } from '../i18n/regions.js';
@@ -58,12 +59,28 @@ test('기종 자료: 기종별 차이(홈 버튼·Face ID·동작 버튼·카메
   assert.deepEqual(IOS_VERSIONS.map((x) => x.v), ['15', '16', '17', '18', '26']);
 });
 
-test('공개 규칙: 실제 캡처 또는 운영자가 승인한 재현 그림만 공개, 필수 100개는 한국어·영어 공개', () => {
+test('필수 외 원고: 목차에 있는 필수 외 수업이고, 한 카드 한 동작, 단계마다 화면 그림', async () => {
+  const { renderIphone, setIpModel } = await import('../assets/iphone-screens.js');
+  for (const [slug, steps] of Object.entries(MORE_STEPS)) {
+    const x = all.find((y) => y.slug === slug); assert.ok(x && !x.ess, slug);
+    const scr = MORE_SCREENS[slug]; assert.equal(scr.length, steps.length, slug);
+    steps.forEach(([ko, en, , ten], i) => {
+      assert.ok(ko && en, `${slug} ${i + 1}`);
+      assert.doesNotMatch(ko, TWO_KO, `${slug}: ${ko}`); assert.doesNotMatch(en, TWO_EN, `${slug}: ${en}`);
+      setIpModel(scr[i].model ?? 'face'); const t = scr[i].t ?? ten;
+      if (t) assert.ok(renderIphone(scr[i], t).target, `${slug} ${i + 1}: ${t}`);
+    });
+  }
+  setIpModel('face');
+});
+
+test('공개 규칙: 실제 캡처 또는 운영자가 승인한 재현 그림만 공개, 원고와 그림이 있는 수업은 한국어·영어 공개', () => {
+  const drawnN = 100 + Object.keys(MORE_STEPS).length;
   const cat = loadCatalog();
   const lessons = cat.chapters.flatMap((c) => c.lessons);
   assert.equal(lessons.length, 440);
-  for (const g of ['ko', 'en']) assert.equal(lessons.filter((l) => isPublic(l, g)).length, 100, g);
-  assert.ok(lessons.filter((l) => isPublic(l, 'ko')).every((l) => l.essential && l.approvedWithoutCompare));
+  for (const g of ['ko', 'en']) assert.equal(lessons.filter((l) => isPublic(l, g)).length, drawnN, g);
+  assert.ok(lessons.filter((l) => isPublic(l, 'ko')).every((l) => l.approvedWithoutCompare && (l.essential || MORE_STEPS[l.slug])));
   const l = lessons.find((x) => x.slug === 'text-size');
   // 운영자 승인 표시가 없으면 같은 그림이라도 공개 불가
   const noApproval = { ...l, approvedWithoutCompare: false };
@@ -71,10 +88,10 @@ test('공개 규칙: 실제 캡처 또는 운영자가 승인한 재현 그림�
   // 출처가 승인된 재현 그림이 아니면 공개 불가
   const other = { ...l, steps: l.steps.map((s) => ({ ...s, imageMeta: { ...s.imageMeta, source: '원본 화면 기준 재현(검수 필수)' } })) };
   assert.ok(publishProblems(other, 'ko').length > 0);
-  // 그림이 없는 수업(필수 외)은 공개 안 됨
-  assert.ok(!isPublic(lessons.find((x) => !x.essential), 'ko'));
+  // 그림이 없는 수업은 공개 안 됨
+  const none = lessons.find((x) => !x.essential && !MORE_STEPS[x.slug]); if (none) assert.ok(!isPublic(none, 'ko'));
   const p = progress(cat);
-  assert.equal(p.withText, 100);
+  assert.equal(p.withText, drawnN);
   assert.ok(REQUIRES['camera-control'].feature === 'cameraControl' && REQUIRES['assistive-access'].ios === '17');
 });
 
@@ -115,11 +132,12 @@ test('과정 첫 화면: 한국어·영어에 내 아이폰 선택(모를 때·�
   }
   const sm = readFileSync('sitemap.xml', 'utf8');
   assert.match(sm, /\/learn\/iphone\/text-size\//); assert.match(sm, /\/en\/iphone\/text-size\//);
-  assert.doesNotMatch(sm, /\/iphone\/restart-iphone|\/iphone\/app-folder\//, '그림 없는 수업은 사이트맵에 없음');
+  const nope = all.find((x) => !x.ess && !MORE_STEPS[x.slug]);
+  if (nope) { assert.ok(!sm.includes(`/iphone/${nope.slug}/`), '그림 없는 수업은 사이트맵에 없음'); assert.ok(!existsSync(`learn/iphone/${nope.slug}`), '그림 없는 수업은 페이지 없음'); }
+  for (const slug of Object.keys(MORE_STEPS).slice(0, 5)) { assert.ok(sm.includes(`/learn/iphone/${slug}/`), slug); assert.ok(existsSync(`en/iphone/${slug}/index.html`), slug); }
   const lesson = readFileSync('learn/iphone/text-size/index.html', 'utf8');
   assert.match(lesson, /아이폰 화면을 보고 그린 그림/); assert.match(lesson, /target-ring/); assert.match(lesson, /hreflang="en"/);
   assert.match(readFileSync('en/iphone/text-size/index.html', 'utf8'), /drawings of the iPhone screen/);
-  assert.ok(!existsSync('learn/iphone/app-folder'), '그림 없는 수업은 페이지 없음');
   assert.ok(!existsSync('es/iphone'), '스페인어 글이 생기기 전에는 스페인어 아이폰 페이지 없음');
   assert.match(readFileSync('en/index.html', 'utf8'), /href="\/en\/iphone\/"/);
   assert.match(readFileSync('index.html', 'utf8'), /href="\/learn\/iphone\/"/);

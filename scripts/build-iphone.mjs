@@ -8,12 +8,17 @@
 //   공개 수업이 하나도 없으면 과정 첫 화면은 검색에서 빼 둔다(noindex, 사이트맵 제외).
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { CHAPTERS as OUTLINE } from '../data/iphone/outline.mjs';
-import { STEPS } from '../data/iphone/steps-essential.mjs';
-import { SCREENS } from '../data/iphone/screens-essential.mjs';
+import { STEPS as STEPS_ESS } from '../data/iphone/steps-essential.mjs';
+import { SCREENS as SCREENS_ESS } from '../data/iphone/screens-essential.mjs';
+import { MORE_STEPS, MORE_SCREENS } from '../data/iphone/more.mjs';
 import { KO_SCREEN } from '../data/iphone/ko-screen.js';
 import { renderIphone, setIpLang, setIpModel } from '../assets/iphone-screens.js';
 import { IPHONE_MODELS, IOS_VERSIONS, SERIES, FEATURE_LABELS, PORT_LABELS, MODELS_LAST_CHECKED } from '../data/iphone/models.js';
 import { STATUS, PUBLIC_STATUS, adminPage } from './build-kakaotalk.mjs';
+
+/** 필수 100개 + 필수 외 원고 */
+const STEPS = { ...STEPS_ESS, ...MORE_STEPS };
+const SCREENS = { ...SCREENS_ESS, ...MORE_SCREENS };
 
 export const CATALOG_FILE = new URL('../data/iphone/catalog.json', import.meta.url);
 const ROOT = new URL('../', import.meta.url);

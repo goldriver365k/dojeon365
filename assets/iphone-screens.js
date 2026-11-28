@@ -36,6 +36,7 @@ const APP = {
   FaceTime: ['#34c759', 'video'], 'App Store': ['#1e90ff', 'store'], Maps: ['#6cc24a', 'map'], Health: ['#fff', 'heart'], 'Find My': ['#34c759', 'radar'],
   Calculator: ['#1c1c1e', 'calc'], Magnifier: ['#1c1c1e', 'lens'], Calendar: ['#fff', 'cal'], Mail: ['#1e90ff', 'mail'], Wallet: ['#1c1c1e', 'cards'],
   Music: ['#fc3c44', 'note'], Files: ['#1e90ff', 'folder'], Reminders: ['#fff', 'list'], 'Voice Memos': ['#1c1c1e', 'wave'],
+  Passwords: ['#8e8e93', 'person'], Shortcuts: ['#5856d6', 'cards'], Translate: ['#1e90ff', 'bubble'], Tips: ['#ffcc00', 'lens'], 'Apple Support': ['#1e90ff', 'store'], Books: ['#ff9500', 'notes'], Watch: ['#1c1c1e', 'clock'], 'Image Playground': ['#af52de', 'petals'],
 };
 function glyph(x, y, s, kind, bg) {
   const k = s / 60; const ink = ['#fff', '#ffffff'].includes(bg) ? '#555' : '#fff';
@@ -123,6 +124,7 @@ const V = {
     c.rect(12, H - 128, W - 24, 100, 'rgba(255,255,255,.28)', 30);
     ['Phone', 'Safari', 'Messages', 'Music'].forEach((a, i) => { const [bg, kind] = APP[a]; const x = 30 + i * 80; const y = H - 108; c.add(`<rect x="${x}" y="${y}" width="60" height="60" rx="13.5" fill="${bg}"/>${glyph(x, y, 60, kind, bg)}`); c.reg(a, x - 4, y - 4, 68, 68); });
     if (s.menu) { dim(c, 0.25); const y = 300; c.rect(40, y, 230, 150, 'rgba(250,250,250,.96)', 14); s.menu.forEach((m, i) => { c.text(58, y + 32 + i * 46, m, { size: 16.5, fill: /Remove|Delete/.test(m) ? C.red : C.ink }); if (i) c.add(`<line x1="40" y1="${y + 8 + i * 46}" x2="270" y2="${y + 8 + i * 46}" stroke="#d1d1d6"/>`); c.reg(m, 40, y + 6 + i * 46, 230, 46); }); appIcon(c, 40, y - 90, s.menuApp ?? 'Weather'); }
+    if (s.edit) { c.text(24, MODEL === 'face' ? 64 : 44, 'Edit', { size: 15, fill: '#fff', weight: 600 }); c.reg('Edit', 6, 40, 90, 34); c.rect(W - 84, MODEL === 'face' ? 46 : 26, 70, 28, 'rgba(255,255,255,.3)', 14); c.text(W - 49, MODEL === 'face' ? 65 : 45, 'Done', { size: 15, fill: '#fff', anchor: 'middle', weight: 600 }); c.reg('Done', W - 90, 40, 82, 36); }
     if (s.thumb) { c.rect(16, H - 260, 110, 210, '#fff', 10, 'stroke="#fff" stroke-width="4"'); c.rect(20, H - 256, 102, 202, '#7a5bd6', 8); c.reg('Screenshot', 16, H - 260, 110, 210); }
     if (s.volume) { c.rect(10, 170, 8, 120, 'rgba(255,255,255,.5)', 4); c.rect(10, 230, 8, 60, '#fff', 4); }
     if (s.assist) { c.add(`<circle cx="${W - 40}" cy="420" r="26" fill="rgba(60,60,60,.75)"/><circle cx="${W - 40}" cy="420" r="17" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3"/>`); c.reg('AssistiveTouch button', W - 70, 390, 60, 60); }
@@ -478,7 +480,7 @@ const V = {
     if (s.avatar) { c.add(`<circle cx="${W - 36}" cy="100" r="18" fill="#a2a2a7"/>`); c.reg('Profile', W - 60, 76, 48, 48); }
     if (s.big) c.text(W / 2, 220, s.big, { size: 80, weight: 200, fill: ink, anchor: 'middle', raw: true });
     let y = s.title ? 140 : 280;
-    for (const r of s.rows ?? []) { const row = typeof r === 'string' ? { label: r } : r; if (row.card) { c.rect(16, y, W - 32, 56, dark ? '#1c1c1e' : row.card === true ? '#f2f2f7' : row.card, 12); } c.text(row.card ? 32 : 20, y + 34, fit(row.label, 30), { size: 17, fill: row.blue ? C.blue : row.red ? C.red : ink, weight: row.bold ? 600 : 400, raw: true }); if (row.value) c.text(W - 30, y + 34, row.value, { size: 16, fill: C.sub, anchor: 'end' }); if (row.toggle !== undefined) toggle(c, W - 83, y + 12, row.toggle); c.reg(row.key ?? row.label, 0, y, W, 56); y += 64; }
+    for (const r of s.rows ?? []) { const row = typeof r === 'string' ? { label: r } : r; if (row.card) { c.rect(16, y, W - 32, 56, dark ? '#1c1c1e' : row.card === true ? '#f2f2f7' : row.card, 12); } const solid = typeof row.card === 'string' && /^#[0-7]/.test(row.card); c.text(solid ? W / 2 : row.card ? 32 : 20, y + 34, fit(row.label, 30), { size: 17, fill: solid ? '#fff' : row.blue ? C.blue : row.red ? C.red : ink, weight: row.bold || solid ? 600 : 400, anchor: solid ? 'middle' : 'start', raw: true }); if (row.value) c.text(W - 30, y + 34, row.value, { size: 16, fill: C.sub, anchor: 'end' }); if (row.toggle !== undefined) toggle(c, W - 83, y + 12, row.toggle); c.reg(row.key ?? row.label, 0, y, W, 56); y += 64; }
     if (s.slider) { c.rect(40, H - 180, W - 80, 4, '#555', 2); c.add(`<circle cx="${W / 2}" cy="${H - 178}" r="12" fill="#fff"/>`); c.reg('Zoom slider', 30, H - 200, W - 60, 44); }
     if (s.face) { c.add(`<circle cx="${W / 2}" cy="300" r="110" fill="none" stroke="${C.green}" stroke-width="6" stroke-dasharray="6 6"/><circle cx="${W / 2}" cy="300" r="80" fill="#c9a58a"/>`); }
     if (s.finger) { c.add(`<circle cx="${W / 2}" cy="320" r="90" fill="none" stroke="#ff2d55" stroke-width="5"/>${[20, 35, 50, 65].map((r) => `<path d="M${W / 2 - r} 330 a${r} ${r + 10} 0 0 1 ${2 * r} 0" stroke="#ff2d55" stroke-width="4" fill="none"/>`).join('')}`); }
