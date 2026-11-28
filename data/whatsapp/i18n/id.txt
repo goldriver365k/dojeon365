@@ -1,0 +1,972 @@
+1|Ketuk “{x}”.
+2|Di layar Chat, ketuk chat dengan {x}.
+3|Layar WhatsApp. {x}
+4|Gambar-gambar ini adalah gambaran layar WhatsApp. Nama dan letak menu bisa sedikit berbeda di aplikasi aslinya.
+5|pelajaran
+6|Pasang dan daftar
+7|Teman dan kontak
+8|Chat dan pesan
+9|Foto, video, dan file
+10|Pesan suara
+11|Panggilan suara dan video
+12|Chat grup
+13|Profil dan status
+14|Emoji dan stiker
+15|Saluran dan komunitas
+16|Tulisan, layar, dan notifikasi
+17|Privasi dan keamanan
+18|Cadangan, pemulihan, dan HP baru
+19|Berbagi lokasi dan kontak
+20|Spam, penipuan, dan masalah
+21|Unduh WhatsApp
+22|Pasang WhatsApp
+23|Buka WhatsApp
+24|Pilih bahasa Anda
+25|Masukkan negara dan nomor telepon
+26|Verifikasi nomor telepon Anda
+27|Tambahkan nama profil
+28|Tambahkan foto profil
+29|Perbarui WhatsApp
+30|Memahami layar utama
+31|Tambah kontak dengan nomor telepon
+32|Tambah nomor luar negeri
+33|Tambah kontak baru
+34|Cari kontak Anda
+35|Tambah kontak dengan kode QR
+36|Lihat kode QR Anda sendiri
+37|Undang teman ke WhatsApp
+38|Ubah nama kontak
+39|Blokir kontak
+40|Buka blokir kontak
+41|Mulai chat baru
+42|Kirim pesan teks
+43|Tulis pesan dengan suara
+44|Baca pesan baru
+45|Balas pesan
+46|Salin pesan
+47|Tempel pesan
+48|Teruskan pesan
+49|Edit pesan yang sudah terkirim
+50|Hapus pesan yang sudah terkirim
+51|Memahami tanda centang
+52|Cari di dalam chat
+53|Kirim tautan situs web
+54|Beri bintang pada pesan penting
+55|Aktifkan pesan sementara
+56|Kirim satu foto
+57|Kirim beberapa foto
+58|Kirim foto dalam HD
+59|Ambil foto lalu kirim
+60|Lihat foto yang diterima
+61|Simpan foto yang diterima
+62|Kirim video
+63|Kirim video dalam HD
+64|Simpan video yang diterima
+65|Kirim dokumen
+66|Buka dokumen yang diterima
+67|Lihat semua foto dan file di chat
+68|Rekam pesan suara
+69|Kirim pesan suara
+70|Dengarkan pesan suara
+71|Batalkan rekaman suara
+72|Rekam tanpa menahan tombol
+73|Jeda rekaman
+74|Dengarkan sebelum mengirim
+75|Ubah kecepatan putar
+76|Lakukan panggilan suara
+77|Jawab panggilan suara
+78|Akhiri panggilan
+79|Lakukan panggilan video
+80|Jawab panggilan video
+81|Ganti kamera saat panggilan video
+82|Matikan mikrofon
+83|Pakai speaker
+84|Telepon beberapa orang sekaligus
+85|Bagikan layar saat panggilan video
+86|Buat grup
+87|Tambah orang ke grup
+88|Buat tautan undangan grup
+89|Gabung grup lewat tautan
+90|Ubah nama grup
+91|Ubah foto grup
+92|Lihat siapa saja di grup
+93|Jadikan seseorang admin grup
+94|Bisukan grup
+95|Sebut seseorang di grup
+96|Sematkan pesan di grup
+97|Keluar dari grup
+98|Lihat profil Anda
+99|Ubah foto profil
+100|Ubah nama profil
+101|Ubah Info
+102|Pasang status teks
+103|Bagikan foto sebagai status
+104|Bagikan video sebagai status
+105|Lihat status teman
+106|Pilih siapa yang melihat status Anda
+107|Hapus status Anda
+108|Kirim emoji
+109|Tanggapi pesan dengan emoji
+110|Kirim stiker
+111|Cari stiker
+112|Tambah stiker baru
+113|Atur stiker favorit
+114|Kirim GIF
+115|Buat stiker sendiri
+116|Apa itu Saluran WhatsApp
+117|Temukan saluran
+118|Ikuti saluran
+119|Baca kabar saluran
+120|Atur notifikasi saluran
+121|Berhenti mengikuti saluran
+122|Apa itu Komunitas
+123|Buat komunitas
+124|Gabung komunitas
+125|Keluar dari komunitas
+126|Perbesar tulisan
+127|Atur ukuran font
+128|Pakai tema terang
+129|Pakai tema gelap
+130|Ubah tema chat
+131|Ubah wallpaper chat
+132|Atur notifikasi pesan
+133|Ubah nada notifikasi
+134|Bisukan chat
+135|Sematkan chat penting
+136|Arsipkan chat
+137|Tampilkan lagi chat yang diarsipkan
+138|Periksa pengaturan privasi
+139|Siapa yang bisa melihat terakhir dilihat
+140|Siapa yang bisa melihat Anda online
+141|Siapa yang bisa melihat foto profil
+142|Aktifkan atau matikan laporan dibaca
+143|Aktifkan verifikasi dua langkah
+144|Kunci WhatsApp dengan sidik jari
+145|Kunci chat
+146|Periksa perangkat tertaut
+147|Keluarkan perangkat tak dikenal
+148|Senyapkan penelepon tak dikenal
+149|Lakukan pemeriksaan privasi
+150|Fungsi cadangan chat
+151|Hubungkan akun Google
+152|Cadangkan chat Anda
+153|Atur cadangan otomatis
+154|Aktifkan cadangan terenkripsi end-to-end
+155|Periksa cadangan terakhir
+156|Pulihkan chat di HP baru
+157|Pindahkan chat dari HP lama
+158|Ganti nomor telepon
+159|Atasi masalah cadangan dan pemulihan
+160|Kirim lokasi saat ini
+161|Bagikan lokasi terkini
+162|Berhenti membagikan lokasi terkini
+163|Kirim kontak ke teman
+164|Simpan kontak yang diterima
+165|Jaga lokasi tetap pribadi
+166|Pesan dari orang tak dikenal
+167|Kenali pesan palsu dari “anggota keluarga”
+168|Kenali tautan berbahaya
+169|Hindari penipuan investasi
+170|Hindari penipuan minta uang
+171|Jangan pernah berikan kode 6 digit Anda
+172|Laporkan spam
+173|Jika akun Anda dicuri
+174|WhatsApp tidak mau terbuka
+175|Pesan tidak terkirim
+176|Foto tidak terkirim
+177|Panggilan tidak tersambung
+178|Notifikasi tidak muncul
+179|Kosongkan ruang penyimpanan
+180|Pakai Pusat Bantuan WhatsApp
+181|Di layar utama, ketuk “Play Store”.
+182|Ketuk kolom pencarian di atas.
+183|Pastikan pengembangnya “WhatsApp LLC”.
+184|Di halaman WhatsApp Messenger, ketuk “Instal”.
+185|Tunggu selama diunduh dan dipasang.
+186|Setelah selesai, tombolnya berubah menjadi “Buka”.
+187|Cari ikon hijau WhatsApp di layar utama.
+188|Ketuk sekali untuk membuka WhatsApp.
+189|Saat WhatsApp pertama kali dibuka, muncul daftar bahasa.
+190|Ketuk bahasa Anda.
+191|Di layar sambutan, ketuk “Setuju dan lanjutkan”.
+192|Ketuk nama negara untuk memilih negara Anda.
+193|Ketik nomor telepon Anda.
+194|WhatsApp mengirim kode 6 digit lewat SMS.
+195|Ketik 6 angka itu ke kotak kode.
+196|Ketuk kotak nama.
+197|Ketik nama yang dikenal teman-teman Anda.
+198|Di layar Info profil, ketuk gambar kamera yang bulat.
+199|Ketuk foto yang Anda inginkan.
+200|Buka “Play Store” dari layar utama.
+201|Cari “WhatsApp” lalu buka WhatsApp Messenger.
+202|“Chat” menampilkan semua percakapan Anda.
+203|“Pembaruan” menampilkan status teman dan saluran.
+204|“Komunitas” mengumpulkan grup-grup yang berkaitan.
+205|“Panggilan” menampilkan panggilan terbaru.
+206|Ketuk tombol hijau chat baru.
+207|Ketik namanya.
+208|Ketik nomor teleponnya.
+209|Ketuk kode negara untuk memilih negara teman.
+210|Ketik nomornya tanpa angka 0 di depan.
+211|Di layar Chat, ketuk tombol hijau chat baru.
+212|Ketik nama depan.
+213|Ketuk kaca pembesar di atas.
+214|Ketik nama. Kontak yang cocok akan muncul.
+215|Ketuk gambar kode QR untuk memindai.
+216|Arahkan kamera ke kode QR teman.
+217|Di layar Chat, ketuk tiga titik di kanan atas.
+218|Ketuk ikon QR kecil di samping nama Anda.
+219|Tunjukkan kode ini ke teman agar dia bisa menambahkan Anda.
+220|Di dekat bagian bawah, ketuk “Undang teman”.
+221|Ketuk cara mengirim undangan, misalnya “Pesan”.
+222|Ketuk nama di atas.
+223|Ketuk tiga titik di kanan atas.
+224|Ubah namanya.
+225|Ketuk nama kontak di atas.
+226|Gulir ke bagian paling bawah info kontak.
+227|Ketuk “Blokir” lagi untuk memastikan.
+228|Ketuk “Kontak yang diblokir” di dekat bagian bawah.
+229|Ketuk orang yang ingin dibuka blokirnya.
+230|Ketuk orang yang ingin Anda kirimi pesan.
+231|Chat terbuka. Ketik di kotak pesan di bawah.
+232|Ketuk kotak pesan di bawah.
+233|Ketik pesan Anda.
+234|Ketuk panah kirim hijau.
+235|Ketuk kotak pesan supaya keyboard muncul.
+236|Ketuk mikrofon di keyboard dan bicaralah pelan-pelan.
+237|Periksa apakah kata-katanya sudah benar.
+238|Angka hijau menunjukkan jumlah pesan baru di chat.
+239|Ketuk chat untuk membaca pesan baru.
+240|Sentuh lama pesan yang ingin dibalas.
+241|Ketuk panah balas di atas.
+242|Ketik balasan Anda.
+243|Sentuh lama pesan yang ingin disalin.
+244|Ketuk ikon salin di atas.
+245|Sentuh lama kotak pesan.
+246|Sentuh lama pesan yang ingin dibagikan.
+247|Ketuk panah teruskan di atas.
+248|Ketuk orang yang akan dikirimi.
+249|Ketuk tombol kirim hijau.
+250|Sentuh lama pesan yang Anda kirim.
+251|Ketuk tiga titik di atas.
+252|Ubah kata-kata di kotak pesan.
+253|Ketuk centang hijau untuk menyimpan.
+254|Sentuh lama pesan yang Anda kirim.
+255|Ketuk ikon tempat sampah di atas.
+256|Satu centang abu-abu: pesan sudah terkirim.
+257|Dua centang abu-abu: pesan sampai di HP mereka.
+258|Dua centang biru: mereka sudah membacanya.
+259|Ketik satu kata. WhatsApp melompat ke pesan dengan kata itu.
+260|Ketuk “Tempel” untuk memasukkan tautan yang disalin.
+261|Sentuh lama pesan penting itu.
+262|Ketuk bintang di atas.
+263|Pesan berbintang ada di menu tiga titik › “Berbintang”.
+264|Pilih berapa lama pesan bertahan, misalnya “24 jam”.
+265|Ketuk penjepit kertas di kotak pesan.
+266|Ketuk foto yang ingin dikirim.
+267|Pastikan fotonya muncul di chat.
+268|Sentuh lama foto pertama.
+269|Ketuk foto lain yang Anda mau. Masing-masing diberi nomor.
+270|Ketuk panah hijau di bawah.
+271|Ketuk “HD” di atas.
+272|Ketuk ikon kamera di kotak pesan.
+273|Ambil foto dengan tombol putih bulat.
+274|Ketuk foto di chat.
+275|Foto memenuhi layar. Renggangkan dua jari untuk memperbesar.
+276|Ketuk foto yang Anda terima.
+277|Ketuk video. Durasi video terlihat di pojok.
+278|Ketuk video.
+279|Ketuk video yang Anda terima.
+280|Ketuk file yang ingin dikirim.
+281|Ketuk dokumen di chat.
+282|Dokumen terbuka di aplikasi yang bisa menampilkannya.
+283|Foto, tautan, dan dokumen ada di tab terpisah.
+284|Sentuh lama mikrofon hijau.
+285|Bicaralah sambil menahannya. Anda akan melihat titik merah dan waktunya.
+286|Tahan mikrofon dan bicaralah.
+287|Angkat jari Anda. Pesan suara terkirim.
+288|Ketuk tombol putar di pesan suara.
+289|Saat merekam, tetap tahan dan geser jari ke kiri.
+290|Angkat jari Anda. Rekaman dihapus dan tidak dikirim.
+291|Geser jari ke atas ke gembok.
+292|Sekarang Anda bisa melepas jari dan terus bicara. Ketuk kirim jika sudah.
+293|Saat merekam tanpa menahan, ketuk tombol jeda.
+294|Ketuk lagi untuk melanjutkan rekaman.
+295|Ketuk putar untuk mendengar pesan sebelum dikirim.
+296|Mulai putar pesan suara.
+297|Ketuk “1×” untuk memutar lebih cepat (1,5× atau 2×).
+298|Ketuk ikon telepon di atas.
+299|Tunggu teman Anda menjawab.
+300|Saat WhatsApp berdering, ketuk tombol hijau “Terima”.
+301|Anda sudah tersambung. Mulailah bicara.
+302|Ketuk tombol merah untuk mengakhiri panggilan.
+303|Ketuk ikon kamera video di atas.
+304|Pegang HP agar wajah Anda terlihat di layar, lalu tunggu.
+305|Ketuk tombol hijau “Terima”.
+306|Teman Anda memenuhi layar. Anda terlihat di kotak kecil.
+307|Saat panggilan video, ketuk “Balik kamera”.
+308|Saat panggilan, ketuk “Bisukan”. Teman tidak bisa mendengar Anda.
+309|Ketuk lagi untuk bicara lagi.
+310|Saat panggilan suara, ketuk “Speaker” agar bisa mendengar tanpa memegang HP.
+311|Ketuk ikon telepon di atas chat grup.
+312|Ketuk orang-orang yang ingin ditelepon.
+313|Ketuk tombol panggil.
+314|Saat panggilan video, ketuk “Bagikan layar”.
+315|Ketuk “Mulai sekarang” untuk memastikan.
+316|Ketuk setiap orang yang ingin dimasukkan ke grup.
+317|Ketuk panah hijau.
+318|Ketik nama grup.
+319|Ketuk centang hijau untuk membuat grup.
+320|Ketuk nama grup di atas.
+321|Ketuk orang yang ingin ditambahkan.
+322|Ketuk centang hijau.
+323|Ketuk tautan undangan grup yang dikirim seseorang.
+324|Ketuk nama grup.
+325|Ketik nama baru.
+326|Ketuk foto grup.
+327|Gulir ke bawah untuk melihat semua anggota grup.
+328|Ketuk orang yang ingin dijadikan admin.
+329|Pilih berapa lama, misalnya “Selalu”.
+330|Ketik “@” di kotak pesan.
+331|Ketuk nama orang itu di daftar.
+332|Ketik sisa pesan Anda.
+333|Sentuh lama pesan yang ingin disematkan.
+334|Pesan tetap di bagian atas chat.
+335|Ketuk “Keluar” untuk memastikan.
+336|Ketuk nama Anda di atas.
+337|Di sini terlihat foto, nama, Info, dan nomor telepon Anda.
+338|Ketuk foto Anda.
+339|Ketik nama baru Anda.
+340|Ketuk kalimat yang sudah tersedia, misalnya “Ada”.
+341|Ketuk “Pembaruan” di bawah.
+342|Ketik pesan singkat.
+343|Ketuk tombol kamera di kanan bawah.
+344|Ketuk foto dari galeri Anda.
+345|Ketuk video dari galeri Anda.
+346|Ketuk teman yang fotonya dilingkari hijau.
+347|Statusnya diputar. Ketuk sisi kanan untuk melewati.
+348|Pilih siapa yang bisa melihat status Anda.
+349|Ketuk wajah tersenyum di kotak pesan.
+350|Ketuk emoji untuk menambahkannya.
+351|Sentuh lama pesan itu.
+352|Ketuk emoji di baris yang muncul.
+353|Tanggapan Anda tampil di bawah pesan.
+354|Ketuk stiker. Stiker langsung terkirim.
+355|Ketik kata seperti “terima kasih”.
+356|Ketuk “+” untuk melihat paket stiker lain.
+357|Ketuk “Tambah” di samping paket yang Anda suka.
+358|Sentuh lama stiker di chat.
+359|Ketuk GIF untuk memilihnya.
+360|Ketuk kotak “+” untuk membuat stiker.
+361|Ketuk foto untuk dijadikan stiker.
+362|Saluran adalah kabar satu arah dari orang atau organisasi.
+363|Saluran ada di tab “Pembaruan”.
+364|Ketuk “Jelajahi” di samping Saluran.
+365|Ketuk ikon cari dan ketik topik.
+366|Di tab Pembaruan, ketuk “Jelajahi”.
+367|Ketuk “Ikuti” di samping saluran.
+368|Ketuk nama saluran.
+369|Baca kabar terbaru di bagian bawah.
+370|Buka saluran dari tab Pembaruan.
+371|Ketuk “Bisukan” atau “Bunyikan” untuk memilih pemberitahuan.
+372|Ketuk “Berhenti mengikuti” lagi untuk memastikan.
+373|Komunitas mengumpulkan beberapa grup yang berkaitan, seperti lingkungan RT atau klub.
+374|Komunitas ada di tab “Komunitas”.
+375|Ketuk “Komunitas” di bawah.
+376|Ketik nama dan deskripsi singkat.
+377|Ketuk panah hijau untuk melanjutkan.
+378|Ketuk tautan undangan komunitas yang dikirim seseorang.
+379|Ketuk komunitasnya.
+380|Pilih “Kecil”, “Sedang”, atau “Besar”.
+381|Ketuk tema warna yang Anda suka.
+382|Ketuk gambar yang Anda suka.
+383|Pastikan “Gunakan notifikasi prioritas tinggi” aktif agar pesan muncul.
+384|Pilih nada.
+385|Pilih “Selalu”.
+386|Sentuh lama chat di daftar Chat.
+387|Ketuk pin di atas.
+388|Chat tetap di bagian atas daftar.
+389|Sentuh lama chat yang ingin disembunyikan.
+390|Ketuk kotak arsip di atas.
+391|Ketuk “Diarsipkan” di bagian atas daftar Chat.
+392|Sentuh lama chat itu.
+393|Ketuk kotak batal arsip di atas.
+394|Periksa setiap baris. Baris itu menunjukkan siapa yang bisa melihat info Anda.
+395|Pilih siapa yang bisa melihat kapan terakhir Anda di WhatsApp.
+396|Di “Siapa yang bisa melihat saya online”, pilih “Sama seperti terakhir dilihat”.
+397|Pilih “Kontak saya”.
+398|Ketuk tombol “Laporan dibaca”.
+399|Ketik PIN 6 digit yang mudah Anda ingat.
+400|Aktifkan “Buka dengan biometrik”.
+401|Sentuh sensor sidik jari untuk memastikan.
+402|Aktifkan tombolnya.
+403|Periksa daftarnya. Semua komputer atau tablet yang memakai WhatsApp Anda ada di sini.
+404|Ketuk perangkat yang tidak Anda kenali.
+405|Aktifkan “Senyapkan penelepon tak dikenal”.
+406|Lihat setiap topik dan pilih yang cocok untuk Anda.
+407|Cadangan menyalin chat Anda ke akun Google.
+408|Ketuk akun Google Anda.
+409|Pilih “Harian”.
+410|Buat kata sandi dan simpan baik-baik.
+411|Lihat “Cadangan terakhir” untuk tahu kapan chat terakhir disimpan.
+412|Di HP baru, pasang WhatsApp dan verifikasi nomor yang sama.
+413|Saat WhatsApp menemukan cadangan, ketuk “Pulihkan”.
+414|Di HP lama, buka Pengaturan.
+415|Ketuk “Mulai”. HP baru akan menampilkan langkah berikutnya.
+416|Ketik nomor lama dan nomor baru Anda.
+417|Jika cadangan atau pemulihan gagal, periksa hal-hal ini.
+418|Pilih berapa lama, misalnya “1 jam”.
+419|Ketuk “Berhenti berbagi” di bawah lokasi terkini Anda.
+420|Ketuk “Berhenti” untuk memastikan.
+421|Ketuk kontak yang ingin dibagikan.
+422|Ketuk kartu kontak yang Anda terima.
+423|Lokasi menunjukkan di mana Anda berada, jadi berhati-hatilah.
+424|Pesan dari nomor yang tidak ada di kontak Anda menampilkan peringatan.
+425|Jangan dibalas. Ketuk “Blokir” di bawah.
+426|Penipu menulis “Halo Bu, HP-ku hilang, ini nomor baruku.”
+427|Sebelum mengirim uang, telepon anak Anda di nomor lamanya.
+428|Hati-hati dengan tautan yang menjanjikan hadiah atau masalah mendesak.
+429|Jangan ketuk tautannya. Hapus pesannya.
+430|Seseorang menjanjikan untung besar tanpa risiko.
+431|Jangan kirim uang. Keluar dari grup dan laporkan.
+432|Akun teman meminta Anda segera mengirim uang.
+433|Telepon teman Anda dulu. Akunnya mungkin dicuri.
+434|Seseorang meminta kode 6 digit yang baru Anda terima.
+435|Jangan pernah berikan. WhatsApp tidak akan pernah meminta kode ini.
+436|Buka chat dengan nomor tak dikenal itu.
+437|Ketuk “Laporkan” untuk memastikan.
+438|Jika teman menerima pesan aneh dari Anda, segera bertindak.
+439|Setelah masuk lagi, aktifkan verifikasi dua langkah.
+440|Jika WhatsApp tidak mau terbuka, coba langkah ini secara berurutan.
+441|Di Play Store, ketuk “Perbarui” jika terlihat.
+442|Jam sebagai ganti centang berarti pesan masih menunggu.
+443|Periksa koneksi internet Anda.
+444|Jika foto tidak terkirim, periksa hal-hal ini.
+445|Jika panggilan tidak tersambung, periksa hal-hal ini.
+446|Jika notifikasi tidak muncul, periksa hal-hal ini.
+447|Aktifkan “Gunakan notifikasi prioritas tinggi”.
+448|Ketuk chat untuk memeriksa dan menghapus file besar.
+449|Ketik pertanyaan Anda untuk menemukan jawaban.
+450|Pasang hanya aplikasi resmi. Jangan pernah memasang WhatsApp dari tautan kiriman orang.
+451|Pakai Wi-Fi jika bisa. Lebih hemat kuota.
+452|Anda bisa mengubahnya nanti di Pengaturan › Bahasa aplikasi.
+453|Ini nomor latihan. Di HP Anda, pakai nomor Anda sendiri.
+454|Sering kali kode terisi sendiri.
+455|Foto tidak wajib. Anda bisa menambahkannya nanti.
+456|Jika hanya terlihat “Buka”, Anda sudah punya versi terbaru.
+457|Setiap negara punya kode, misalnya +62 untuk Indonesia.
+458|Pesan yang sering diteruskan diberi tanda “Sering diteruskan”. Hati-hati — mungkin itu kabar bohong.
+459|Anda bisa mengedit pesan sebentar setelah mengirimnya.
+460|“Hapus untuk semua orang” hanya bisa dalam waktu tertentu setelah dikirim.
+461|Jika seseorang mematikan laporan dibaca, centangnya tetap abu-abu.
+462|Jangan pernah membuka tautan dari orang tak dikenal.
+463|Pesan baru akan hilang setelah waktu itu. Pesan lama tetap ada.
+464|Foto HD memakai lebih banyak kuota. Sebaiknya pakai Wi-Fi.
+465|Banyak HP menyimpan foto yang diterima secara otomatis.
+466|Jangan buka file dari orang tak dikenal.
+467|Tetap tahan jari di tombol selama Anda bicara.
+468|Dekatkan HP ke telinga agar terdengar pelan.
+469|Ketuk tempat sampah untuk menghapusnya jika ingin mencoba lagi.
+470|Panggilan WhatsApp memakai internet (Wi-Fi atau kuota).
+471|Di beberapa HP, tombolnya digeser ke atas.
+472|Sekarang teman Anda melihat apa yang Anda lihat — kebun, cucu…
+473|Tutup dulu aplikasi pribadi. Teman Anda melihat semua isi layar.
+474|Mungkin hanya admin grup yang boleh menambah orang.
+475|Gabunglah hanya ke grup dari orang yang Anda kenal.
+476|Admin bisa menambah dan mengeluarkan orang serta mengubah pengaturan grup.
+477|Orang yang Anda sebut mendapat notifikasi.
+478|Status hilang setelah 24 jam.
+479|Stiker favorit ada di bawah bintang di panel stiker.
+480|Untuk tulisan yang lebih besar lagi, perbesar juga di Pengaturan › Tampilan HP.
+481|Layar gelap bisa lebih nyaman di mata saat malam.
+482|Pengaturan › Notifikasi di HP juga harus mengizinkan WhatsApp.
+483|Chat yang diarsipkan hanya disembunyikan, tidak dihapus.
+484|Jika dimatikan, Anda juga tidak akan melihat centang biru dari orang lain.
+485|Jangan pernah memberi tahu PIN ini ke siapa pun.
+486|Sambungkan ke Wi-Fi dulu. Cadangan bisa berukuran besar.
+487|Pakai akun Google yang sama tempat cadangan disimpan.
+488|Foto yang dihapus tidak bisa kembali. Simpan dulu yang Anda inginkan.
+489|Bantuan resmi: faq.whatsapp.com
+490|Pesan yang dihapus dan chat yang Anda tinggalkan mungkin tidak bisa kembali. Periksa sebelum mengetuk.
+491|Ini mengubah keamanan akun Anda. Jangan pernah berikan kode 6 digit atau PIN kepada siapa pun.
+492|Cadangan chat bisa berisi pesan pribadi. Jaga akun Google dan kata sandi cadangan Anda, dan jangan pernah menghapus cadangan kecuali Anda yakin.
+493|Lokasi menunjukkan di mana Anda berada. Bagikan hanya kepada orang yang Anda percaya, dan hentikan saat tidak diperlukan lagi.
+494|Telepon
+495|Pesan
+496|Kamera
+497|Galeri
+498|Play Store
+499|Pengaturan
+500|Ketuk
+501|Instal
+502|Tentang aplikasi ini
+503|Sederhana. Andal. Pribadi.
+504|Menginstal…
+505|Batal
+506|Uninstal
+507|Buka
+508|Tanya Meta AI atau cari
+509|Semua
+510|Belum dibaca
+511|Favorit
+512|Grup
+513|Sudah makan malam?
+514|Keluarga
+515|Foto
+516|Sampai besok
+517|Klub jalan kaki
+518|Pertemuan hari Sabtu
+519|Chat
+520|Pembaruan
+521|Komunitas
+522|Panggilan
+523|Pilih bahasa Anda
+524|Berikutnya
+525|Selamat datang di WhatsApp
+526|Baca Kebijakan Privasi kami. Ketuk “Setuju dan lanjutkan” untuk menerima Ketentuan Layanan.
+527|Setuju dan lanjutkan
+528|Masukkan nomor telepon Anda
+529|WhatsApp perlu memverifikasi nomor telepon Anda.
+530|Nomor telepon
+531|Kode Anda hanya untuk Anda
+532|Cari SMS dari WhatsApp.
+533|Jangan pernah memberi tahu kode ini ke siapa pun — termasuk orang yang mengaku bekerja di WhatsApp.
+534|Memverifikasi nomor Anda
+535|Menunggu untuk otomatis mendeteksi kode 6 digit yang dikirim lewat SMS.
+536|Tidak menerima kode?
+537|Info profil
+538|Masukkan nama Anda dan foto profil (opsional).
+539|Ketik nama Anda di sini
+540|Foto profil
+541|Terbaru
+542|Selesai
+543|Perbarui
+544|Status
+545|Status saya
+546|Ketuk untuk menambahkan pembaruan status
+547|Pembaruan terkini
+548|Hari ini, 09.12
+549|Saluran
+550|Jelajahi
+551|Komunitas baru
+552|Tambah favorit
+553|Terbaru
+554|Pilih kontak
+555|Grup baru
+556|Kontak baru
+557|Kontak di WhatsApp
+558|Nama depan
+559|Simpan
+560|5 kontak
+561|Nama belakang
+562|Halo! Saya menggunakan WhatsApp.
+563|Kode QR
+564|Kode saya
+565|Pindai kode
+566|Kontak WhatsApp
+567|Bagikan kode
+568|Pindai kode QR WhatsApp
+569|Tambahkan ke kontak
+570|Daftar siaran
+571|Perangkat tertaut
+572|Berbintang
+573|Akun
+574|Notifikasi keamanan, ganti nomor
+575|Privasi
+576|Blokir kontak, pesan sementara
+577|Tema, wallpaper, riwayat chat
+578|Notifikasi
+579|Nada pesan, grup & panggilan
+580|Penyimpanan dan data
+581|Penggunaan jaringan, unduh otomatis
+582|Bahasa aplikasi
+583|Bahasa Indonesia (bahasa perangkat)
+584|Bantuan
+585|Pusat bantuan, hubungi kami
+586|Undang teman
+587|Email
+588|Lainnya
+589|online
+590|Hari ini
+591|Sudah. Kamu?
+592|Pesan
+593|Audio
+594|Video
+595|Bayar
+596|Cari
+597|Visibilitas media
+598|Pesan sementara
+599|Nonaktif
+600|Blokir
+601|Bagikan
+602|Edit
+603|Lihat di buku alamat
+604|Verifikasi kode keamanan
+605|Edit kontak
+606|Kontak yang diblokir tidak akan bisa menelepon atau mengirim pesan kepada Anda.
+607|Blokir John?
+608|Terakhir dilihat & online
+609|Semua orang
+610|Laporan dibaca
+611|Kontak yang diblokir
+612|Buka blokir John
+613|Bicara, jangan mengetik
+614|Keyboard Anda punya tombol mikrofon kecil.
+615|Bicaralah pelan-pelan. Kata-kata Anda muncul sebagai tulisan.
+616|Keyboard terlihat sedikit berbeda di setiap HP.
+617|Tempel
+618|Papan klip
+619|Teruskan ke…
+620|Info
+621|Salin
+622|Sematkan
+623|Hapus pesan?
+624|Hapus untuk saya
+625|Hapus untuk semua orang
+626|Kamu di rumah?
+627|Lihat kontak
+628|Tambah ke daftar
+629|Media, tautan, dan dokumen
+630|Bisukan notifikasi
+631|Jam berapa ke dokter?
+632|24 jam
+633|7 hari
+634|90 hari
+635|Lokasi
+636|Kontak
+637|Dokumen
+638|Polling
+639|Acara
+640|Tambahkan keterangan…
+641|dipilih
+642|Kualitas media
+643|Kualitas standar
+644|Kualitas HD
+645|Ambil foto
+646|Pegang HP dengan stabil.
+647|Ketuk tombol bulat besar sekali.
+648|Lihat kebunnya!
+649|Hari ini, 18.20
+650|Lihat cucu-cucu!
+651|Semua media
+652|Tampilkan di chat
+653|Lihat di galeri
+654|Kirim ke Maria
+655|Janji dokter.pdf
+656|240 kB · PDF
+657|Rencana kebun.pdf
+658|1 MB · PDF
+659|Kirim “Janji dokter.pdf” ke Maria?
+660|Kirim
+661|Membuka dokumen
+662|File PDF terbuka di penampil PDF.
+663|Jika HP bertanya aplikasi mana yang dipakai, pilih yang Anda kenal.
+664|‹ Geser untuk batal
+665|Terenkripsi end-to-end
+666|Berdering
+667|Speaker
+668|Bisukan
+669|Tambah orang
+670|Panggilan suara WhatsApp
+671|Tolak
+672|Terima
+673|Balik kamera
+674|Kamera mati
+675|Bagikan layar
+676|Panggilan video WhatsApp
+677|Anda
+678|Maria, John, Tom, Anda
+679|Makan siang bareng hari Sabtu?
+680|Ya, sampai ketemu!
+681|Mulai panggilan grup
+682|WhatsApp akan memiliki akses ke semua yang ada di layar Anda.
+683|Mulai merekam atau mentransmisikan dengan WhatsApp?
+684|Mulai sekarang
+685|Tambah anggota
+686|Buat
+687|Grup
+688|anggota
+689|Tambah
+690|Izin grup
+691|Undang lewat tautan
+692|Kirim tautan lewat WhatsApp
+693|Salin tautan
+694|Bagikan tautan
+695|Setel ulang tautan
+696|Gabung grup kami: chat.whatsapp.com/example
+697|Grup · 12 anggota
+698|Gabung grup
+699|Masukkan nama grup
+700|OK
+701|Ikon grup
+702|Emoji & stiker
+703|Admin grup
+704|Kirim pesan ke Maria
+705|Lihat Maria
+706|Jadikan admin grup
+707|Keluarkan Maria
+708|Info grup
+709|Media grup
+710|Anggota lain tidak akan tahu bahwa Anda membisukan chat ini.
+711|8 jam
+712|1 minggu
+713|Selalu
+714|Sebut
+715|Laporkan
+716|Keluar dari grup
+717|Bersihkan chat
+718|Ekspor chat
+719|Hanya admin grup yang akan diberi tahu bahwa Anda keluar.
+720|Keluar dari “Klub jalan kaki”?
+721|Keluar
+722|Profil
+723|Nama
+724|Info
+725|Halo!
+726|Avatar
+727|Hapus foto
+728|Pilih Info
+729|Ada
+730|Sibuk
+731|Di kantor
+732|Selamat pagi, semuanya!
+733|Status (Kontak)
+734|Jalan-jalan yang menyenangkan di taman hari ini
+735|Balas…
+736|Buat saluran
+737|Privasi status
+738|Kontak saya
+739|Kontak saya kecuali…
+740|Hanya bagikan dengan…
+741|2 kali dilihat
+742|Status ini juga akan dihapus untuk semua orang yang menerimanya.
+743|Hapus pembaruan status ini?
+744|Hapus
+745|Emoji
+746|Stiker
+747|Cari stiker
+748|Stiker terima kasih
+749|Paket stiker
+750|Paket stiker
+751|Wajah gembira
+752|Gratis
+753|Bunga
+754|Tambahkan ke favorit
+755|Lihat paket stiker
+756|Apa itu saluran?
+757|Anda membaca kabar; Anda tidak bisa membalas di saluran.
+758|Nomor telepon Anda tidak ditampilkan ke saluran.
+759|Ikuti hanya saluran yang Anda percaya.
+760|Tips Berkebun
+761|12 rb pengikut
+762|Ikuti
+763|Temukan saluran
+764|Berita Kesehatan
+765|48 rb pengikut
+766|Siram tomat Anda pagi-pagi.
+767|Minggu ini: menanam umbi tulip.
+768|Info saluran
+769|Berhenti mengikuti
+770|Berhenti mengikuti Tips Berkebun?
+771|Apa itu komunitas?
+772|Admin bisa mengirim pengumuman ke semua orang.
+773|Anggota bisa bergabung dengan grup yang mereka suka.
+774|Nomor Anda terlihat oleh anggota grup.
+775|Gabung komunitas kami: chat.whatsapp.com/example
+776|Klub kakek-nenek
+777|Komunitas · 3 grup
+778|Gabung komunitas
+779|Lingkungan
+780|Pengumuman
+781|Umum
+782|Grup kebun
+783|Info komunitas
+784|Keluar dari komunitas
+785|Tampilan
+786|Tema
+787|Default sistem
+788|Tema chat default
+789|Pengaturan chat
+790|Enter untuk kirim
+791|Ukuran font
+792|Sedang
+793|Kecil
+794|Besar
+795|Cadangan chat
+796|Transfer chat
+797|Pilih tema
+798|Terang
+799|Gelap
+800|Wallpaper
+801|Nada percakapan
+802|Nada notifikasi
+803|Default
+804|Getar
+805|Gunakan notifikasi prioritas tinggi
+806|Nada notifikasi grup
+807|Lonceng kecil
+808|Bel
+809|Senyap
+810|Diarsipkan
+811|Kunci aplikasi
+812|Tidak ada
+813|Pemeriksaan privasi
+814|Siapa yang bisa melihat terakhir dilihat saya
+815|Tidak ada
+816|Siapa yang bisa melihat saya online
+817|Sama seperti terakhir dilihat
+818|Notifikasi keamanan
+819|Kunci sandi
+820|Alamat email
+821|Verifikasi dua langkah
+822|Ganti nomor
+823|Minta info akun
+824|Hapus akun
+825|Untuk keamanan tambahan, aktifkan verifikasi dua langkah, yang akan meminta PIN saat Anda mendaftarkan nomor ke WhatsApp lagi.
+826|Aktifkan
+827|Masukkan PIN 6 digit yang akan diminta saat Anda mendaftarkan nomor ke WhatsApp.
+828|Buka dengan biometrik
+829|Kunci otomatis
+830|Segera
+831|Konfirmasi sidik jari Anda
+832|Letakkan jari yang terdaftar di sensor.
+833|Mulai sekarang WhatsApp hanya terbuka dengan sidik jari Anda.
+834|Kunci chat
+835|Kunci chat ini dengan sidik jari
+836|Status perangkat
+837|Aktif sekarang
+838|Terakhir aktif 3 hari lalu
+839|Tautkan perangkat
+840|Browser tidak dikenal
+841|Terakhir aktif 1 jam lalu
+842|Keluar
+843|Tutup
+844|Senyapkan penelepon tak dikenal
+845|Panggilan dari nomor tak dikenal akan disenyapkan
+846|Pilih siapa yang bisa menghubungi Anda
+847|Kendalikan info pribadi Anda
+848|Tambah privasi untuk chat Anda
+849|Tambah perlindungan untuk akun Anda
+850|Fungsi cadangan chat
+851|Pesan dan foto Anda bisa disimpan di Google Drive.
+852|Jika HP hilang, Anda bisa memulihkannya.
+853|Anda perlu nomor telepon dan akun Google yang sama.
+854|Cadangkan
+855|Cadangan terakhir: Kemarin 02.00
+856|Akun Google
+857|Frekuensi
+858|Harian
+859|Cadangan terenkripsi end-to-end
+860|Sertakan video
+861|Pilih akun
+862|Tambah akun
+863|Mingguan
+864|Bulanan
+865|Tambahkan lapisan perlindungan pada cadangan Anda.
+866|Buat kata sandi
+867|Jika lupa kata sandi ini, Anda tidak bisa memulihkan cadangan.
+868|Pulihkan cadangan
+869|Cadangan ditemukan. Cadangan terakhir: Kemarin 02.00.
+870|Lewati
+871|Pulihkan
+872|Letakkan kedua HP berdekatan dan sambungkan ke Wi-Fi.
+873|Mulai
+874|Mengganti nomor akan memindahkan info akun, grup, dan pengaturan Anda.
+875|Masalah cadangan dan pemulihan
+876|Nomor dan akun Google yang sama?
+877|Cukup ruang di Google Drive dan di HP?
+878|Tersambung ke Wi-Fi?
+879|Untuk cadangan terenkripsi: kata sandinya benar?
+880|Kirim lokasi
+881|Bagikan lokasi terkini
+882|Kirim lokasi Anda saat ini
+883|Akurat hingga 10 meter
+884|15 menit
+885|1 jam
+886|Lokasi terkini
+887|Berhenti berbagi
+888|Berhenti membagikan lokasi terkini?
+889|Berhenti
+890|Bagikan kontak
+891|Tambah kontak
+892|Jaga lokasi tetap pribadi
+893|Bagikan hanya kepada keluarga dan teman dekat.
+894|Lokasi terkini berhenti setelah waktu yang dipilih — boleh dihentikan lebih awal.
+895|Jangan pernah membagikannya ke orang asing atau di grup besar.
+896|Bukan kontak
+897|Pengirim ini tidak ada di kontak Anda.
+898|Halo sayang, saya punya penawaran bagus untuk Anda
+899|Bukan kontak · Tidak ada grup bersama
+900|Halo Bu, HP-ku rusak. Ini nomor baruku.
+901|Bisa kirim uang? Mendesak.
+902|Kenali pesan keluarga palsu
+903|Nomor baru, dan permintaan uang yang mendesak.
+904|Mereka bilang tidak bisa ditelepon.
+905|Selalu telepon nomor lama dan dengar suaranya dulu.
+906|Paket Anda menunggu! Bayar biayanya di sini: parcel-check.example
+907|Kenali tautan berbahaya
+908|Ejaan aneh, hadiah, atau “bayar biaya kecil”.
+909|Jika tautan meminta kata sandi atau nomor kartu, berhenti.
+910|Cek ke perusahaannya lewat aplikasi resminya.
+911|Klub Investasi
+912|300 anggota
+913|Gabung hari ini dan gandakan uang Anda dalam seminggu!
+914|Hindari penipuan investasi
+915|Tidak ada investasi sungguhan yang menjamin untung besar dan cepat.
+916|Penipu memakai grup yang penuh “anggota bahagia” palsu.
+917|Tanyakan ke bank atau keluarga sebelum berinvestasi.
+918|Aku tertahan di luar negeri, bisa kirim 500 sekarang?
+919|Hindari penipuan minta uang
+920|Telepon orangnya.
+921|Jangan kirim uang hanya karena sebuah pesan.
+922|Jika akunnya palsu, laporkan.
+923|Dukungan WhatsApp?
+924|Akun Anda akan ditutup. Kirimkan kode 6 digit dari SMS Anda.
+925|Kode Anda adalah kunci akun Anda
+926|Siapa pun yang punya kode bisa mengambil alih WhatsApp Anda.
+927|Jangan dibalas. Blokir dan laporkan.
+928|Aktifkan verifikasi dua langkah agar lebih aman.
+929|Anda menang hadiah!
+930|Pesan terbaru akan diteruskan ke WhatsApp.
+931|Laporkan kontak ini ke WhatsApp?
+932|Jika akun Anda dicuri
+933|Buka WhatsApp dan daftarkan nomor Anda lagi dengan kode SMS.
+934|Aktifkan verifikasi dua langkah.
+935|Beri tahu keluarga dan teman agar tidak mengirim uang.
+936|Hubungi dukungan WhatsApp lewat Pengaturan › Bantuan.
+937|WhatsApp tidak mau terbuka
+938|Mulai ulang HP Anda.
+939|Perbarui WhatsApp di Play Store.
+940|Pastikan HP masih punya ruang kosong.
+941|Kamu datang?
+942|Pesan tidak terkirim
+943|Nyalakan Wi-Fi atau data seluler.
+944|Matikan mode pesawat.
+945|Mulai ulang HP jika masih menunggu.
+946|Foto tidak terkirim
+947|Apakah internet Anda berfungsi?
+948|Apakah tanggal dan jam di HP sudah benar?
+949|Apakah WhatsApp diizinkan memakai foto? (Pengaturan HP › Aplikasi › WhatsApp › Izin)
+950|Panggilan tidak tersambung
+951|Kedua HP perlu koneksi internet yang bagus.
+952|Coba Wi-Fi, jangan data seluler.
+953|Pastikan WhatsApp boleh memakai mikrofon dan kamera.
+954|Notifikasi tidak muncul
+955|Apakah chat dibisukan?
+956|Apakah notifikasi WhatsApp aktif di Pengaturan HP?
+957|Apakah penghemat baterai menghentikan WhatsApp?
+958|Kelola penyimpanan
+959|2,1 GB terpakai
+960|Penggunaan jaringan
+961|Gunakan lebih sedikit data untuk panggilan
+962|Pusat bantuan
+963|Hubungi kami
+964|Ketentuan dan Kebijakan Privasi
+965|Info aplikasi
+966|Cari di Pusat Bantuan
+967|Cara mencadangkan chat
+968|Pusat Bantuan
+969|Cara tetap aman
+970|Kemarin
+971|Hari ini, 18.40
+972|Kemarin, 10.02

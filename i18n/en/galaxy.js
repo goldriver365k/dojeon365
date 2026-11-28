@@ -1,0 +1,411 @@
+// English (global) Galaxy lessons. Every lesson is a draft (noindex, not in the sitemap) until it is listed in review.js.
+// steps[i] matches the Korean card i of the same lesson (tests check the count).
+// UI names follow Samsung's English One UI wording. Practice screens are not shown yet (their labels are Korean).
+
+import { findLesson } from '../../data/galaxy/index.js';
+export const GROUPS = { basic: 'Basics', life: 'Everyday use', apply: 'More features', adv: 'Advanced and troubleshooting' };
+
+export const CATEGORIES = {
+  1: ['Turn your phone on and off', 'Buttons, charging, power and the lock screen'],
+  2: ['Tap, hold and swipe', 'The basic touches and the navigation buttons'],
+  3: ['Make text and sound easier', 'Bigger text, brightness, screen timeout and volume'],
+  4: ['Make and answer calls', 'Calling, answering, speaker and blocking'],
+  5: ['Save and find contacts', 'New contacts, search, edit and favorites'],
+  6: ['Send messages', 'Texting, editing, copying and attaching photos'],
+  7: ['Notifications and quick settings', 'Notification panel, flashlight, rotation and Do not disturb'],
+  8: ['Wi-Fi, data and Bluetooth', 'Connecting to the internet and nearby devices'],
+  9: ['Search the web and install apps', 'Browser, QR codes, downloads and app stores'],
+  10: ['Take photos and videos', 'Camera basics, selfies, zoom, timer and video'],
+  11: ['Organize photos and files', 'Gallery, editing, restoring and My Files'],
+  12: ['Home screen and everyday tools', 'Apps, folders, wallpaper, alarms, calendar and notes'],
+  13: ['Share photos with family', 'Email photos, send videos and make video calls'],
+  14: ['Pay with Samsung Wallet', 'Opening Wallet and choosing a card'],
+  15: ['Keep your phone safe', 'Screen lock, biometrics, permissions and emergency SOS'],
+  16: ['Move to a new phone', 'Setup, accounts, Smart Switch and backups'],
+  17: ['Vision, hearing and touch settings', 'Magnification, contrast, TalkBack and captions'],
+  18: ['Battery and storage', 'Power saving, storage, device care and updates'],
+  19: ['Galaxy AI and Bixby', 'Voice requests and Galaxy AI features'],
+  20: ['Connect to TV, PC and watch', 'Smart View, PC, DeX, wearables and SmartThings'],
+  21: ['More helpful features', 'Split screen, modes and routines, Always On Display'],
+  22: ['When something goes wrong', 'No sound, no signal, charging, overheating and freezing'],
+};
+
+// id → [slug, title]  (every global lesson; lessons without `steps` below are shown as "coming soon")
+export const TITLES = {
+  'x13-gmail': ['email-photos-with-gmail', 'Email photos with Gmail'],
+  'x13-video': ['send-a-video-to-family', 'Send a video to family'],
+  'x13-meet': ['video-call-with-google-meet', 'Make a video call with Google Meet'],
+  'g01-buttons': ['find-side-buttons', 'Find the side buttons'],
+  'g01-charge': ['charge-your-phone', 'Charge your phone'],
+  'g01-power': ['turn-off-and-on', 'Turn your phone off and on again'],
+  'g01-restart': ['restart-your-phone', 'Restart your phone'],
+  'g01-lock': ['lock-and-unlock-screen', 'Lock and unlock the screen'],
+  'g02-tap': ['tap', 'Tap once'],
+  'g02-hold': ['touch-and-hold', 'Touch and hold'],
+  'g02-swipe': ['swipe', 'Swipe to move around'],
+  'g02-pinch': ['pinch-to-zoom', 'Zoom with two fingers'],
+  'g02-back': ['back-button', 'Go back'],
+  'g02-home': ['home-button', 'Go to the Home screen'],
+  'g02-recent': ['recent-apps', 'Open recent apps'],
+  'g03-font': ['change-font-size', 'Make text bigger'],
+  'g03-zoom': ['screen-zoom', 'Make the screen and icons bigger'],
+  'g03-easy': ['easy-mode', 'Turn on Easy mode'],
+  'g03-bright': ['adjust-brightness', 'Adjust brightness'],
+  'g03-timeout': ['screen-timeout', 'Change how long the screen stays on'],
+  'g03-sound': ['ringtone-volume-vibration', 'Adjust ringtone volume and vibration'],
+  'g04-call': ['make-a-call', 'Make a call with the keypad'],
+  'g04-answer': ['answer-or-decline-call', 'Answer or decline a call'],
+  'g04-speaker': ['speakerphone', 'Turn on the speaker during a call'],
+  'g04-missed': ['call-back-missed-call', 'Call back a missed call'],
+  'g04-log': ['call-history', 'Check your call history'],
+  'g04-block': ['block-spam-numbers', 'Block spam numbers'],
+  'g05-new': ['save-new-contact', 'Save a new contact'],
+  'g05-search': ['search-contacts', 'Search contacts by name'],
+  'g05-edit': ['edit-contact-number', 'Edit a phone number'],
+  'g05-speed': ['favorite-contacts', 'Add people you call often'],
+  'g05-share': ['share-contact', 'Share a contact'],
+  'g06-send': ['send-and-reply-messages', 'Send and reply to messages'],
+  'g06-type': ['type-letters-numbers-symbols', 'Type letters, numbers and symbols'],
+  'g06-fix': ['fix-typing-mistakes', 'Fix typing mistakes'],
+  'g06-copy': ['copy-and-paste', 'Copy and paste'],
+  'g06-photo': ['attach-photo-to-message', 'Attach a photo to a message'],
+  'g06-translate': ['translate-text', 'Translate text'],
+  'g07-noti': ['view-and-clear-notifications', 'View and clear notifications'],
+  'g07-appnoti': ['app-notifications', 'Adjust app notifications'],
+  'g07-quick': ['quick-settings-panel', 'Open the quick settings panel'],
+  'g07-flash': ['flashlight', 'Turn on the flashlight'],
+  'g07-rotate': ['screen-rotation', 'Control screen rotation'],
+  'g07-dnd': ['do-not-disturb-airplane-mode', 'Use Do not disturb and Airplane mode'],
+  'g08-wifi': ['connect-to-wifi', 'Connect to Wi-Fi'],
+  'g08-data': ['mobile-data-on-off', 'Turn mobile data on and off'],
+  'g08-usage': ['data-usage', 'Check data usage'],
+  'g08-bt': ['connect-bluetooth-earphones', 'Connect Bluetooth earphones'],
+  'g08-hotspot': ['mobile-hotspot', 'Use mobile hotspot'],
+  'g08-location': ['location-and-nfc', 'Find location and NFC settings'],
+  'g09-search': ['search-in-samsung-internet', 'Search in Samsung Internet'],
+  'g09-bookmark': ['bookmark-pages', 'Save pages you visit often'],
+  'g09-qr': ['scan-qr-code', 'Open a QR code'],
+  'g09-files': ['find-downloaded-files', 'Find downloaded files'],
+  'g09-stores': ['play-store-and-galaxy-store', 'Use Play Store and Galaxy Store'],
+  'g09-install': ['install-update-delete-apps', 'Install, update and delete apps'],
+  'g09-google': ['find-google-apps', 'Find Google and carrier apps'],
+  'g10-open': ['open-camera', 'Open the camera'],
+  'g10-focus': ['focus-camera', 'Focus the camera'],
+  'g10-switch': ['switch-front-rear-camera', 'Switch between front and rear cameras'],
+  'g10-selfie': ['take-a-selfie', 'Take a selfie'],
+  'g10-zoom': ['zoom-in-photos', 'Zoom in when taking photos'],
+  'g10-timer': ['camera-timer', 'Use the camera timer'],
+  'g10-modes': ['portrait-and-night-mode', 'Try Portrait and Night mode'],
+  'g10-video': ['record-video', 'Record a video'],
+  'g10-capture': ['screenshot-and-screen-recording', 'Take a screenshot or record the screen'],
+  'g11-latest': ['find-latest-photo', 'Find the photo you just took'],
+  'g11-album': ['create-album', 'Create an album'],
+  'g11-edit': ['crop-and-brighten-photo', 'Crop and brighten a photo'],
+  'g11-text': ['copy-text-from-photo', 'Copy text from a photo'],
+  'g11-multi': ['share-multiple-photos', 'Share several photos'],
+  'g11-restore': ['restore-deleted-photos', 'Restore deleted photos'],
+  'g11-docs': ['find-documents-in-my-files', 'Find documents in My Files'],
+  'g11-quickshare': ['quick-share', 'Send files with Quick Share'],
+  'g12-addapp': ['add-app-to-home-screen', 'Put an app on the Home screen'],
+  'g12-folder': ['folders-and-widgets', 'Make folders and widgets'],
+  'g12-wallpaper': ['wallpaper-theme-lock-screen', 'Change wallpaper, theme and lock screen'],
+  'g12-alarm': ['alarm-and-timer', 'Set an alarm and a timer'],
+  'g12-calendar': ['add-calendar-event', 'Add an appointment to the calendar'],
+  'g12-reminder': ['to-do-reminders', 'Get reminders for things to do'],
+  'g12-note': ['samsung-notes', 'Use Samsung Notes'],
+  'g12-recorder': ['voice-recorder', 'Record your voice'],
+  'g12-tools': ['weather-calculator-radio', 'Use weather, calculator and radio'],
+  'g14-open': ['open-samsung-wallet', 'Open Samsung Wallet'],
+  'g14-add': ['add-card-screen', 'Look at the add card screen'],
+  'g14-pay': ['choose-payment-card', 'Choose a card to pay with'],
+  'g15-pin': ['set-a-pin', 'Create a PIN'],
+  'g15-bio': ['fingerprints-and-face', 'Register fingerprints and face'],
+  'g15-perm': ['app-permissions-location', 'Check app permissions and location sharing'],
+  'g15-folder': ['secure-folder-samsung-pass', 'Learn about Secure Folder and Samsung Pass'],
+  'g15-medical': ['medical-info-emergency-contacts', 'Add medical info and emergency contacts'],
+  'g15-sos': ['emergency-sos', 'Check Emergency SOS settings'],
+  'g15-find': ['samsung-find', 'Find your phone with Samsung Find'],
+  'g16-setup': ['first-setup', 'Set up your phone for the first time'],
+  'g16-sim': ['sim-and-esim', 'Learn about SIM and eSIM'],
+  'g16-account': ['samsung-and-google-accounts', 'Check Samsung and Google accounts'],
+  'g16-switch': ['smart-switch', 'Move contacts and photos with Smart Switch'],
+  'g16-backup': ['check-backup', 'Check backup status'],
+  'g16-restore': ['restore-from-backup', 'Restore from a backup'],
+  'g17-magnify': ['magnification', 'Magnify part of the screen'],
+  'g17-contrast': ['high-contrast-fonts', 'Increase text contrast'],
+  'g17-talkback': ['talkback', 'Have the screen read aloud with TalkBack'],
+  'g17-caption': ['sound-and-captions', 'Adjust sound and captions'],
+  'g17-hearing': ['hearing-aid-support', 'Check hearing aid support'],
+  'g17-touch': ['touch-settings-accessibility-shortcut', 'Adjust touch settings and the accessibility shortcut'],
+  'g18-usage': ['battery-usage-by-app', 'Find apps that use a lot of battery'],
+  'g18-saver': ['power-saving', 'Turn on Power saving'],
+  'g18-storage': ['check-storage', 'Check storage'],
+  'g18-clean': ['clean-up-large-files', 'Clean up large files'],
+  'g18-care': ['device-care', 'Check your phone with Device care'],
+  'g18-update': ['software-update', 'Update the software'],
+  'g18-version': ['check-model-and-one-ui-version', 'Check your model and One UI version'],
+  'g19-bixby': ['ask-bixby', 'Ask Bixby with your voice'],
+  'g19-circle': ['circle-to-search', 'Search for things on your screen'],
+  'g19-interpret': ['live-translate-interpreter', 'Learn about call translation and Interpreter'],
+  'g19-write': ['writing-assist', 'Polish and summarize text'],
+  'g19-transcribe': ['transcribe-recordings', 'Turn recordings into text'],
+  'g19-photo': ['ai-photo-editing', 'Edit photos with AI'],
+  'g19-support': ['galaxy-ai-supported-models', 'Check features by model'],
+  'g20-smartview': ['smart-view', 'Show your screen on a TV with Smart View'],
+  'g20-pc': ['connect-to-pc', 'Connect to a PC'],
+  'g20-dex': ['samsung-dex', 'Learn about Samsung DeX'],
+  'g20-watch': ['connect-watch-and-buds', 'Connect a watch and earbuds'],
+  'g20-smartthings': ['smartthings', 'Connect appliances with SmartThings'],
+  'g20-musicshare': ['music-share', 'Learn about Music Share'],
+  'g21-split': ['split-screen', 'Use two apps with split screen'],
+  'g21-modes': ['modes-and-routines', 'Set up Modes and Routines'],
+  'g21-aod': ['always-on-display', 'Show a clock on the lock screen'],
+  'g21-wellbeing': ['digital-wellbeing', 'See screen time with Digital Wellbeing'],
+  'g21-apps': ['samsung-health-kids-game-booster', 'Learn about Samsung Health, Kids and Game Booster'],
+  'g21-samsung': ['samsung-news-and-samsung-com', 'Find Samsung News, Samsung.com and Global Goals'],
+  'g21-spen': ['s-pen', 'Use the S Pen on supported models'],
+  'g22-ring': ['no-ringtone-sound', 'When the ringtone does not sound'],
+  'g22-network': ['no-calls-or-internet', 'When calls or the internet do not work'],
+  'g22-charge': ['phone-not-charging', 'When your phone does not charge'],
+  'g22-hot': ['phone-gets-hot', 'When your phone gets hot'],
+  'g22-freeze': ['screen-frozen', 'When the screen freezes'],
+  'g22-water': ['phone-got-wet', 'What to check when your phone gets wet'],
+  'g22-members': ['samsung-members-diagnostics', 'Run diagnostics in Samsung Members'],
+  'g22-service': ['before-contacting-service', 'Check model and symptoms before contacting service'],
+};
+
+/* ---------- Steps (one action per step) ---------- */
+import { open, item, settings } from './kit.js';
+import { STEPS_04_08 } from './steps-04-08.js';
+import { STEPS_09_12 } from './steps-09-12.js';
+import { STEPS_14_18 } from './steps-14-18.js';
+import { STEPS_19_22 } from './steps-19-22.js';
+
+export const LESSONS = {
+  'g01-buttons': {
+    desc: 'Learn where the Volume up, Volume down and Side buttons are on a Galaxy phone, and what each one does.',
+    steps: [
+      ['Look at the right edge of your phone.', 'There are three buttons. From the top: Volume up, Volume down and the Side button.'],
+      ['Press the Side button in the picture.', 'It is the bottom button. Use it to turn the phone on and off or to turn off the screen.'],
+      ['Press the Volume down button in the picture.', 'It is the middle button. It makes the sound quieter.'],
+      ['Press the Volume up button in the picture.', 'It is the top button. It makes the sound louder.'],
+    ],
+  },
+  'g01-charge': {
+    desc: 'Charge your Galaxy phone step by step: plug in the charger, connect the cable and check the charging sign.',
+    steps: [
+      ['Plug the charger into a wall outlet.'],
+      ['Plug the end of the cable into the port at the bottom of your phone.', 'If the port is wet, let it dry completely first.'],
+      ['Check that a charging sign appears on the screen.'],
+      ['Unplug the cable when charging is finished.'],
+    ],
+  },
+  'g01-power': {
+    desc: 'Turn a Galaxy phone off with the Side and Volume down buttons, then turn it back on.',
+    steps: [
+      ['Press and hold the Side button and the Volume down button together.', 'Press both at the same time and wait for the menu to appear.'],
+      ['Tap Power off.'],
+      ['Tap Power off once more.', 'When the screen goes dark, go to the next step to turn it on again.'],
+      ['Press and hold the Side button to turn the phone on.', 'Hold it for a few seconds until the Samsung logo appears. Then unlock the screen.'],
+    ],
+  },
+  'g01-restart': {
+    desc: 'Restart a Galaxy phone when it is slow or acting strangely.',
+    steps: [
+      ['Press and hold the Side button and the Volume down button together.', 'Hold them until the power menu appears.'],
+      ['Tap Restart.'],
+      ['Tap Restart once more.'],
+      ['Wait for the phone to turn off and on again.', '', 'If the screen is frozen and no menu appears, hold both buttons for more than 7 seconds.'],
+    ],
+  },
+  'g01-lock': {
+    desc: 'Lock the screen with the Side button and unlock it again by swiping up.',
+    steps: [
+      ['Press the Side button once, briefly.', 'The screen turns off and locks automatically.'],
+      ['Press the Side button briefly again.', 'The lock screen turns on. You can also double-tap the screen.'],
+      ['Swipe up on the screen.', 'If you set a PIN or fingerprint, use it to unlock.'],
+    ],
+  },
+  'g02-tap': {
+    desc: 'Practice the most basic touch: tapping once to open an app.',
+    steps: [
+      ['Tap Gallery lightly once with your fingertip.', 'Do not press hard. A light tap opens the app.'],
+      ['Tap the Home button at the bottom center.', 'You go back to the first screen (the Home screen).'],
+    ],
+  },
+  'g02-hold': {
+    desc: 'Practice touch and hold to open the menu for an app.',
+    steps: [
+      ['Touch and hold Gallery for 2 seconds.', 'Keep your finger down until a menu appears.'],
+      ['Check that a menu appeared.', 'Touch and hold shows what you can do with that app.'],
+      ['Tap the Back button to close the menu.'],
+    ],
+  },
+  'g02-swipe': {
+    desc: 'Swipe to move between Home screen pages and to open the Apps screen.',
+    steps: [
+      ['Swipe left on the screen.', 'You move to the next page of the Home screen.'],
+      ['Swipe up from the bottom of the Home screen.', 'The Apps screen with all your apps opens.'],
+      ['Swipe down on the Apps screen.', 'You go back to the Home screen.'],
+    ],
+  },
+  'g02-pinch': {
+    desc: 'Spread two fingers to zoom in on a photo and pinch them together to zoom out.',
+    steps: [
+      open('Gallery'),
+      ['Tap the photo you want to see.'],
+      ['Put two fingers on the photo and spread them apart.', 'Spread your thumb and index finger to make it bigger.'],
+      ['Pinch your two fingers together.', 'The photo gets smaller again.'],
+    ],
+  },
+  'g02-back': {
+    desc: 'Use the Back button to return to the previous screen.',
+    steps: [
+      ...settings('Display'),
+      ['Tap the Back button at the bottom right.', 'You go back to the previous screen (Settings).', 'You can change the button order in Settings → Display → Navigation bar.'],
+    ],
+  },
+  'g02-home': {
+    desc: 'Go back to the Home screen from any app with the Home button.',
+    steps: [
+      open('Settings'),
+      ['Tap the Home button at the bottom center.', 'You go back to the first screen (the Home screen).'],
+      ['Check that the Home screen appeared.', 'Whatever app you are using, the Home button brings you here.', 'If you cannot see the buttons, swipe up a little from the very bottom of the screen.'],
+    ],
+  },
+  'g02-recent': {
+    desc: 'Open recent apps to switch between apps or close them all.',
+    steps: [
+      ['Tap the Recents button at the bottom left.', 'Apps you used recently appear like cards.'],
+      ['Tap the app you want to use again.', 'Swipe sideways to see other apps.'],
+      ['Tap the Recents button again.'],
+      ['Tap ‘Close all’.', 'All open apps are closed.'],
+    ],
+  },
+  'g03-font': {
+    desc: 'Make text bigger and bold on a Galaxy phone in Settings → Display → Font size and style.',
+    steps: [
+      ...settings('Display', 'Font size and style'),
+      ['Drag the circle on the font size bar to the right.', 'The further right, the bigger the text.'],
+      ['Tap the ‘Bold font’ switch to turn it on.', 'Bold text is easier to read.'],
+      ['Check that the text got bigger.'],
+    ],
+  },
+  'g03-zoom': {
+    desc: 'Make icons and buttons bigger with Screen zoom in Settings → Display.',
+    steps: [
+      ...settings('Display', 'Screen zoom'),
+      ['Drag the circle on the bar to the right.', 'The further right, the bigger the icons and buttons.'],
+      ['Check that the icons and buttons got bigger.'],
+    ],
+  },
+  'g03-easy': {
+    desc: 'Turn on Easy mode for a simpler Home screen with bigger text and icons.',
+    steps: [
+      ...settings('Display', 'Easy mode'),
+      ['Tap the ‘Easy mode’ switch to turn it on.', 'Text and icons on the Home screen become bigger.'],
+      ['Check that the text and icons on the Home screen got bigger.'],
+    ],
+  },
+  'g03-bright': {
+    desc: 'Adjust screen brightness from the quick settings panel.',
+    steps: [
+      ['Swipe down from the top right of the screen.', 'The quick settings panel opens.'],
+      ['Drag the brightness bar to the right.', 'Drag it to the left to make the screen darker.'],
+      ['Swipe up to close the panel.'],
+    ],
+  },
+  'g03-timeout': {
+    desc: 'Change how long the screen stays on before it turns off, in Settings → Display → Screen timeout.',
+    steps: [
+      ...settings('Display', 'Screen timeout'),
+      ['Tap ‘5 minutes’.', 'Choose the time you want. Longer times use more battery.'],
+    ],
+  },
+  'g03-sound': {
+    desc: 'Make the ringtone louder and have the phone vibrate while ringing.',
+    steps: [
+      ...settings('Sounds and vibration', 'Volume'),
+      ['Drag the Ringtone bar to the right.', 'The further right, the louder the ringtone.'],
+      ['Tap the Back button at the bottom.', 'You go back to the previous screen.'],
+      ['Tap ‘Sound’.', 'To use vibration only, tap ‘Vibrate’.'],
+      ['Tap the ‘Vibrate while ringing’ switch to turn it on.', 'Sound and vibration both alert you.'],
+    ],
+  },
+  ...STEPS_04_08,
+  ...STEPS_09_12,
+  ...STEPS_14_18,
+  ...STEPS_19_22,
+};
+
+/* ---------- Global-only lessons (no Korean original: Korean chapter 13 uses KakaoTalk) ---------- */
+const GMAIL_SRC = { label: 'Gmail Help · Attach files', url: 'https://support.google.com/mail/answer/6584?hl=en&co=GENIE.Platform%3DAndroid' };
+const MEET_SRC = { label: 'Google Meet Help', url: 'https://support.google.com/meet/?hl=en' };
+const GALLERY_SRC = { label: 'Samsung support', url: 'https://www.samsung.com/us/support/' };
+// 해외용 새 수업의 연습 그림. 그림 속 글자는 한국어로 적고 언어별 단어표로 옮긴다(국내 수업과 같은 방식).
+// 같은 동작은 국내 수업의 카드를 그대로 쓴다(이미 19개 언어 단어표가 있음).
+const ko = (id, i) => findLesson(id).lesson.cards[i];
+const tap = (screen, target) => ({ screen, target, action: 'tap', done: 'practice' });
+const COMPOSE = (target) => tap({ kind: 'list', title: '편지쓰기', items: ['받는사람', '메일 제목', '메일 내용'] }, target);
+const COMPOSE_BAR = (target) => tap({ kind: 'app', title: '편지쓰기', buttons: [target], primary: '보내기' }, target); // one button so the hint bubble never covers another
+export const EXTRA = [
+  { id: 'x13-gmail', chapter: 13, src: [GMAIL_SRC], cards: [
+    tap({ kind: 'home', apps: true, find: '카카오톡' }, '카카오톡'),
+    tap({ kind: 'app', title: '받은편지함', fab: '편지쓰기' }, '편지쓰기'),
+    COMPOSE('받는사람'),
+    COMPOSE_BAR('파일 첨부'),
+    ko('g06-photo', 4),
+    COMPOSE('메일 제목'),
+    COMPOSE_BAR('보내기'),
+  ] },
+  { id: 'x13-video', chapter: 13, src: [GALLERY_SRC], cards: [
+    ko('g11-multi', 0), ko('g11-latest', 1), ko('g11-multi', 3), ko('g05-share', 3), ko('g05-share', 4),
+    tap({ kind: 'chat', title: '아들' }, '전송 아이콘'),
+  ] },
+  { id: 'x13-meet', chapter: 13, src: [MEET_SRC], cards: [
+    tap({ kind: 'home', apps: true, find: 'Meet' }, 'Meet'),
+    tap({ kind: 'app', title: 'Meet', buttons: ['새로 만들기'], primary: '새로 만들기' }, '새로 만들기'),
+    tap({ kind: 'list', title: 'Meet', items: ['김영희', '아들'] }, '김영희'),
+    tap({ kind: 'app', title: '김영희', buttons: ['영상통화'], primary: '영상통화' }, '영상통화'),
+    ko('g04-call', 4),
+  ] },
+];
+const CHECK = 'New lesson written for the global site. Screens of Google apps change often, so check on a real phone.';
+Object.assign(LESSONS, {
+  'x13-gmail': {
+    desc: 'Send photos to family by email with the Gmail app on a Galaxy phone.',
+    check: CHECK,
+    steps: [
+      open('Gmail'),
+      ['Tap ‘Compose’ at the bottom right.'],
+      ['Type the email address of the person in the ‘To’ box.'],
+      ['Tap the paper clip (Attach) at the top.'],
+      ['Tap the photo you want to send.', 'You can tap more than one photo.'],
+      ['Type a short subject.'],
+      ['Tap the Send button (paper plane) at the top.'],
+    ],
+  },
+  'x13-video': {
+    desc: 'Send a video from Gallery to a family member with the Messages app.',
+    check: CHECK,
+    steps: [
+      open('Gallery'),
+      ['Tap the video you want to send.'],
+      ['Tap ‘Share’ at the bottom.'],
+      ['Tap ‘Messages’.'],
+      ['Choose the person to send it to.'],
+      ['Tap the Send button.', '', 'Long videos may be too big for a text message. Then use Quick Share or email instead.'],
+    ],
+  },
+  'x13-meet': {
+    desc: 'Make a video call to family with the Google Meet app.',
+    check: CHECK,
+    steps: [
+      open('Meet'),
+      ['Tap ‘New’.'],
+      ['Tap the name of the person to call.', 'They also need the Google Meet app or a Google account.'],
+      ['Tap the video call button.'],
+      ['When you finish, tap the red End call button.'],
+    ],
+  },
+});

@@ -1,0 +1,2242 @@
+1|Chạm vào {x}.
+2|Bật {x}.
+3|Tắt {x}.
+4|Chọn {x}.
+5|Hình vẽ màn hình iPhone. {x}
+6|Hướng dẫn sử dụng iPhone
+7|Bài học dễ hiểu từng bước
+8|DigiStep365 là trang web giáo dục độc lập, không liên kết, không được tài trợ hay chứng nhận bởi Apple Inc. Apple và iPhone là nhãn hiệu của Apple Inc.
+9|Đây là hình vẽ màn hình iPhone. Tên và vị trí menu có thể hơi khác trên iPhone của bạn.
+10|iPhone có nút Home (SE, 8 trở về trước)
+11|Chọn iPhone của bạn
+12|Chọn kiểu máy và phiên bản iOS để xem trước các bài phù hợp với iPhone của bạn. Bạn cũng có thể bỏ qua và xem tất cả bài học.
+13|Kiểu máy iPhone
+14|Phiên bản iOS
+15|Tôi không biết kiểu máy iPhone của mình
+16|Tôi không biết phiên bản iOS
+17|Bắt đầu với bài học cho mọi iPhone
+18|Lưu
+19|Thay đổi
+20|Trang web này
+21|Tiếng Việt · Quốc tế
+22|Cách xem kiểu máy iPhone
+23|Cách xem phiên bản iOS
+24|Sắp có
+25|{n}
+26|Đã đăng {n} / {t} bài học
+27|Bài học được đăng dần sau khi chụp và kiểm tra màn hình iPhone thật. Chúng tôi không bao giờ dùng màn hình tự bịa ra.
+28|Tất cả bài học đã được đăng. Hình là hình vẽ màn hình iPhone nên có thể hơi khác với iPhone của bạn.
+29|Cần thiết
+30|Máy này có
+31|Máy này không có
+32|Danh sách máy kiểm tra ngày
+33|{n} bước
+34|Trang chủ
+35|Tất cả bài học
+36|Chọn
+37|Cần JavaScript để chọn. Bạn vẫn đọc được danh sách bài học bên dưới.
+38|Nút Home
+39|Touch ID (vân tay)
+40|Face ID (nhận diện khuôn mặt)
+41|Nút Tác vụ
+42|Điều khiển Camera
+43|Dynamic Island
+44|Apple Intelligence (kiểm tra ngôn ngữ và vùng)
+45|SOS khẩn cấp qua vệ tinh (một số quốc gia)
+46|MagSafe
+47|Cổng sạc: Lightning
+48|Cổng sạc: USB-C
+49|Cơ bản về iPhone
+50|Gọi điện
+51|Danh bạ
+52|Tin nhắn và iMessage
+53|Bàn phím và đọc chính tả
+54|Camera và video
+55|Ảnh và album
+56|Lướt web với Safari
+57|Wi-Fi, Bluetooth và dữ liệu
+58|Màn hình và cỡ chữ
+59|Âm thanh, nhạc chuông và thông báo
+60|App Store và ứng dụng
+61|Pin và sạc
+62|Đồng hồ, báo thức, máy tính và thời tiết
+63|Lịch, Ghi chú và Ghi âm
+64|Face ID, Touch ID và bảo mật
+65|Tính năng cho người cao tuổi và trợ năng
+66|Tệp, dung lượng và AirDrop
+67|Tài khoản Apple, iCloud và sao lưu
+68|Apple Pay, Sức khỏe và Bản đồ
+69|Siri và Apple Intelligence
+70|Khắc phục sự cố và iPhone bị mất
+71|Bật iPhone
+72|Tắt iPhone
+73|Khởi động lại iPhone
+74|Buộc khởi động lại iPhone
+75|Đánh thức và mở khóa iPhone
+76|Khóa iPhone
+77|Về Màn hình chính
+78|Học chạm, chạm và giữ, vuốt
+79|Mở ứng dụng
+80|Chuyển giữa các ứng dụng đang mở
+81|Đóng ứng dụng
+82|Mở Trung tâm điều khiển
+83|Xem Trung tâm thông báo
+84|Hiểu các biểu tượng trạng thái
+85|Dùng nút âm lượng
+86|Bật hoặc tắt chế độ im lặng
+87|Dùng nút Tác vụ
+88|Di chuyển ứng dụng trên Màn hình chính
+89|Tạo thư mục ứng dụng
+90|Dùng Thư viện ứng dụng
+91|Tìm kiếm từ Màn hình chính
+92|Thêm tiện ích
+93|Đổi hình nền Màn hình khóa
+94|Xem kiểu máy iPhone của bạn
+95|Xem phiên bản iOS
+96|Gọi điện thoại
+97|Trả lời cuộc gọi
+98|Từ chối cuộc gọi
+99|Kết thúc cuộc gọi
+100|Bật loa ngoài khi gọi
+101|Tắt tiếng mình khi gọi
+102|Gọi lại từ Gần đây
+103|Thêm mục ưa thích và gọi
+104|Nghe thư thoại
+105|Dùng bàn phím số khi gọi
+106|Chặn số điện thoại
+107|Tắt tiếng người gọi không xác định
+108|Gọi hội nghị
+109|Gọi video FaceTime
+110|Dùng Thư thoại trực tiếp
+111|Thêm liên hệ mới
+112|Lưu số từ Gần đây
+113|Sửa liên hệ
+114|Xóa liên hệ
+115|Tìm liên hệ
+116|Thêm ảnh cho liên hệ
+117|Chia sẻ liên hệ
+118|Thiết lập thẻ liên hệ của bạn
+119|Tạo áp phích liên hệ
+120|Thêm liên hệ khẩn cấp
+121|Thêm liên hệ vào Mục ưa thích
+122|Hợp nhất liên hệ trùng lặp
+123|Gửi tin nhắn
+124|Đọc tin nhắn
+125|Trả lời tin nhắn
+126|Gửi ảnh
+127|Lưu ảnh nhận được
+128|Gửi tin nhắn nhóm
+129|Phân biệt bong bóng xanh dương và xanh lá
+130|Phản ứng bằng Tapback
+131|Xóa tin nhắn
+132|Xóa cuộc hội thoại
+133|Gửi tin nhắn âm thanh
+134|Chia sẻ vị trí trong Tin nhắn
+135|Ghim cuộc hội thoại
+136|Ẩn cảnh báo cuộc hội thoại
+137|Dùng mã xác minh từ Tin nhắn
+138|Sửa iMessage đã gửi
+139|Hoàn tác gửi iMessage
+140|Lọc người gửi không xác định
+141|Báo cáo tin nhắn rác
+142|Tìm trong tin nhắn
+143|Gõ bằng bàn phím
+144|Đổi ngôn ngữ bàn phím
+145|Thêm bàn phím
+146|Gõ số và ký hiệu
+147|Đọc chính tả bằng giọng nói
+148|Thêm biểu tượng cảm xúc
+149|Di chuyển con trỏ
+150|Chọn văn bản
+151|Sao chép và dán
+152|Hoàn tác thao tác gõ
+153|Bật hoặc tắt tự động sửa
+154|Dùng thay thế văn bản
+155|Dùng bàn phím một tay
+156|Viết tay
+157|Đổi âm thanh và rung của bàn phím
+158|Mở Camera
+159|Chụp ảnh
+160|Mở Camera từ Màn hình khóa
+161|Thu phóng trong Camera
+162|Chỉnh lấy nét và phơi sáng
+163|Chụp ảnh tự sướng
+164|Quay video
+165|Tạm dừng khi đang quay video
+166|Bật hoặc tắt đèn flash
+167|Dùng chế độ Chân dung
+168|Chụp ảnh toàn cảnh
+169|Dùng chế độ Ban đêm
+170|Dùng hẹn giờ Camera
+171|Chụp liên tục
+172|Bật hoặc tắt Live Photos
+173|Bật lưới
+174|Chụp macro
+175|Quay video chuyển động chậm
+176|Quay video tua nhanh thời gian
+177|Quay ở chế độ Điện ảnh
+178|Dùng Phong cách nhiếp ảnh
+179|Quét mã QR bằng Camera
+180|Dùng Văn bản trực tiếp trong Camera
+181|Dùng Điều khiển Camera
+182|Chụp ảnh bằng nút âm lượng
+183|Lật ảnh camera trước
+184|Đổi chất lượng video
+185|Giữ cài đặt Camera
+186|Chuyển ống kính
+187|Quay video QuickTake
+188|Xem ảnh
+189|Phóng to ảnh
+190|Phát video
+191|Xóa ảnh
+192|Khôi phục ảnh đã xóa
+193|Đánh dấu ảnh là ưa thích
+194|Tạo album
+195|Thêm ảnh vào album
+196|Chia sẻ ảnh
+197|Cắt ảnh
+198|Xoay ảnh
+199|Tự động cải thiện ảnh
+200|Thêm bộ lọc cho ảnh
+201|Trở về ảnh gốc
+202|Cắt bớt video
+203|Tìm ảnh
+204|Xem Người và thú cưng
+205|Xem Kỷ niệm
+206|Ẩn ảnh
+207|Chọn nhiều ảnh
+208|Tìm ảnh chụp màn hình
+209|Tách chủ thể khỏi ảnh
+210|Hợp nhất ảnh trùng lặp
+211|Tạo album chia sẻ
+212|In ảnh
+213|Mở Safari
+214|Tìm kiếm trên web
+215|Vào địa chỉ trang web
+216|Quay lại trang trước
+217|Mở tab mới
+218|Đóng tab
+219|Đánh dấu trang web
+220|Mở dấu trang
+221|Dùng Trình đọc
+222|Đổi cỡ chữ trang web
+223|Phóng to trang web
+224|Thêm vào Danh sách đọc
+225|Chia sẻ liên kết
+226|Duyệt web riêng tư
+227|Xóa lịch sử duyệt web
+228|Tìm chữ trên trang
+229|Tải tệp về
+230|Dịch trang web
+231|Nghe đọc trang web
+232|Thêm trang web vào Màn hình chính
+233|Kết nối Wi-Fi
+234|Quên mạng Wi-Fi
+235|Chia sẻ mật khẩu Wi-Fi
+236|Kết nối Wi-Fi bằng mã QR
+237|Bật hoặc tắt dữ liệu di động
+238|Xem dung lượng dữ liệu di động đã dùng
+239|Bật hoặc tắt Chế độ máy bay
+240|Bật Bluetooth
+241|Ghép đôi tai nghe Bluetooth
+242|Hủy ghép đôi thiết bị Bluetooth
+243|Kết nối AirPods
+244|Bật Điểm truy cập cá nhân
+245|Dùng Chế độ dữ liệu thấp
+246|Bật hoặc tắt chuyển vùng dữ liệu
+247|Thêm eSIM
+248|Đặt lại cài đặt mạng
+249|Kết nối ô tô qua Bluetooth
+250|Đọc thẻ NFC
+251|Làm chữ to hơn
+252|In đậm chữ
+253|Dùng Thu phóng màn hình
+254|Chỉnh độ sáng
+255|Bật hoặc tắt độ sáng tự động
+256|Dùng Chế độ tối
+257|Dùng Night Shift
+258|Bật hoặc tắt True Tone
+259|Đổi thời gian tự động khóa
+260|Dùng Nâng lên để bật
+261|Bật hoặc tắt màn hình luôn bật
+262|Đổi hình nền
+263|Đặt cỡ chữ cho một ứng dụng
+264|Làm biểu tượng Màn hình chính to hơn
+265|Giảm chuyển động
+266|Tăng độ tương phản
+267|Bật hình dạng nút
+268|Dùng bộ lọc màu
+269|Giảm điểm trắng
+270|Khóa hướng màn hình
+271|Làm nhạc chuông to hơn
+272|Đổi nhạc chuông
+273|Bật hoặc tắt rung
+274|Đặt nhạc chuông cho một liên hệ
+275|Đổi âm báo tin nhắn
+276|Bật hoặc tắt thông báo ứng dụng
+277|Ẩn xem trước thông báo
+278|Dùng Không làm phiền
+279|Bật chế độ tập trung Ngủ
+280|Cho phép cuộc gọi từ một số người
+281|Bật đèn LED flash khi có cảnh báo
+282|Giảm âm thanh lớn của tai nghe
+283|Thông báo cuộc gọi
+284|Bật Âm thanh đơn sắc
+285|Dùng Nhận biết âm thanh
+286|Cài đặt ứng dụng
+287|Tìm trên App Store
+288|Cập nhật ứng dụng
+289|Bật cập nhật ứng dụng tự động
+290|Xóa ứng dụng
+291|Xóa ứng dụng khỏi Màn hình chính
+292|Gỡ bỏ ứng dụng (giữ dữ liệu)
+293|Tải lại ứng dụng
+294|Đổi quyền của ứng dụng
+295|Xem hoặc hủy gói đăng ký
+296|Xem lịch sử mua hàng
+297|Xem Thời gian sử dụng
+298|Đặt giới hạn ứng dụng
+299|Khóa ứng dụng
+300|Ẩn ứng dụng
+301|Sạc iPhone
+302|Hiện phần trăm pin
+303|Bật Chế độ nguồn điện thấp
+304|Xem tình trạng pin
+305|Xem mức dùng pin theo ứng dụng
+306|Sạc không dây
+307|Sạc bằng MagSafe
+308|Dùng Sạc pin được tối ưu hóa
+309|Đặt giới hạn sạc
+310|Sạc nhanh iPhone
+311|Sạc bằng USB-C
+312|Sạc bằng cáp Lightning
+313|Thêm tiện ích pin
+314|Mẹo tiết kiệm pin
+315|Sạc thiết bị khác từ iPhone
+316|Đặt báo thức
+317|Xóa báo thức
+318|Đổi âm báo thức
+319|Báo lại báo thức
+320|Dùng hẹn giờ
+321|Dùng đồng hồ bấm giờ
+322|Xem đồng hồ thế giới
+323|Đặt lịch ngủ
+324|Bật đèn pin
+325|Dùng Máy tính
+326|Xem lịch sử Máy tính
+327|Đổi đơn vị bằng Máy tính
+328|Xem thời tiết
+329|Thêm thành phố vào Thời tiết
+330|Nhận cảnh báo thời tiết
+331|Thêm sự kiện vào lịch
+332|Nhận cảnh báo sự kiện
+333|Sửa sự kiện
+334|Xóa sự kiện
+335|Tạo sự kiện lặp lại
+336|Đổi chế độ xem lịch
+337|Hiện ngày lễ
+338|Tạo ghi chú
+339|Tạo danh sách kiểm tra
+340|Thêm ảnh vào ghi chú
+341|Quét tài liệu trong Ghi chú
+342|Khóa ghi chú
+343|Ghim ghi chú
+344|Chia sẻ ghi chú
+345|Xóa và khôi phục ghi chú
+346|Ghi âm
+347|Nghe bản ghi
+348|Đổi tên bản ghi
+349|Chia sẻ bản ghi
+350|Tạo lời nhắc
+351|Đặt mật mã
+352|Đổi mật mã
+353|Thiết lập Face ID
+354|Dùng Face ID khi đeo khẩu trang
+355|Thiết lập diện mạo thay thế
+356|Thiết lập Touch ID
+357|Thêm vân tay khác
+358|Dùng Face ID trong ứng dụng
+359|Xem mật khẩu đã lưu
+360|Dùng Tự động điền mật khẩu
+361|Kiểm tra xác thực hai yếu tố
+362|Dùng Kiểm tra an toàn
+363|Bật Bảo vệ thiết bị bị đánh cắp
+364|Chọn những gì dùng được khi khóa
+365|Xóa dữ liệu sau 10 lần nhập sai mật mã
+366|Kiểm tra quyền truy cập vị trí của ứng dụng
+367|Tắt theo dõi của ứng dụng
+368|Xem Báo cáo quyền riêng tư ứng dụng
+369|Cập nhật iOS
+370|Tránh lừa đảo qua điện thoại và tin nhắn
+371|Dùng Thu phóng để phóng to màn hình
+372|Dùng Kính lúp
+373|Dùng Đọc màn hình
+374|Dùng Đọc mục được chọn
+375|Bật hoặc tắt VoiceOver
+376|Học cử chỉ VoiceOver cơ bản
+377|Dùng AssistiveTouch
+378|Thiết lập Truy cập được hỗ trợ
+379|Thoát Truy cập được hỗ trợ
+380|Thiết lập Phím tắt trợ năng
+381|Dùng Chạm vào mặt sau
+382|Dùng Điều chỉnh cảm ứng
+383|Đổi thời lượng Haptic Touch
+384|Dùng Tầm với
+385|Dùng Phụ đề trực tiếp
+386|Ghép đôi thiết bị trợ thính
+387|Dùng Nghe trực tiếp
+388|Dùng cuộc gọi RTT
+389|Tạo Giọng nói cá nhân
+390|Dùng Lời nói trực tiếp
+391|Dùng Khẩu lệnh
+392|Dùng Theo dõi mắt
+393|Phát âm thanh nền
+394|Đặt định tuyến âm thanh cuộc gọi
+395|Tự động trả lời cuộc gọi
+396|Chỉnh tốc độ bấm nút sườn
+397|Làm chữ bàn phím to hơn
+398|Dùng Chế độ phát hiện
+399|Dùng Truy cập được hướng dẫn
+400|Thiết lập trợ năng khi bắt đầu
+401|Xem dung lượng iPhone
+402|Giải phóng dung lượng
+403|Dùng ứng dụng Tệp
+404|Tìm tệp đã tải về
+405|Lưu tệp vào Tệp
+406|Mở tệp PDF
+407|Ký tệp PDF
+408|Đổi tên tệp
+409|Xóa tệp
+410|Giải nén tệp
+411|Kết nối USB
+412|Gửi ảnh bằng AirDrop
+413|Thiết lập nhận AirDrop
+414|Chia sẻ liên hệ bằng NameDrop
+415|Chụp màn hình
+416|Chụp cả trang web
+417|Quay màn hình
+418|Đánh dấu ảnh chụp màn hình
+419|In từ iPhone
+420|Chuyển ảnh sang máy tính
+421|Tạo Tài khoản Apple
+422|Đăng nhập Tài khoản Apple
+423|Đổi mật khẩu Tài khoản Apple
+424|Nếu quên mật khẩu Tài khoản Apple
+425|Thêm liên hệ khôi phục
+426|Thêm Liên hệ di sản
+427|Xem dung lượng iCloud
+428|Bật Ảnh iCloud
+429|Sao lưu bằng iCloud
+430|Sao lưu bằng máy tính
+431|Khôi phục từ bản sao lưu
+432|Chuyển sang iPhone mới
+433|Đồng bộ danh bạ và lịch với iCloud
+434|Thiết lập Chia sẻ trong gia đình
+435|Dùng Yêu cầu mua
+436|Đổi phương thức thanh toán
+437|Đổi số điện thoại tin cậy
+438|Đăng xuất Tài khoản Apple
+439|Tìm hiểu iCloud+
+440|Xóa iPhone
+441|Thêm thẻ vào Apple Pay
+442|Thanh toán tại cửa hàng bằng Apple Pay
+443|Dùng thẻ đi lại (khu vực hỗ trợ)
+444|Thêm thẻ lên máy bay, vé vào Ví
+445|Xóa thẻ khỏi Apple Pay
+446|Thiết lập ID y tế
+447|Xem số bước
+448|Nhận lời nhắc uống thuốc
+449|Tìm hiểu Phát hiện té ngã (Apple Watch)
+450|Chia sẻ dữ liệu sức khỏe với gia đình
+451|Nhận cảnh báo độ vững khi đi bộ
+452|Tìm địa điểm trong Bản đồ
+453|Xem chỉ đường
+454|Xem đường đi bằng phương tiện công cộng
+455|Chia sẻ giờ đến dự kiến
+456|Tải bản đồ ngoại tuyến
+457|Tìm iPhone bằng ứng dụng Tìm
+458|Chia sẻ vị trí với gia đình
+459|Tìm đồ vật bằng AirTag
+460|Dùng Kiểm tra an toàn khi đến nơi
+461|Bật Siri
+462|Nói chuyện với Siri
+463|Gọi Siri bằng nút
+464|Nhập để hỏi Siri
+465|Gọi điện bằng Siri
+466|Gửi tin nhắn bằng Siri
+467|Đặt báo thức bằng Siri
+468|Đặt hẹn giờ bằng Siri
+469|Hỏi Siri về thời tiết
+470|Mở ứng dụng bằng Siri
+471|Tạo lời nhắc bằng Siri
+472|Bật nhạc bằng Siri
+473|Bật đèn pin bằng Siri
+474|Đổi giọng Siri
+475|Đổi ngôn ngữ Siri
+476|Cho phép Siri khi khóa
+477|Thông báo thông báo
+478|Xóa lịch sử Siri
+479|Tạo phím tắt
+480|Bật Apple Intelligence
+481|Dùng Công cụ viết
+482|Tóm tắt văn bản
+483|Xem tóm tắt thông báo
+484|Dùng Xóa trong Ảnh
+485|Tạo hình ảnh với Image Playground
+486|Tạo Genmoji
+487|Dùng Trí tuệ thị giác
+488|Dùng tiện ích mở rộng ChatGPT
+489|Dùng Dịch trực tiếp
+490|Tìm hiểu quyền riêng tư của Apple Intelligence
+491|Hiểu về SOS khẩn cấp
+492|Kiểm tra cài đặt SOS khẩn cấp
+493|Tìm hiểu SOS khẩn cấp qua vệ tinh
+494|Đánh dấu iPhone là bị mất
+495|Xóa từ xa iPhone bị mất
+496|Nếu màn hình bị đơ
+497|Nếu iPhone không sạc được
+498|Nếu không có âm thanh
+499|Nếu Wi-Fi không hoạt động
+500|Nếu dung lượng bị đầy
+501|Nếu ứng dụng cứ tự đóng
+502|Nếu quên mật mã
+503|Nếu iPhone báo không khả dụng
+504|Nếu iPhone bị ướt
+505|Nếu iPhone bị nóng
+506|Nếu màn hình bị vỡ
+507|Đặt lịch sửa chữa bằng ứng dụng Hỗ trợ Apple
+508|Đặt lại tất cả cài đặt
+509|Nếu iPhone báo không có SIM
+510|Nếu không gọi điện được
+511|Xóa sẽ mất hết ảnh, danh bạ và ứng dụng. Hãy kiểm tra chắc chắn đã sao lưu trước.
+512|Đăng xuất hoặc đổi Tài khoản Apple có thể làm mất ảnh và danh bạ iCloud trên iPhone này.
+513|Ảnh đã xóa sẽ mất hẳn sau 30 ngày.
+514|Giữ kết nối Wi-Fi và sạc trong khi sao lưu hoặc khôi phục.
+515|Khôi phục sẽ thay nội dung hiện tại trên iPhone bằng bản sao lưu.
+516|Thanh toán là mất tiền thật. Đừng chạm Thanh toán khi đang tập.
+517|Chỉ chia sẻ vị trí với người nhà bạn tin tưởng.
+518|Đừng bao giờ bấm nút để tập. Máy sẽ gọi cấp cứu thật.
+519|Xóa từ xa sẽ xóa mọi thứ trên iPhone.
+520|Nhấn và giữ nút sườn bên phải.
+521|Khi logo Apple hiện ra, hãy thả tay.
+522|Chờ đến khi Màn hình khóa hiện ra.
+523|Nhấn và giữ cùng lúc nút sườn và một nút âm lượng.
+524|Kéo thanh trượt tắt nguồn sang phải.
+525|Chờ màn hình tối hẳn.
+526|Nhấn và giữ nút sườn.
+527|Trước tiên, hãy tắt iPhone.
+528|Chờ khoảng 30 giây.
+529|Nhấn và giữ nút sườn cho đến khi logo Apple hiện ra.
+530|Nhấn rồi thả nhanh nút tăng âm lượng.
+531|Nhấn rồi thả nhanh nút giảm âm lượng.
+532|Thả tay khi logo Apple hiện ra.
+533|Chạm vào màn hình hoặc nhấn nút sườn.
+534|Cầm iPhone trước mặt và nhìn vào màn hình.
+535|Vuốt lên từ cạnh dưới màn hình.
+536|Nhấn nút Home.
+537|Đặt ngón tay đã đăng ký lên Touch ID.
+538|Nhấn nút sườn một lần.
+539|Màn hình tắt và iPhone đã được khóa.
+540|Vuốt lên từ mép dưới của màn hình.
+541|Bây giờ bạn thấy Màn hình chính.
+542|Nhấn nút Home tròn bên dưới màn hình.
+543|Chạm: chạm nhẹ vào màn hình một lần.
+544|Chạm và giữ: để ngón tay trên màn hình một lúc.
+545|Vuốt: trượt ngón tay trên màn hình.
+546|Trên Màn hình chính, chạm vào ứng dụng bạn muốn.
+547|Ứng dụng mở ra.
+548|Vuốt lên từ dưới và dừng ở giữa màn hình.
+549|Vuốt sang trái hoặc phải để xem các ứng dụng.
+550|Chạm vào ứng dụng bạn muốn.
+551|Nhấn hai lần nút Home.
+552|Vuốt lên ứng dụng bạn muốn đóng.
+553|Vuốt xuống từ góc trên bên phải.
+554|Trung tâm điều khiển mở ra. Vuốt lên để đóng.
+555|Trung tâm điều khiển mở ra. Nhấn nút Home để đóng.
+556|Vuốt xuống từ giữa cạnh trên của màn hình.
+557|Chạm vào thông báo để mở.
+558|Vuốt lên để đóng.
+559|Hình cục pin ở góc trên bên phải cho biết pin còn lại.
+560|Hình quạt nghĩa là bạn đang kết nối Wi-Fi.
+561|4 vạch cho biết sóng di động mạnh hay yếu.
+562|Vuốt xuống từ góc trên bên phải để mở Trung tâm điều khiển.
+563|Nhấn nút trên ở bên trái để tăng âm lượng.
+564|Nhấn nút dưới để giảm âm lượng.
+565|Mở Trung tâm điều khiển.
+566|Chạm vào nút chế độ im lặng hình cái chuông.
+567|Gạt công tắc Chuông/Im lặng bên trái xuống.
+568|Thấy màu cam là đang im lặng. Gạt lên để có tiếng trở lại.
+569|Vuốt để chọn chức năng, ví dụ Đèn pin.
+570|Nhấn và giữ nút Tác vụ để dùng chức năng đó.
+571|Chạm và giữ ứng dụng.
+572|Khi các ứng dụng rung, kéo ứng dụng đến chỗ mới.
+573|Chạm vào Xong ở góc trên bên phải.
+574|Chạm và giữ chỗ trống trên Màn hình chính.
+575|Kéo một ứng dụng chồng lên ứng dụng khác.
+576|Muốn đổi tên thư mục, hãy chạm và giữ tên của nó.
+577|Tiếp tục vuốt sang trái trên Màn hình chính.
+578|Chạm vào ô tìm kiếm ở trên cùng.
+579|Nhập tên ứng dụng.
+580|Vuốt xuống từ giữa Màn hình chính.
+581|Nhập tên ứng dụng hoặc liên hệ.
+582|Chạm vào kết quả.
+583|Chạm vào Sửa ở góc trên bên trái.
+584|Chạm và giữ Màn hình khóa.
+585|Tên kiểu máy cho biết kiểu iPhone của bạn.
+586|Số bên cạnh Phiên bản iOS chính là phiên bản iOS của bạn.
+587|Chạm vào ứng dụng Điện thoại màu xanh lá.
+588|Chạm vào Bàn phím ở dưới cùng.
+589|Bấm số điện thoại.
+590|Chạm vào nút gọi màu xanh lá.
+591|Khi có cuộc gọi đến, chạm vào nút xanh lá.
+592|Nếu iPhone đang khóa, kéo thanh trượt để trả lời.
+593|Khi có cuộc gọi đến, chạm vào nút Từ chối màu đỏ.
+594|Nếu iPhone đang khóa, nhấn nhanh nút sườn hai lần.
+595|Trên màn hình cuộc gọi, chạm vào nút đỏ.
+596|Trong khi gọi, chạm vào Loa.
+597|Chạm lần nữa để nghe bằng loa trong.
+598|Nhìn vào màn hình cuộc gọi.
+599|Chạm lần nữa để người kia nghe được bạn.
+600|Chạm vào ứng dụng Điện thoại.
+601|Chạm vào Gần đây ở dưới cùng.
+602|Chạm vào tên người bạn muốn gọi lại.
+603|Chạm vào Mục ưa thích ở dưới cùng.
+604|Chạm vào người đó.
+605|Lần sau, chỉ cần chạm vào tên là gọi được.
+606|Chạm vào Thư thoại ở góc dưới bên phải.
+607|Chạm vào một tin nhắn thoại.
+608|Chạm vào Phát.
+609|Trong khi gọi, chạm vào Bàn phím.
+610|Bấm các số được yêu cầu.
+611|Chạm vào Ẩn để quay lại màn hình cuộc gọi.
+612|Trong Điện thoại, chạm vào Gần đây.
+613|Chạm vào nút thông tin bên cạnh số.
+614|Chạm vào Chặn người gọi này ở dưới cùng.
+615|Chạm vào Chặn liên hệ để xác nhận.
+616|Cuộc gọi từ số không có trong Danh bạ sẽ vào thư thoại mà không đổ chuông.
+617|Bắt đầu cuộc gọi với người thứ nhất.
+618|Chạm vào người thứ hai.
+619|Chạm vào ứng dụng FaceTime.
+620|Nhập tên người đó.
+621|Chạm vào nút FaceTime màu xanh lá.
+622|Nếu bạn lỡ cuộc gọi, lời nhắn hiện thành chữ trên màn hình.
+623|Chạm vào ứng dụng Danh bạ.
+624|Chạm vào ＋ ở góc trên bên phải.
+625|Nhập tên.
+626|Nhập số điện thoại.
+627|Chạm vào ⓘ bên cạnh số.
+628|Trong Danh bạ, chạm vào người đó.
+629|Chạm vào Sửa ở góc trên bên phải.
+630|Thay đổi thông tin.
+631|Chạm vào Xóa liên hệ ở dưới cùng.
+632|Chạm lại vào Xóa liên hệ.
+633|Mở Danh bạ.
+634|Chạm vào ô Tìm kiếm ở trên cùng.
+635|Chạm vào một ảnh.
+636|Chạm vào liên hệ muốn gửi.
+637|Nhập tên người nhận. Chạm vào nút Gửi.
+638|Chạm vào Thẻ của tôi ở trên cùng.
+639|Kiểm tra tên và số điện thoại của bạn.
+640|Chạm vào Ảnh. Bạn có thể chọn ảnh của mình.
+641|Chạm vào ảnh của bạn ở góc trên bên phải.
+642|Chạm vào Tìm thấy mục trùng lặp ở trên cùng.
+643|Chạm vào ứng dụng Tin nhắn màu xanh lá.
+644|Chạm vào nút soạn ở góc trên bên phải.
+645|Nhập tên hoặc số điện thoại.
+646|Nhập tin nhắn vào ô bên dưới.
+647|Chạm vào nút mũi tên lên để gửi.
+648|Chạm vào cuộc hội thoại có chấm xanh.
+649|Đọc tin nhắn mới.
+650|Mở cuộc hội thoại.
+651|Chạm vào ô nhập chữ ở dưới cùng.
+652|Nhập câu trả lời.
+653|Chạm vào mũi tên lên.
+654|Chạm vào ＋ bên cạnh ô nhập chữ.
+655|Chạm vào ảnh.
+656|Chạm vào mũi tên lên để gửi.
+657|Chạm vào ảnh bạn nhận được.
+658|Chạm vào nút Chia sẻ.
+659|Chạm vào Soạn.
+660|Thêm từng người một.
+661|Nhập tin nhắn.
+662|Bong bóng xanh dương là iMessage gửi qua internet (giữa các thiết bị Apple).
+663|Bong bóng xanh lá là tin nhắn SMS thường. Tính theo gói cước nhà mạng.
+664|Chạm vào cuộc hội thoại.
+665|Chạm và giữ bong bóng tin nhắn.
+666|Chạm vào trái tim hoặc ngón cái.
+667|Chạm và giữ bong bóng tin nhắn.
+668|Chạm vào nút thùng rác.
+669|Vuốt sang trái trên cuộc hội thoại.
+670|Chạm vào Xóa màu đỏ.
+671|Chạm vào ＋ ở bên trái.
+672|Hãy nói. Giọng của bạn được ghi lại.
+673|Chạm vào nút Gửi.
+674|Vuốt sang phải trên cuộc hội thoại.
+675|Chạm vào nút ghim màu vàng.
+676|Chạm vào nút chuông màu tím.
+677|Khi có mã gửi đến, mã hiện ở trên bàn phím.
+678|Chạm vào mã để điền tự động.
+679|Đừng bao giờ nói mã cho ai biết.
+680|Chạm và giữ bong bóng xanh dương.
+681|Sửa chữ. Chạm vào dấu tích xanh. Chỉ làm được trong 15 phút.
+682|Chạm vào Hoàn tác gửi. Chỉ làm được trong 2 phút.
+683|Trong Tin nhắn, chạm vào Bộ lọc ở góc trên bên trái để xem Người gửi không xác định.
+684|Chạm vào tin nhắn của người gửi lạ.
+685|Chạm vào Báo cáo tin rác ở dưới cùng.
+686|Nhập một từ, ví dụ bác sĩ.
+687|Chạm vào ô nhập chữ để hiện bàn phím.
+688|Chạm từng chữ một.
+689|Chạm vào ⌫ để xóa chữ sai.
+690|Chạm vào ô nhập chữ để mở bàn phím.
+691|Chạm vào nút quả địa cầu ở góc dưới bên trái.
+692|Mỗi lần chạm sẽ đổi bàn phím.
+693|Mở bàn phím.
+694|Chạm vào 123 ở góc dưới bên trái.
+695|Chạm vào các số. Chạm vào ABC để quay lại chữ cái.
+696|Chạm vào ô nhập chữ.
+697|Chạm vào micrô trên bàn phím.
+698|Nói chậm. Lời bạn nói hiện thành chữ.
+699|Nói xong, chạm lại vào micrô.
+700|Chạm vào phím mặt cười (hoặc quả địa cầu) ở góc dưới bên trái.
+701|Chạm vào biểu tượng cảm xúc bạn muốn.
+702|Chạm vào ABC để quay lại chữ cái.
+703|Chạm vào chỗ bất kỳ trong văn bản để đặt con trỏ.
+704|Chạm và giữ phím cách.
+705|Không nhấc ngón tay, di chuyển để dời con trỏ.
+706|Chạm hai lần vào từ đó.
+707|Kéo hai tay nắm để chọn thêm.
+708|Chạm và giữ chữ.
+709|Chạm và giữ chỗ bạn muốn dán.
+710|Vuốt sang trái bằng ba ngón tay để hoàn tác.
+711|Bạn cũng có thể lắc iPhone.
+712|Nhập cả câu và một từ viết tắt ngắn.
+713|Chạm vào Lưu ở góc trên bên phải.
+714|Chạm và giữ nút quả địa cầu hoặc biểu tượng cảm xúc.
+715|Chạm vào biểu tượng bàn phím lệch phải.
+716|Chạm vào ứng dụng Camera.
+717|Camera mở ra.
+718|Mở Camera.
+719|Kiểm tra chắc chắn đang chọn Ảnh.
+720|Hướng máy vào thứ bạn muốn chụp.
+721|Chạm vào nút chụp màu trắng.
+722|Nhìn vào Màn hình khóa.
+723|Vuốt sang trái trên màn hình để mở Camera.
+724|Hoặc chạm và giữ nút Camera ở góc dưới bên phải.
+725|Đặt hai ngón tay lên màn hình camera rồi tách ra.
+726|Chạm vào nút chụp để chụp ảnh.
+727|Chạm vào chỗ bạn muốn lấy nét.
+728|Kéo hình mặt trời màu vàng lên hoặc xuống để chỉnh độ sáng.
+729|Chạm và giữ để khóa lấy nét (Khóa AE/AF).
+730|Chạm vào nút đổi camera.
+731|Để khuôn mặt nằm trong khung hình.
+732|Chạm vào nút chụp.
+733|Trong Camera, chạm vào Video.
+734|Chạm vào nút đỏ để bắt đầu.
+735|Chạm vào hình vuông đỏ để dừng.
+736|Chạm vào nút Quay màu đỏ.
+737|Muốn tạm dừng, chạm vào nút tạm dừng bên trái (iOS 18 trở lên).
+738|Quay xong, chạm vào Dừng.
+739|Chạm vào ⌃ ở giữa phía trên.
+740|Chạm vào Flash (hình tia chớp).
+741|Chọn Tắt, Bật hoặc Tự động.
+742|Chạm vào Chân dung.
+743|Đứng cách người được chụp trong vòng 2,5 mét. Khi Ánh sáng tự nhiên chuyển màu vàng là sẵn sàng.
+744|Chạm vào nút chụp màu trắng.
+745|Chạm vào Toàn cảnh.
+746|Chạm vào nút chụp.
+747|Di chuyển iPhone chậm sang ngang theo mũi tên.
+748|Chạm lại vào nút chụp để kết thúc.
+749|Ở chỗ tối, biểu tượng mặt trăng màu vàng tự bật.
+750|Giữ iPhone yên trong vài giây.
+751|Chạm vào Hẹn giờ.
+752|Chạm vào nút chụp. Máy sẽ chụp sau 10 giây.
+753|Trượt nút chụp sang trái.
+754|Giữ nguyên ngón tay.
+755|Nhấc ngón tay để dừng.
+756|Trong Ảnh, bạn có thể chọn những tấm ưng ý.
+757|Chạm vào nút Live tròn ở góc trên bên phải.
+758|Có gạch chéo nghĩa là đã tắt.
+759|Các đường kẻ hiện ra giúp chụp ảnh thẳng hơn.
+760|Đưa máy đến gần vật cần chụp tới 2 xăng-ti-mét (máy Pro).
+761|Biểu tượng bông hoa nghĩa là chế độ Macro đang bật.
+762|Chạm vào Slo-mo.
+763|Chạm vào nút Quay.
+764|Chạm vào Time-lapse.
+765|Đặt iPhone lên giá để máy không bị xê dịch.
+766|Chạm vào Điện ảnh.
+767|Chạm vào một người để lấy nét người đó. Phông nền sẽ mờ đi.
+768|Chạm vào Phong cách.
+769|Vuốt để chọn kiểu màu, ví dụ Ấm.
+770|Hướng camera vào mã QR.
+771|Chạm vào liên kết hiện ra.
+772|Hãy kiểm tra địa chỉ trước khi mở mã QR lạ.
+773|Hướng camera vào chữ.
+774|Chạm vào nút văn bản ở góc dưới bên phải.
+775|Bấm Điều khiển Camera ở bên phải phía dưới để mở Camera (iPhone 16 trở lên).
+776|Bấm lần nữa để chụp ảnh.
+777|Nhấn nhẹ nút hai lần.
+778|Trượt ngón tay trên nút để thu phóng.
+779|Nhấn một trong hai nút âm lượng để chụp ảnh.
+780|Nhấn và giữ để quay video.
+781|Ảnh tự sướng được lưu giống như khi bạn soi gương.
+782|Chất lượng càng cao càng tốn dung lượng.
+783|Chạm vào 0.5 để chụp rộng hơn (Góc siêu rộng).
+784|Chạm vào 2 để chụp gần hơn (Tele).
+785|Chạm và giữ một con số.
+786|Trượt sang ngang để thu phóng tùy ý.
+787|Ở chế độ Ảnh, chạm và giữ nút chụp.
+788|Thả tay để dừng quay.
+789|Muốn quay tiếp, trượt sang phải đến hình ổ khóa.
+790|Chạm vào ứng dụng Ảnh.
+791|Vuốt để xem ảnh tiếp theo.
+792|Đặt hai ngón tay lên ảnh rồi tách ra.
+793|Chụm ngón tay lại để thu nhỏ.
+794|Trong Ảnh, chạm vào một video.
+795|Mở ảnh.
+796|Trong Ảnh, chạm vào Đã xóa gần đây.
+797|Mở khóa bằng Face ID hoặc mật mã.
+798|Chạm vào nút trái tim ở dưới cùng.
+799|Bạn sẽ thấy ảnh trong album Mục ưa thích.
+800|Chạm vào Bộ sưu tập ở dưới cùng.
+801|Chạm vào ＋ bên cạnh Album.
+802|Nhập tên, ví dụ Các cháu.
+803|Chạm vào nút ••• ở góc trên bên phải.
+804|Chạm vào album.
+805|Chạm vào cách gửi hoặc người nhận.
+806|Chạm vào Cắt ở dưới cùng.
+807|Kéo các góc để chọn phần muốn giữ.
+808|Chạm vào nút xoay ở góc trên bên trái.
+809|Chạm vào Tự động ở trên cùng.
+810|Chạm vào Bộ lọc ở dưới cùng.
+811|Chạm vào một bộ lọc, ví dụ Đơn sắc.
+812|Chạm vào Hoàn nguyên màu đỏ ở trên cùng.
+813|Chạm vào video.
+814|Kéo hai đầu khung màu vàng để chọn phần muốn giữ.
+815|Chạm vào nút tìm kiếm ở trên cùng.
+816|Nhập một từ, ví dụ biển hoặc chó.
+817|Chạm vào một người để chỉ xem ảnh của người đó.
+818|Chạm vào một kỷ niệm để xem kèm nhạc.
+819|Ảnh đã ẩn nằm trong Bộ sưu tập › Tiện ích › Bị ẩn.
+820|Chạm vào Chọn ở góc trên bên phải.
+821|Chạm vào từng ảnh. Bạn cũng có thể kéo ngón tay.
+822|Chạm vào nút Chia sẻ ở góc dưới bên trái.
+823|Trong Loại phương tiện, chạm vào Ảnh màn hình.
+824|Chạm và giữ người hoặc đồ vật trong ảnh.
+825|Chạm và giữ ô tin nhắn để dán riêng chủ thể.
+826|Trong Tiện ích, chạm vào Trùng lặp.
+827|Nhập tên, ví dụ Gia đình mình.
+828|Chọn người trong gia đình.
+829|Kiểm tra máy in. Chạm vào In.
+830|Chạm vào Safari, biểu tượng la bàn xanh.
+831|Trong Safari, chạm vào thanh địa chỉ.
+832|Nhập điều bạn muốn tìm.
+833|Chạm vào Đi trên bàn phím.
+834|Chạm vào thanh địa chỉ ở dưới cùng.
+835|Nhập địa chỉ, ví dụ digistep365.com
+836|Chạm vào phím Đi màu xanh.
+837|Chạm vào ‹ ở góc dưới bên trái.
+838|Chạm vào nút Tab ở góc dưới bên phải.
+839|Chạm vào ✕ trên tab muốn đóng.
+840|Muốn đóng tất cả, chạm và giữ Xong.
+841|Chạm vào nút hình quyển sách.
+842|Chạm vào trang web.
+843|Chạm vào ᴬA bên trái thanh địa chỉ.
+844|Bạn chỉ thấy chữ, không có quảng cáo.
+845|Chạm vào nút menu trang trong thanh địa chỉ.
+846|Chạm vào chữ A lớn hơn để phóng to chữ.
+847|Chạm vào chữ A lớn để phóng to chữ.
+848|Bạn cũng có thể tách hai ngón tay.
+849|Đọc sau từ nút quyển sách › kính.
+850|Chạm vào Riêng tư ở dưới cùng.
+851|Lịch sử không được lưu ở đây.
+852|Nhập một từ. Từ đó được tô vàng.
+853|Chạm và giữ liên kết tệp.
+854|Bạn sẽ thấy trong Tệp › Tải về.
+855|Chạm vào ngôn ngữ.
+856|iPhone đọc to trang web.
+857|Chạm vào Thêm ở góc trên bên phải.
+858|Chạm vào tên mạng.
+859|Nhập mật khẩu.
+860|Nhờ bạn của bạn chạm vào mạng Wi-Fi của bạn trên iPhone của họ.
+861|Để hai chiếc iPhone sát nhau.
+862|Trên iPhone của bạn, chạm vào Chia sẻ mật khẩu.
+863|Hướng camera vào mã QR Wi-Fi.
+864|Chạm vào thông báo ở trên cùng.
+865|Cuộn xuống để xem mỗi ứng dụng dùng bao nhiêu dữ liệu.
+866|Tắt một công tắc để ứng dụng đó chỉ dùng internet qua Wi-Fi.
+867|Chạm vào nút máy bay.
+868|Bật công tắc.
+869|Đưa tai nghe vào chế độ ghép đôi (xem hướng dẫn kèm theo).
+870|Mở Cài đặt › Bluetooth.
+871|Trong Thiết bị khác, chạm vào tai nghe.
+872|Mở khóa iPhone và về Màn hình chính.
+873|Mở hộp AirPods và để sát iPhone.
+874|Trên thiết bị kia, chọn iPhone của bạn trong danh sách Wi-Fi.
+875|Nhập mật khẩu này trên thiết bị đó.
+876|Dùng dữ liệu ở nước ngoài có thể rất đắt. Hãy xem trước gói chuyển vùng của nhà mạng.
+877|Làm theo nhà mạng: quét mã QR của họ hoặc chọn Chuyển từ iPhone ở gần.
+878|Nhập mật mã. Các mật khẩu Wi-Fi đã lưu sẽ bị xóa.
+879|Bắt đầu ghép đôi Bluetooth trên màn hình ô tô (xem hướng dẫn của xe).
+880|Đánh thức màn hình.
+881|Đưa phần trên của iPhone lại gần thẻ NFC.
+882|Kéo thanh trượt sang phải.
+883|Mở Cài đặt › Màn hình & Độ sáng.
+884|Kéo thanh trượt mặt trời lên để sáng hơn.
+885|Chọn thời gian.
+886|Chạm vào ảnh bạn thích.
+887|Mở ứng dụng bạn muốn đổi.
+888|Trong Cỡ chữ, chạm vào Chỉ Thời tiết.
+889|Kéo thanh trượt lên để chữ to hơn.
+890|Chạm vào nút Khóa hướng hình ổ khóa.
+891|Mở Cài đặt › Âm thanh & Cảm ứng.
+892|Kéo thanh trượt Nhạc chuông và cảnh báo sang phải.
+893|Chạm vào nhạc chuông bạn thích.
+894|Chạm vào Nhận bên cạnh ứng dụng.
+895|Nhấn hai lần nút sườn hoặc dùng Face ID để xác nhận.
+896|Chạm vào Tìm kiếm ở dưới cùng.
+897|Chạm vào tên ứng dụng để xem chi tiết và đánh giá.
+898|Mở App Store.
+899|Chạm vào ảnh đại diện ở góc trên bên phải.
+900|Chạm vào Xóa để xác nhận.
+901|Chạm vào nút đám mây bên cạnh ứng dụng.
+902|Chạm vào tên của bạn ở trên cùng.
+903|Chạm vào gói đăng ký muốn hủy.
+904|Bạn xem được hôm nay đã dùng mỗi ứng dụng bao lâu.
+905|Chọn loại ứng dụng muốn giới hạn.
+906|Đặt thời gian mỗi ngày.
+907|Ứng dụng đã ẩn nằm trong thư mục Bị ẩn ở cuối Thư viện ứng dụng.
+908|Cắm cáp vào cổng ở cạnh dưới.
+909|Nối đầu kia vào củ sạc và ổ điện.
+910|Có hình tia chớp trên pin nghĩa là đang sạc.
+911|Mở Cài đặt › Pin.
+912|Dung lượng tối đa cho biết tình trạng pin. Dưới 80% thì nên nghĩ đến việc thay pin.
+913|Cuộn xuống để xem mỗi ứng dụng dùng bao nhiêu pin.
+914|Cắm đế sạc không dây vào ổ điện.
+915|Đặt iPhone ngửa màn hình lên giữa đế sạc.
+916|Có hình tia chớp nghĩa là đang sạc.
+917|Cắm bộ sạc MagSafe vào ổ điện.
+918|Áp bộ sạc vào mặt sau iPhone. Nó tự hít vào bằng nam châm.
+919|Biểu tượng sạc hiện trên màn hình.
+920|Dùng củ sạc từ 20W trở lên và cáp phù hợp.
+921|Cắm cáp vào iPhone.
+922|Khoảng 30 phút sẽ sạc được chừng một nửa.
+923|Cắm cáp USB-C vào cổng ở cạnh dưới.
+924|Nối đầu kia vào củ sạc và ổ điện.
+925|Cắm cáp Lightning vào cổng ở cạnh dưới.
+926|Bật Chế độ nguồn điện thấp khi pin yếu.
+927|Giảm độ sáng màn hình một chút.
+928|Tắt vị trí cho những ứng dụng không cần đến.
+929|Nối iPhone với tai nghe bằng cáp USB-C.
+930|Tai nghe được sạc bằng pin của iPhone.
+931|Chạm vào ứng dụng Đồng hồ.
+932|Chạm vào Báo thức ở dưới cùng.
+933|Cuộn để chỉnh giờ và phút.
+934|Vuốt sang trái trên báo thức.
+935|Chạm vào báo thức.
+936|Khi báo thức reo, chạm vào Báo lại.
+937|Chuông sẽ reo lại sau 9 phút.
+938|Khi sửa báo thức, bạn có thể bật hoặc tắt Báo lại.
+939|Mở Đồng hồ › Hẹn giờ.
+940|Đặt thời gian.
+941|Chạm vào Bấm giờ ở dưới cùng.
+942|Chạm vào Dừng để tạm dừng.
+943|Chạm vào Đồng hồ thế giới ở góc dưới bên trái.
+944|Nhập tên thành phố, ví dụ New York.
+945|Trong Ngủ | Thức dậy, chạm vào Không có báo thức.
+946|Đặt giờ đi ngủ và giờ thức dậy.
+947|Chạm vào nút đèn pin. Chạm lần nữa để tắt.
+948|Vuốt lên từ dưới để mở Trung tâm điều khiển.
+949|Chạm vào các số, ví dụ 1, 2, 0, 0, 0.
+950|Chạm vào một dấu như ＋.
+951|Chạm vào ＝ để xem kết quả.
+952|Chạm vào nút danh sách ở góc trên bên trái.
+953|Bạn thấy các phép tính trước đây.
+954|Chạm vào nút máy tính ở góc dưới bên trái.
+955|Chọn đơn vị. Nhập một số, ví dụ 1 dặm = 1.6 km.
+956|Chạm vào ứng dụng Thời tiết.
+957|Xem thời tiết hôm nay và theo từng giờ.
+958|Chạm vào nút danh sách ở góc dưới bên phải.
+959|Nhập tên thành phố vào ô tìm kiếm.
+960|Nhập tiêu đề, ví dụ Khám bệnh.
+961|Chạm vào Bắt đầu để chọn ngày và giờ.
+962|Chạm vào sự kiện.
+963|Đổi chỗ cần đổi, ví dụ giờ.
+964|Chạm vào Xóa sự kiện ở dưới cùng.
+965|Chạm lại vào Xóa sự kiện.
+966|Chạm vào < ở góc trên bên trái để xem cả tháng.
+967|Chạm vào một ngày để xem ngày đó.
+968|Chạm vào Lịch ở dưới cùng.
+969|Chạm vào ứng dụng Ghi chú.
+970|Chạm vào nút ghi chú mới ở góc dưới bên phải.
+971|Nhập ghi chú. Ghi chú tự lưu.
+972|Chạm vào nút danh sách kiểm tra.
+973|Nhập một mục. Nhấn xuống dòng để sang dòng tiếp theo.
+974|Chạm vào một ghi chú.
+975|Chạm vào nút đính kèm.
+976|Hướng camera vào tờ giấy. Máy tự động quét.
+977|Chạm vào ghi chú.
+978|Chọn dùng mật mã iPhone.
+979|Vuốt sang phải trên ghi chú.
+980|Chạm vào nút ghim.
+981|Vuốt sang trái trên ghi chú.
+982|Chạm vào nút thùng rác màu đỏ.
+983|Muốn khôi phục, chạm vào Đã xóa gần đây trong Thư mục.
+984|Vuốt sang trái trên ghi chú để chuyển về. Chỉ làm được trong 30 ngày.
+985|Chạm lại vào nút đỏ để dừng.
+986|Chạm vào bản ghi.
+987|Chạm vào tên.
+988|Nhập tên mới.
+989|Chạm vào nút •••.
+990|Chạm vào Lời nhắc mới ở góc dưới bên trái.
+991|Nhập việc cần làm, ví dụ Uống thuốc.
+992|Chạm vào ⓘ ở bên phải.
+993|Mở Cài đặt › Face ID & Mật mã (hoặc Touch ID & Mật mã).
+994|Nhập mật mã 6 số hai lần.
+995|Nhập mật mã hiện tại.
+996|Nhập mật mã mới hai lần.
+997|Mở Cài đặt › Face ID & Mật mã.
+998|Đưa khuôn mặt vào vòng tròn và từ từ xoay đầu.
+999|Mở Cài đặt › Touch ID & Mật mã.
+1000|Chạm vào Thêm dấu vân tay.
+1001|Chạm ngón tay vào nút Home nhiều lần.
+1002|Bạn thấy mật khẩu đã lưu cho trang web và ứng dụng.
+1003|Kiểm tra Xác thực hai yếu tố đang Bật.
+1004|Làm theo các bước để xem bạn đang chia sẻ với ai.
+1005|Mọi dữ liệu sẽ bị xóa sau 10 lần nhập sai mật mã. Hãy có bản sao lưu.
+1006|Mở Cài đặt › Cài đặt chung.
+1007|Nếu có bản cập nhật, chạm vào Cập nhật bây giờ.
+1008|Đừng chạm vào liên kết từ số lạ.
+1009|Nếu "người nhà" nhắn tin xin tiền, hãy gọi điện hỏi lại trước.
+1010|Đừng bao giờ chia sẻ mã hay mật khẩu.
+1011|Với tin rác, hãy dùng Báo cáo tin rác.
+1012|Mở Cài đặt › Trợ năng.
+1013|Chạm hai lần vào màn hình bằng ba ngón tay để phóng to.
+1014|Mở ứng dụng Kính lúp (tìm kiếm nếu cần).
+1015|Hướng camera vào chữ.
+1016|Kéo thanh trượt để phóng to.
+1017|Mở Cài đặt › Trợ năng › Nội dung được đọc.
+1018|Ở màn hình bất kỳ, vuốt xuống từ trên bằng hai ngón tay.
+1019|Mở Cài đặt › Trợ năng › VoiceOver.
+1020|Chạm vào công tắc VoiceOver.
+1021|Muốn tắt, hãy chọn công tắc. Chạm hai lần vào chỗ bất kỳ để chuyển.
+1022|Chạm một lần để nghe đọc mục đó.
+1023|Chạm hai lần để mở.
+1024|Vuốt bằng ba ngón tay để sang trang tiếp theo.
+1025|Mở Cài đặt › Trợ năng › Cảm ứng.
+1026|Bật lên. Một nút tròn màu xám sẽ hiện ra.
+1027|Mở Cài đặt › Trợ năng › Truy cập được hỗ trợ.
+1028|Làm theo các bước để chọn ứng dụng.
+1029|Tốt nhất nên thiết lập cùng người hỗ trợ.
+1030|Nhấn nhanh nút sườn ba lần.
+1031|Nhập mật mã Truy cập được hỗ trợ.
+1032|Nhấn nhanh nút sườn ba lần để bật hoặc tắt.
+1033|Vuốt xuống ở mép dưới để kéo phần trên màn hình xuống.
+1034|Mở rồi đóng nắp pin của máy trợ thính để máy sẵn sàng kết nối.
+1035|Trong Thính giác, chạm vào Nghe trực tiếp.
+1036|Đặt iPhone gần người nói và nghe bằng tai nghe.
+1037|Ở nơi yên tĩnh, đọc to các câu trên màn hình.
+1038|Nhập điều bạn muốn nói. iPhone sẽ nói thay bạn.
+1039|Nói một lệnh như "Mở Cài đặt".
+1040|Nhìn theo dấu chấm trên màn hình.
+1041|Bàn phím cũng to hơn.
+1042|Hướng vào người, cửa hoặc chữ và iPhone sẽ báo cho bạn biết.
+1043|Mở ứng dụng bạn muốn dùng.
+1044|Khi bật máy lần đầu, màn hình Xin chào sẽ hiện ra.
+1045|Chạm vào nút Trợ năng.
+1046|Chọn điều bạn cần, ví dụ Thị giác.
+1047|Xem dung lượng còn trống và mỗi ứng dụng dùng bao nhiêu.
+1048|Thanh màu cho biết thứ gì chiếm nhiều chỗ nhất.
+1049|Làm theo đề xuất để xóa video lớn hoặc tin nhắn cũ.
+1050|Chạm vào một thư mục.
+1051|Chạm vào tệp để mở.
+1052|Các tệp tải về từ Safari nằm ở đây.
+1053|Mở tệp hoặc ảnh.
+1054|Chọn thư mục. Chạm vào Lưu.
+1055|Chạm vào tệp PDF.
+1056|Vuốt lên hoặc xuống để lật trang.
+1057|Tách hai ngón tay để phóng to.
+1058|Chạm vào tệp PDF.
+1059|Chạm vào Đánh dấu (hình cây bút) ở dưới cùng.
+1060|Chạm vào ＋ ở góc dưới bên phải.
+1061|Ký bằng ngón tay.
+1062|Chạm và giữ tệp.
+1063|Nhập tên mới. Nhấn Xong.
+1064|Tệp đã xóa có thể khôi phục từ Đã xóa gần đây trong 30 ngày.
+1065|Chạm vào tệp .zip.
+1066|Một thư mục hiện ra ở cùng chỗ, bên trong có các tệp.
+1067|Cắm USB vào cổng sạc (USB-C hoặc qua bộ chuyển đổi).
+1068|Trong Vị trí, chạm vào USB.
+1069|Chạm vào thiết bị của người đó.
+1070|Chỉ danh bạ là an toàn nhất để người lạ không gửi gì cho bạn.
+1071|Mở khóa cả hai iPhone.
+1072|Đưa phần trên của hai iPhone lại gần nhau.
+1073|Chạm vào Chia sẻ để trao đổi cả liên hệ của bạn.
+1074|Nhấn rồi thả cùng lúc nút sườn và nút tăng âm lượng.
+1075|Một ảnh nhỏ hiện ở góc dưới bên trái.
+1076|Nhấn rồi thả cùng lúc nút sườn và nút Home.
+1077|Mở một trang web trong Safari.
+1078|Nhấn cùng lúc nút sườn và nút tăng âm lượng.
+1079|Chạm vào ảnh nhỏ ở góc dưới bên trái.
+1080|Chạm vào Toàn trang ở trên cùng.
+1081|Chạm vào Ghi màn hình. Sau 3 giây sẽ bắt đầu.
+1082|Muốn dừng, chạm vào dấu đỏ ở trên cùng.
+1083|Bản ghi được lưu vào Ảnh.
+1084|Chọn bút ở dưới cùng. Viết bằng ngón tay.
+1085|Mở ảnh hoặc tài liệu.
+1086|Chọn máy in dùng cùng mạng Wi-Fi (AirPrint).
+1087|Chạm vào In ở góc trên bên phải.
+1088|Nối iPhone với máy tính bằng cáp.
+1089|Trên iPhone, chạm vào Tin cậy.
+1090|Nhập mật mã.
+1091|Trên máy tính, mở ứng dụng Ảnh và chọn Nhập.
+1092|Chạm vào Đăng nhập vào iPhone ở trên cùng.
+1093|Nhập tên và ngày sinh.
+1094|Chọn email và mật khẩu. Làm theo các bước để hoàn tất.
+1095|Nhập email Tài khoản Apple.
+1096|Nhập mật khẩu. Nếu có mã hiện trên thiết bị khác, hãy nhập mã đó.
+1097|Nhập mật mã iPhone.
+1098|Nhập mật khẩu mới hai lần: từ 8 ký tự, có chữ hoa, chữ thường và một số.
+1099|Trên màn hình đăng nhập, chạm vào Quên mật khẩu?
+1100|Nhập mật mã iPhone để tạo mật khẩu mới.
+1101|Nếu không được, hãy yêu cầu Khôi phục tài khoản. Có thể mất vài ngày.
+1102|Chọn người nhà bạn tin tưởng.
+1103|Chọn người có thể truy cập dữ liệu của bạn sau khi bạn qua đời.
+1104|Thanh màu cho biết Ảnh và bản sao lưu chiếm bao nhiêu.
+1105|Trên máy Mac, dùng Finder. Trên Windows, dùng ứng dụng Thiết bị Apple. Chọn iPhone của bạn.
+1106|Bấm Sao lưu bây giờ.
+1107|Trên các màn hình thiết lập, đến phần Ứng dụng & Dữ liệu.
+1108|Đăng nhập bằng Tài khoản Apple.
+1109|Chạm vào bản sao lưu mới nhất.
+1110|Bật iPhone mới.
+1111|Đặt cạnh iPhone cũ.
+1112|Trên iPhone cũ, chạm vào Tiếp tục.
+1113|Hướng camera của iPhone cũ vào hình màu xanh trên iPhone mới.
+1114|Nhập mật mã cũ trên iPhone mới. Để hai máy gần nhau khi đang chuyển.
+1115|Chạm vào tên con bạn.
+1116|Bạn thấy phương thức thanh toán hiện tại. Đừng bao giờ cho ai xem số thẻ.
+1117|Nhập số mới. Nhập mã nhận được qua tin nhắn.
+1118|Nhập mật khẩu Tài khoản Apple.
+1119|Chọn dữ liệu muốn giữ trên iPhone này.
+1120|Có thêm dung lượng và tính năng như Ẩn địa chỉ email. Mất phí hằng tháng.
+1121|Chạm vào Tiếp tục. Hãy chắc chắn đã sao lưu trước.
+1122|Nhập mật mã và mật khẩu Tài khoản Apple để xóa mọi thứ.
+1123|Quét thẻ bằng camera hoặc nhập tay.
+1124|Hoàn tất xác minh của ngân hàng (ví dụ qua tin nhắn).
+1125|Nhấn nhanh nút sườn hai lần.
+1126|Nhìn vào iPhone để dùng Face ID.
+1127|Đưa phần trên iPhone lại gần máy đọc thẻ.
+1128|Xong và dấu tích nghĩa là đã thành công.
+1129|Ở khu vực hỗ trợ, chỉ cần đưa iPhone vào cổng soát vé.
+1130|Trong ứng dụng hoặc email của hãng bay hay sự kiện, chạm vào Thêm vào Apple Wallet.
+1131|Chạm vào thẻ.
+1132|Chạm vào Xóa thẻ này ở dưới cùng.
+1133|Chạm vào ứng dụng Sức khỏe.
+1134|Chạm vào Bắt đầu hoặc Sửa.
+1135|Thêm bệnh, thuốc và nhóm máu của bạn.
+1136|Tóm tắt cho biết số bước hôm nay.
+1137|Chạm vào Bước để xem số liệu theo tuần và tháng.
+1138|Trong Duyệt, chạm vào Thuốc.
+1139|Nhập tên thuốc và giờ uống.
+1140|Apple Watch có thể phát hiện cú ngã mạnh. Nếu bạn không phản hồi trong một phút, đồng hồ sẽ gọi cấp cứu.
+1141|Trong Chia sẻ, chạm vào Chia sẻ với ai đó.
+1142|Chọn một người trong gia đình.
+1143|Chọn mục muốn chia sẻ, ví dụ Bước.
+1144|Trong Duyệt, chạm vào Khả năng di chuyển.
+1145|Trong Độ vững khi đi bộ, chạm vào Thiết lập.
+1146|Chạm vào ứng dụng Bản đồ.
+1147|Chạm vào ô tìm kiếm.
+1148|Nhập tên địa điểm.
+1149|Nhập địa điểm, ví dụ Ga Seoul.
+1150|Chạm vào nút Chỉ đường màu xanh.
+1151|Chạm vào nút Đi màu xanh lá.
+1152|Chọn địa điểm.
+1153|Chạm vào Phương tiện công cộng (hình xe buýt).
+1154|Bắt đầu chỉ đường.
+1155|Vuốt thẻ lên. Chạm vào Chia sẻ giờ đến.
+1156|Chạm vào người muốn báo.
+1157|Chạm vào ảnh của bạn bên cạnh ô tìm kiếm.
+1158|Chọn khu vực. Chạm vào Tải về.
+1159|Chạm vào ứng dụng Tìm.
+1160|Chạm vào thiết bị.
+1161|Trong Người, chạm vào Chia sẻ vị trí của tôi.
+1162|Chọn thời gian chia sẻ.
+1163|Trong Vật dụng, chạm vào đồ vật.
+1164|Chạm vào Phát âm thanh để AirTag kêu.
+1165|Chạm vào Tìm để có mũi tên chỉ đường đến đồ vật.
+1166|Chạm vào cuộc hội thoại gia đình.
+1167|Kiểm tra địa điểm và thời gian. Chạm vào nút Gửi.
+1168|Mở Cài đặt › Siri (hoặc Siri & Tìm kiếm).
+1169|Chạm vào Nói chuyện với Siri hoặc Lắng nghe.
+1170|Nói các câu hiện trên màn hình.
+1171|Nói "Siri" hoặc "Hey Siri" (theo cách đã thiết lập).
+1172|Nói điều bạn muốn, ví dụ "Thời tiết ngày mai thế nào?"
+1173|Nhấn và giữ nút sườn để gọi Siri.
+1174|Chạm hai lần vào cạnh dưới màn hình để nhập cho Siri.
+1175|Nói "Siri" hoặc nhấn và giữ nút sườn.
+1176|Nói ví dụ "Gọi cho mẹ".
+1177|Nói "Gửi tin nhắn cho John".
+1178|Nói nội dung tin nhắn.
+1179|Nói "Gửi".
+1180|Nói "Đánh thức tôi lúc 6 giờ sáng mai".
+1181|Nói "Hẹn giờ 10 phút".
+1182|Nói "Hôm nay thời tiết thế nào?"
+1183|Nói ví dụ "Mở Camera".
+1184|Nói "Nhắc tôi uống thuốc lúc 8 giờ tối".
+1185|Nói ví dụ "Mở nhạc jazz" (cần gói nhạc).
+1186|Nói "Bật đèn pin".
+1187|Khi tắt, người khác không dùng được Siri lúc iPhone đang khóa.
+1188|Chạm lần nữa.
+1189|Chọn một tác vụ, ví dụ Gửi tin nhắn "Đang về nhà".
+1190|Chỉ có trên máy hỗ trợ (15 Pro trở lên) và ngôn ngữ hỗ trợ. Chờ đến khi thiết lập xong.
+1191|Chọn đoạn văn bản.
+1192|Chọn một đoạn văn dài hoặc mở trang web.
+1193|Bạn thấy ý chính chỉ trong vài dòng.
+1194|Nhiều thông báo được tóm lại thành một dòng trên Màn hình khóa.
+1195|Khoanh tròn bằng ngón tay thứ bạn muốn xóa.
+1196|Mô tả điều bạn muốn, ví dụ một con mèo trên bãi biển.
+1197|Chọn một phong cách.
+1198|Trong Tin nhắn, chạm vào nút biểu tượng cảm xúc trên bàn phím.
+1199|Chạm vào nút biểu tượng cảm xúc lấp lánh ở góc trên bên phải.
+1200|Mô tả hình bạn muốn, ví dụ chú chó đội mũ.
+1201|Nhấn và giữ Điều khiển Camera (máy hỗ trợ).
+1202|Hướng vào thứ bạn muốn biết, ví dụ một bông hoa hay biển hiệu cửa hàng.
+1203|Chạm vào Hỏi để được giải thích.
+1204|Thông tin cá nhân có thể bị gửi đi, nên hãy để bật hỏi xác nhận.
+1205|Chọn hai ngôn ngữ ở trên cùng.
+1206|Chạm vào micrô.
+1207|Nói điều bạn muốn nói.
+1208|Bản dịch hiện thành chữ và giọng nói.
+1209|Apple Intelligence xử lý dữ liệu ngay trên iPhone khi có thể.
+1210|Việc lớn hơn dùng Private Cloud Compute, không lưu dữ liệu của bạn.
+1211|SOS khẩn cấp gọi cấp cứu bằng các nút bấm.
+1212|Đừng bấm để tập: hãy học qua các hình vẽ này.
+1213|Xem cách hoạt động trong Cài đặt › SOS khẩn cấp.
+1214|Kiểm tra cách nào đang bật: nhấn giữ hoặc bấm 5 lần.
+1215|Khi không có sóng di động hay Wi-Fi, hãy ra ngoài trời nơi thấy rõ bầu trời (quốc gia và máy hỗ trợ).
+1216|Gọi cấp cứu. Nhắn tin khẩn cấp qua vệ tinh sẽ hiện ra.
+1217|Trả lời câu hỏi. Hướng iPhone về phía vệ tinh như hướng dẫn.
+1218|Mở ứng dụng Tìm trên thiết bị khác hoặc vào icloud.com/find.
+1219|Chạm vào iPhone bị mất.
+1220|Trong Đánh dấu là bị mất, chạm vào Kích hoạt.
+1221|Nhập số điện thoại và lời nhắn để hiện trên màn hình.
+1222|Trong ứng dụng Tìm, chạm vào iPhone bị mất.
+1223|Chạm vào Xóa thiết bị này ở dưới cùng.
+1224|Sau khi xóa, bạn không thể định vị máy nữa. Chỉ dùng khi không còn cách nào khác.
+1225|Trước tiên, thử tắt máy bằng nút sườn.
+1226|Nếu không tắt được, hãy làm theo bài "Buộc khởi động lại".
+1227|Kiểm tra cáp và củ sạc đã cắm chặt chưa.
+1228|Thử ổ điện khác hoặc cáp khác.
+1229|Nhẹ nhàng kiểm tra cổng sạc có bụi bẩn không.
+1230|Nếu vẫn không sạc được, hãy liên hệ Hỗ trợ Apple.
+1231|Kiểm tra công tắc im lặng bên trái hoặc nút chuông trong Trung tâm điều khiển.
+1232|Nhấn nút tăng âm lượng.
+1233|Tắt Tập trung nếu đang bật.
+1234|Kiểm tra có đang kết nối tai nghe Bluetooth không.
+1235|Tắt rồi bật lại Wi-Fi trong Trung tâm điều khiển.
+1236|Rút điện bộ phát Wi-Fi 30 giây. Cắm lại.
+1237|Khởi động lại iPhone.
+1238|Nếu vẫn lỗi, hãy quên mạng rồi kết nối lại.
+1239|Làm theo đề xuất.
+1240|Gỡ bỏ các ứng dụng lớn bạn không dùng.
+1241|Chuyển ảnh lên Ảnh iCloud hoặc sang máy tính.
+1242|Đóng hẳn ứng dụng. Mở lại.
+1243|Xem App Store có bản cập nhật cho ứng dụng không.
+1244|Nếu vẫn lỗi, hãy xóa ứng dụng rồi tải lại.
+1245|Nhập sai mật mã nhiều lần, iPhone không khả dụng sẽ hiện ra.
+1246|Chạm vào Quên mật mã? ở dưới cùng.
+1247|Nhập mật khẩu Tài khoản Apple để xóa iPhone. Bạn có thể khôi phục từ bản sao lưu.
+1248|Chờ hết thời gian hiển thị. Thử lại.
+1249|Bạn có thể dùng mật mã cũ trong 72 giờ sau khi đổi (iOS 17 trở lên).
+1250|Nếu không nhớ, hãy dùng Quên mật mã? để xóa.
+1251|Lấy máy ra ngay. Lau bằng khăn mềm.
+1252|Gõ nhẹ máy vào lòng bàn tay, cổng sạc hướng xuống.
+1253|Nếu hiện Phát hiện chất lỏng, đừng sạc đến khi khô (ít nhất 30 phút).
+1254|Đừng bỏ vào gạo hay dùng máy sấy tóc.
+1255|Đưa máy ra khỏi nắng hoặc xe nóng, để vào chỗ mát.
+1256|Tháo ốp dày. Tạm ngừng sạc.
+1257|Nếu hiện cảnh báo nhiệt độ, hãy chờ máy nguội.
+1258|Dán miếng dán hoặc băng keo lên kính vỡ để khỏi đứt tay.
+1259|Trước tiên, hãy sao lưu lên iCloud hoặc máy tính.
+1260|Đặt lịch sửa bằng ứng dụng Hỗ trợ Apple hoặc tại nơi được ủy quyền.
+1261|Chọn sự cố.
+1262|Nhập mật mã. Ảnh và danh bạ vẫn còn. Chỉ có cài đặt trở về mặc định.
+1263|Bật rồi tắt Chế độ máy bay.
+1264|Với eSIM, kiểm tra đường dây đã bật trong Cài đặt › Di động.
+1265|Nếu vẫn lỗi, hãy liên hệ nhà mạng.
+1266|Kiểm tra Chế độ máy bay đang tắt.
+1267|Xem các vạch sóng ở trên cùng.
+1268|Kiểm tra số đó không bị chặn.
+=Settings|Cài đặt
+=Action Button|Nút Tác vụ
+=Edit Home Screen|Sửa Màn hình chính
+=Add Widget|Thêm tiện ích
+=Weather|Thời tiết
+=Customize|Tùy chỉnh
+=Lock Screen|Màn hình khóa
+=Done|Xong
+=General|Cài đặt chung
+=About|Giới thiệu
+=Mute|Tắt tiếng
+=Phone|Điện thoại
+=Call|Gọi
+=Apps|Ứng dụng
+=Silence Unknown Callers|Tắt tiếng người gọi không xác định
+=Add|Thêm
+=Merge Calls|Hợp nhất cuộc gọi
+=New FaceTime|FaceTime mới
+=Live Voicemail|Thư thoại trực tiếp
+=add phone|thêm số điện thoại
+=Create New Contact|Tạo liên hệ mới
+=Contacts|Danh bạ
+=Edit|Sửa
+=Add Photo|Thêm ảnh
+=Share Contact|Chia sẻ liên hệ
+=Messages|Tin nhắn
+=Contact Photo & Poster|Ảnh & áp phích liên hệ
+=Health|Sức khỏe
+=Medical ID|ID y tế
+=add emergency contact|thêm liên hệ khẩn cấp
+=Add to Favorites|Thêm vào Mục ưa thích
+=Merge All|Hợp nhất tất cả
+=Photos|Ảnh
+=Save Image|Lưu hình ảnh
+=More|Thêm
+=Delete Message|Xóa tin nhắn
+=Delete|Xóa
+=Audio|Âm thanh
+=Location|Vị trí
+=Send Pin|Gửi ghim
+=Filter Unknown Senders|Lọc người gửi không xác định
+=Delete and Report Junk|Xóa và báo cáo tin rác
+=Keyboard|Bàn phím
+=Keyboards|Bàn phím
+=Add New Keyboard...|Thêm bàn phím mới...
+=Japanese|Tiếng Nhật
+=Copy|Sao chép
+=Paste|Dán
+=Undo|Hoàn tác
+=Auto-Correction|Tự động sửa
+=Text Replacement|Thay thế văn bản
+=Chinese (Simplified)|Tiếng Trung (Giản thể)
+=Handwriting|Viết tay
+=Sounds & Haptics|Âm thanh & Cảm ứng
+=Keyboard Feedback|Phản hồi bàn phím
+=Haptic|Cảm ứng
+=Grid|Lưới
+=Stop|Dừng
+=Copy All|Sao chép tất cả
+=Mirror Front Camera|Lật camera trước
+=Record Video|Quay video
+=4K at 30 fps|4K ở 30 fps
+=Preserve Settings|Giữ cài đặt
+=Camera Mode|Chế độ camera
+=Delete Photo|Xóa ảnh
+=Recover|Khôi phục
+=New Album|Album mới
+=Add to Album|Thêm vào album
+=Revert to Original|Hoàn nguyên về bản gốc
+=Beach|Biển
+=People & Pets|Người & Thú cưng
+=Memories|Kỷ niệm
+=Hide|Ẩn
+=Merge|Hợp nhất
+=New Shared Album|Album chia sẻ mới
+=Create|Tạo
+=Print|In
+=Add Bookmark|Thêm dấu trang
+=Show Reader|Hiện Trình đọc
+=Add to Reading List|Thêm vào Danh sách đọc
+=Clear History and Website Data|Xóa lịch sử và dữ liệu trang web
+=All history|Toàn bộ lịch sử
+=Clear History|Xóa lịch sử
+=Find on Page|Tìm trên trang
+=Download Linked File|Tải tệp được liên kết
+=Translate|Dịch
+=Listen to Page|Nghe trang
+=Add to Home Screen|Thêm vào MH chính
+=Join|Kết nối
+=Home|Nhà
+=Forget This Network|Quên mạng này
+=Forget|Quên
+=Cellular|Di động
+=Cellular Data|Dữ liệu di động
+=Forget This Device|Quên thiết bị này
+=Forget Device|Quên thiết bị
+=Connect|Kết nối
+=Personal Hotspot|Điểm truy cập cá nhân
+=Allow Others to Join|Cho phép người khác kết nối
+=Cellular Data Options|Tùy chọn dữ liệu di động
+=Low Data Mode|Chế độ dữ liệu thấp
+=Data Roaming|Chuyển vùng dữ liệu
+=Add eSIM|Thêm eSIM
+=Transfer or Reset iPhone|Chuyển hoặc đặt lại iPhone
+=Reset|Đặt lại
+=Reset Network Settings|Đặt lại cài đặt mạng
+=My Car|Xe của tôi
+=Display & Brightness|Màn hình & Độ sáng
+=Text Size|Cỡ chữ
+=Bold Text|Chữ in đậm
+=Display Zoom|Thu phóng màn hình
+=Larger Text|Chữ lớn hơn
+=Accessibility|Trợ năng
+=Display & Text Size|Màn hình & Cỡ chữ
+=Auto-Brightness|Độ sáng tự động
+=Dark|Tối
+=Manually Enable Until Tomorrow|Bật thủ công đến mai
+=Auto-Lock|Tự động khóa
+=Raise to Wake|Nâng lên để bật
+=Always On Display|Màn hình luôn bật
+=Wallpaper|Hình nền
+=Add New Wallpaper|Thêm hình nền mới
+=Large|Lớn
+=Motion|Chuyển động
+=Reduce Motion|Giảm chuyển động
+=Increase Contrast|Tăng độ tương phản
+=Button Shapes|Hình dạng nút
+=Color Filters|Bộ lọc màu
+=Grayscale|Thang độ xám
+=Reduce White Point|Giảm điểm trắng
+=Ringtone|Nhạc chuông
+=Haptics|Rung
+=Always Play|Luôn phát
+=Text Tone|Âm báo tin nhắn
+=Chord|Hợp âm
+=Notifications|Thông báo
+=Allow Notifications|Cho phép thông báo
+=Show Previews|Hiển thị bản xem trước
+=When Unlocked|Khi mở khóa
+=Focus|Tập trung
+=Do Not Disturb|Không làm phiền
+=Sleep|Ngủ
+=Emergency Bypass|Bỏ qua khẩn cấp
+=Audio & Visual|Âm thanh & Hình ảnh
+=LED Flash for Alerts|Đèn LED flash báo
+=Headphone Safety|An toàn tai nghe
+=Reduce Loud Audio|Giảm âm thanh lớn
+=Announce Calls|Thông báo cuộc gọi
+=Always|Luôn luôn
+=Mono Audio|Âm thanh đơn sắc
+=Sound Recognition|Nhận biết âm thanh
+=Sounds|Âm thanh
+=Doorbell|Chuông cửa
+=Search|Tìm kiếm
+=Update All|Cập nhật tất cả
+=App Updates|Cập nhật ứng dụng
+=Remove App|Xóa ứng dụng
+=Delete App|Xóa ứng dụng
+=Remove from Home Screen|Xóa khỏi MH chính
+=iPhone Storage|Dung lượng iPhone
+=Offload App|Gỡ bỏ ứng dụng
+=Account|Tài khoản
+=Purchased|Đã mua
+=Privacy & Security|Quyền riêng tư & Bảo mật
+=Location Services|Dịch vụ định vị
+=While Using the App|Khi dùng ứng dụng
+=Subscriptions|Gói đăng ký
+=Cancel Subscription|Hủy gói đăng ký
+=Media & Purchases|Phương tiện & Mục mua
+=View Account|Xem tài khoản
+=Purchase History|Lịch sử mua hàng
+=Screen Time|Thời gian sử dụng
+=See All App & Website Activity|Xem tất cả hoạt động
+=App Limits|Giới hạn ứng dụng
+=Add Limit|Thêm giới hạn
+=Require Face ID|Yêu cầu Face ID
+=Hide and Require Face ID|Ẩn và yêu cầu Face ID
+=Battery Percentage|Phần trăm pin
+=Low Power Mode|Chế độ nguồn điện thấp
+=Battery|Pin
+=Battery Health & Charging|Tình trạng pin & Sạc
+=Charging|Sạc
+=Optimized Battery Charging|Sạc pin được tối ưu hóa
+=80% Limit|Giới hạn 80%
+=Batteries|Pin
+=Save|Lưu
+=Clock|Đồng hồ
+=Sound|Âm thanh
+=Chimes|Chuông ngân
+=Start|Bắt đầu
+=New York, U.S.A.|New York, Hoa Kỳ
+=Calculator|Máy tính
+=Convert|Chuyển đổi
+=Severe Weather|Thời tiết khắc nghiệt
+=Calendar|Lịch
+=Alert|Cảnh báo
+=1 hour before|1 giờ trước
+=Repeat|Lặp lại
+=Every Week|Hằng tuần
+=Holidays|Ngày lễ
+=Notes|Ghi chú
+=Choose Photo or Video|Chọn ảnh hoặc video
+=Scan Documents|Quét tài liệu
+=Lock|Khóa
+=Voice Memos|Ghi âm
+=Share|Chia sẻ
+=Reminders|Lời nhắc
+=Time|Thời gian
+=Turn Passcode On|Bật mật mã
+=Face ID & Passcode|Face ID & Mật mã
+=Change Passcode|Đổi mật mã
+=Set Up Face ID|Thiết lập Face ID
+=Face ID with a Mask|Face ID khi đeo khẩu trang
+=Set Up an Alternate Appearance|Thiết lập diện mạo thay thế
+=Touch ID & Passcode|Touch ID & Mật mã
+=Add a Fingerprint...|Thêm dấu vân tay...
+=Password AutoFill|Tự động điền mật khẩu
+=Passwords|Mật khẩu
+=AutoFill & Passwords|Tự động điền & Mật khẩu
+=AutoFill Passwords and Passkeys|Tự động điền mật khẩu và mã khóa
+=Sign-In & Security|Đăng nhập & Bảo mật
+=Safety Check|Kiểm tra an toàn
+=Manage Sharing & Access|Quản lý chia sẻ & truy cập
+=Stolen Device Protection|Bảo vệ thiết bị bị đánh cắp
+=Control Center|Trung tâm điều khiển
+=Erase Data|Xóa dữ liệu
+=Tracking|Theo dõi
+=Allow Apps to Request to Track|Cho phép ứng dụng yêu cầu theo dõi
+=App Privacy Report|Báo cáo quyền riêng tư ứng dụng
+=Turn On App Privacy Report|Bật báo cáo quyền riêng tư
+=Software Update|Cập nhật phần mềm
+=Zoom|Thu phóng
+=Speak Screen|Đọc màn hình
+=Spoken Content|Nội dung được đọc
+=Speak Selection|Đọc mục được chọn
+=Speak|Đọc
+=Set Up Assistive Access|Thiết lập Truy cập được hỗ trợ
+=Exit Assistive Access|Thoát Truy cập được hỗ trợ
+=Accessibility Shortcut|Phím tắt trợ năng
+=Touch|Cảm ứng
+=Back Tap|Chạm vào mặt sau
+=Double Tap|Chạm hai lần
+=Screenshot|Chụp màn hình
+=Touch Accommodations|Điều chỉnh cảm ứng
+=Slow|Chậm
+=Reachability|Tầm với
+=Live Captions|Phụ đề trực tiếp
+=Hearing Devices|Thiết bị trợ thính
+=My Hearing Aids|Máy trợ thính của tôi
+=Software RTT/TTY|RTT/TTY phần mềm
+=Personal Voice|Giọng nói cá nhân
+=Create a Personal Voice|Tạo giọng nói cá nhân
+=Live Speech|Lời nói trực tiếp
+=Voice Control|Khẩu lệnh
+=Eye Tracking|Theo dõi mắt
+=Background Sounds|Âm thanh nền
+=Call Audio Routing|Định tuyến âm thanh cuộc gọi
+=Speaker|Loa
+=Auto-Answer Calls|Tự động trả lời
+=Side Button|Nút sườn
+=Slowest|Chậm nhất
+=Magnifier|Kính lúp
+=Detection Mode|Chế độ phát hiện
+=Guided Access|Truy cập được hướng dẫn
+=Files|Tệp
+=On My iPhone|Trên iPhone
+=Downloads|Tải về
+=Save to Files|Lưu vào Tệp
+=Add Signature|Thêm chữ ký
+=Rename|Đổi tên
+=Contacts Only|Chỉ danh bạ
+=Don’t have an Apple Account?|Chưa có Tài khoản Apple?
+=Change Password|Đổi mật khẩu
+=Account Recovery|Khôi phục tài khoản
+=Add Recovery Contact...|Thêm liên hệ khôi phục...
+=Legacy Contact|Liên hệ di sản
+=Add Legacy Contact|Thêm liên hệ di sản
+=Manage Account Storage|Quản lý dung lượng
+=Sync this iPhone|Đồng bộ iPhone này
+=iCloud Backup|Sao lưu iCloud
+=Back Up Now|Sao lưu bây giờ
+=From iCloud Backup|Từ bản sao lưu iCloud
+=See All|Xem tất cả
+=Family|Gia đình
+=Invite Others|Mời người khác
+=Invite via Messages|Mời qua Tin nhắn
+=Ask to Buy|Yêu cầu mua
+=Payment & Shipping|Thanh toán & Giao hàng
+=Add Payment Method|Thêm phương thức thanh toán
+=Add Trusted Phone Number|Thêm số tin cậy
+=Sign Out|Đăng xuất
+=iCloud+ Features|Tính năng iCloud+
+=Erase All Content and Settings|Xóa tất cả nội dung và cài đặt
+=Wallet|Ví
+=Debit or Credit Card|Thẻ ghi nợ hoặc tín dụng
+=Transit Card|Thẻ đi lại
+=Show When Locked|Hiện khi khóa
+=Add Medication|Thêm thuốc
+=Emergency SOS|SOS khẩn cấp
+=Fall Detection|Phát hiện té ngã
+=Maps|Bản đồ
+=Search Maps|Tìm trong Bản đồ
+=Offline Maps|Bản đồ ngoại tuyến
+=Download New Map|Tải bản đồ mới
+=Devices|Thiết bị
+=Play Sound|Phát âm thanh
+=Find My|Tìm
+=Check In|Kiểm tra an toàn
+=Press Side Button for Siri|Nhấn nút sườn để gọi Siri
+=Type to Siri|Nhập để nói với Siri
+=Siri Voice|Giọng Siri
+=Voice 2|Giọng 2
+=Language|Ngôn ngữ
+=Korean|Tiếng Hàn
+=Allow Siri When Locked|Cho phép Siri khi khóa
+=Announce Notifications|Thông báo thông báo
+=Siri & Dictation History|Lịch sử Siri & Đọc chính tả
+=Delete Siri & Dictation History|Xóa lịch sử Siri & Đọc chính tả
+=Shortcuts|Phím tắt
+=Add Action|Thêm tác vụ
+=Apple Intelligence & Siri|Apple Intelligence & Siri
+=Turn On Apple Intelligence|Bật Apple Intelligence
+=Writing Tools|Công cụ viết
+=Proofread|Hiệu đính
+=Summarize|Tóm tắt
+=Summarize Notifications|Tóm tắt thông báo
+=Clean Up|Xóa
+=Use ChatGPT|Dùng ChatGPT
+=Apple Intelligence Report|Báo cáo Apple Intelligence
+=Emergency Contacts|Liên hệ khẩn cấp
+=Apple Support|Hỗ trợ Apple
+=Repairs & Physical Damage|Sửa chữa & hư hỏng
+=Book a Repair|Đặt lịch sửa chữa
+=Reset All Settings|Đặt lại tất cả cài đặt
+=Tap|Chạm
+=Hold|Giữ
+=Swipe|Vuốt
+=Tuesday, September 9|Thứ Ba, 9 tháng 9
+=Swipe up to open|Vuốt lên để mở
+=slide to power off|trượt để tắt nguồn
+=Cancel|Hủy
+=Sunny|Nắng
+=High 24°  Low 15°|C: 24°  T: 15°
+=Share App|Chia sẻ ứng dụng
+=Library|Thư viện
+=Select|Chọn
+=Collections|Bộ sưu tập
+=Not Playing|Không phát
+=Dinner at 7?|7 giờ ăn tối nhé?
+=Tomorrow 10:00|Mai 10:00
+=Apple Account, iCloud and more|Tài khoản Apple, iCloud và hơn thế nữa
+=Airplane Mode|Chế độ máy bay
+=On|Bật
+=Flashlight|Đèn pin
+=Productivity|Năng suất
+=App Library|Thư viện ứng dụng
+=space|dấu cách
+=return|xuống dòng
+=Widgets|Tiện ích
+=Home Screen|Màn hình chính
+=Date & Time|Ngày & Giờ
+=Language & Region|Ngôn ngữ & Vùng
+=Shut Down|Tắt máy
+=Name|Tên
+=iOS Version|Phiên bản iOS
+=Model Name|Tên kiểu máy
+=Model Number|Số kiểu máy
+=Serial Number|Số sê-ri
+=Applications|Ứng dụng
+=Capacity|Dung lượng
+=Available|Khả dụng
+=Recents|Gần đây
+=mobile|di động
+=Yesterday|Hôm qua
+=unknown|không xác định
+=Monday|Thứ Hai
+=Favorites|Mục ưa thích
+=Keypad|Bàn phím
+=Voicemail|Thư thoại
+=Decline|Từ chối
+=Accept|Chấp nhận
+=slide to answer|trượt để trả lời
+=End|Kết thúc
+=Message|Tin nhắn
+=▶ Play|▶ Phát
+=message|nhắn tin
+=call|gọi
+=video|video
+=mail|thư
+=Send Message|Gửi tin nhắn
+=Block this Caller|Chặn người gọi này
+=You will not receive phone calls, messages or FaceTime from people on the block list.|Bạn sẽ không nhận cuộc gọi, tin nhắn hay FaceTime từ người trong danh sách chặn.
+=Block Contact|Chặn liên hệ
+=Home Screen & App Library|Màn hình chính & Thư viện ứng dụng
+=StandBy|Chờ
+=Wallet & Apple Pay|Ví & Apple Pay
+=ALLOW PHONE TO ACCESS|CHO PHÉP ĐIỆN THOẠI TRUY CẬP
+=Siri & Search|Siri & Tìm kiếm
+=Call Blocking & Identification|Chặn cuộc gọi & Nhận dạng
+=Blocked Contacts|Liên hệ bị chặn
+=Maria  On Hold|Maria  Đang giữ
+=Create Link|Tạo liên kết
+=To: |Đến: 
+=To: Maria|Đến: Maria
+=“Hi, it’s John. Call me back.”|“Chào, tôi là John. Gọi lại cho tôi nhé.”
+=New Contact|Liên hệ mới
+=First name|Tên
+=Last name|Họ
+=Company|Công ty
+=Add to Existing Contact|Thêm vào liên hệ hiện có
+=Delete Contact|Xóa liên hệ
+=New Message|Tin nhắn mới
+=To:|Đến:
+=Create New|Tạo mới
+=Monogram|Chữ lồng
+=Summary|Tóm tắt
+=Health Details|Chi tiết sức khỏe
+=Duplicates|Trùng lặp
+=See you tomorrow|Mai gặp nhé
+=Photo|Ảnh
+=Hello!|Xin chào!
+=Yes, see you!|Ừ, gặp sau nhé!
+=Yes|Có
+=Stickers|Nhãn dán
+=Look!|Xem này!
+=1 Photo Selected|Đã chọn 1 ảnh
+=Add to Shared Album|Thêm vào album chia sẻ
+=Lunch?|Ăn trưa không?
+=Lunch on Saturday?|Thứ Bảy ăn trưa nhé?
+=Reply|Trả lời
+=More...|Thêm...
+=Delete Conversation?|Xóa cuộc hội thoại?
+=📌 Pin|📌 Ghim
+=🔕 Hide Alerts|🔕 Ẩn cảnh báo
+=Your code is 123456. Do not share it.|Mã của bạn là 123456. Đừng chia sẻ.
+=From Messages  123456|Từ Tin nhắn  123456
+=Undo Send|Hoàn tác gửi
+=Yes, see you at 7!|Ừ, 7 giờ gặp nhé!
+=Send Read Receipts|Gửi thông báo đã đọc
+=Filters|Bộ lọc
+=All Messages|Tất cả tin nhắn
+=Known Senders|Người gửi đã biết
+=Unknown Senders|Người gửi không xác định
+=Report Junk|Báo cáo tin rác
+=Maria: Doctor at 10?|Maria: 10 giờ khám bệnh à?
+=Helo|Xin chao
+=Background App Refresh|Làm mới ứng dụng trong nền
+=One-Handed Keyboard|Bàn phím một tay
+=Off|Tắt
+=Auto-Capitalization|Tự động viết hoa
+=Enable Dictation|Bật Đọc chính tả
+=English (US)|Tiếng Anh (Mỹ)
+=Add New Keyboard|Thêm bàn phím mới
+=English (UK)|Tiếng Anh (Anh)
+=Spanish|Tiếng Tây Ban Nha
+=Thank you|Cảm ơn
+=Thank you 🙏|Cảm ơn 🙏
+=Hello Maria|Chào Maria
+=Hello |Maria|Chào |Maria
+=Cut|Cắt
+=Hello Mar|Chào Mar
+=Undo Typing|Hoàn tác gõ
+=On my way!|Đang tới đây!
+=Phrase|Cụm từ
+=I’ll call you back|Lát tôi gọi lại
+=Shortcut|Phím tắt
+=◧  Left|◧  Trái
+=▣  Center|▣  Giữa
+=◨  Right|◨  Phải
+=Silent Mode|Chế độ im lặng
+=RINGTONE AND ALERTS|NHẠC CHUÔNG VÀ CẢNH BÁO
+=Change with Buttons|Thay đổi bằng nút
+=Reflection|Phản chiếu
+=Note|Nốt nhạc
+=System Haptics|Cảm ứng hệ thống
+=TIME-LAPSE|TUA NHANH
+=SLO-MO|QUAY CHẬM
+=CINEMATIC|ĐIỆN ẢNH
+=PHOTO|ẢNH
+=PORTRAIT|CHÂN DUNG
+=PANO|TOÀN CẢNH
+=Auto|Tự động
+=Formats|Định dạng
+=1080p at 30 fps|1080p ở 30 fps
+=Level|Cân bằng
+=Standard|Chuẩn
+=Warm|Ấm
+=Cool|Lạnh
+=Open “example.com”|Mở “example.com”
+=Live Text|Văn bản trực tiếp
+=Scene Detection|Phát hiện cảnh
+=720p HD at 30 fps|720p HD ở 30 fps
+=1080p HD at 30 fps|1080p HD ở 30 fps
+=4K at 60 fps|4K ở 60 fps
+=Creative Controls|Điều khiển sáng tạo
+=Utilities|Tiện ích
+=Hidden|Bị ẩn
+=Recently Deleted|Đã xóa gần đây
+=Videos|Video
+=Albums|Album
+=Grandkids|Các cháu
+=Duplicate|Nhân bản
+=Trip|Chuyến đi
+=AUTO|TỰ ĐỘNG
+=Adjust|Điều chỉnh
+=Crop|Cắt
+=Original|Gốc
+=Vivid|Sống động
+=Mono|Đơn sắc
+=Revert|Hoàn nguyên
+=Summer 2026|Mùa hè 2026
+={n} Photos Selected|Đã chọn {n} ảnh
+=Media Types|Loại phương tiện
+=Selfies|Ảnh selfie
+=Screenshots|Ảnh màn hình
+=Screen Recordings|Bản ghi màn hình
+=2 Photos|2 ảnh
+=Our Family|Gia đình mình
+=Invite People|Mời mọi người
+=Print Options|Tùy chọn in
+=Printer|Máy in
+=Office Printer|Máy in văn phòng
+=Copies|Bản sao
+=Search or enter website name|Tìm kiếm hoặc nhập tên trang web
+=weather|thời tiết
+=go|đi
+=Tabs|Tab
+=News|Tin tức
+=Close All Tabs|Đóng tất cả tab
+=Text only, larger and easier to read.|Chỉ có chữ, to và dễ đọc hơn.
+=Reading List|Danh sách đọc
+=Private|Riêng tư
+=2 Tabs|2 tab
+=Search Engine|Công cụ tìm kiếm
+=Block Pop-ups|Chặn cửa sổ bật lên
+=Page Zoom|Thu phóng trang
+=Last hour|Giờ qua
+=Today|Hôm nay
+=Today and yesterday|Hôm nay và hôm qua
+=lesson|bài học
+=Open in New Tab|Mở trong tab mới
+=Copy Link|Sao chép liên kết
+=English|Tiếng Anh
+=Page Menu|Menu trang
+=NETWORKS|MẠNG
+=Neighbor 5G|Hàng xóm 5G
+=Enter the password for “Home”|Nhập mật khẩu cho “Nhà”
+=Password|Mật khẩu
+=Cafe Free WiFi|WiFi miễn phí quán cà phê
+=Ask to Join Networks|Hỏi để kết nối mạng
+=Notify|Thông báo
+=Auto-Join|Tự động kết nối
+=Forget Wi-Fi Network “Home”?|Quên mạng Wi-Fi “Nhà”?
+=Wi-Fi Password|Mật khẩu Wi-Fi
+=Share Password|Chia sẻ mật khẩu
+=Join “Home” Network|Kết nối mạng “Nhà”
+=Join Wi-Fi Network “Home”?|Kết nối mạng Wi-Fi “Nhà”?
+=CELLULAR DATA|DỮ LIỆU DI ĐỘNG
+=OTHER DEVICES|THIẾT BỊ KHÁC
+=MY DEVICES|THIẾT BỊ CỦA TÔI
+=Connected|Đã kết nối
+=Not Connected|Chưa kết nối
+=Disconnect|Ngắt kết nối
+=Voice & Data|Thoại & Dữ liệu
+=5G Auto|5G tự động
+=Set Up eSIM|Thiết lập eSIM
+=Transfer From Nearby iPhone|Chuyển từ iPhone ở gần
+=Use QR Code|Dùng mã QR
+=Prepare for New iPhone|Chuẩn bị cho iPhone mới
+=Reset Keyboard Dictionary|Đặt lại từ điển bàn phím
+=Reset Home Screen Layout|Đặt lại bố cục MH chính
+=Reset Location & Privacy|Đặt lại vị trí & quyền riêng tư
+=Enter Passcode|Nhập mật mã
+=APPEARANCE|GIAO DIỆN
+=Light|Sáng
+=BRIGHTNESS|ĐỘ SÁNG
+=30 seconds|30 giây
+=DISPLAY|MÀN HÌNH
+=Default|Mặc định
+=Apps that support Dynamic Type will adjust to your preferred reading size below.|Các ứng dụng hỗ trợ Cỡ chữ động sẽ điều chỉnh theo cỡ chữ bạn chọn bên dưới.
+=VISION|THỊ GIÁC
+=PHYSICAL AND MOTOR|THỂ CHẤT VÀ VẬN ĐỘNG
+=HEARING|THÍNH GIÁC
+=Smart Invert|Đảo ngược thông minh
+=Scheduled|Đã lên lịch
+=Color Temperature|Nhiệt độ màu
+=1 minute|1 phút
+=2 minutes|2 phút
+=3 minutes|3 phút
+=4 minutes|4 phút
+=5 minutes|5 phút
+=Never|Không bao giờ
+=Show Wallpaper|Hiện hình nền
+=Show Notifications|Hiện thông báo
+=People|Người
+=Astronomy|Thiên văn
+=Weather Only|Chỉ Thời tiết
+=All Apps|Tất cả ứng dụng
+=Small|Nhỏ
+=Auto-Play Message Effects|Tự động phát hiệu ứng tin nhắn
+=Red/Green Filter|Bộ lọc đỏ/xanh lá
+=Green/Red Filter|Bộ lọc xanh lá/đỏ
+=Blue/Yellow Filter|Bộ lọc xanh dương/vàng
+=Color Tint|Sắc màu
+=Ringtone and Alerts|Nhạc chuông và cảnh báo
+=Play in Silent Mode|Phát khi im lặng
+=Don’t Play in Silent Mode|Không phát khi im lặng
+=Never Play|Không bao giờ phát
+=Circles|Vòng tròn
+=Notification Display|Hiển thị thông báo
+=Count|Số lượng
+=Scheduled Summary|Tóm tắt theo lịch
+=NOTIFICATION STYLE|KIỂU THÔNG BÁO
+=ALERTS|CẢNH BÁO
+=Notification Center|Trung tâm thông báo
+=Banners|Biểu ngữ
+=Personal|Cá nhân
+=Work|Công việc
+=RINGTONES|NHẠC CHUÔNG
+=Headphone Accommodations|Điều chỉnh tai nghe
+=Talk to Siri|Nói chuyện với Siri
+=American|Giọng 1
+=Headphones & Car|Tai nghe & Ô tô
+=Headphones Only|Chỉ tai nghe
+=ALARMS|BÁO ĐỘNG
+=Fire|Cháy
+=Siren|Còi báo động
+=HOUSEHOLD|GIA ĐÌNH
+=Door Knock|Gõ cửa
+=Games|Trò chơi
+=Get|Nhận
+=Double Click to Install|Bấm hai lần để cài đặt
+=Upcoming Automatic Updates|Cập nhật tự động sắp tới
+=Update|Cập nhật
+=App Downloads|Tải về ứng dụng
+=Automatic Downloads|Tải về tự động
+=Video Autoplay|Tự động phát video
+=Remove “Weather”?|Xóa “Thời tiết”?
+=Deleting this app will also delete its data.|Xóa ứng dụng này cũng sẽ xóa dữ liệu của nó.
+=Delete “Weather”?|Xóa “Thời tiết”?
+=This will free up storage used by the app, but keep its documents and data.|Thao tác này giải phóng dung lượng ứng dụng nhưng giữ lại tài liệu và dữ liệu.
+=Share My Location|Chia sẻ vị trí của tôi
+=While Using|Khi dùng
+=Ask Next Time or When I Share|Hỏi lần sau hoặc khi tôi chia sẻ
+=Apple Account|Tài khoản Apple
+=Personal Information|Thông tin cá nhân
+=Music Plus  ₩8,900/month|Music Plus  8,900 ₩/tháng
+=Cloud Photos  ₩1,100/month|Cloud Photos  1,100 ₩/tháng
+=Downtime|Giờ nghỉ
+=Communication Limits|Giới hạn giao tiếp
+=Lock Screen Time Settings|Khóa cài đặt Thời gian sử dụng
+=Daily Average  2h 14m|Trung bình ngày  2 giờ 14 phút
+=YouTube  58m|YouTube  58 phút
+=Messages  31m|Tin nhắn  31 phút
+=Choose Apps|Chọn ứng dụng
+=Social|Mạng xã hội
+=Entertainment|Giải trí
+=1 hr 0 min|1 giờ 0 phút
+=Suggestions|Gợi ý
+=Low Power Mode temporarily reduces background activity until you can fully charge your iPhone.|Chế độ nguồn điện thấp tạm giảm hoạt động nền cho đến khi bạn sạc đầy iPhone.
+=Maximum Capacity|Dung lượng tối đa
+=Peak Performance Capability|Khả năng hiệu năng đỉnh
+=BATTERY USAGE BY APP|MỨC DÙNG PIN THEO ỨNG DỤNG
+=Home & Lock Screen|MH chính & MH khóa
+=Optimized|Tối ưu hóa
+=None|Không có
+=Alarms|Báo thức
+=Alarm|Báo thức
+=World Clock|Đồng hồ thế giới
+=Stopwatch|Bấm giờ
+=Timers|Hẹn giờ
+=Add Alarm|Thêm báo thức
+=Label|Nhãn
+=Snooze|Báo lại
+=Edit Alarm|Sửa báo thức
+=0 hours|0 giờ
+=0 sec|0 giây
+=Lap|Vòng
+=Choose a City|Chọn thành phố
+=Sleep | Wake Up|Ngủ | Thức dậy
+=No Alarm|Không có báo thức
+=Full Schedule|Toàn bộ lịch
+=Bedtime  10:30 PM|Giờ ngủ  22:30
+=Wake Up  6:30 AM|Thức dậy  6:30
+=History|Lịch sử
+=Basic|Cơ bản
+=Scientific|Khoa học
+=Math Notes|Ghi chú toán
+=Edit List|Sửa danh sách
+=Units|Đơn vị
+=Next-Hour Precipitation|Mưa trong giờ tới
+=September|Tháng 9
+=Calendars|Lịch
+=Inbox|Hộp thư đến
+=New Event|Sự kiện mới
+=Title|Tiêu đề
+=Doctor|Khám bệnh
+=Starts|Bắt đầu
+=Sep 10  10:00 AM|10 thg 9  10:00
+=Ends|Kết thúc
+=Doctor  10:00|Khám bệnh  10:00
+=Event Details|Chi tiết sự kiện
+=Edit Event|Sửa sự kiện
+=15 minutes before|15 phút trước
+=1 day before|1 ngày trước
+=Sep 10  11:00 AM|10 thg 9  11:00
+=Delete Event|Xóa sự kiện
+=Exercise|Tập thể dục
+=Sep 10  7:00 AM|10 thg 9  7:00
+=Every Day|Hằng ngày
+=Every Month|Hằng tháng
+=Every Year|Hằng năm
+=Birthdays|Sinh nhật
+=Shopping list|Danh sách mua sắm
+=Doctor 10:00|Khám bệnh 10:00
+=Buy milk and eggs|Mua sữa và trứng
+=Shopping|Mua sắm
+=○ Milk|○ Sữa
+=○ Eggs|○ Trứng
+=Garden|Vườn
+=Take Photo or Video|Chụp ảnh hoặc quay video
+=Papers|Giấy tờ
+=Scan|Quét
+=Bank memo|Ghi chú ngân hàng
+=Pin|Ghim
+=Lock Note|Khóa ghi chú
+=Use iPhone Passcode|Dùng mật mã iPhone
+=Trip plan|Kế hoạch chuyến đi
+=Collaborate|Cộng tác
+=Old list|Danh sách cũ
+=Folders|Thư mục
+=All Recordings|Tất cả bản ghi
+=New Recording  0:12|Bản ghi mới  0:12
+=Doctor advice|Lời dặn bác sĩ
+=Doctor advice  0:12|Lời dặn bác sĩ  0:12
+=Edit Recording|Sửa bản ghi
+=＋ New Reminder|＋ Lời nhắc mới
+=○ Take medicine|○ Uống thuốc
+=○ Take medicine  ⓘ|○ Uống thuốc  ⓘ
+=Details|Chi tiết
+=Date|Ngày
+=USE FACE ID FOR|DÙNG FACE ID CHO
+=iPhone Unlock|Mở khóa iPhone
+=Turn Passcode Off|Tắt mật mã
+=FINGERPRINTS|DẤU VÂN TAY
+=USE TOUCH ID FOR|DÙNG TOUCH ID CHO
+=Finger 1|Ngón 1
+=All|Tất cả
+=Passkeys|Mã khóa
+=AUTOFILL FROM|TỰ ĐỘNG ĐIỀN TỪ
+=Email & Phone Numbers|Email & Số điện thoại
+=Two-Factor Authentication|Xác thực hai yếu tố
+=Emergency Reset|Đặt lại khẩn cấp
+=Information|Thông tin
+=ALLOW ACCESS WHEN LOCKED|CHO PHÉP TRUY CẬP KHI KHÓA
+=This update includes bug fixes and security updates.|Bản cập nhật này gồm sửa lỗi và cập nhật bảo mật.
+=Update Now|Cập nhật bây giờ
+=Your parcel is waiting. Pay here: parcel-check.example|Bưu kiện của bạn đang chờ. Thanh toán tại: parcel-check.example
+=Mom, I broke my phone. Please send money now.|Mẹ ơi, con làm vỡ điện thoại. Gửi tiền cho con ngay nhé.
+=GENERAL|CHUNG
+=Assistive Access|Truy cập được hỗ trợ
+=Double-tap three fingers to zoom. Drag three fingers to move around the screen.|Chạm hai lần bằng ba ngón để phóng to. Kéo ba ngón để di chuyển.
+=Swipe down with two fingers from the top of the screen to hear the content of the screen.|Vuốt xuống bằng hai ngón từ trên cùng để nghe nội dung màn hình.
+=Voices|Giọng nói
+=Speaking Rate|Tốc độ đọc
+=VoiceOver speaks items on the screen.|VoiceOver đọc các mục trên màn hình.
+=Tap to Wake|Chạm để bật
+=AssistiveTouch allows you to use your iPhone if you have difficulty touching the screen.|AssistiveTouch giúp bạn dùng iPhone nếu khó chạm vào màn hình.
+=Assistive Access makes iPhone simpler, with larger buttons and only the apps you choose.|Truy cập được hỗ trợ giúp iPhone đơn giản hơn, nút to hơn và chỉ có ứng dụng bạn chọn.
+=Calls|Cuộc gọi
+=Automatic|Tự động
+=Triple Tap|Chạm ba lần
+=Hold Duration|Thời gian giữ
+=Ignore Repeat|Bỏ qua lặp lại
+=Fast|Nhanh
+=MFI HEARING DEVICES|THIẾT BỊ TRỢ THÍNH MFI
+=Hearing|Thính giác
+=Live Listen|Nghe trực tiếp
+=Relay Number|Số chuyển tiếp
+=“The weather is lovely today.”|“Hôm nay trời đẹp quá.”
+=Favorite Phrases|Cụm từ yêu thích
+=English (U.S.)|Tiếng Anh (Mỹ)
+=Rain|Mưa
+=Bluetooth Headset|Tai nghe Bluetooth
+=Door, 2 meters|Cửa, 2 mét
+=Passcode Settings|Cài đặt mật mã
+=Vision|Thị giác
+=Motor|Vận động
+=Cognitive|Nhận thức
+=iPhone: 66.8 GB of 128 GB Used|iPhone: Đã dùng 66.8 GB / 128 GB
+=Photos  42 GB|Ảnh  42 GB
+=Apps  18 GB|Ứng dụng  18 GB
+=Messages  6 GB|Tin nhắn  6 GB
+=Recommendations|Đề xuất
+=Review Large Attachments|Xem lại tệp đính kèm lớn
+=Review Personal Videos|Xem lại video cá nhân
+=Browse|Duyệt
+=Shared|Được chia sẻ
+=Documents|Tài liệu
+=Page 1|Trang 1
+=Page 2|Trang 2
+=Markup|Đánh dấu
+=Add Text|Thêm văn bản
+=Shapes|Hình dạng
+=Signature|Chữ ký
+=USB DRIVE|Ổ USB
+=Receiving Off|Tắt nhận
+=Everyone for 10 Minutes|Mọi người trong 10 phút
+=Receive Only|Chỉ nhận
+=Screen|Màn hình
+=Full Page|Toàn trang
+=◉ Screen Recording|◉ Ghi màn hình
+=Select Printer|Chọn máy in
+=Trust This Computer?|Tin cậy máy tính này?
+=Trust|Tin cậy
+=Don’t Trust|Không tin cậy
+=Back|Quay lại
+=Next|Tiếp
+=Name and Birthday|Tên và ngày sinh
+=First Name|Tên
+=Last Name|Họ
+=Birthday|Ngày sinh
+=Continue|Tiếp tục
+=Change|Đổi
+=New|Mới
+=Verify|Xác minh
+=Forgot password?|Quên mật khẩu?
+=Start Account Recovery|Bắt đầu khôi phục tài khoản
+=RECOVERY CONTACTS|LIÊN HỆ KHÔI PHỤC
+=4.2 GB of 5 GB Used|Đã dùng 4.2 GB / 5 GB
+=Photos  3.1 GB|Ảnh  3.1 GB
+=Backups  0.9 GB|Bản sao lưu  0.9 GB
+=SAVED TO ICLOUD|ĐÃ LƯU VÀO ICLOUD
+=Optimize iPhone Storage|Tối ưu hóa dung lượng
+=Back Up This iPhone|Sao lưu iPhone này
+=Last successful backup: Yesterday at 2:00 AM|Sao lưu gần nhất: Hôm qua lúc 2:00
+=Transfer Your Apps & Data|Chuyển ứng dụng & dữ liệu
+=From Mac or PC|Từ Mac hoặc PC
+=From Another iPhone|Từ iPhone khác
+=Choose Backup|Chọn bản sao lưu
+=Today 2:00 AM|Hôm nay 2:00
+=Yesterday 2:00 AM|Hôm qua 2:00
+=Quick Start|Bắt đầu nhanh
+=Apps Using iCloud|Ứng dụng dùng iCloud
+=Create Child Account|Tạo tài khoản cho trẻ
+=Invite|Mời
+=Invite in Person|Mời trực tiếp
+=Maria (Me)|Maria (Tôi)
+=Minji (Child)|Minji (Con)
+=TRUSTED PHONE NUMBERS|SỐ ĐIỆN THOẠI TIN CẬY
+=Keep a copy|Giữ một bản
+=Erase This iPhone|Xóa iPhone này
+=Add to Wallet|Thêm vào Ví
+=Card Added|Đã thêm thẻ
+=Done ✓|Xong ✓
+=Your ticket|Vé của bạn
+=Add to Apple Wallet|Thêm vào Apple Wallet
+=Boarding Pass|Thẻ lên máy bay
+=My Bank Card|Thẻ ngân hàng của tôi
+=Card Details|Chi tiết thẻ
+=Remove This Card|Xóa thẻ này
+=Steps|Bước
+=Heart Rate|Nhịp tim
+=72 BPM|72 nhịp/phút
+=Profile|Hồ sơ
+=Medical Conditions|Bệnh lý
+=Medications|Thuốc
+=Blood Type|Nhóm máu
+=Diabetes|Tiểu đường
+=Your Medical ID can be viewed when iPhone is locked by tapping Emergency, then Medical ID.|Có thể xem ID y tế khi iPhone khóa bằng cách chạm Khẩn cấp rồi chạm ID y tế.
+=Steps  6,214|Bước  6,214
+=Walking Distance  4.3 km|Quãng đường đi bộ  4.3 km
+=Activity|Hoạt động
+=Schedule|Lịch trình
+=Vitamin D|Vitamin D
+=Sharing|Chia sẻ
+=Share with Someone|Chia sẻ với ai đó
+=Mobility|Khả năng di chuyển
+=Walking Steadiness|Độ vững khi đi bộ
+=Set Up|Thiết lập
+=Seoul Station|Ga Seoul
+=Seoul Station Exit 1|Ga Seoul, lối ra 1
+=Directions|Chỉ đường
+=🚗 25 min|🚗 25 phút
+=Go|Đi
+=Drive|Lái xe
+=Walk|Đi bộ
+=Transit|Công cộng
+=Arrive 10:30|Đến lúc 10:30
+=Share ETA|Chia sẻ giờ đến
+=Places|Địa điểm
+=Ratings|Đánh giá
+=Download|Tải về
+=Items|Vật dụng
+=Me|Tôi
+=Maria’s iPhone|iPhone của Maria
+=Maria’s iPad|iPad của Maria
+=Mark As Lost|Đánh dấu là bị mất
+=Share for One Hour|Chia sẻ trong 1 giờ
+=Share Until End of Day|Chia sẻ đến cuối ngày
+=Share Indefinitely|Chia sẻ vô thời hạn
+=Keys|Chìa khóa
+=Find|Tìm
+=Check In: Home 6:00 PM|Kiểm tra an toàn: Nhà 18:00
+=Say “Siri, what’s the weather today?”|Nói “Siri ơi, hôm nay thời tiết thế nào?”
+=Tomorrow will be sunny, with a high of 24°.|Ngày mai trời nắng, cao nhất 24°.
+=Calling Mom…|Đang gọi cho mẹ…
+=What do you want to say?|Bạn muốn nói gì?
+=“I’ll be there at 7.”|“7 giờ tôi tới.”
+=Sent.|Đã gửi.
+=Your alarm is set for 6 AM.|Đã đặt báo thức lúc 6 giờ sáng.
+=10 minutes, counting down.|10 phút, bắt đầu đếm ngược.
+=It’s sunny, 21°.|Trời nắng, 21°.
+=Opening Camera.|Đang mở Camera.
+=OK, I’ll remind you.|Được, tôi sẽ nhắc bạn.
+=Here’s some music.|Đây là nhạc cho bạn.
+=Your flashlight is on.|Đèn pin đã bật.
+=Voice 1|Giọng 1
+=Voice 3|Giọng 3
+=Voice 4|Giọng 4
+=English (United States)|Tiếng Anh (Hoa Kỳ)
+=Spanish (Spain)|Tiếng Tây Ban Nha (Tây Ban Nha)
+=Headphones|Tai nghe
+=Tips|Mẹo
+=New Shortcut|Phím tắt mới
+=Actions|Tác vụ
+=Set Alarm|Đặt báo thức
+=Downloading…|Đang tải về…
+=i will come tomorow|mai toi se den
+=Rewrite|Viết lại
+=Friendly|Thân thiện
+=I will come tomorrow.|Mai tôi sẽ đến.
+=• Main point 1|• Ý chính 1
+=• Main point 2|• Ý chính 2
+=a cat at the beach|chú mèo trên bãi biển
+=Animation|Hoạt hình
+=Illustration|Minh họa
+=Sketch|Phác thảo
+=Emoji|Biểu tượng cảm xúc
+=dog with a hat|chú chó đội mũ
+=Visual Intelligence|Trí tuệ thị giác
+=Ask|Hỏi
+=EXTENSIONS|TIỆN ÍCH MỞ RỘNG
+=Confirm ChatGPT Requests|Xác nhận yêu cầu ChatGPT
+=Korean  ⇄  English|Tiếng Hàn  ⇄  Tiếng Anh
+=On-Device Processing|Xử lý trên thiết bị
+=Call with Hold and Release|Gọi khi nhấn giữ rồi thả
+=Call with 5 Button Presses|Gọi khi nhấn 5 lần
+=Call Quietly|Gọi im lặng
+=Crash Detection|Phát hiện va chạm
+=No Connection|Không có kết nối
+=Emergency Text via Satellite|Nhắn tin khẩn cấp qua vệ tinh
+=Satellite|Vệ tinh
+=Turn left ↺|Xoay sang trái ↺
+=Activate|Kích hoạt
+=Phone Number|Số điện thoại
+=Please call me|Vui lòng gọi cho tôi
+=Erase This Device|Xóa thiết bị này
+=Erase This Device?|Xóa thiết bị này?
+=Erase|Xóa
+=Get Support|Nhận hỗ trợ
+=iPhone Unavailable|iPhone không khả dụng
+=Try again in 15 minutes|Thử lại sau 15 phút
+=Forgot Passcode?|Quên mật mã?
+=Enter Previous Passcode|Nhập mật mã trước đó
+=Liquid Detected|Phát hiện chất lỏng
+=Temperature|Nhiệt độ
+=iPhone needs to cool down before you can use it.|iPhone cần nguội đi trước khi bạn có thể dùng.
+=Repairs|Sửa chữa
+=Cracked Screen|Vỡ màn hình
+=Other|Khác
+=Options|Tùy chọn
+=Primary|Chính
+=TUE|TH 3

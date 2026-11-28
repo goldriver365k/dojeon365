@@ -1,0 +1,1727 @@
+/**
+ * 연습용 휴대폰 화면 그림 (SVG).
+ *
+ * 수업 데이터의 card.screen 을 받아 그림을 그리고, 누를 수 있는 곳(대상)의 위치를 함께 돌려준다.
+ *   renderScreen(screen, target) → { svg, viewBox, targets: { 이름: {x,y,w,h} }, label }
+ *
+ * - 좌표계는 가로 360 × 세로 640 (휴대폰 화면 비율).
+ * - 대상 이름은 화면에 보이는 한국어 이름을 그대로 쓴다. 예: '설정', '디스플레이', '홈 버튼'.
+ * - 실제 갤럭시 사진으로 바꿀 때는 card.photo 를 넣으면 이 그림 대신 사진이 쓰인다(app.js 참고).
+ */
+
+import { appIconSvg, appInfo, settingIconSvg } from './apps.js?v=20261128.1307';
+
+const W = 360;
+const H = 640;
+
+const C = {
+  bg: '#F7F7F9',
+  card: '#FFFFFF',
+  ink: '#1C1B1F',
+  sub: '#5F6368',
+  line: '#DADCE0',
+  blue: '#1A5FD0',
+  green: '#1E8E3E',
+  red: '#C62828',
+  dim: 'rgba(20,20,24,0.55)',
+};
+
+const APP_COLORS = {
+  전화: '#1E8E3E', 메시지: '#1A5FD0', 연락처: '#E8710A', 카메라: '#C2185B', 갤러리: '#D81B60',
+  설정: '#5F6368', 인터넷: '#5E35B1', 브라우저: '#5E35B1', '삼성 인터넷': '#5E35B1', '플레이 스토어': '#0F9D58', '갤럭시 스토어': '#C2185B',
+  카카오톡: '#F2C200', 시계: '#3949AB', 캘린더: '#1565C0', '내 파일': '#F9A825', '삼성 노트': '#EF6C00',
+  노트: '#EF6C00', '음성 녹음': '#D32F2F', 계산기: '#2E7D32', 날씨: '#0288D1', 라디오: '#6D4C41',
+  월렛: '#283593', '삼성 월렛': '#283593', 파인드: '#00897B', 멤버스: '#1565C0', 헬스: '#00897B',
+  지도: '#34A853', 'Google': '#4285F4', 'YouTube': '#E53935', 'Smart Switch': '#1E88E5', 스마트싱스: '#00ACC1',
+  편한자판: '#7B1FA2', '보안 폴더': '#37474F', 통역: '#00838F', 웨어러블: '#455A64', 펜업: '#AD1457',
+  '삼성닷컴': '#1428A0', '삼성 키즈': '#F57C00', '게이밍 허브': '#6A1B9A', '크리에이티브 스튜디오': '#8E24AA',
+  'Gemini': '#3F51B5', 'Chrome': '#F4B400', '통신사 앱': '#546E7A', 'Samsung Global Goals': '#00796B',
+};
+
+function esc(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/* ---------- 다른 언어로 그리기 ----------
+ * 해외용 페이지를 만들 때 setTranslator(한국어 → 다른 언어 함수)를 부르면 그림 속 글자만 바뀐다.
+ * 누를 곳 이름(target)은 그대로 한국어로 둔다. 국내 앱은 번역 함수를 쓰지 않는다. */
+let TR = null;
+// 띄어쓰기 없는 언어(일본어·중국어·태국어)는 단어 단위로 끊고, 글자 폭에 맞춰 한 줄 길이를 정한다
+let TR_OPT = { scale: 1.6, seg: null };
+export function setTranslator(fn, opt = {}) {
+  TR = fn;
+  const seg = opt.noSpace && typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter(opt.locale, { granularity: 'word' }) : null;
+  TR_OPT = { scale: opt.scale ?? 1.6, seg, noSpace: Boolean(opt.noSpace) };
+}
+const tr = (v) => (TR && typeof v === 'string' ? TR(v) : v);
+const glyph = (v) => tr(v).slice(0, 2);
+// 홈 화면 기본 앱: 국내는 카카오톡, 해외용 그림은 국내 전용 앱 대신 유튜브
+const LOCAL_CHAT = () => (TR ? 'YouTube' : '카카오톡');
+
+/** 그림 조각을 모으고, 누를 수 있는 곳을 기록하는 작은 도구 */
+function canvas() {
+  const parts = [];
+  const targets = {};
+  return {
+    add(s) { parts.push(s); },
+    reg(name, x, y, w, h) { if (name && !targets[name]) targets[name] = { x, y, w, h }; },
+    rect(x, y, w, h, fill, r = 0, extra = '') {
+      parts.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" ${extra}/>`);
+    },
+    text(x, y, s, { size = 16, fill = C.ink, weight = 500, anchor = 'start' } = {}) {
+      parts.push(`<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${anchor}">${esc(tr(s))}</text>`);
+    },
+    out() { return { body: parts.join(''), targets }; },
+  };
+}
+
+/* ---------- 공통 조각 ---------- */
+
+function statusBar(c, { dark = false } = {}) {
+  const f = dark ? '#FFFFFF' : C.ink;
+  c.text(18, 24, '10:00', { size: 14, fill: f, weight: 600 });
+  c.add('<circle cx="180" cy="17" r="7" fill="#0B0B0D"/>'); // 전면 카메라 구멍
+  c.add(`<g fill="${f}"><rect x="290" y="13" width="4" height="10" rx="1"/><rect x="296" y="10" width="4" height="13" rx="1"/><rect x="302" y="7" width="4" height="16" rx="1"/><rect x="314" y="9" width="26" height="13" rx="3" fill="none" stroke="${f}" stroke-width="2"/><rect x="317" y="12" width="17" height="7" rx="1"/></g>`);
+  c.reg('상태표시줄', 0, 0, W, 34);
+}
+
+function navBar(c, { dark = false } = {}) {
+  const f = dark ? '#FFFFFF' : '#3C4043';
+  c.add(`<g stroke="${f}" stroke-width="2.6" fill="none" stroke-linecap="round">
+    <line x1="64" y1="612" x2="64" y2="628"/><line x1="72" y1="612" x2="72" y2="628"/><line x1="80" y1="612" x2="80" y2="628"/>
+    <rect x="170" y="610" width="20" height="20" rx="6"/>
+    <polyline points="294,610 284,620 294,630"/></g>`);
+  c.reg('최근 앱 버튼', 40, 600, 64, 40);
+  c.reg('홈 버튼', 148, 600, 64, 40);
+  c.reg('뒤로가기 버튼', 256, 600, 64, 40);
+}
+
+// 해외용 그림에서 국내 전용 앱을 비슷한 역할의 세계 공통 앱으로 바꿔 그린다(누를 곳 이름은 그대로)
+const GLOBAL_APP = { 카카오톡: 'Gmail', 카카오맵: '지도' };
+function appIcon(c, x, y, name, size = 56, labelColor = C.ink) {
+  const info = appInfo(name);
+  const label = info?.label ?? name;
+  const drawn = TR && GLOBAL_APP[name] ? GLOBAL_APP[name] : name;
+  c.add(appIconSvg(TR && !appInfo(drawn) ? tr(drawn) : drawn, x, y, size)); // 등록 안 된 앱은 이름 첫 글자 아이콘 → 번역된 이름으로
+  const seen = tr(drawn === name ? label : (appInfo(drawn)?.label ?? drawn));
+  const fs = seen.length > 9 ? 11 : seen.length > 5 ? 12.5 : 15;
+  const shown = seen.length > 12 ? `${seen.slice(0, 11)}…` : seen;
+  c.text(x + size / 2, y + size + 19, shown, { size: fs, anchor: 'middle', weight: 700, fill: labelColor });
+  c.reg(name, x - 8, y - 4, size + 16, size + 28);
+  c.reg(label, x - 8, y - 4, size + 16, size + 28);
+}
+
+function header(c, title, { back = true, actions = [], y = 40 } = {}) {
+  if (back) {
+    c.add(`<polyline points="30,${y + 14} 20,${y + 24} 30,${y + 34}" fill="none" stroke="${C.ink}" stroke-width="2.6" stroke-linecap="round"/>`);
+    c.reg('뒤로', 6, y, 40, 48);
+  }
+  c.text(back ? 52 : 22, y + 32, title, { size: 24, weight: 800 });
+  let ax = 330;
+  for (const a of [...actions].reverse()) {
+    drawAction(c, ax, y + 24, a);
+    c.reg(a, ax - 20, y, 40, 48);
+    ax -= 42;
+  }
+}
+
+function drawAction(c, x, y, a) {
+  const s = `stroke="${C.ink}" stroke-width="2.4" fill="none" stroke-linecap="round"`;
+  if (a === '옵션 더보기') c.add(`<g fill="${C.ink}"><circle cx="${x}" cy="${y - 8}" r="2.6"/><circle cx="${x}" cy="${y}" r="2.6"/><circle cx="${x}" cy="${y + 8}" r="2.6"/></g>`);
+  else if (a === '검색') c.add(`<circle cx="${x - 3}" cy="${y - 3}" r="8" ${s}/><line x1="${x + 3}" y1="${y + 3}" x2="${x + 10}" y2="${y + 10}" ${s}/>`);
+  else if (a === '추가') c.add(`<line x1="${x - 10}" y1="${y}" x2="${x + 10}" y2="${y}" ${s}/><line x1="${x}" y1="${y - 10}" x2="${x}" y2="${y + 10}" ${s}/>`);
+  else if (a === '편집') c.add(`<path d="M${x - 9} ${y + 9} l3 -9 l12 -12 l6 6 l-12 12 z" ${s}/>`);
+  else if (a === '공유') c.add(`<circle cx="${x + 7}" cy="${y - 8}" r="3.5" ${s}/><circle cx="${x - 7}" cy="${y}" r="3.5" ${s}/><circle cx="${x + 7}" cy="${y + 8}" r="3.5" ${s}/><line x1="${x - 4}" y1="${y - 2}" x2="${x + 4}" y2="${y - 6}" ${s}/><line x1="${x - 4}" y1="${y + 2}" x2="${x + 4}" y2="${y + 6}" ${s}/>`);
+  else if (a === '메뉴') c.add(`<g ${s}><line x1="${x - 10}" y1="${y - 7}" x2="${x + 10}" y2="${y - 7}"/><line x1="${x - 10}" y1="${y}" x2="${x + 10}" y2="${y}"/><line x1="${x - 10}" y1="${y + 7}" x2="${x + 10}" y2="${y + 7}"/></g>`);
+  else c.text(x, y + 6, glyph(a), { size: 14, anchor: 'middle', weight: 700 });
+}
+
+function toggle(c, x, y, on) {
+  c.rect(x, y, 44, 24, on ? C.blue : '#BDC1C6', 12);
+  c.add(`<circle cx="${on ? x + 32 : x + 12}" cy="${y + 12}" r="9" fill="#fff"/>`);
+}
+
+function wrapText(s, max) {
+  // 다른 언어 그림: 줄을 나누기 전에 문장 전체를 번역하고, 로마자는 한글보다 좁아 한 줄 글자 수를 늘린다
+  const src = tr(String(s ?? ''));
+  if (TR) max = Math.round(max * TR_OPT.scale);
+  const out = [];
+  let line = '';
+  if (TR && TR_OPT.noSpace) {
+    const parts = TR_OPT.seg ? [...TR_OPT.seg.segment(src)].map((x) => x.segment) : [...src];
+    for (const part of parts) {
+      // 줄 첫머리에 붙임표·닫는 문장부호가 오지 않게 한다
+      const glue = /^[-–.,!?:;)\]」』。、，！？：；）]/.test(part) || /[-(「『（]$/.test(line);
+      if ((line + part).length > max && line.trim() && !glue) { out.push(line.trim()); line = part.trimStart(); } else line += part;
+    }
+    if (line.trim()) out.push(line.trim());
+    return out;
+  }
+  for (const word of src.split(' ')) {
+    if ((line + ' ' + word).trim().length > max && line) { out.push(line); line = word; } else line = (line + ' ' + word).trim();
+  }
+  if (line) out.push(line);
+  return out;
+}
+
+/* ---------- 화면 종류별 그리기 ---------- */
+
+const KINDS = {
+  /** 휴대폰 앞면과 옆면 버튼 */
+  side(c, s) {
+    // 갤럭시 S26 실물에 가깝게: 금속 테두리, 얇은 화면 테두리, 전면 카메라 구멍, 오른쪽 옆면 버튼
+    c.rect(0, 0, W, H, '#EEF3FB');
+    c.add(`<defs>
+      <linearGradient id="sv-frame" x1="0" x2="1"><stop offset="0" stop-color="#8A8F98"/><stop offset="0.5" stop-color="#D9DCE1"/><stop offset="1" stop-color="#7C818A"/></linearGradient>
+      <linearGradient id="sv-btn" x1="0" x2="1"><stop offset="0" stop-color="#B9BDC4"/><stop offset="0.6" stop-color="#ECEEF1"/><stop offset="1" stop-color="#9AA0A8"/></linearGradient>
+      <linearGradient id="sv-wall" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#1F3B73"/><stop offset="0.55" stop-color="#4E6FB5"/><stop offset="1" stop-color="#C9A4D8"/></linearGradient>
+      <filter id="sv-shadow" x="-20%" y="-10%" width="140%" height="120%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000" flood-opacity="0.22"/></filter>
+    </defs>`);
+    const X = 58; const Y = s.cable ? -260 : 40; const PW = 182; // 충전 카드는 아래쪽이 보이게 올려 그림
+    const ph = 556; // 휴대폰 높이(가로:세로 ≈ 1:2.1)
+    // 오른쪽 옆면 버튼(테두리보다 살짝 튀어나옴): 위에서부터 음량(상)·음량(하) 한 줄 버튼, 그 아래 측면 버튼
+    const bx = X + PW - 1;
+    const btn = (name, y, h) => {
+      c.add(`<rect x="${bx}" y="${y}" width="9" height="${h}" rx="3.5" fill="url(#sv-btn)" stroke="#80858D" stroke-width="0.8"/>`);
+      c.reg(name, bx - 10, y - 6, 34, h + 12);
+    };
+    c.add(`<g filter="url(#sv-shadow)"><rect x="${X}" y="${Y}" width="${PW}" height="${ph}" rx="30" fill="url(#sv-frame)"/></g>`);
+    btn('음량(상) 버튼', Y + 118, 40);
+    btn('음량(하) 버튼', Y + 160, 40);
+    btn('측면 버튼', Y + 226, 46);
+    c.add(`<rect x="${X}" y="${Y}" width="${PW}" height="${ph}" rx="30" fill="url(#sv-frame)"/>`);
+    c.add(`<rect x="${X + 4}" y="${Y + 4}" width="${PW - 8}" height="${ph - 8}" rx="27" fill="#0C0D10"/>`);
+    // 화면
+    const sx = X + 9; const sy = Y + 9; const sw = PW - 18; const sh = ph - 18;
+    c.add(s.screenOff ? `<rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="22" fill="#050506"/>` : `<rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="22" fill="url(#sv-wall)"/>`);
+    c.add(`<circle cx="${X + PW / 2}" cy="${sy + 16}" r="6" fill="#050506"/><circle cx="${X + PW / 2}" cy="${sy + 16}" r="2.4" fill="#1C2333"/>`);
+    if (!s.screenOff) {
+      c.text(X + PW / 2, sy + 110, '10:00', { size: 46, fill: '#fff', weight: 300, anchor: 'middle' });
+      c.text(X + PW / 2, sy + 136, '11월 25일 수요일', { size: 13, fill: '#E8ECF5', anchor: 'middle', weight: 600 });
+      c.add(`<circle cx="${X + PW / 2}" cy="${sy + sh - 70}" r="15" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2"/>`);
+    }
+    // 버튼 이름표: 가는 선으로 이어서 테두리 밖에 표시
+    const tag = (label, y) => {
+      c.add(`<line x1="${bx + 14}" y1="${y}" x2="${bx + 34}" y2="${y}" stroke="#5F6368" stroke-width="1.6"/>`);
+      c.text(bx + 38, y + 6, label, { size: 17, fill: C.ink, weight: 800 });
+    };
+    tag('음량(상)', Y + 138);
+    tag('음량(하)', Y + 180);
+    tag('측면 버튼', Y + 249);
+    c.reg('측면 버튼과 음량(하) 버튼', bx - 10, Y + 154, 34, 124);
+    // 아래쪽 USB-C 충전 연결잭
+    const px = X + PW / 2;
+    c.add(`<rect x="${px - 16}" y="${Y + ph - 6}" width="32" height="8" rx="4" fill="#2A2C31"/>`);
+    c.reg('충전 연결잭', px - 40, Y + ph - 26, 80, 44);
+    if (s.cable) {
+      c.add(`<rect x="${px - 13}" y="${Y + ph + 4}" width="26" height="22" rx="5" fill="#F2F2F2" stroke="#C9CCD1"/><rect x="${px - 6}" y="${Y + ph + 26}" width="12" height="20" rx="4" fill="#E2E4E8"/>`);
+      c.add(`<line x1="${px + 22}" y1="${Y + ph + 12}" x2="${px + 44}" y2="${Y + ph + 12}" stroke="#5F6368" stroke-width="1.6"/>`);
+      c.text(px + 48, Y + ph + 18, '충전 연결잭', { size: 16, fill: C.ink, weight: 800 });
+    }
+  },
+
+  /** 홈 화면 또는 앱스 화면 */
+  home(c, s) {
+    c.rect(0, 0, W, H, s.apps ? '#1F2A44' : '#24406B');
+    statusBar(c, { dark: true });
+    c.reg('화면 위쪽', 0, 0, W, 60);
+    if (!s.apps) {
+      c.text(180, 110, '10:00', { size: 54, fill: '#fff', weight: 300, anchor: 'middle' });
+      c.text(180, 140, '11월 25일 수요일', { size: 15, fill: '#E8EAED', anchor: 'middle' });
+    } else {
+      c.rect(24, 50, 312, 40, 'rgba(255,255,255,0.18)', 20);
+      c.text(48, 76, '검색', { size: 15, fill: '#E8EAED' });
+      c.reg('검색', 24, 50, 312, 40);
+    }
+    const grid = s.grid ?? (s.apps ? ['갤러리', '설정', 'Play 스토어', '캘린더', '시계', '연락처', '내 파일', '노트', '계산기', '날씨', '음성 녹음', LOCAL_CHAT()] : ['갤러리', 'Play 스토어', '설정', LOCAL_CHAT()]);
+    const list = [...grid];
+    if (s.find && !list.includes(s.find) && !(s.dock ?? []).includes(s.find)) list[list.length - 1] = s.find;
+    const startY = s.apps ? 120 : 330;
+    list.forEach((name, i) => {
+      const col = i % 4;
+      const row = Math.floor(i / 4);
+      appIcon(c, 26 + col * 82, startY + row * 100, name, 56, '#FFFFFF');
+      // 앱 이름 글자색(어두운 배경)
+    });
+    c.add(''); // 자리 표시
+    if (!s.apps) {
+      const dock = s.dock ?? ['전화', '메시지', '브라우저', '카메라'];
+      dock.forEach((name, i) => appIcon(c, 26 + i * 82, 500, name, 56, '#FFFFFF'));
+      // 구글 검색창 위젯(갤럭시 기본 홈 화면)
+      c.rect(24, 446, 312, 40, 'rgba(255,255,255,0.92)', 20);
+      c.add(appIconSvg('Google', 34, 452, 28));
+      c.text(72, 472, '검색', { size: 15, fill: C.sub });
+      c.reg('Google 검색창', 24, 446, 312, 40);
+      c.reg('빈 공간', 20, 170, 320, 140);
+    }
+    navBar(c, { dark: true });
+    c.reg('화면', 0, 40, W, 560);
+  },
+
+  /** 잠금화면 */
+  lock(c) {
+    c.rect(0, 0, W, H, '#2C3E66');
+    statusBar(c, { dark: true });
+    c.text(180, 170, '10:00', { size: 72, fill: '#fff', weight: 300, anchor: 'middle' });
+    c.text(180, 205, '11월 25일 수요일', { size: 16, fill: '#E8EAED', anchor: 'middle' });
+    c.add('<g fill="none" stroke="#fff" stroke-width="2.4"><circle cx="180" cy="520" r="22"/><path d="M170 520 q10 -14 20 0 M174 526 q6 -8 12 0"/></g>');
+    c.reg('지문 인식 센서', 150, 490, 60, 60);
+    c.add('<g fill="#fff" opacity="0.9"><circle cx="52" cy="588" r="18" fill="rgba(255,255,255,0.2)"/><circle cx="308" cy="588" r="18" fill="rgba(255,255,255,0.2)"/></g>');
+    c.text(52, 594, '☎', { size: 16, fill: '#fff', anchor: 'middle' });
+    c.text(308, 594, '◉', { size: 16, fill: '#fff', anchor: 'middle' });
+    c.reg('화면', 0, 240, W, 230);
+  },
+
+  /** 꺼진 화면 */
+  off(c, s) {
+    c.rect(0, 0, W, H, '#0B0B0D');
+    c.text(180, 320, s.message ?? '화면이 꺼져 있어요', { size: 18, fill: '#9AA0A6', anchor: 'middle' });
+    c.reg('화면', 0, 0, W, H);
+  },
+
+  /** 목록 화면(설정 등). items: '이름' 또는 {t, s, sw, r, btn, v} */
+  list(c, s) {
+    c.rect(0, 0, W, H, C.bg);
+    statusBar(c);
+    header(c, s.title ?? '설정', { back: s.back !== false, actions: s.actions ?? [] });
+    let y = 100;
+    if (s.searchBar) {
+      c.rect(16, y, 328, 44, '#ECEEF1', 22);
+      c.text(44, y + 28, s.searchBar, { size: 15, fill: C.sub });
+      c.reg('검색창', 16, y, 328, 44);
+      y += 56;
+    }
+    if (s.top) {
+      for (const line of wrapText(s.top, 24)) { c.text(22, y + 18, line, { size: 15, fill: C.sub }); y += 22; }
+      y += 8;
+    }
+    const items = s.items ?? [];
+    const rowH = s.rowH ?? 62;
+    const bottomLimit = s.tabs ? 540 : 596;
+    c.rect(12, y, 336, Math.min(items.length * rowH, bottomLimit - y) + 8, C.card, 18);
+    y += 4;
+    for (const raw of items) {
+      if (y + rowH > bottomLimit) break;
+      const it = typeof raw === 'string' ? { t: raw } : raw;
+      const hasSub = Boolean(it.s);
+      const icon = (s.title === '설정' || it.icon) ? settingIconSvg(it.icon ?? it.t, 24, y + rowH / 2 - 17, 34) : null;
+      if (icon) c.add(icon);
+      const tx = icon ? 70 : 30;
+      c.text(tx, y + (hasSub ? 27 : 39), it.t, { size: 21, weight: 700, fill: it.off ? '#9AA0A6' : C.ink });
+      if (hasSub) c.text(tx, y + 50, it.s, { size: 15, fill: it.sBlue ? C.blue : C.sub });
+      if (it.sw !== undefined) { toggle(c, 290, y + rowH / 2 - 12, it.sw); c.reg(`${it.t} 스위치`, 280, y + 4, 66, rowH - 8); }
+      if (it.r !== undefined) {
+        c.add(`<circle cx="318" cy="${y + rowH / 2}" r="10" fill="none" stroke="${it.r ? C.blue : '#9AA0A6'}" stroke-width="2.4"/>${it.r ? `<circle cx="318" cy="${y + rowH / 2}" r="5" fill="${C.blue}"/>` : ''}`);
+      }
+      if (it.v) c.text(334, y + 34, it.v, { size: 14, fill: C.blue, anchor: 'end', weight: 600 });
+      if (it.btn) {
+        const bw = Math.max(64, it.btn.length * 15 + 24);
+        c.rect(334 - bw, y + rowH / 2 - 17, bw, 34, C.blue, 17);
+        c.text(334 - bw / 2, y + rowH / 2 + 6, it.btn, { size: 14, fill: '#fff', weight: 700, anchor: 'middle' });
+        c.reg(it.btn === it.t ? it.btn : `${it.t} ${it.btn}`, 334 - bw - 4, y + 2, bw + 8, rowH - 4);
+      }
+      if (it.slider !== undefined) {
+        c.rect(30, y + rowH - 16, 290, 6, '#D0D4DA', 3);
+        c.rect(30, y + rowH - 16, 290 * it.slider, 6, C.blue, 3);
+        c.add(`<circle cx="${30 + 290 * it.slider}" cy="${y + rowH - 13}" r="10" fill="${C.blue}"/>`);
+        c.reg(`${it.t} 막대`, 20, y + rowH - 34, 316, 40);
+      }
+      c.reg(it.t, 12, y, 336, rowH);
+      if (it !== items[items.length - 1]) c.add(`<line x1="28" y1="${y + rowH}" x2="332" y2="${y + rowH}" stroke="${C.line}" stroke-width="1"/>`);
+      y += rowH;
+    }
+    if (s.button) {
+      c.rect(30, 520, 300, 52, C.blue, 26);
+      c.text(180, 552, s.button, { size: 18, fill: '#fff', weight: 700, anchor: 'middle' });
+      c.reg(s.button, 30, 516, 300, 60);
+    }
+    if (s.fab) {
+      c.add(`<circle cx="306" cy="${s.tabs ? 500 : 548}" r="28" fill="${C.blue}"/>`);
+      c.text(306, (s.tabs ? 500 : 548) + 10, '+', { size: 30, fill: '#fff', anchor: 'middle', weight: 400 });
+      c.reg(s.fab, 274, (s.tabs ? 500 : 548) - 32, 64, 64);
+    }
+    if (s.tabs) tabs(c, s.tabs, s.tab);
+    navBar(c);
+  },
+
+  /** 전원 메뉴·확인 창·아래에서 올라오는 메뉴 */
+  dialog(c, s) {
+    c.rect(0, 0, W, H, s.under === 'home' ? '#24406B' : C.bg);
+    if (s.under === 'home') statusBar(c, { dark: true }); else statusBar(c);
+    c.rect(0, 0, W, H, C.dim);
+    const style = s.style ?? 'popup';
+    if (style === 'power') {
+      const btns = s.buttons ?? ['전원 끄기', '다시 시작', '긴급전화', '의료정보'];
+      btns.forEach((b, i) => {
+        const col = i % 2;
+        const row = Math.floor(i / 2);
+        const cx = 110 + col * 140;
+        const cy = 230 + row * 150;
+        const big = s.confirm && b === s.confirm;
+        const faded = s.confirm && !big;
+        c.add(`<circle cx="${cx}" cy="${cy}" r="${big ? 50 : 40}" fill="${i === 0 ? '#E53935' : '#FFFFFF'}" opacity="${faded ? 0.25 : 1}"/>`);
+        c.add(`<g stroke="${i === 0 ? '#fff' : C.ink}" stroke-width="3" fill="none" stroke-linecap="round" opacity="${faded ? 0.25 : 1}">${i === 0 ? `<path d="M${cx - 10} ${cy - 10} a14 14 0 1 0 20 0"/><line x1="${cx}" y1="${cy - 18}" x2="${cx}" y2="${cy - 2}"/>` : i === 1 ? `<path d="M${cx + 12} ${cy - 6} a14 14 0 1 0 2 10"/><polyline points="${cx + 6},${cy - 10} ${cx + 13},${cy - 7} ${cx + 15},${cy - 15}"/>` : i === 2 ? `<path d="M${cx - 12} ${cy - 10} h24 M${cx} ${cy - 16} v24"/>` : `<path d="M${cx - 10} ${cy} h20 M${cx} ${cy - 10} v20"/><circle cx="${cx}" cy="${cy}" r="16"/>`}</g>`);
+        c.text(cx, cy + (big ? 78 : 66), b, { size: 17, fill: '#fff', weight: 700, anchor: 'middle' });
+        if (!faded) c.reg(b, cx - 60, cy - 56, 120, 140);
+      });
+      if (s.confirm) c.text(180, 120, '한 번 더 누르면 꺼져요', { size: 18, fill: '#fff', weight: 700, anchor: 'middle' });
+    } else if (style === 'sheet') {
+      const opts = s.buttons ?? [];
+      const top = 640 - 70 - opts.length * 58 - (s.title ? 50 : 0);
+      c.rect(8, top, 344, 640 - top - 52, C.card, 24);
+      let y = top + 16;
+      if (s.title) { c.text(30, y + 26, s.title, { size: 19, weight: 700 }); y += 50; }
+      for (const b of opts) {
+        c.text(30, y + 37, b, { size: 20, weight: 700 });
+        c.reg(b, 8, y, 344, 58);
+        y += 58;
+      }
+      navBar(c);
+    } else if (style === 'grid') {
+      // 공유 창처럼 아이콘이 늘어선 메뉴
+      const opts = s.buttons ?? [];
+      const top = 300;
+      c.rect(8, top, 344, 290, C.card, 24);
+      if (s.title) c.text(30, top + 40, s.title, { size: 19, weight: 700 });
+      opts.forEach((b, i) => {
+        const col = i % 4;
+        const row = Math.floor(i / 4);
+        appIcon(c, 30 + col * 80, top + 70 + row * 100, b, 48);
+      });
+      navBar(c);
+    } else {
+      // 가운데 확인 창
+      const lines = wrapText(s.message ?? '', 20);
+      const h = 120 + lines.length * 24 + (s.title ? 30 : 0);
+      const top = 320 - h / 2;
+      c.rect(24, top, 312, h, C.card, 26);
+      let y = top + 40;
+      if (s.title) { c.text(48, y, s.title, { size: 20, weight: 700 }); y += 34; }
+      for (const l of lines) { c.text(48, y, l, { size: 16, fill: C.sub }); y += 24; }
+      const btns = s.buttons ?? ['취소', '확인'];
+      const bw = 288 / btns.length;
+      btns.forEach((b, i) => {
+        c.text(36 + bw * i + bw / 2, top + h - 30, b, { size: 17, fill: C.blue, weight: 700, anchor: 'middle' });
+        c.reg(b, 36 + bw * i, top + h - 64, bw, 56);
+      });
+    }
+  },
+
+  /** 전화 키패드 */
+  keypad(c, s) {
+    c.rect(0, 0, W, H, C.bg);
+    statusBar(c);
+    header(c, '', { back: false, actions: ['옵션 더보기'] });
+    c.text(180, 150, s.number ?? '', { size: 32, anchor: 'middle', weight: 500 });
+    if (s.number) c.reg('입력한 번호', 40, 110, 280, 56);
+    const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#'];
+    keys.forEach((k, i) => {
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      const x = 60 + col * 120;
+      const y = 200 + row * 70;
+      c.text(x, y + 10, k, { size: 30, anchor: 'middle', weight: 500 });
+      c.reg(k, x - 50, y - 26, 100, 60);
+    });
+    c.add(`<circle cx="180" cy="490" r="30" fill="${C.green}"/><path d="M168 480 q2 -6 8 -4 l4 8 q-2 4 -5 5 q4 8 12 12 q1 -3 5 -5 l8 4 q2 6 -4 8 q-22 -4 -28 -28z" fill="#fff"/>`);
+    c.reg('통화 버튼', 140, 456, 80, 70);
+    if (s.number) { c.text(290, 498, '⌫', { size: 26, anchor: 'middle', fill: C.sub }); c.reg('지우기', 260, 466, 60, 56); }
+    tabs(c, ['키패드', '최근기록', '연락처'], '키패드');
+    navBar(c);
+  },
+
+  /** 전화가 올 때 */
+  call(c, s) {
+    c.rect(0, 0, W, H, '#20304F');
+    statusBar(c, { dark: true });
+    c.text(180, 170, s.name ?? '김영희', { size: 32, fill: '#fff', weight: 700, anchor: 'middle' });
+    c.text(180, 205, s.number ?? '휴대전화 010-0000-0000', { size: 16, fill: '#C9D1E0', anchor: 'middle' });
+    c.add(`<circle cx="80" cy="480" r="34" fill="${C.green}"/><circle cx="280" cy="480" r="34" fill="${C.red}"/>`);
+    c.text(80, 490, '☎', { size: 28, fill: '#fff', anchor: 'middle' });
+    c.text(280, 490, '☎', { size: 28, fill: '#fff', anchor: 'middle' });
+    c.text(80, 540, '받기', { size: 16, fill: '#fff', weight: 700, anchor: 'middle' });
+    c.text(280, 540, '거절', { size: 16, fill: '#fff', weight: 700, anchor: 'middle' });
+    c.reg('수신 아이콘', 36, 436, 88, 120);
+    c.reg('거절 아이콘', 236, 436, 88, 120);
+    c.text(180, 590, '⌃ 메시지 보내기', { size: 15, fill: '#C9D1E0', anchor: 'middle' });
+    c.reg('메시지 보내기', 110, 566, 140, 36);
+  },
+
+  /** 통화 중 화면 */
+  incall(c, s) {
+    c.rect(0, 0, W, H, '#F1F3F7');
+    statusBar(c);
+    c.text(180, 130, s.name ?? '김영희', { size: 30, weight: 700, anchor: 'middle' });
+    c.text(180, 162, '00:12', { size: 16, fill: C.sub, anchor: 'middle' });
+    const btns = s.buttons ?? ['녹음', '영상통화', '블루투스', '스피커', '음소거', '키패드'];
+    btns.forEach((b, i) => {
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      const cx = 70 + col * 110;
+      const cy = 280 + row * 110;
+      c.add(`<circle cx="${cx}" cy="${cy}" r="30" fill="#FFFFFF" stroke="${C.line}"/>`);
+      c.text(cx, cy + 6, glyph(b), { size: 15, anchor: 'middle', weight: 700, fill: C.sub });
+      c.text(cx, cy + 54, b, { size: 15, anchor: 'middle', weight: 600 });
+      c.reg(b, cx - 50, cy - 36, 100, 104);
+    });
+    c.add(`<circle cx="180" cy="520" r="32" fill="${C.red}"/>`);
+    c.text(180, 528, '☎', { size: 24, fill: '#fff', anchor: 'middle' });
+    c.reg('통화 종료', 140, 484, 80, 74);
+    navBar(c);
+  },
+
+  /** 알림창(mode: 'noti') 또는 빠른 설정창(mode: 'quick') */
+  shade(c, s) {
+    c.rect(0, 0, W, H, '#1E2533');
+    statusBar(c, { dark: true });
+    if (s.mode === 'quick') {
+      c.add(`<g fill="none" stroke="#fff" stroke-width="2.2"><path d="M246 52 a10 10 0 1 0 12 0"/><line x1="252" y1="44" x2="252" y2="54"/></g>`);
+      c.reg('전원 끄기 아이콘', 230, 36, 44, 40);
+      c.add('<circle cx="296" cy="56" r="10" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="296" cy="56" r="3.5" fill="#fff"/>');
+      c.reg('설정 아이콘', 274, 36, 44, 40);
+      c.text(332, 62, '✎', { size: 18, fill: '#fff', anchor: 'middle' });
+      c.reg('편집 아이콘', 314, 36, 40, 40);
+      const tiles = s.tiles ?? ['Wi-Fi', '소리', '블루투스', '화면 회전', '비행기 탑승 모드', '손전등', '방해 금지', '모바일 데이터', '위치', '스마트 뷰', '절전 모드', '화면 녹화'];
+      tiles.forEach((t, i) => {
+        const col = i % 4;
+        const row = Math.floor(i / 4);
+        const x = 18 + col * 82;
+        const y = 92 + row * 104;
+        const on = (s.on ?? ['Wi-Fi', '소리', '모바일 데이터']).includes(t);
+        c.add(`<circle cx="${x + 32}" cy="${y + 30}" r="28" fill="${on ? '#4C8DF6' : '#3A4253'}"/>`);
+        c.text(x + 32, y + 36, glyph(t), { size: 15, fill: '#fff', weight: 700, anchor: 'middle' });
+        const lt = tr(t);
+        const max = TR ? 9 : 6;
+        const label = lt.length > max ? `${lt.slice(0, max)}…` : lt;
+        c.text(x + 32, y + 82, label, { size: TR ? 12.5 : 15, fill: '#FFFFFF', anchor: 'middle', weight: 700 });
+        c.reg(t, x - 4, y - 4, 76, 100);
+      });
+      const by = 92 + Math.ceil(tiles.length / 4) * 104 + 6;
+      c.rect(24, by, 312, 40, '#3A4253', 20);
+      c.rect(24, by, 190, 40, '#8AB4F8', 20);
+      c.text(44, by + 26, '밝기', { size: 15, fill: '#0B1F44', weight: 700 });
+      c.reg('밝기 막대', 20, by - 6, 320, 52);
+    } else {
+      c.text(24, 70, '알림', { size: 20, fill: '#fff', weight: 700 });
+      const notes = s.notes ?? [
+        { app: '메시지', t: '김영희', s: '저녁 같이 먹어요' },
+        { app: '전화', t: '부재중 전화', s: '010-0000-0000' },
+        TR ? { app: '메시지', t: '영희', s: '사진을 보냈습니다.' } : { app: '카카오톡', t: '가족방', s: '사진을 보냈습니다.' },
+      ];
+      let y = 92;
+      for (const n of notes) {
+        c.rect(14, y, 332, 76, '#2E3646', 18);
+        c.text(30, y + 28, `${n.app} · ${n.t}`, { size: 15, fill: '#C9D1E0', weight: 600 });
+        c.text(30, y + 54, n.s, { size: 16, fill: '#fff', weight: 600 });
+        c.reg(n.t, 14, y, 332, 76);
+        c.reg(n.app, 14, y, 332, 76);
+        y += 86;
+      }
+      c.text(60, y + 30, '알림 설정', { size: 15, fill: '#C9D1E0', weight: 700, anchor: 'middle' });
+      c.reg('알림 설정', 14, y + 6, 100, 40);
+      c.rect(252, y + 8, 92, 36, '#3A4253', 18);
+      c.text(298, y + 31, '모두 삭제', { size: 15, fill: '#fff', weight: 700, anchor: 'middle' });
+      c.reg('모두 삭제', 248, y + 2, 100, 48);
+    }
+    navBar(c, { dark: true });
+  },
+
+  /** 카메라 촬영 화면 */
+  camera(c, s) {
+    c.rect(0, 0, W, H, '#000');
+    c.rect(0, 56, W, 420, s.front ? '#5B6E7F' : '#6F8A62');
+    // 피사체
+    c.add(s.front
+      ? '<circle cx="180" cy="230" r="58" fill="#E9C4A8"/><rect x="110" y="300" width="140" height="140" rx="60" fill="#3F51B5"/>'
+      : '<rect x="120" y="190" width="120" height="150" rx="12" fill="#F2E3B3"/><circle cx="180" cy="160" r="30" fill="#E57373"/>');
+    c.reg('찍을 대상', 60, 100, 240, 300);
+    if (s.focus) c.add('<circle cx="180" cy="250" r="44" fill="none" stroke="#FFD54F" stroke-width="3"/>');
+    // 위쪽 옵션
+    const opts = s.top ?? ['플래시', '타이머', '퀵 컨트롤'];
+    opts.forEach((o, i) => {
+      const x = 60 + i * 120;
+      c.add(`<circle cx="${x}" cy="30" r="17" fill="rgba(255,255,255,0.15)"/>`);
+      c.text(x, 36, o === '퀵 컨트롤' ? '⌄' : glyph(o), { size: 13, fill: '#fff', anchor: 'middle', weight: 700 });
+      c.reg(o, x - 30, 8, 60, 46);
+    });
+    if (s.qr) {
+      c.rect(130, 210, 100, 100, '#FFFFFF', 6);
+      c.add('<g fill="#000"><rect x="140" y="220" width="24" height="24"/><rect x="196" y="220" width="24" height="24"/><rect x="140" y="276" width="24" height="24"/><rect x="176" y="256" width="12" height="12"/><rect x="200" y="280" width="16" height="16"/></g>');
+      c.rect(70, 330, 220, 44, '#FFD54F', 22);
+      c.text(180, 358, s.qr, { size: 15, weight: 800, anchor: 'middle' });
+      c.reg('QR 링크', 66, 324, 228, 56);
+    }
+    if (s.timer) c.text(180, 300, s.timer, { size: 64, fill: '#fff', weight: 700, anchor: 'middle' });
+    // 줌
+    if (!s.front) {
+      ['0.6', '1x', '3'].forEach((z, i) => {
+        const x = 130 + i * 50;
+        c.add(`<circle cx="${x}" cy="446" r="18" fill="rgba(0,0,0,0.55)"/>`);
+        c.text(x, 451, z, { size: 13, fill: z === (s.zoom ?? '1x') ? '#FFD54F' : '#fff', weight: 700, anchor: 'middle' });
+        c.reg(`줌 ${z}`, x - 22, 424, 44, 44);
+      });
+    }
+    // 촬영 모드
+    const modes = s.modes ?? ['더보기', '인물 사진', '사진', '동영상', '프로'];
+    const cur = s.mode ?? '사진';
+    modes.forEach((m, i) => {
+      const x = 36 + i * 72;
+      c.text(x, 508, m, { size: 14, fill: m === cur ? '#FFD54F' : '#fff', weight: m === cur ? 800 : 600, anchor: 'middle' });
+      c.reg(m, x - 36, 486, 72, 36);
+    });
+    // 셔터·전환·미리보기
+    const rec = cur === '동영상';
+    c.add(`<circle cx="180" cy="570" r="34" fill="#fff"/><circle cx="180" cy="570" r="27" fill="${rec ? '#E53935' : '#fff'}" stroke="#000" stroke-width="2"/>`);
+    if (s.recording) c.rect(168, 558, 24, 24, '#E53935', 4);
+    c.reg(rec ? (s.recording ? '녹화 중지' : '녹화 시작') : '촬영 버튼', 140, 530, 80, 80);
+    c.rect(52, 548, 44, 44, '#555', 12);
+    c.reg('미리보기 사진', 44, 540, 60, 60);
+    c.add('<circle cx="292" cy="570" r="24" fill="rgba(255,255,255,0.2)"/><path d="M280 566 a12 12 0 0 1 22 -4 M304 574 a12 12 0 0 1 -22 4" fill="none" stroke="#fff" stroke-width="2.4"/>');
+    c.reg('카메라 전환', 262, 540, 60, 60);
+  },
+
+  /** 갤러리 (view: 'grid' 또는 'photo') */
+  gallery(c, s) {
+    c.rect(0, 0, W, H, s.view === 'photo' ? '#000' : C.bg);
+    statusBar(c, { dark: s.view === 'photo' });
+    if (s.view === 'photo') {
+      c.rect(0, 140, W, 300, '#7E9C73');
+      c.add('<circle cx="180" cy="270" r="50" fill="#F1D9A6"/>');
+      c.reg('사진', 0, 140, W, 300);
+      header(c, '', { back: true, actions: ['옵션 더보기'] });
+      const bar = s.bar ?? ['즐겨찾기', '편집', '공유', '삭제'];
+      bar.forEach((b, i) => {
+        const x = 54 + i * 84;
+        c.text(x, 568, b, { size: 14, fill: '#fff', anchor: 'middle', weight: 600 });
+        c.add(`<circle cx="${x}" cy="538" r="16" fill="rgba(255,255,255,0.18)"/>`);
+        c.reg(b, x - 40, 512, 80, 70);
+      });
+      if (s.textBtn) { c.add('<circle cx="40" cy="480" r="22" fill="#FFD54F"/>'); c.text(40, 487, 'T', { size: 20, anchor: 'middle', weight: 800 }); c.reg('텍스트 인식 아이콘', 14, 454, 52, 52); }
+      if (s.textShown) { c.rect(60, 180, 240, 60, 'rgba(255,255,255,0.85)', 8); c.text(180, 218, s.textShown, { size: 18, anchor: 'middle', weight: 700 }); c.reg(s.textShown, 60, 180, 240, 60); }
+      if (s.assist) { c.add('<circle cx="320" cy="480" r="22" fill="#4C8DF6"/>'); c.text(320, 486, 'AI', { size: 14, fill: '#fff', anchor: 'middle', weight: 800 }); c.reg('어시스트 아이콘', 294, 454, 52, 52); }
+      navBar(c, { dark: true });
+      return;
+    }
+    header(c, s.title ?? '사진', { back: Boolean(s.title), actions: ['검색', '옵션 더보기'] });
+    const colors = ['#90A4AE', '#A1887F', '#81C784', '#64B5F6', '#FFB74D', '#BA68C8', '#4DB6AC', '#F06292', '#AED581'];
+    for (let i = 0; i < 9; i += 1) {
+      const x = 10 + (i % 3) * 114;
+      const y = 100 + Math.floor(i / 3) * 114;
+      c.rect(x, y, 110, 110, colors[i], 6);
+      if (s.selected?.includes(i)) c.add(`<circle cx="${x + 20}" cy="${y + 20}" r="11" fill="${C.blue}" stroke="#fff" stroke-width="2"/>`);
+      c.reg(i === 0 ? '첫 번째 사진' : `사진 ${i + 1}`, x, y, 110, 110);
+    }
+    if (s.sheet) {
+      const opts = s.sheet;
+      opts.forEach((o, i) => {
+        const x = 40 + i * (280 / Math.max(1, opts.length - 1 || 1));
+        c.text(x, 560, o, { size: 14, anchor: 'middle', weight: 700 });
+        c.reg(o, x - 40, 530, 80, 50);
+      });
+    }
+    tabs(c, s.tabs ?? ['사진', '앨범', '스토리', '메뉴'], s.tab ?? '사진');
+    navBar(c);
+  },
+
+  /** 대화 화면(메시지·카카오톡) */
+  chat(c, s) {
+    const kakao = s.app === '카카오톡';
+    c.rect(0, 0, W, H, kakao ? '#BACEE0' : C.bg);
+    statusBar(c);
+    header(c, s.title ?? '김영희', { back: true, actions: s.actions ?? (kakao ? ['검색', '메뉴'] : ['옵션 더보기']) });
+    let y = 110;
+    for (const b of s.bubbles ?? [{ from: 'you', text: '잘 지내시죠?' }]) {
+      const me = b.from === 'me';
+      const lines = wrapText(b.text, 14);
+      const w = Math.max(...lines.map((l) => l.length)) * 16 + 28;
+      const h = lines.length * 22 + 18;
+      const x = me ? 340 - w : 20;
+      c.rect(x, y, w, h, me ? (kakao ? '#FEE500' : C.blue) : '#FFFFFF', 16);
+      lines.forEach((l, i) => c.text(x + 14, y + 26 + i * 22, l, { size: 16, fill: me && !kakao ? '#fff' : C.ink, weight: 500 }));
+      c.reg(b.text, x, y, w, h);
+      y += h + 14;
+    }
+    // 입력줄
+    c.rect(0, 540, W, 60, '#FFFFFF');
+    c.add(`<circle cx="30" cy="570" r="16" fill="none" stroke="${C.sub}" stroke-width="2.4"/><path d="M22 570 h16 M30 562 v16" stroke="${C.sub}" stroke-width="2.4"/>`);
+    c.reg(s.plusName ?? '추가 아이콘', 6, 544, 48, 52);
+    c.rect(56, 550, 230, 40, '#F1F3F4', 20);
+    c.text(72, 576, s.typed ?? '메시지 입력', { size: 15, fill: s.typed ? C.ink : '#80868B' });
+    c.reg('입력창', 56, 546, 230, 48);
+    c.add(`<circle cx="320" cy="570" r="20" fill="${s.typed ? (kakao ? '#FEE500' : C.blue) : '#E0E0E0'}"/>`);
+    c.text(320, 576, s.typed ? '↑' : '🎤', { size: 16, fill: s.typed && !kakao ? '#fff' : C.ink, anchor: 'middle', weight: 800 });
+    c.reg(s.typed ? '전송 아이콘' : '음성 메시지 아이콘', 296, 546, 52, 52);
+    if (s.attach) {
+      c.rect(0, 380, W, 160, '#FFFFFF');
+      s.attach.forEach((a, i) => {
+        const col = i % 4;
+        const row = Math.floor(i / 4);
+        const x = 48 + col * 88;
+        const yy = 410 + row * 70;
+        c.add(`<circle cx="${x}" cy="${yy}" r="22" fill="#ECEFF4"/>`);
+        c.text(x, yy + 5, glyph(a), { size: 13, anchor: 'middle', weight: 700, fill: C.sub });
+        c.text(x, yy + 42, a, { size: 15, anchor: 'middle', weight: 700 });
+        c.reg(a, x - 40, yy - 26, 80, 76);
+      });
+    }
+    navBar(c);
+  },
+
+  /** 글자판(삼성 키보드) */
+  keyboard(c, s) {
+    c.rect(0, 0, W, H, C.bg);
+    statusBar(c);
+    header(c, s.title ?? '새 메시지', { back: true });
+    c.rect(16, 110, 328, s.field ? 120 : 60, '#FFFFFF', 14);
+    const text = s.text ?? '';
+    wrapText(text, 18).forEach((l, i) => c.text(30, 146 + i * 26, l, { size: 18, weight: 500 }));
+    if (s.selected) c.rect(28, 128, Math.min(300, s.selected.length * 18), 26, 'rgba(26,95,208,0.25)', 4);
+    c.reg('입력창', 16, 110, 328, 60);
+    if (s.popup) {
+      const opts = s.popup;
+      const bw = 300 / opts.length;
+      c.rect(30, 70, 300, 40, '#303134', 10);
+      opts.forEach((o, i) => { c.text(30 + bw * i + bw / 2, 96, o, { size: 15, fill: '#fff', anchor: 'middle', weight: 700 }); c.reg(o, 30 + bw * i, 66, bw, 48); });
+    }
+    // 글자판
+    const top = 370;
+    c.rect(0, top, W, 230, '#E8EAED');
+    const tools = ['어시스트', '이모티콘', '음성 입력', '설정'];
+    tools.forEach((t, i) => {
+      const x = 40 + i * 90;
+      c.text(x, top + 26, t === '음성 입력' ? '🎤' : t === '설정' ? '⚙' : t === '이모티콘' ? '☺' : 'AI', { size: 18, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.reg(t === '음성 입력' ? '음성 입력 아이콘' : t === '어시스트' ? '어시스트 아이콘' : t, x - 30, top + 2, 60, 38);
+    });
+    const rows = s.symbols ? [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'], ['+', '×', '÷', '=', '/', '_', '<', '>', '[', ']'], ['!', '@', '#', '₩', '%', '^', '&', '*', '(', ')']]
+      : (s.english || TR) ? [['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], ['z', 'x', 'c', 'v', 'b', 'n', 'm']]
+        : [['ㅂ', 'ㅈ', 'ㄷ', 'ㄱ', 'ㅅ', 'ㅛ', 'ㅕ', 'ㅑ', 'ㅐ', 'ㅔ'], ['ㅁ', 'ㄴ', 'ㅇ', 'ㄹ', 'ㅎ', 'ㅗ', 'ㅓ', 'ㅏ', 'ㅣ'], ['ㅋ', 'ㅌ', 'ㅊ', 'ㅍ', 'ㅠ', 'ㅜ', 'ㅡ']];
+    rows.forEach((row, r) => {
+      const kw = 34;
+      const offset = (W - row.length * (kw + 2)) / 2;
+      row.forEach((k, i) => {
+        const x = offset + i * (kw + 2);
+        const y = top + 46 + r * 44;
+        c.rect(x, y, kw, 38, '#FFFFFF', 6);
+        c.text(x + kw / 2, y + 26, k, { size: 17, anchor: 'middle', weight: 600 });
+        c.reg(`${k} 자판`, x, y, kw, 38);
+      });
+    });
+    const y4 = top + 46 + 3 * 44;
+    c.rect(4, top + 46 + 2 * 44, 44, 38, '#C9CDD2', 6); c.text(26, top + 46 + 2 * 44 + 26, '⇧', { size: 17, anchor: 'middle' });
+    c.rect(312, top + 46 + 2 * 44, 44, 38, '#C9CDD2', 6); c.text(334, top + 46 + 2 * 44 + 26, '⌫', { size: 17, anchor: 'middle' });
+    c.reg('지우기 자판', 308, top + 42 + 2 * 44, 52, 46);
+    const bottom = [['!#1', 60, '기호 자판'], ['한/영', 60, '한/영 자판'], ['', 140, '스페이스 바'], ['.', 36, '마침표 자판'], ['↵', 56, '줄 바꿈 자판']];
+    let bx = 4;
+    for (const [label, w, name] of bottom) {
+      c.rect(bx, y4, w, 38, name === '스페이스 바' ? '#FFFFFF' : '#C9CDD2', 6);
+      c.text(bx + w / 2, y4 + 25, label, { size: 15, anchor: 'middle', weight: 700 });
+      c.reg(name, bx, y4, w, 38);
+      bx += w + 4;
+    }
+    if (s.listening) {
+      c.rect(0, top, W, 230, '#FFFFFF');
+      c.add(`<circle cx="180" cy="${top + 100}" r="40" fill="${C.blue}"/>`);
+      c.text(180, top + 112, '🎤', { size: 30, anchor: 'middle' });
+      c.text(180, top + 180, '말씀하세요', { size: 18, anchor: 'middle', weight: 700 });
+      c.reg('마이크', 130, top + 50, 100, 100);
+    }
+    navBar(c);
+  },
+
+  /** 인터넷(브라우저) 화면 */
+  browser(c, s) {
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    c.rect(12, 42, 336, 44, '#F1F3F4', 22);
+    c.text(30, 70, s.url ?? '검색어 또는 URL 입력', { size: 15, fill: s.url ? C.ink : '#80868B' });
+    c.reg('주소창', 12, 42, 290, 44);
+    c.text(326, 71, '☆', { size: 20, anchor: 'middle', fill: C.sub });
+    c.reg('북마크 추가 아이콘', 304, 42, 44, 44);
+    if (s.results) {
+      let y = 120;
+      for (const r of s.results) {
+        c.text(20, y, r, { size: 17, fill: C.blue, weight: 700 });
+        c.rect(20, y + 12, 300, 10, '#ECEFF1', 4);
+        c.rect(20, y + 28, 240, 10, '#ECEFF1', 4);
+        c.reg(r, 12, y - 24, 336, 70);
+        y += 80;
+      }
+    } else {
+      c.text(180, 250, s.page ?? '오늘의 소식', { size: 24, anchor: 'middle', weight: 700 });
+      for (let i = 0; i < 5; i += 1) c.rect(30, 290 + i * 28, 300 - (i % 2) * 60, 12, '#ECEFF1', 4);
+    }
+    const bar = ['뒤로', '앞으로', '홈', '북마크', '탭', '메뉴'];
+    bar.forEach((b, i) => {
+      const x = 30 + i * 60;
+      c.text(x, 584, b === '메뉴' ? '≡' : b === '탭' ? '▢' : b === '북마크' ? '☆' : b === '홈' ? '⌂' : b === '뒤로' ? '‹' : '›', { size: 22, anchor: 'middle', fill: C.sub });
+      c.reg(b === '북마크' ? '북마크 목록' : b, x - 28, 560, 56, 40);
+    });
+    navBar(c);
+  },
+
+  /** 지도 */
+  map(c, s) {
+    c.rect(0, 0, W, H, '#E8F0E3');
+    c.add('<g stroke="#FFFFFF" stroke-width="14"><line x1="0" y1="260" x2="360" y2="220"/><line x1="120" y1="0" x2="160" y2="640"/><line x1="0" y1="430" x2="360" y2="470"/></g>');
+    statusBar(c);
+    c.rect(14, 44, 332, 48, '#FFFFFF', 24);
+    c.text(40, 74, s.query ?? '여기서 검색', { size: 16, fill: s.query ? C.ink : '#80868B' });
+    c.reg('검색창', 14, 44, 332, 48);
+    if (s.pin) {
+      c.add('<path d="M200 300 q-24 -40 0 -56 q24 16 0 56z" fill="#E53935"/><circle cx="200" cy="268" r="7" fill="#fff"/>');
+      c.reg('장소 표시', 170, 230, 60, 80);
+      c.rect(14, 470, 332, 120, '#FFFFFF', 20);
+      c.text(32, 506, s.pin, { size: 19, weight: 700 });
+      c.rect(32, 530, 90, 40, C.blue, 20); c.text(77, 556, '경로', { size: 16, fill: '#fff', weight: 700, anchor: 'middle' });
+      c.reg('경로', 28, 526, 98, 48);
+      c.rect(132, 530, 90, 40, '#E8F0FE', 20); c.text(177, 556, '공유', { size: 16, fill: C.blue, weight: 700, anchor: 'middle' });
+      c.reg('공유', 128, 526, 98, 48);
+    }
+    navBar(c);
+  },
+
+  /** 최근 앱 화면 */
+  recent(c, s) {
+    c.rect(0, 0, W, H, '#2A2F3A');
+    statusBar(c, { dark: true });
+    const apps = s.apps ?? ['인터넷', '메시지'];
+    apps.slice(0, 2).forEach((a, i) => {
+      const x = 40 + i * 170;
+      c.rect(x, 140, 150, 330, '#F5F5F5', 18);
+      c.text(x + 14, 172, (appInfo(a)?.label ?? a), { size: 14, weight: 800 });
+      for (let k = 0; k < 7; k += 1) c.rect(x + 12, 200 + k * 34, 126 - (k % 3) * 24, 14, '#DDE1E6', 6);
+      c.rect(x + 12, 440 - 30, 126, 40, '#E3EAF8', 10);
+      c.add(appIconSvg(a, x + 55, 92, 40)); // 실제 화면처럼 앱 화면 위에 아이콘만
+      c.reg(`${a} 아이콘`, x + 37, 80, 60, 56);
+      c.reg(`${a} 화면`, x, 140, 150, 330);
+    });
+    c.rect(120, 520, 120, 40, 'rgba(255,255,255,0.2)', 20);
+    c.text(180, 546, '모두 닫기', { size: 15, fill: '#fff', weight: 700, anchor: 'middle' });
+    c.reg('모두 닫기', 116, 514, 128, 52);
+    navBar(c, { dark: true });
+  },
+
+  /** 앱 안 화면(일반): 제목, 큰 버튼 여러 개 */
+  app(c, s) {
+    c.rect(0, 0, W, H, s.bg ?? C.bg);
+    statusBar(c);
+    header(c, s.title ?? '', { back: s.back !== false, actions: s.actions ?? [] });
+    let y = 110;
+    if (s.hero) {
+      c.rect(20, y, 320, 150, s.heroColor ?? '#3F5BA9', 20);
+      wrapText(s.hero, 16).forEach((l, i) => c.text(40, y + 50 + i * 28, l, { size: 20, fill: '#fff', weight: 700 }));
+      c.reg(s.heroName ?? s.hero, 20, y, 320, 150);
+      y += 170;
+    }
+    for (const line of s.lines ?? []) {
+      wrapText(line, 22).forEach((l) => { c.text(24, y + 20, l, { size: 16, fill: C.sub }); y += 26; });
+      y += 6;
+    }
+    for (const b of s.buttons ?? []) {
+      c.rect(24, y + 8, 312, 52, b === s.primary ? C.blue : '#FFFFFF', 26, `stroke="${C.line}"`);
+      c.text(180, y + 41, b, { size: 17, fill: b === s.primary ? '#fff' : C.ink, weight: 700, anchor: 'middle' });
+      c.reg(b, 24, y + 4, 312, 60);
+      y += 68;
+    }
+    if (s.fab) {
+      c.add(`<circle cx="306" cy="${s.tabs ? 500 : 548}" r="28" fill="${C.blue}"/>`);
+      c.text(306, (s.tabs ? 500 : 548) + 10, '+', { size: 30, fill: '#fff', anchor: 'middle' });
+      c.reg(s.fab, 274, (s.tabs ? 500 : 548) - 32, 64, 64);
+    }
+    if (s.tabs) tabs(c, s.tabs, s.tab);
+    navBar(c);
+  },
+
+  /** 메뉴판·상품 타일(키오스크, 배달, 쇼핑): tabs, tiles:[{t, s, color, mark}], total, button */
+  tiles(c, s) {
+    c.rect(0, 0, W, H, '#F5F7FB');
+    statusBar(c);
+    header(c, s.title ?? '메뉴', { back: s.back !== false, actions: s.actions ?? [] });
+    let y = 92;
+    if (s.tabs) {
+      const tw = (W - 16) / s.tabs.length;
+      s.tabs.forEach((t, i) => {
+        const on = t === s.tab;
+        c.rect(8 + tw * i + 2, y, tw - 4, 40, on ? C.blue : '#FFFFFF', 20, on ? '' : `stroke="${C.line}"`);
+        c.text(8 + tw * i + tw / 2, y + 26, t, { size: 15, weight: 800, anchor: 'middle', fill: on ? '#fff' : C.ink });
+        c.reg(t, 8 + tw * i, y - 2, tw, 44);
+      });
+      y += 54;
+    }
+    if (s.top) { c.text(16, y + 16, s.top, { size: 15, fill: C.sub, weight: 600 }); y += 28; }
+    const cols = s.cols ?? 2;
+    const gw = (W - 24 - (cols - 1) * 10) / cols;
+    const gh = s.tileH ?? 118;
+    const bottom = s.button ? 520 : 596;
+    (s.tiles ?? []).forEach((tile, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const x = 12 + col * (gw + 10);
+      const ty = y + row * (gh + 10);
+      if (ty + gh > bottom) return;
+      c.rect(x, ty, gw, gh, '#FFFFFF', 14, `stroke="${tile.selected ? C.blue : C.line}" stroke-width="${tile.selected ? 3 : 1}"`);
+      c.rect(x + 10, ty + 10, gw - 20, gh - 62, tile.color ?? '#E3EAF8', 10);
+      if (tile.mark) c.text(x + gw / 2, ty + 10 + (gh - 62) / 2 + 8, tile.mark, { size: 22, anchor: 'middle', weight: 800, fill: '#5F6B85' });
+      c.text(x + 12, ty + gh - 30, tile.t, { size: 15, weight: 800 });
+      if (tile.s) c.text(x + 12, ty + gh - 11, tile.s, { size: 13.5, fill: C.sub, weight: 600 });
+      c.reg(tile.t, x, ty, gw, gh);
+    });
+    if (s.button) {
+      c.rect(0, 528, W, 72, '#FFFFFF');
+      c.add(`<line x1="0" y1="528" x2="${W}" y2="528" stroke="${C.line}"/>`);
+      if (s.cartLabel !== false) { c.text(16, 556, s.cartLabel ?? '장바구니', { size: 14, fill: C.sub, weight: 700 }); c.reg(s.cartLabel ?? '장바구니', 8, 532, 120, 62); }
+      c.text(16, 582, s.total ?? '0원', { size: 19, weight: 900 });
+      const bw = 170;
+      c.rect(W - bw - 12, 538, bw, 52, C.blue, 14);
+      c.text(W - bw / 2 - 12, 570, s.button, { size: 17, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.reg(s.button, W - bw - 16, 534, bw + 8, 60);
+    }
+    navBar(c);
+  },
+
+  /** 좌석 고르기(기차·버스·영화): rows, cols, taken:['1A'], picked:['3B'], button */
+  seats(c, s) {
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    header(c, s.title ?? '좌석 선택', { back: true });
+    const rows = s.rows ?? 8;
+    const cols = s.cols ?? ['A', 'B', 'C', 'D'];
+    c.text(180, 112, s.front ?? '앞쪽', { size: 14, fill: C.sub, anchor: 'middle', weight: 700 });
+    c.rect(60, 120, 240, 6, '#DADCE0', 3);
+    const size = 40;
+    const gap = 10;
+    const aisle = cols.length === 4 ? 24 : 0;
+    const totalW = cols.length * size + (cols.length - 1) * gap + aisle;
+    const x0 = (W - totalW) / 2;
+    for (let r = 1; r <= rows; r += 1) {
+      cols.forEach((col, i) => {
+        const id = `${r}${col}`;
+        const x = x0 + i * (size + gap) + (aisle && i >= cols.length / 2 ? aisle : 0);
+        const y = 140 + (r - 1) * (size + 8);
+        if (y + size > 500) return;
+        const taken = (s.taken ?? []).includes(id);
+        const picked = (s.picked ?? []).includes(id);
+        c.rect(x, y, size, size, picked ? C.blue : taken ? '#C9CDD3' : '#E8F0FE', 9, `stroke="${picked ? C.blue : '#A8C2F0'}"`);
+        c.text(x + size / 2, y + 26, id, { size: 13, anchor: 'middle', weight: 800, fill: picked ? '#fff' : taken ? '#7A7F87' : C.ink });
+        if (!taken) c.reg(id, x - 2, y - 2, size + 4, size + 4);
+      });
+    }
+    c.rect(24, 510, 16, 16, '#E8F0FE', 4, 'stroke="#A8C2F0"'); c.text(46, 523, '빈 자리', { size: 13, fill: C.sub, weight: 700 });
+    c.rect(120, 510, 16, 16, '#C9CDD3', 4); c.text(142, 523, '팔린 자리', { size: 13, fill: C.sub, weight: 700 });
+    c.rect(226, 510, 16, 16, C.blue, 4); c.text(248, 523, '고른 자리', { size: 13, fill: C.sub, weight: 700 });
+    if (s.button) {
+      c.rect(20, 540, 320, 52, C.blue, 14);
+      c.text(180, 572, s.button, { size: 17, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.reg(s.button, 16, 536, 328, 60);
+    }
+    navBar(c);
+  },
+
+  /** 숫자판(금액·비밀번호·인원): label, value, masked, button */
+  numpad(c, s) {
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    header(c, s.title ?? '', { back: s.back !== false });
+    c.text(180, 132, s.label ?? '숫자를 누르세요', { size: 17, anchor: 'middle', fill: C.sub, weight: 700 });
+    c.text(180, 184, s.value ?? '', { size: 34, anchor: 'middle', weight: 800 });
+    c.add(`<line x1="50" y1="200" x2="310" y2="200" stroke="${C.line}" stroke-width="2"/>`);
+    if (s.value) c.reg('입력한 숫자', 50, 150, 260, 54);
+    const keys = s.keys ?? ['1', '2', '3', '4', '5', '6', '7', '8', '9', '지움', '0', '←'];
+    keys.forEach((k, i) => {
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      const x = 24 + col * 108;
+      const y = 226 + row * 66;
+      c.rect(x, y, 96, 56, '#F1F3F7', 12);
+      c.text(x + 48, y + 37, k, { size: k.length > 1 ? 17 : 26, anchor: 'middle', weight: 700 });
+      c.reg(k, x, y, 96, 56);
+    });
+    const bt = s.button ?? '확인';
+    c.rect(24, 498, 312, 54, C.blue, 14);
+    c.text(180, 532, bt, { size: 18, fill: '#fff', weight: 800, anchor: 'middle' });
+    c.reg(bt, 20, 494, 320, 62);
+    navBar(c);
+  },
+
+  /**
+   * 서 있는 키오스크 기계: 위 화면 + 카드 단말기 + 영수증 출구
+   * screenTitle, message, buttons(화면 속 버튼), state: 'menu' | 'insert' | 'paying' | 'remove' | 'print'
+   */
+  kiosk(c, s) {
+    const st = s.state ?? 'menu';
+    c.rect(0, 0, W, H, '#EEF2F8');
+    c.add('<ellipse cx="180" cy="558" rx="120" ry="9" fill="#1E2A5A" opacity="0.12"/>');
+    // 몸체
+    c.rect(52, 14, 256, 540, '#3A4150', 26);
+    c.rect(58, 20, 244, 528, '#4A5263', 22);
+    // 화면
+    c.rect(70, 32, 220, 232, '#0E1430', 12);
+    c.rect(76, 38, 208, 220, '#FFFFFF', 8);
+    c.rect(76, 38, 208, 34, s.color ?? '#2563E2', 8);
+    c.rect(76, 60, 208, 12, s.color ?? '#2563E2');
+    c.text(180, 61, s.screenTitle ?? '주문하기', { size: 15, fill: '#fff', weight: 800, anchor: 'middle' });
+    const msg = s.message ?? (st === 'insert' ? '카드를 넣어 주세요' : st === 'paying' ? '결제 중입니다' : st === 'remove' ? '카드를 빼 주세요' : st === 'print' ? '영수증을 가져가세요' : '');
+    let y = 96;
+    if (msg) { for (const line of wrapText(msg, 12)) { c.text(180, y + 12, line, { size: 19, weight: 900, anchor: 'middle', fill: st === 'remove' ? '#C02A1E' : C.ink }); y += 28; } y += 6; }
+    if (s.amount) { c.text(180, y + 8, s.amount, { size: 16, weight: 800, anchor: 'middle', fill: C.blue }); y += 26; }
+    for (const b of s.buttons ?? []) {
+      c.rect(90, y, 180, 40, '#E8F0FE', 10, `stroke="#A8C2F0"`);
+      c.text(180, y + 26, b, { size: 15, weight: 800, anchor: 'middle' });
+      c.reg(b, 86, y - 2, 188, 44);
+      y += 48;
+    }
+    if (st === 'insert' || st === 'paying' || st === 'remove') {
+      // 화면 속 안내 그림: 카드 아래 방향
+      c.rect(150, Math.max(y, 176), 60, 38, '#7CB3FF', 6);
+      c.rect(150, Math.max(y, 176) + 8, 60, 7, '#1E2A5A');
+      c.add(`<path d="M180 ${Math.max(y, 176) + 46} l-9 -9 h18 z" fill="#2563E2"/>`);
+    }
+    // 카드 단말기
+    c.rect(84, 278, 192, 132, '#2B303B', 14);
+    c.text(180, 300, '카드 넣는 곳', { size: 13, fill: '#E7EBF7', weight: 800, anchor: 'middle' });
+    c.rect(110, 334, 140, 12, '#0B0D12', 6);
+    c.add('<path d="M100 340 h8 M252 340 h8" stroke="#FFD54F" stroke-width="3" stroke-linecap="round"/>');
+    c.reg('카드 투입구', 100, 318, 160, 44);
+    // 카드 그림(상태별)
+    const card = (cy, h = 60) => {
+      c.rect(130, cy, 100, h, '#3D8BF2', 8, 'stroke="#1E5BC8" stroke-width="2"');
+      c.rect(146, cy + 10, 22, 16, '#FFD54F', 3);
+      c.rect(140, cy + h - 16, 70, 6, '#BFD8FF', 3);
+    };
+    if (st === 'insert') {
+      card(366, 54);
+      c.add('<path d="M268 400 v-46" stroke="#D7263D" stroke-width="5" stroke-linecap="round"/><path d="M268 344 l-9 12 h18 z" fill="#D7263D"/>');
+    } else if (st === 'paying') {
+      card(346, 40);
+    } else if (st === 'remove') {
+      card(346, 40);
+      c.reg('꽂힌 카드', 120, 334, 120, 64);
+      c.add('<path d="M268 354 v46" stroke="#D7263D" stroke-width="5" stroke-linecap="round"/><path d="M268 410 l-9 -12 h18 z" fill="#D7263D"/>');
+    }
+    c.add('<circle cx="250" cy="300" r="5" fill="' + (st === 'paying' ? '#FFD54F' : st === 'remove' ? '#C02A1E' : '#29982F') + '"/>');
+    // 영수증 출구
+    c.rect(100, 430, 160, 40, '#2B303B', 10);
+    c.rect(116, 446, 128, 7, '#0B0D12', 3);
+    c.text(180, 486, '영수증 나오는 곳', { size: 13, fill: '#E7EBF7', weight: 800, anchor: 'middle' });
+    c.reg('영수증 출구', 100, 424, 160, 70);
+    if (st === 'print') {
+      c.add('<path d="M124 449 h112 v66 l-8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5 -8 -5 -8 5z" fill="#FFFFFF" stroke="#C9CDD3"/>');
+      c.text(180, 478, '주문 번호', { size: 11, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.text(180, 500, s.number ?? '123', { size: 20, anchor: 'middle', weight: 900 });
+      c.reg('영수증', 118, 442, 124, 80);
+    }
+    c.reg('화면', 70, 32, 220, 232);
+  },
+
+  /**
+   * 무인 매장 셀프 계산대: 화면 + 바코드 찍는 곳 + 상품(바코드) + 저울 + 카드 단말기
+   * message, items:[[이름, 금액]], total, buttons, state: 'idle' | 'scan' | 'weigh'
+   */
+  selfcheckout(c, s) {
+    const st = s.state ?? 'idle';
+    const barcode = (x, y, w, h) => {
+      const bars = [3, 1, 2, 1, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1];
+      let bx = x + 4;
+      let out = `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#FFFFFF" rx="2"/>`;
+      bars.forEach((bw, i) => { if (i % 2 === 0 && bx < x + w - 4) out += `<rect x="${bx}" y="${y + 3}" width="${bw * 1.3}" height="${h - 12}" fill="#111"/>`; bx += bw * 1.3 + 0.6; });
+      out += `<text x="${x + w / 2}" y="${y + h - 2}" font-size="6.5" text-anchor="middle" fill="#111">8 801234 567890</text>`;
+      return out;
+    };
+    c.rect(0, 0, W, H, '#EEF2F8');
+    // 화면
+    c.rect(66, 14, 228, 238, '#2B303B', 14);
+    c.rect(74, 22, 212, 222, '#FFFFFF', 8);
+    c.rect(74, 22, 212, 30, '#007A4B', 8);
+    c.rect(74, 42, 212, 10, '#007A4B');
+    c.text(180, 42, '셀프 계산대', { size: 14, fill: '#fff', weight: 800, anchor: 'middle' });
+    let y = 70;
+    if (s.message) { c.text(180, y, s.message, { size: 15, weight: 900, anchor: 'middle', fill: s.warn ? '#C02A1E' : C.ink }); y += 20; }
+    for (const [name, price] of s.items ?? []) {
+      c.text(84, y + 4, name, { size: 12.5, weight: 700 });
+      c.text(276, y + 4, price, { size: 12.5, weight: 700, anchor: 'end' });
+      y += 18;
+    }
+    if (s.total) { c.add(`<line x1="84" y1="${y - 4}" x2="276" y2="${y - 4}" stroke="#DADCE0"/>`); c.text(84, y + 12, '합계', { size: 13, weight: 900 }); c.text(276, y + 12, s.total, { size: 13, weight: 900, anchor: 'end', fill: '#007A4B' }); y += 24; }
+    const btns = s.buttons ?? ['바코드 없는 상품', '봉투 구매', '직원 호출', '결제하기'];
+    const by0 = 244 - Math.ceil(btns.length / 2) * 34 - 4;
+    btns.forEach((b, i) => {
+      const bx = 80 + (i % 2) * 102;
+      const by = by0 + Math.floor(i / 2) * 34;
+      const primary = b === '결제하기';
+      c.rect(bx, by, 98, 30, primary ? '#2563E2' : '#E8F5EE', 8, primary ? '' : 'stroke="#A9E6CC"');
+      c.text(bx + 49, by + 20, b, { size: 11.5, weight: 800, anchor: 'middle', fill: primary ? '#fff' : C.ink });
+      c.reg(b, bx - 2, by - 2, 102, 34);
+    });
+    // 계산대 상판
+    c.rect(16, 270, 328, 210, '#C9CED8', 16);
+    c.rect(16, 270, 328, 14, '#B4BAC6', 8);
+    // 저울(봉투 놓는 곳)
+    c.rect(28, 300, 104, 120, '#AEB4C0', 10);
+    c.rect(36, 308, 88, 104, '#D9DDE4', 6);
+    c.text(80, 436, st === 'weigh' ? '저울' : '봉투 놓는 곳', { size: 12.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
+    c.reg('저울', 28, 300, 104, 120);
+    if (st === 'weigh') {
+      c.add('<circle cx="80" cy="350" r="24" fill="#E53935"/><path d="M80 326 q4 -10 12 -12" stroke="#5D4037" stroke-width="3" fill="none"/><ellipse cx="90" cy="320" rx="8" ry="4" fill="#43A047"/>');
+      c.rect(52, 384, 56, 20, '#0E1430', 4);
+      c.text(80, 398, '0.42kg', { size: 11, fill: '#7CFC9A', weight: 800, anchor: 'middle' });
+    }
+    // 바코드 찍는 곳
+    c.rect(146, 318, 112, 64, '#1C2029', 10);
+    c.rect(154, 326, 96, 48, '#3B1012', 6);
+    c.add('<path d="M160 350 h84 M166 340 l72 20 M166 360 l72 -20" stroke="#FF3B30" stroke-width="2" opacity="0.85"/>');
+    c.text(202, 400, '바코드 찍는 곳', { size: 12.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
+    c.reg('바코드 스캐너', 144, 314, 116, 72);
+    // 상품(우유 팩)과 바코드
+    const px = st === 'scan' ? 170 : 274;
+    const py = st === 'scan' ? 238 : 296;
+    c.add(`<path d="M${px} ${py + 20} l14 -18 h36 l14 18 v84 h-64 z" fill="#FFFFFF" stroke="#9AA0A6"/>`);
+    c.add(`<path d="M${px} ${py + 20} h64" stroke="#9AA0A6"/>`);
+    c.rect(px + 6, py + 26, 52, 22, '#2F7DF6', 4);
+    c.text(px + 32, py + 42, '우유', { size: 13, fill: '#fff', weight: 900, anchor: 'middle' });
+    c.add(barcode(px + 8, py + 62, 48, 36));
+    c.reg('상품 바코드', px + 4, py + 58, 56, 44);
+    if (st === 'scan') c.add(`<rect x="${px + 8}" y="${py + 78}" width="48" height="2.5" fill="#FF3B30"/>`);
+    // 카드 단말기·영수증
+    c.rect(278, 416, 56, 52, '#2B303B', 8);
+    c.rect(286, 430, 40, 6, '#0B0D12', 3);
+    c.text(306, 456, '카드', { size: 11, fill: '#E7EBF7', weight: 800, anchor: 'middle' });
+    c.reg('카드 투입구', 276, 412, 60, 58);
+    c.rect(146, 440, 112, 26, '#2B303B', 6);
+    c.rect(160, 451, 84, 5, '#0B0D12', 2);
+    c.reg('영수증 출구', 146, 436, 112, 34);
+    c.text(202, 488, '영수증', { size: 11.5, weight: 800, anchor: 'middle', fill: '#3A4150' });
+    c.reg('화면', 66, 14, 228, 238);
+  },
+
+  /**
+   * 코레일톡 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님)
+   * view: 'home' | 'station' | 'date' | 'pax' | 'list' | 'seat' | 'confirm' | 'pay' | 'ticket' | 'mytickets'
+   */
+  korail(c, s) {
+    const BLUE = '#1E5BB8';
+    const NAVY = '#0F2D6B';
+    const v = s.view ?? 'home';
+    c.rect(0, 0, W, H, '#F2F5FA');
+    statusBar(c);
+    // 머리줄
+    c.rect(0, 34, W, 54, NAVY);
+    if (v !== 'home') { c.add('<polyline points="28,52 18,61 28,70" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>'); c.reg('뒤로', 6, 36, 40, 50); }
+    const titles = { home: '승차권 예매', station: '역 선택', date: '출발일 선택', pax: '인원 선택', list: '열차 조회', seat: '좌석 선택', confirm: '예매 확인', pay: '결제', ticket: '승차권 확인', mytickets: '승차권 확인' };
+    c.text(v === 'home' ? 20 : 46, 68, titles[v], { size: 19, fill: '#fff', weight: 800 });
+    c.text(340, 68, '연습 화면', { size: 11, fill: '#BFD3F5', weight: 700, anchor: 'end' });
+    const btn = (label, y, primary = true) => { c.rect(16, y, 328, 52, primary ? BLUE : '#FFFFFF', 10, primary ? '' : `stroke="${BLUE}"`); c.text(180, y + 33, label, { size: 17, fill: primary ? '#fff' : BLUE, weight: 800, anchor: 'middle' }); c.reg(label, 12, y - 4, 336, 60); };
+    const tabs = (cur) => {
+      const items = ['승차권 예매', '승차권 확인', '할인·카드', '전체 메뉴'];
+      c.rect(0, 548, W, 52, '#FFFFFF'); c.add(`<line x1="0" y1="548" x2="${W}" y2="548" stroke="#DADCE0"/>`);
+      items.forEach((t, i) => { const x = 45 + i * 90; c.text(x, 580, t, { size: 12.5, anchor: 'middle', weight: t === cur ? 900 : 600, fill: t === cur ? BLUE : C.sub }); c.reg(t, x - 45, 548, 90, 52); });
+    };
+    if (v === 'home') {
+      c.rect(16, 104, 328, 132, '#FFFFFF', 14, 'stroke="#DCE3EE"');
+      c.text(40, 128, '출발', { size: 13, fill: C.sub, weight: 700 });
+      c.text(250, 128, '도착', { size: 13, fill: C.sub, weight: 700 });
+      c.text(70, 178, s.from ?? '서울', { size: 34, weight: 900, anchor: 'middle', fill: NAVY });
+      c.text(282, 178, s.to ?? '부산', { size: 34, weight: 900, anchor: 'middle', fill: NAVY });
+      c.reg('출발역', 20, 110, 130, 100); c.reg('도착역', 210, 110, 130, 100);
+      c.add(`<circle cx="180" cy="168" r="20" fill="#EAF1FD"/><path d="M170 162h20l-5-5M190 174h-20l5 5" stroke="${BLUE}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`);
+      c.reg('출발역·도착역 바꾸기', 158, 146, 44, 44);
+      c.rect(16, 248, 328, 56, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+      c.text(32, 282, '출발일', { size: 14, fill: C.sub, weight: 700 }); c.text(330, 282, s.date ?? '12월 3일(수) 08시 이후', { size: 15, weight: 800, anchor: 'end' });
+      c.reg('출발일', 16, 248, 328, 56);
+      c.rect(16, 314, 328, 56, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+      c.text(32, 348, '인원', { size: 14, fill: C.sub, weight: 700 }); c.text(330, 348, s.pax ?? '어른 1명', { size: 15, weight: 800, anchor: 'end' });
+      c.reg('인원', 16, 314, 328, 56);
+      btn('열차 조회하기', 392);
+      tabs('승차권 예매');
+    } else if (v === 'station') {
+      c.rect(16, 100, 328, 44, '#FFFFFF', 22, 'stroke="#DCE3EE"'); c.text(40, 128, '역 이름 검색', { size: 14, fill: '#80868B' }); c.reg('역 검색', 16, 100, 328, 44);
+      c.text(20, 172, '주요역', { size: 14, fill: C.sub, weight: 800 });
+      ['서울', '용산', '광명', '대전', '동대구', '부산', '광주송정', '강릉', '전주'].forEach((st, i) => {
+        const x = 16 + (i % 3) * 112; const y = 186 + Math.floor(i / 3) * 56;
+        c.rect(x, y, 104, 46, '#FFFFFF', 10, 'stroke="#DCE3EE"'); c.text(x + 52, y + 29, st, { size: 16, weight: 800, anchor: 'middle' }); c.reg(st, x, y, 104, 46);
+      });
+    } else if (v === 'date') {
+      c.text(180, 122, '2026년 12월', { size: 17, weight: 900, anchor: 'middle' });
+      ['일', '월', '화', '수', '목', '금', '토'].forEach((d, i) => c.text(36 + i * 48, 152, d, { size: 13, anchor: 'middle', fill: i === 0 ? '#C02A1E' : C.sub, weight: 700 }));
+      for (let d = 1; d <= 31; d += 1) {
+        const idx = d + 1; const x = 36 + (idx % 7) * 48; const y = 186 + Math.floor(idx / 7) * 44;
+        const sel = d === 3;
+        if (sel) c.add(`<circle cx="${x}" cy="${y - 6}" r="17" fill="${BLUE}"/>`);
+        c.text(x, y, String(d), { size: 15, anchor: 'middle', weight: 700, fill: sel ? '#fff' : C.ink });
+        c.reg(`${d}일`, x - 22, y - 26, 44, 40);
+      }
+      c.text(20, 444, '출발 시각', { size: 14, fill: C.sub, weight: 800 });
+      ['06시', '08시', '10시', '12시'].forEach((t, i) => { c.rect(16 + i * 84, 456, 76, 38, i === 1 ? BLUE : '#FFFFFF', 19, i === 1 ? '' : 'stroke="#DCE3EE"'); c.text(54 + i * 84, 481, t, { size: 14, anchor: 'middle', weight: 800, fill: i === 1 ? '#fff' : C.ink }); c.reg(t, 16 + i * 84, 456, 76, 38); });
+      btn('확인', 506);
+    } else if (v === 'pax') {
+      [['어른(만 13세 이상)', s.adult ?? 1], ['어린이(만 6~12세)', 0], ['경로(만 65세 이상)', s.senior ?? 0], ['장애인', 0]].forEach(([t, n], i) => {
+        const y = 104 + i * 66;
+        c.rect(16, y, 328, 58, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+        c.text(32, y + 35, t, { size: 15, weight: 800 });
+        c.add(`<circle cx="250" cy="${y + 29}" r="15" fill="#EAF1FD"/><circle cx="318" cy="${y + 29}" r="15" fill="${BLUE}"/>`);
+        c.text(250, y + 35, '−', { size: 18, anchor: 'middle', weight: 900, fill: BLUE }); c.text(284, y + 35, String(n), { size: 16, anchor: 'middle', weight: 900 }); c.text(318, y + 35, '+', { size: 18, anchor: 'middle', weight: 900, fill: '#fff' });
+        c.reg(`${t} 빼기`, 232, y + 10, 36, 38); c.reg(`${t} 더하기`, 300, y + 10, 36, 38);
+      });
+      btn('확인', 400);
+    } else if (v === 'list') {
+      c.rect(0, 88, W, 40, '#FFFFFF'); c.text(180, 114, `${s.from ?? '서울'} → ${s.to ?? '부산'} · 12월 3일(수)`, { size: 14, weight: 800, anchor: 'middle' });
+      const trains = s.trains ?? [['KTX 001', '08:00', '10:40', '59,800원', '83,000원'], ['KTX 003', '09:30', '12:08', '59,800원', '매진'], ['ITX-새마을 1001', '10:05', '14:48', '42,600원', '-'], ['KTX 005', '11:00', '13:42', '매진', '매진']];
+      trains.forEach(([name, dep, arr, gen, first], i) => {
+        const y = 138 + i * 92;
+        c.rect(12, y, 336, 84, '#FFFFFF', 12, 'stroke="#DCE3EE"');
+        c.text(26, y + 24, name, { size: 13, weight: 800, fill: BLUE });
+        c.text(26, y + 56, `${dep} → ${arr}`, { size: 20, weight: 900 });
+        const cell = (label, price, x) => {
+          const soldout = price === '매진' || price === '-';
+          c.rect(x, y + 12, 74, 60, soldout ? '#F1F3F4' : '#EAF1FD', 8, soldout ? '' : `stroke="${BLUE}"`);
+          c.text(x + 37, y + 34, label, { size: 12, anchor: 'middle', weight: 700, fill: soldout ? '#9AA0A6' : C.sub });
+          c.text(x + 37, y + 56, price, { size: 13, anchor: 'middle', weight: 900, fill: soldout ? '#9AA0A6' : BLUE });
+          if (!soldout) c.reg(`${name} ${label}`, x - 2, y + 10, 78, 64);
+        };
+        cell('일반실', gen, 186); cell('특실', first, 266);
+      });
+    } else if (v === 'seat') {
+      c.rect(0, 88, W, 46, '#FFFFFF');
+      ['3호차', '4호차', '5호차', '6호차'].forEach((car, i) => { const on = car === '5호차'; c.rect(14 + i * 84, 96, 76, 30, on ? BLUE : '#FFFFFF', 15, on ? '' : 'stroke="#DCE3EE"'); c.text(52 + i * 84, 116, car, { size: 13, anchor: 'middle', weight: 800, fill: on ? '#fff' : C.ink }); c.reg(car, 14 + i * 84, 92, 76, 38); });
+      c.text(180, 156, '◀ 진행 방향', { size: 12, anchor: 'middle', fill: C.sub, weight: 700 });
+      const cols = ['A', 'B', 'C', 'D'];
+      const taken = s.taken ?? ['1A', '1B', '2C', '3D', '4A', '6B', '6C'];
+      const picked = s.picked ?? [];
+      for (let r = 1; r <= 7; r += 1) {
+        cols.forEach((col, i) => {
+          const id = `${r}${col}`;
+          const x = 66 + i * 50 + (i >= 2 ? 26 : 0); const y = 168 + (r - 1) * 48;
+          const tk = taken.includes(id); const pk = picked.includes(id);
+          c.rect(x, y, 42, 40, pk ? BLUE : tk ? '#C9CDD3' : '#FFFFFF', 8, `stroke="${pk ? BLUE : '#9DB8E6'}"`);
+          c.text(x + 21, y + 25, id, { size: 12.5, anchor: 'middle', weight: 800, fill: pk ? '#fff' : tk ? '#7A7F87' : C.ink });
+          if (!tk) c.reg(id, x - 2, y - 2, 46, 44);
+        });
+      }
+      c.text(20, 520, s.note ?? '경로 1명 · 순방향', { size: 13, fill: C.sub, weight: 700 });
+      c.rect(208, 500, 136, 42, BLUE, 10); c.text(276, 527, '좌석 선택 완료', { size: 14, fill: '#fff', weight: 800, anchor: 'middle' }); c.reg('좌석 선택 완료', 204, 496, 144, 50);
+    } else if (v === 'confirm' || v === 'pay') {
+      c.rect(16, 104, 328, 170, '#FFFFFF', 14, 'stroke="#DCE3EE"');
+      c.text(32, 132, 'KTX 001 · 12월 3일(수)', { size: 13, fill: BLUE, weight: 800 });
+      c.text(32, 170, '서울 08:00 → 부산 10:40', { size: 19, weight: 900 });
+      c.text(32, 204, '5호차 3A · 일반실 · 순방향', { size: 14, fill: C.sub, weight: 700 });
+      c.text(32, 236, '경로 1명', { size: 14, fill: C.sub, weight: 700 });
+      c.text(328, 258, '41,900원', { size: 20, weight: 900, anchor: 'end', fill: BLUE });
+      if (v === 'confirm') {
+        c.text(20, 304, '결제 기한 안에 결제해야 예매가 끝나요.', { size: 13, fill: '#C02A1E', weight: 700 });
+        btn('결제하기', 324);
+        btn('예약 취소', 386, false);
+      } else {
+        [['카드 결제', true], ['간편결제', false], ['포인트', false]].forEach(([t, on], i) => {
+          const y = 292 + i * 54; c.rect(16, y, 328, 46, '#FFFFFF', 10, `stroke="${on ? BLUE : '#DCE3EE'}" stroke-width="${on ? 2 : 1}"`);
+          c.add(`<circle cx="40" cy="${y + 23}" r="9" fill="none" stroke="${on ? BLUE : '#9AA0A6'}" stroke-width="2.4"/>${on ? `<circle cx="40" cy="${y + 23}" r="4.5" fill="${BLUE}"/>` : ''}`);
+          c.text(60, y + 29, t, { size: 15, weight: 800 }); c.reg(t, 16, y, 328, 46);
+        });
+        btn('41,900원 결제하기', 466);
+      }
+    } else if (v === 'ticket') {
+      c.rect(16, 100, 328, 420, '#FFFFFF', 16, 'stroke="#DCE3EE"');
+      c.rect(16, 100, 328, 56, BLUE, 16); c.rect(16, 140, 328, 16, BLUE);
+      c.text(32, 134, '승차권 · KTX 001', { size: 16, fill: '#fff', weight: 800 });
+      c.text(70, 200, '서울', { size: 26, weight: 900, anchor: 'middle' }); c.text(290, 200, '부산', { size: 26, weight: 900, anchor: 'middle' });
+      c.text(70, 226, '08:00', { size: 15, anchor: 'middle', fill: C.sub, weight: 700 }); c.text(290, 226, '10:40', { size: 15, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.add(`<path d="M120 196 h120 l-8 -6 M240 196 l-8 6" stroke="${BLUE}" stroke-width="2.5" fill="none"/>`);
+      c.text(180, 270, '12월 3일(수) · 5호차 3A · 경로', { size: 15, anchor: 'middle', weight: 800 });
+      // QR
+      c.rect(120, 292, 120, 120, '#FFFFFF', 4, 'stroke="#111"');
+      const q = [[0, 0], [1, 0], [3, 0], [5, 1], [0, 2], [2, 2], [4, 2], [1, 3], [3, 3], [5, 3], [0, 4], [2, 4], [4, 5], [1, 5], [3, 5]];
+      for (const [qx, qy] of q) c.rect(132 + qx * 16, 304 + qy * 16, 14, 14, '#111');
+      c.reg('승차권 QR', 116, 288, 128, 128);
+      c.text(180, 440, '검표할 때 이 화면을 보여 주세요', { size: 13, anchor: 'middle', fill: C.sub, weight: 700 });
+      c.rect(32, 462, 140, 42, '#FFFFFF', 10, `stroke="${BLUE}"`); c.text(102, 489, '예매 변경', { size: 14, anchor: 'middle', weight: 800, fill: BLUE }); c.reg('예매 변경', 28, 458, 148, 50);
+      c.rect(188, 462, 140, 42, '#FFFFFF', 10, 'stroke="#C02A1E"'); c.text(258, 489, '반환(취소)', { size: 14, anchor: 'middle', weight: 800, fill: '#C02A1E' }); c.reg('반환(취소)', 184, 458, 148, 50);
+      tabs('승차권 확인');
+    }
+    navBar(c);
+  },
+
+  /**
+   * 카카오 T(택시) 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님)
+   * view: 'home' | 'taxi' | 'search' | 'options' | 'matching' | 'matched' | 'riding' | 'history'
+   */
+  kakaot(c, s) {
+    const Y = '#FFD43B';
+    const INK = '#1F1F1F';
+    const v = s.view ?? 'home';
+    const map = (h = 600) => {
+      c.rect(0, 0, W, h, '#EAF0E4');
+      c.add(`<g stroke="#FFFFFF" stroke-width="16"><line x1="-10" y1="230" x2="370" y2="190"/><line x1="110" y1="0" x2="150" y2="${h}"/><line x1="-10" y1="420" x2="370" y2="460"/><line x1="260" y1="0" x2="300" y2="${h}"/></g>`);
+      c.add('<g fill="#D6E2CC"><rect x="20" y="40" width="70" height="120" rx="6"/><rect x="170" y="250" width="70" height="140" rx="6"/><rect x="310" y="60" width="50" height="110" rx="6"/></g>');
+    };
+    const pin = (x, y, color = INK, label) => {
+      c.add(`<path d="M${x} ${y} q-18 -26 0 -40 q18 14 0 40z" fill="${color}"/><circle cx="${x}" cy="${y - 24}" r="6" fill="#fff"/>`);
+      if (label) { c.rect(x - 44, y - 74, 88, 26, '#FFFFFF', 13, 'stroke="#DADCE0"'); c.text(x, y - 56, label, { size: 12.5, weight: 800, anchor: 'middle' }); }
+    };
+    const sheetTop = (y) => { c.rect(0, y, W, 600 - y, '#FFFFFF', 22); c.rect(160, y + 8, 40, 5, '#D5D8DC', 3); };
+    const ybtn = (label, y) => { c.rect(16, y, 328, 54, Y, 12); c.text(180, y + 34, label, { size: 17, weight: 900, anchor: 'middle', fill: INK }); c.reg(label, 12, y - 4, 336, 62); };
+    if (v === 'home') {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.text(20, 76, '카카오 T', { size: 22, weight: 900 });
+      c.text(340, 76, '연습 화면', { size: 11, fill: C.sub, weight: 700, anchor: 'end' });
+      const svc = [['택시', '🚕'], ['대리', '🚗'], ['주차', 'P'], ['바이크', '🚲'], ['기차', '🚆'], ['항공', '✈'], ['퀵·배송', '📦'], ['전체', '⋯']];
+      svc.forEach(([t, m], i) => {
+        const x = 18 + (i % 4) * 82; const y = 100 + Math.floor(i / 4) * 100;
+        c.rect(x, y, 70, 70, i === 0 ? Y : '#F4F5F7', 18);
+        c.text(x + 35, y + 44, m, { size: 26, anchor: 'middle', weight: 800 });
+        c.text(x + 35, y + 90, t, { size: 13.5, anchor: 'middle', weight: 800 });
+        c.reg(t, x - 4, y - 4, 78, 104);
+      });
+      c.rect(16, 318, 328, 64, '#F4F5F7', 14);
+      c.text(32, 356, '어디로 갈까요?', { size: 17, weight: 800, fill: '#6B6F76' });
+      c.reg('어디로 갈까요?', 16, 318, 328, 64);
+    } else if (v === 'taxi' || v === 'options' || v === 'matching') {
+      map();
+      statusBar(c);
+      pin(150, 300, INK, '여기서 타요');
+      if (v === 'taxi') {
+        c.rect(14, 46, 332, 50, '#FFFFFF', 14, 'stroke="#DADCE0"');
+        c.add('<circle cx="34" cy="71" r="5" fill="#1F1F1F"/>');
+        c.text(48, 77, '현재 위치 · 시청앞', { size: 15, weight: 700 });
+        c.reg('출발지', 14, 46, 332, 50);
+        sheetTop(392);
+        c.text(20, 432, '택시', { size: 18, weight: 900 });
+        c.rect(16, 446, 328, 58, '#F4F5F7', 14);
+        c.text(36, 482, '어디로 갈까요?', { size: 17, weight: 800, fill: '#6B6F76' });
+        c.reg('어디로 갈까요?', 16, 446, 328, 58);
+        c.text(20, 534, '최근: 서울역 · ○○병원', { size: 13, fill: C.sub, weight: 700 });
+      } else if (v === 'options') {
+        pin(250, 170, '#2F7DF6', '서울역');
+        sheetTop(300);
+        c.text(20, 336, '시청앞 → 서울역', { size: 15, weight: 800 });
+        const types = [['일반호출', '예상 6,800원', '가까운 택시를 불러요'], ['블루', '예상 9,800원', '+ 호출료'], ['모범', '예상 11,500원', '넓고 조용한 차']];
+        types.forEach(([t, f, d], i) => {
+          const y = 350 + i * 58; const on = (s.pick ?? '일반호출') === t;
+          c.rect(16, y, 328, 50, on ? '#FFF6CC' : '#FFFFFF', 12, `stroke="${on ? '#E0B400' : '#E3E5E8'}" stroke-width="${on ? 2 : 1}"`);
+          c.text(32, y + 23, t, { size: 15, weight: 900 }); c.text(32, y + 41, d, { size: 11.5, fill: C.sub, weight: 600 });
+          c.text(330, y + 31, f, { size: 14, weight: 800, anchor: 'end' });
+          c.reg(t, 16, y, 328, 50);
+        });
+        ybtn('호출하기', 528);
+      } else {
+        sheetTop(380);
+        c.text(180, 440, '택시를 찾고 있어요', { size: 19, weight: 900, anchor: 'middle' });
+        c.text(180, 468, '가까운 기사님께 요청 중…', { size: 14, fill: C.sub, weight: 700, anchor: 'middle' });
+        c.rect(110, 500, 140, 44, '#F4F5F7', 22); c.text(180, 528, '호출 취소', { size: 15, weight: 800, anchor: 'middle' }); c.reg('호출 취소', 106, 496, 148, 52);
+      }
+    } else if (v === 'search') {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.add('<polyline points="28,58 18,67 28,76" fill="none" stroke="#1F1F1F" stroke-width="2.6" stroke-linecap="round"/>');
+      c.rect(48, 44, 298, 46, '#F4F5F7', 12);
+      c.text(62, 74, s.query ?? '도착지 검색', { size: 16, weight: 700, fill: s.query ? INK : '#8A8F98' });
+      c.reg('도착지 검색', 48, 44, 298, 46);
+      const res = s.results ?? [['서울역', '서울 용산구 · 1.9km'], ['서울역 버스환승센터', '서울 중구 · 2.0km'], ['서울역 공항철도', '서울 용산구 · 2.1km']];
+      res.forEach(([t, d], i) => {
+        const y = 108 + i * 68;
+        c.add(`<circle cx="30" cy="${y + 28}" r="11" fill="#F4F5F7"/><path d="M30 ${y + 34} q-7 -9 0 -14 q7 5 0 14z" fill="#6B6F76"/>`);
+        c.text(52, y + 26, t, { size: 16, weight: 800 }); c.text(52, y + 47, d, { size: 12.5, fill: C.sub, weight: 600 });
+        c.add(`<line x1="16" y1="${y + 64}" x2="344" y2="${y + 64}" stroke="#EEF0F2"/>`);
+        c.reg(t, 0, y, W, 64);
+      });
+    } else if (v === 'matched' || v === 'riding') {
+      map();
+      statusBar(c);
+      pin(150, 300, INK, '여기서 타요');
+      c.add('<g transform="translate(70 330)"><rect width="44" height="22" rx="6" fill="#FFD43B" stroke="#1F1F1F"/><circle cx="10" cy="22" r="5" fill="#1F1F1F"/><circle cx="34" cy="22" r="5" fill="#1F1F1F"/></g>');
+      sheetTop(340);
+      c.text(20, 378, v === 'matched' ? (s.eta ?? '3분 뒤 도착해요') : '서울역까지 약 9분', { size: 19, weight: 900 });
+      c.rect(16, 394, 328, 86, '#F7F8FA', 14);
+      c.text(32, 428, s.plate ?? '서울 12가 3456', { size: 22, weight: 900 });
+      c.text(32, 454, '흰색 쏘나타 · 김○○ 기사님', { size: 13.5, fill: C.sub, weight: 700 });
+      c.reg('차 번호', 16, 394, 328, 86);
+      const acts = v === 'matched' ? ['전화하기', '메시지', '호출 취소'] : ['안심 공유', '전화하기', '신고'];
+      acts.forEach((a, i) => { const x = 16 + i * 112; c.rect(x, 494, 104, 46, '#FFFFFF', 12, 'stroke="#DADCE0"'); c.text(x + 52, 523, a, { size: 14, weight: 800, anchor: 'middle' }); c.reg(a, x, 490, 104, 54); });
+    } else if (v === 'history') {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.add('<polyline points="28,58 18,67 28,76" fill="none" stroke="#1F1F1F" stroke-width="2.6" stroke-linecap="round"/>');
+      c.text(46, 74, '이용 내역', { size: 19, weight: 900 });
+      c.rect(16, 100, 328, 176, '#F7F8FA', 14);
+      c.text(32, 132, '12월 3일(수) 10:12', { size: 13, fill: C.sub, weight: 700 });
+      c.text(32, 162, '시청앞 → 서울역', { size: 17, weight: 900 });
+      c.text(32, 190, '일반호출 · 서울 12가 3456', { size: 13.5, fill: C.sub, weight: 700 });
+      c.text(32, 238, '결제 금액', { size: 14, weight: 700 }); c.text(328, 238, '6,700원', { size: 20, weight: 900, anchor: 'end' });
+      c.text(32, 262, '자동결제 완료', { size: 12.5, fill: '#007A4B', weight: 800 });
+      c.reg('영수증', 16, 100, 328, 176);
+      c.rect(16, 292, 328, 48, '#FFFFFF', 12, 'stroke="#DADCE0"'); c.text(180, 322, '영수증 보기', { size: 15, weight: 800, anchor: 'middle' }); c.reg('영수증 보기', 16, 288, 328, 56);
+    }
+    navBar(c);
+  },
+
+  /**
+   * Gemini 앱 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님, 공식 로고 미사용)
+   * view: 'welcome' | 'account' | 'terms' | 'home' | 'chat' | 'attach' | 'menu' | 'upgrade' | 'voice'
+   */
+  gemini(c, s) {
+    const v = s.view ?? 'home';
+    const GRAD = '<linearGradient id="gm-grad" x1="0" x2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient>';
+    c.add(`<defs>${GRAD}</defs>`);
+    c.rect(0, 0, W, H, '#FFFFFF');
+    statusBar(c);
+    const pillInput = (y = 524) => {
+      c.rect(12, y, 336, 64, '#F0F4F9', 32);
+      c.add(`<circle cx="40" cy="${y + 32}" r="14" fill="#FFFFFF"/><path d="M33 ${y + 32}h14M40 ${y + 25}v14" stroke="#444746" stroke-width="2.4" stroke-linecap="round"/>`);
+      c.reg('추가 아이콘', 20, y + 8, 44, 48);
+      c.text(66, y + 38, s.typed ?? 'Gemini에게 물어보기', { size: 15, fill: s.typed ? '#1F1F1F' : '#5F6368', weight: s.typed ? 600 : 500 });
+      c.reg('입력창', 64, y + 8, 196, 48);
+      if (s.typed) {
+        c.add(`<circle cx="318" cy="${y + 32}" r="20" fill="#1F1F1F"/><path d="M310 ${y + 33}l8 -8 8 8M318 ${y + 26}v16" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>`);
+        c.reg('전송 아이콘', 294, y + 8, 50, 48);
+      } else {
+        c.add(`<rect x="264" y="${y + 21}" width="10" height="16" rx="5" fill="#444746"/><path d="M260 ${y + 33}a9 9 0 0 0 18 0M269 ${y + 42}v5" stroke="#444746" stroke-width="2" fill="none"/>`);
+        c.reg('음성 메시지 아이콘', 250, y + 8, 40, 48);
+        c.add(`<circle cx="318" cy="${y + 32}" r="18" fill="#FFFFFF"/><path d="M308 ${y + 32}h3M313 ${y + 26}v12M318 ${y + 22}v20M323 ${y + 26}v12M328 ${y + 32}h-1" stroke="#1F1F1F" stroke-width="2.4" stroke-linecap="round"/>`);
+        c.reg('Live 아이콘', 296, y + 8, 46, 48);
+      }
+    };
+    const top = () => {
+      c.add('<g stroke="#444746" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="56" x2="36" y2="56"/><line x1="18" y1="63" x2="36" y2="63"/><line x1="18" y1="70" x2="30" y2="70"/></g>');
+      c.reg('메뉴', 8, 42, 40, 44);
+      c.text(54, 70, 'Gemini', { size: 20, weight: 700, fill: '#1F1F1F' });
+      c.text(124, 69, '▾', { size: 13, fill: '#5F6368' });
+      c.reg('모델 선택', 50, 46, 100, 36);
+      c.add('<circle cx="330" cy="63" r="15" fill="#7CACF8"/>');
+      c.text(330, 69, '영', { size: 14, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.reg('내 계정', 312, 46, 36, 36);
+      c.text(240, 69, '연습 화면', { size: 10.5, fill: '#9AA0A6', weight: 700, anchor: 'end' });
+    };
+    const blueBtn = (label, y) => { c.rect(24, y, 312, 50, '#0B57D0', 25); c.text(180, y + 32, label, { size: 16, fill: '#fff', weight: 700, anchor: 'middle' }); c.reg(label, 20, y - 4, 320, 58); };
+    if (v === 'welcome') {
+      c.text(180, 200, 'Gemini', { size: 44, weight: 700, anchor: 'middle', fill: 'url(#gm-grad)' });
+      c.text(180, 246, 'Google의 AI 도우미와', { size: 18, anchor: 'middle', weight: 600 });
+      c.text(180, 272, '대화해 보세요', { size: 18, anchor: 'middle', weight: 600 });
+      c.text(180, 330, '연습 화면', { size: 12, anchor: 'middle', fill: '#9AA0A6', weight: 700 });
+      blueBtn('시작하기', 500);
+    } else if (v === 'account') {
+      c.text(180, 120, '계정 선택', { size: 22, weight: 700, anchor: 'middle' });
+      c.text(180, 148, 'Gemini에서 사용할 Google 계정', { size: 14, anchor: 'middle', fill: '#5F6368' });
+      const rows = [['영희', 'younghee@gmail.com'], ['다른 계정 추가', '']];
+      rows.forEach(([n, e], i) => {
+        const y = 180 + i * 72;
+        c.rect(20, y, 320, 62, '#FFFFFF', 12, 'stroke="#DADCE0"');
+        c.add(`<circle cx="50" cy="${y + 31}" r="16" fill="${i ? '#E8EAED' : '#7CACF8'}"/>`);
+        c.text(50, y + 37, i ? '+' : '영', { size: 15, anchor: 'middle', weight: 800, fill: i ? '#444746' : '#fff' });
+        c.text(78, y + (e ? 27 : 37), n, { size: 16, weight: 700 }); if (e) c.text(78, y + 48, e, { size: 13, fill: '#5F6368' });
+        c.reg(e || n, 20, y, 320, 62);
+      });
+    } else if (v === 'terms') {
+      c.text(24, 116, 'Gemini 앱 개인정보', { size: 21, weight: 700 });
+      c.text(24, 142, '보호 안내', { size: 21, weight: 700 });
+      ['대화 내용이 Google 계정에 저장될 수 있어요.', '민감한 정보는 입력하지 마세요.', '활동 기록은 설정에서 끌 수 있어요.'].forEach((t, i) => {
+        c.add(`<circle cx="32" cy="${190 + i * 44}" r="4" fill="#0B57D0"/>`);
+        c.text(46, 195 + i * 44, t, { size: 14.5, weight: 600 });
+      });
+      c.text(24, 350, '자세히 보기', { size: 14, fill: '#0B57D0', weight: 700 });
+      blueBtn('동의', 500);
+      c.text(180, 576, '나중에', { size: 15, fill: '#0B57D0', weight: 700, anchor: 'middle' }); c.reg('나중에', 120, 556, 120, 34);
+    } else if (v === 'home' || v === 'attach') {
+      top();
+      c.text(24, 200, `안녕하세요, ${s.name ?? '영희'}님`, { size: 30, weight: 700, fill: 'url(#gm-grad)' });
+      c.text(24, 238, '무엇을 도와드릴까요?', { size: 26, weight: 600, fill: '#C4C7C5' });
+      const chips = ['글쓰기 도움', '계획 세우기', '사진으로 묻기'];
+      let cx = 14;
+      chips.forEach((t) => { const w = t.length * 15 + 28; c.rect(cx, 470, w, 40, '#FFFFFF', 20, 'stroke="#DADCE0"'); c.text(cx + w / 2, 495, t, { size: 13.5, weight: 600, anchor: 'middle' }); c.reg(t, cx, 466, w, 48); cx += w + 8; });
+      pillInput();
+      if (v === 'attach') {
+        c.rect(0, 360, W, 240, '#FFFFFF', 24, 'stroke="#DADCE0"');
+        [['카메라', '📷'], ['갤러리', '🖼'], ['파일', '📄']].forEach(([t, m], i) => {
+          const x = 30 + i * 104;
+          c.rect(x, 400, 88, 88, '#F0F4F9', 20); c.text(x + 44, 452, m, { size: 30, anchor: 'middle' });
+          c.text(x + 44, 512, t, { size: 14, anchor: 'middle', weight: 700 });
+          c.reg(t, x, 396, 88, 130);
+        });
+      }
+    } else if (v === 'chat') {
+      top();
+      let y = 104;
+      for (const b of s.bubbles ?? []) {
+        const lines = wrapText(b.text, b.from === 'me' ? 15 : 19);
+        if (b.from === 'me') {
+          const w = Math.min(260, Math.max(...lines.map((l) => l.length)) * 15 + 30);
+          const h = lines.length * 22 + 18;
+          c.rect(344 - w, y, w, h, '#E9EEF6', 18);
+          lines.forEach((l, i) => c.text(344 - w + 15, y + 26 + i * 22, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 344 - w, y, w, h);
+          y += h + 18;
+        } else {
+          c.add(`<path d="M28 ${y + 2}c2 9 7 14 16 16-9 2-14 7-16 16-2-9-7-14-16-16 9-2 14-7 16-16z" fill="url(#gm-grad)"/>`);
+          lines.forEach((l, i) => c.text(52, y + 16 + i * 23, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 48, y, 296, lines.length * 23 + 8);
+          y += lines.length * 23 + 22;
+          if (y < 470) {
+            ['👍', '👎', '⟳', '⋮'].forEach((ic, k) => { c.text(60 + k * 34, y, ic, { size: 14, fill: '#5F6368' }); });
+            y += 22;
+          }
+        }
+      }
+      pillInput();
+    } else if (v === 'menu') {
+      c.rect(0, 0, W, H, 'rgba(0,0,0,0.25)');
+      c.rect(0, 0, 290, H, '#F0F4F9');
+      statusBar(c);
+      c.rect(16, 52, 140, 44, '#DDE3EA', 22); c.text(86, 80, '+ 새 채팅', { size: 15, weight: 700, anchor: 'middle' }); c.reg('새 채팅', 16, 48, 140, 52);
+      c.text(20, 130, '최근', { size: 13, fill: '#5F6368', weight: 700 });
+      ['손녀 생일 축하 문자', '된장찌개 끓이는 법', '경주 나들이 일정'].forEach((t, i) => { c.text(20, 162 + i * 38, t, { size: 15, weight: 500 }); c.reg(t, 8, 140 + i * 38, 270, 36); });
+      c.add('<line x1="16" y1="440" x2="274" y2="440" stroke="#DADCE0"/>');
+      c.text(20, 474, '⚙ 설정 및 도움말', { size: 15, weight: 600 }); c.reg('설정 및 도움말', 8, 452, 270, 36);
+      c.rect(16, 500, 258, 44, '#FFFFFF', 22, 'stroke="#DADCE0"'); c.text(145, 528, 'Gemini 업그레이드(유료)', { size: 14, weight: 700, anchor: 'middle', fill: '#0B57D0' }); c.reg('Gemini 업그레이드(유료)', 16, 496, 258, 52);
+    } else if (v === 'upgrade') {
+      c.add('<path d="M330 50l-14 14M316 50l14 14" stroke="#444746" stroke-width="2.4" stroke-linecap="round"/>');
+      c.reg('닫기', 304, 38, 44, 40);
+      c.text(24, 110, '요금제', { size: 22, weight: 700 });
+      c.rect(16, 130, 328, 120, '#FFFFFF', 16, 'stroke="#0B57D0" stroke-width="2"');
+      c.text(32, 162, '무료', { size: 18, weight: 800 }); c.text(328, 162, '현재 요금제', { size: 13, weight: 700, fill: '#0B57D0', anchor: 'end' });
+      c.text(32, 192, '질문·글쓰기·사진 묻기 등 기본 기능', { size: 13.5, fill: '#444746' });
+      c.text(32, 216, '돈이 들지 않아요', { size: 13.5, fill: '#137333', weight: 700 });
+      c.rect(16, 266, 328, 150, '#F8FAFD', 16, 'stroke="#DADCE0"');
+      c.text(32, 298, '유료 요금제', { size: 18, weight: 800 });
+      c.text(32, 326, '더 높은 기능·사용량(매달 요금)', { size: 13.5, fill: '#444746' });
+      c.rect(32, 350, 296, 44, '#0B57D0', 22); c.text(180, 378, '구독하기(유료)', { size: 15, fill: '#fff', weight: 700, anchor: 'middle' }); c.reg('구독하기(유료)', 28, 346, 304, 52);
+      c.text(180, 452, '무료로 쓰려면 오른쪽 위 ×를 누르세요', { size: 13.5, anchor: 'middle', fill: '#5F6368', weight: 700 });
+    } else if (v === 'voice') {
+      c.rect(0, 0, W, H, '#0E1117');
+      statusBar(c, { dark: true });
+      c.text(180, 120, 'Live', { size: 20, fill: '#fff', weight: 700, anchor: 'middle' });
+      c.add('<ellipse cx="180" cy="560" rx="220" ry="90" fill="url(#gm-grad)" opacity="0.55"/>');
+      c.text(180, 300, '듣고 있어요…', { size: 18, fill: '#E3E3E3', weight: 600, anchor: 'middle' });
+      c.add('<circle cx="120" cy="520" r="28" fill="#2A2F37"/><circle cx="240" cy="520" r="28" fill="#D93025"/>');
+      c.text(120, 527, '⏸', { size: 18, fill: '#fff', anchor: 'middle' }); c.text(240, 527, '✕', { size: 18, fill: '#fff', anchor: 'middle', weight: 800 });
+      c.reg('일시 정지', 90, 490, 60, 60); c.reg('끝내기', 210, 490, 60, 60);
+    }
+    navBar(c, { dark: v === 'voice' });
+  },
+
+  /**
+   * ChatGPT 앱 화면 구성을 따른 연습 화면(실제 앱 캡처가 아님, 공식 로고 미사용)
+   * view: 'welcome' | 'home' | 'chat' | 'attach' | 'menu' | 'upgrade' | 'voice'
+   */
+  chatgpt(c, s) {
+    const v = s.view ?? 'home';
+    const dark = v === 'welcome' || v === 'voice';
+    c.rect(0, 0, W, H, dark ? '#000000' : '#FFFFFF');
+    statusBar(c, { dark });
+    const input = (y = 520) => {
+      c.rect(12, y, 336, 68, '#F4F4F4', 30, 'stroke="#E5E5E5"');
+      c.add(`<path d="M30 ${y + 34}h16M38 ${y + 26}v16" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round"/>`);
+      c.reg('추가 아이콘', 16, y + 10, 44, 48);
+      c.text(62, y + 40, s.typed ?? '무엇이든 물어보세요', { size: 15, fill: s.typed ? '#0D0D0D' : '#8E8E8E', weight: s.typed ? 600 : 500 });
+      c.reg('입력창', 60, y + 10, 196, 48);
+      if (s.typed) {
+        c.add(`<circle cx="320" cy="${y + 34}" r="18" fill="#0D0D0D"/><path d="M313 ${y + 35}l7 -7 7 7M320 ${y + 29}v13" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>`);
+        c.reg('전송 아이콘', 298, y + 10, 46, 48);
+      } else {
+        c.add(`<rect x="266" y="${y + 25}" width="9" height="15" rx="4.5" fill="#0D0D0D"/><path d="M262 ${y + 36}a8.5 8.5 0 0 0 17 0" stroke="#0D0D0D" stroke-width="2" fill="none"/>`);
+        c.reg('음성 메시지 아이콘', 252, y + 10, 40, 48);
+        c.add(`<circle cx="320" cy="${y + 34}" r="18" fill="#0D0D0D"/><path d="M312 ${y + 34}v0M316 ${y + 29}v10M320 ${y + 26}v16M324 ${y + 29}v10M328 ${y + 34}v0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>`);
+        c.reg('음성 모드', 298, y + 10, 46, 48);
+      }
+    };
+    const top = () => {
+      c.add('<g stroke="#0D0D0D" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="58" x2="36" y2="58"/><line x1="18" y1="68" x2="30" y2="68"/></g>');
+      c.reg('메뉴', 8, 42, 40, 44);
+      c.text(180, 70, 'ChatGPT ▾', { size: 18, weight: 700, anchor: 'middle' });
+      c.reg('모델 선택', 120, 46, 120, 36);
+      c.add('<path d="M322 54h-10a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4v-10M318 66l14-14" stroke="#0D0D0D" stroke-width="2" fill="none" stroke-linecap="round"/>');
+      c.reg('새 채팅', 300, 44, 44, 40);
+      c.text(180, 90, '연습 화면', { size: 10.5, fill: '#9AA0A6', weight: 700, anchor: 'middle' });
+    };
+    if (v === 'welcome') {
+      c.text(180, 250, 'ChatGPT', { size: 40, weight: 700, anchor: 'middle', fill: '#FFFFFF' });
+      c.text(180, 290, '연습 화면', { size: 12, anchor: 'middle', fill: '#8E8E8E', weight: 700 });
+      const btns = [['Google로 계속하기', '#FFFFFF', '#0D0D0D'], ['이메일로 가입하기', '#2F2F2F', '#FFFFFF'], ['로그인', '#000000', '#FFFFFF']];
+      btns.forEach(([t, bg, fg], i) => { const y = 412 + i * 60; c.rect(24, y, 312, 50, bg, 25, i === 2 ? 'stroke="#5E5E5E"' : ''); c.text(180, y + 32, t, { size: 16, fill: fg, weight: 700, anchor: 'middle' }); c.reg(t, 20, y - 4, 320, 58); });
+    } else if (v === 'home' || v === 'attach') {
+      top();
+      c.text(180, 300, '무엇을 도와드릴까요?', { size: 24, weight: 700, anchor: 'middle' });
+      input();
+      if (v === 'attach') {
+        c.rect(0, 380, W, 220, '#FFFFFF', 22, 'stroke="#E5E5E5"');
+        [['카메라', '📷'], ['사진', '🖼'], ['파일', '📄']].forEach(([t, m], i) => {
+          const x = 30 + i * 104;
+          c.rect(x, 410, 88, 80, '#F4F4F4', 18); c.text(x + 44, 458, m, { size: 28, anchor: 'middle' });
+          c.text(x + 44, 512, t, { size: 14, anchor: 'middle', weight: 700 });
+          c.reg(t, x, 406, 88, 122);
+        });
+      }
+    } else if (v === 'chat') {
+      top();
+      let y = 110;
+      for (const b of s.bubbles ?? []) {
+        const lines = wrapText(b.text, b.from === 'me' ? 15 : 20);
+        if (b.from === 'me') {
+          const w = Math.min(260, Math.max(...lines.map((l) => l.length)) * 15 + 30);
+          const h = lines.length * 22 + 18;
+          c.rect(344 - w, y, w, h, '#F4F4F4', 20);
+          lines.forEach((l, i) => c.text(344 - w + 15, y + 26 + i * 22, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 344 - w, y, w, h);
+          y += h + 18;
+        } else {
+          lines.forEach((l, i) => c.text(18, y + 16 + i * 23, l, { size: 15, weight: 500 }));
+          c.reg(b.text, 12, y, 330, lines.length * 23 + 8);
+          y += lines.length * 23 + 20;
+          if (y < 470) { ['⧉', '👍', '👎', '🔊', '⟳'].forEach((ic, k) => c.text(22 + k * 30, y, ic, { size: 13, fill: '#8E8E8E' })); y += 22; }
+        }
+      }
+      input();
+    } else if (v === 'menu') {
+      c.rect(0, 0, W, H, 'rgba(0,0,0,0.3)');
+      c.rect(0, 0, 290, H, '#F9F9F9');
+      statusBar(c);
+      c.rect(14, 50, 262, 40, '#ECECEC', 20); c.text(40, 75, '🔍 검색', { size: 14, fill: '#8E8E8E' });
+      c.text(20, 124, '✎ 새 채팅', { size: 15, weight: 700 }); c.reg('새 채팅', 8, 104, 270, 32);
+      c.text(20, 162, '최근', { size: 13, fill: '#8E8E8E', weight: 700 });
+      ['안부 문자 부탁', '김장 장보기 목록', '일본어 통역'].forEach((t, i) => { c.text(20, 192 + i * 36, t, { size: 15, weight: 500 }); c.reg(t, 8, 172 + i * 36, 270, 34); });
+      c.rect(14, 470, 262, 44, '#FFFFFF', 22, 'stroke="#E5E5E5"'); c.text(145, 498, 'Plus로 업그레이드(유료)', { size: 14, weight: 700, anchor: 'middle' }); c.reg('Plus로 업그레이드(유료)', 14, 466, 262, 52);
+      c.add('<circle cx="34" cy="550" r="14" fill="#10A37F"/>'); c.text(34, 556, '영', { size: 13, fill: '#fff', weight: 800, anchor: 'middle' });
+      c.text(58, 556, '영희 · 무료', { size: 14, weight: 700 }); c.reg('내 계정', 8, 532, 270, 40);
+    } else if (v === 'upgrade') {
+      c.add('<path d="M330 50l-14 14M316 50l14 14" stroke="#0D0D0D" stroke-width="2.4" stroke-linecap="round"/>');
+      c.reg('닫기', 304, 38, 44, 40);
+      c.text(24, 110, '요금제 업그레이드', { size: 22, weight: 700 });
+      c.rect(16, 130, 328, 120, '#FFFFFF', 16, 'stroke="#0D0D0D" stroke-width="2"');
+      c.text(32, 162, 'Free(무료)', { size: 18, weight: 800 }); c.text(328, 162, '현재 요금제', { size: 13, weight: 700, anchor: 'end' });
+      c.text(32, 192, '기본 대화·글쓰기·사진 묻기(사용량 제한)', { size: 13.5, fill: '#5D5D5D' });
+      c.text(32, 216, '돈이 들지 않아요', { size: 13.5, fill: '#10A37F', weight: 700 });
+      c.rect(16, 266, 328, 150, '#F9F9F9', 16, 'stroke="#E5E5E5"');
+      c.text(32, 298, 'Plus(유료)', { size: 18, weight: 800 });
+      c.text(32, 326, '더 많은 사용량·기능(매달 요금)', { size: 13.5, fill: '#5D5D5D' });
+      c.rect(32, 350, 296, 44, '#0D0D0D', 22); c.text(180, 378, 'Plus 구독하기(유료)', { size: 15, fill: '#fff', weight: 700, anchor: 'middle' }); c.reg('Plus 구독하기(유료)', 28, 346, 304, 52);
+      c.text(180, 452, '무료로 쓰려면 오른쪽 위 ×를 누르세요', { size: 13.5, anchor: 'middle', fill: '#5D5D5D', weight: 700 });
+    } else if (v === 'voice') {
+      c.add('<circle cx="180" cy="300" r="90" fill="#3B82F6" opacity="0.85"/><circle cx="180" cy="300" r="60" fill="#93C5FD"/>');
+      c.text(180, 440, '듣고 있어요…', { size: 18, fill: '#E5E5E5', weight: 600, anchor: 'middle' });
+      c.add('<circle cx="120" cy="530" r="28" fill="#2F2F2F"/><circle cx="240" cy="530" r="28" fill="#2F2F2F"/>');
+      c.text(120, 537, '🎤', { size: 18, anchor: 'middle' }); c.text(240, 537, '✕', { size: 18, fill: '#fff', anchor: 'middle', weight: 800 });
+      c.reg('마이크 끄기', 90, 500, 60, 60); c.reg('끝내기', 210, 500, 60, 60);
+    }
+    navBar(c, { dark });
+  },
+
+  /** 출력된 주문 번호 영수증: number, items:[[이름, 금액]], total, store, date */
+  receipt(c, s) {
+    c.rect(0, 0, W, H, '#EEF2F8');
+    c.add('<ellipse cx="184" cy="610" rx="120" ry="10" fill="#1E2A5A" opacity="0.12"/>');
+    const top = 40;
+    const bottom = 590;
+    let zig = `M60 ${top} H300 V${bottom}`;
+    for (let x = 300; x > 60; x -= 12) zig += ` L${x - 6} ${bottom - 7} L${x - 12} ${bottom}`;
+    c.add(`<path d="${zig} Z" fill="#FFFFFF" stroke="#D5D9E0"/>`);
+    c.text(180, top + 34, s.store ?? '○○버거 키오스크', { size: 16, anchor: 'middle', weight: 800 });
+    c.text(180, top + 56, s.date ?? '2026-12-03 12:31', { size: 13, anchor: 'middle', fill: C.sub, weight: 600 });
+    c.add(`<line x1="78" y1="${top + 72}" x2="282" y2="${top + 72}" stroke="#9AA0A6" stroke-dasharray="4 4"/>`);
+    c.text(180, top + 104, s.label ?? '매장 식사 · 주문 번호', { size: 15, anchor: 'middle', fill: C.sub, weight: 700 });
+    c.text(180, top + 176, s.number ?? '123', { size: 76, anchor: 'middle', weight: 900 });
+    c.reg('주문 번호', 90, top + 110, 180, 84);
+    c.add(`<line x1="78" y1="${top + 206}" x2="282" y2="${top + 206}" stroke="#9AA0A6" stroke-dasharray="4 4"/>`);
+    let y = top + 236;
+    for (const [name, price] of s.items ?? [['불고기버거 세트', '6,800원'], ['  콜라(보통)', '0원']]) {
+      c.text(80, y, name, { size: 15, weight: 600 });
+      c.text(280, y, price, { size: 15, weight: 600, anchor: 'end' });
+      y += 26;
+    }
+    c.add(`<line x1="78" y1="${y}" x2="282" y2="${y}" stroke="#9AA0A6" stroke-dasharray="4 4"/>`);
+    c.text(80, y + 30, '합계', { size: 17, weight: 900 });
+    c.text(280, y + 30, s.total ?? '6,800원', { size: 17, weight: 900, anchor: 'end' });
+    c.text(80, y + 56, '신용카드 결제', { size: 13, fill: C.sub, weight: 600 });
+    c.text(280, y + 56, '승인 완료', { size: 13, fill: C.sub, weight: 600, anchor: 'end' });
+    c.text(180, bottom - 40, '번호가 화면에 나오면 받아 가세요', { size: 13, anchor: 'middle', fill: C.sub, weight: 700 });
+  },
+
+  /** 손동작 설명(밀기·확대 등) */
+  gesture(c, s) {
+    const base = s.on ?? 'page';
+    if (base === 'home') KINDS.home(c, {});
+    else if (base === 'lock') KINDS.lock(c, {});
+    else {
+      c.rect(0, 0, W, H, '#FFFFFF');
+      statusBar(c);
+      c.text(24, 80, s.title ?? '사진 보기', { size: 22, weight: 700 });
+      c.rect(20, 110, 320, 220, '#9CCC65', 16);
+      c.add('<circle cx="180" cy="220" r="46" fill="#FFF59D"/>');
+      for (let i = 0; i < 6; i += 1) c.rect(24, 350 + i * 30, 300 - (i % 3) * 50, 12, '#ECEFF1', 4);
+      navBar(c);
+    }
+    c.reg('화면', 0, 40, W, 560);
+  },
+
+  /** 설명 그림(실제 휴대폰에서 할 일) */
+  info(c, s) {
+    c.rect(0, 0, W, H, '#EAF1FD');
+    c.add(`<circle cx="180" cy="200" r="86" fill="${s.color ?? '#1A5FD0'}" opacity="0.12"/>`);
+    c.text(180, 228, s.icon ?? '!', { size: 76, anchor: 'middle', weight: 800, fill: s.color ?? '#1A5FD0' });
+    let y = 340;
+    for (const line of s.lines ?? []) {
+      wrapText(line, 17).forEach((l) => { c.text(180, y, l, { size: 19, anchor: 'middle', weight: 600 }); y += 30; });
+      y += 10;
+    }
+    c.reg('그림', 0, 0, W, H);
+  },
+};
+
+function tabs(c, names, current) {
+  c.rect(0, 548, W, 52, '#FFFFFF');
+  const w = W / names.length;
+  names.forEach((n, i) => {
+    const on = n === current;
+    c.text(w * i + w / 2, 580, n, { size: 15, anchor: 'middle', weight: on ? 800 : 600, fill: on ? C.ink : C.sub });
+    if (on) c.rect(w * i + w / 2 - 18, 590, 36, 3, C.ink, 2);
+    c.reg(n, w * i, 548, w, 52);
+  });
+}
+
+/** 손동작 화살표 */
+function gestureMark(action, t) {
+  const cx = t ? t.x + t.w / 2 : 180;
+  const cy = t ? t.y + t.h / 2 : 320;
+  const arrow = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#D7263D" stroke-width="7" stroke-linecap="round" marker-end="url(#arrowhead)"/>`;
+  switch (action) {
+    case 'swipe-up': return arrow(cx, cy + 90, cx, cy - 90);
+    case 'swipe-down': return arrow(cx, cy - 90, cx, cy + 90);
+    case 'swipe-left': return arrow(cx + 100, cy, cx - 100, cy);
+    case 'swipe-right': return arrow(cx - 100, cy, cx + 100, cy);
+    case 'pinch-out': return arrow(cx - 20, cy + 20, cx - 90, cy + 90) + arrow(cx + 20, cy - 20, cx + 90, cy - 90);
+    case 'pinch-in': return arrow(cx - 90, cy + 90, cx - 24, cy + 24) + arrow(cx + 90, cy - 90, cx + 24, cy - 24);
+    default: return '';
+  }
+}
+
+/**
+ * 화면 그리기
+ * @param {object} screen card.screen
+ * @param {string} [target] 누를 곳 이름
+ * @param {string} [action] 'tap' | 'hold' | 'swipe-up' | ...
+ */
+export function renderScreen(screen = { kind: 'info' }, target, action) {
+  const kind = KINDS[screen.kind] ? screen.kind : 'info';
+  const c = canvas();
+  KINDS[kind](c, screen);
+  c.reg('화면', 0, 40, W, 560); // 밀기 연습용 전체 영역
+  const { body, targets } = c.out();
+  const t = target ? targets[target] : null;
+  let mark = '';
+  if (t) {
+    mark += `<rect class="target-ring" x="${t.x + 2}" y="${t.y + 2}" width="${t.w - 4}" height="${t.h - 4}" rx="12" fill="none" stroke="#D7263D" stroke-width="5"/>`;
+    // ‘여기’ 표시: 대상 위나 아래에 말풍선
+    const above = t.y > 150 || t.y + t.h > 520;
+    const by = above ? t.y - 44 : t.y + t.h + 8;
+    const bx = Math.min(Math.max(t.x + t.w / 2 - 34, 6), W - 74);
+    mark += `<g class="target-tag"><rect x="${bx}" y="${by}" width="68" height="34" rx="17" fill="#D7263D"/><text x="${bx + 34}" y="${by + 23}" font-size="17" font-weight="800" fill="#fff" text-anchor="middle">${esc(tr(action === 'hold' ? '길게' : '여기'))}</text>`
+      + `<path d="M${bx + 26} ${above ? by + 34 : by} l8 ${above ? 9 : -9} l8 ${above ? -9 : 9}z" fill="#D7263D"/></g>`;
+  }
+  const gm = screen.mark ?? action;
+  if (gm && (gm.startsWith('swipe') || gm.startsWith('pinch'))) mark += gestureMark(gm, t);
+  const defs = '<defs><marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#D7263D"/></marker></defs>';
+  const vh = { kiosk: 572, receipt: 620, selfcheckout: 500 }[kind] ?? H;
+  const svg = `<svg viewBox="0 0 ${W} ${vh}" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" font-family="Pretendard Variable, Pretendard, Noto Sans KR, sans-serif">${defs}${body}${mark}</svg>`;
+  return { svg, width: W, height: vh, targets, target: t };
+}
+
+export const SCREEN_KINDS = Object.keys(KINDS);

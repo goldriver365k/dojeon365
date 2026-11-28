@@ -1,0 +1,972 @@
+1|Ketik “{x}”.
+2|Pada skrin Sembang, ketik sembang dengan {x}.
+3|Skrin WhatsApp. {x}
+4|Gambar-gambar ini ialah lukisan skrin WhatsApp. Nama dan kedudukan menu mungkin berbeza sedikit dalam aplikasi sebenar.
+5|pelajaran
+6|Pasang dan daftar
+7|Rakan dan kenalan
+8|Sembang dan mesej
+9|Foto, video dan fail
+10|Mesej suara
+11|Panggilan suara dan video
+12|Sembang kumpulan
+13|Profil dan status
+14|Emoji dan pelekat
+15|Saluran dan komuniti
+16|Teks, skrin dan pemberitahuan
+17|Privasi dan keselamatan
+18|Sandaran, pemulihan dan telefon baharu
+19|Kongsi lokasi dan kenalan
+20|Spam, penipuan dan masalah
+21|Muat turun WhatsApp
+22|Pasang WhatsApp
+23|Buka WhatsApp
+24|Pilih bahasa anda
+25|Masukkan negara dan nombor telefon
+26|Sahkan nombor telefon
+27|Tambah nama profil
+28|Tambah foto profil
+29|Kemas kini WhatsApp
+30|Fahami skrin utama
+31|Tambah kenalan dengan nombor telefon
+32|Tambah nombor luar negara
+33|Tambah kenalan baharu
+34|Cari kenalan
+35|Tambah kenalan dengan kod QR
+36|Lihat kod QR anda sendiri
+37|Jemput rakan ke WhatsApp
+38|Tukar nama kenalan
+39|Sekat kenalan
+40|Nyahsekat kenalan
+41|Mulakan sembang baharu
+42|Hantar mesej teks
+43|Taip mesej dengan suara
+44|Baca mesej baharu
+45|Balas mesej
+46|Salin mesej
+47|Tampal mesej
+48|Majukan mesej
+49|Edit mesej yang telah dihantar
+50|Padam mesej yang telah dihantar
+51|Fahami tanda semak
+52|Cari dalam sembang
+53|Hantar pautan laman web
+54|Bintangkan mesej penting
+55|Hidupkan mesej sementara
+56|Hantar satu foto
+57|Hantar beberapa foto
+58|Hantar foto dalam HD
+59|Ambil foto dan hantar
+60|Lihat foto yang diterima
+61|Simpan foto yang diterima
+62|Hantar video
+63|Hantar video dalam HD
+64|Simpan video yang diterima
+65|Hantar dokumen
+66|Buka dokumen yang diterima
+67|Lihat semua foto dan fail dalam sembang
+68|Rakam mesej suara
+69|Hantar mesej suara
+70|Dengar mesej suara
+71|Batalkan rakaman suara
+72|Rakam tanpa menahan butang
+73|Jeda rakaman
+74|Dengar sebelum menghantar
+75|Tukar kelajuan main semula
+76|Buat panggilan suara
+77|Jawab panggilan suara
+78|Tamatkan panggilan
+79|Buat panggilan video
+80|Jawab panggilan video
+81|Tukar kamera semasa panggilan video
+82|Matikan mikrofon
+83|Guna pembesar suara
+84|Panggil beberapa orang sekali gus
+85|Kongsi skrin semasa panggilan video
+86|Cipta kumpulan
+87|Tambah orang ke kumpulan
+88|Cipta pautan jemputan kumpulan
+89|Sertai kumpulan melalui pautan
+90|Tukar nama kumpulan
+91|Tukar foto kumpulan
+92|Lihat siapa dalam kumpulan
+93|Jadikan seseorang admin kumpulan
+94|Senyapkan kumpulan
+95|Sebut seseorang dalam kumpulan
+96|Semat mesej dalam kumpulan
+97|Keluar dari kumpulan
+98|Lihat profil anda
+99|Tukar foto profil
+100|Tukar nama profil
+101|Tukar Perihal
+102|Siarkan status teks
+103|Kongsi foto sebagai status
+104|Kongsi video sebagai status
+105|Lihat status rakan
+106|Pilih siapa yang melihat status anda
+107|Padam status anda
+108|Hantar emoji
+109|Beri reaksi pada mesej dengan emoji
+110|Hantar pelekat
+111|Cari pelekat
+112|Tambah pelekat baharu
+113|Urus pelekat kegemaran
+114|Hantar GIF
+115|Buat pelekat sendiri
+116|Apa itu Saluran WhatsApp
+117|Cari saluran
+118|Ikuti saluran
+119|Baca kemas kini saluran
+120|Tetapkan pemberitahuan saluran
+121|Berhenti mengikuti saluran
+122|Apa itu Komuniti
+123|Cipta komuniti
+124|Sertai komuniti
+125|Keluar dari komuniti
+126|Besarkan teks
+127|Laraskan saiz fon
+128|Guna tema cerah
+129|Guna tema gelap
+130|Tukar tema sembang
+131|Tukar kertas dinding sembang
+132|Tetapkan pemberitahuan mesej
+133|Tukar bunyi pemberitahuan
+134|Senyapkan sembang
+135|Semat sembang penting
+136|Arkibkan sembang
+137|Paparkan semula sembang yang diarkibkan
+138|Semak tetapan privasi
+139|Siapa boleh lihat terakhir dilihat anda
+140|Siapa boleh lihat anda dalam talian
+141|Siapa boleh lihat foto profil anda
+142|Hidupkan atau matikan resit dibaca
+143|Hidupkan pengesahan dua langkah
+144|Kunci WhatsApp dengan cap jari
+145|Kunci sembang
+146|Semak peranti terpaut
+147|Log keluar peranti yang tidak dikenali
+148|Senyapkan pemanggil tidak dikenali
+149|Buat semakan privasi
+150|Fungsi sandaran sembang
+151|Sambungkan akaun Google
+152|Sandarkan sembang
+153|Tetapkan sandaran automatik
+154|Hidupkan sandaran tersulit hujung ke hujung
+155|Semak sandaran terakhir
+156|Pulihkan sembang pada telefon baharu
+157|Pindahkan sembang dari telefon lama
+158|Tukar nombor telefon
+159|Selesaikan masalah sandaran dan pemulihan
+160|Hantar lokasi semasa
+161|Kongsi lokasi langsung
+162|Berhenti berkongsi lokasi langsung
+163|Hantar kenalan kepada rakan
+164|Simpan kenalan yang diterima
+165|Rahsiakan lokasi anda
+166|Mesej daripada orang yang tidak dikenali
+167|Kenal pasti mesej palsu daripada “ahli keluarga”
+168|Kenal pasti pautan berbahaya
+169|Elakkan penipuan pelaburan
+170|Elakkan penipuan minta wang
+171|Jangan sekali-kali kongsi kod 6 digit anda
+172|Laporkan spam
+173|Jika anda rasa akaun anda dicuri
+174|WhatsApp tidak boleh dibuka
+175|Mesej tidak dihantar
+176|Foto tidak dihantar
+177|Panggilan tidak bersambung
+178|Pemberitahuan tidak sampai
+179|Kosongkan storan
+180|Guna Pusat Bantuan WhatsApp
+181|Pada skrin utama, ketik “Play Store”.
+182|Ketik bar carian di atas.
+183|Pastikan pembangunnya “WhatsApp LLC”.
+184|Pada halaman WhatsApp Messenger, ketik “Pasang”.
+185|Tunggu sementara ia dimuat turun dan dipasang.
+186|Apabila selesai, butang bertukar menjadi “Buka”.
+187|Cari ikon hijau WhatsApp pada skrin utama.
+188|Ketik sekali untuk membuka WhatsApp.
+189|Apabila WhatsApp dibuka buat kali pertama, senarai bahasa akan muncul.
+190|Ketik bahasa anda.
+191|Pada skrin aluan, ketik “Setuju dan teruskan”.
+192|Ketik nama negara untuk memilih negara anda.
+193|Taip nombor telefon anda.
+194|WhatsApp menghantar kod 6 digit melalui SMS.
+195|Taip 6 nombor itu ke dalam kotak kod.
+196|Ketik kotak nama.
+197|Taip nama yang dikenali oleh rakan-rakan anda.
+198|Pada skrin Maklumat profil, ketik gambar kamera bulat.
+199|Ketik foto yang anda mahu.
+200|Buka “Play Store” dari skrin utama.
+201|Cari “WhatsApp” dan buka WhatsApp Messenger.
+202|“Sembang” menunjukkan semua perbualan anda.
+203|“Kemas kini” menunjukkan status rakan dan saluran.
+204|“Komuniti” menghimpunkan kumpulan yang berkaitan.
+205|“Panggilan” menunjukkan panggilan terkini.
+206|Ketik butang hijau sembang baharu.
+207|Taip nama.
+208|Taip nombor telefon.
+209|Ketik kod negara untuk memilih negara rakan.
+210|Taip nombor tanpa 0 di hadapan.
+211|Pada skrin Sembang, ketik butang hijau sembang baharu.
+212|Taip nama pertama.
+213|Ketik kanta pembesar di atas.
+214|Taip nama. Kenalan yang sepadan akan muncul.
+215|Ketik gambar kod QR untuk mengimbas.
+216|Halakan kamera ke kod QR rakan anda.
+217|Pada skrin Sembang, ketik tiga titik di kanan atas.
+218|Ketik ikon QR kecil di sebelah nama anda.
+219|Tunjukkan kod ini kepada rakan supaya mereka boleh menambah anda.
+220|Di bahagian bawah, ketik “Jemput rakan”.
+221|Ketik cara anda mahu menghantar jemputan, contohnya “Mesej”.
+222|Ketik nama di atas.
+223|Ketik tiga titik di kanan atas.
+224|Tukar nama.
+225|Ketik nama kenalan di atas.
+226|Tatal ke bahagian paling bawah maklumat kenalan.
+227|Ketik “Sekat” sekali lagi untuk mengesahkan.
+228|Ketik “Kenalan disekat” di bahagian bawah.
+229|Ketik orang yang ingin dinyahsekat.
+230|Ketik orang yang ingin anda hantar mesej.
+231|Sembang terbuka. Taip dalam kotak mesej di bawah.
+232|Ketik kotak mesej di bawah.
+233|Taip mesej anda.
+234|Ketik anak panah hantar hijau.
+235|Ketik kotak mesej supaya papan kekunci terbuka.
+236|Ketik mikrofon pada papan kekunci dan bercakap perlahan-lahan.
+237|Semak sama ada perkataannya betul.
+238|Nombor hijau menunjukkan bilangan mesej baharu dalam sembang.
+239|Ketik sembang untuk membaca mesej baharu.
+240|Sentuh dan tahan mesej yang ingin dibalas.
+241|Ketik anak panah balas di atas.
+242|Taip jawapan anda.
+243|Sentuh dan tahan mesej yang ingin disalin.
+244|Ketik ikon salin di atas.
+245|Sentuh dan tahan kotak mesej.
+246|Sentuh dan tahan mesej yang ingin dikongsi.
+247|Ketik anak panah majukan di atas.
+248|Ketik orang yang ingin dihantar.
+249|Ketik butang hantar hijau.
+250|Sentuh dan tahan mesej yang anda hantar.
+251|Ketik tiga titik di atas.
+252|Tukar perkataan dalam kotak mesej.
+253|Ketik tanda semak hijau untuk menyimpan.
+254|Sentuh dan tahan mesej yang anda hantar.
+255|Ketik ikon tong sampah di atas.
+256|Satu tanda kelabu: mesej telah dihantar.
+257|Dua tanda kelabu: ia sampai ke telefon mereka.
+258|Dua tanda biru: mereka telah membacanya.
+259|Taip satu perkataan. WhatsApp melompat ke mesej yang ada perkataan itu.
+260|Ketik “Tampal” untuk memasukkan pautan yang disalin.
+261|Sentuh dan tahan mesej penting itu.
+262|Ketik bintang di atas.
+263|Mesej berbintang ada dalam menu tiga titik › “Berbintang”.
+264|Pilih berapa lama mesej kekal, contohnya “24 jam”.
+265|Ketik klip kertas dalam kotak mesej.
+266|Ketik foto yang ingin dihantar.
+267|Pastikan foto muncul dalam sembang.
+268|Sentuh dan tahan foto pertama.
+269|Ketik foto lain yang anda mahu. Setiap satu mendapat nombor.
+270|Ketik anak panah hijau di bawah.
+271|Ketik “HD” di atas.
+272|Ketik ikon kamera dalam kotak mesej.
+273|Ambil foto dengan butang putih bulat.
+274|Ketik foto dalam sembang.
+275|Foto memenuhi skrin. Renggangkan dua jari untuk zum masuk.
+276|Ketik foto yang anda terima.
+277|Ketik video. Panjang video ditunjukkan di sudut.
+278|Ketik video.
+279|Ketik video yang anda terima.
+280|Ketik fail yang ingin dihantar.
+281|Ketik dokumen dalam sembang.
+282|Ia dibuka dalam aplikasi yang boleh memaparkannya.
+283|Foto, pautan dan dokumen berada dalam tab berasingan.
+284|Sentuh dan tahan mikrofon hijau.
+285|Bercakap sambil menahannya. Anda akan nampak titik merah dan masa.
+286|Tahan mikrofon dan bercakap.
+287|Angkat jari anda. Mesej suara dihantar.
+288|Ketik butang main pada mesej suara.
+289|Semasa merakam, terus tahan dan leret jari ke kiri.
+290|Angkat jari anda. Rakaman dipadam dan tidak dihantar.
+291|Leret jari ke atas ke mangga.
+292|Kini anda boleh lepaskan dan terus bercakap. Ketik hantar apabila selesai.
+293|Semasa merakam tanpa tangan, ketik butang jeda.
+294|Ketik sekali lagi untuk terus merakam.
+295|Ketik main untuk mendengar mesej sebelum menghantar.
+296|Mula mainkan mesej suara.
+297|Ketik “1×” untuk main lebih laju (1.5× atau 2×).
+298|Ketik ikon telefon di atas.
+299|Tunggu rakan anda menjawab.
+300|Apabila WhatsApp berdering, ketik butang hijau “Terima”.
+301|Anda sudah bersambung. Mula bercakap.
+302|Ketik butang merah untuk menamatkan panggilan.
+303|Ketik ikon kamera video di atas.
+304|Pegang telefon supaya wajah anda kelihatan di skrin dan tunggu.
+305|Ketik butang hijau “Terima”.
+306|Rakan anda memenuhi skrin. Anda kelihatan dalam kotak kecil.
+307|Semasa panggilan video, ketik “Balikkan kamera”.
+308|Semasa panggilan, ketik “Senyap”. Rakan anda tidak dapat mendengar anda.
+309|Ketik sekali lagi untuk bercakap semula.
+310|Semasa panggilan suara, ketik “Pembesar suara” untuk mendengar tanpa memegang telefon.
+311|Ketik ikon telefon di atas sembang kumpulan.
+312|Ketik orang yang ingin dipanggil.
+313|Ketik butang panggil.
+314|Semasa panggilan video, ketik “Kongsi skrin”.
+315|Ketik “Mula sekarang” untuk mengesahkan.
+316|Ketik setiap orang yang anda mahu dalam kumpulan.
+317|Ketik anak panah hijau.
+318|Taip nama kumpulan.
+319|Ketik tanda semak hijau untuk mencipta kumpulan.
+320|Ketik nama kumpulan di atas.
+321|Ketik orang yang ingin ditambah.
+322|Ketik tanda semak hijau.
+323|Ketik pautan jemputan kumpulan yang dihantar kepada anda.
+324|Ketik nama kumpulan.
+325|Taip nama baharu.
+326|Ketik foto kumpulan.
+327|Tatal ke bawah untuk melihat semua orang dalam kumpulan.
+328|Ketik orang yang ingin dijadikan admin.
+329|Pilih berapa lama, contohnya “Sentiasa”.
+330|Taip “@” dalam kotak mesej.
+331|Ketik nama orang itu dalam senarai.
+332|Taip baki mesej anda.
+333|Sentuh dan tahan mesej yang ingin disemat.
+334|Mesej kekal di bahagian atas sembang.
+335|Ketik “Keluar” untuk mengesahkan.
+336|Ketik nama anda di atas.
+337|Di sini anda nampak foto, nama, Perihal dan nombor telefon anda.
+338|Ketik foto anda.
+339|Taip nama baharu anda.
+340|Ketik ayat sedia ada, contohnya “Ada”.
+341|Ketik “Kemas kini” di bawah.
+342|Taip mesej pendek.
+343|Ketik butang kamera di kanan bawah.
+344|Ketik foto daripada galeri anda.
+345|Ketik video daripada galeri anda.
+346|Ketik rakan yang fotonya dikelilingi gelang hijau.
+347|Status mereka dimainkan. Ketik sebelah kanan untuk melangkau.
+348|Pilih siapa yang boleh melihat status anda.
+349|Ketik muka senyum dalam kotak mesej.
+350|Ketik emoji untuk menambahnya.
+351|Sentuh dan tahan mesej itu.
+352|Ketik emoji dalam baris yang muncul.
+353|Reaksi anda dipaparkan di bawah mesej.
+354|Ketik pelekat. Ia terus dihantar.
+355|Taip perkataan seperti “terima kasih”.
+356|Ketik “+” untuk melihat lebih banyak pek pelekat.
+357|Ketik “Tambah” di sebelah pek yang anda suka.
+358|Sentuh dan tahan pelekat dalam sembang.
+359|Ketik GIF untuk memilihnya.
+360|Ketik kotak “+” untuk mencipta pelekat.
+361|Ketik foto untuk dijadikan pelekat.
+362|Saluran ialah berita sehala daripada orang atau organisasi.
+363|Saluran terdapat dalam tab “Kemas kini”.
+364|Ketik “Teroka” di sebelah Saluran.
+365|Ketik ikon carian dan taip topik.
+366|Dalam tab Kemas kini, ketik “Teroka”.
+367|Ketik “Ikut” di sebelah saluran.
+368|Ketik nama saluran.
+369|Baca kemas kini terbaharu di bahagian bawah.
+370|Buka saluran dari tab Kemas kini.
+371|Ketik “Senyapkan” atau “Nyahsenyap” untuk memilih makluman.
+372|Ketik “Berhenti mengikuti” sekali lagi untuk mengesahkan.
+373|Komuniti menghimpunkan beberapa kumpulan berkaitan, seperti kejiranan atau kelab.
+374|Komuniti terdapat dalam tab “Komuniti”.
+375|Ketik “Komuniti” di bawah.
+376|Taip nama dan penerangan ringkas.
+377|Ketik anak panah hijau untuk meneruskan.
+378|Ketik pautan jemputan komuniti yang dihantar kepada anda.
+379|Ketik komuniti itu.
+380|Pilih “Kecil”, “Sederhana” atau “Besar”.
+381|Ketik tema warna yang anda suka.
+382|Ketik gambar yang anda suka.
+383|Pastikan “Guna pemberitahuan keutamaan tinggi” dihidupkan supaya mesej muncul.
+384|Pilih bunyi.
+385|Pilih “Sentiasa”.
+386|Sentuh dan tahan sembang dalam senarai Sembang.
+387|Ketik pin di atas.
+388|Sembang kekal di bahagian atas senarai.
+389|Sentuh dan tahan sembang yang ingin disembunyikan.
+390|Ketik kotak arkib di atas.
+391|Ketik “Diarkibkan” di atas senarai Sembang.
+392|Sentuh dan tahan sembang itu.
+393|Ketik kotak nyaharkib di atas.
+394|Semak setiap baris. Ia menunjukkan siapa yang boleh melihat maklumat anda.
+395|Pilih siapa yang boleh melihat bila anda kali terakhir di WhatsApp.
+396|Di bawah “Siapa boleh lihat saya dalam talian”, pilih “Sama seperti terakhir dilihat”.
+397|Pilih “Kenalan saya”.
+398|Ketik suis “Resit dibaca”.
+399|Taip PIN 6 digit yang anda akan ingat.
+400|Hidupkan “Buka kunci dengan biometrik”.
+401|Sentuh penderia cap jari untuk mengesahkan.
+402|Hidupkan suis.
+403|Semak senarai. Setiap komputer atau tablet yang menggunakan WhatsApp anda ada di sini.
+404|Ketik peranti yang anda tidak kenali.
+405|Hidupkan “Senyapkan pemanggil tidak dikenali”.
+406|Lalui setiap topik dan pilih yang sesuai untuk anda.
+407|Sandaran menyalin sembang anda ke akaun Google anda.
+408|Ketik akaun Google anda.
+409|Pilih “Harian”.
+410|Cipta kata laluan dan simpan dengan selamat.
+411|Lihat “Sandaran terakhir” untuk tahu bila sembang anda kali terakhir disimpan.
+412|Pada telefon baharu, pasang WhatsApp dan sahkan nombor telefon yang sama.
+413|Apabila WhatsApp menemui sandaran, ketik “Pulihkan”.
+414|Pada telefon lama, buka Tetapan.
+415|Ketik “Mula”. Telefon baharu akan menunjukkan langkah seterusnya.
+416|Taip nombor lama dan nombor baharu anda.
+417|Jika sandaran atau pemulihan tidak berjaya, semak perkara ini.
+418|Pilih berapa lama, contohnya “1 jam”.
+419|Ketik “Berhenti berkongsi” di bawah lokasi langsung anda.
+420|Ketik “Berhenti” untuk mengesahkan.
+421|Ketik kenalan yang ingin dikongsi.
+422|Ketik kad kenalan yang anda terima.
+423|Lokasi menunjukkan di mana anda berada, jadi berhati-hati.
+424|Mesej daripada nombor yang tiada dalam kenalan anda menunjukkan amaran.
+425|Jangan balas. Ketik “Sekat” di bawah.
+426|Penipu menulis “Hai Mak, telefon saya hilang, ini nombor baharu saya.”
+427|Sebelum menghantar wang, telefon anak anda di nombor lamanya.
+428|Berhati-hati dengan pautan yang menjanjikan hadiah atau masalah segera.
+429|Jangan ketik pautan itu. Padam mesej.
+430|Seseorang menjanjikan untung besar tanpa risiko.
+431|Jangan hantar wang. Keluar dari kumpulan dan laporkan.
+432|Akaun rakan meminta anda menghantar wang segera.
+433|Telefon rakan anda dahulu. Akaun mereka mungkin dicuri.
+434|Seseorang meminta kod 6 digit yang baru anda terima.
+435|Jangan sekali-kali kongsi. WhatsApp tidak akan meminta kod ini.
+436|Buka sembang dengan nombor yang tidak dikenali.
+437|Ketik “Laporkan” untuk mengesahkan.
+438|Jika rakan menerima mesej pelik daripada anda, bertindak segera.
+439|Selepas anda dapat masuk semula, hidupkan pengesahan dua langkah.
+440|Jika WhatsApp tidak boleh dibuka, cuba langkah ini mengikut urutan.
+441|Dalam Play Store, ketik “Kemas kini” jika ada.
+442|Jam sebagai ganti tanda semak bermaksud mesej masih menunggu.
+443|Semak sambungan internet anda.
+444|Jika foto tidak dihantar, semak perkara ini.
+445|Jika panggilan tidak bersambung, semak perkara ini.
+446|Jika pemberitahuan tidak sampai, semak perkara ini.
+447|Hidupkan “Guna pemberitahuan keutamaan tinggi”.
+448|Ketik sembang untuk menyemak dan memadam fail besar.
+449|Taip soalan anda untuk mencari jawapan.
+450|Pasang aplikasi rasmi sahaja. Jangan sekali-kali pasang WhatsApp daripada pautan yang dihantar orang.
+451|Guna Wi-Fi jika boleh. Ia menjimatkan data mudah alih.
+452|Anda boleh menukarnya kemudian dalam Tetapan › Bahasa aplikasi.
+453|Ini nombor latihan. Pada telefon anda, guna nombor anda sendiri.
+454|Selalunya kod diisi secara automatik.
+455|Foto adalah pilihan. Anda boleh menambahnya kemudian.
+456|Jika anda hanya nampak “Buka”, anda sudah ada versi terbaharu.
+457|Setiap negara ada kod, contohnya +60 untuk Malaysia.
+458|Mesej yang dimajukan berkali-kali ditanda “Kerap dimajukan”. Berhati-hati — ia mungkin khabar angin.
+459|Anda boleh mengedit mesej untuk masa singkat selepas menghantarnya.
+460|“Padam untuk semua orang” hanya berfungsi untuk seketika selepas dihantar.
+461|Jika seseorang mematikan resit dibaca, tanda kekal kelabu.
+462|Jangan sekali-kali buka pautan daripada orang yang tidak dikenali.
+463|Mesej baharu akan hilang selepas tempoh itu. Mesej lama kekal.
+464|Foto HD menggunakan lebih banyak data. Wi-Fi paling baik.
+465|Banyak telefon menyimpan foto yang diterima secara automatik.
+466|Jangan buka fail daripada orang yang tidak dikenali.
+467|Kekalkan jari pada butang semasa bercakap.
+468|Dekatkan telefon ke telinga untuk mendengar dengan perlahan.
+469|Ketik tong sampah untuk memadamnya jika anda mahu cuba lagi.
+470|Panggilan WhatsApp menggunakan internet (Wi-Fi atau data mudah alih).
+471|Pada sesetengah telefon, anda leret butang ke atas.
+472|Kini rakan anda nampak apa yang anda nampak — taman, cucu-cucu…
+473|Tutup aplikasi peribadi dahulu. Rakan anda nampak segala-galanya pada skrin anda.
+474|Mungkin hanya admin kumpulan boleh menambah orang.
+475|Sertai kumpulan daripada orang yang anda kenali sahaja.
+476|Admin boleh menambah dan mengeluarkan orang serta menukar tetapan kumpulan.
+477|Orang yang anda sebut akan menerima pemberitahuan.
+478|Status hilang selepas 24 jam.
+479|Pelekat kegemaran muncul di bawah bintang dalam panel pelekat.
+480|Untuk teks lebih besar lagi, besarkan juga dalam Tetapan › Paparan telefon.
+481|Skrin gelap lebih selesa untuk mata pada waktu malam.
+482|Tetapan › Pemberitahuan telefon juga mesti membenarkan WhatsApp.
+483|Sembang yang diarkibkan hanya disembunyikan, bukan dipadam.
+484|Jika anda matikan, anda juga tidak akan nampak tanda biru daripada orang lain.
+485|Jangan sekali-kali beritahu PIN ini kepada sesiapa.
+486|Sambung ke Wi-Fi dahulu. Sandaran boleh jadi besar.
+487|Guna akaun Google yang sama yang menyimpan sandaran.
+488|Foto yang dipadam tidak boleh kembali. Simpan dahulu yang anda mahu.
+489|Bantuan rasmi: faq.whatsapp.com
+490|Mesej yang dipadam dan sembang yang anda tinggalkan mungkin tidak boleh kembali. Semak sebelum mengetik.
+491|Ini mengubah keselamatan akaun anda. Jangan sekali-kali kongsi kod 6 digit atau PIN anda dengan sesiapa.
+492|Sandaran sembang mungkin mengandungi mesej peribadi. Jaga akaun Google dan kata laluan sandaran anda, dan jangan padam sandaran melainkan anda pasti.
+493|Lokasi menunjukkan di mana anda berada. Kongsi hanya dengan orang yang anda percayai, dan berhenti berkongsi apabila tidak diperlukan lagi.
+494|Telefon
+495|Mesej
+496|Kamera
+497|Galeri
+498|Play Store
+499|Tetapan
+500|Ketik
+501|Pasang
+502|Perihal aplikasi ini
+503|Mudah. Boleh dipercayai. Peribadi.
+504|Memasang…
+505|Batal
+506|Nyahpasang
+507|Buka
+508|Tanya Meta AI atau Cari
+509|Semua
+510|Belum dibaca
+511|Kegemaran
+512|Kumpulan
+513|Dah makan malam?
+514|Keluarga
+515|Foto
+516|Jumpa esok
+517|Kelab jalan kaki
+518|Mesyuarat pada hari Sabtu
+519|Sembang
+520|Kemas kini
+521|Komuniti
+522|Panggilan
+523|Pilih bahasa anda
+524|Seterusnya
+525|Selamat datang ke WhatsApp
+526|Baca Dasar Privasi kami. Ketik “Setuju dan teruskan” untuk menerima Terma Perkhidmatan.
+527|Setuju dan teruskan
+528|Masukkan nombor telefon anda
+529|WhatsApp perlu mengesahkan nombor telefon anda.
+530|Nombor telefon
+531|Kod anda hanya untuk anda
+532|Cari mesej SMS daripada WhatsApp.
+533|Jangan sekali-kali beritahu kod ini kepada sesiapa — termasuk orang yang mengaku bekerja untuk WhatsApp.
+534|Mengesahkan nombor anda
+535|Menunggu untuk mengesan secara automatik kod 6 digit yang dihantar melalui SMS.
+536|Tidak menerima kod?
+537|Maklumat profil
+538|Sila berikan nama anda dan foto profil (pilihan).
+539|Taip nama anda di sini
+540|Foto profil
+541|Terkini
+542|Selesai
+543|Kemas kini
+544|Status
+545|Status saya
+546|Ketik untuk menambah kemas kini status
+547|Kemas kini terbaharu
+548|Hari ini, 09:12
+549|Saluran
+550|Teroka
+551|Komuniti baharu
+552|Tambah kegemaran
+553|Terkini
+554|Pilih kenalan
+555|Kumpulan baharu
+556|Kenalan baharu
+557|Kenalan di WhatsApp
+558|Nama pertama
+559|Simpan
+560|5 kenalan
+561|Nama akhir
+562|Hai! Saya menggunakan WhatsApp.
+563|Kod QR
+564|Kod saya
+565|Imbas kod
+566|Kenalan WhatsApp
+567|Kongsi kod
+568|Imbas kod QR WhatsApp
+569|Tambah ke kenalan
+570|Senarai siaran
+571|Peranti terpaut
+572|Berbintang
+573|Akaun
+574|Pemberitahuan keselamatan, tukar nombor
+575|Privasi
+576|Sekat kenalan, mesej sementara
+577|Tema, kertas dinding, sejarah sembang
+578|Pemberitahuan
+579|Nada mesej, kumpulan & panggilan
+580|Storan dan data
+581|Penggunaan rangkaian, muat turun automatik
+582|Bahasa aplikasi
+583|Bahasa Melayu (bahasa peranti)
+584|Bantuan
+585|Pusat bantuan, hubungi kami
+586|Jemput rakan
+587|E-mel
+588|Lagi
+589|dalam talian
+590|Hari ini
+591|Dah. Awak?
+592|Mesej
+593|Audio
+594|Video
+595|Bayar
+596|Cari
+597|Keterlihatan media
+598|Mesej sementara
+599|Mati
+600|Sekat
+601|Kongsi
+602|Edit
+603|Lihat dalam buku alamat
+604|Sahkan kod keselamatan
+605|Edit kenalan
+606|Kenalan yang disekat tidak lagi boleh memanggil atau menghantar mesej kepada anda.
+607|Sekat John?
+608|Terakhir dilihat dan dalam talian
+609|Semua orang
+610|Resit dibaca
+611|Kenalan disekat
+612|Nyahsekat John
+613|Bercakap, bukan menaip
+614|Papan kekunci anda ada kekunci mikrofon kecil.
+615|Bercakap perlahan-lahan. Kata-kata anda muncul sebagai teks.
+616|Papan kekunci kelihatan sedikit berbeza pada setiap telefon.
+617|Tampal
+618|Papan keratan
+619|Majukan kepada…
+620|Maklumat
+621|Salin
+622|Semat
+623|Padam mesej?
+624|Padam untuk saya
+625|Padam untuk semua orang
+626|Awak di rumah?
+627|Lihat kenalan
+628|Tambah ke senarai
+629|Media, pautan dan dokumen
+630|Senyapkan pemberitahuan
+631|Pukul berapa jumpa doktor?
+632|24 jam
+633|7 hari
+634|90 hari
+635|Lokasi
+636|Kenalan
+637|Dokumen
+638|Undian
+639|Acara
+640|Tambah kapsyen…
+641|dipilih
+642|Kualiti media
+643|Kualiti standard
+644|Kualiti HD
+645|Ambil foto
+646|Pegang telefon dengan stabil.
+647|Ketik butang bulat besar sekali.
+648|Tengok taman ni!
+649|Hari ini, 18:20
+650|Tengok cucu-cucu!
+651|Semua media
+652|Tunjukkan dalam sembang
+653|Lihat dalam galeri
+654|Hantar kepada Maria
+655|Temujanji doktor.pdf
+656|240 kB · PDF
+657|Pelan taman.pdf
+658|1 MB · PDF
+659|Hantar “Temujanji doktor.pdf” kepada Maria?
+660|Hantar
+661|Membuka dokumen
+662|Fail PDF dibuka dalam pemapar PDF.
+663|Jika telefon bertanya aplikasi mana yang hendak digunakan, pilih yang anda tahu.
+664|‹ Leret untuk batal
+665|Disulitkan hujung ke hujung
+666|Berdering
+667|Pembesar suara
+668|Senyap
+669|Tambah orang
+670|Panggilan suara WhatsApp
+671|Tolak
+672|Terima
+673|Balikkan kamera
+674|Kamera mati
+675|Kongsi skrin
+676|Panggilan video WhatsApp
+677|Anda
+678|Maria, John, Tom, Anda
+679|Makan tengah hari bersama hari Sabtu?
+680|Ya, jumpa nanti!
+681|Mulakan panggilan kumpulan
+682|WhatsApp akan mendapat akses kepada semua yang ada pada skrin anda.
+683|Mulakan rakaman atau penghantaran dengan WhatsApp?
+684|Mula sekarang
+685|Tambah ahli
+686|Cipta
+687|Kumpulan
+688|ahli
+689|Tambah
+690|Kebenaran kumpulan
+691|Jemput melalui pautan
+692|Hantar pautan melalui WhatsApp
+693|Salin pautan
+694|Kongsi pautan
+695|Tetapkan semula pautan
+696|Sertai kumpulan kami: chat.whatsapp.com/example
+697|Kumpulan · 12 ahli
+698|Sertai kumpulan
+699|Masukkan nama kumpulan
+700|OK
+701|Ikon kumpulan
+702|Emoji & pelekat
+703|Admin kumpulan
+704|Hantar mesej kepada Maria
+705|Lihat Maria
+706|Jadikan admin kumpulan
+707|Keluarkan Maria
+708|Maklumat kumpulan
+709|Media kumpulan
+710|Ahli lain tidak akan nampak bahawa anda menyenyapkan sembang ini.
+711|8 jam
+712|1 minggu
+713|Sentiasa
+714|Sebut
+715|Laporkan
+716|Keluar kumpulan
+717|Kosongkan sembang
+718|Eksport sembang
+719|Hanya admin kumpulan akan diberitahu bahawa anda telah keluar.
+720|Keluar dari “Kelab jalan kaki”?
+721|Keluar
+722|Profil
+723|Nama
+724|Perihal
+725|Hai!
+726|Avatar
+727|Alih keluar foto
+728|Pilih Perihal
+729|Ada
+730|Sibuk
+731|Di tempat kerja
+732|Selamat pagi semua!
+733|Status (Kenalan)
+734|Seronok berjalan di taman hari ini
+735|Balas…
+736|Cipta saluran
+737|Privasi status
+738|Kenalan saya
+739|Kenalan saya kecuali…
+740|Hanya kongsi dengan…
+741|2 tontonan
+742|Ia juga akan dipadam untuk semua orang yang menerimanya.
+743|Padam kemas kini status ini?
+744|Padam
+745|Emoji
+746|Pelekat
+747|Cari pelekat
+748|Pelekat terima kasih
+749|Pek pelekat
+750|Pek pelekat
+751|Muka gembira
+752|Percuma
+753|Bunga
+754|Tambah ke kegemaran
+755|Lihat pek pelekat
+756|Apa itu saluran?
+757|Anda membaca kemas kini; anda tidak boleh membalas dalam saluran.
+758|Nombor telefon anda tidak ditunjukkan kepada saluran.
+759|Ikuti saluran yang anda percayai sahaja.
+760|Tip Berkebun
+761|12K pengikut
+762|Ikut
+763|Cari saluran
+764|Berita Kesihatan
+765|48K pengikut
+766|Siram tomato anda awal pagi.
+767|Minggu ini: menanam ubi tulip.
+768|Maklumat saluran
+769|Berhenti ikut
+770|Berhenti mengikuti Tip Berkebun?
+771|Apa itu komuniti?
+772|Admin boleh menghantar pengumuman kepada semua orang.
+773|Ahli boleh menyertai kumpulan yang mereka suka.
+774|Nombor anda kelihatan kepada ahli kumpulan.
+775|Sertai komuniti kami: chat.whatsapp.com/example
+776|Kelab datuk nenek
+777|Komuniti · 3 kumpulan
+778|Sertai komuniti
+779|Kejiranan
+780|Pengumuman
+781|Umum
+782|Kumpulan taman
+783|Maklumat komuniti
+784|Keluar komuniti
+785|Paparan
+786|Tema
+787|Lalai sistem
+788|Tema sembang lalai
+789|Tetapan sembang
+790|Enter untuk hantar
+791|Saiz fon
+792|Sederhana
+793|Kecil
+794|Besar
+795|Sandaran sembang
+796|Pindahkan sembang
+797|Pilih tema
+798|Cerah
+799|Gelap
+800|Kertas dinding
+801|Nada perbualan
+802|Nada pemberitahuan
+803|Lalai
+804|Getar
+805|Guna pemberitahuan keutamaan tinggi
+806|Nada pemberitahuan kumpulan
+807|Loceng angin
+808|Loceng
+809|Senyap
+810|Diarkibkan
+811|Kunci aplikasi
+812|Tiada
+813|Semakan privasi
+814|Siapa boleh lihat terakhir dilihat saya
+815|Tiada sesiapa
+816|Siapa boleh lihat saya dalam talian
+817|Sama seperti terakhir dilihat
+818|Pemberitahuan keselamatan
+819|Kunci laluan
+820|Alamat e-mel
+821|Pengesahan dua langkah
+822|Tukar nombor
+823|Minta maklumat akaun
+824|Padam akaun
+825|Untuk keselamatan tambahan, hidupkan pengesahan dua langkah yang akan meminta PIN apabila mendaftar nombor telefon anda dengan WhatsApp sekali lagi.
+826|Hidupkan
+827|Masukkan PIN 6 digit yang akan diminta apabila anda mendaftar nombor telefon dengan WhatsApp.
+828|Buka kunci dengan biometrik
+829|Kunci secara automatik
+830|Serta-merta
+831|Sahkan cap jari anda
+832|Letakkan jari berdaftar anda pada penderia.
+833|Mulai sekarang WhatsApp hanya dibuka dengan cap jari anda.
+834|Kunci sembang
+835|Kunci sembang ini dengan cap jari
+836|Status peranti
+837|Aktif sekarang
+838|Kali terakhir aktif 3 hari lalu
+839|Pautkan peranti
+840|Pelayar tidak dikenali
+841|Kali terakhir aktif 1 jam lalu
+842|Log keluar
+843|Tutup
+844|Senyapkan pemanggil tidak dikenali
+845|Panggilan daripada nombor tidak dikenali akan disenyapkan
+846|Pilih siapa yang boleh menghubungi anda
+847|Kawal maklumat peribadi anda
+848|Tambah privasi pada sembang anda
+849|Tambah perlindungan pada akaun anda
+850|Fungsi sandaran sembang
+851|Mesej dan foto anda boleh disimpan ke Google Drive.
+852|Jika telefon hilang, anda boleh memulihkannya.
+853|Anda perlukan nombor telefon dan akaun Google yang sama.
+854|Sandarkan
+855|Sandaran terakhir: Semalam 02:00
+856|Akaun Google
+857|Kekerapan
+858|Harian
+859|Sandaran tersulit hujung ke hujung
+860|Sertakan video
+861|Pilih akaun
+862|Tambah akaun
+863|Mingguan
+864|Bulanan
+865|Tambah lapisan perlindungan pada sandaran anda.
+866|Cipta kata laluan
+867|Jika anda lupa kata laluan ini, anda tidak boleh memulihkan sandaran.
+868|Pulihkan sandaran
+869|Sandaran ditemui. Sandaran terakhir: Semalam 02:00.
+870|Langkau
+871|Pulihkan
+872|Letakkan kedua-dua telefon berdekatan dan bersambung ke Wi-Fi.
+873|Mula
+874|Menukar nombor telefon akan memindahkan maklumat akaun, kumpulan dan tetapan anda.
+875|Masalah sandaran dan pemulihan
+876|Nombor telefon dan akaun Google yang sama?
+877|Ruang yang cukup dalam Google Drive dan telefon?
+878|Bersambung ke Wi-Fi?
+879|Untuk sandaran tersulit: kata laluan yang betul?
+880|Hantar lokasi
+881|Kongsi lokasi langsung
+882|Hantar lokasi semasa anda
+883|Tepat hingga 10 meter
+884|15 minit
+885|1 jam
+886|Lokasi langsung
+887|Berhenti berkongsi
+888|Berhenti berkongsi lokasi langsung?
+889|Berhenti
+890|Kongsi kenalan
+891|Tambah kenalan
+892|Rahsiakan lokasi anda
+893|Kongsi hanya dengan keluarga dan rakan rapat.
+894|Lokasi langsung berhenti selepas masa yang anda pilih — hentikan lebih awal jika mahu.
+895|Jangan sekali-kali kongsi dengan orang asing atau dalam kumpulan besar.
+896|Bukan kenalan
+897|Pengirim ini tiada dalam kenalan anda.
+898|Hai sayang, saya ada tawaran hebat untuk anda
+899|Bukan kenalan · Tiada kumpulan bersama
+900|Hai Mak, telefon saya rosak. Ini nombor baharu saya.
+901|Boleh hantar duit? Segera.
+902|Kenal pasti mesej keluarga palsu
+903|Nombor baharu, dan permintaan wang yang segera.
+904|Mereka kata tidak boleh bercakap di telefon.
+905|Sentiasa telefon nombor lama dan dengar suara mereka dahulu.
+906|Bungkusan anda menunggu! Bayar yuran di sini: parcel-check.example
+907|Kenal pasti pautan berbahaya
+908|Ejaan pelik, hadiah, atau “bayar yuran kecil”.
+909|Jika pautan meminta kata laluan atau nombor kad, berhenti.
+910|Semak dengan syarikat melalui aplikasi rasminya.
+911|Kelab Pelaburan
+912|300 ahli
+913|Sertai hari ini dan gandakan wang anda dalam seminggu!
+914|Elakkan penipuan pelaburan
+915|Tiada pelaburan sebenar yang menjamin untung besar dengan cepat.
+916|Penipu menggunakan kumpulan yang penuh dengan “ahli gembira” palsu.
+917|Tanya bank atau keluarga sebelum melabur.
+918|Saya tersekat di luar negara, boleh hantar 500 sekarang?
+919|Elakkan penipuan minta wang
+920|Telefon orang itu.
+921|Jangan hantar wang hanya kerana satu mesej.
+922|Jika akaun itu palsu, laporkan.
+923|Sokongan WhatsApp?
+924|Akaun anda akan ditutup. Hantar kod 6 digit daripada SMS anda kepada saya.
+925|Kod anda ialah kunci akaun anda
+926|Sesiapa yang ada kod boleh mengambil alih WhatsApp anda.
+927|Jangan balas. Sekat dan laporkan.
+928|Hidupkan pengesahan dua langkah untuk keselamatan tambahan.
+929|Anda memenangi hadiah!
+930|Mesej terkini akan dimajukan kepada WhatsApp.
+931|Laporkan kenalan ini kepada WhatsApp?
+932|Jika akaun anda dicuri
+933|Buka WhatsApp dan daftar semula nombor anda dengan kod SMS.
+934|Hidupkan pengesahan dua langkah.
+935|Beritahu keluarga dan rakan supaya tidak menghantar wang.
+936|Hubungi sokongan WhatsApp dari Tetapan › Bantuan.
+937|WhatsApp tidak boleh dibuka
+938|Mulakan semula telefon anda.
+939|Kemas kini WhatsApp di Play Store.
+940|Pastikan telefon anda ada storan kosong.
+941|Awak datang?
+942|Mesej tidak dihantar
+943|Hidupkan Wi-Fi atau data mudah alih.
+944|Matikan mod pesawat.
+945|Mulakan semula telefon jika ia masih menunggu.
+946|Foto tidak dihantar
+947|Adakah internet anda berfungsi?
+948|Adakah tarikh dan masa pada telefon anda betul?
+949|Adakah WhatsApp dibenarkan menggunakan foto? (Tetapan telefon › Aplikasi › WhatsApp › Kebenaran)
+950|Panggilan tidak bersambung
+951|Kedua-dua telefon memerlukan sambungan internet yang baik.
+952|Cuba Wi-Fi dan bukan data mudah alih.
+953|Pastikan WhatsApp boleh menggunakan mikrofon dan kamera.
+954|Pemberitahuan tidak sampai
+955|Adakah sembang disenyapkan?
+956|Adakah pemberitahuan WhatsApp dihidupkan dalam Tetapan telefon?
+957|Adakah penjimat bateri menghalang WhatsApp?
+958|Urus storan
+959|2.1 GB digunakan
+960|Penggunaan rangkaian
+961|Guna kurang data untuk panggilan
+962|Pusat bantuan
+963|Hubungi kami
+964|Terma dan Dasar Privasi
+965|Maklumat aplikasi
+966|Cari dalam Pusat Bantuan
+967|Cara menyandarkan sembang
+968|Pusat Bantuan
+969|Cara kekal selamat
+970|Semalam
+971|Hari ini, 18:40
+972|Semalam, 10:02

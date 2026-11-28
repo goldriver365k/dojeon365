@@ -1,0 +1,972 @@
+1|I-tap ang “{x}”.
+2|Sa screen ng Mga Chat, i-tap ang chat kay {x}.
+3|Screen ng WhatsApp. {x}
+4|Mga drowing ng screen ng WhatsApp ang mga larawang ito. Maaaring bahagyang iba ang pangalan at puwesto ng mga menu sa totoong app.
+5|aralin
+6|Pag-install at pagrehistro
+7|Mga kaibigan at contact
+8|Mga chat at mensahe
+9|Mga larawan, video at file
+10|Mga voice message
+11|Mga voice at video call
+12|Mga group chat
+13|Profile at status
+14|Emoji at sticker
+15|Mga channel at community
+16|Teksto, screen at notification
+17|Privacy at seguridad
+18|Backup, pag-restore at bagong phone
+19|Pagbabahagi ng lokasyon at contact
+20|Spam, scam at pag-aayos ng problema
+21|I-download ang WhatsApp
+22|I-install ang WhatsApp
+23|Buksan ang WhatsApp
+24|Piliin ang iyong wika
+25|Ilagay ang bansa at numero ng telepono
+26|I-verify ang numero ng telepono
+27|Ilagay ang pangalan sa profile
+28|Maglagay ng profile photo
+29|I-update ang WhatsApp
+30|Kilalanin ang pangunahing screen
+31|Magdagdag ng contact gamit ang numero
+32|Magdagdag ng numero sa ibang bansa
+33|Magdagdag ng bagong contact
+34|Hanapin ang iyong mga contact
+35|Magdagdag ng contact gamit ang QR code
+36|Tingnan ang sarili mong QR code
+37|Imbitahan ang kaibigan sa WhatsApp
+38|Palitan ang pangalan ng contact
+39|I-block ang contact
+40|I-unblock ang contact
+41|Magsimula ng bagong chat
+42|Magpadala ng text message
+43|Mag-type ng mensahe gamit ang boses
+44|Basahin ang mga bagong mensahe
+45|Sagutin ang isang mensahe
+46|Kopyahin ang mensahe
+47|I-paste ang mensahe
+48|I-forward ang mensahe
+49|I-edit ang naipadalang mensahe
+50|I-delete ang naipadalang mensahe
+51|Unawain ang mga tsek
+52|Maghanap sa loob ng chat
+53|Magpadala ng link ng website
+54|Lagyan ng star ang mahalagang mensahe
+55|I-on ang mga nawawalang mensahe
+56|Magpadala ng isang larawan
+57|Magpadala ng ilang larawan
+58|Magpadala ng larawan sa HD
+59|Kumuha ng larawan at ipadala
+60|Tingnan ang natanggap na larawan
+61|I-save ang natanggap na larawan
+62|Magpadala ng video
+63|Magpadala ng video sa HD
+64|I-save ang natanggap na video
+65|Magpadala ng dokumento
+66|Buksan ang natanggap na dokumento
+67|Tingnan ang lahat ng larawan at file sa chat
+68|Mag-record ng voice message
+69|Magpadala ng voice message
+70|Pakinggan ang voice message
+71|Kanselahin ang pag-record
+72|Mag-record nang hindi pinipindot
+73|I-pause ang pag-record
+74|Pakinggan bago ipadala
+75|Baguhin ang bilis ng pag-play
+76|Tumawag gamit ang voice call
+77|Sagutin ang voice call
+78|Tapusin ang tawag
+79|Tumawag gamit ang video call
+80|Sagutin ang video call
+81|Magpalit ng camera sa video call
+82|I-off ang iyong mikropono
+83|Gamitin ang speaker
+84|Tawagan ang ilang tao nang sabay
+85|Ibahagi ang screen sa video call
+86|Gumawa ng grupo
+87|Magdagdag ng tao sa grupo
+88|Gumawa ng link ng imbitasyon sa grupo
+89|Sumali sa grupo gamit ang link
+90|Palitan ang pangalan ng grupo
+91|Palitan ang larawan ng grupo
+92|Tingnan kung sino ang nasa grupo
+93|Gawing admin ng grupo ang isang tao
+94|I-mute ang grupo
+95|I-mention ang isang tao sa grupo
+96|I-pin ang mensahe sa grupo
+97|Umalis sa grupo
+98|Tingnan ang iyong profile
+99|Palitan ang profile photo
+100|Palitan ang pangalan sa profile
+101|Palitan ang Tungkol sa
+102|Mag-post ng text status
+103|Ibahagi ang larawan bilang status
+104|Ibahagi ang video bilang status
+105|Tingnan ang status ng kaibigan
+106|Piliin kung sino ang makakakita ng status mo
+107|I-delete ang iyong status
+108|Magpadala ng emoji
+109|Mag-react sa mensahe gamit ang emoji
+110|Magpadala ng sticker
+111|Maghanap ng sticker
+112|Magdagdag ng bagong sticker
+113|Ayusin ang mga paboritong sticker
+114|Magpadala ng GIF
+115|Gumawa ng sariling sticker
+116|Ano ang WhatsApp Channels
+117|Maghanap ng channel
+118|I-follow ang channel
+119|Basahin ang mga update ng channel
+120|I-set ang notification ng channel
+121|I-unfollow ang channel
+122|Ano ang Communities
+123|Gumawa ng community
+124|Sumali sa community
+125|Umalis sa community
+126|Palakihin ang teksto
+127|Ayusin ang laki ng font
+128|Gamitin ang light theme
+129|Gamitin ang dark theme
+130|Palitan ang tema ng chat
+131|Palitan ang wallpaper ng chat
+132|I-set ang notification ng mensahe
+133|Palitan ang tunog ng notification
+134|I-mute ang chat
+135|I-pin ang mahalagang chat
+136|I-archive ang chat
+137|Ipakita ulit ang naka-archive na chat
+138|Suriin ang mga setting ng privacy
+139|Sino ang makakakita ng last seen mo
+140|Sino ang makakakita kapag online ka
+141|Sino ang makakakita ng profile photo mo
+142|I-on o i-off ang read receipts
+143|I-on ang two-step verification
+144|I-lock ang WhatsApp gamit ang fingerprint
+145|I-lock ang isang chat
+146|Suriin ang mga naka-link na device
+147|I-log out ang hindi kilalang device
+148|I-silence ang mga hindi kilalang tumatawag
+149|Gawin ang privacy checkup
+150|Para saan ang chat backup
+151|Ikonekta ang Google account
+152|I-back up ang iyong mga chat
+153|I-set ang awtomatikong backup
+154|I-on ang end-to-end encrypted backup
+155|Tingnan ang huling backup
+156|I-restore ang mga chat sa bagong phone
+157|Ilipat ang mga chat mula sa lumang phone
+158|Palitan ang numero ng telepono
+159|Ayusin ang problema sa backup at restore
+160|Ipadala ang kasalukuyang lokasyon
+161|Ibahagi ang live location
+162|Itigil ang pagbabahagi ng live location
+163|Magpadala ng contact sa kaibigan
+164|I-save ang natanggap na contact
+165|Panatilihing pribado ang lokasyon
+166|Mga mensahe mula sa hindi mo kilala
+167|Kilalanin ang pekeng mensahe ng “kapamilya”
+168|Kilalanin ang mapanganib na link
+169|Iwasan ang scam sa investment
+170|Iwasan ang scam na humihingi ng pera
+171|Huwag kailanman ibigay ang 6-digit code
+172|I-report ang spam
+173|Kung sa tingin mo ay nanakaw ang account mo
+174|Ayaw bumukas ng WhatsApp
+175|Hindi maipadala ang mensahe
+176|Hindi maipadala ang larawan
+177|Hindi kumokonekta ang tawag
+178|Hindi dumarating ang notification
+179|Magbakante ng storage
+180|Gamitin ang WhatsApp Help Center
+181|Sa home screen, i-tap ang “Play Store”.
+182|I-tap ang search bar sa itaas.
+183|Tiyaking “WhatsApp LLC” ang developer.
+184|Sa page ng WhatsApp Messenger, i-tap ang “I-install”.
+185|Maghintay habang nagda-download at nag-i-install.
+186|Kapag tapos na, magiging “Buksan” ang button.
+187|Hanapin ang berdeng icon ng WhatsApp sa home screen.
+188|I-tap ito nang isang beses para buksan ang WhatsApp.
+189|Sa unang pagbukas ng WhatsApp, may lalabas na listahan ng mga wika.
+190|I-tap ang iyong wika.
+191|Sa welcome screen, i-tap ang “Sumang-ayon at magpatuloy”.
+192|I-tap ang pangalan ng bansa para piliin ang iyong bansa.
+193|I-type ang numero ng iyong telepono.
+194|Magpapadala ang WhatsApp ng 6-digit code sa text message.
+195|I-type ang 6 na numero sa mga kahon ng code.
+196|I-tap ang kahon ng pangalan.
+197|I-type ang pangalang kilala ng mga kaibigan mo.
+198|Sa screen ng Profile info, i-tap ang bilog na larawan ng camera.
+199|I-tap ang larawang gusto mo.
+200|Buksan ang “Play Store” mula sa home screen.
+201|Hanapin ang “WhatsApp” at buksan ang WhatsApp Messenger.
+202|Ipinapakita ng “Mga Chat” ang lahat ng usapan mo.
+203|Ipinapakita ng “Mga Update” ang status ng mga kaibigan at mga channel.
+204|Pinagsasama ng “Mga Community” ang magkakaugnay na grupo.
+205|Ipinapakita ng “Mga Tawag” ang mga huling tawag mo.
+206|I-tap ang berdeng button ng bagong chat.
+207|I-type ang pangalan.
+208|I-type ang numero ng telepono.
+209|I-tap ang country code para piliin ang bansa ng kaibigan.
+210|I-type ang numero nang walang 0 sa unahan.
+211|Sa screen ng Mga Chat, i-tap ang berdeng button ng bagong chat.
+212|I-type ang unang pangalan.
+213|I-tap ang magnifying glass sa itaas.
+214|Mag-type ng pangalan. Lalabas ang mga katugmang contact.
+215|I-tap ang larawan ng QR code para mag-scan.
+216|Itutok ang camera sa QR code ng kaibigan mo.
+217|Sa screen ng Mga Chat, i-tap ang tatlong tuldok sa kanang itaas.
+218|I-tap ang maliit na QR icon sa tabi ng pangalan mo.
+219|Ipakita ang code na ito sa kaibigan para maidagdag ka niya.
+220|Sa may ibaba, i-tap ang “Mag-imbita ng kaibigan”.
+221|I-tap kung paano mo ipapadala ang imbitasyon, halimbawa “Mga Mensahe”.
+222|I-tap ang pangalan sa itaas.
+223|I-tap ang tatlong tuldok sa kanang itaas.
+224|Palitan ang pangalan.
+225|I-tap ang pangalan ng contact sa itaas.
+226|Mag-scroll pababa hanggang dulo ng contact info.
+227|I-tap ulit ang “I-block” para kumpirmahin.
+228|I-tap ang “Mga naka-block na contact” sa may ibaba.
+229|I-tap ang taong gusto mong i-unblock.
+230|I-tap ang taong gusto mong padalhan ng mensahe.
+231|Bubukas ang chat. Mag-type sa message box sa ibaba.
+232|I-tap ang message box sa ibaba.
+233|I-type ang iyong mensahe.
+234|I-tap ang berdeng arrow ng pagpapadala.
+235|I-tap ang message box para lumabas ang keyboard.
+236|I-tap ang mikropono sa keyboard at magsalita nang dahan-dahan.
+237|Tiyaking tama ang mga salita.
+238|Ipinapakita ng berdeng numero kung ilan ang bagong mensahe sa chat.
+239|I-tap ang chat para basahin ang mga bagong mensahe.
+240|Pindutin nang matagal ang mensaheng gusto mong sagutin.
+241|I-tap ang reply arrow sa itaas.
+242|I-type ang sagot mo.
+243|Pindutin nang matagal ang mensaheng gusto mong kopyahin.
+244|I-tap ang copy icon sa itaas.
+245|Pindutin nang matagal ang message box.
+246|Pindutin nang matagal ang mensaheng gusto mong ibahagi.
+247|I-tap ang forward arrow sa itaas.
+248|I-tap ang taong padadalhan mo.
+249|I-tap ang berdeng send button.
+250|Pindutin nang matagal ang mensaheng ipinadala mo.
+251|I-tap ang tatlong tuldok sa itaas.
+252|Palitan ang mga salita sa message box.
+253|I-tap ang berdeng tsek para i-save.
+254|Pindutin nang matagal ang ipinadala mong mensahe.
+255|I-tap ang icon ng basurahan sa itaas.
+256|Isang abong tsek: naipadala ang mensahe.
+257|Dalawang abong tsek: nakarating na sa phone nila.
+258|Dalawang asul na tsek: nabasa na nila.
+259|Mag-type ng salita. Lilipat ang WhatsApp sa mga mensaheng may salitang iyon.
+260|I-tap ang “I-paste” para ilagay ang kinopyang link.
+261|Pindutin nang matagal ang mahalagang mensahe.
+262|I-tap ang star sa itaas.
+263|Nasa three-dot menu › “Naka-star” ang mga mensaheng may star.
+264|Piliin kung gaano katagal mananatili ang mga mensahe, halimbawa “24 na oras”.
+265|I-tap ang paper clip sa message box.
+266|I-tap ang larawang gusto mong ipadala.
+267|Tiyaking lumabas ang larawan sa chat.
+268|Pindutin nang matagal ang unang larawan.
+269|I-tap ang iba pang larawang gusto mo. May numero ang bawat isa.
+270|I-tap ang berdeng arrow sa ibaba.
+271|I-tap ang “HD” sa itaas.
+272|I-tap ang camera icon sa message box.
+273|Kumuha ng larawan gamit ang bilog na puting button.
+274|I-tap ang larawan sa chat.
+275|Pupunuin ng larawan ang screen. Ibuka ang dalawang daliri para mag-zoom in.
+276|I-tap ang natanggap mong larawan.
+277|I-tap ang isang video. Nasa sulok ang haba ng video.
+278|I-tap ang isang video.
+279|I-tap ang natanggap mong video.
+280|I-tap ang file na gusto mong ipadala.
+281|I-tap ang dokumento sa chat.
+282|Bubukas ito sa app na kayang ipakita ito.
+283|Nasa magkakahiwalay na tab ang mga larawan, link at dokumento.
+284|Pindutin nang matagal ang berdeng mikropono.
+285|Magsalita habang pinipindot. Makikita mo ang pulang tuldok at ang oras.
+286|Pindutin ang mikropono at magsalita.
+287|Iangat ang daliri. Maipapadala ang voice message.
+288|I-tap ang play button ng voice message.
+289|Habang nagre-record, patuloy na pindutin at i-slide ang daliri pakaliwa.
+290|Iangat ang daliri. Mabubura ang recording at hindi maipapadala.
+291|I-slide pataas ang daliri papunta sa kandado.
+292|Puwede mo nang bitawan at magpatuloy sa pagsasalita. I-tap ang send kapag tapos na.
+293|Habang hands-free ang pag-record, i-tap ang pause button.
+294|I-tap ulit para magpatuloy sa pag-record.
+295|I-tap ang play para marinig ang mensahe bago ipadala.
+296|Simulang i-play ang voice message.
+297|I-tap ang “1×” para mas mabilis (1.5× o 2×).
+298|I-tap ang phone icon sa itaas.
+299|Hintaying sumagot ang kaibigan mo.
+300|Kapag nag-ring ang WhatsApp, i-tap ang berdeng button na “Tanggapin”.
+301|Konektado na kayo. Magsimulang mag-usap.
+302|I-tap ang pulang button para tapusin ang tawag.
+303|I-tap ang video camera icon sa itaas.
+304|Hawakan ang phone para makita ang mukha mo sa screen, at maghintay.
+305|I-tap ang berdeng button na “Tanggapin”.
+306|Pupunuin ng kaibigan mo ang screen. Nasa maliit na kahon ka.
+307|Habang nasa video call, i-tap ang “I-flip ang camera”.
+308|Habang nasa tawag, i-tap ang “I-mute”. Hindi ka maririnig ng kaibigan mo.
+309|I-tap ulit para makapagsalita muli.
+310|Habang nasa voice call, i-tap ang “Speaker” para marinig nang hindi hawak ang phone.
+311|I-tap ang phone icon sa itaas ng group chat.
+312|I-tap ang mga taong gusto mong tawagan.
+313|I-tap ang call button.
+314|Habang nasa video call, i-tap ang “Ibahagi ang screen”.
+315|I-tap ang “Simulan ngayon” para kumpirmahin.
+316|I-tap ang bawat taong gusto mong isama sa grupo.
+317|I-tap ang berdeng arrow.
+318|Mag-type ng pangalan ng grupo.
+319|I-tap ang berdeng tsek para gawin ang grupo.
+320|I-tap ang pangalan ng grupo sa itaas.
+321|I-tap ang taong gusto mong idagdag.
+322|I-tap ang berdeng tsek.
+323|I-tap ang link ng imbitasyon sa grupo na ipinadala sa iyo.
+324|I-tap ang pangalan ng grupo.
+325|I-type ang bagong pangalan.
+326|I-tap ang larawan ng grupo.
+327|Mag-scroll pababa para makita ang lahat ng nasa grupo.
+328|I-tap ang taong gusto mong gawing admin.
+329|Piliin kung gaano katagal, halimbawa “Palagi”.
+330|I-type ang “@” sa message box.
+331|I-tap ang pangalan ng tao sa listahan.
+332|I-type ang natitira sa mensahe mo.
+333|Pindutin nang matagal ang mensaheng gusto mong i-pin.
+334|Mananatili ang mensahe sa itaas ng chat.
+335|I-tap ang “Umalis” para kumpirmahin.
+336|I-tap ang pangalan mo sa itaas.
+337|Dito mo makikita ang larawan, pangalan, Tungkol sa at numero ng telepono mo.
+338|I-tap ang larawan mo.
+339|I-type ang bagong pangalan mo.
+340|I-tap ang nakahandang linya, halimbawa “Available”.
+341|I-tap ang “Mga Update” sa ibaba.
+342|Mag-type ng maikling mensahe.
+343|I-tap ang camera button sa kanang ibaba.
+344|I-tap ang isang larawan mula sa gallery mo.
+345|I-tap ang isang video mula sa gallery mo.
+346|I-tap ang kaibigang may berdeng bilog sa paligid ng larawan.
+347|Magpe-play ang status nila. I-tap ang kanang bahagi para lumaktaw.
+348|Piliin kung sino ang makakakita ng status mo.
+349|I-tap ang smiley face sa message box.
+350|I-tap ang emoji para idagdag ito.
+351|Pindutin nang matagal ang mensahe.
+352|I-tap ang emoji sa hanay na lalabas.
+353|Lalabas ang reaction mo sa ilalim ng mensahe.
+354|I-tap ang sticker. Ipapadala ito agad.
+355|Mag-type ng salita gaya ng “salamat”.
+356|I-tap ang “+” para makita ang iba pang sticker pack.
+357|I-tap ang “Idagdag” sa tabi ng pack na gusto mo.
+358|Pindutin nang matagal ang sticker sa chat.
+359|I-tap ang GIF para piliin ito.
+360|I-tap ang kahong “+” para gumawa ng sticker.
+361|I-tap ang larawang gagawing sticker.
+362|Ang mga channel ay one-way na balita mula sa mga tao o organisasyon.
+363|Nasa tab na “Mga Update” ang mga channel.
+364|I-tap ang “I-explore” sa tabi ng Mga Channel.
+365|I-tap ang search icon at mag-type ng paksa.
+366|Sa tab na Mga Update, i-tap ang “I-explore”.
+367|I-tap ang “I-follow” sa tabi ng channel.
+368|I-tap ang pangalan ng channel.
+369|Basahin ang pinakabagong update sa ibaba.
+370|Buksan ang channel mula sa tab na Mga Update.
+371|I-tap ang “I-mute” o “I-unmute” para piliin ang mga alerto.
+372|I-tap ulit ang “I-unfollow” para kumpirmahin.
+373|Pinagsasama ng community ang ilang magkakaugnay na grupo, gaya ng barangay o samahan.
+374|Nasa tab na “Mga Community” ang mga community.
+375|I-tap ang “Mga Community” sa ibaba.
+376|Mag-type ng pangalan at maikling paglalarawan.
+377|I-tap ang berdeng arrow para magpatuloy.
+378|I-tap ang link ng imbitasyon sa community na ipinadala sa iyo.
+379|I-tap ang community.
+380|Piliin ang “Maliit”, “Katamtaman” o “Malaki”.
+381|I-tap ang kulay ng tema na gusto mo.
+382|I-tap ang larawang gusto mo.
+383|Tiyaking naka-on ang “Gumamit ng mga high priority notification” para lumabas ang mga mensahe.
+384|Pumili ng tunog.
+385|Piliin ang “Palagi”.
+386|Pindutin nang matagal ang isang chat sa listahan ng Mga Chat.
+387|I-tap ang pin sa itaas.
+388|Mananatili ang chat sa itaas ng listahan mo.
+389|Pindutin nang matagal ang chat na gusto mong itago.
+390|I-tap ang archive box sa itaas.
+391|I-tap ang “Naka-archive” sa itaas ng listahan ng Mga Chat.
+392|Pindutin nang matagal ang chat.
+393|I-tap ang unarchive box sa itaas.
+394|Suriin ang bawat linya. Ipinapakita nito kung sino ang makakakita ng impormasyon mo.
+395|Piliin kung sino ang makakakita kung kailan ka huling nasa WhatsApp.
+396|Sa ilalim ng “Sino ang makakakita kapag online ako”, piliin ang “Kapareho ng last seen”.
+397|Piliin ang “Aking mga contact”.
+398|I-tap ang switch ng “Read receipts”.
+399|Mag-type ng 6-digit PIN na maaalala mo.
+400|I-on ang “I-unlock gamit ang biometric”.
+401|Hawakan ang fingerprint sensor para kumpirmahin.
+402|I-on ang switch.
+403|Suriin ang listahan. Narito ang bawat computer o tablet na gumagamit ng WhatsApp mo.
+404|I-tap ang device na hindi mo kilala.
+405|I-on ang “I-silence ang mga hindi kilalang tumatawag”.
+406|Isa-isahin ang bawat paksa at piliin ang bagay sa iyo.
+407|Kinokopya ng backup ang mga chat mo sa iyong Google account.
+408|I-tap ang iyong Google account.
+409|Piliin ang “Araw-araw”.
+410|Gumawa ng password at itago ito nang ligtas.
+411|Tingnan ang “Huling backup” para malaman kung kailan huling na-save ang mga chat mo.
+412|Sa bagong phone, i-install ang WhatsApp at i-verify ang parehong numero.
+413|Kapag nakakita ang WhatsApp ng backup, i-tap ang “I-restore”.
+414|Sa lumang phone, buksan ang Settings.
+415|I-tap ang “Simulan”. Ipapakita ng bagong phone ang mga susunod na hakbang.
+416|I-type ang luma at bagong numero mo.
+417|Kung hindi gumagana ang backup o restore, suriin ang mga ito.
+418|Piliin kung gaano katagal, halimbawa “1 oras”.
+419|I-tap ang “Itigil ang pagbabahagi” sa ilalim ng live location mo.
+420|I-tap ang “Itigil” para kumpirmahin.
+421|I-tap ang contact na gusto mong ibahagi.
+422|I-tap ang natanggap na contact card.
+423|Ipinapakita ng lokasyon kung nasaan ka, kaya mag-ingat.
+424|May babala ang mensahe mula sa numerong wala sa mga contact mo.
+425|Huwag sumagot. I-tap ang “I-block” sa ibaba.
+426|Sumusulat ang mga scammer ng “Hi Ma, nawala ang phone ko, ito ang bago kong numero.”
+427|Bago magpadala ng pera, tawagan ang anak mo sa luma niyang numero.
+428|Mag-ingat sa mga link na nangangako ng premyo o nagsasabing may agarang problema.
+429|Huwag i-tap ang link. I-delete ang mensahe.
+430|May nangangako ng malaking kita nang walang panganib.
+431|Huwag magpadala ng pera. Umalis sa grupo at i-report ito.
+432|Humihingi ng pera nang madalian ang account ng kaibigan.
+433|Tawagan muna ang kaibigan mo. Baka nanakaw ang account niya.
+434|May humihingi ng 6-digit code na kakatanggap mo lang.
+435|Huwag itong ibigay kailanman. Hindi kailanman hihingin ng WhatsApp ang code na ito.
+436|Buksan ang chat sa hindi kilalang numero.
+437|I-tap ang “I-report” para kumpirmahin.
+438|Kung nakakatanggap ang mga kaibigan ng kakaibang mensahe mula sa iyo, kumilos agad.
+439|Kapag nakabalik ka na, i-on ang two-step verification.
+440|Kung ayaw bumukas ng WhatsApp, subukan ang mga hakbang na ito nang sunod-sunod.
+441|Sa Play Store, i-tap ang “I-update” kung nakikita mo ito.
+442|Kapag orasan ang nasa halip na tsek, naghihintay pa ang mensahe.
+443|Suriin ang koneksyon mo sa internet.
+444|Kung hindi maipadala ang larawan, suriin ang mga ito.
+445|Kung hindi kumokonekta ang tawag, suriin ang mga ito.
+446|Kung hindi dumarating ang notification, suriin ang mga ito.
+447|I-on ang “Gumamit ng mga high priority notification”.
+448|I-tap ang isang chat para tingnan at burahin ang malalaking file.
+449|I-type ang tanong mo para makahanap ng sagot.
+450|I-install lang ang opisyal na app. Huwag kailanman mag-install ng WhatsApp mula sa link na ipinadala ng iba.
+451|Gumamit ng Wi-Fi kung kaya. Nakakatipid ito sa mobile data.
+452|Puwede mo itong palitan mamaya sa Settings › Wika ng app.
+453|Numero ito para sa pagsasanay. Sa phone mo, gamitin ang sarili mong numero.
+454|Kadalasan, kusang napupunan ang code.
+455|Hindi kailangan ang larawan. Puwede mo itong idagdag mamaya.
+456|Kung “Buksan” lang ang nakikita mo, nasa pinakabagong bersyon ka na.
+457|May code ang bawat bansa, halimbawa +63 para sa Pilipinas.
+458|May markang “Madalas na na-forward” ang mga mensaheng maraming beses nang na-forward. Mag-ingat — baka tsismis ang mga ito.
+459|Puwede mong i-edit ang mensahe sa maikling oras pagkatapos ipadala.
+460|Gumagana lang ang “I-delete para sa lahat” sa loob ng ilang oras pagkatapos ipadala.
+461|Kung naka-off ang read receipts ng isang tao, mananatiling abo ang tsek.
+462|Huwag kailanman buksan ang link mula sa hindi mo kilala.
+463|Mawawala ang mga bagong mensahe pagkalipas ng oras na iyon. Mananatili ang mga luma.
+464|Mas malakas sa mobile data ang mga HD na larawan. Mas mabuti ang Wi-Fi.
+465|Maraming phone ang kusang nagse-save ng natanggap na larawan.
+466|Huwag buksan ang file mula sa hindi mo kilala.
+467|Panatilihin ang daliri sa button habang nagsasalita.
+468|Ilapit ang phone sa tainga para marinig nang mahina.
+469|I-tap ang basurahan para burahin ito kung gusto mong subukan ulit.
+470|Gumagamit ng internet ang mga tawag sa WhatsApp (Wi-Fi o mobile data).
+471|Sa ilang phone, ini-swipe pataas ang button.
+472|Nakikita na ngayon ng kaibigan mo ang nakikita mo — ang hardin, ang mga apo…
+473|Isara muna ang mga pribadong app. Nakikita ng kaibigan mo ang lahat sa screen mo.
+474|Baka mga admin lang ng grupo ang puwedeng magdagdag ng tao.
+475|Sumali lang sa mga grupo ng mga taong kilala mo.
+476|Puwedeng magdagdag at mag-alis ng tao ang mga admin at magpalit ng setting ng grupo.
+477|Makakatanggap ng notification ang taong na-mention mo.
+478|Nawawala ang status pagkalipas ng 24 na oras.
+479|Nasa ilalim ng star sa sticker panel ang mga paboritong sticker.
+480|Para mas malaki pa ang teksto, palakihin din ito sa Settings › Display ng phone.
+481|Mas magaan sa mata ang madilim na screen sa gabi.
+482|Dapat payagan din ng Settings › Notifications ng phone ang WhatsApp.
+483|Nakatago lang ang mga naka-archive na chat, hindi na-delete.
+484|Kapag in-off mo, hindi mo rin makikita ang asul na tsek ng iba.
+485|Huwag kailanman sabihin ang PIN na ito kaninuman.
+486|Kumonekta muna sa Wi-Fi. Puwedeng malaki ang backup.
+487|Gamitin ang parehong Google account na may backup.
+488|Hindi na maibabalik ang na-delete na larawan. I-save muna ang mga gusto mo.
+489|Opisyal na tulong: faq.whatsapp.com
+490|Baka hindi na maibalik ang na-delete na mensahe at mga chat na iniwan mo. Suriin muna bago mag-tap.
+491|Binabago nito ang seguridad ng account mo. Huwag kailanman ibigay kaninuman ang 6-digit code o PIN mo.
+492|Puwedeng may pribadong mensahe ang chat backup. Ingatan ang Google account at backup password mo, at huwag kailanman mag-delete ng backup kung hindi ka sigurado.
+493|Ipinapakita ng lokasyon kung nasaan ka. Ibahagi lang ito sa mga pinagkakatiwalaan mo, at itigil kapag hindi na kailangan.
+494|Telepono
+495|Mga Mensahe
+496|Camera
+497|Gallery
+498|Play Store
+499|Settings
+500|I-tap
+501|I-install
+502|Tungkol sa app na ito
+503|Simple. Maaasahan. Pribado.
+504|Ini-install…
+505|Kanselahin
+506|I-uninstall
+507|Buksan
+508|Magtanong sa Meta AI o Maghanap
+509|Lahat
+510|Hindi pa nababasa
+511|Mga Paborito
+512|Mga Grupo
+513|Kumain ka na ba ng hapunan?
+514|Pamilya
+515|Larawan
+516|Kita tayo bukas
+517|Samahan ng paglalakad
+518|Sa Sabado ang pulong
+519|Mga Chat
+520|Mga Update
+521|Mga Community
+522|Mga Tawag
+523|Piliin ang iyong wika
+524|Susunod
+525|Maligayang pagdating sa WhatsApp
+526|Basahin ang aming Patakaran sa Privacy. I-tap ang “Sumang-ayon at magpatuloy” para tanggapin ang Mga Tuntunin ng Serbisyo.
+527|Sumang-ayon at magpatuloy
+528|Ilagay ang numero ng telepono mo
+529|Kailangang i-verify ng WhatsApp ang numero ng telepono mo.
+530|Numero ng telepono
+531|Para sa iyo lang ang code mo
+532|Hanapin ang text message mula sa WhatsApp.
+533|Huwag kailanman sabihin ang code na ito kaninuman — kahit sa nagsasabing taga-WhatsApp sila.
+534|Vine-verify ang numero mo
+535|Naghihintay na awtomatikong makita ang 6-digit code na ipinadala sa SMS.
+536|Hindi natanggap ang code?
+537|Profile info
+538|Ilagay ang pangalan mo at, kung gusto mo, isang profile photo.
+539|I-type ang pangalan mo rito
+540|Profile photo
+541|Mga kamakailan
+542|Tapos na
+543|I-update
+544|Status
+545|Aking status
+546|I-tap para magdagdag ng status update
+547|Mga kamakailang update
+548|Ngayong araw, 09:12
+549|Mga Channel
+550|I-explore
+551|Bagong community
+552|Magdagdag ng paborito
+553|Kamakailan
+554|Pumili ng contact
+555|Bagong grupo
+556|Bagong contact
+557|Mga contact sa WhatsApp
+558|Unang pangalan
+559|I-save
+560|5 contact
+561|Apelyido
+562|Hi! Gumagamit ako ng WhatsApp.
+563|QR code
+564|Aking code
+565|I-scan ang code
+566|Contact sa WhatsApp
+567|Ibahagi ang code
+568|I-scan ang WhatsApp QR code
+569|Idagdag sa mga contact
+570|Mga broadcast list
+571|Mga naka-link na device
+572|Naka-star
+573|Account
+574|Mga security notification, palitan ang numero
+575|Privacy
+576|I-block ang mga contact, mga nawawalang mensahe
+577|Tema, wallpaper, history ng chat
+578|Mga Notification
+579|Tunog ng mensahe, grupo at tawag
+580|Storage at data
+581|Paggamit ng network, awtomatikong pag-download
+582|Wika ng app
+583|Filipino (wika ng device)
+584|Tulong
+585|Help center, makipag-ugnayan sa amin
+586|Mag-imbita ng kaibigan
+587|Email
+588|Higit pa
+589|online
+590|Ngayong araw
+591|Oo, kumain na ako. Ikaw?
+592|Mensahe
+593|Audio
+594|Video
+595|Magbayad
+596|Maghanap
+597|Visibility ng media
+598|Mga nawawalang mensahe
+599|Naka-off
+600|I-block
+601|Ibahagi
+602|I-edit
+603|Tingnan sa address book
+604|I-verify ang security code
+605|I-edit ang contact
+606|Hindi ka na matatawagan o mapapadalhan ng mensahe ng mga naka-block na contact.
+607|I-block si John?
+608|Last seen at online
+609|Lahat
+610|Read receipts
+611|Mga naka-block na contact
+612|I-unblock si John
+613|Magsalita sa halip na mag-type
+614|May maliit na mikroponong key ang keyboard mo.
+615|Magsalita nang dahan-dahan. Lalabas bilang teksto ang mga salita mo.
+616|Bahagyang iba ang hitsura ng keyboard sa bawat phone.
+617|I-paste
+618|Clipboard
+619|I-forward sa…
+620|Info
+621|Kopyahin
+622|I-pin
+623|I-delete ang mensahe?
+624|I-delete para sa akin
+625|I-delete para sa lahat
+626|Nasa bahay ka ba?
+627|Tingnan ang contact
+628|Idagdag sa listahan
+629|Media, link at doc
+630|I-mute ang mga notification
+631|Anong oras sa doktor?
+632|24 na oras
+633|7 araw
+634|90 araw
+635|Lokasyon
+636|Contact
+637|Dokumento
+638|Poll
+639|Event
+640|Magdagdag ng caption…
+641|napili
+642|Kalidad ng media
+643|Karaniwang kalidad
+644|HD na kalidad
+645|Kunan ang larawan
+646|Hawakan nang matatag ang phone.
+647|I-tap nang isang beses ang malaking bilog na button.
+648|Tingnan mo ang hardin!
+649|Ngayong araw, 18:20
+650|Tingnan mo ang mga apo!
+651|Lahat ng media
+652|Ipakita sa chat
+653|Tingnan sa gallery
+654|Ipadala kay Maria
+655|Appointment sa doktor.pdf
+656|240 kB · PDF
+657|Plano ng hardin.pdf
+658|1 MB · PDF
+659|Ipadala ang “Appointment sa doktor.pdf” kay Maria?
+660|Ipadala
+661|Pagbukas ng dokumento
+662|Bumubukas ang PDF file sa PDF viewer.
+663|Kung itanong ng phone kung aling app ang gagamitin, pumili ng kilala mo.
+664|‹ I-slide para kanselahin
+665|End-to-end encrypted
+666|Nagri-ring
+667|Speaker
+668|I-mute
+669|Magdagdag ng tao
+670|WhatsApp voice call
+671|Tanggihan
+672|Tanggapin
+673|I-flip ang camera
+674|Naka-off ang camera
+675|Ibahagi ang screen
+676|WhatsApp video call
+677|Ikaw
+678|Maria, John, Tom, Ikaw
+679|Sabay tayong mananghalian sa Sabado?
+680|Sige, kita tayo!
+681|Simulan ang group call
+682|Magkakaroon ng access ang WhatsApp sa lahat ng nasa screen mo.
+683|Simulan ang pag-record o pag-cast gamit ang WhatsApp?
+684|Simulan ngayon
+685|Magdagdag ng miyembro
+686|Gumawa
+687|Grupo
+688|miyembro
+689|Idagdag
+690|Mga pahintulot ng grupo
+691|Mag-imbita sa pamamagitan ng link
+692|Ipadala ang link sa WhatsApp
+693|Kopyahin ang link
+694|Ibahagi ang link
+695|I-reset ang link
+696|Sumali sa aming grupo: chat.whatsapp.com/example
+697|Grupo · 12 miyembro
+698|Sumali sa grupo
+699|Ilagay ang pangalan ng grupo
+700|OK
+701|Icon ng grupo
+702|Emoji at sticker
+703|Admin ng grupo
+704|I-message si Maria
+705|Tingnan si Maria
+706|Gawing admin ng grupo
+707|Alisin si Maria
+708|Info ng grupo
+709|Media ng grupo
+710|Hindi makikita ng ibang miyembro na in-mute mo ang chat na ito.
+711|8 oras
+712|1 linggo
+713|Palagi
+714|I-mention
+715|I-report
+716|Umalis sa grupo
+717|I-clear ang chat
+718|I-export ang chat
+719|Mga admin lang ng grupo ang maaabisuhan na umalis ka.
+720|Umalis sa “Samahan ng paglalakad”?
+721|Umalis
+722|Profile
+723|Pangalan
+724|Tungkol sa
+725|Hi!
+726|Avatar
+727|Alisin ang larawan
+728|Piliin ang Tungkol sa
+729|Available
+730|Abala
+731|Nasa trabaho
+732|Magandang umaga sa inyong lahat!
+733|Status (Mga Contact)
+734|Ang sarap maglakad sa parke ngayon
+735|Sumagot…
+736|Gumawa ng channel
+737|Privacy ng status
+738|Aking mga contact
+739|Aking mga contact maliban sa…
+740|Ibahagi lang kay…
+741|2 view
+742|Made-delete din ito para sa lahat ng nakatanggap nito.
+743|I-delete ang status update na ito?
+744|I-delete
+745|Emoji
+746|Mga Sticker
+747|Maghanap ng sticker
+748|Mga sticker ng pasasalamat
+749|Sticker pack
+750|Mga sticker pack
+751|Masasayang mukha
+752|Libre
+753|Mga Bulaklak
+754|Idagdag sa mga paborito
+755|Tingnan ang sticker pack
+756|Ano ang mga channel?
+757|Nagbabasa ka ng update; hindi ka makakasagot sa channel.
+758|Hindi ipinapakita sa channel ang numero mo.
+759|I-follow lang ang mga channel na pinagkakatiwalaan mo.
+760|Mga Tip sa Hardin
+761|12K follower
+762|I-follow
+763|Maghanap ng channel
+764|Balitang Pangkalusugan
+765|48K follower
+766|Diligan ang mga kamatis nang maaga sa umaga.
+767|Ngayong linggo: pagtatanim ng bombilya ng tulip.
+768|Info ng channel
+769|I-unfollow
+770|I-unfollow ang Mga Tip sa Hardin?
+771|Ano ang mga community?
+772|Puwedeng magpadala ng anunsyo sa lahat ang mga admin.
+773|Puwedeng sumali ang mga miyembro sa mga grupong gusto nila.
+774|Nakikita ng mga miyembro ng grupo ang numero mo.
+775|Sumali sa aming community: chat.whatsapp.com/example
+776|Samahan ng mga lolo at lola
+777|Community · 3 grupo
+778|Sumali sa community
+779|Barangay
+780|Mga Anunsyo
+781|Pangkalahatan
+782|Grupo ng hardin
+783|Info ng community
+784|Umalis sa community
+785|Display
+786|Tema
+787|Default ng system
+788|Default na tema ng chat
+789|Mga setting ng chat
+790|Enter para magpadala
+791|Laki ng font
+792|Katamtaman
+793|Maliit
+794|Malaki
+795|Chat backup
+796|Ilipat ang mga chat
+797|Pumili ng tema
+798|Maliwanag
+799|Madilim
+800|Wallpaper
+801|Mga tunog ng usapan
+802|Tunog ng notification
+803|Default
+804|Vibrate
+805|Gumamit ng mga high priority notification
+806|Tunog ng notification ng grupo
+807|Chime
+808|Kampana
+809|Tahimik
+810|Naka-archive
+811|App lock
+812|Wala
+813|Privacy checkup
+814|Sino ang makakakita ng last seen ko
+815|Walang sinuman
+816|Sino ang makakakita kapag online ako
+817|Kapareho ng last seen
+818|Mga security notification
+819|Mga passkey
+820|Email address
+821|Two-step verification
+822|Palitan ang numero
+823|Humingi ng info ng account
+824|I-delete ang account
+825|Para sa dagdag na seguridad, i-on ang two-step verification. Hihingi ito ng PIN kapag muli mong inirehistro ang numero mo sa WhatsApp.
+826|I-on
+827|Maglagay ng 6-digit PIN na hihingin kapag inirehistro mo ang numero mo sa WhatsApp.
+828|I-unlock gamit ang biometric
+829|Awtomatikong i-lock
+830|Kaagad
+831|Kumpirmahin ang fingerprint
+832|Ilagay ang nakarehistrong daliri sa sensor.
+833|Mula ngayon, bubukas lang ang WhatsApp gamit ang fingerprint mo.
+834|Chat lock
+835|I-lock ang chat na ito gamit ang fingerprint
+836|Status ng device
+837|Aktibo ngayon
+838|Huling aktibo 3 araw na ang nakalipas
+839|Mag-link ng device
+840|Hindi kilalang browser
+841|Huling aktibo 1 oras na ang nakalipas
+842|Mag-log out
+843|Isara
+844|I-silence ang mga hindi kilalang tumatawag
+845|Isasa-silence ang mga tawag mula sa hindi kilalang numero
+846|Piliin kung sino ang puwedeng makipag-ugnayan sa iyo
+847|Kontrolin ang personal mong impormasyon
+848|Dagdagan ang privacy ng mga chat mo
+849|Dagdagan ang proteksyon ng account mo
+850|Para saan ang chat backup
+851|Puwedeng i-save sa Google Drive ang mga mensahe at larawan mo.
+852|Kung mawala ang phone mo, maibabalik mo ang mga ito.
+853|Kailangan mo ang parehong numero ng telepono at Google account.
+854|I-back up
+855|Huling backup: Kahapon 02:00
+856|Google Account
+857|Dalas
+858|Araw-araw
+859|End-to-end encrypted backup
+860|Isama ang mga video
+861|Pumili ng account
+862|Magdagdag ng account
+863|Lingguhan
+864|Buwanan
+865|Magdagdag ng isa pang proteksyon sa backup mo.
+866|Gumawa ng password
+867|Kung makalimutan mo ang password na ito, hindi mo mare-restore ang backup mo.
+868|I-restore ang backup
+869|May nakitang backup. Huling backup: Kahapon 02:00.
+870|Laktawan
+871|I-restore
+872|Ilapit ang dalawang phone sa isa't isa at ikonekta sa Wi-Fi.
+873|Simulan
+874|Ililipat ng pagpapalit ng numero ang info ng account, mga grupo at setting mo.
+875|Mga problema sa backup at restore
+876|Parehong numero ng telepono at parehong Google account?
+877|Sapat ang espasyo sa Google Drive at sa phone?
+878|Nakakonekta sa Wi-Fi?
+879|Para sa encrypted backup: tama ba ang password?
+880|Ipadala ang lokasyon
+881|Ibahagi ang live location
+882|Ipadala ang kasalukuyang lokasyon mo
+883|Tumpak hanggang 10 metro
+884|15 minuto
+885|1 oras
+886|Live location
+887|Itigil ang pagbabahagi
+888|Itigil ang pagbabahagi ng live location?
+889|Itigil
+890|Ibahagi ang mga contact
+891|Idagdag ang contact
+892|Panatilihing pribado ang lokasyon mo
+893|Ibahagi lang ito sa pamilya at malalapit na kaibigan.
+894|Titigil ang live location pagkatapos ng oras na pinili mo — itigil ito nang mas maaga kung gusto mo.
+895|Huwag itong ibahagi kailanman sa mga estranghero o sa malalaking grupo.
+896|Hindi contact
+897|Wala sa mga contact mo ang nagpadalang ito.
+898|Hello mahal, may magandang alok ako para sa iyo
+899|Hindi contact · Walang kaparehong grupo
+900|Hi Ma, nasira ang phone ko. Ito ang bago kong numero.
+901|Puwede mo ba akong padalhan ng pera? Madalian lang.
+902|Kilalanin ang pekeng mensahe ng pamilya
+903|Bagong numero, at madaliang paghingi ng pera.
+904|Sinasabi nilang hindi sila makakausap sa telepono.
+905|Laging tawagan ang lumang numero at pakinggan muna ang boses nila.
+906|Naghihintay ang parcel mo! Bayaran ang fee dito: parcel-check.example
+907|Kilalanin ang mapanganib na link
+908|Kakaibang spelling, premyo, o “magbayad ng maliit na fee”.
+909|Kung humihingi ang link ng password o numero ng card, huminto.
+910|Magtanong sa kumpanya gamit ang opisyal nilang app.
+911|Investment Club
+912|300 miyembro
+913|Sumali ngayon at dodoblehin ang pera mo sa isang linggo!
+914|Iwasan ang scam sa investment
+915|Walang totoong investment ang nangangako ng mabilis at malaking kita.
+916|Gumagamit ang mga scammer ng grupong puno ng pekeng “masasayang miyembro”.
+917|Magtanong sa bangko o pamilya bago mag-invest.
+918|Na-stranded ako sa ibang bansa, puwede mo ba akong padalhan ng 500 ngayon?
+919|Iwasan ang scam na humihingi ng pera
+920|Tawagan ang tao sa telepono.
+921|Huwag magpadala ng pera dahil lang sa isang mensahe.
+922|Kung peke ang account, i-report ito.
+923|WhatsApp Support?
+924|Isasara ang account mo. Ipadala sa akin ang 6-digit code mula sa SMS mo.
+925|Ang code mo ang susi ng account mo
+926|Kahit sinong may code ay puwedeng kumuha ng WhatsApp mo.
+927|Huwag sumagot. I-block at i-report.
+928|I-on ang two-step verification para sa dagdag na seguridad.
+929|Nanalo ka ng premyo!
+930|Ifo-forward sa WhatsApp ang mga pinakahuling mensahe.
+931|I-report ang contact na ito sa WhatsApp?
+932|Kung nanakaw ang account mo
+933|Buksan ang WhatsApp at irehistro ulit ang numero mo gamit ang SMS code.
+934|I-on ang two-step verification.
+935|Sabihan ang pamilya at mga kaibigan na huwag magpadala ng pera.
+936|Makipag-ugnayan sa WhatsApp support mula sa Settings › Tulong.
+937|Ayaw bumukas ng WhatsApp
+938|I-restart ang phone mo.
+939|I-update ang WhatsApp sa Play Store.
+940|Tiyaking may bakanteng storage ang phone mo.
+941|Darating ka ba?
+942|Hindi maipadala ang mensahe
+943|I-on ang Wi-Fi o mobile data.
+944|I-off ang airplane mode.
+945|I-restart ang phone kung naghihintay pa rin.
+946|Hindi maipadala ang larawan
+947|Gumagana ba ang internet mo?
+948|Tama ba ang petsa at oras sa phone mo?
+949|May pahintulot ba ang WhatsApp na gamitin ang mga larawan? (Settings ng phone › Mga App › WhatsApp › Mga Pahintulot)
+950|Hindi kumokonekta ang tawag
+951|Kailangan ng dalawang phone ang magandang koneksyon sa internet.
+952|Subukan ang Wi-Fi sa halip na mobile data.
+953|Tiyaking puwedeng gamitin ng WhatsApp ang mikropono at camera.
+954|Hindi dumarating ang notification
+955|Naka-mute ba ang chat?
+956|Naka-on ba ang mga notification ng WhatsApp sa Settings ng phone mo?
+957|Pinipigilan ba ng battery saver ang WhatsApp?
+958|Pamahalaan ang storage
+959|2.1 GB ang nagamit
+960|Paggamit ng network
+961|Gumamit ng mas kaunting data sa tawag
+962|Help center
+963|Makipag-ugnayan sa amin
+964|Mga Tuntunin at Patakaran sa Privacy
+965|Info ng app
+966|Maghanap sa Help Center
+967|Paano mag-back up ng mga chat
+968|Help Center
+969|Paano manatiling ligtas
+970|Kahapon
+971|Ngayong araw, 18:40
+972|Kahapon, 10:02

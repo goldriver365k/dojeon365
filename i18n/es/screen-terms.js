@@ -1,0 +1,44 @@
+// Palabras de las imágenes de práctica, coreano → español (nombres de One UI en español, por revisar).
+// Una imagen solo se muestra en la página en español si todas sus palabras están traducidas aquí.
+export const TERMS = {
+  여기: 'Aquí', 길게: 'Mantén',
+  '11월 25일 수요일': 'miércoles, 25 de noviembre',
+  '음량(상)': 'Subir volumen', '음량(하)': 'Bajar volumen', '측면 버튼': 'Botón lateral', '충전 연결잭': 'Puerto de carga',
+  '휴대폰과 함께 받은 충전기와 선(USB Type-C)을 쓰세요.': 'Usa el cargador y el cable USB Type-C que venían con el móvil.',
+  '배터리 그림에 번개 표시가 보이면 충전 중이에요.': 'Si ves un rayo en el icono de la batería, está cargando.',
+  '충전기는 콘센트에서도 빼 두면 전기를 아껴요.': 'Desenchufa también el cargador para ahorrar electricidad.',
+  '전원 끄기': 'Apagar', '다시 시작': 'Reiniciar', 긴급전화: 'Llamada de emergencia', 의료정보: 'Información médica',
+  '한 번 더 누르면 꺼져요': 'Toca otra vez para apagar', '1분쯤 걸려요. 켜지면 잠금을 풀어요.': 'Tarda un minuto. Cuando se encienda, desbloquéalo.',
+  갤러리: 'Galería', 'Play 스토어': 'Play Store', 설정: 'Ajustes', 전화: 'Teléfono', 메시지: 'Mensajes', 브라우저: 'Internet', 카메라: 'Cámara',
+  검색: 'Buscar', 사진: 'Fotos', 앨범: 'Álbumes', 스토리: 'Historias', 메뉴: 'Menú', 선택: 'Seleccionar', '앱 정보': 'Info. de la app',
+  '설치 삭제': 'Desinstalar', 캘린더: 'Calendario', 시계: 'Reloj', 연락처: 'Contactos', '내 파일': 'Mis archivos', 노트: 'Samsung Notes',
+  계산기: 'Calculadora', 날씨: 'El Tiempo', '음성 녹음': 'Grabadora de voz', 즐겨찾기: 'Favoritos', 편집: 'Editar', 공유: 'Compartir', 삭제: 'Eliminar',
+  YouTube: 'YouTube',
+  '소리 및 진동': 'Sonidos y vibración', 알림: 'Notificaciones', 디스플레이: 'Pantalla', 배터리: 'Batería', '배경화면 및 스타일': 'Fondo y estilo',
+  테마: 'Temas', '홈 화면': 'Pantalla de inicio', '라이트/다크': 'Claro/Oscuro', 밝기: 'Brillo', '밝기 최적화': 'Brillo adaptable', '더 밝게': 'Brillo extra',
+  '부드러운 모션 및 화면 전환': 'Fluidez de movimientos', '편안하게 화면 보기': 'Protección ocular', '화면 모드': 'Modo de pantalla', 연결: 'Conexiones',
+  '기기 간 연결': 'Dispositivos conectados', '모드 및 루틴': 'Modos y rutinas', '모두 닫기': 'Cerrar todo',
+  '글자 크기와 스타일': 'Tamaño y estilo de fuente', '화면 크게/작게': 'Zoom de pantalla', '화면 해상도': 'Resolución de pantalla', '카메라 영역': 'Zona de la cámara',
+  '화면 자동 꺼짐 시간': 'Tiempo de espera de pantalla', '글자 스타일': 'Estilo de fuente', 기본: 'Predeterminado', '글자 굵게': 'Fuente en negrita', '글자 크기': 'Tamaño de fuente',
+  가: 'Aa', '너무 크면 막대를 왼쪽으로 조금 미세요.': 'Si es demasiado grande, arrastra la barra un poco a la izquierda.',
+  '쉬운 사용 모드': 'Modo fácil', '글씨도 함께 키우려면 ‘글씨 크게 보기’ 수업을 보세요.': 'Para agrandar también la letra, mira la lección ‘Poner la letra más grande’.',
+  'Edge 패널': 'Paneles Edge', '내비게이션 바': 'Barra de navegación', '오동작 방지 필터': 'Protección contra toques accidentales',
+  '원래대로 하려면 같은 스위치를 다시 눌러 끄세요.': 'Para volver atrás, toca el mismo interruptor para desactivarlo.',
+  소리: 'Sonido', 블루투스: 'Bluetooth', '화면 회전': 'Rotación automática', 화면: 'Pantalla', '비행기 탑승 모드': 'Modo Avión', 손전등: 'Linterna',
+  '방해 금지': 'No molestar', '모바일 데이터': 'Datos móviles', 위치: 'Ubicación', '스마트 뷰': 'Smart View', '절전 모드': 'Ahorro de energía', '화면 녹화': 'Grabar pantalla',
+  '15초': '15 segundos', '30초': '30 segundos', '1분': '1 minuto', '2분': '2 minutos', '5분': '5 minutos', '10분': '10 minutos',
+  벨소리: 'Tono de llamada', '알림 소리': 'Sonido de notificación', '시스템 소리': 'Sonido del sistema', 음량: 'Volumen', '전화 진동': 'Vibración de llamada',
+  '알림 진동': 'Vibración de notificación', '진동 세기': 'Intensidad de vibración', 미디어: 'Multimedia', 시스템: 'Sistema', 진동: 'Vibrar', 무음: 'Silencio',
+  '전화벨이 울릴 때 진동도 울림': 'Vibrar al sonar',
+};
+// Lo que no está arriba se toma del vocabulario inglés traducido al español (from-en.js).
+import { TERMS as EN_TERMS } from '../en/screen-terms.js';
+import { ES_FROM_EN, SAME } from './from-en.js';
+const SAME_SET = new Set(SAME);
+export const tr = (s) => {
+  if (s in TERMS) return TERMS[s];
+  const en = EN_TERMS[s];
+  if (en === undefined) return s;
+  if (en in ES_FROM_EN) return ES_FROM_EN[en];
+  return SAME_SET.has(en) ? en : s; // sin traducción española → se queda en coreano y la imagen no se muestra
+};

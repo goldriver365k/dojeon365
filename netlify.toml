@@ -1,0 +1,45 @@
+# 편한자판 시니어 교육 — Netlify 설정
+# 저장소 폴더를 그대로 배포한다(정적 사이트). 배포 직전에 해외용 페이지만 다시 만들어
+# 관리자 편집 화면에서 저장한 i18n/<언어>/edits.json이 바로 반영되게 한다(의존성 설치 없음).
+[build]
+  publish = "."
+  command = "npm run build:global"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
+# 카카오톡 교육 원본 목록(관리자용): 검색에 나오지 않게
+[[headers]]
+  for = "/data/kakaotalk/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
+# WhatsApp 교육 원본 목록(관리자용): 검색에 나오지 않게
+[[headers]]
+  for = "/data/whatsapp/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
