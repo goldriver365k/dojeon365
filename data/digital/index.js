@@ -7,10 +7,10 @@
  * - 세부 수업의 카드(cards)는 갤럭시 수업과 같은 형식이다(ch01-07.js, ch08-14.js, ch15-20.js). cards 가 없으면 ‘준비 중’으로 보인다.
  */
 
-import { CHAPTERS_0 } from './ch-apps.js?v=20261128.0725';
-import { CHAPTERS_1 } from './ch01-07.js?v=20261128.0725';
-import { CHAPTERS_2 } from './ch08-14.js?v=20261128.0725';
-import { CHAPTERS_3 } from './ch15-20.js?v=20261128.0725';
+import { CHAPTERS_0 } from './ch-apps.js?v=20261128.0746';
+import { CHAPTERS_1 } from './ch01-07.js?v=20261128.0746';
+import { CHAPTERS_2 } from './ch08-14.js?v=20261128.0746';
+import { CHAPTERS_3 } from './ch15-20.js?v=20261128.0746';
 
 export const COURSE = {
   id: 'digital',
