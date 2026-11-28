@@ -2,8 +2,8 @@
  * 시니어 재취업·창업교실 — 일자리 찾기·이력서·면접·일자리 사기 피하기, 작은 창업·온라인 판매·홍보·돈 관리
  * 공공 일자리·창업 지원은 공식 누리집으로 안내하고, 해마다 바뀌는 금액(최저임금 등)은 적지 않는다.
  */
-import { app as openApp } from '../galaxy/helpers.js?v=20261128.0221';
-import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261128.0221';
+import { app as openApp } from '../galaxy/helpers.js?v=20261128.0232';
+import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261128.0232';
 
 export const COURSE = {
   id: 'career',
