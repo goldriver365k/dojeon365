@@ -1,0 +1,972 @@
+1|Nhấn vào “{x}”.
+2|Trên màn hình Đoạn chat, nhấn vào đoạn chat với {x}.
+3|Màn hình WhatsApp. {x}
+4|Những hình này là hình vẽ màn hình WhatsApp. Tên và vị trí menu trong ứng dụng thật có thể hơi khác.
+5|bài học
+6|Cài đặt và đăng ký
+7|Bạn bè và danh bạ
+8|Đoạn chat và tin nhắn
+9|Ảnh, video và tệp
+10|Tin nhắn thoại
+11|Cuộc gọi thoại và video
+12|Nhóm chat
+13|Hồ sơ và trạng thái
+14|Biểu tượng cảm xúc và nhãn dán
+15|Kênh và cộng đồng
+16|Chữ, màn hình và thông báo
+17|Quyền riêng tư và bảo mật
+18|Sao lưu, khôi phục và điện thoại mới
+19|Chia sẻ vị trí và liên hệ
+20|Tin rác, lừa đảo và sự cố
+21|Tải WhatsApp
+22|Cài đặt WhatsApp
+23|Mở WhatsApp
+24|Chọn ngôn ngữ
+25|Nhập quốc gia và số điện thoại
+26|Xác minh số điện thoại
+27|Thêm tên hồ sơ
+28|Thêm ảnh hồ sơ
+29|Cập nhật WhatsApp
+30|Hiểu màn hình chính
+31|Thêm liên hệ bằng số điện thoại
+32|Thêm số nước ngoài
+33|Thêm liên hệ mới
+34|Tìm trong danh bạ
+35|Thêm liên hệ bằng mã QR
+36|Xem mã QR của bạn
+37|Mời bạn bè dùng WhatsApp
+38|Sửa tên liên hệ
+39|Chặn liên hệ
+40|Bỏ chặn liên hệ
+41|Bắt đầu đoạn chat mới
+42|Gửi tin nhắn chữ
+43|Nhập tin nhắn bằng giọng nói
+44|Đọc tin nhắn mới
+45|Trả lời tin nhắn
+46|Sao chép tin nhắn
+47|Dán tin nhắn
+48|Chuyển tiếp tin nhắn
+49|Sửa tin nhắn đã gửi
+50|Xóa tin nhắn đã gửi
+51|Hiểu các dấu tích
+52|Tìm trong đoạn chat
+53|Gửi đường link trang web
+54|Gắn sao tin nhắn quan trọng
+55|Bật tin nhắn tự hủy
+56|Gửi một ảnh
+57|Gửi nhiều ảnh
+58|Gửi ảnh chất lượng HD
+59|Chụp ảnh rồi gửi
+60|Xem ảnh nhận được
+61|Lưu ảnh nhận được
+62|Gửi video
+63|Gửi video chất lượng HD
+64|Lưu video nhận được
+65|Gửi tài liệu
+66|Mở tài liệu nhận được
+67|Xem mọi ảnh và tệp trong đoạn chat
+68|Ghi âm tin nhắn thoại
+69|Gửi tin nhắn thoại
+70|Nghe tin nhắn thoại
+71|Hủy ghi âm
+72|Ghi âm không cần giữ nút
+73|Tạm dừng ghi âm
+74|Nghe lại trước khi gửi
+75|Đổi tốc độ phát
+76|Gọi thoại
+77|Nghe cuộc gọi thoại
+78|Kết thúc cuộc gọi
+79|Gọi video
+80|Nghe cuộc gọi video
+81|Đổi camera khi gọi video
+82|Tắt micrô
+83|Dùng loa ngoài
+84|Gọi nhiều người cùng lúc
+85|Chia sẻ màn hình khi gọi video
+86|Tạo nhóm
+87|Thêm người vào nhóm
+88|Tạo đường link mời vào nhóm
+89|Vào nhóm bằng đường link
+90|Đổi tên nhóm
+91|Đổi ảnh nhóm
+92|Xem ai trong nhóm
+93|Chỉ định quản trị viên nhóm
+94|Tắt thông báo nhóm
+95|Nhắc đến ai đó trong nhóm
+96|Ghim tin nhắn trong nhóm
+97|Rời nhóm
+98|Xem hồ sơ của bạn
+99|Đổi ảnh hồ sơ
+100|Đổi tên hồ sơ
+101|Đổi phần Giới thiệu
+102|Đăng trạng thái chữ
+103|Chia sẻ ảnh làm trạng thái
+104|Chia sẻ video làm trạng thái
+105|Xem trạng thái của bạn bè
+106|Chọn người xem trạng thái
+107|Xóa trạng thái
+108|Gửi biểu tượng cảm xúc
+109|Bày tỏ cảm xúc với tin nhắn
+110|Gửi nhãn dán
+111|Tìm nhãn dán
+112|Thêm nhãn dán mới
+113|Quản lý nhãn dán yêu thích
+114|Gửi GIF
+115|Tự làm nhãn dán
+116|Kênh WhatsApp là gì
+117|Tìm kênh
+118|Theo dõi kênh
+119|Đọc cập nhật của kênh
+120|Cài thông báo kênh
+121|Bỏ theo dõi kênh
+122|Cộng đồng là gì
+123|Tạo cộng đồng
+124|Tham gia cộng đồng
+125|Rời cộng đồng
+126|Phóng to chữ
+127|Chỉnh cỡ chữ
+128|Dùng giao diện sáng
+129|Dùng giao diện tối
+130|Đổi chủ đề đoạn chat
+131|Đổi hình nền đoạn chat
+132|Cài thông báo tin nhắn
+133|Đổi âm báo
+134|Tắt thông báo đoạn chat
+135|Ghim đoạn chat quan trọng
+136|Lưu trữ đoạn chat
+137|Hiện lại đoạn chat đã lưu trữ
+138|Kiểm tra cài đặt quyền riêng tư
+139|Ai xem được lần truy cập cuối
+140|Ai xem được khi bạn trực tuyến
+141|Ai xem được ảnh hồ sơ
+142|Bật hoặc tắt thông báo đã xem
+143|Bật xác minh hai bước
+144|Khóa WhatsApp bằng vân tay
+145|Khóa một đoạn chat
+146|Kiểm tra thiết bị đã liên kết
+147|Đăng xuất thiết bị lạ
+148|Tắt tiếng người gọi không xác định
+149|Kiểm tra quyền riêng tư
+150|Sao lưu đoạn chat để làm gì
+151|Kết nối tài khoản Google
+152|Sao lưu đoạn chat
+153|Cài sao lưu tự động
+154|Bật sao lưu mã hóa đầu cuối
+155|Xem bản sao lưu gần nhất
+156|Khôi phục đoạn chat trên điện thoại mới
+157|Chuyển đoạn chat từ điện thoại cũ
+158|Đổi số điện thoại
+159|Sửa lỗi sao lưu và khôi phục
+160|Gửi vị trí hiện tại
+161|Chia sẻ vị trí trực tiếp
+162|Ngừng chia sẻ vị trí trực tiếp
+163|Gửi liên hệ cho bạn bè
+164|Lưu liên hệ nhận được
+165|Giữ kín vị trí của bạn
+166|Tin nhắn từ người lạ
+167|Nhận ra tin nhắn giả “người nhà”
+168|Nhận ra đường link nguy hiểm
+169|Tránh lừa đảo đầu tư
+170|Tránh lừa đảo xin tiền
+171|Không bao giờ chia sẻ mã 6 số
+172|Báo cáo tin rác
+173|Nếu bạn nghĩ tài khoản bị đánh cắp
+174|WhatsApp không mở được
+175|Tin nhắn không gửi được
+176|Ảnh không gửi được
+177|Cuộc gọi không kết nối
+178|Không nhận được thông báo
+179|Giải phóng bộ nhớ
+180|Dùng Trung tâm trợ giúp WhatsApp
+181|Trên màn hình chính, nhấn vào “Play Store”.
+182|Nhấn vào thanh tìm kiếm ở trên cùng.
+183|Kiểm tra nhà phát triển là “WhatsApp LLC”.
+184|Trên trang WhatsApp Messenger, nhấn vào “Cài đặt”.
+185|Chờ tải về và cài đặt.
+186|Khi xong, nút sẽ đổi thành “Mở”.
+187|Tìm biểu tượng WhatsApp màu xanh trên màn hình chính.
+188|Nhấn một lần để mở WhatsApp.
+189|Lần đầu mở WhatsApp, một danh sách ngôn ngữ sẽ hiện ra.
+190|Nhấn vào ngôn ngữ của bạn.
+191|Trên màn hình chào mừng, nhấn vào “Đồng ý và tiếp tục”.
+192|Nhấn vào tên quốc gia để chọn quốc gia của bạn.
+193|Nhập số điện thoại của bạn.
+194|WhatsApp gửi mã 6 số qua tin nhắn SMS.
+195|Nhập 6 số vào các ô mã.
+196|Nhấn vào ô tên.
+197|Nhập tên mà bạn bè vẫn gọi bạn.
+198|Trên màn hình Thông tin hồ sơ, nhấn vào hình máy ảnh tròn.
+199|Nhấn vào ảnh bạn muốn.
+200|Mở “Play Store” từ màn hình chính.
+201|Tìm “WhatsApp” và mở WhatsApp Messenger.
+202|“Đoạn chat” hiện mọi cuộc trò chuyện của bạn.
+203|“Cập nhật” hiện trạng thái của bạn bè và các kênh.
+204|“Cộng đồng” gom các nhóm liên quan lại với nhau.
+205|“Cuộc gọi” hiện các cuộc gọi gần đây.
+206|Nhấn vào nút đoạn chat mới màu xanh.
+207|Nhập tên.
+208|Nhập số điện thoại.
+209|Nhấn vào mã quốc gia để chọn quốc gia của bạn bè.
+210|Nhập số mà không có số 0 ở đầu.
+211|Trên màn hình Đoạn chat, nhấn vào nút đoạn chat mới màu xanh.
+212|Nhập tên.
+213|Nhấn vào kính lúp ở trên cùng.
+214|Nhập một tên. Các liên hệ trùng khớp sẽ hiện ra.
+215|Nhấn vào hình mã QR để quét.
+216|Hướng camera vào mã QR của bạn bè.
+217|Trên màn hình Đoạn chat, nhấn vào ba chấm ở góc trên bên phải.
+218|Nhấn vào biểu tượng QR nhỏ cạnh tên bạn.
+219|Cho bạn bè xem mã này để họ thêm bạn.
+220|Gần cuối, nhấn vào “Mời bạn bè”.
+221|Nhấn vào cách bạn muốn gửi lời mời, ví dụ “Tin nhắn”.
+222|Nhấn vào tên ở trên cùng.
+223|Nhấn vào ba chấm ở góc trên bên phải.
+224|Đổi tên.
+225|Nhấn vào tên liên hệ ở trên cùng.
+226|Cuộn xuống cuối phần thông tin liên hệ.
+227|Nhấn “Chặn” lần nữa để xác nhận.
+228|Nhấn vào “Liên hệ đã chặn” gần cuối.
+229|Nhấn vào người bạn muốn bỏ chặn.
+230|Nhấn vào người bạn muốn nhắn tin.
+231|Đoạn chat mở ra. Nhập vào ô tin nhắn ở dưới cùng.
+232|Nhấn vào ô tin nhắn ở dưới cùng.
+233|Nhập tin nhắn của bạn.
+234|Nhấn vào mũi tên gửi màu xanh.
+235|Nhấn vào ô tin nhắn để mở bàn phím.
+236|Nhấn vào micrô trên bàn phím và nói chậm.
+237|Kiểm tra chữ đã đúng chưa.
+238|Số màu xanh cho biết đoạn chat có bao nhiêu tin nhắn mới.
+239|Nhấn vào đoạn chat để đọc tin nhắn mới.
+240|Chạm và giữ tin nhắn bạn muốn trả lời.
+241|Nhấn vào mũi tên trả lời ở trên cùng.
+242|Nhập câu trả lời.
+243|Chạm và giữ tin nhắn bạn muốn sao chép.
+244|Nhấn vào biểu tượng sao chép ở trên cùng.
+245|Chạm và giữ ô tin nhắn.
+246|Chạm và giữ tin nhắn bạn muốn chia sẻ.
+247|Nhấn vào mũi tên chuyển tiếp ở trên cùng.
+248|Nhấn vào người bạn muốn gửi đến.
+249|Nhấn vào nút gửi màu xanh.
+250|Chạm và giữ một tin nhắn bạn đã gửi.
+251|Nhấn vào ba chấm ở trên cùng.
+252|Sửa chữ trong ô tin nhắn.
+253|Nhấn vào dấu tích xanh để lưu.
+254|Chạm và giữ tin nhắn bạn đã gửi.
+255|Nhấn vào biểu tượng thùng rác ở trên cùng.
+256|Một dấu tích xám: tin nhắn đã gửi.
+257|Hai dấu tích xám: đã đến điện thoại của họ.
+258|Hai dấu tích xanh: họ đã đọc.
+259|Nhập một từ. WhatsApp nhảy tới tin nhắn có từ đó.
+260|Nhấn vào “Dán” để chèn đường link đã sao chép.
+261|Chạm và giữ tin nhắn quan trọng.
+262|Nhấn vào ngôi sao ở trên cùng.
+263|Tin nhắn gắn sao nằm trong menu ba chấm › “Tin nhắn có gắn sao”.
+264|Chọn thời gian tin nhắn tồn tại, ví dụ “24 giờ”.
+265|Nhấn vào kẹp giấy trong ô tin nhắn.
+266|Nhấn vào ảnh bạn muốn gửi.
+267|Kiểm tra ảnh đã hiện trong đoạn chat.
+268|Chạm và giữ ảnh đầu tiên.
+269|Nhấn vào các ảnh khác bạn muốn. Mỗi ảnh có một số.
+270|Nhấn vào mũi tên xanh ở dưới cùng.
+271|Nhấn vào “HD” ở trên cùng.
+272|Nhấn vào biểu tượng máy ảnh trong ô tin nhắn.
+273|Chụp ảnh bằng nút tròn màu trắng.
+274|Nhấn vào ảnh trong đoạn chat.
+275|Ảnh hiện toàn màn hình. Mở rộng hai ngón tay để phóng to.
+276|Nhấn vào ảnh bạn nhận được.
+277|Nhấn vào một video. Độ dài video hiện ở góc.
+278|Nhấn vào một video.
+279|Nhấn vào video bạn nhận được.
+280|Nhấn vào tệp bạn muốn gửi.
+281|Nhấn vào tài liệu trong đoạn chat.
+282|Tài liệu mở trong ứng dụng có thể hiển thị nó.
+283|Ảnh, đường link và tài liệu nằm ở các thẻ riêng.
+284|Chạm và giữ micrô màu xanh.
+285|Vừa giữ vừa nói. Bạn sẽ thấy chấm đỏ và thời gian.
+286|Giữ micrô và nói.
+287|Nhấc ngón tay lên. Tin nhắn thoại được gửi.
+288|Nhấn vào nút phát của tin nhắn thoại.
+289|Khi đang ghi âm, tiếp tục giữ và trượt ngón tay sang trái.
+290|Nhấc ngón tay lên. Bản ghi bị xóa và không gửi.
+291|Trượt ngón tay lên ổ khóa.
+292|Giờ bạn có thể buông tay và tiếp tục nói. Nhấn gửi khi xong.
+293|Khi ghi âm rảnh tay, nhấn vào nút tạm dừng.
+294|Nhấn lần nữa để tiếp tục ghi âm.
+295|Nhấn phát để nghe lại tin nhắn trước khi gửi.
+296|Bắt đầu phát tin nhắn thoại.
+297|Nhấn vào “1×” để phát nhanh hơn (1,5× hoặc 2×).
+298|Nhấn vào biểu tượng điện thoại ở trên cùng.
+299|Chờ bạn bè nghe máy.
+300|Khi WhatsApp đổ chuông, nhấn vào nút xanh “Chấp nhận”.
+301|Đã kết nối. Bắt đầu nói chuyện.
+302|Nhấn vào nút đỏ để kết thúc cuộc gọi.
+303|Nhấn vào biểu tượng máy quay ở trên cùng.
+304|Cầm điện thoại sao cho mặt bạn hiện trên màn hình và chờ.
+305|Nhấn vào nút xanh “Chấp nhận”.
+306|Bạn bè hiện toàn màn hình. Bạn hiện trong ô nhỏ.
+307|Khi gọi video, nhấn vào “Lật camera”.
+308|Khi đang gọi, nhấn vào “Tắt tiếng”. Bạn bè không nghe thấy bạn.
+309|Nhấn lần nữa để nói tiếp.
+310|Khi gọi thoại, nhấn vào “Loa ngoài” để nghe mà không cần cầm điện thoại.
+311|Nhấn vào biểu tượng điện thoại ở trên cùng nhóm chat.
+312|Nhấn vào những người bạn muốn gọi.
+313|Nhấn vào nút gọi.
+314|Khi gọi video, nhấn vào “Chia sẻ màn hình”.
+315|Nhấn vào “Bắt đầu ngay” để xác nhận.
+316|Nhấn vào từng người bạn muốn đưa vào nhóm.
+317|Nhấn vào mũi tên xanh.
+318|Nhập tên nhóm.
+319|Nhấn vào dấu tích xanh để tạo nhóm.
+320|Nhấn vào tên nhóm ở trên cùng.
+321|Nhấn vào người bạn muốn thêm.
+322|Nhấn vào dấu tích xanh.
+323|Nhấn vào đường link mời vào nhóm mà người khác gửi cho bạn.
+324|Nhấn vào tên nhóm.
+325|Nhập tên mới.
+326|Nhấn vào ảnh nhóm.
+327|Cuộn xuống để xem mọi người trong nhóm.
+328|Nhấn vào người bạn muốn chỉ định làm quản trị viên.
+329|Chọn thời gian, ví dụ “Luôn luôn”.
+330|Nhập “@” vào ô tin nhắn.
+331|Nhấn vào tên người đó trong danh sách.
+332|Nhập phần còn lại của tin nhắn.
+333|Chạm và giữ tin nhắn bạn muốn ghim.
+334|Tin nhắn nằm ở trên cùng đoạn chat.
+335|Nhấn vào “Thoát” để xác nhận.
+336|Nhấn vào tên bạn ở trên cùng.
+337|Ở đây bạn thấy ảnh, tên, phần Giới thiệu và số điện thoại.
+338|Nhấn vào ảnh của bạn.
+339|Nhập tên mới.
+340|Nhấn vào một câu có sẵn, ví dụ “Sẵn sàng”.
+341|Nhấn vào “Cập nhật” ở dưới cùng.
+342|Nhập một tin nhắn ngắn.
+343|Nhấn vào nút máy ảnh ở góc dưới bên phải.
+344|Nhấn vào một ảnh trong thư viện.
+345|Nhấn vào một video trong thư viện.
+346|Nhấn vào người bạn có vòng xanh quanh ảnh.
+347|Trạng thái của họ được phát. Nhấn bên phải để chuyển tiếp.
+348|Chọn người có thể xem trạng thái.
+349|Nhấn vào mặt cười trong ô tin nhắn.
+350|Nhấn vào một biểu tượng cảm xúc để thêm.
+351|Chạm và giữ tin nhắn.
+352|Nhấn vào một biểu tượng trong hàng hiện ra.
+353|Cảm xúc của bạn hiện dưới tin nhắn.
+354|Nhấn vào một nhãn dán. Nhãn dán được gửi ngay.
+355|Nhập một từ như “cảm ơn”.
+356|Nhấn vào “+” để xem thêm gói nhãn dán.
+357|Nhấn vào “Thêm” cạnh gói bạn thích.
+358|Chạm và giữ một nhãn dán trong đoạn chat.
+359|Nhấn vào một GIF để chọn.
+360|Nhấn vào ô “+” để tạo nhãn dán.
+361|Nhấn vào một ảnh để biến thành nhãn dán.
+362|Kênh là tin tức một chiều từ cá nhân hoặc tổ chức.
+363|Các kênh nằm trong thẻ “Cập nhật”.
+364|Nhấn vào “Khám phá” cạnh Kênh.
+365|Nhấn vào biểu tượng tìm kiếm và nhập chủ đề.
+366|Trong thẻ Cập nhật, nhấn vào “Khám phá”.
+367|Nhấn vào “Theo dõi” cạnh kênh.
+368|Nhấn vào tên kênh.
+369|Đọc các cập nhật mới nhất ở dưới cùng.
+370|Mở kênh từ thẻ Cập nhật.
+371|Nhấn vào “Tắt tiếng” hoặc “Bật tiếng” để chọn thông báo.
+372|Nhấn “Bỏ theo dõi” lần nữa để xác nhận.
+373|Cộng đồng gom nhiều nhóm liên quan lại, như khu phố hoặc câu lạc bộ.
+374|Các cộng đồng nằm trong thẻ “Cộng đồng”.
+375|Nhấn vào “Cộng đồng” ở dưới cùng.
+376|Nhập tên và mô tả ngắn.
+377|Nhấn vào mũi tên xanh để tiếp tục.
+378|Nhấn vào đường link mời vào cộng đồng mà người khác gửi cho bạn.
+379|Nhấn vào cộng đồng.
+380|Chọn “Nhỏ”, “Vừa” hoặc “Lớn”.
+381|Nhấn vào chủ đề màu bạn thích.
+382|Nhấn vào hình bạn thích.
+383|Kiểm tra “Dùng thông báo có mức ưu tiên cao” đang bật để tin nhắn hiện lên.
+384|Chọn một âm thanh.
+385|Chọn “Luôn luôn”.
+386|Chạm và giữ một đoạn chat trong danh sách Đoạn chat.
+387|Nhấn vào ghim ở trên cùng.
+388|Đoạn chat nằm ở đầu danh sách.
+389|Chạm và giữ đoạn chat bạn muốn ẩn.
+390|Nhấn vào hộp lưu trữ ở trên cùng.
+391|Nhấn vào “Đã lưu trữ” ở đầu danh sách Đoạn chat.
+392|Chạm và giữ đoạn chat.
+393|Nhấn vào hộp bỏ lưu trữ ở trên cùng.
+394|Kiểm tra từng dòng. Dòng đó cho biết ai xem được thông tin của bạn.
+395|Chọn ai xem được lần cuối bạn dùng WhatsApp.
+396|Ở “Ai có thể biết khi tôi trực tuyến”, chọn “Giống như lần truy cập cuối”.
+397|Chọn “Danh bạ của tôi”.
+398|Nhấn vào công tắc “Thông báo đã xem”.
+399|Nhập mã PIN 6 số mà bạn sẽ nhớ.
+400|Bật “Mở khóa bằng sinh trắc học”.
+401|Chạm vào cảm biến vân tay để xác nhận.
+402|Bật công tắc.
+403|Kiểm tra danh sách. Mọi máy tính hoặc máy tính bảng dùng WhatsApp của bạn đều ở đây.
+404|Nhấn vào thiết bị bạn không nhận ra.
+405|Bật “Tắt tiếng người gọi không xác định”.
+406|Xem qua từng mục và chọn cái hợp với bạn.
+407|Sao lưu sẽ chép đoạn chat vào tài khoản Google của bạn.
+408|Nhấn vào tài khoản Google của bạn.
+409|Chọn “Hằng ngày”.
+410|Tạo mật khẩu và giữ cẩn thận.
+411|Xem “Bản sao lưu gần nhất” để biết đoạn chat được lưu lúc nào.
+412|Trên điện thoại mới, cài WhatsApp và xác minh cùng số điện thoại.
+413|Khi WhatsApp tìm thấy bản sao lưu, nhấn vào “Khôi phục”.
+414|Trên điện thoại cũ, mở Cài đặt.
+415|Nhấn vào “Bắt đầu”. Điện thoại mới sẽ hiện các bước tiếp theo.
+416|Nhập số cũ và số mới.
+417|Nếu sao lưu hoặc khôi phục không được, hãy kiểm tra những điều này.
+418|Chọn thời gian, ví dụ “1 giờ”.
+419|Nhấn vào “Dừng chia sẻ” dưới vị trí trực tiếp của bạn.
+420|Nhấn vào “Dừng” để xác nhận.
+421|Nhấn vào liên hệ bạn muốn chia sẻ.
+422|Nhấn vào thẻ liên hệ bạn nhận được.
+423|Vị trí cho biết bạn đang ở đâu, nên hãy cẩn thận.
+424|Tin nhắn từ số không có trong danh bạ sẽ hiện cảnh báo.
+425|Đừng trả lời. Nhấn vào “Chặn” ở dưới cùng.
+426|Kẻ lừa đảo viết “Mẹ ơi, con mất điện thoại rồi, đây là số mới của con.”
+427|Trước khi gửi tiền, hãy gọi cho con theo số cũ.
+428|Cẩn thận với đường link hứa phần thưởng hoặc báo vấn đề gấp.
+429|Đừng nhấn vào đường link. Xóa tin nhắn.
+430|Ai đó hứa lợi nhuận lớn mà không rủi ro.
+431|Đừng gửi tiền. Rời nhóm và báo cáo.
+432|Tài khoản của bạn bè nhờ bạn gửi tiền gấp.
+433|Hãy gọi cho bạn bè trước. Tài khoản của họ có thể đã bị đánh cắp.
+434|Ai đó xin mã 6 số bạn vừa nhận được.
+435|Không bao giờ chia sẻ. WhatsApp sẽ không bao giờ hỏi mã này.
+436|Mở đoạn chat với số lạ.
+437|Nhấn vào “Báo cáo” để xác nhận.
+438|Nếu bạn bè nhận được tin nhắn lạ từ bạn, hãy hành động nhanh.
+439|Sau khi vào lại được, hãy bật xác minh hai bước.
+440|Nếu WhatsApp không mở được, hãy thử lần lượt các bước sau.
+441|Trong Play Store, nhấn vào “Cập nhật” nếu thấy.
+442|Đồng hồ thay cho dấu tích nghĩa là tin nhắn vẫn đang chờ.
+443|Kiểm tra kết nối internet.
+444|Nếu ảnh không gửi được, hãy kiểm tra những điều này.
+445|Nếu cuộc gọi không kết nối, hãy kiểm tra những điều này.
+446|Nếu không nhận được thông báo, hãy kiểm tra những điều này.
+447|Bật “Dùng thông báo có mức ưu tiên cao”.
+448|Nhấn vào một đoạn chat để xem và xóa tệp lớn.
+449|Nhập câu hỏi để tìm câu trả lời.
+450|Chỉ cài ứng dụng chính thức. Không bao giờ cài WhatsApp từ đường link người khác gửi.
+451|Dùng Wi-Fi nếu có thể. Như vậy tiết kiệm dữ liệu di động.
+452|Bạn có thể đổi sau trong Cài đặt › Ngôn ngữ ứng dụng.
+453|Đây là số để thực hành. Trên điện thoại, hãy dùng số của chính bạn.
+454|Thường thì mã tự điền vào.
+455|Ảnh không bắt buộc. Bạn có thể thêm sau.
+456|Nếu chỉ thấy “Mở”, bạn đã có phiên bản mới nhất.
+457|Mỗi quốc gia có một mã, ví dụ +84 cho Việt Nam.
+458|Tin nhắn được chuyển tiếp nhiều lần có nhãn “Đã chuyển tiếp nhiều lần”. Hãy cẩn thận — đó có thể là tin đồn.
+459|Bạn có thể sửa tin nhắn trong một thời gian ngắn sau khi gửi.
+460|“Xóa với mọi người” chỉ dùng được trong một thời gian sau khi gửi.
+461|Nếu ai đó tắt thông báo đã xem, dấu tích vẫn màu xám.
+462|Không bao giờ mở đường link từ người lạ.
+463|Tin nhắn mới sẽ biến mất sau thời gian đó. Tin nhắn cũ vẫn còn.
+464|Ảnh HD tốn nhiều dữ liệu di động hơn. Tốt nhất là dùng Wi-Fi.
+465|Nhiều điện thoại tự động lưu ảnh nhận được.
+466|Đừng mở tệp từ người lạ.
+467|Giữ ngón tay trên nút khi nói.
+468|Áp điện thoại vào tai để nghe nhỏ.
+469|Nhấn vào thùng rác để xóa nếu muốn thử lại.
+470|Cuộc gọi WhatsApp dùng internet (Wi-Fi hoặc dữ liệu di động).
+471|Trên một số điện thoại, bạn vuốt nút lên trên.
+472|Giờ bạn bè thấy những gì bạn thấy — khu vườn, các cháu…
+473|Đóng các ứng dụng riêng tư trước. Bạn bè thấy mọi thứ trên màn hình của bạn.
+474|Có thể chỉ quản trị viên nhóm mới thêm được người.
+475|Chỉ tham gia nhóm của người bạn quen.
+476|Quản trị viên có thể thêm, xóa người và đổi cài đặt nhóm.
+477|Người được nhắc đến sẽ nhận thông báo.
+478|Trạng thái biến mất sau 24 giờ.
+479|Nhãn dán yêu thích nằm dưới ngôi sao trong bảng nhãn dán.
+480|Muốn chữ to hơn nữa, hãy phóng to cả trong Cài đặt › Màn hình của điện thoại.
+481|Màn hình tối dễ chịu cho mắt hơn vào ban đêm.
+482|Cài đặt › Thông báo của điện thoại cũng phải cho phép WhatsApp.
+483|Đoạn chat đã lưu trữ chỉ bị ẩn, không bị xóa.
+484|Nếu tắt, bạn cũng không thấy dấu tích xanh của người khác.
+485|Không bao giờ nói mã PIN này cho ai.
+486|Hãy kết nối Wi-Fi trước. Bản sao lưu có thể rất lớn.
+487|Dùng cùng tài khoản Google chứa bản sao lưu.
+488|Ảnh đã xóa không lấy lại được. Hãy lưu những ảnh bạn muốn trước.
+489|Trợ giúp chính thức: faq.whatsapp.com
+490|Tin nhắn đã xóa và đoạn chat đã rời có thể không lấy lại được. Hãy kiểm tra trước khi nhấn.
+491|Việc này thay đổi bảo mật tài khoản. Không bao giờ chia sẻ mã 6 số hoặc mã PIN với bất kỳ ai.
+492|Bản sao lưu có thể chứa tin nhắn riêng tư. Hãy giữ an toàn tài khoản Google và mật khẩu sao lưu, và đừng bao giờ xóa bản sao lưu nếu chưa chắc chắn.
+493|Vị trí cho biết bạn đang ở đâu. Chỉ chia sẻ với người bạn tin, và dừng chia sẻ khi không cần nữa.
+494|Điện thoại
+495|Tin nhắn
+496|Máy ảnh
+497|Thư viện
+498|Play Store
+499|Cài đặt
+500|Nhấn
+501|Cài đặt
+502|Thông tin về ứng dụng này
+503|Đơn giản. Đáng tin cậy. Riêng tư.
+504|Đang cài đặt…
+505|Hủy
+506|Gỡ cài đặt
+507|Mở
+508|Hỏi Meta AI hoặc tìm kiếm
+509|Tất cả
+510|Chưa đọc
+511|Yêu thích
+512|Nhóm
+513|Ăn tối chưa?
+514|Gia đình
+515|Ảnh
+516|Hẹn mai gặp
+517|Câu lạc bộ đi bộ
+518|Họp vào thứ Bảy
+519|Đoạn chat
+520|Cập nhật
+521|Cộng đồng
+522|Cuộc gọi
+523|Chọn ngôn ngữ
+524|Tiếp
+525|Chào mừng bạn đến với WhatsApp
+526|Hãy đọc Chính sách quyền riêng tư. Nhấn “Đồng ý và tiếp tục” để chấp nhận Điều khoản dịch vụ.
+527|Đồng ý và tiếp tục
+528|Nhập số điện thoại
+529|WhatsApp cần xác minh số điện thoại của bạn.
+530|Số điện thoại
+531|Mã này chỉ dành cho bạn
+532|Hãy xem tin nhắn SMS từ WhatsApp.
+533|Không bao giờ nói mã này cho ai — kể cả người tự nhận làm việc cho WhatsApp.
+534|Đang xác minh số của bạn
+535|Đang chờ tự động nhận mã 6 số gửi qua SMS.
+536|Không nhận được mã?
+537|Thông tin hồ sơ
+538|Vui lòng nhập tên và ảnh hồ sơ (không bắt buộc).
+539|Nhập tên của bạn ở đây
+540|Ảnh hồ sơ
+541|Gần đây
+542|Xong
+543|Cập nhật
+544|Trạng thái
+545|Trạng thái của tôi
+546|Nhấn để thêm cập nhật trạng thái
+547|Cập nhật gần đây
+548|Hôm nay, 09:12
+549|Kênh
+550|Khám phá
+551|Cộng đồng mới
+552|Thêm mục yêu thích
+553|Gần đây
+554|Chọn liên hệ
+555|Nhóm mới
+556|Liên hệ mới
+557|Liên hệ dùng WhatsApp
+558|Tên
+559|Lưu
+560|5 liên hệ
+561|Họ
+562|Xin chào! Tôi đang dùng WhatsApp.
+563|Mã QR
+564|Mã của tôi
+565|Quét mã
+566|Liên hệ WhatsApp
+567|Chia sẻ mã
+568|Quét mã QR WhatsApp
+569|Thêm vào danh bạ
+570|Danh sách gửi
+571|Thiết bị đã liên kết
+572|Tin nhắn có gắn sao
+573|Tài khoản
+574|Thông báo bảo mật, đổi số
+575|Quyền riêng tư
+576|Chặn liên hệ, tin nhắn tự hủy
+577|Chủ đề, hình nền, lịch sử chat
+578|Thông báo
+579|Âm báo tin nhắn, nhóm và cuộc gọi
+580|Dung lượng và dữ liệu
+581|Mức sử dụng mạng, tự động tải
+582|Ngôn ngữ ứng dụng
+583|Tiếng Việt (ngôn ngữ thiết bị)
+584|Trợ giúp
+585|Trung tâm trợ giúp, liên hệ chúng tôi
+586|Mời bạn bè
+587|Email
+588|Thêm
+589|đang hoạt động
+590|Hôm nay
+591|Ăn rồi. Còn bạn?
+592|Nhắn tin
+593|Gọi thoại
+594|Video
+595|Thanh toán
+596|Tìm kiếm
+597|Hiển thị file phương tiện
+598|Tin nhắn tự hủy
+599|Tắt
+600|Chặn
+601|Chia sẻ
+602|Sửa
+603|Xem trong danh bạ
+604|Xác minh mã bảo mật
+605|Sửa liên hệ
+606|Liên hệ bị chặn sẽ không thể gọi hay nhắn tin cho bạn nữa.
+607|Chặn John?
+608|Lần truy cập cuối và trực tuyến
+609|Mọi người
+610|Thông báo đã xem
+611|Liên hệ đã chặn
+612|Bỏ chặn John
+613|Nói thay vì gõ
+614|Bàn phím có một phím micrô nhỏ.
+615|Nói chậm. Lời bạn nói sẽ hiện thành chữ.
+616|Bàn phím trên mỗi điện thoại hơi khác nhau.
+617|Dán
+618|Bộ nhớ tạm
+619|Chuyển tiếp đến…
+620|Thông tin
+621|Sao chép
+622|Ghim
+623|Xóa tin nhắn?
+624|Xóa với tôi
+625|Xóa với mọi người
+626|Bạn có nhà không?
+627|Xem liên hệ
+628|Thêm vào danh sách
+629|File phương tiện, link và tài liệu
+630|Tắt thông báo
+631|Mấy giờ đi khám bác sĩ?
+632|24 giờ
+633|7 ngày
+634|90 ngày
+635|Vị trí
+636|Liên hệ
+637|Tài liệu
+638|Bình chọn
+639|Sự kiện
+640|Thêm chú thích…
+641|đã chọn
+642|Chất lượng file phương tiện
+643|Chất lượng tiêu chuẩn
+644|Chất lượng HD
+645|Chụp ảnh
+646|Cầm điện thoại thật vững.
+647|Nhấn một lần vào nút tròn lớn.
+648|Nhìn khu vườn này!
+649|Hôm nay, 18:20
+650|Nhìn các cháu này!
+651|Tất cả file phương tiện
+652|Hiện trong đoạn chat
+653|Xem trong thư viện
+654|Gửi cho Maria
+655|Lịch khám bác sĩ.pdf
+656|240 kB · PDF
+657|Kế hoạch khu vườn.pdf
+658|1 MB · PDF
+659|Gửi “Lịch khám bác sĩ.pdf” cho Maria?
+660|Gửi
+661|Mở tài liệu
+662|Tệp PDF mở trong trình xem PDF.
+663|Nếu điện thoại hỏi dùng ứng dụng nào, hãy chọn ứng dụng bạn quen.
+664|‹ Trượt để hủy
+665|Được mã hóa đầu cuối
+666|Đang đổ chuông
+667|Loa ngoài
+668|Tắt tiếng
+669|Thêm người
+670|Cuộc gọi thoại WhatsApp
+671|Từ chối
+672|Chấp nhận
+673|Lật camera
+674|Tắt camera
+675|Chia sẻ màn hình
+676|Cuộc gọi video WhatsApp
+677|Bạn
+678|Maria, John, Tom, Bạn
+679|Thứ Bảy ăn trưa cùng nhau nhé?
+680|Ừ, hẹn gặp!
+681|Bắt đầu cuộc gọi nhóm
+682|WhatsApp sẽ có quyền truy cập mọi thứ trên màn hình của bạn.
+683|Bắt đầu ghi hoặc truyền bằng WhatsApp?
+684|Bắt đầu ngay
+685|Thêm thành viên
+686|Tạo
+687|Nhóm
+688|thành viên
+689|Thêm
+690|Quyền của nhóm
+691|Mời qua đường link
+692|Gửi link qua WhatsApp
+693|Sao chép link
+694|Chia sẻ link
+695|Đặt lại link
+696|Vào nhóm của chúng tôi: chat.whatsapp.com/example
+697|Nhóm · 12 thành viên
+698|Tham gia nhóm
+699|Nhập tên nhóm
+700|OK
+701|Biểu tượng nhóm
+702|Biểu tượng cảm xúc và nhãn dán
+703|Quản trị viên nhóm
+704|Nhắn tin cho Maria
+705|Xem Maria
+706|Chỉ định làm quản trị viên nhóm
+707|Xóa Maria
+708|Thông tin nhóm
+709|File phương tiện của nhóm
+710|Các thành viên khác sẽ không thấy bạn đã tắt thông báo đoạn chat này.
+711|8 giờ
+712|1 tuần
+713|Luôn luôn
+714|Nhắc đến
+715|Báo cáo
+716|Thoát nhóm
+717|Xóa nội dung chat
+718|Xuất đoạn chat
+719|Chỉ quản trị viên nhóm được thông báo khi bạn rời nhóm.
+720|Thoát “Câu lạc bộ đi bộ”?
+721|Thoát
+722|Hồ sơ
+723|Tên
+724|Giới thiệu
+725|Xin chào!
+726|Hình đại diện
+727|Gỡ ảnh
+728|Chọn phần Giới thiệu
+729|Sẵn sàng
+730|Bận
+731|Đang làm việc
+732|Chào buổi sáng cả nhà!
+733|Trạng thái (Danh bạ)
+734|Hôm nay đi dạo công viên thật vui
+735|Trả lời…
+736|Tạo kênh
+737|Quyền riêng tư của trạng thái
+738|Danh bạ của tôi
+739|Danh bạ của tôi ngoại trừ…
+740|Chỉ chia sẻ với…
+741|2 lượt xem
+742|Trạng thái này cũng sẽ bị xóa với mọi người đã nhận được.
+743|Xóa cập nhật trạng thái này?
+744|Xóa
+745|Biểu tượng cảm xúc
+746|Nhãn dán
+747|Tìm nhãn dán
+748|Nhãn dán cảm ơn
+749|Gói nhãn dán
+750|Các gói nhãn dán
+751|Mặt cười vui vẻ
+752|Miễn phí
+753|Hoa
+754|Thêm vào mục yêu thích
+755|Xem gói nhãn dán
+756|Kênh là gì?
+757|Bạn đọc cập nhật; bạn không thể trả lời trong kênh.
+758|Kênh không thấy số điện thoại của bạn.
+759|Chỉ theo dõi kênh bạn tin tưởng.
+760|Mẹo làm vườn
+761|12 N người theo dõi
+762|Theo dõi
+763|Tìm kênh
+764|Tin sức khỏe
+765|48 N người theo dõi
+766|Tưới cà chua vào sáng sớm.
+767|Tuần này: trồng củ hoa tulip.
+768|Thông tin kênh
+769|Bỏ theo dõi
+770|Bỏ theo dõi Mẹo làm vườn?
+771|Cộng đồng là gì?
+772|Quản trị viên có thể gửi thông báo cho mọi người.
+773|Thành viên có thể vào các nhóm họ thích.
+774|Thành viên nhóm thấy được số của bạn.
+775|Vào cộng đồng của chúng tôi: chat.whatsapp.com/example
+776|Câu lạc bộ ông bà
+777|Cộng đồng · 3 nhóm
+778|Tham gia cộng đồng
+779|Khu phố
+780|Thông báo chung
+781|Chung
+782|Nhóm làm vườn
+783|Thông tin cộng đồng
+784|Thoát cộng đồng
+785|Màn hình
+786|Chủ đề
+787|Mặc định của hệ thống
+788|Chủ đề chat mặc định
+789|Cài đặt đoạn chat
+790|Nhấn Enter để gửi
+791|Cỡ chữ
+792|Vừa
+793|Nhỏ
+794|Lớn
+795|Sao lưu đoạn chat
+796|Chuyển đoạn chat
+797|Chọn chủ đề
+798|Sáng
+799|Tối
+800|Hình nền
+801|Âm thanh cuộc trò chuyện
+802|Âm báo
+803|Mặc định
+804|Rung
+805|Dùng thông báo có mức ưu tiên cao
+806|Âm báo nhóm
+807|Chuông nhẹ
+808|Chuông
+809|Im lặng
+810|Đã lưu trữ
+811|Khóa ứng dụng
+812|Không có
+813|Kiểm tra quyền riêng tư
+814|Ai có thể xem lần truy cập cuối của tôi
+815|Không ai
+816|Ai có thể biết khi tôi trực tuyến
+817|Giống như lần truy cập cuối
+818|Thông báo bảo mật
+819|Khóa truy cập
+820|Địa chỉ email
+821|Xác minh hai bước
+822|Đổi số
+823|Yêu cầu thông tin tài khoản
+824|Xóa tài khoản
+825|Để tăng bảo mật, hãy bật xác minh hai bước; bạn sẽ được hỏi mã PIN khi đăng ký lại số điện thoại với WhatsApp.
+826|Bật
+827|Nhập mã PIN 6 số sẽ được hỏi khi bạn đăng ký số điện thoại với WhatsApp.
+828|Mở khóa bằng sinh trắc học
+829|Tự động khóa
+830|Ngay lập tức
+831|Xác nhận vân tay
+832|Đặt ngón tay đã đăng ký lên cảm biến.
+833|Từ giờ WhatsApp chỉ mở bằng vân tay của bạn.
+834|Khóa đoạn chat
+835|Khóa đoạn chat này bằng vân tay
+836|Trạng thái thiết bị
+837|Đang hoạt động
+838|Hoạt động 3 ngày trước
+839|Liên kết thiết bị
+840|Trình duyệt không xác định
+841|Hoạt động 1 giờ trước
+842|Đăng xuất
+843|Đóng
+844|Tắt tiếng người gọi không xác định
+845|Cuộc gọi từ số lạ sẽ bị tắt tiếng
+846|Chọn ai có thể liên hệ với bạn
+847|Kiểm soát thông tin cá nhân
+848|Thêm quyền riêng tư cho đoạn chat
+849|Thêm bảo vệ cho tài khoản
+850|Sao lưu đoạn chat để làm gì
+851|Tin nhắn và ảnh có thể được lưu vào Google Drive.
+852|Nếu mất điện thoại, bạn có thể khôi phục lại.
+853|Bạn cần cùng số điện thoại và cùng tài khoản Google.
+854|Sao lưu
+855|Bản sao lưu gần nhất: Hôm qua 02:00
+856|Tài khoản Google
+857|Tần suất
+858|Hằng ngày
+859|Sao lưu mã hóa đầu cuối
+860|Bao gồm video
+861|Chọn tài khoản
+862|Thêm tài khoản
+863|Hằng tuần
+864|Hằng tháng
+865|Thêm một lớp bảo vệ cho bản sao lưu.
+866|Tạo mật khẩu
+867|Nếu quên mật khẩu này, bạn không thể khôi phục bản sao lưu.
+868|Khôi phục bản sao lưu
+869|Đã tìm thấy bản sao lưu. Bản gần nhất: Hôm qua 02:00.
+870|Bỏ qua
+871|Khôi phục
+872|Để hai điện thoại gần nhau và kết nối Wi-Fi.
+873|Bắt đầu
+874|Đổi số điện thoại sẽ chuyển thông tin tài khoản, nhóm và cài đặt của bạn.
+875|Sự cố sao lưu và khôi phục
+876|Cùng số điện thoại và cùng tài khoản Google?
+877|Đủ chỗ trên Google Drive và điện thoại?
+878|Đã kết nối Wi-Fi?
+879|Với bản sao lưu mã hóa: đúng mật khẩu chưa?
+880|Gửi vị trí
+881|Chia sẻ vị trí trực tiếp
+882|Gửi vị trí hiện tại
+883|Chính xác đến 10 mét
+884|15 phút
+885|1 giờ
+886|Vị trí trực tiếp
+887|Dừng chia sẻ
+888|Dừng chia sẻ vị trí trực tiếp?
+889|Dừng
+890|Chia sẻ liên hệ
+891|Thêm liên hệ
+892|Giữ kín vị trí của bạn
+893|Chỉ chia sẻ với gia đình và bạn thân.
+894|Vị trí trực tiếp dừng sau thời gian bạn chọn — có thể dừng sớm hơn.
+895|Không bao giờ chia sẻ với người lạ hoặc nhóm đông người.
+896|Không phải liên hệ
+897|Người gửi này không có trong danh bạ của bạn.
+898|Chào bạn thân mến, tôi có ưu đãi tuyệt vời cho bạn
+899|Không phải liên hệ · Không có nhóm chung
+900|Mẹ ơi, điện thoại con hỏng rồi. Đây là số mới của con.
+901|Mẹ gửi tiền cho con được không? Gấp lắm.
+902|Nhận ra tin nhắn người nhà giả
+903|Một số mới, và lời xin tiền gấp.
+904|Họ nói không thể nghe điện thoại.
+905|Luôn gọi vào số cũ và nghe giọng họ trước.
+906|Bưu kiện của bạn đang chờ! Thanh toán phí tại đây: parcel-check.example
+907|Nhận ra đường link nguy hiểm
+908|Chính tả lạ, phần thưởng, hoặc “trả một khoản phí nhỏ”.
+909|Nếu đường link đòi mật khẩu hoặc số thẻ, hãy dừng lại.
+910|Kiểm tra với công ty qua ứng dụng chính thức của họ.
+911|Câu lạc bộ đầu tư
+912|300 thành viên
+913|Tham gia hôm nay, nhân đôi tiền trong một tuần!
+914|Tránh lừa đảo đầu tư
+915|Không khoản đầu tư thật nào đảm bảo lợi nhuận lớn và nhanh.
+916|Kẻ lừa đảo dùng nhóm đầy “thành viên vui vẻ” giả.
+917|Hỏi ngân hàng hoặc gia đình trước khi đầu tư.
+918|Mình bị kẹt ở nước ngoài, gửi mình 500 ngay được không?
+919|Tránh lừa đảo xin tiền
+920|Gọi điện cho người đó.
+921|Đừng gửi tiền chỉ vì một tin nhắn.
+922|Nếu tài khoản là giả, hãy báo cáo.
+923|Hỗ trợ WhatsApp?
+924|Tài khoản của bạn sẽ bị đóng. Gửi tôi mã 6 số trong SMS của bạn.
+925|Mã của bạn là chìa khóa tài khoản
+926|Ai có mã đều có thể chiếm WhatsApp của bạn.
+927|Đừng trả lời. Chặn và báo cáo.
+928|Bật xác minh hai bước để an toàn hơn.
+929|Bạn đã trúng thưởng!
+930|Các tin nhắn gần nhất sẽ được chuyển tiếp đến WhatsApp.
+931|Báo cáo liên hệ này với WhatsApp?
+932|Nếu tài khoản bị đánh cắp
+933|Mở WhatsApp và đăng ký lại số bằng mã SMS.
+934|Bật xác minh hai bước.
+935|Báo cho gia đình và bạn bè đừng gửi tiền.
+936|Liên hệ hỗ trợ WhatsApp trong Cài đặt › Trợ giúp.
+937|WhatsApp không mở được
+938|Khởi động lại điện thoại.
+939|Cập nhật WhatsApp trong Play Store.
+940|Kiểm tra điện thoại còn dung lượng trống.
+941|Bạn có đến không?
+942|Tin nhắn không gửi được
+943|Bật Wi-Fi hoặc dữ liệu di động.
+944|Tắt chế độ máy bay.
+945|Khởi động lại điện thoại nếu vẫn chờ.
+946|Ảnh không gửi được
+947|Internet có hoạt động không?
+948|Ngày giờ trên điện thoại có đúng không?
+949|WhatsApp có quyền dùng ảnh không? (Cài đặt điện thoại › Ứng dụng › WhatsApp › Quyền)
+950|Cuộc gọi không kết nối
+951|Cả hai điện thoại cần kết nối internet tốt.
+952|Thử Wi-Fi thay vì dữ liệu di động.
+953|Kiểm tra WhatsApp được phép dùng micrô và camera.
+954|Không nhận được thông báo
+955|Đoạn chat có bị tắt thông báo không?
+956|Thông báo WhatsApp có bật trong Cài đặt điện thoại không?
+957|Chế độ tiết kiệm pin có chặn WhatsApp không?
+958|Quản lý dung lượng
+959|Đã dùng 2,1 GB
+960|Mức sử dụng mạng
+961|Dùng ít dữ liệu hơn cho cuộc gọi
+962|Trung tâm trợ giúp
+963|Liên hệ chúng tôi
+964|Điều khoản và Chính sách quyền riêng tư
+965|Thông tin ứng dụng
+966|Tìm trong Trung tâm trợ giúp
+967|Cách sao lưu đoạn chat
+968|Trung tâm trợ giúp
+969|Cách giữ an toàn
+970|Hôm qua
+971|Hôm nay, 18:40
+972|Hôm qua, 10:02

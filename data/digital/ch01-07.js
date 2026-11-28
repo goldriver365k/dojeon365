@@ -1,6 +1,6 @@
 /** [가게와 식당] 01~03, [교통과 이동] 04~07 */
-import { app as openApp } from '../galaxy/helpers.js?v=20261128.0245';
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats, swipe, kiosk, receipt, kioskPay } from './kit.js?v=20261128.0245';
+import { app as openApp } from '../galaxy/helpers.js?v=20261128.0256';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats, swipe, kiosk, receipt, kioskPay } from './kit.js?v=20261128.0256';
 
 /* ---------- 01 키오스크 ---------- */
 const K_HOME = app('주문하기', { hero: '어서 오세요! 화면을 눌러 주문하세요', heroColor: '#2563E2', buttons: ['매장에서 먹기', '포장하기'] });

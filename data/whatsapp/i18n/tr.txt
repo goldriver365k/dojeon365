@@ -1,0 +1,972 @@
+1|“{x}” öğesine dokunun.
+2|Sohbetler ekranında {x} ile olan sohbete dokunun.
+3|WhatsApp ekranı. {x}
+4|Bu resimler WhatsApp ekranının çizimleridir. Menü adları ve yerleri gerçek uygulamada biraz farklı olabilir.
+5|ders
+6|Kurma ve kayıt
+7|Arkadaşlar ve kişiler
+8|Sohbetler ve mesajlar
+9|Fotoğraf, video ve dosyalar
+10|Sesli mesajlar
+11|Sesli ve görüntülü aramalar
+12|Grup sohbetleri
+13|Profil ve durum
+14|Emoji ve çıkartmalar
+15|Kanallar ve topluluklar
+16|Yazı, ekran ve bildirimler
+17|Gizlilik ve güvenlik
+18|Yedekleme, geri yükleme ve yeni telefon
+19|Konum ve kişi paylaşma
+20|Spam, dolandırıcılık ve sorunlar
+21|WhatsApp’ı indirin
+22|WhatsApp’ı yükleyin
+23|WhatsApp’ı açın
+24|Dilinizi seçin
+25|Ülkenizi ve telefon numaranızı girin
+26|Telefon numaranızı doğrulayın
+27|Profil adınızı ekleyin
+28|Profil fotoğrafı ekleyin
+29|WhatsApp’ı güncelleyin
+30|Ana ekranı tanıyın
+31|Telefon numarasıyla kişi ekleyin
+32|Yurt dışı numarası ekleyin
+33|Yeni kişi ekleyin
+34|Kişilerinizde arayın
+35|QR koduyla kişi ekleyin
+36|Kendi QR kodunuzu görün
+37|Bir arkadaşınızı WhatsApp’a davet edin
+38|Kişi adını değiştirin
+39|Kişiyi engelleyin
+40|Kişinin engelini kaldırın
+41|Yeni sohbet başlatın
+42|Yazılı mesaj gönderin
+43|Sesinizle mesaj yazın
+44|Yeni mesajları okuyun
+45|Bir mesajı yanıtlayın
+46|Mesajı kopyalayın
+47|Mesajı yapıştırın
+48|Mesajı iletin
+49|Gönderilen mesajı düzenleyin
+50|Gönderilen mesajı silin
+51|Tik işaretlerini anlayın
+52|Sohbet içinde arayın
+53|Web sitesi bağlantısı gönderin
+54|Önemli mesajı yıldızlayın
+55|Süreli mesajları açın
+56|Bir fotoğraf gönderin
+57|Birkaç fotoğraf gönderin
+58|Fotoğrafı HD gönderin
+59|Fotoğraf çekip gönderin
+60|Gelen fotoğrafı görün
+61|Gelen fotoğrafı kaydedin
+62|Video gönderin
+63|Videoyu HD gönderin
+64|Gelen videoyu kaydedin
+65|Belge gönderin
+66|Gelen belgeyi açın
+67|Sohbetteki tüm fotoğraf ve dosyaları görün
+68|Sesli mesaj kaydedin
+69|Sesli mesaj gönderin
+70|Sesli mesajı dinleyin
+71|Ses kaydını iptal edin
+72|Basılı tutmadan kaydedin
+73|Kaydı duraklatın
+74|Göndermeden önce dinleyin
+75|Oynatma hızını değiştirin
+76|Sesli arama yapın
+77|Sesli aramayı yanıtlayın
+78|Aramayı bitirin
+79|Görüntülü arama yapın
+80|Görüntülü aramayı yanıtlayın
+81|Görüntülü aramada kamerayı değiştirin
+82|Mikrofonunuzu kapatın
+83|Hoparlörü kullanın
+84|Birkaç kişiyi aynı anda arayın
+85|Görüntülü aramada ekranınızı paylaşın
+86|Grup kurun
+87|Gruba kişi ekleyin
+88|Grup davet bağlantısı oluşturun
+89|Bağlantıyla gruba katılın
+90|Grup adını değiştirin
+91|Grup fotoğrafını değiştirin
+92|Grupta kimler var görün
+93|Birini grup yöneticisi yapın
+94|Grubu sessize alın
+95|Grupta birinden bahsedin
+96|Grupta mesaj sabitleyin
+97|Gruptan çıkın
+98|Profilinizi görün
+99|Profil fotoğrafınızı değiştirin
+100|Profil adınızı değiştirin
+101|Hakkımda yazınızı değiştirin
+102|Yazılı durum paylaşın
+103|Fotoğrafı durum olarak paylaşın
+104|Videoyu durum olarak paylaşın
+105|Arkadaşınızın durumunu görün
+106|Durumunuzu kimin göreceğini seçin
+107|Durumunuzu silin
+108|Emoji gönderin
+109|Mesaja emojiyle tepki verin
+110|Çıkartma gönderin
+111|Çıkartma arayın
+112|Yeni çıkartma ekleyin
+113|Favori çıkartmaları yönetin
+114|GIF gönderin
+115|Kendi çıkartmanızı yapın
+116|WhatsApp kanalları nedir
+117|Kanal bulun
+118|Kanalı takip edin
+119|Kanal güncellemelerini okuyun
+120|Kanal bildirimlerini ayarlayın
+121|Kanalı takibi bırakın
+122|Topluluklar nedir
+123|Topluluk kurun
+124|Topluluğa katılın
+125|Topluluktan çıkın
+126|Yazıyı büyütün
+127|Yazı tipi boyutunu ayarlayın
+128|Açık temayı kullanın
+129|Koyu temayı kullanın
+130|Sohbet temasını değiştirin
+131|Sohbet duvar kâğıdını değiştirin
+132|Mesaj bildirimlerini ayarlayın
+133|Bildirim sesini değiştirin
+134|Sohbeti sessize alın
+135|Önemli sohbeti sabitleyin
+136|Sohbeti arşivleyin
+137|Arşivlenen sohbeti tekrar gösterin
+138|Gizlilik ayarlarınızı kontrol edin
+139|Son görülmenizi kim görebilir
+140|Çevrimiçi olduğunuzu kim görebilir
+141|Profil fotoğrafınızı kim görebilir
+142|Okundu bilgisini açın veya kapatın
+143|İki adımlı doğrulamayı açın
+144|WhatsApp’ı parmak izinizle kilitleyin
+145|Bir sohbeti kilitleyin
+146|Bağlı cihazları kontrol edin
+147|Bilinmeyen cihazın oturumunu kapatın
+148|Bilinmeyen arayanları sessize alın
+149|Gizlilik kontrolü yapın
+150|Sohbet yedeği ne işe yarar
+151|Google hesabınızı bağlayın
+152|Sohbetlerinizi yedekleyin
+153|Otomatik yedekleme ayarlayın
+154|Uçtan uca şifreli yedeklemeyi açın
+155|Son yedeğinizi kontrol edin
+156|Sohbetleri yeni telefona geri yükleyin
+157|Sohbetleri eski telefondan aktarın
+158|Telefon numaranızı değiştirin
+159|Yedekleme ve geri yükleme sorunlarını çözün
+160|Mevcut konumunuzu gönderin
+161|Canlı konumunuzu paylaşın
+162|Canlı konum paylaşımını durdurun
+163|Arkadaşınıza bir kişi gönderin
+164|Gelen kişiyi kaydedin
+165|Konumunuzu gizli tutun
+166|Tanımadığınız kişilerden mesajlar
+167|Sahte “aile üyesi” mesajını tanıyın
+168|Tehlikeli bağlantıları tanıyın
+169|Yatırım dolandırıcılığından korunun
+170|Para isteme dolandırıcılığından korunun
+171|6 haneli kodunuzu asla paylaşmayın
+172|Spam bildirin
+173|Hesabınızın çalındığını düşünüyorsanız
+174|WhatsApp açılmıyor
+175|Mesaj gitmiyor
+176|Fotoğraf gitmiyor
+177|Aramalar bağlanmıyor
+178|Bildirimler gelmiyor
+179|Yer açın
+180|WhatsApp Yardım Merkezi’ni kullanın
+181|Ana ekranda “Play Store”a dokunun.
+182|Üstteki arama çubuğuna dokunun.
+183|Geliştiricinin “WhatsApp LLC” olduğunu kontrol edin.
+184|WhatsApp Messenger sayfasında “Yükle”ye dokunun.
+185|İnip yüklenirken bekleyin.
+186|Bitince düğme “Aç” olur.
+187|Ana ekranda yeşil WhatsApp simgesini bulun.
+188|WhatsApp’ı açmak için bir kez dokunun.
+189|WhatsApp ilk açıldığında bir dil listesi çıkar.
+190|Dilinize dokunun.
+191|Hoş geldiniz ekranında “Kabul et ve devam et”e dokunun.
+192|Ülkenizi seçmek için ülke adına dokunun.
+193|Telefon numaranızı yazın.
+194|WhatsApp SMS ile 6 haneli bir kod gönderir.
+195|6 rakamı kod kutularına yazın.
+196|Ad kutusuna dokunun.
+197|Arkadaşlarınızın sizi tanıdığı adı yazın.
+198|Profil bilgisi ekranında yuvarlak kamera resmine dokunun.
+199|İstediğiniz fotoğrafa dokunun.
+200|Ana ekrandan “Play Store”u açın.
+201|“WhatsApp” diye arayın ve WhatsApp Messenger’ı açın.
+202|“Sohbetler” tüm konuşmalarınızı gösterir.
+203|“Güncellemeler” arkadaşların durumlarını ve kanalları gösterir.
+204|“Topluluklar” ilgili grupları bir araya toplar.
+205|“Aramalar” son aramalarınızı gösterir.
+206|Yeşil yeni sohbet düğmesine dokunun.
+207|Adı yazın.
+208|Telefon numarasını yazın.
+209|Arkadaşınızın ülkesini seçmek için ülke koduna dokunun.
+210|Numarayı baştaki 0 olmadan yazın.
+211|Sohbetler ekranında yeşil yeni sohbet düğmesine dokunun.
+212|Adı yazın.
+213|Üstteki büyütece dokunun.
+214|Bir ad yazın. Uyan kişiler görünür.
+215|Taramak için QR kodu resmine dokunun.
+216|Kamerayı arkadaşınızın QR koduna tutun.
+217|Sohbetler ekranında sağ üstteki üç noktaya dokunun.
+218|Adınızın yanındaki küçük QR simgesine dokunun.
+219|Sizi eklemesi için bu kodu arkadaşınıza gösterin.
+220|Alta yakın “Arkadaşını davet et”e dokunun.
+221|Daveti nasıl göndereceğinize dokunun, örneğin “Mesajlar”.
+222|Üstteki ada dokunun.
+223|Sağ üstteki üç noktaya dokunun.
+224|Adı değiştirin.
+225|Üstte kişinin adına dokunun.
+226|Kişi bilgisinin en altına kaydırın.
+227|Onaylamak için yine “Engelle”ye dokunun.
+228|Alta yakın “Engellenen kişiler”e dokunun.
+229|Engelini kaldırmak istediğiniz kişiye dokunun.
+230|Mesaj göndermek istediğiniz kişiye dokunun.
+231|Sohbet açılır. Alttaki mesaj kutusuna yazın.
+232|Alttaki mesaj kutusuna dokunun.
+233|Mesajınızı yazın.
+234|Yeşil gönder okuna dokunun.
+235|Klavye açılsın diye mesaj kutusuna dokunun.
+236|Klavyedeki mikrofona dokunun ve yavaş konuşun.
+237|Kelimelerin doğru olduğunu kontrol edin.
+238|Yeşil sayı, sohbette kaç yeni mesaj olduğunu gösterir.
+239|Yeni mesajları okumak için sohbete dokunun.
+240|Yanıtlamak istediğiniz mesaja basılı tutun.
+241|Üstteki yanıt okuna dokunun.
+242|Yanıtınızı yazın.
+243|Kopyalamak istediğiniz mesaja basılı tutun.
+244|Üstteki kopyala simgesine dokunun.
+245|Mesaj kutusuna basılı tutun.
+246|Paylaşmak istediğiniz mesaja basılı tutun.
+247|Üstteki iletme okuna dokunun.
+248|Göndermek istediğiniz kişiye dokunun.
+249|Yeşil gönder düğmesine dokunun.
+250|Gönderdiğiniz bir mesaja basılı tutun.
+251|Üstteki üç noktaya dokunun.
+252|Mesaj kutusundaki kelimeleri değiştirin.
+253|Kaydetmek için yeşil tike dokunun.
+254|Gönderdiğiniz mesaja basılı tutun.
+255|Üstteki çöp kutusu simgesine dokunun.
+256|Bir gri tik: mesaj gönderildi.
+257|İki gri tik: telefonuna ulaştı.
+258|İki mavi tik: okudu.
+259|Bir kelime yazın. WhatsApp o kelimenin geçtiği mesajlara gider.
+260|Kopyalanan bağlantıyı koymak için “Yapıştır”a dokunun.
+261|Önemli mesaja basılı tutun.
+262|Üstteki yıldıza dokunun.
+263|Yıldızlı mesajları üç nokta menüsü › “Yıldızlı” bölümünde bulursunuz.
+264|Mesajların ne kadar kalacağını seçin, örneğin “24 saat”.
+265|Mesaj kutusundaki ataşa dokunun.
+266|Göndermek istediğiniz fotoğrafa dokunun.
+267|Fotoğrafın sohbette göründüğünü kontrol edin.
+268|İlk fotoğrafa basılı tutun.
+269|İstediğiniz diğer fotoğraflara dokunun. Her birine bir numara gelir.
+270|Alttaki yeşil oka dokunun.
+271|Üstte “HD”ye dokunun.
+272|Mesaj kutusundaki kamera simgesine dokunun.
+273|Yuvarlak beyaz düğmeyle fotoğrafı çekin.
+274|Sohbetteki fotoğrafa dokunun.
+275|Fotoğraf ekranı kaplar. Büyütmek için iki parmağınızı açın.
+276|Gelen fotoğrafa dokunun.
+277|Bir videoya dokunun. Videoların süresi köşede yazar.
+278|Bir videoya dokunun.
+279|Gelen videoya dokunun.
+280|Göndermek istediğiniz dosyaya dokunun.
+281|Sohbetteki belgeye dokunun.
+282|Onu gösterebilen bir uygulamada açılır.
+283|Fotoğraflar, bağlantılar ve belgeler ayrı sekmelerdedir.
+284|Yeşil mikrofona basılı tutun.
+285|Basılı tutarken konuşun. Kırmızı bir nokta ve süre görürsünüz.
+286|Mikrofona basılı tutup konuşun.
+287|Parmağınızı kaldırın. Sesli mesaj gider.
+288|Sesli mesajdaki oynat düğmesine dokunun.
+289|Kayıt sırasında basılı tutmaya devam edin ve parmağınızı sola kaydırın.
+290|Parmağınızı kaldırın. Kayıt silinir ve gönderilmez.
+291|Parmağınızı yukarı, kilide kaydırın.
+292|Artık bırakıp konuşmaya devam edebilirsiniz. Bitince gönder’e dokunun.
+293|Elleriniz serbest kayıt yaparken duraklat düğmesine dokunun.
+294|Kayda devam etmek için tekrar dokunun.
+295|Göndermeden önce dinlemek için oynat’a dokunun.
+296|Sesli mesajı oynatmaya başlayın.
+297|Daha hızlı dinlemek için “1×”e dokunun (1,5× veya 2×).
+298|Üstteki telefon simgesine dokunun.
+299|Arkadaşınızın açmasını bekleyin.
+300|WhatsApp çaldığında yeşil “Kabul et” düğmesine dokunun.
+301|Bağlandınız. Konuşmaya başlayın.
+302|Aramayı bitirmek için kırmızı düğmeye dokunun.
+303|Üstteki video kamera simgesine dokunun.
+304|Telefonu yüzünüz ekranda görünecek şekilde tutun ve bekleyin.
+305|Yeşil “Kabul et” düğmesine dokunun.
+306|Arkadaşınız ekranı kaplar. Siz küçük kutuda görünürsünüz.
+307|Görüntülü aramada “Kamerayı çevir”e dokunun.
+308|Arama sırasında “Sessiz”e dokunun. Arkadaşınız sizi duymaz.
+309|Yeniden konuşmak için tekrar dokunun.
+310|Sesli aramada telefonu tutmadan duymak için “Hoparlör”e dokunun.
+311|Grup sohbetinin üstündeki telefon simgesine dokunun.
+312|Aramak istediğiniz kişilere dokunun.
+313|Arama düğmesine dokunun.
+314|Görüntülü aramada “Ekranı paylaş”a dokunun.
+315|Onaylamak için “Şimdi başlat”a dokunun.
+316|Grupta olmasını istediğiniz her kişiye dokunun.
+317|Yeşil oka dokunun.
+318|Grup adını yazın.
+319|Grubu kurmak için yeşil tike dokunun.
+320|Üstteki grup adına dokunun.
+321|Eklemek istediğiniz kişiye dokunun.
+322|Yeşil tike dokunun.
+323|Size gönderilen grup davet bağlantısına dokunun.
+324|Grup adına dokunun.
+325|Yeni adı yazın.
+326|Grup fotoğrafına dokunun.
+327|Gruptaki herkesi görmek için aşağı kaydırın.
+328|Yönetici yapmak istediğiniz kişiye dokunun.
+329|Ne kadar süreceğini seçin, örneğin “Her zaman”.
+330|Mesaj kutusuna “@” yazın.
+331|Listede kişinin adına dokunun.
+332|Mesajınızın kalanını yazın.
+333|Sabitlemek istediğiniz mesaja basılı tutun.
+334|Mesaj sohbetin en üstünde kalır.
+335|Onaylamak için “Çık”a dokunun.
+336|Üstteki adınıza dokunun.
+337|Burada fotoğrafınızı, adınızı, Hakkımda yazınızı ve telefon numaranızı görürsünüz.
+338|Fotoğrafınıza dokunun.
+339|Yeni adınızı yazın.
+340|Hazır bir satıra dokunun, örneğin “Müsait”.
+341|Alttaki “Güncellemeler”e dokunun.
+342|Kısa bir mesaj yazın.
+343|Sağ alttaki kamera düğmesine dokunun.
+344|Galerinizden bir fotoğrafa dokunun.
+345|Galerinizden bir videoya dokunun.
+346|Fotoğrafının etrafında yeşil halka olan bir arkadaşa dokunun.
+347|Durumu oynar. İleri geçmek için sağ tarafa dokunun.
+348|Durumunuzu kimin görebileceğini seçin.
+349|Mesaj kutusundaki gülen yüze dokunun.
+350|Eklemek için bir emojiye dokunun.
+351|Mesaja basılı tutun.
+352|Çıkan sıradaki bir emojiye dokunun.
+353|Tepkiniz mesajın altında görünür.
+354|Bir çıkartmaya dokunun. Hemen gider.
+355|“teşekkürler” gibi bir kelime yazın.
+356|Daha fazla çıkartma paketi için “+”ya dokunun.
+357|Beğendiğiniz paketin yanındaki “Ekle”ye dokunun.
+358|Sohbetteki bir çıkartmaya basılı tutun.
+359|Seçmek için bir GIF’e dokunun.
+360|Çıkartma yapmak için “+” kutusuna dokunun.
+361|Çıkartmaya dönüştürmek için bir fotoğrafa dokunun.
+362|Kanallar, kişi veya kurumlardan tek yönlü haberlerdir.
+363|Kanallar “Güncellemeler” sekmesindedir.
+364|Kanallar’ın yanındaki “Keşfet”e dokunun.
+365|Arama simgesine dokunup bir konu yazın.
+366|Güncellemeler sekmesinde “Keşfet”e dokunun.
+367|Kanalın yanındaki “Takip et”e dokunun.
+368|Kanalın adına dokunun.
+369|En yeni güncellemeleri altta okuyun.
+370|Kanalı Güncellemeler sekmesinden açın.
+371|Uyarıları seçmek için “Sessize al” veya “Sesi aç”a dokunun.
+372|Onaylamak için yine “Takibi bırak”a dokunun.
+373|Topluluk, mahalle veya kulüp gibi birbiriyle ilgili birkaç grubu bir araya getirir.
+374|Topluluklar “Topluluklar” sekmesindedir.
+375|Alttaki “Topluluklar”a dokunun.
+376|Bir ad ve kısa bir açıklama yazın.
+377|Devam etmek için yeşil oka dokunun.
+378|Size gönderilen topluluk davet bağlantısına dokunun.
+379|Topluluğa dokunun.
+380|“Küçük”, “Orta” veya “Büyük”ü seçin.
+381|Beğendiğiniz bir renk temasına dokunun.
+382|Beğendiğiniz bir resme dokunun.
+383|Mesajlar açılır görünsün diye “Yüksek öncelikli bildirimleri kullan”ın açık olduğunu kontrol edin.
+384|Bir ses seçin.
+385|“Her zaman”ı seçin.
+386|Sohbetler listesinde bir sohbete basılı tutun.
+387|Üstteki raptiyeye dokunun.
+388|Sohbet listenizin en üstünde kalır.
+389|Gizlemek istediğiniz sohbete basılı tutun.
+390|Üstteki arşiv kutusuna dokunun.
+391|Sohbetler listesinin üstündeki “Arşivlenmiş”e dokunun.
+392|Sohbete basılı tutun.
+393|Üstteki arşivden çıkar kutusuna dokunun.
+394|Her satırı kontrol edin. Bilgilerinizi kimin görebileceğini gösterir.
+395|WhatsApp’ta en son ne zaman olduğunuzu kimin görebileceğini seçin.
+396|“Çevrimiçi olduğumu kimler görebilir” altında “Son görülme ile aynı”yı seçin.
+397|“Kişilerim”i seçin.
+398|“Okundu bilgisi” düğmesine dokunun.
+399|Hatırlayacağınız 6 haneli bir PIN yazın.
+400|“Biyometrik verilerle kilidi aç”ı açın.
+401|Onaylamak için parmak izi sensörüne dokunun.
+402|Düğmeyi açın.
+403|Listeyi kontrol edin. WhatsApp’ınızı kullanan her bilgisayar veya tablet burada.
+404|Tanımadığınız cihaza dokunun.
+405|“Bilinmeyen arayanları sessize al”ı açın.
+406|Her konuya bakın ve size uygun olanı seçin.
+407|Yedekleme, sohbetlerinizi Google hesabınıza kopyalar.
+408|Google hesabınıza dokunun.
+409|“Günlük”ü seçin.
+410|Bir şifre oluşturun ve güvende tutun.
+411|Sohbetlerin en son ne zaman kaydedildiğini görmek için “Son yedekleme”ye bakın.
+412|Yeni telefona WhatsApp’ı yükleyin ve aynı numarayı doğrulayın.
+413|WhatsApp bir yedek bulunca “Geri yükle”ye dokunun.
+414|Eski telefonda Ayarlar’ı açın.
+415|“Başlat”a dokunun. Yeni telefon sonraki adımları gösterir.
+416|Eski ve yeni numaranızı yazın.
+417|Yedekleme veya geri yükleme çalışmazsa şunları kontrol edin.
+418|Ne kadar süreceğini seçin, örneğin “1 saat”.
+419|Canlı konumunuzun altındaki “Paylaşmayı durdur”a dokunun.
+420|Onaylamak için “Durdur”a dokunun.
+421|Paylaşmak istediğiniz kişiye dokunun.
+422|Gelen kişi kartına dokunun.
+423|Konumunuz nerede olduğunuzu gösterir, dikkatli olun.
+424|Kişilerinizde olmayan bir numaradan gelen mesajda uyarı çıkar.
+425|Yanıt vermeyin. Alttaki “Engelle”ye dokunun.
+426|Dolandırıcılar “Anne selam, telefonumu kaybettim, bu yeni numaram” diye yazar.
+427|Para göndermeden önce çocuğunuzu eski numarasından arayın.
+428|Ödül vaat eden veya acil sorundan bahseden bağlantılara dikkat edin.
+429|Bağlantıya dokunmayın. Mesajı silin.
+430|Biri risksiz büyük kazanç vaat ediyor.
+431|Para göndermeyin. Gruptan çıkın ve bildirin.
+432|Bir arkadaşınızın hesabı acilen para istiyor.
+433|Önce arkadaşınızı arayın. Hesabı çalınmış olabilir.
+434|Biri az önce gelen 6 haneli kodu istiyor.
+435|Asla paylaşmayın. WhatsApp bu kodu sizden asla istemez.
+436|Bilinmeyen numarayla olan sohbeti açın.
+437|Onaylamak için “Şikâyet et”e dokunun.
+438|Arkadaşlarınız sizden garip mesajlar alıyorsa hemen harekete geçin.
+439|Hesabınıza geri girince iki adımlı doğrulamayı açın.
+440|WhatsApp açılmıyorsa bu adımları sırayla deneyin.
+441|Play Store’da görüyorsanız “Güncelle”ye dokunun.
+442|Tik yerine saat, mesajın hâlâ beklediği anlamına gelir.
+443|İnternet bağlantınızı kontrol edin.
+444|Fotoğraf gitmiyorsa şunları kontrol edin.
+445|Aramalar bağlanmıyorsa şunları kontrol edin.
+446|Bildirimler gelmiyorsa şunları kontrol edin.
+447|“Yüksek öncelikli bildirimleri kullan”ı açın.
+448|Büyük dosyaları görüp silmek için bir sohbete dokunun.
+449|Cevap bulmak için sorunuzu yazın.
+450|Yalnızca resmî uygulamayı yükleyin. WhatsApp’ı asla birinin gönderdiği bağlantıdan yüklemeyin.
+451|Mümkünse Wi-Fi kullanın. Mobil veriden tasarruf edersiniz.
+452|Bunu sonra Ayarlar › Uygulama dili bölümünden değiştirebilirsiniz.
+453|Bu bir alıştırma numarası. Telefonunuzda kendi numaranızı kullanın.
+454|Kod çoğu zaman kendiliğinden dolar.
+455|Fotoğraf isteğe bağlıdır. Sonra ekleyebilirsiniz.
+456|Yalnızca “Aç” görüyorsanız en yeni sürüme sahipsiniz.
+457|Her ülkenin bir kodu vardır, örneğin Türkiye için +90.
+458|Çok kez iletilen mesajlarda “Çok kez iletildi” yazar. Dikkat edin, söylenti olabilir.
+459|Bir mesajı gönderdikten sonra kısa bir süre düzenleyebilirsiniz.
+460|“Herkesten sil” gönderdikten sonra yalnızca bir süre çalışır.
+461|Biri okundu bilgisini kapattıysa tikler gri kalır.
+462|Tanımadığınız kişilerin bağlantılarını asla açmayın.
+463|Yeni mesajlar bu süreden sonra kaybolur. Eski mesajlar kalır.
+464|HD fotoğraflar daha çok mobil veri harcar. En iyisi Wi-Fi.
+465|Birçok telefon gelen fotoğrafları kendiliğinden kaydeder.
+466|Tanımadığınız kişilerin dosyalarını açmayın.
+467|Konuşurken parmağınızı düğmede tutun.
+468|Sessizce dinlemek için telefonu kulağınıza tutun.
+469|Yeniden denemek isterseniz silmek için çöp kutusuna dokunun.
+470|WhatsApp aramaları interneti kullanır (Wi-Fi veya mobil veri).
+471|Bazı telefonlarda düğme yukarı kaydırılır.
+472|Artık arkadaşınız sizin gördüğünüzü görüyor: bahçeyi, torunları…
+473|Önce özel uygulamaları kapatın. Arkadaşınız ekranınızdaki her şeyi görür.
+474|Kişi eklemeyi yalnızca grup yöneticileri yapabilir olabilir.
+475|Yalnızca tanıdığınız kişilerin gruplarına katılın.
+476|Yöneticiler kişi ekleyip çıkarabilir ve grup ayarlarını değiştirebilir.
+477|Bahsettiğiniz kişiye bildirim gider.
+478|Durum 24 saat sonra kaybolur.
+479|Favori çıkartmalar çıkartma panelinde yıldızın altında görünür.
+480|Daha da büyük yazı için telefonun Ayarlar › Ekran bölümünden de büyütün.
+481|Koyu ekran geceleri gözü daha az yorabilir.
+482|Telefonun Ayarlar › Bildirimler bölümü de WhatsApp’a izin vermelidir.
+483|Arşivlenen sohbetler gizlenir, silinmez.
+484|Kapatırsanız başkalarının mavi tiklerini de görmezsiniz.
+485|Bu PIN’i asla kimseye söylemeyin.
+486|Önce Wi-Fi’ye bağlanın. Yedekler büyük olabilir.
+487|Yedeğin bulunduğu aynı Google hesabını kullanın.
+488|Silinen fotoğraflar geri gelmez. İstediklerinizi önce kaydedin.
+489|Resmî yardım: faq.whatsapp.com
+490|Silinen mesajlar ve çıktığınız sohbetler geri gelmeyebilir. Dokunmadan önce kontrol edin.
+491|Bu, hesap güvenliğinizi değiştirir. 6 haneli kodunuzu veya PIN’inizi asla kimseyle paylaşmayın.
+492|Sohbet yedekleri özel mesajlar içerebilir. Google hesabınızı ve yedek şifrenizi koruyun; emin olmadıkça yedeği asla silmeyin.
+493|Konumunuz nerede olduğunuzu gösterir. Yalnızca güvendiğiniz kişilerle paylaşın ve gerek kalmayınca paylaşımı durdurun.
+494|Telefon
+495|Mesajlar
+496|Kamera
+497|Galeri
+498|Play Store
+499|Ayarlar
+500|Dokunun
+501|Yükle
+502|Bu uygulama hakkında
+503|Basit. Güvenilir. Gizli.
+504|Yükleniyor…
+505|İptal
+506|Kaldır
+507|Aç
+508|Meta AI’a sorun veya arayın
+509|Tümü
+510|Okunmamış
+511|Favoriler
+512|Gruplar
+513|Akşam yemeği yedin mi?
+514|Aile
+515|Fotoğraf
+516|Yarın görüşürüz
+517|Yürüyüş kulübü
+518|Toplantı cumartesi
+519|Sohbetler
+520|Güncellemeler
+521|Topluluklar
+522|Aramalar
+523|Dilinizi seçin
+524|İleri
+525|WhatsApp’a hoş geldiniz
+526|Gizlilik İlkemizi okuyun. Hizmet Koşulları’nı kabul etmek için “Kabul et ve devam et”e dokunun.
+527|Kabul et ve devam et
+528|Telefon numaranızı girin
+529|WhatsApp’ın telefon numaranızı doğrulaması gerekir.
+530|Telefon numarası
+531|Kodunuz yalnızca sizin içindir
+532|WhatsApp’tan gelen SMS’e bakın.
+533|Bu kodu asla kimseye söylemeyin; WhatsApp’ta çalıştığını söyleyen birine bile.
+534|Numaranız doğrulanıyor
+535|SMS ile gönderilen 6 haneli kodun otomatik algılanması bekleniyor.
+536|Kod gelmedi mi?
+537|Profil bilgisi
+538|Lütfen adınızı ve isteğe bağlı bir profil fotoğrafı girin.
+539|Adınızı buraya yazın
+540|Profil fotoğrafı
+541|En son
+542|Bitti
+543|Güncelle
+544|Durum
+545|Durumum
+546|Durum güncellemesi eklemek için dokunun
+547|Son güncellemeler
+548|Bugün 09:12
+549|Kanallar
+550|Keşfet
+551|Yeni topluluk
+552|Favori ekle
+553|Son
+554|Kişi seç
+555|Yeni grup
+556|Yeni kişi
+557|WhatsApp’taki kişiler
+558|Ad
+559|Kaydet
+560|5 kişi
+561|Soyadı
+562|Merhaba! Ben WhatsApp kullanıyorum.
+563|QR kodu
+564|Kodum
+565|Kodu tara
+566|WhatsApp kişisi
+567|Kodu paylaş
+568|WhatsApp QR kodunu tarayın
+569|Kişilere ekle
+570|Toplu mesaj listeleri
+571|Bağlı cihazlar
+572|Yıldızlı
+573|Hesap
+574|Güvenlik bildirimleri, numara değiştir
+575|Gizlilik
+576|Kişileri engelle, süreli mesajlar
+577|Tema, duvar kâğıtları, sohbet geçmişi
+578|Bildirimler
+579|Mesaj, grup ve arama sesleri
+580|Depolama ve veriler
+581|Ağ kullanımı, otomatik indirme
+582|Uygulama dili
+583|Türkçe (cihazın dili)
+584|Yardım
+585|Yardım merkezi, bize ulaşın
+586|Arkadaşını davet et
+587|E-posta
+588|Diğer
+589|çevrimiçi
+590|Bugün
+591|Evet, yedim. Sen?
+592|Mesaj
+593|Sesli
+594|Görüntülü
+595|Öde
+596|Ara
+597|Medya görünürlüğü
+598|Süreli mesajlar
+599|Kapalı
+600|Engelle
+601|Paylaş
+602|Düzenle
+603|Rehberde görüntüle
+604|Güvenlik kodunu doğrula
+605|Kişiyi düzenle
+606|Engellenen kişiler artık sizi arayamaz ve size mesaj gönderemez.
+607|John engellensin mi?
+608|Son görülme ve çevrimiçi
+609|Herkes
+610|Okundu bilgisi
+611|Engellenen kişiler
+612|John’un engelini kaldır
+613|Yazmak yerine konuşun
+614|Klavyenizde küçük bir mikrofon tuşu var.
+615|Yavaş konuşun. Sözleriniz yazıya döner.
+616|Klavye her telefonda biraz farklı görünür.
+617|Yapıştır
+618|Pano
+619|Şuna ilet…
+620|Bilgi
+621|Kopyala
+622|Sabitle
+623|Mesaj silinsin mi?
+624|Benden sil
+625|Herkesten sil
+626|Evde misin?
+627|Kişiyi görüntüle
+628|Listeye ekle
+629|Medya, bağlantı ve belgeler
+630|Bildirimleri sessize al
+631|Doktor saat kaçta?
+632|24 saat
+633|7 gün
+634|90 gün
+635|Konum
+636|Kişi
+637|Belge
+638|Anket
+639|Etkinlik
+640|Açıklama ekleyin…
+641|seçildi
+642|Medya kalitesi
+643|Standart kalite
+644|HD kalite
+645|Fotoğrafı çekin
+646|Telefonu sabit tutun.
+647|Büyük yuvarlak düğmeye bir kez dokunun.
+648|Bahçeye bak!
+649|Bugün 18:20
+650|Torunlara bak!
+651|Tüm medya
+652|Sohbette göster
+653|Galeride görüntüle
+654|Maria’ya gönder
+655|Doktor randevusu.pdf
+656|240 kB · PDF
+657|Bahçe planı.pdf
+658|1 MB · PDF
+659|“Doktor randevusu.pdf” Maria’ya gönderilsin mi?
+660|Gönder
+661|Belge açma
+662|PDF dosyaları bir PDF görüntüleyicide açılır.
+663|Telefon hangi uygulamayı kullanacağını sorarsa bildiğiniz birini seçin.
+664|‹ İptal için kaydırın
+665|Uçtan uca şifreli
+666|Çalıyor
+667|Hoparlör
+668|Sessiz
+669|Kişi ekle
+670|WhatsApp sesli arama
+671|Reddet
+672|Kabul et
+673|Kamerayı çevir
+674|Kamera kapalı
+675|Ekranı paylaş
+676|WhatsApp görüntülü arama
+677|Siz
+678|Maria, John, Tom, siz
+679|Cumartesi birlikte öğle yemeği?
+680|Evet, görüşürüz!
+681|Grup araması başlat
+682|WhatsApp ekranınızdaki her şeye erişebilecek.
+683|WhatsApp ile kayıt veya yayın başlatılsın mı?
+684|Şimdi başlat
+685|Katılımcı ekle
+686|Oluştur
+687|Grup
+688|katılımcı
+689|Ekle
+690|Grup izinleri
+691|Bağlantıyla davet et
+692|Bağlantıyı WhatsApp ile gönder
+693|Bağlantıyı kopyala
+694|Bağlantıyı paylaş
+695|Bağlantıyı sıfırla
+696|Grubumuza katıl: chat.whatsapp.com/example
+697|Grup · 12 katılımcı
+698|Gruba katıl
+699|Grup adını girin
+700|Tamam
+701|Grup simgesi
+702|Emoji ve çıkartmalar
+703|Grup yöneticisi
+704|Maria’ya mesaj gönder
+705|Maria’yı görüntüle
+706|Grup yöneticisi yap
+707|Maria’yı çıkar
+708|Grup bilgisi
+709|Grup medyası
+710|Diğer katılımcılar bu sohbeti sessize aldığınızı görmez.
+711|8 saat
+712|1 hafta
+713|Her zaman
+714|Bahset
+715|Şikâyet et
+716|Gruptan çık
+717|Sohbeti temizle
+718|Sohbeti dışa aktar
+719|Gruptan çıktığınız yalnızca grup yöneticilerine bildirilir.
+720|“Yürüyüş kulübü” grubundan çıkılsın mı?
+721|Çık
+722|Profil
+723|Ad
+724|Hakkımda
+725|Merhaba!
+726|Avatar
+727|Fotoğrafı kaldır
+728|Hakkımda seç
+729|Müsait
+730|Meşgul
+731|İşte
+732|Herkese günaydın!
+733|Durum (Kişiler)
+734|Bugün parkta güzel bir yürüyüş
+735|Yanıtla…
+736|Kanal oluştur
+737|Durum gizliliği
+738|Kişilerim
+739|Şunlar hariç kişilerim…
+740|Yalnızca şunlarla paylaş…
+741|2 görüntüleme
+742|Bunu alan herkes için de silinecek.
+743|Bu durum güncellemesi silinsin mi?
+744|Sil
+745|Emoji
+746|Çıkartmalar
+747|Çıkartma ara
+748|Teşekkür çıkartmaları
+749|Çıkartma paketi
+750|Çıkartma paketleri
+751|Mutlu yüzler
+752|Ücretsiz
+753|Çiçekler
+754|Favorilere ekle
+755|Çıkartma paketini görüntüle
+756|Kanallar nedir?
+757|Güncellemeleri okursunuz; kanalda yanıt veremezsiniz.
+758|Telefon numaranız kanala gösterilmez.
+759|Yalnızca güvendiğiniz kanalları takip edin.
+760|Bahçe İpuçları
+761|12 B takipçi
+762|Takip et
+763|Kanal bul
+764|Sağlık Haberleri
+765|48 B takipçi
+766|Domatesleri sabah erkenden sulayın.
+767|Bu hafta: lale soğanı dikiyoruz.
+768|Kanal bilgisi
+769|Takibi bırak
+770|Bahçe İpuçları takibi bırakılsın mı?
+771|Topluluklar nedir?
+772|Yöneticiler herkese duyuru gönderebilir.
+773|Üyeler istedikleri gruplara katılabilir.
+774|Numaranız grup üyelerine görünür.
+775|Topluluğumuza katıl: chat.whatsapp.com/example
+776|Büyükanne ve büyükbabalar kulübü
+777|Topluluk · 3 grup
+778|Topluluğa katıl
+779|Mahalle
+780|Duyurular
+781|Genel
+782|Bahçe grubu
+783|Topluluk bilgisi
+784|Topluluktan çık
+785|Ekran
+786|Tema
+787|Sistem varsayılanı
+788|Varsayılan sohbet teması
+789|Sohbet ayarları
+790|Enter ile gönder
+791|Yazı tipi boyutu
+792|Orta
+793|Küçük
+794|Büyük
+795|Sohbet yedeği
+796|Sohbetleri aktar
+797|Tema seç
+798|Açık
+799|Koyu
+800|Duvar kâğıdı
+801|Konuşma sesleri
+802|Bildirim sesi
+803|Varsayılan
+804|Titreşim
+805|Yüksek öncelikli bildirimleri kullan
+806|Grup bildirim sesi
+807|Çan sesi
+808|Zil
+809|Sessiz
+810|Arşivlenmiş
+811|Uygulama kilidi
+812|Hiçbiri
+813|Gizlilik kontrolü
+814|Son görülmemi kimler görebilir
+815|Hiç kimse
+816|Çevrimiçi olduğumu kimler görebilir
+817|Son görülme ile aynı
+818|Güvenlik bildirimleri
+819|Geçiş anahtarları
+820|E-posta adresi
+821|İki adımlı doğrulama
+822|Numara değiştir
+823|Hesap bilgisi iste
+824|Hesabı sil
+825|Ekstra güvenlik için iki adımlı doğrulamayı açın; numaranızı WhatsApp’a yeniden kaydederken bir PIN istenir.
+826|Aç
+827|Numaranızı WhatsApp’a kaydederken sorulacak 6 haneli bir PIN girin.
+828|Biyometrik verilerle kilidi aç
+829|Otomatik kilitle
+830|Hemen
+831|Parmak izinizi onaylayın
+832|Kayıtlı parmağınızı sensöre koyun.
+833|Artık WhatsApp yalnızca parmak izinizle açılır.
+834|Sohbet kilidi
+835|Bu sohbeti parmak iziyle kilitle
+836|Cihaz durumu
+837|Şu an etkin
+838|Son etkinlik 3 gün önce
+839|Cihaz bağla
+840|Bilinmeyen tarayıcı
+841|Son etkinlik 1 saat önce
+842|Oturumu kapat
+843|Kapat
+844|Bilinmeyen arayanları sessize al
+845|Bilinmeyen numaralardan gelen aramalar sessize alınır
+846|Sizinle kimin iletişim kurabileceğini seçin
+847|Kişisel bilgilerinizi kontrol edin
+848|Sohbetlerinize daha fazla gizlilik ekleyin
+849|Hesabınıza daha fazla koruma ekleyin
+850|Sohbet yedeği ne işe yarar
+851|Mesajlarınız ve fotoğraflarınız Google Drive’a kaydedilebilir.
+852|Telefonunuzu kaybederseniz geri yükleyebilirsiniz.
+853|Aynı telefon numarası ve aynı Google hesabı gerekir.
+854|Yedekle
+855|Son yedekleme: Dün 02:00
+856|Google Hesabı
+857|Sıklık
+858|Günlük
+859|Uçtan uca şifreli yedekleme
+860|Videoları dahil et
+861|Hesap seçin
+862|Hesap ekle
+863|Haftalık
+864|Aylık
+865|Yedeğinize bir koruma katmanı ekleyin.
+866|Şifre oluştur
+867|Bu şifreyi unutursanız yedeğinizi geri yükleyemezsiniz.
+868|Yedeği geri yükle
+869|Yedek bulundu. Son yedekleme: Dün 02:00.
+870|Atla
+871|Geri yükle
+872|İki telefonu yakın tutun ve Wi-Fi’ye bağlayın.
+873|Başlat
+874|Numaranızı değiştirmek hesap bilgilerinizi, gruplarınızı ve ayarlarınızı taşır.
+875|Yedekleme ve geri yükleme sorunları
+876|Aynı numara ve aynı Google hesabı mı?
+877|Google Drive’da ve telefonda yeterli yer var mı?
+878|Wi-Fi’ye bağlı mı?
+879|Şifreli yedekler için: doğru şifre mi?
+880|Konum gönder
+881|Canlı konum paylaş
+882|Mevcut konumunuzu gönderin
+883|10 metreye kadar doğru
+884|15 dakika
+885|1 saat
+886|Canlı konum
+887|Paylaşmayı durdur
+888|Canlı konum paylaşımı durdurulsun mu?
+889|Durdur
+890|Kişi paylaş
+891|Kişi ekle
+892|Konumunuzu gizli tutun
+893|Yalnızca aileniz ve yakın arkadaşlarınızla paylaşın.
+894|Canlı konum seçtiğiniz süre bitince durur; isterseniz daha önce durdurun.
+895|Asla yabancılarla veya büyük gruplarda paylaşmayın.
+896|Kişi değil
+897|Bu gönderen kişileriniz arasında değil.
+898|Merhaba canım, size harika bir teklifim var
+899|Kişi değil · Ortak grup yok
+900|Anne selam, telefonum bozuldu. Bu yeni numaram.
+901|Para gönderebilir misin? Acil.
+902|Sahte aile mesajını tanıyın
+903|Yeni bir numara ve acil para isteği.
+904|Telefonda konuşamayacaklarını söylerler.
+905|Her zaman eski numarayı arayın ve önce sesini duyun.
+906|Kargonuz bekliyor! Ücreti buradan ödeyin: parcel-check.example
+907|Tehlikeli bağlantıları tanıyın
+908|Garip yazım, ödüller veya “küçük bir ücret ödeyin”.
+909|Bağlantı şifre veya kart numarası isterse durun.
+910|Şirkete resmî uygulamasından danışın.
+911|Yatırım Kulübü
+912|300 katılımcı
+913|Bugün katıl, paranı bir haftada ikiye katla!
+914|Yatırım dolandırıcılığından korunun
+915|Hiçbir gerçek yatırım hızlı ve büyük kazanç garanti etmez.
+916|Dolandırıcılar sahte “mutlu üyelerle” dolu gruplar kullanır.
+917|Yatırım yapmadan önce bankanıza veya ailenize sorun.
+918|Yurt dışında kaldım, hemen 500 gönderebilir misin?
+919|Para isteme dolandırıcılığından korunun
+920|Kişiyi telefonla arayın.
+921|Sadece bir mesaj yüzünden para göndermeyin.
+922|Hesap sahteyse şikâyet edin.
+923|WhatsApp Destek?
+924|Hesabınız kapatılacak. SMS’inizdeki 6 haneli kodu bana gönderin.
+925|Kodunuz hesabınızın anahtarıdır
+926|Kodu bilen herkes WhatsApp’ınızı ele geçirebilir.
+927|Yanıt vermeyin. Engelleyin ve şikâyet edin.
+928|Ekstra güvenlik için iki adımlı doğrulamayı açın.
+929|Ödül kazandınız!
+930|En son mesajlar WhatsApp’a iletilecek.
+931|Bu kişi WhatsApp’a şikâyet edilsin mi?
+932|Hesabınız çalındıysa
+933|WhatsApp’ı açın ve numaranızı SMS koduyla yeniden kaydedin.
+934|İki adımlı doğrulamayı açın.
+935|Ailenize ve arkadaşlarınıza para göndermemelerini söyleyin.
+936|Ayarlar › Yardım bölümünden WhatsApp destek ekibine ulaşın.
+937|WhatsApp açılmıyor
+938|Telefonunuzu yeniden başlatın.
+939|WhatsApp’ı Play Store’dan güncelleyin.
+940|Telefonunuzda boş yer olduğunu kontrol edin.
+941|Geliyor musun?
+942|Mesaj gitmiyor
+943|Wi-Fi’yi veya mobil veriyi açın.
+944|Uçak modunu kapatın.
+945|Hâlâ bekliyorsa telefonunuzu yeniden başlatın.
+946|Fotoğraf gitmiyor
+947|İnternetiniz çalışıyor mu?
+948|Telefonunuzun tarihi ve saati doğru mu?
+949|WhatsApp’ın fotoğraflara izni var mı? (telefon Ayarlar › Uygulamalar › WhatsApp › İzinler)
+950|Aramalar bağlanmıyor
+951|İki telefonun da iyi bir internet bağlantısı olmalı.
+952|Mobil veri yerine Wi-Fi deneyin.
+953|WhatsApp’ın mikrofonu ve kamerayı kullanabildiğini kontrol edin.
+954|Bildirimler gelmiyor
+955|Sohbet sessize mi alınmış?
+956|Telefonun Ayarlar’ında WhatsApp bildirimleri açık mı?
+957|Pil tasarrufu WhatsApp’ı durduruyor mu?
+958|Depolamayı yönet
+959|2,1 GB kullanıldı
+960|Ağ kullanımı
+961|Aramalarda daha az veri kullan
+962|Yardım merkezi
+963|Bize ulaşın
+964|Koşullar ve Gizlilik İlkesi
+965|Uygulama bilgisi
+966|Yardım Merkezi’nde ara
+967|Sohbetler nasıl yedeklenir
+968|Yardım Merkezi
+969|Nasıl güvende kalınır
+970|Dün
+971|Bugün 18:40
+972|Dün 10:02
