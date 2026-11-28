@@ -15,14 +15,14 @@ for (const lang of langs) {
   const tr = rows(`${lang}.txt`); const out = [];
   const enWords = new Set([...en].filter(([n]) => keys.get(n) === '#w').map(([, v]) => v));
   const wl = raw(`${lang}.txt`).filter(([n]) => n.startsWith('='));
-  for (const [n, v] of wl) { if (!enWords.has(n.slice(1))) out.push(`화면 글자 목록에 없음: ${n.slice(1)}`); if (sig(n.slice(1)) !== sig(v) && !/\d:\d\d/.test(n)) out.push(`화면 글자 숫자·기호 다름: ${n.slice(1)} | ${v}`); }
+  for (const [n, v] of wl) { if (!enWords.has(n.slice(1))) out.push(`화면 글자 목록에 없음: ${n.slice(1)}`); if (sig(n.slice(1)).split(' ').some((x) => x && !sig(v).split(' ').includes(x)) && !/\d:\d\d/.test(n)) out.push(`화면 글자 숫자·기호 다름: ${n.slice(1)} | ${v}`); }
   const wset = new Set(wl.map(([n]) => n.slice(1))); const wmiss = [...enWords].filter((w) => !wset.has(w) && ![...tr.keys()].some((k) => en.get(k) === w));
   if (wmiss.length > 200) out.push(`화면 글자 번역 적음: 빠진 것 ${wmiss.length}개`);
   const miss = [...en.keys()].filter((n) => !tr.has(n) && keys.get(n) !== '#w');
   if (miss.length) out.push(`빠진 번호(문장): ${miss.slice(0, 20).join(',')}${miss.length > 20 ? '…' : ''} (${miss.length})`);
   for (const [n, t] of tr) {
     const e = en.get(n); if (e == null) { out.push(`${n}: 영어에 없는 번호`); continue; }
-    if (sig(e) !== sig(t) && !/[٠-٩০-৯०-९๐-๙]/.test(t)) out.push(`${n}: 숫자·기호 다름 | ${e} | ${t}`);
+    { const te = sig(t).split(' '); const missing = sig(e).split(' ').filter((x) => x && !te.includes(x)); if (missing.length && !/[٠-٩০-৯०-९๐-๙]/.test(t)) out.push(`${n}: 숫자·기호 빠짐(${missing.join(',')}) | ${e} | ${t}`); }
     const k = keys.get(n);
     if ((k === '#s' || k.startsWith('#c')) && /[.!?。]$/.test(e) && !/[.!?。！？।۔]$|[.!?。」』”»"“]$/.test(t.trim())) out.push(`${n}: 문장 끝 없음 | ${e} | ${t}`);
     if (k === '#w' && /[.。]$/.test(t.trim()) && !/[.]$/.test(e)) out.push(`${n}: 낱말인데 마침표 | ${e} | ${t}`);

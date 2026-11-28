@@ -1,5 +1,5 @@
 /** [기초] 01~06 */
-import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, M, SRC, MENUS, SIDE, HOME, APPS, PHONE_TABS, PRACTICE_ONLY } from './helpers.js?v=20261128.1206';
+import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, M, SRC, MENUS, SIDE, HOME, APPS, PHONE_TABS, PRACTICE_ONLY } from './helpers.js?v=20261128.1219';
 
 const POWER = { kind: 'dialog', style: 'power' };
 
