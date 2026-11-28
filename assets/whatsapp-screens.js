@@ -36,13 +36,23 @@ function canvas() {
     out() { return { body: parts.join(''), targets }; },
   };
 }
-const fit = (s, n) => { const t = tr(s); return t.length > n ? `${t.slice(0, n - 1)}…` : t; };
+// Width in "Latin letters": CJK and Hangul count double, Thai vowel/tone marks count zero
+const cw = (ch) => (/[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]/.test(ch) ? 0 : /[\u1100-\u115F\u2E80-\uA4CF\uAC00-\uD7A3\uF900-\uFAFF\uFE30-\uFE4F\uFF00-\uFF60\uFFE0-\uFFE6]/.test(ch) ? 2 : 1);
+const width = (t) => [...t].reduce((a, ch) => a + cw(ch), 0);
+const fit = (s, n) => { const t = tr(s); if (width(t) <= n) return t; let o = ''; for (const ch of t) { if (width(o + ch) > n - 1) break; o += ch; } return `${o}…`; };
+// Word pieces: languages without spaces (Thai, Japanese, Chinese) are split into words by Intl.Segmenter
+const SEG = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter(undefined, { granularity: 'word' }) : null;
+const pieces = (t) => (SEG ? [...SEG.segment(t)].map((x) => x.segment) : t.split(/(\s+)/));
 function wrap(s, max) {
   const t = tr(s); const out = []; let line = '';
-  for (const w of t.split(' ')) { if ((`${line} ${w}`).trim().length > max && line) { out.push(line); line = w; } else line = `${line} ${w}`.trim(); }
-  if (line) out.push(line);
+  for (const p of pieces(t)) {
+    if (width(line + p) > max && line.trim()) { out.push(line.trim()); line = p.trimStart(); } else line += p;
+    while (width(line) > max) { let a = ''; for (const ch of line) { if (width(a + ch) > max) break; a += ch; } out.push(a); line = line.slice(a.length); }
+  }
+  if (line.trim()) out.push(line.trim());
   return out;
 }
+
 
 const I = {
   search: (x, y, f = C.dark) => `<g stroke="${f}" stroke-width="2.2" fill="none" stroke-linecap="round"><circle cx="${x - 2}" cy="${y - 2}" r="7"/><line x1="${x + 3}" y1="${y + 3}" x2="${x + 8}" y2="${y + 8}"/></g>`,
