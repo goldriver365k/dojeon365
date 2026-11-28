@@ -6,7 +6,7 @@ import { CHAPTERS } from '../data/iphone/outline.mjs';
 import { STEPS } from '../data/iphone/steps-essential.mjs';
 import { MORE_STEPS, MORE_SCREENS } from '../data/iphone/more.mjs';
 import { IPHONE_MODELS, IOS_VERSIONS, SERIES, iosFor, modelById } from '../data/iphone/models.js';
-import { loadCatalog, publishProblems, isPublic, iphoneCourse, progress, REQUIRES } from '../scripts/build-iphone.mjs';
+import { loadCatalog, publishProblems, isPublic, iphoneCourse, progress, REQUIRES, IP_LANGS, ipTr } from '../scripts/build-iphone.mjs';
 import { hasCourse } from '../i18n/regions.js';
 
 const TWO_KO = /(열고|누르고|적고|고르고|켜고|끄고|밀고|들어가|선택하고)\s|\s후\s|→/;
@@ -138,8 +138,19 @@ test('과정 첫 화면: 한국어·영어에 내 아이폰 선택(모를 때·�
   const lesson = readFileSync('learn/iphone/text-size/index.html', 'utf8');
   assert.match(lesson, /아이폰 화면을 보고 그린 그림/); assert.match(lesson, /target-ring/); assert.match(lesson, /hreflang="en"/);
   assert.match(readFileSync('en/iphone/text-size/index.html', 'utf8'), /drawings of the iPhone screen/);
-  assert.ok(!existsSync('es/iphone'), '스페인어 글이 생기기 전에는 스페인어 아이폰 페이지 없음');
+  // 번역 파일이 있는 언어만 아이폰 페이지가 생긴다
+  for (const lang of IP_LANGS) { assert.ok(existsSync(`${lang}/iphone/index.html`), lang); assert.ok(sm.includes(`/${lang}/iphone/text-size/`), lang); }
   assert.match(readFileSync('en/index.html', 'utf8'), /href="\/en\/iphone\/"/);
   assert.match(readFileSync('index.html', 'utf8'), /href="\/learn\/iphone\/"/);
   assert.match(readFileSync('admin/iphone/index.html', 'utf8'), /data-course="iphone"/);
+});
+
+test('다른 언어 번역: 번역 파일의 줄이 영어와 맞고, 그 언어로 440개 모두 공개', async () => {
+  const { execFileSync } = await import('node:child_process');
+  execFileSync('node', ['scripts/iphone-i18n-check.mjs'], { stdio: 'pipe' });
+  for (const lang of IP_LANGS) {
+    const c = iphoneCourse(lang); assert.equal(c.count, 440, lang);
+    const t = ipTr(lang); assert.ok(t.get('@title') && t.get('@disclaimer').includes('Apple'), lang);
+    assert.notEqual(t.step('Tap Settings.'), 'Tap Settings.', lang);
+  }
 });
