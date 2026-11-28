@@ -1,0 +1,2219 @@
+1|Touchez {x}.
+2|Activez {x}.
+3|Désactivez {x}.
+4|Choisissez {x}.
+5|Dessin de l’écran de l’iPhone. {x}
+6|Utiliser l’iPhone
+7|Leçons faciles, étape par étape
+8|DigiStep365 est un site éducatif indépendant ; il n’est ni affilié, ni parrainé, ni approuvé par Apple Inc. Apple et iPhone sont des marques d’Apple Inc.
+9|Ces images sont des dessins de l’écran de l’iPhone. Le nom et la place des menus peuvent être un peu différents sur votre iPhone.
+10|iPhone avec bouton principal (SE, 8 et antérieurs)
+11|Choisissez votre iPhone
+12|Choisissez votre modèle et votre version d’iOS pour voir d’abord les leçons adaptées à votre iPhone. Vous pouvez aussi passer cette étape et voir toutes les leçons.
+13|Modèle d’iPhone
+14|Version d’iOS
+15|Je ne connais pas mon modèle d’iPhone
+16|Je ne connais pas ma version d’iOS
+17|Commencer par les leçons pour tous les iPhone
+18|Enregistrer
+19|Modifier
+20|Ce site
+21|Français · International
+22|Comment trouver le modèle de votre iPhone
+23|Comment trouver votre version d’iOS
+24|Bientôt
+25|{n}
+26|{n} leçons publiées sur {t}
+27|Les leçons sont publiées une par une après la capture et la vérification de vrais écrans d’iPhone. Nous n’utilisons jamais d’écrans inventés.
+28|Toutes les leçons sont publiées. Les images sont des dessins de l’écran de l’iPhone et peuvent être un peu différentes de votre iPhone.
+29|Essentiel
+30|Ce modèle a
+31|Ce modèle n’a pas
+32|Liste des modèles vérifiée le
+33|{n} étapes
+34|Accueil
+35|Toutes les leçons
+36|Choisir
+37|Le choix nécessite JavaScript. Vous pouvez quand même lire la liste des leçons ci-dessous.
+38|Bouton principal
+39|Touch ID (empreinte digitale)
+40|Face ID (reconnaissance faciale)
+41|Bouton Action
+42|Commande de l’appareil photo
+43|Dynamic Island
+44|Apple Intelligence (vérifiez la langue et la région)
+45|SOS d’urgence par satellite (certains pays)
+46|MagSafe
+47|Port de charge : Lightning
+48|Port de charge : USB-C
+49|Les bases de l’iPhone
+50|Appels
+51|Contacts
+52|Messages et iMessage
+53|Clavier et dictée
+54|Appareil photo et vidéo
+55|Photos et albums
+56|Naviguer avec Safari
+57|Wi-Fi, Bluetooth et données
+58|Écran et taille du texte
+59|Sons, sonneries et notifications
+60|App Store et apps
+61|Batterie et recharge
+62|Horloge, alarmes, calculette et météo
+63|Calendrier, Notes et Dictaphone
+64|Face ID, Touch ID et sécurité
+65|Fonctions pour seniors et accessibilité
+66|Fichiers, stockage et AirDrop
+67|Compte Apple, iCloud et sauvegarde
+68|Apple Pay, Santé et Plans
+69|Siri et Apple Intelligence
+70|Dépannage et iPhone perdu
+71|Allumer l’iPhone
+72|Éteindre l’iPhone
+73|Redémarrer l’iPhone
+74|Forcer le redémarrage de l’iPhone
+75|Réactiver et déverrouiller l’iPhone
+76|Verrouiller l’iPhone
+77|Aller à l’écran d’accueil
+78|Apprendre à toucher, maintenir et balayer
+79|Ouvrir une app
+80|Passer d’une app ouverte à l’autre
+81|Fermer une app
+82|Ouvrir le centre de contrôle
+83|Voir le centre de notifications
+84|Comprendre les icônes d’état
+85|Utiliser les boutons de volume
+86|Activer ou désactiver le mode silencieux
+87|Utiliser le bouton Action
+88|Déplacer des apps sur l’écran d’accueil
+89|Créer un dossier d’apps
+90|Utiliser la bibliothèque d’apps
+91|Rechercher depuis l’écran d’accueil
+92|Ajouter un widget
+93|Changer le fond de l’écran verrouillé
+94|Trouver le modèle de votre iPhone
+95|Trouver votre version d’iOS
+96|Passer un appel
+97|Répondre à un appel
+98|Refuser un appel
+99|Raccrocher
+100|Utiliser le haut-parleur pendant un appel
+101|Couper votre micro pendant un appel
+102|Rappeler depuis Récents
+103|Ajouter un favori et l’appeler
+104|Écouter la messagerie
+105|Utiliser le clavier pendant un appel
+106|Bloquer un numéro
+107|Mettre en silence les appels inconnus
+108|Passer un appel à plusieurs
+109|Passer un appel vidéo FaceTime
+110|Utiliser la messagerie en direct
+111|Ajouter un contact
+112|Enregistrer un numéro depuis Récents
+113|Modifier un contact
+114|Supprimer un contact
+115|Rechercher dans vos contacts
+116|Ajouter une photo à un contact
+117|Partager un contact
+118|Configurer votre fiche de contact
+119|Créer une affiche de contact
+120|Ajouter un contact d’urgence
+121|Ajouter des contacts aux favoris
+122|Fusionner des contacts en double
+123|Envoyer un SMS
+124|Lire un message
+125|Répondre à un message
+126|Envoyer une photo
+127|Enregistrer une photo reçue
+128|Envoyer un message de groupe
+129|Comprendre les bulles bleues et vertes
+130|Réagir avec un Tapback
+131|Supprimer un message
+132|Supprimer une conversation
+133|Envoyer un message audio
+134|Partager votre position dans Messages
+135|Épingler une conversation
+136|Masquer les alertes d’une conversation
+137|Utiliser un code de vérification reçu par Messages
+138|Modifier un iMessage envoyé
+139|Annuler l’envoi d’un iMessage
+140|Filtrer les expéditeurs inconnus
+141|Signaler des messages indésirables
+142|Rechercher dans vos messages
+143|Écrire avec le clavier
+144|Changer la langue du clavier
+145|Ajouter un clavier
+146|Écrire des chiffres et des symboles
+147|Dicter du texte avec la voix
+148|Ajouter des emoji
+149|Déplacer le curseur
+150|Sélectionner du texte
+151|Copier et coller
+152|Annuler la saisie
+153|Activer ou désactiver la correction automatique
+154|Utiliser le remplacement de texte
+155|Utiliser le clavier à une main
+156|Écrire à la main
+157|Changer les sons et vibrations du clavier
+158|Ouvrir l’appareil photo
+159|Prendre une photo
+160|Ouvrir l’appareil photo depuis l’écran verrouillé
+161|Zoomer avec l’appareil photo
+162|Régler la mise au point et l’exposition
+163|Prendre un selfie
+164|Filmer une vidéo
+165|Mettre en pause pendant une vidéo
+166|Activer ou désactiver le flash
+167|Utiliser le mode Portrait
+168|Prendre une photo panoramique
+169|Utiliser le mode Nuit
+170|Utiliser le retardateur
+171|Prendre des photos en rafale
+172|Activer ou désactiver Live Photo
+173|Afficher la grille
+174|Prendre des photos macro
+175|Filmer au ralenti
+176|Filmer un accéléré
+177|Filmer en mode Cinématique
+178|Utiliser les styles photographiques
+179|Lire un code QR avec l’appareil photo
+180|Utiliser Texte en direct dans l’appareil photo
+181|Utiliser la commande de l’appareil photo
+182|Prendre une photo avec le bouton de volume
+183|Inverser la caméra avant
+184|Changer la qualité vidéo
+185|Conserver les réglages de l’appareil photo
+186|Changer d’objectif
+187|Filmer une vidéo QuickTake
+188|Voir vos photos
+189|Zoomer sur une photo
+190|Lire une vidéo
+191|Supprimer une photo
+192|Récupérer une photo supprimée
+193|Mettre une photo en favori
+194|Créer un album
+195|Ajouter des photos à un album
+196|Partager une photo
+197|Recadrer une photo
+198|Faire pivoter une photo
+199|Améliorer une photo automatiquement
+200|Ajouter un filtre à une photo
+201|Revenir à la photo d’origine
+202|Couper le début ou la fin d’une vidéo
+203|Rechercher dans vos photos
+204|Voir Personnes et animaux
+205|Regarder les Souvenirs
+206|Masquer une photo
+207|Sélectionner plusieurs photos
+208|Retrouver les captures d’écran
+209|Détacher le sujet d’une photo
+210|Fusionner des photos en double
+211|Créer un album partagé
+212|Imprimer une photo
+213|Ouvrir Safari
+214|Chercher sur le web
+215|Aller à l’adresse d’un site
+216|Revenir à la page précédente
+217|Ouvrir un nouvel onglet
+218|Fermer des onglets
+219|Ajouter un site aux signets
+220|Ouvrir un signet
+221|Utiliser le lecteur
+222|Changer la taille du texte d’une page
+223|Zoomer sur une page web
+224|Ajouter à la liste de lecture
+225|Partager un lien
+226|Utiliser la navigation privée
+227|Effacer l’historique
+228|Rechercher du texte dans une page
+229|Télécharger un fichier
+230|Traduire une page web
+231|Écouter une page web
+232|Ajouter un site à l’écran d’accueil
+233|Se connecter au Wi-Fi
+234|Oublier un réseau Wi-Fi
+235|Partager le mot de passe Wi-Fi
+236|Se connecter au Wi-Fi avec un code QR
+237|Activer ou désactiver les données cellulaires
+238|Voir l’utilisation des données cellulaires
+239|Activer ou désactiver le mode Avion
+240|Activer le Bluetooth
+241|Jumeler des écouteurs Bluetooth
+242|Oublier un appareil Bluetooth
+243|Connecter des AirPods
+244|Activer le partage de connexion
+245|Utiliser le mode données réduites
+246|Activer ou désactiver l’itinérance des données
+247|Ajouter une eSIM
+248|Réinitialiser les réglages réseau
+249|Connecter la voiture en Bluetooth
+250|Lire une étiquette NFC
+251|Agrandir le texte
+252|Mettre le texte en gras
+253|Utiliser le zoom de l’écran
+254|Régler la luminosité
+255|Activer ou désactiver la luminosité automatique
+256|Utiliser le mode sombre
+257|Utiliser Night Shift
+258|Activer ou désactiver True Tone
+259|Changer le délai de verrouillage
+260|Utiliser Lever pour activer
+261|Activer ou désactiver l’écran toujours allumé
+262|Changer le fond d’écran
+263|Régler la taille du texte d’une seule app
+264|Agrandir les icônes de l’écran d’accueil
+265|Réduire les animations
+266|Augmenter le contraste
+267|Activer les formes de boutons
+268|Utiliser les filtres de couleur
+269|Réduire le point blanc
+270|Verrouiller l’orientation de l’écran
+271|Monter le volume de la sonnerie
+272|Changer la sonnerie
+273|Activer ou désactiver les vibrations
+274|Choisir une sonnerie pour un contact
+275|Changer le son des messages
+276|Activer ou désactiver les notifications d’une app
+277|Masquer l’aperçu des notifications
+278|Utiliser Ne pas déranger
+279|Activer la concentration Sommeil
+280|Autoriser les appels de certaines personnes
+281|Activer le flash LED pour les alertes
+282|Réduire le son trop fort des écouteurs
+283|Annoncer les appels
+284|Activer l’audio mono
+285|Utiliser la reconnaissance des sons
+286|Installer une app
+287|Chercher dans l’App Store
+288|Mettre à jour les apps
+289|Activer les mises à jour automatiques
+290|Supprimer une app
+291|Retirer une app de l’écran d’accueil
+292|Décharger une app
+293|Retélécharger une app
+294|Changer les autorisations des apps
+295|Voir ou résilier des abonnements
+296|Voir l’historique des achats
+297|Consulter Temps d’écran
+298|Fixer des limites aux apps
+299|Verrouiller une app
+300|Masquer une app
+301|Recharger l’iPhone
+302|Afficher le pourcentage de batterie
+303|Activer le mode économie d’énergie
+304|Vérifier l’état de la batterie
+305|Voir l’utilisation de la batterie par app
+306|Recharger sans fil
+307|Recharger avec MagSafe
+308|Utiliser la recharge optimisée
+309|Fixer une limite de charge
+310|Recharger rapidement l’iPhone
+311|Recharger en USB-C
+312|Recharger avec un câble Lightning
+313|Ajouter un widget de batterie
+314|Astuces pour économiser la batterie
+315|Recharger un autre appareil avec l’iPhone
+316|Régler une alarme
+317|Supprimer une alarme
+318|Changer le son de l’alarme
+319|Répéter une alarme
+320|Utiliser le minuteur
+321|Utiliser le chronomètre
+322|Voir l’horloge mondiale
+323|Programmer un horaire de sommeil
+324|Allumer la lampe torche
+325|Utiliser la calculette
+326|Voir l’historique de la calculette
+327|Convertir des unités avec la calculette
+328|Consulter la météo
+329|Ajouter une ville dans Météo
+330|Recevoir des alertes météo
+331|Ajouter un évènement au calendrier
+332|Recevoir une alerte pour un évènement
+333|Modifier un évènement
+334|Supprimer un évènement
+335|Créer un évènement qui se répète
+336|Changer l’affichage du calendrier
+337|Afficher les jours fériés
+338|Créer une note
+339|Faire une liste de contrôle
+340|Ajouter une photo à une note
+341|Numériser un document dans Notes
+342|Verrouiller une note
+343|Épingler une note
+344|Partager une note
+345|Supprimer et récupérer une note
+346|Enregistrer un mémo vocal
+347|Écouter un enregistrement
+348|Renommer un enregistrement
+349|Partager un enregistrement
+350|Créer un rappel
+351|Définir un code
+352|Changer votre code
+353|Configurer Face ID
+354|Utiliser Face ID avec un masque
+355|Configurer une autre apparence
+356|Configurer Touch ID
+357|Ajouter une autre empreinte
+358|Utiliser Face ID dans les apps
+359|Voir les mots de passe enregistrés
+360|Utiliser le remplissage automatique des mots de passe
+361|Vérifier l’identification à deux facteurs
+362|Utiliser le contrôle de sécurité
+363|Activer la protection en cas de vol
+364|Choisir ce qui est accessible verrouillé
+365|Effacer les données après 10 codes erronés
+366|Vérifier l’accès des apps à la position
+367|Désactiver le suivi des apps
+368|Voir le rapport de confidentialité des apps
+369|Mettre à jour iOS
+370|Éviter les arnaques par téléphone et SMS
+371|Utiliser Zoom pour agrandir l’écran
+372|Utiliser la Loupe
+373|Utiliser Énoncer l’écran
+374|Utiliser Énoncer la sélection
+375|Activer ou désactiver VoiceOver
+376|Apprendre les gestes de base de VoiceOver
+377|Utiliser AssistiveTouch
+378|Configurer l’accès assisté
+379|Quitter l’accès assisté
+380|Configurer le raccourci d’accessibilité
+381|Utiliser Toucher le dos
+382|Utiliser les adaptations du toucher
+383|Changer la durée de Haptic Touch
+384|Utiliser Accessibilité (atteindre le haut)
+385|Utiliser les sous-titres en direct
+386|Jumeler un appareil auditif
+387|Utiliser Écoute en direct
+388|Utiliser les appels RTT
+389|Créer une voix personnelle
+390|Utiliser Parole en direct
+391|Utiliser Contrôle vocal
+392|Utiliser le suivi oculaire
+393|Écouter des sons d’arrière-plan
+394|Choisir la sortie audio des appels
+395|Répondre automatiquement aux appels
+396|Régler la vitesse du clic du bouton latéral
+397|Agrandir les lettres du clavier
+398|Utiliser le mode Détection
+399|Utiliser l’accès guidé
+400|Configurer l’accessibilité au démarrage
+401|Vérifier le stockage de l’iPhone
+402|Libérer de l’espace
+403|Utiliser l’app Fichiers
+404|Retrouver les fichiers téléchargés
+405|Enregistrer un fichier dans Fichiers
+406|Ouvrir un PDF
+407|Signer un PDF
+408|Renommer un fichier
+409|Supprimer un fichier
+410|Décompresser un fichier
+411|Brancher une clé USB
+412|Envoyer des photos avec AirDrop
+413|Régler la réception AirDrop
+414|Échanger des contacts avec NameDrop
+415|Faire une capture d’écran
+416|Faire une capture de page entière
+417|Enregistrer l’écran
+418|Annoter une capture d’écran
+419|Imprimer depuis l’iPhone
+420|Transférer des photos sur un ordinateur
+421|Créer un compte Apple
+422|Se connecter avec son compte Apple
+423|Changer le mot de passe du compte Apple
+424|Si vous avez oublié le mot de passe de votre compte Apple
+425|Ajouter un contact de récupération
+426|Ajouter un contact légataire
+427|Vérifier le stockage iCloud
+428|Activer Photos iCloud
+429|Sauvegarder avec iCloud
+430|Sauvegarder avec un ordinateur
+431|Restaurer une sauvegarde
+432|Transférer vers un nouvel iPhone
+433|Synchroniser contacts et calendriers avec iCloud
+434|Configurer le partage familial
+435|Utiliser Demander l’autorisation d’achat
+436|Changer le moyen de paiement
+437|Changer le numéro de confiance
+438|Se déconnecter du compte Apple
+439|Découvrir iCloud+
+440|Effacer l’iPhone
+441|Ajouter une carte à Apple Pay
+442|Payer en magasin avec Apple Pay
+443|Utiliser une carte de transport
+444|Ajouter des cartes à Cartes
+445|Retirer une carte d’Apple Pay
+446|Configurer la fiche médicale
+447|Voir vos pas
+448|Recevoir des rappels de médicaments
+449|Découvrir la détection des chutes
+450|Partager des données de santé avec la famille
+451|Recevoir des alertes de stabilité à la marche
+452|Chercher un lieu dans Plans
+453|Obtenir un itinéraire
+454|Voir les itinéraires en transports en commun
+455|Partager votre heure d’arrivée
+456|Télécharger des cartes hors ligne
+457|Retrouver votre iPhone avec Localiser
+458|Partager votre position avec la famille
+459|Retrouver des objets avec AirTag
+460|Utiliser Arrivée
+461|Activer Siri
+462|Parler à Siri
+463|Activer Siri avec un bouton
+464|Écrire à Siri
+465|Appeler avec Siri
+466|Envoyer un message avec Siri
+467|Régler une alarme avec Siri
+468|Lancer un minuteur avec Siri
+469|Demander la météo à Siri
+470|Ouvrir une app avec Siri
+471|Créer un rappel avec Siri
+472|Lancer de la musique avec Siri
+473|Allumer la lampe torche avec Siri
+474|Changer la voix de Siri
+475|Changer la langue de Siri
+476|Autoriser Siri en mode verrouillé
+477|Annoncer les notifications
+478|Effacer l’historique de Siri
+479|Créer un raccourci
+480|Activer Apple Intelligence
+481|Utiliser les outils d’écriture
+482|Résumer un texte
+483|Voir les résumés de notifications
+484|Utiliser Retouche dans Photos
+485|Créer des images avec Image Playground
+486|Créer des Genmoji
+487|Utiliser l’intelligence visuelle
+488|Utiliser l’extension ChatGPT
+489|Utiliser la traduction en direct
+490|Comprendre la confidentialité d’Apple Intelligence
+491|Comprendre SOS d’urgence
+492|Vérifier les réglages SOS d’urgence
+493|Découvrir SOS d’urgence par satellite
+494|Déclarer l’iPhone perdu
+495|Effacer à distance un iPhone perdu
+496|Si l’écran est bloqué
+497|Si l’iPhone ne se recharge pas
+498|S’il n’y a pas de son
+499|Si le Wi-Fi ne marche pas
+500|Si le stockage est plein
+501|Si une app se ferme toute seule
+502|Si vous avez oublié votre code
+503|Si l’iPhone indique qu’il est indisponible
+504|Si l’iPhone a été mouillé
+505|Si l’iPhone est chaud
+506|Si l’écran est fissuré
+507|Prendre rendez-vous pour une réparation avec l’app Assistance Apple
+508|Réinitialiser tous les réglages
+509|Si l’iPhone indique qu’il n’y a pas de SIM
+510|Si vous ne pouvez pas appeler
+511|Effacer supprime toutes les photos, tous les contacts et toutes les apps. Vérifiez d’abord que vous avez une sauvegarde.
+512|Se déconnecter ou changer de compte Apple peut retirer de cet iPhone les photos et contacts iCloud.
+513|Les photos supprimées disparaissent définitivement au bout de 30 jours.
+514|Gardez le Wi-Fi et le chargeur branchés pendant la sauvegarde ou la restauration.
+515|Restaurer remplace le contenu actuel de votre iPhone par la sauvegarde.
+516|Les paiements dépensent de l’argent réel. Ne touchez pas Payer pour vous entraîner.
+517|Partagez votre position uniquement avec des proches de confiance.
+518|N’appuyez jamais sur les boutons pour vous entraîner. Cela appelle vraiment les secours.
+519|L’effacement à distance supprime tout le contenu de l’iPhone.
+520|Maintenez le bouton latéral droit enfoncé.
+521|Quand le logo Apple apparaît, relâchez.
+522|Attendez que l’écran verrouillé s’affiche.
+523|Maintenez enfoncés en même temps le bouton latéral et l’un des boutons de volume.
+524|Faites glisser le curseur d’extinction vers la droite.
+525|Attendez que l’écran devienne noir.
+526|Maintenez le bouton latéral enfoncé.
+527|D’abord, éteignez l’iPhone.
+528|Attendez environ 30 secondes.
+529|Maintenez le bouton latéral enfoncé jusqu’à l’apparition du logo Apple.
+530|Appuyez brièvement sur le bouton d’augmentation du volume.
+531|Appuyez brièvement sur le bouton de diminution du volume.
+532|Relâchez quand le logo Apple apparaît.
+533|Touchez l’écran ou appuyez sur le bouton latéral.
+534|Tenez l’iPhone devant votre visage et regardez-le.
+535|Balayez vers le haut depuis le bas de l’écran.
+536|Appuyez sur le bouton principal.
+537|Posez le doigt enregistré sur Touch ID.
+538|Appuyez une fois sur le bouton latéral.
+539|L’écran s’éteint et l’iPhone est verrouillé.
+540|Balayez vers le haut depuis le bord inférieur de l’écran.
+541|Vous voyez maintenant l’écran d’accueil.
+542|Appuyez sur le bouton principal rond sous l’écran.
+543|Toucher : touchez l’écran une fois, légèrement.
+544|Maintenir : gardez le doigt sur l’écran un instant.
+545|Balayer : faites glisser le doigt sur l’écran.
+546|Sur l’écran d’accueil, touchez l’app voulue.
+547|L’app s’ouvre.
+548|Balayez vers le haut depuis le bas et arrêtez-vous au milieu.
+549|Balayez à gauche ou à droite entre les apps.
+550|Touchez l’app voulue.
+551|Appuyez deux fois sur le bouton principal.
+552|Balayez vers le haut l’app à fermer.
+553|Balayez vers le bas depuis le coin supérieur droit.
+554|Le centre de contrôle s’ouvre. Balayez vers le haut pour le fermer.
+555|Le centre de contrôle s’ouvre. Appuyez sur le bouton principal pour le fermer.
+556|Balayez vers le bas depuis le milieu du haut de l’écran.
+557|Touchez une notification pour l’ouvrir.
+558|Balayez vers le haut pour fermer.
+559|La pile en haut à droite indique la batterie restante.
+560|L’éventail indique que vous êtes connecté au Wi-Fi.
+561|Les 4 barres montrent le signal cellulaire.
+562|Balayez vers le bas depuis le haut à droite pour ouvrir le centre de contrôle.
+563|Appuyez sur le bouton du haut, à gauche, pour monter le volume.
+564|Appuyez sur le bouton du bas pour baisser le volume.
+565|Ouvrez le centre de contrôle.
+566|Touchez le bouton du mode silencieux, en forme de cloche.
+567|Basculez vers le bas l’interrupteur Sonnerie/Silence sur le côté gauche.
+568|Orange veut dire silencieux. Basculez-le vers le haut pour remettre le son.
+569|Balayez pour choisir une fonction, par exemple Lampe torche.
+570|Maintenez le bouton Action enfoncé pour l’utiliser.
+571|Maintenez le doigt sur l’app.
+572|Quand les apps bougent, faites glisser l’app à un autre endroit.
+573|Touchez OK en haut à droite.
+574|Maintenez le doigt sur une zone vide de l’écran d’accueil.
+575|Faites glisser une app sur une autre.
+576|Pour renommer le dossier, maintenez le doigt sur son nom.
+577|Continuez à balayer vers la gauche sur l’écran d’accueil.
+578|Touchez le champ de recherche en haut.
+579|Tapez le nom de l’app.
+580|Balayez vers le bas depuis le milieu de l’écran d’accueil.
+581|Tapez le nom d’une app ou d’un contact.
+582|Touchez le résultat.
+583|Touchez Modifier en haut à gauche.
+584|Maintenez le doigt sur l’écran verrouillé.
+585|Nom du modèle indique le modèle de votre iPhone.
+586|Le numéro à côté de Version d’iOS est votre version d’iOS.
+587|Touchez l’app Téléphone, la verte.
+588|Touchez Clavier en bas.
+589|Touchez le numéro de téléphone.
+590|Touchez le bouton vert d’appel.
+591|Quand un appel arrive, touchez le bouton vert.
+592|Si l’iPhone est verrouillé, faites glisser le curseur pour répondre.
+593|Quand un appel arrive, touchez le bouton rouge Refuser.
+594|Si l’iPhone est verrouillé, appuyez deux fois rapidement sur le bouton latéral.
+595|Sur l’écran d’appel, touchez le bouton rouge.
+596|Pendant un appel, touchez Haut-parleur.
+597|Touchez-le à nouveau pour utiliser l’écouteur.
+598|Regardez l’écran d’appel.
+599|Touchez-le à nouveau pour que l’autre personne vous entende.
+600|Touchez l’app Téléphone.
+601|Touchez Récents en bas.
+602|Touchez le nom de la personne à rappeler.
+603|Touchez Favoris en bas.
+604|Touchez la personne.
+605|La prochaine fois, touchez simplement le nom pour appeler.
+606|Touchez Messagerie en bas à droite.
+607|Touchez un message.
+608|Touchez Lire.
+609|Pendant un appel, touchez Clavier.
+610|Touchez les chiffres demandés.
+611|Touchez Masquer pour revenir à l’écran d’appel.
+612|Dans Téléphone, touchez Récents.
+613|Touchez le bouton d’informations à côté du numéro.
+614|Touchez Bloquer ce correspondant en bas.
+615|Touchez Bloquer le contact pour confirmer.
+616|Les appels des numéros absents de Contacts vont sur la messagerie sans sonner.
+617|Commencez un appel avec la première personne.
+618|Touchez la deuxième personne.
+619|Touchez l’app FaceTime.
+620|Tapez le nom de la personne.
+621|Touchez le bouton vert FaceTime.
+622|Si vous manquez un appel, le message s’affiche en texte à l’écran.
+623|Touchez l’app Contacts.
+624|Touchez ＋ en haut à droite.
+625|Tapez le nom.
+626|Tapez le numéro de téléphone.
+627|Touchez ⓘ à côté du numéro.
+628|Dans Contacts, touchez la personne.
+629|Touchez Modifier en haut à droite.
+630|Changez les informations.
+631|Touchez Supprimer le contact en bas.
+632|Touchez à nouveau Supprimer le contact.
+633|Ouvrez Contacts.
+634|Touchez le champ Rechercher en haut.
+635|Touchez une photo.
+636|Touchez le contact à envoyer.
+637|Tapez le nom. Touchez le bouton Envoyer.
+638|Touchez Ma fiche en haut.
+639|Vérifiez votre nom et votre numéro.
+640|Touchez Photos. Vous pouvez choisir votre photo.
+641|Touchez votre photo en haut à droite.
+642|Touchez Doublons trouvés en haut.
+643|Touchez l’app Messages, la verte.
+644|Touchez le bouton de rédaction en haut à droite.
+645|Tapez le nom ou le numéro.
+646|Tapez votre message dans le champ en bas.
+647|Touchez la flèche vers le haut pour envoyer.
+648|Touchez la conversation avec un point bleu.
+649|Lisez le nouveau message.
+650|Ouvrez la conversation.
+651|Touchez le champ de texte en bas.
+652|Tapez votre réponse.
+653|Touchez la flèche vers le haut.
+654|Touchez ＋ à côté du champ de texte.
+655|Touchez la photo.
+656|Touchez la flèche vers le haut pour envoyer.
+657|Touchez la photo reçue.
+658|Touchez le bouton Partager.
+659|Touchez Rédiger.
+660|Ajoutez chaque personne, une par une.
+661|Tapez votre message.
+662|Les bulles bleues sont des iMessages envoyés par Internet (entre appareils Apple).
+663|Les bulles vertes sont des SMS classiques. Votre forfait s’applique.
+664|Touchez la conversation.
+665|Maintenez le doigt sur la bulle.
+666|Touchez le cœur ou le pouce levé.
+667|Maintenez le doigt sur la bulle du message.
+668|Touchez le bouton corbeille.
+669|Balayez la conversation vers la gauche.
+670|Touchez Supprimer, en rouge.
+671|Touchez ＋ à gauche.
+672|Parlez. Votre voix est enregistrée.
+673|Touchez le bouton Envoyer.
+674|Balayez la conversation vers la droite.
+675|Touchez le bouton jaune de la punaise.
+676|Touchez le bouton violet de la cloche.
+677|Quand un code arrive, il s’affiche au-dessus du clavier.
+678|Touchez le code pour le remplir.
+679|Ne donnez jamais votre code à personne.
+680|Maintenez le doigt sur la bulle bleue.
+681|Corrigez le texte. Touchez la coche bleue. Possible pendant 15 minutes.
+682|Touchez Annuler l’envoi. Possible pendant 2 minutes.
+683|Dans Messages, touchez Filtres en haut à gauche pour voir les expéditeurs inconnus.
+684|Touchez le message d’un expéditeur inconnu.
+685|Touchez Signaler comme indésirable en bas.
+686|Tapez un mot, par exemple médecin.
+687|Touchez un champ de texte pour afficher le clavier.
+688|Touchez les lettres une par une.
+689|Touchez ⌫ pour effacer une erreur.
+690|Touchez un champ de texte pour ouvrir le clavier.
+691|Touchez le bouton globe en bas à gauche.
+692|Chaque toucher change de clavier.
+693|Ouvrez le clavier.
+694|Touchez 123 en bas à gauche.
+695|Touchez les chiffres. Touchez ABC pour revenir aux lettres.
+696|Touchez le champ de texte.
+697|Touchez le micro du clavier.
+698|Parlez lentement. Vos mots apparaissent en texte.
+699|Touchez à nouveau le micro quand vous avez fini.
+700|Touchez la touche smiley (ou globe) en bas à gauche.
+701|Touchez l’emoji voulu.
+702|Touchez ABC pour revenir aux lettres.
+703|Touchez n’importe où dans le texte pour placer le curseur.
+704|Maintenez le doigt sur la barre d’espace.
+705|Sans lever le doigt, déplacez-le pour bouger le curseur.
+706|Touchez deux fois le mot.
+707|Faites glisser les poignées pour sélectionner plus.
+708|Maintenez le doigt sur le texte.
+709|Maintenez le doigt là où vous voulez coller.
+710|Balayez vers la gauche avec trois doigts pour annuler.
+711|Vous pouvez aussi secouer l’iPhone.
+712|Tapez la phrase complète et un raccourci court.
+713|Touchez Enregistrer en haut à droite.
+714|Maintenez le doigt sur le bouton globe ou emoji.
+715|Touchez l’icône de clavier à droite.
+716|Touchez l’app Appareil photo.
+717|L’appareil photo s’ouvre.
+718|Ouvrez l’appareil photo.
+719|Vérifiez que Photo est sélectionné.
+720|Visez ce que vous voulez photographier.
+721|Touchez le déclencheur blanc.
+722|Regardez l’écran verrouillé.
+723|Balayez l’écran vers la gauche pour ouvrir l’appareil photo.
+724|Ou maintenez le doigt sur le bouton appareil photo en bas à droite.
+725|Écartez deux doigts sur l’écran de l’appareil photo.
+726|Touchez le déclencheur pour prendre la photo.
+727|Touchez l’endroit où faire la mise au point.
+728|Faites glisser le soleil jaune vers le haut ou le bas pour changer la luminosité.
+729|Maintenez le doigt pour verrouiller la mise au point (Verrou AE/AF).
+730|Touchez le bouton de changement de caméra.
+731|Cadrez votre visage.
+732|Touchez le déclencheur.
+733|Dans l’appareil photo, touchez Vidéo.
+734|Touchez le bouton rouge pour commencer.
+735|Touchez le carré rouge pour arrêter.
+736|Touchez le bouton rouge Enregistrer.
+737|Pour faire pause, touchez le bouton pause à gauche (iOS 18 ou ultérieur).
+738|Touchez Arrêter quand vous avez fini.
+739|Touchez ⌃ en haut au centre.
+740|Touchez Flash (l’éclair).
+741|Choisissez Désactivé, Activé ou Auto.
+742|Touchez Portrait.
+743|Restez à moins de 2,5 mètres. Quand Lumière naturelle devient jaune, c’est prêt.
+744|Touchez le déclencheur blanc.
+745|Touchez Pano.
+746|Touchez le déclencheur.
+747|Déplacez lentement l’iPhone sur le côté en suivant la flèche.
+748|Touchez à nouveau le déclencheur pour finir.
+749|Dans le noir, l’icône jaune de la lune s’active toute seule.
+750|Gardez l’iPhone immobile quelques secondes.
+751|Touchez Retardateur.
+752|Touchez le déclencheur. La photo est prise après 10 secondes.
+753|Faites glisser le déclencheur vers la gauche.
+754|Gardez le doigt appuyé.
+755|Levez le doigt pour arrêter.
+756|Dans Photos, vous pouvez choisir vos meilleures images.
+757|Touchez le bouton rond Live en haut à droite.
+758|S’il est barré, il est désactivé.
+759|Des lignes apparaissent pour garder les photos bien droites.
+760|Approchez-vous jusqu’à 2 centimètres de l’objet (modèles Pro).
+761|Une icône de fleur indique que le mode Macro est activé.
+762|Touchez Ralenti.
+763|Touchez le bouton Enregistrer.
+764|Touchez Accéléré.
+765|Posez l’iPhone sur un support pour qu’il ne bouge pas.
+766|Touchez Cinématique.
+767|Touchez une personne pour faire la mise au point sur elle. Le fond devient flou.
+768|Touchez Styles.
+769|Balayez pour choisir un rendu, par exemple Chaud.
+770|Visez le code QR avec l’appareil photo.
+771|Touchez le lien qui apparaît.
+772|Vérifiez l’adresse avant d’ouvrir un code QR inconnu.
+773|Visez un texte avec l’appareil photo.
+774|Touchez le bouton texte en bas à droite.
+775|Cliquez sur la commande de l’appareil photo, en bas à droite, pour ouvrir l’appareil photo (iPhone 16 et ultérieurs).
+776|Cliquez encore pour prendre une photo.
+777|Appuyez légèrement deux fois sur le bouton.
+778|Faites glisser le doigt sur le bouton pour zoomer.
+779|Appuyez sur un des boutons de volume pour prendre une photo.
+780|Maintenez-le enfoncé pour filmer une vidéo.
+781|Les selfies sont enregistrés comme dans un miroir.
+782|Une meilleure qualité prend plus de place.
+783|Touchez 0.5 pour une vue plus large (ultra grand-angle).
+784|Touchez 2 pour rapprocher (téléobjectif).
+785|Maintenez le doigt sur un chiffre.
+786|Faites glisser sur le côté pour zoomer librement.
+787|En mode Photo, maintenez le doigt sur le déclencheur.
+788|Relâchez pour arrêter l’enregistrement.
+789|Pour continuer à filmer, faites glisser vers la droite jusqu’au cadenas.
+790|Touchez l’app Photos.
+791|Balayez pour voir la photo suivante.
+792|Écartez deux doigts sur la photo.
+793|Pincez pour dézoomer.
+794|Dans Photos, touchez une vidéo.
+795|Ouvrez la photo.
+796|Dans Photos, touchez Supprimés récemment.
+797|Déverrouillez avec Face ID ou votre code.
+798|Touchez le bouton cœur en bas.
+799|Vous la retrouverez dans l’album Favoris.
+800|Touchez Collections en bas.
+801|Touchez ＋ à côté d’Albums.
+802|Tapez un nom, par exemple Petits-enfants.
+803|Touchez le bouton ••• en haut à droite.
+804|Touchez l’album.
+805|Touchez comment ou à qui l’envoyer.
+806|Touchez Recadrer en bas.
+807|Faites glisser les coins pour choisir ce que vous gardez.
+808|Touchez le bouton de rotation en haut à gauche.
+809|Touchez Auto en haut.
+810|Touchez Filtres en bas.
+811|Touchez un filtre, par exemple Mono.
+812|Touchez Revenir, en rouge, en haut.
+813|Touchez la vidéo.
+814|Faites glisser les extrémités du cadre jaune pour choisir ce que vous gardez.
+815|Touchez le bouton de recherche en haut.
+816|Tapez un mot, par exemple plage ou chien.
+817|Touchez une personne pour ne voir que ses photos.
+818|Touchez un souvenir pour le voir en musique.
+819|Les photos masquées sont dans Collections › Utilitaires › Masqués.
+820|Touchez Sélectionner en haut à droite.
+821|Touchez chaque photo. Vous pouvez aussi faire glisser le doigt.
+822|Touchez le bouton Partager en bas à gauche.
+823|Dans Types de médias, touchez Captures d’écran.
+824|Maintenez le doigt sur la personne ou l’objet de la photo.
+825|Maintenez le doigt sur un champ de message pour coller seulement le sujet.
+826|Dans Utilitaires, touchez Doublons.
+827|Tapez un nom, par exemple Notre famille.
+828|Choisissez les membres de la famille.
+829|Vérifiez l’imprimante. Touchez Imprimer.
+830|Touchez Safari, la boussole bleue.
+831|Dans Safari, touchez la barre d’adresse.
+832|Tapez ce que vous cherchez.
+833|Touchez Accéder sur le clavier.
+834|Touchez la barre d’adresse en bas.
+835|Tapez l’adresse, par exemple digistep365.com
+836|Touchez la touche bleue Accéder.
+837|Touchez ‹ en bas à gauche.
+838|Touchez le bouton des onglets en bas à droite.
+839|Touchez ✕ sur l’onglet à fermer.
+840|Pour tout fermer, maintenez le doigt sur OK.
+841|Touchez le bouton livre.
+842|Touchez le site.
+843|Touchez ᴬA à gauche de la barre d’adresse.
+844|Vous ne voyez que le texte, sans publicité.
+845|Touchez le bouton du menu de la page dans la barre d’adresse.
+846|Touchez le plus grand A pour agrandir le texte.
+847|Touchez le grand A pour agrandir le texte.
+848|Vous pouvez aussi écarter deux doigts.
+849|Lisez-la plus tard depuis le bouton livre › lunettes.
+850|Touchez Privée en bas.
+851|L’historique n’est pas enregistré ici.
+852|Tapez un mot. Il est surligné en jaune.
+853|Maintenez le doigt sur le lien du fichier.
+854|Retrouvez-le dans Fichiers › Téléchargements.
+855|Touchez la langue.
+856|L’iPhone lit la page à voix haute.
+857|Touchez Ajouter en haut à droite.
+858|Touchez le nom du réseau.
+859|Tapez le mot de passe.
+860|Demandez à votre ami de toucher votre réseau Wi-Fi sur son iPhone.
+861|Gardez les deux iPhone tout près l’un de l’autre.
+862|Sur votre iPhone, touchez Partager le mot de passe.
+863|Visez le code QR du Wi-Fi avec l’appareil photo.
+864|Touchez la notification en haut.
+865|Faites défiler vers le bas pour voir les données utilisées par chaque app.
+866|Désactivez un interrupteur pour que l’app n’utilise Internet qu’en Wi-Fi.
+867|Touchez le bouton avion.
+868|Activez l’interrupteur.
+869|Mettez les écouteurs en mode jumelage (voir leur notice).
+870|Ouvrez Réglages › Bluetooth.
+871|Sous Autres appareils, touchez les écouteurs.
+872|Déverrouillez l’iPhone et allez à l’écran d’accueil.
+873|Ouvrez le boîtier des AirPods et tenez-le près de l’iPhone.
+874|Sur l’autre appareil, choisissez votre iPhone dans la liste Wi-Fi.
+875|Tapez ce mot de passe sur cet appareil.
+876|Les données à l’étranger peuvent coûter cher. Vérifiez d’abord le forfait itinérance de votre opérateur.
+877|Suivez votre opérateur : lisez son code QR ou choisissez Transférer depuis un iPhone à proximité.
+878|Tapez votre code. Les mots de passe Wi-Fi enregistrés sont effacés.
+879|Lancez le jumelage Bluetooth sur l’écran de la voiture (voir la notice).
+880|Réactivez l’écran.
+881|Approchez le haut de l’iPhone de l’étiquette NFC.
+882|Faites glisser le curseur vers la droite.
+883|Ouvrez Réglages › Luminosité et affichage.
+884|Faites glisser le curseur du soleil vers le haut pour plus de luminosité.
+885|Choisissez une durée.
+886|Touchez une photo qui vous plaît.
+887|Ouvrez l’app à modifier.
+888|Dans Taille du texte, touchez Météo uniquement.
+889|Faites glisser le curseur vers le haut pour agrandir le texte.
+890|Touchez le bouton Verrouillage de l’orientation, en forme de cadenas.
+891|Ouvrez Réglages › Sons et vibrations.
+892|Faites glisser vers la droite le curseur Sonnerie et alertes.
+893|Touchez une sonnerie qui vous plaît.
+894|Touchez Obtenir à côté de l’app.
+895|Appuyez deux fois sur le bouton latéral ou utilisez Face ID pour confirmer.
+896|Touchez Rechercher en bas.
+897|Touchez le nom de l’app pour voir les détails et les notes.
+898|Ouvrez l’App Store.
+899|Touchez votre photo de profil en haut à droite.
+900|Touchez Supprimer pour confirmer.
+901|Touchez le bouton nuage à côté de l’app.
+902|Touchez votre nom en haut.
+903|Touchez l’abonnement à résilier.
+904|Vous voyez combien de temps vous avez utilisé chaque app aujourd’hui.
+905|Choisissez le type d’apps à limiter.
+906|Réglez la durée par jour.
+907|Les apps masquées sont dans le dossier Masquées, en bas de la bibliothèque d’apps.
+908|Branchez le câble dans le port en bas.
+909|Branchez l’autre bout à un adaptateur secteur et à une prise.
+910|Un éclair sur la batterie signifie qu’elle se recharge.
+911|Ouvrez Réglages › Batterie.
+912|Capacité maximale indique l’état de la batterie. En dessous de 80 %, pensez à la remplacer.
+913|Faites défiler vers le bas pour voir la batterie utilisée par chaque app.
+914|Branchez le chargeur sans fil sur une prise.
+915|Posez l’iPhone écran vers le haut au centre du chargeur.
+916|Un éclair signifie qu’il se recharge.
+917|Branchez le chargeur MagSafe sur une prise.
+918|Approchez le chargeur du dos de l’iPhone. Il se fixe avec des aimants.
+919|Un symbole de charge s’affiche à l’écran.
+920|Utilisez un adaptateur de 20W ou plus avec le bon câble.
+921|Branchez le câble dans l’iPhone.
+922|En 30 minutes environ, il se recharge à peu près à moitié.
+923|Branchez le câble USB-C dans le port en bas.
+924|Branchez l’autre bout à un adaptateur et à une prise.
+925|Branchez le câble Lightning dans le port en bas.
+926|Activez le mode économie d’énergie quand la batterie est faible.
+927|Baissez un peu la luminosité de l’écran.
+928|Désactivez la position pour les apps qui n’en ont pas besoin.
+929|Reliez l’iPhone et les écouteurs avec un câble USB-C.
+930|Les écouteurs se rechargent avec la batterie de l’iPhone.
+931|Touchez l’app Horloge.
+932|Touchez Alarmes en bas.
+933|Faites défiler pour régler l’heure et les minutes.
+934|Balayez l’alarme vers la gauche.
+935|Touchez l’alarme.
+936|Quand l’alarme sonne, touchez Rappel.
+937|Elle sonne à nouveau dans 9 minutes.
+938|Vous pouvez activer ou désactiver Rappel en modifiant l’alarme.
+939|Ouvrez Horloge › Minuteurs.
+940|Réglez la durée.
+941|Touchez Chronomètre en bas.
+942|Touchez Arrêter pour faire une pause.
+943|Touchez Horloge mondiale en bas à gauche.
+944|Tapez une ville, par exemple New York.
+945|Sous Sommeil | Réveil, touchez Pas d’alarme.
+946|Réglez l’heure du coucher et du réveil.
+947|Touchez le bouton lampe torche. Touchez-le à nouveau pour l’éteindre.
+948|Balayez vers le haut depuis le bas pour ouvrir le centre de contrôle.
+949|Touchez les chiffres, par exemple 1, 2, 0, 0, 0.
+950|Touchez un signe comme ＋.
+951|Touchez ＝ pour voir le résultat.
+952|Touchez le bouton liste en haut à gauche.
+953|Vous voyez vos calculs précédents.
+954|Touchez le bouton calculette en bas à gauche.
+955|Choisissez les unités. Tapez un nombre, par exemple 1 mile = 1.6 km.
+956|Touchez l’app Météo.
+957|Voyez la météo du jour et heure par heure.
+958|Touchez le bouton liste en bas à droite.
+959|Tapez le nom d’une ville dans le champ de recherche.
+960|Tapez un titre, par exemple Médecin.
+961|Touchez Début pour choisir la date et l’heure.
+962|Touchez l’évènement.
+963|Changez ce qu’il faut, par exemple l’heure.
+964|Touchez Supprimer l’évènement en bas.
+965|Touchez à nouveau Supprimer l’évènement.
+966|Touchez < en haut à gauche pour voir tout le mois.
+967|Touchez une date pour voir ce jour-là.
+968|Touchez Calendriers en bas.
+969|Touchez l’app Notes.
+970|Touchez le bouton nouvelle note en bas à droite.
+971|Tapez votre note. Elle s’enregistre toute seule.
+972|Touchez le bouton liste de contrôle.
+973|Tapez un élément. Touchez retour pour passer à la ligne.
+974|Touchez une note.
+975|Touchez le bouton pièce jointe.
+976|Visez le papier avec l’appareil photo. Il est numérisé automatiquement.
+977|Touchez la note.
+978|Choisissez d’utiliser le code de l’iPhone.
+979|Balayez la note vers la droite.
+980|Touchez le bouton punaise.
+981|Balayez la note vers la gauche.
+982|Touchez le bouton rouge de la corbeille.
+983|Pour la récupérer, touchez Supprimés récemment dans Dossiers.
+984|Balayez la note vers la gauche pour la remettre. Possible pendant 30 jours.
+985|Touchez à nouveau le bouton rouge pour arrêter.
+986|Touchez l’enregistrement.
+987|Touchez le nom.
+988|Tapez un nouveau nom.
+989|Touchez le bouton •••.
+990|Touchez Nouveau rappel en bas à gauche.
+991|Tapez la tâche, par exemple Prendre mon médicament.
+992|Touchez ⓘ à droite.
+993|Ouvrez Réglages › Face ID et code (ou Touch ID et code).
+994|Tapez deux fois un code à 6 chiffres.
+995|Tapez votre code actuel.
+996|Tapez deux fois votre nouveau code.
+997|Ouvrez Réglages › Face ID et code.
+998|Placez votre visage dans le cercle et bougez lentement la tête.
+999|Ouvrez Réglages › Touch ID et code.
+1000|Touchez Ajouter une empreinte.
+1001|Posez le doigt sur le bouton principal, encore et encore.
+1002|Vous voyez les mots de passe enregistrés pour les sites et les apps.
+1003|Vérifiez que l’identification à deux facteurs est activée.
+1004|Suivez les étapes pour vérifier avec qui vous partagez.
+1005|Toutes les données sont effacées après 10 codes erronés. Gardez une sauvegarde.
+1006|Ouvrez Réglages › Général.
+1007|S’il y a une mise à jour, touchez Mettre à jour maintenant.
+1008|Ne touchez pas les liens venant de numéros inconnus.
+1009|Si un « proche » vous demande de l’argent par SMS, appelez-le d’abord.
+1010|Ne partagez jamais vos codes ni vos mots de passe.
+1011|Pour les indésirables, utilisez Signaler comme indésirable.
+1012|Ouvrez Réglages › Accessibilité.
+1013|Touchez deux fois l’écran avec trois doigts pour zoomer.
+1014|Ouvrez l’app Loupe (cherchez-la si besoin).
+1015|Visez le texte avec l’appareil photo.
+1016|Faites glisser le curseur pour zoomer.
+1017|Ouvrez Réglages › Accessibilité › Contenu énoncé.
+1018|Sur n’importe quel écran, balayez vers le bas depuis le haut avec deux doigts.
+1019|Ouvrez Réglages › Accessibilité › VoiceOver.
+1020|Touchez l’interrupteur VoiceOver.
+1021|Pour le désactiver, sélectionnez l’interrupteur. Touchez deux fois n’importe où pour le basculer.
+1022|Touchez une fois pour entendre un élément.
+1023|Touchez deux fois pour l’ouvrir.
+1024|Balayez avec trois doigts pour passer à la page suivante.
+1025|Ouvrez Réglages › Accessibilité › Toucher.
+1026|Activez-le. Un bouton rond gris apparaît.
+1027|Ouvrez Réglages › Accessibilité › Accès assisté.
+1028|Suivez les étapes pour choisir les apps.
+1029|Mieux vaut le configurer avec une personne qui aide.
+1030|Appuyez trois fois sur le bouton latéral.
+1031|Tapez le code de l’accès assisté.
+1032|Appuyez trois fois sur le bouton latéral pour l’activer ou le désactiver.
+1033|Balayez vers le bas sur le bord inférieur pour faire descendre le haut de l’écran.
+1034|Ouvrez et refermez le compartiment des piles des appareils auditifs pour qu’ils soient détectables.
+1035|Sous Audition, touchez Écoute en direct.
+1036|Posez l’iPhone près de la personne et écoutez avec vos écouteurs.
+1037|Dans un endroit calme, lisez à voix haute les phrases à l’écran.
+1038|Tapez ce que vous voulez dire. L’iPhone le dit pour vous.
+1039|Dites une commande comme « Ouvrir Réglages ».
+1040|Suivez des yeux le point à l’écran.
+1041|Le clavier s’agrandit aussi.
+1042|Visez des personnes, des portes ou du texte et l’iPhone vous le dit.
+1043|Ouvrez l’app à utiliser.
+1044|À la première mise en marche, l’écran Bonjour apparaît.
+1045|Touchez le bouton Accessibilité.
+1046|Choisissez ce dont vous avez besoin, par exemple Vision.
+1047|Voyez l’espace libre et la place prise par chaque app.
+1048|La barre montre ce qui prend le plus de place.
+1049|Suivez les recommandations pour effacer les grosses vidéos ou les vieux messages.
+1050|Touchez un dossier.
+1051|Touchez un fichier pour l’ouvrir.
+1052|Les fichiers téléchargés dans Safari sont ici.
+1053|Ouvrez le fichier ou la photo.
+1054|Choisissez un dossier. Touchez Enregistrer.
+1055|Touchez le fichier PDF.
+1056|Balayez vers le haut ou le bas pour tourner les pages.
+1057|Écartez deux doigts pour zoomer.
+1058|Touchez le PDF.
+1059|Touchez Annotation (le stylo) en bas.
+1060|Touchez ＋ en bas à droite.
+1061|Signez avec le doigt.
+1062|Maintenez le doigt sur le fichier.
+1063|Tapez le nouveau nom. Touchez OK.
+1064|Les fichiers supprimés se récupèrent dans Supprimés récemment pendant 30 jours.
+1065|Touchez le fichier .zip.
+1066|Un dossier apparaît au même endroit avec les fichiers dedans.
+1067|Branchez la clé USB sur le port de charge (USB-C ou avec un adaptateur).
+1068|Sous Emplacements, touchez la clé USB.
+1069|Touchez l’appareil de la personne.
+1070|Contacts uniquement est le plus sûr : les inconnus ne peuvent rien vous envoyer.
+1071|Déverrouillez les deux iPhone.
+1072|Rapprochez le haut des deux iPhone.
+1073|Touchez Partager pour échanger aussi votre contact.
+1074|Appuyez puis relâchez en même temps le bouton latéral et le bouton d’augmentation du volume.
+1075|Une vignette apparaît en bas à gauche.
+1076|Appuyez puis relâchez en même temps le bouton latéral et le bouton principal.
+1077|Ouvrez une page web dans Safari.
+1078|Appuyez en même temps sur le bouton latéral et le bouton d’augmentation du volume.
+1079|Touchez la petite image en bas à gauche.
+1080|Touchez Page entière en haut.
+1081|Touchez Enregistrement de l’écran. Cela commence dans 3 secondes.
+1082|Pour arrêter, touchez l’indicateur rouge en haut.
+1083|L’enregistrement est mis dans Photos.
+1084|Choisissez un stylo en bas. Écrivez avec le doigt.
+1085|Ouvrez la photo ou le document.
+1086|Choisissez une imprimante sur le même Wi-Fi (AirPrint).
+1087|Touchez Imprimer en haut à droite.
+1088|Branchez l’iPhone à l’ordinateur avec un câble.
+1089|Sur l’iPhone, touchez Se fier.
+1090|Tapez votre code.
+1091|Sur l’ordinateur, ouvrez l’app Photos et choisissez Importer.
+1092|Touchez Se connecter à l’iPhone en haut.
+1093|Tapez votre nom et votre date de naissance.
+1094|Choisissez une adresse e-mail et un mot de passe. Suivez les étapes pour finir.
+1095|Tapez l’adresse e-mail de votre compte Apple.
+1096|Tapez votre mot de passe. Si un code apparaît sur un autre appareil, tapez-le.
+1097|Tapez le code de votre iPhone.
+1098|Tapez deux fois un nouveau mot de passe : 8 caractères ou plus, avec majuscules, minuscules et un chiffre.
+1099|Sur l’écran de connexion, touchez Mot de passe oublié ?
+1100|Tapez le code de votre iPhone pour créer un nouveau mot de passe.
+1101|Si cela ne marche pas, demandez une récupération de compte. Cela peut prendre quelques jours.
+1102|Choisissez un proche de confiance.
+1103|Choisissez la personne qui pourra accéder à vos données après votre décès.
+1104|La barre montre la place prise par Photos et les sauvegardes.
+1105|Sur Mac, utilisez le Finder. Sur Windows, l’app Appareils Apple. Sélectionnez votre iPhone.
+1106|Cliquez sur Sauvegarder maintenant.
+1107|Dans les écrans de configuration, allez à Apps et données.
+1108|Connectez-vous avec votre compte Apple.
+1109|Touchez la sauvegarde la plus récente.
+1110|Allumez le nouvel iPhone.
+1111|Posez-le à côté de votre ancien iPhone.
+1112|Sur l’ancien iPhone, touchez Continuer.
+1113|Visez le motif bleu du nouvel iPhone avec l’appareil photo de l’ancien.
+1114|Tapez votre ancien code sur le nouvel iPhone. Gardez les deux proches pendant le transfert.
+1115|Touchez le nom de votre enfant.
+1116|Vous voyez votre moyen de paiement actuel. Ne montrez jamais votre numéro de carte.
+1117|Tapez le nouveau numéro. Tapez le code reçu par SMS.
+1118|Tapez le mot de passe de votre compte Apple.
+1119|Choisissez les données à garder sur cet iPhone.
+1120|Plus d’espace et des fonctions comme Masquer mon adresse e-mail. C’est payant chaque mois.
+1121|Touchez Continuer. Vérifiez d’abord que vous avez sauvegardé.
+1122|Tapez votre code et le mot de passe du compte Apple pour tout effacer.
+1123|Numérisez la carte avec l’appareil photo ou saisissez-la à la main.
+1124|Terminez la vérification de votre banque (par exemple un SMS).
+1125|Appuyez deux fois sur le bouton latéral.
+1126|Regardez l’iPhone pour Face ID.
+1127|Approchez le haut de l’iPhone du terminal de paiement.
+1128|OK et une coche signifient que c’est réussi.
+1129|Dans les zones compatibles, il suffit d’approcher l’iPhone du portillon.
+1130|Dans l’app ou l’e-mail de la compagnie aérienne ou de l’évènement, touchez Ajouter à Apple Cartes.
+1131|Touchez la carte.
+1132|Touchez Supprimer cette carte en bas.
+1133|Touchez l’app Santé.
+1134|Touchez Commencer ou Modifier.
+1135|Ajoutez vos maladies, médicaments et groupe sanguin.
+1136|Résumé montre les pas du jour.
+1137|Touchez Pas pour voir les relevés de la semaine et du mois.
+1138|Dans Parcourir, touchez Médicaments.
+1139|Tapez le nom du médicament et l’heure.
+1140|L’Apple Watch peut détecter une chute grave. Si vous ne répondez pas pendant une minute, elle appelle les secours.
+1141|Dans Partage, touchez Partager avec quelqu’un.
+1142|Choisissez un membre de la famille.
+1143|Choisissez quoi partager, par exemple Pas.
+1144|Dans Parcourir, touchez Mobilité.
+1145|Sous Stabilité de la marche, touchez Configurer.
+1146|Touchez l’app Plans.
+1147|Touchez le champ de recherche.
+1148|Tapez le nom du lieu.
+1149|Tapez le lieu, par exemple Gare de Séoul.
+1150|Touchez le bouton bleu Itinéraire.
+1151|Touchez le bouton vert Y aller.
+1152|Choisissez le lieu.
+1153|Touchez Transports (le bus).
+1154|Lancez l’itinéraire.
+1155|Faites glisser la fiche vers le haut. Touchez Partager l’heure d’arrivée.
+1156|Touchez la personne à prévenir.
+1157|Touchez votre photo à côté du champ de recherche.
+1158|Choisissez la zone. Touchez Télécharger.
+1159|Touchez l’app Localiser.
+1160|Touchez l’appareil.
+1161|Dans Personnes, touchez Partager ma position.
+1162|Choisissez la durée.
+1163|Dans Objets, touchez l’objet.
+1164|Touchez Émettre un son pour faire sonner l’AirTag.
+1165|Touchez Localiser pour avoir une flèche qui vous guide.
+1166|Touchez la conversation de famille.
+1167|Vérifiez le lieu et l’heure. Touchez le bouton Envoyer.
+1168|Ouvrez Réglages › Siri (ou Siri et recherche).
+1169|Touchez Parler à Siri ou Écouter.
+1170|Dites les phrases à l’écran.
+1171|Dites « Siri » ou « Dis Siri » (selon votre réglage).
+1172|Dites ce que vous voulez, par exemple « Quel temps fera-t-il demain ? »
+1173|Maintenez le bouton latéral enfoncé pour faire apparaître Siri.
+1174|Touchez deux fois le bas de l’écran pour écrire à Siri.
+1175|Dites « Siri » ou maintenez le bouton latéral enfoncé.
+1176|Dites par exemple « Appelle maman ».
+1177|Dites « Envoie un message à John ».
+1178|Dites votre message.
+1179|Dites « Envoie ».
+1180|Dites « Réveille-moi demain à 6 heures ».
+1181|Dites « Minuteur 10 minutes ».
+1182|Dites « Quel temps fait-il aujourd’hui ? »
+1183|Dites par exemple « Ouvre l’appareil photo ».
+1184|Dites « Rappelle-moi de prendre mon médicament à 8 heures du soir ».
+1185|Dites par exemple « Mets du jazz » (abonnement musical nécessaire).
+1186|Dites « Allume la lampe torche ».
+1187|Si c’est désactivé, personne ne peut utiliser Siri quand l’iPhone est verrouillé.
+1188|Touchez à nouveau.
+1189|Choisissez une action, par exemple Envoyer le message « Je rentre ».
+1190|Seulement sur les modèles compatibles (15 Pro et ultérieurs) et dans les langues prises en charge. Attendez la fin de la configuration.
+1191|Sélectionnez le texte.
+1192|Sélectionnez un long texte ou ouvrez une page web.
+1193|Vous voyez l’essentiel en quelques lignes.
+1194|Plusieurs notifications sont résumées en une ligne sur l’écran verrouillé.
+1195|Entourez avec le doigt ce que vous voulez effacer.
+1196|Décrivez ce que vous voulez, par exemple un chat à la plage.
+1197|Choisissez un style.
+1198|Dans Messages, touchez le bouton emoji du clavier.
+1199|Touchez le bouton emoji scintillant en haut à droite.
+1200|Décrivez-le, par exemple un chien avec un chapeau.
+1201|Maintenez enfoncée la commande de l’appareil photo (modèles compatibles).
+1202|Visez quelque chose, par exemple une fleur ou l’enseigne d’un magasin.
+1203|Touchez Demander pour avoir une explication.
+1204|Des informations personnelles peuvent être envoyées : laissez la demande de confirmation activée.
+1205|Choisissez les deux langues en haut.
+1206|Touchez le micro.
+1207|Dites ce que vous voulez dire.
+1208|La traduction apparaît en texte et à voix haute.
+1209|Apple Intelligence traite les données sur votre iPhone quand c’est possible.
+1210|Les tâches plus lourdes utilisent Private Cloud Compute, qui ne conserve pas vos données.
+1211|SOS d’urgence appelle les secours avec les boutons.
+1212|N’appuyez pas pour vous entraîner : apprenez avec ces dessins.
+1213|Voyez comment cela marche dans Réglages › SOS d’urgence.
+1214|Vérifiez les méthodes activées : maintenir ou appuyer 5 fois.
+1215|Sans réseau cellulaire ni Wi-Fi, allez dehors avec une vue dégagée sur le ciel (pays et modèles compatibles).
+1216|Appelez les secours. SMS d’urgence par satellite apparaît.
+1217|Répondez aux questions. Pointez l’iPhone vers le satellite comme indiqué.
+1218|Ouvrez Localiser sur un autre appareil ou sur icloud.com/find.
+1219|Touchez l’iPhone perdu.
+1220|Sous Déclarer comme perdu, touchez Activer.
+1221|Tapez un numéro de téléphone et un message à afficher à l’écran.
+1222|Dans Localiser, touchez l’iPhone perdu.
+1223|Touchez Effacer cet appareil en bas.
+1224|Après l’effacement, vous ne pourrez plus le localiser. N’utilisez cette option qu’en dernier recours.
+1225|D’abord, essayez de l’éteindre avec le bouton latéral.
+1226|S’il ne s’éteint pas, suivez la leçon « Forcer le redémarrage ».
+1227|Vérifiez que le câble et l’adaptateur sont bien branchés.
+1228|Essayez une autre prise ou un autre câble.
+1229|Vérifiez doucement qu’il n’y a pas de peluches dans le port.
+1230|S’il ne se recharge toujours pas, contactez l’Assistance Apple.
+1231|Vérifiez l’interrupteur silencieux à gauche ou la cloche du centre de contrôle.
+1232|Appuyez sur le bouton d’augmentation du volume.
+1233|Désactivez Concentration si elle est activée.
+1234|Vérifiez si des écouteurs Bluetooth sont connectés.
+1235|Désactivez puis réactivez le Wi-Fi dans le centre de contrôle.
+1236|Débranchez la box 30 secondes. Rebranchez-la.
+1237|Redémarrez l’iPhone.
+1238|Si cela ne marche toujours pas, oubliez le réseau et reconnectez-vous.
+1239|Suivez les recommandations.
+1240|Déchargez les grosses apps que vous n’utilisez pas.
+1241|Transférez les photos vers Photos iCloud ou un ordinateur.
+1242|Fermez complètement l’app. Rouvrez-la.
+1243|Cherchez une mise à jour de l’app dans l’App Store.
+1244|Si cela ne marche toujours pas, supprimez l’app et retéléchargez-la.
+1245|Après plusieurs codes erronés, iPhone indisponible s’affiche.
+1246|Touchez Code oublié ? en bas.
+1247|Tapez le mot de passe de votre compte Apple pour effacer l’iPhone. Vous pourrez restaurer une sauvegarde.
+1248|Attendez le temps indiqué. Réessayez.
+1249|Vous pouvez utiliser votre ancien code pendant 72 heures après l’avoir changé (iOS 17 ou ultérieur).
+1250|Si vous ne vous en souvenez pas, utilisez Code oublié ? pour effacer.
+1251|Sortez-le tout de suite. Essuyez-le avec un chiffon doux.
+1252|Tapotez-le doucement contre la main, port vers le bas.
+1253|Si Liquide détecté s’affiche, ne le rechargez pas avant qu’il soit sec (au moins 30 minutes).
+1254|Ne le mettez pas dans du riz et n’utilisez pas de sèche-cheveux.
+1255|Sortez-le du soleil ou d’une voiture chaude et mettez-le à l’ombre.
+1256|Retirez une coque épaisse. Arrêtez la recharge un moment.
+1257|Si une alerte de température apparaît, attendez qu’il refroidisse.
+1258|Couvrez la vitre fissurée avec un film ou du ruban adhésif pour ne pas vous couper.
+1259|Sauvegardez d’abord sur iCloud ou un ordinateur.
+1260|Prenez rendez-vous avec l’app Assistance Apple ou chez un réparateur agréé.
+1261|Choisissez le problème.
+1262|Tapez votre code. Les photos et contacts restent. Seuls les réglages reviennent par défaut.
+1263|Activez puis désactivez le mode Avion.
+1264|Pour une eSIM, vérifiez que la ligne est activée dans Réglages › Réseau cellulaire.
+1265|Si cela ne marche toujours pas, contactez votre opérateur.
+1266|Vérifiez que le mode Avion est désactivé.
+1267|Regardez les barres de signal en haut.
+1268|Vérifiez que le numéro n’est pas bloqué.
+=Settings|Réglages
+=Action Button|Bouton Action
+=Edit Home Screen|Modifier l’écran d’accueil
+=Add Widget|Ajouter un widget
+=Weather|Météo
+=Customize|Personnaliser
+=Lock Screen|Écran verrouillé
+=Done|OK
+=General|Général
+=About|Informations
+=Mute|Silence
+=Phone|Téléphone
+=Call|Appeler
+=Silence Unknown Callers|Appels inconnus en silence
+=Add|Ajouter
+=Merge Calls|Fusionner les appels
+=New FaceTime|Nouveau FaceTime
+=Live Voicemail|Messagerie en direct
+=add phone|ajouter un numéro
+=Create New Contact|Créer un contact
+=Edit|Modifier
+=Add Photo|Ajouter une photo
+=Share Contact|Partager le contact
+=Contact Photo & Poster|Photo et affiche du contact
+=Health|Santé
+=Medical ID|Fiche médicale
+=add emergency contact|ajouter un contact d’urgence
+=Add to Favorites|Ajouter aux favoris
+=Merge All|Tout fusionner
+=Save Image|Enregistrer l’image
+=More|Plus
+=Delete Message|Supprimer le message
+=Delete|Supprimer
+=Location|Position
+=Send Pin|Envoyer l’épingle
+=Filter Unknown Senders|Filtrer les inconnus
+=Delete and Report Junk|Supprimer et signaler
+=Keyboard|Clavier
+=Keyboards|Claviers
+=Add New Keyboard...|Ajouter un clavier...
+=Japanese|Japonais
+=Copy|Copier
+=Paste|Coller
+=Undo|Annuler
+=Auto-Correction|Correction automatique
+=Text Replacement|Remplacement de texte
+=Chinese (Simplified)|Chinois (simplifié)
+=Handwriting|Écriture manuscrite
+=Sounds & Haptics|Sons et vibrations
+=Keyboard Feedback|Retour du clavier
+=Haptic|Vibration
+=Camera|Appareil photo
+=Video|Vidéo
+=Grid|Grille
+=Stop|Arrêter
+=Copy All|Tout copier
+=Mirror Front Camera|Inverser la caméra avant
+=Record Video|Enregistrement vidéo
+=4K at 30 fps|4K à 30 i/s
+=Preserve Settings|Conserver les réglages
+=Camera Mode|Mode de l’appareil photo
+=Delete Photo|Supprimer la photo
+=Recover|Récupérer
+=New Album|Nouvel album
+=Add to Album|Ajouter à l’album
+=Revert to Original|Revenir à l’original
+=Beach|Plage
+=People & Pets|Personnes et animaux
+=Memories|Souvenirs
+=Hide|Masquer
+=Merge|Fusionner
+=New Shared Album|Nouvel album partagé
+=Create|Créer
+=Print|Imprimer
+=Add Bookmark|Ajouter un signet
+=Show Reader|Afficher le lecteur
+=Add to Reading List|Ajouter à la liste de lecture
+=Clear History and Website Data|Effacer historique et données
+=All history|Tout l’historique
+=Clear History|Effacer l’historique
+=Find on Page|Rechercher dans la page
+=Download Linked File|Télécharger le fichier lié
+=Translate|Traduire
+=Listen to Page|Écouter la page
+=Add to Home Screen|Sur l’écran d’accueil
+=Join|Rejoindre
+=Home|Maison
+=Forget This Network|Oublier ce réseau
+=Forget|Oublier
+=Cellular|Réseau cellulaire
+=Cellular Data|Données cellulaires
+=Forget This Device|Oublier cet appareil
+=Forget Device|Oublier l’appareil
+=Connect|Se connecter
+=Personal Hotspot|Partage de connexion
+=Allow Others to Join|Autoriser d’autres utilisateurs
+=Cellular Data Options|Options des données
+=Low Data Mode|Mode données réduites
+=Data Roaming|Itinérance des données
+=Add eSIM|Ajouter une eSIM
+=Transfer or Reset iPhone|Transférer ou réinitialiser l’iPhone
+=Reset|Réinitialiser
+=Reset Network Settings|Réinitialiser les réglages réseau
+=My Car|Ma voiture
+=Display & Brightness|Luminosité et affichage
+=Text Size|Taille du texte
+=Bold Text|Texte en gras
+=Display Zoom|Zoom de l’écran
+=Larger Text|Police plus grande
+=Accessibility|Accessibilité
+=Display & Text Size|Affichage et taille du texte
+=Auto-Brightness|Luminosité automatique
+=Dark|Sombre
+=Manually Enable Until Tomorrow|Activer manuellement jusqu’à demain
+=Auto-Lock|Verrouillage automatique
+=Raise to Wake|Lever pour activer
+=Always On Display|Écran toujours allumé
+=Wallpaper|Fond d’écran
+=Add New Wallpaper|Ajouter un fond d’écran
+=Large|Grandes
+=Motion|Animations
+=Reduce Motion|Réduire les animations
+=Increase Contrast|Augmenter le contraste
+=Button Shapes|Formes des boutons
+=Color Filters|Filtres de couleur
+=Grayscale|Niveaux de gris
+=Reduce White Point|Réduire le point blanc
+=Ringtone|Sonnerie
+=Haptics|Vibrations
+=Always Play|Toujours
+=Text Tone|Son des messages
+=Chord|Accord
+=Allow Notifications|Autoriser les notifications
+=Show Previews|Afficher les aperçus
+=When Unlocked|Si déverrouillé
+=Focus|Concentration
+=Do Not Disturb|Ne pas déranger
+=Sleep|Sommeil
+=Emergency Bypass|Exception d’urgence
+=Audio & Visual|Audio et visuel
+=LED Flash for Alerts|Flash LED pour alertes
+=Headphone Safety|Sécurité des écouteurs
+=Reduce Loud Audio|Réduire les sons forts
+=Announce Calls|Annoncer les appels
+=Always|Toujours
+=Mono Audio|Audio mono
+=Sound Recognition|Reconnaissance des sons
+=Sounds|Sons
+=Doorbell|Sonnette
+=Search|Rechercher
+=Update All|Tout mettre à jour
+=App Updates|Mises à jour des apps
+=Remove App|Supprimer l’app
+=Delete App|Supprimer l’app
+=Remove from Home Screen|Retirer de l’écran d’accueil
+=iPhone Storage|Stockage iPhone
+=Offload App|Décharger l’app
+=Account|Compte
+=Purchased|Achats
+=Privacy & Security|Confidentialité et sécurité
+=Location Services|Service de localisation
+=While Using the App|Lorsque l’app est active
+=Subscriptions|Abonnements
+=Cancel Subscription|Résilier l’abonnement
+=Media & Purchases|Contenu multimédia et achats
+=View Account|Voir le compte
+=Purchase History|Historique des achats
+=Screen Time|Temps d’écran
+=See All App & Website Activity|Voir toute l’activité
+=App Limits|Limites d’apps
+=Add Limit|Ajouter une limite
+=Require Face ID|Exiger Face ID
+=Hide and Require Face ID|Masquer et exiger Face ID
+=Battery Percentage|Pourcentage de la batterie
+=Low Power Mode|Mode économie d’énergie
+=Battery|Batterie
+=Battery Health & Charging|État et recharge de la batterie
+=Charging|Recharge
+=Optimized Battery Charging|Recharge optimisée
+=80% Limit|Limite de 80 %
+=Batteries|Batteries
+=Save|Enregistrer
+=Clock|Horloge
+=Sound|Son
+=Chimes|Carillons
+=Start|Démarrer
+=New York, U.S.A.|New York, États-Unis
+=Calculator|Calculette
+=Convert|Convertir
+=Severe Weather|Intempéries
+=Calendar|Calendrier
+=Alert|Alerte
+=1 hour before|1 heure avant
+=Repeat|Répéter
+=Every Week|Chaque semaine
+=Holidays|Jours fériés
+=Choose Photo or Video|Choisir une photo ou vidéo
+=Scan Documents|Numériser des documents
+=Lock|Verrouiller
+=Voice Memos|Dictaphone
+=Share|Partager
+=Reminders|Rappels
+=Time|Heure
+=Turn Passcode On|Activer le code
+=Face ID & Passcode|Face ID et code
+=Change Passcode|Modifier le code
+=Set Up Face ID|Configurer Face ID
+=Face ID with a Mask|Face ID avec un masque
+=Set Up an Alternate Appearance|Configurer une autre apparence
+=Touch ID & Passcode|Touch ID et code
+=Add a Fingerprint...|Ajouter une empreinte...
+=Password AutoFill|Remplissage des mots de passe
+=Passwords|Mots de passe
+=AutoFill & Passwords|Remplissage et mots de passe
+=AutoFill Passwords and Passkeys|Remplir mots de passe et clés d’identification
+=Sign-In & Security|Connexion et sécurité
+=Safety Check|Contrôle de sécurité
+=Manage Sharing & Access|Gérer le partage et l’accès
+=Stolen Device Protection|Protection en cas de vol
+=Control Center|Centre de contrôle
+=Erase Data|Effacer les données
+=Tracking|Suivi
+=Allow Apps to Request to Track|Autoriser les demandes de suivi
+=App Privacy Report|Rapport de confidentialité des apps
+=Turn On App Privacy Report|Activer le rapport de confidentialité
+=Software Update|Mise à jour logicielle
+=Speak Screen|Énoncer l’écran
+=Spoken Content|Contenu énoncé
+=Speak Selection|Énoncer la sélection
+=Speak|Énoncer
+=Set Up Assistive Access|Configurer l’accès assisté
+=Exit Assistive Access|Quitter l’accès assisté
+=Accessibility Shortcut|Raccourci d’accessibilité
+=Touch|Toucher
+=Back Tap|Toucher le dos
+=Double Tap|Toucher deux fois
+=Screenshot|Capture d’écran
+=Touch Accommodations|Adaptation du toucher
+=Slow|Lent
+=Reachability|Accessibilité
+=Live Captions|Sous-titres en direct
+=Hearing Devices|Appareils auditifs
+=My Hearing Aids|Mes appareils auditifs
+=Software RTT/TTY|RTT/TTY logiciel
+=Personal Voice|Voix personnelle
+=Create a Personal Voice|Créer une voix personnelle
+=Live Speech|Parole en direct
+=Voice Control|Contrôle vocal
+=Eye Tracking|Suivi oculaire
+=Background Sounds|Sons d’arrière-plan
+=Call Audio Routing|Sortie audio des appels
+=Speaker|Haut-parleur
+=Auto-Answer Calls|Réponse automatique
+=Side Button|Bouton latéral
+=Slowest|Le plus lent
+=Magnifier|Loupe
+=Detection Mode|Mode Détection
+=Guided Access|Accès guidé
+=Files|Fichiers
+=On My iPhone|Sur mon iPhone
+=Downloads|Téléchargements
+=Save to Files|Enregistrer dans Fichiers
+=Add Signature|Ajouter une signature
+=Rename|Renommer
+=Contacts Only|Contacts uniquement
+=Don’t have an Apple Account?|Pas de compte Apple ?
+=Change Password|Modifier le mot de passe
+=Account Recovery|Récupération du compte
+=Add Recovery Contact...|Ajouter un contact de récupération...
+=Legacy Contact|Contact légataire
+=Add Legacy Contact|Ajouter un contact légataire
+=Manage Account Storage|Gérer le stockage
+=Sync this iPhone|Synchroniser cet iPhone
+=iCloud Backup|Sauvegarde iCloud
+=Back Up Now|Sauvegarder maintenant
+=From iCloud Backup|À partir d’iCloud
+=See All|Tout afficher
+=Family|Famille
+=Invite Others|Inviter d’autres personnes
+=Invite via Messages|Inviter par Messages
+=Ask to Buy|Demander l’autorisation d’achat
+=Payment & Shipping|Paiement et livraison
+=Add Payment Method|Ajouter un moyen de paiement
+=Add Trusted Phone Number|Ajouter un numéro de confiance
+=Sign Out|Se déconnecter
+=iCloud+ Features|Fonctions d’iCloud+
+=Erase All Content and Settings|Effacer contenu et réglages
+=Wallet|Cartes
+=Debit or Credit Card|Carte de débit ou de crédit
+=Transit Card|Carte de transport
+=Show When Locked|Afficher si verrouillé
+=Add Medication|Ajouter un médicament
+=Emergency SOS|SOS d’urgence
+=Fall Detection|Détection des chutes
+=Maps|Plans
+=Search Maps|Rechercher dans Plans
+=Offline Maps|Cartes hors ligne
+=Download New Map|Télécharger une carte
+=Devices|Appareils
+=Play Sound|Émettre un son
+=Find My|Localiser
+=Check In|Arrivée
+=Press Side Button for Siri|Bouton latéral pour Siri
+=Type to Siri|Écrire à Siri
+=Siri Voice|Voix de Siri
+=Voice 2|Voix 2
+=Language|Langue
+=Korean|Coréen
+=Allow Siri When Locked|Siri en mode verrouillé
+=Announce Notifications|Annoncer les notifications
+=Siri & Dictation History|Historique de Siri et de la dictée
+=Delete Siri & Dictation History|Supprimer l’historique de Siri et de la dictée
+=Shortcuts|Raccourcis
+=Add Action|Ajouter une action
+=Apple Intelligence & Siri|Apple Intelligence et Siri
+=Turn On Apple Intelligence|Activer Apple Intelligence
+=Writing Tools|Outils d’écriture
+=Proofread|Relire
+=Summarize|Résumer
+=Summarize Notifications|Résumer les notifications
+=Clean Up|Retouche
+=Use ChatGPT|Utiliser ChatGPT
+=Apple Intelligence Report|Rapport Apple Intelligence
+=Emergency Contacts|Contacts d’urgence
+=Apple Support|Assistance Apple
+=Repairs & Physical Damage|Réparations et dommages
+=Book a Repair|Prendre rendez-vous
+=Reset All Settings|Réinitialiser tous les réglages
+=Tap|Touchez
+=Hold|Maintenez
+=Swipe|Balayez
+=Tuesday, September 9|mardi 9 septembre
+=Swipe up to open|Balayez vers le haut pour ouvrir
+=slide to power off|faire glisser pour éteindre
+=Cancel|Annuler
+=Seoul|Séoul
+=Sunny|Ensoleillé
+=High 24°  Low 15°|Max. 24°  Min. 15°
+=Share App|Partager l’app
+=Library|Photothèque
+=Select|Sélectionner
+=Not Playing|Pas de lecture
+=Dinner at 7?|On dîne à 7 h ?
+=Tomorrow 10:00|Demain 10:00
+=Apple Account, iCloud and more|Compte Apple, iCloud et plus
+=Airplane Mode|Mode Avion
+=On|Oui
+=Flashlight|Lampe torche
+=Productivity|Productivité
+=App Library|Bibliothèque d’apps
+=space|espace
+=return|retour
+=Home Screen|Écran d’accueil
+=Date & Time|Date et heure
+=Language & Region|Langue et région
+=Shut Down|Éteindre
+=Name|Nom
+=iOS Version|Version d’iOS
+=Model Name|Nom du modèle
+=Model Number|Numéro de modèle
+=Serial Number|Numéro de série
+=Applications|Apps
+=Capacity|Capacité
+=Available|Disponible
+=Recents|Récents
+=Yesterday|Hier
+=unknown|inconnu
+=Monday|lundi
+=Favorites|Favoris
+=Keypad|Clavier
+=Voicemail|Messagerie
+=Decline|Refuser
+=Accept|Accepter
+=slide to answer|faire glisser pour répondre
+=End|Raccrocher
+=▶ Play|▶ Lire
+=call|appel
+=video|vidéo
+=mail|e-mail
+=Send Message|Envoyer un message
+=Block this Caller|Bloquer ce correspondant
+=You will not receive phone calls, messages or FaceTime from people on the block list.|Vous ne recevrez ni appels, ni messages, ni FaceTime des personnes bloquées.
+=Block Contact|Bloquer le contact
+=Home Screen & App Library|Écran d’accueil et bibliothèque d’apps
+=StandBy|En veille
+=Wallet & Apple Pay|Cartes et Apple Pay
+=ALLOW PHONE TO ACCESS|AUTORISER TÉLÉPHONE À ACCÉDER À
+=Siri & Search|Siri et recherche
+=Call Blocking & Identification|Blocage et identification
+=Blocked Contacts|Contacts bloqués
+=Maria  On Hold|Maria  En attente
+=Create Link|Créer un lien
+=To: |À : 
+=To: Maria|À : Maria
+=“Hi, it’s John. Call me back.”|« Bonjour, c’est John. Rappelle-moi. »
+=New Contact|Nouveau contact
+=First name|Prénom
+=Last name|Nom
+=Company|Entreprise
+=Add to Existing Contact|Ajouter à un contact
+=Delete Contact|Supprimer le contact
+=New Message|Nouveau message
+=To:|À :
+=Create New|Créer
+=Monogram|Monogramme
+=Summary|Résumé
+=Health Details|Détails de santé
+=Duplicates|Doublons
+=See you tomorrow|À demain
+=Hello!|Bonjour !
+=Yes, see you!|Oui, à tout à l’heure !
+=Yes|Oui
+=Stickers|Autocollants
+=Look!|Regarde !
+=1 Photo Selected|1 photo sélectionnée
+=Add to Shared Album|Ajouter à un album partagé
+=Lunch?|On déjeune ?
+=Lunch on Saturday?|On déjeune samedi ?
+=Reply|Répondre
+=More...|Plus...
+=Delete Conversation?|Supprimer la conversation ?
+=📌 Pin|📌 Épingler
+=🔕 Hide Alerts|🔕 Masquer les alertes
+=Your code is 123456. Do not share it.|Votre code est 123456. Ne le partagez pas.
+=From Messages  123456|De Messages  123456
+=Undo Send|Annuler l’envoi
+=Yes, see you at 7!|Oui, à 7 h !
+=Send Read Receipts|Accusés de lecture
+=Filters|Filtres
+=All Messages|Tous les messages
+=Known Senders|Expéditeurs connus
+=Unknown Senders|Expéditeurs inconnus
+=Report Junk|Signaler comme indésirable
+=Maria: Doctor at 10?|Maria : Médecin à 10 h ?
+=Helo|Bonjur
+=Background App Refresh|Actualisation en arrière-plan
+=One-Handed Keyboard|Clavier à une main
+=Off|Non
+=Auto-Capitalization|Majuscules automatiques
+=Enable Dictation|Activer la dictée
+=English (US)|Anglais (É.-U.)
+=Add New Keyboard|Ajouter un clavier
+=English (UK)|Anglais (R.-U.)
+=Spanish|Espagnol
+=Thank you|Merci
+=Thank you 🙏|Merci 🙏
+=Hello Maria|Bonjour Maria
+=Hello |Maria|Bonjour |Maria
+=Cut|Couper
+=Hello Mar|Bonjour Mar
+=Undo Typing|Annuler la saisie
+=On my way!|J’arrive !
+=I’ll call you back|Je te rappelle
+=Shortcut|Raccourci
+=◧  Left|◧  Gauche
+=▣  Center|▣  Centre
+=◨  Right|◨  Droite
+=Silent Mode|Mode silencieux
+=RINGTONE AND ALERTS|SONNERIE ET ALERTES
+=Change with Buttons|Modifier avec les boutons
+=Note|Note
+=System Haptics|Vibrations du système
+=TIME-LAPSE|ACCÉLÉRÉ
+=SLO-MO|RALENTI
+=CINEMATIC|CINÉMATIQUE
+=VIDEO|VIDÉO
+=Formats|Formats
+=1080p at 30 fps|1080p à 30 i/s
+=Level|Niveau
+=Warm|Chaud
+=Cool|Froid
+=Open “example.com”|Ouvrir « example.com »
+=Live Text|Texte en direct
+=Scene Detection|Détection de scène
+=720p HD at 30 fps|720p HD à 30 i/s
+=1080p HD at 30 fps|1080p HD à 30 i/s
+=4K at 60 fps|4K à 60 i/s
+=Creative Controls|Commandes créatives
+=Utilities|Utilitaires
+=Hidden|Masqués
+=Recently Deleted|Supprimés récemment
+=Videos|Vidéos
+=Albums|Albums
+=Grandkids|Petits-enfants
+=Duplicate|Dupliquer
+=Trip|Voyage
+=Adjust|Ajuster
+=Crop|Recadrer
+=Vivid|Éclatant
+=Revert|Revenir
+=Summer 2026|Été 2026
+={n} Photos Selected|{n} photos sélectionnées
+=Media Types|Types de médias
+=Screenshots|Captures d’écran
+=Screen Recordings|Enregistrements d’écran
+=2 Photos|2 photos
+=Our Family|Notre famille
+=Invite People|Inviter des personnes
+=Print Options|Options d’impression
+=Printer|Imprimante
+=Office Printer|Imprimante du bureau
+=Copies|Copies
+=Search or enter website name|Rechercher ou saisir un site
+=weather|météo
+=go|accéder
+=Tabs|Onglets
+=News|Actualités
+=Close All Tabs|Fermer tous les onglets
+=Text only, larger and easier to read.|Le texte seul, plus grand et plus facile à lire.
+=Reading List|Liste de lecture
+=Private|Privée
+=2 Tabs|2 onglets
+=Search Engine|Moteur de recherche
+=Block Pop-ups|Bloquer les pop-up
+=Page Zoom|Zoom de la page
+=Last hour|Dernière heure
+=Today|Aujourd’hui
+=Today and yesterday|Aujourd’hui et hier
+=lesson|leçon
+=Open in New Tab|Ouvrir dans un nouvel onglet
+=Copy Link|Copier le lien
+=English|Anglais
+=Page Menu|Menu de la page
+=NETWORKS|RÉSEAUX
+=Neighbor 5G|Voisin 5G
+=Enter the password for “Home”|Mot de passe de « Maison »
+=Password|Mot de passe
+=Cafe Free WiFi|Café WiFi gratuit
+=Ask to Join Networks|Demander à rejoindre
+=Notify|Avertir
+=Auto-Join|Connexion auto
+=Forget Wi-Fi Network “Home”?|Oublier le réseau « Maison » ?
+=Wi-Fi Password|Mot de passe Wi-Fi
+=Share Password|Partager le mot de passe
+=Join “Home” Network|Rejoindre le réseau « Maison »
+=Join Wi-Fi Network “Home”?|Rejoindre le réseau « Maison » ?
+=CELLULAR DATA|DONNÉES CELLULAIRES
+=OTHER DEVICES|AUTRES APPAREILS
+=MY DEVICES|MES APPAREILS
+=Connected|Connecté
+=Not Connected|Non connecté
+=Disconnect|Déconnecter
+=Voice & Data|Voix et données
+=5G Auto|5G auto
+=Set Up eSIM|Configurer l’eSIM
+=Transfer From Nearby iPhone|Transférer depuis un iPhone à proximité
+=Use QR Code|Utiliser un code QR
+=Prepare for New iPhone|Préparer pour le nouvel iPhone
+=Reset Keyboard Dictionary|Réinitialiser le dictionnaire clavier
+=Reset Home Screen Layout|Réinitialiser l’écran d’accueil
+=Reset Location & Privacy|Réinitialiser localisation et confidentialité
+=Enter Passcode|Saisissez le code
+=APPEARANCE|APPARENCE
+=Light|Clair
+=BRIGHTNESS|LUMINOSITÉ
+=30 seconds|30 secondes
+=DISPLAY|AFFICHAGE
+=Default|Par défaut
+=Apps that support Dynamic Type will adjust to your preferred reading size below.|Les apps compatibles avec Police dynamique s’adapteront à la taille choisie ci-dessous.
+=VISION|VISION
+=PHYSICAL AND MOTOR|MOTRICITÉ
+=HEARING|AUDITION
+=Smart Invert|Inversion intelligente
+=Scheduled|Programmé
+=Color Temperature|Température des couleurs
+=1 minute|1 minute
+=2 minutes|2 minutes
+=3 minutes|3 minutes
+=4 minutes|4 minutes
+=5 minutes|5 minutes
+=Never|Jamais
+=Show Wallpaper|Afficher le fond d’écran
+=Show Notifications|Afficher les notifications
+=People|Personnes
+=Astronomy|Astronomie
+=Weather Only|Météo uniquement
+=All Apps|Toutes les apps
+=Small|Petites
+=Auto-Play Message Effects|Lecture auto des effets
+=Red/Green Filter|Filtre rouge/vert
+=Green/Red Filter|Filtre vert/rouge
+=Blue/Yellow Filter|Filtre bleu/jaune
+=Color Tint|Teinte
+=Ringtone and Alerts|Sonnerie et alertes
+=Play in Silent Mode|En mode silencieux
+=Don’t Play in Silent Mode|Pas en mode silencieux
+=Never Play|Jamais
+=Bamboo|Bambou
+=Circles|Cercles
+=Notification Display|Affichage
+=Count|Nombre
+=Scheduled Summary|Résumé programmé
+=NOTIFICATION STYLE|STYLE DE NOTIFICATION
+=ALERTS|ALERTES
+=Notification Center|Centre de notifications
+=Banners|Bannières
+=Personal|Personnel
+=Work|Travail
+=RINGTONES|SONNERIES
+=Headphone Accommodations|Adaptations pour écouteurs
+=Talk to Siri|Parler à Siri
+=American|Américaine
+=Headphones & Car|Écouteurs et voiture
+=Headphones Only|Écouteurs seulement
+=ALARMS|ALARMES
+=Fire|Feu
+=Siren|Sirène
+=HOUSEHOLD|MAISON
+=Door Knock|Coups à la porte
+=Games|Jeux
+=Get|Obtenir
+=Double Click to Install|Cliquer deux fois pour installer
+=Upcoming Automatic Updates|Mises à jour automatiques à venir
+=Update|Mettre à jour
+=App Downloads|Téléchargements d’apps
+=Automatic Downloads|Téléchargements automatiques
+=Video Autoplay|Lecture auto des vidéos
+=Remove “Weather”?|Supprimer « Météo » ?
+=Deleting this app will also delete its data.|Supprimer cette app supprime aussi ses données.
+=Delete “Weather”?|Supprimer « Météo » ?
+=This will free up storage used by the app, but keep its documents and data.|L’espace de l’app sera libéré, mais ses documents et données seront conservés.
+=Share My Location|Partager ma position
+=While Using|Si l’app est active
+=Ask Next Time or When I Share|Demander la prochaine fois
+=Apple Account|Compte Apple
+=Personal Information|Informations personnelles
+=Music Plus  ₩8,900/month|Music Plus  8,900 ₩/mois
+=Cloud Photos  ₩1,100/month|Cloud Photos  1,100 ₩/mois
+=Downtime|Temps d’arrêt
+=Communication Limits|Limites de communication
+=Lock Screen Time Settings|Verrouiller les réglages
+=Daily Average  2h 14m|Moyenne quotidienne  2 h 14 min
+=YouTube  58m|YouTube  58 min
+=Messages  31m|Messages  31 min
+=Choose Apps|Choisir des apps
+=Social|Réseaux sociaux
+=Entertainment|Divertissement
+=1 hr 0 min|1 h 0 min
+=Suggestions|Suggestions
+=Low Power Mode temporarily reduces background activity until you can fully charge your iPhone.|Le mode économie d’énergie réduit l’activité en arrière-plan jusqu’à la recharge complète de l’iPhone.
+=Maximum Capacity|Capacité maximale
+=Peak Performance Capability|Performances maximales
+=BATTERY USAGE BY APP|UTILISATION PAR APP
+=Home & Lock Screen|Accueil et écran verrouillé
+=Optimized|Optimisée
+=None|Aucune
+=Alarms|Alarmes
+=Alarm|Alarme
+=World Clock|Horloge mondiale
+=Stopwatch|Chronomètre
+=Timers|Minuteurs
+=Add Alarm|Ajouter une alarme
+=Label|Libellé
+=Snooze|Rappel
+=Edit Alarm|Modifier l’alarme
+=0 hours|0 heure
+=0 sec|0 s
+=Lap|Tour
+=Seoul  9:41|Séoul  9:41
+=Choose a City|Choisissez une ville
+=Sleep | Wake Up|Sommeil | Réveil
+=No Alarm|Pas d’alarme
+=Full Schedule|Programme complet
+=Bedtime  10:30 PM|Coucher  22:30
+=Wake Up  6:30 AM|Réveil  6:30
+=History|Historique
+=Basic|De base
+=Scientific|Scientifique
+=Math Notes|Notes de maths
+=Edit List|Modifier la liste
+=Units|Unités
+=Next-Hour Precipitation|Pluie dans l’heure
+=September|Septembre
+=Calendars|Calendriers
+=Inbox|Boîte de réception
+=New Event|Nouvel évènement
+=Title|Titre
+=Doctor|Médecin
+=Starts|Début
+=Sep 10  10:00 AM|10 sept.  10:00
+=Ends|Fin
+=Doctor  10:00|Médecin  10:00
+=Event Details|Détails de l’évènement
+=Edit Event|Modifier l’évènement
+=15 minutes before|15 minutes avant
+=1 day before|1 jour avant
+=Sep 10  11:00 AM|10 sept.  11:00
+=Delete Event|Supprimer l’évènement
+=Exercise|Sport
+=Sep 10  7:00 AM|10 sept.  7:00
+=Every Day|Chaque jour
+=Every Month|Chaque mois
+=Every Year|Chaque année
+=Birthdays|Anniversaires
+=Shopping list|Liste de courses
+=Doctor 10:00|Médecin 10:00
+=Buy milk and eggs|Acheter du lait et des œufs
+=Shopping|Courses
+=○ Milk|○ Lait
+=○ Eggs|○ Œufs
+=Garden|Jardin
+=Take Photo or Video|Prendre une photo ou vidéo
+=Papers|Papiers
+=Scan|Numériser
+=Bank memo|Note banque
+=Pin|Épingler
+=Lock Note|Verrouiller la note
+=Use iPhone Passcode|Utiliser le code de l’iPhone
+=Trip plan|Projet de voyage
+=Collaborate|Collaborer
+=Old list|Ancienne liste
+=Folders|Dossiers
+=All Recordings|Tous les enregistrements
+=New Recording  0:12|Nouvel enregistrement  0:12
+=Doctor advice|Conseils du médecin
+=Doctor advice  0:12|Conseils du médecin  0:12
+=Edit Recording|Modifier l’enregistrement
+=＋ New Reminder|＋ Nouveau rappel
+=○ Take medicine|○ Prendre le médicament
+=○ Take medicine  ⓘ|○ Prendre le médicament  ⓘ
+=Details|Détails
+=USE FACE ID FOR|UTILISER FACE ID POUR
+=iPhone Unlock|Déverrouillage de l’iPhone
+=Turn Passcode Off|Désactiver le code
+=FINGERPRINTS|EMPREINTES
+=USE TOUCH ID FOR|UTILISER TOUCH ID POUR
+=Finger 1|Doigt 1
+=All|Tout
+=Passkeys|Clés d’identification
+=AUTOFILL FROM|REMPLIR À PARTIR DE
+=Email & Phone Numbers|E-mail et numéros
+=Two-Factor Authentication|Identification à deux facteurs
+=Emergency Reset|Réinitialisation d’urgence
+=Information|Informations
+=ALLOW ACCESS WHEN LOCKED|AUTORISER L’ACCÈS EN MODE VERROUILLÉ
+=This update includes bug fixes and security updates.|Cette mise à jour comprend des corrections de bugs et de sécurité.
+=Update Now|Mettre à jour maintenant
+=Your parcel is waiting. Pay here: parcel-check.example|Votre colis vous attend. Payez ici : parcel-check.example
+=Mom, I broke my phone. Please send money now.|Maman, j’ai cassé mon téléphone. Envoie-moi de l’argent vite.
+=GENERAL|GÉNÉRAL
+=Assistive Access|Accès assisté
+=Double-tap three fingers to zoom. Drag three fingers to move around the screen.|Touchez deux fois avec trois doigts pour zoomer. Faites glisser trois doigts pour vous déplacer.
+=Swipe down with two fingers from the top of the screen to hear the content of the screen.|Balayez vers le bas avec deux doigts depuis le haut pour entendre le contenu de l’écran.
+=Voices|Voix
+=Speaking Rate|Débit
+=VoiceOver speaks items on the screen.|VoiceOver énonce les éléments à l’écran.
+=Tap to Wake|Toucher pour réactiver
+=AssistiveTouch allows you to use your iPhone if you have difficulty touching the screen.|AssistiveTouch vous aide à utiliser l’iPhone si toucher l’écran est difficile.
+=Assistive Access makes iPhone simpler, with larger buttons and only the apps you choose.|L’accès assisté simplifie l’iPhone : grands boutons et seulement les apps choisies.
+=Calls|Appels
+=Automatic|Automatique
+=Triple Tap|Toucher trois fois
+=Hold Duration|Durée de maintien
+=Ignore Repeat|Ignorer la répétition
+=Fast|Rapide
+=MFI HEARING DEVICES|APPAREILS AUDITIFS MFI
+=Hearing|Audition
+=Live Listen|Écoute en direct
+=Relay Number|Numéro de relais
+=“The weather is lovely today.”|« Il fait très beau aujourd’hui. »
+=Favorite Phrases|Phrases favorites
+=English (U.S.)|Anglais (É.-U.)
+=Rain|Pluie
+=Bluetooth Headset|Casque Bluetooth
+=Door, 2 meters|Porte, 2 mètres
+=Passcode Settings|Réglages du code
+=Vision|Vision
+=Motor|Motricité
+=Cognitive|Cognition
+=iPhone: 66.8 GB of 128 GB Used|iPhone : 66.8 Go sur 128 Go utilisés
+=Photos  42 GB|Photos  42 Go
+=Apps  18 GB|Apps  18 Go
+=Messages  6 GB|Messages  6 Go
+=Recommendations|Recommandations
+=Review Large Attachments|Vérifier les grosses pièces jointes
+=Review Personal Videos|Vérifier les vidéos personnelles
+=Browse|Parcourir
+=Shared|Partagé
+=Documents|Documents
+=Page 1|Page 1
+=Page 2|Page 2
+=Markup|Annotation
+=Add Text|Ajouter du texte
+=Shapes|Formes
+=USB DRIVE|CLÉ USB
+=Receiving Off|Réception désactivée
+=Everyone for 10 Minutes|Tout le monde pendant 10 minutes
+=Receive Only|Recevoir seulement
+=Screen|Écran
+=Full Page|Page entière
+=◉ Screen Recording|◉ Enregistrement de l’écran
+=Select Printer|Choisir l’imprimante
+=Trust This Computer?|Se fier à cet ordinateur ?
+=Trust|Se fier
+=Don’t Trust|Ne pas se fier
+=Back|Retour
+=Next|Suivant
+=Name and Birthday|Nom et date de naissance
+=First Name|Prénom
+=Last Name|Nom
+=Birthday|Date de naissance
+=Email|E-mail
+=Continue|Continuer
+=Change|Modifier
+=New|Nouveau
+=Verify|Confirmer
+=Forgot password?|Mot de passe oublié ?
+=Start Account Recovery|Lancer la récupération du compte
+=RECOVERY CONTACTS|CONTACTS DE RÉCUPÉRATION
+=4.2 GB of 5 GB Used|4.2 Go sur 5 Go utilisés
+=Photos  3.1 GB|Photos  3.1 Go
+=Backups  0.9 GB|Sauvegardes  0.9 Go
+=SAVED TO ICLOUD|ENREGISTRÉ DANS ICLOUD
+=Optimize iPhone Storage|Optimiser le stockage
+=Back Up This iPhone|Sauvegarder cet iPhone
+=Last successful backup: Yesterday at 2:00 AM|Dernière sauvegarde : hier à 2:00
+=Transfer Your Apps & Data|Transférer apps et données
+=From Mac or PC|À partir d’un Mac ou PC
+=From Another iPhone|À partir d’un autre iPhone
+=Choose Backup|Choisir une sauvegarde
+=Today 2:00 AM|Aujourd’hui 2:00
+=Yesterday 2:00 AM|Hier 2:00
+=Quick Start|Démarrage rapide
+=Apps Using iCloud|Apps utilisant iCloud
+=Create Child Account|Créer un compte enfant
+=Invite|Inviter
+=Invite in Person|Inviter en personne
+=Maria (Me)|Maria (moi)
+=Minji (Child)|Minji (enfant)
+=TRUSTED PHONE NUMBERS|NUMÉROS DE CONFIANCE
+=Keep a copy|Garder une copie
+=Erase This iPhone|Effacer cet iPhone
+=Add to Wallet|Ajouter à Cartes
+=Card Added|Carte ajoutée
+=Done ✓|OK ✓
+=Your ticket|Votre billet
+=Add to Apple Wallet|Ajouter à Apple Cartes
+=Boarding Pass|Carte d’embarquement
+=My Bank Card|Ma carte bancaire
+=Card Details|Détails de la carte
+=Remove This Card|Supprimer cette carte
+=Steps|Pas
+=Heart Rate|Fréquence cardiaque
+=72 BPM|72 BPM
+=Profile|Profil
+=Medical Conditions|Problèmes de santé
+=Medications|Médicaments
+=Blood Type|Groupe sanguin
+=Diabetes|Diabète
+=Metformin|Metformine
+=Your Medical ID can be viewed when iPhone is locked by tapping Emergency, then Medical ID.|Votre fiche médicale est visible iPhone verrouillé en touchant Urgence, puis Fiche médicale.
+=Steps  6,214|Pas  6,214
+=Walking Distance  4.3 km|Distance de marche  4.3 km
+=Activity|Activité
+=Schedule|Programme
+=Vitamin D|Vitamine D
+=Sharing|Partage
+=Share with Someone|Partager avec quelqu’un
+=Mobility|Mobilité
+=Walking Steadiness|Stabilité de la marche
+=Set Up|Configurer
+=Seoul Station|Gare de Séoul
+=Seoul Station Exit 1|Gare de Séoul, sortie 1
+=Directions|Itinéraire
+=Go|Y aller
+=Drive|Voiture
+=Walk|À pied
+=Transit|Transports
+=Arrive 10:30|Arrivée 10:30
+=Share ETA|Partager l’heure d’arrivée
+=Places|Lieux
+=Ratings|Notes
+=Download|Télécharger
+=Items|Objets
+=Me|Moi
+=Maria’s iPhone|iPhone de Maria
+=Maria’s iPad|iPad de Maria
+=Mark As Lost|Déclarer comme perdu
+=Share for One Hour|Partager pendant une heure
+=Share Until End of Day|Partager jusqu’à la fin de la journée
+=Share Indefinitely|Partager indéfiniment
+=Keys|Clés
+=Find|Localiser
+=Check In: Home 6:00 PM|Arrivée : Maison 18:00
+=Say “Siri, what’s the weather today?”|Dites « Siri, quel temps fait-il aujourd’hui ? »
+=Tomorrow will be sunny, with a high of 24°.|Demain, il fera beau, avec un maximum de 24°.
+=Calling Mom…|Appel de maman…
+=What do you want to say?|Que voulez-vous dire ?
+=“I’ll be there at 7.”|« J’arrive à 7 h. »
+=Sent.|Envoyé.
+=Your alarm is set for 6 AM.|Votre alarme est réglée sur 6 h.
+=10 minutes, counting down.|10 minutes, c’est parti.
+=It’s sunny, 21°.|Il fait beau, 21°.
+=Opening Camera.|J’ouvre l’appareil photo.
+=OK, I’ll remind you.|D’accord, je vous le rappellerai.
+=Here’s some music.|Voici de la musique.
+=Your flashlight is on.|La lampe torche est allumée.
+=Voice 1|Voix 1
+=Voice 3|Voix 3
+=Voice 4|Voix 4
+=English (United States)|Anglais (États-Unis)
+=Spanish (Spain)|Espagnol (Espagne)
+=Headphones|Écouteurs
+=Tips|Astuces
+=New Shortcut|Nouveau raccourci
+=Actions|Actions
+=Set Alarm|Régler une alarme
+=Downloading…|Téléchargement…
+=i will come tomorow|je viendrai demin
+=Rewrite|Réécrire
+=Friendly|Amical
+=I will come tomorrow.|Je viendrai demain.
+=• Main point 1|• Point essentiel 1
+=• Main point 2|• Point essentiel 2
+=a cat at the beach|un chat à la plage
+=Illustration|Illustration
+=Sketch|Croquis
+=dog with a hat|chien avec un chapeau
+=Visual Intelligence|Intelligence visuelle
+=Ask|Demander
+=EXTENSIONS|EXTENSIONS
+=Confirm ChatGPT Requests|Confirmer les demandes ChatGPT
+=Korean  ⇄  English|Coréen  ⇄  Anglais
+=On-Device Processing|Traitement sur l’appareil
+=Call with Hold and Release|Appel en maintenant et relâchant
+=Call with 5 Button Presses|Appel avec 5 pressions
+=Call Quietly|Appel silencieux
+=Crash Detection|Détection des accidents
+=No Connection|Aucune connexion
+=Emergency Text via Satellite|SMS d’urgence par satellite
+=Turn left ↺|Tournez à gauche ↺
+=Activate|Activer
+=Phone Number|Numéro de téléphone
+=Please call me|Merci de m’appeler
+=Erase This Device|Effacer cet appareil
+=Erase This Device?|Effacer cet appareil ?
+=Erase|Effacer
+=Get Support|Obtenir de l’aide
+=iPhone Unavailable|iPhone indisponible
+=Try again in 15 minutes|Réessayez dans 15 minutes
+=Forgot Passcode?|Code oublié ?
+=Enter Previous Passcode|Saisir l’ancien code
+=Liquid Detected|Liquide détecté
+=Temperature|Température
+=iPhone needs to cool down before you can use it.|L’iPhone doit refroidir avant de pouvoir être utilisé.
+=Repairs|Réparations
+=Cracked Screen|Écran fissuré
+=Other|Autre
+=Options|Options
+=Primary|Principale
+=TUE|MAR
