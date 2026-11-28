@@ -1,8 +1,8 @@
 // DigiStep365 global pages: "My phone" picker (series → model → One UI) and support badges, in the page language.
 // Optional: nothing is forced. Saved only in this browser. The site never guesses the model.
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261128.0331';
-import { metaOf } from '../data/galaxy/meta.js?v=20261128.0331';
-import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261128.0331';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, supportFor } from '../data/devices.js?v=20261128.0341';
+import { metaOf } from '../data/galaxy/meta.js?v=20261128.0341';
+import { DEVICE_STRINGS } from '../i18n/device-strings.js?v=20261128.0341';
 
 const LANG = document.documentElement.lang in DEVICE_STRINGS ? document.documentElement.lang : 'en';
 const D = DEVICE_STRINGS[LANG];

@@ -29,7 +29,7 @@ export const WA_TEXT = {
   fr: ['Utiliser WhatsApp', 'Leçons faciles, pas à pas', 'DigiStep365 est un site éducatif indépendant, sans lien avec WhatsApp ou Meta, qui ne le parrainent ni ne le soutiennent.'],
   it: ['Come usare WhatsApp', 'Lezioni facili passo dopo passo', 'DigiStep365 è un sito educativo indipendente e non è affiliato, sponsorizzato né approvato da WhatsApp o Meta.'],
   id: ['Cara Menggunakan WhatsApp', 'Pelajaran mudah langkah demi langkah', 'DigiStep365 adalah situs edukasi independen dan tidak berafiliasi dengan, disponsori, atau didukung oleh WhatsApp atau Meta.'],
-  ms: ['Cara Menggunakan WhatsApp', 'Pelajaran mudah langkah demi langkah', 'DigiStep365 ialah laman pendidikan bebas dan tidak bergabung dengan, ditaja atau disokong oleh WhatsApp atau Meta.'],
+  ms: ['Panduan Menggunakan WhatsApp', 'Pelajaran mudah, satu langkah pada satu masa', 'DigiStep365 ialah laman pendidikan bebas dan tidak bergabung dengan, ditaja atau disokong oleh WhatsApp atau Meta.'],
   vi: ['Cách dùng WhatsApp', 'Bài học dễ hiểu từng bước', 'DigiStep365 là trang giáo dục độc lập, không liên kết, không được tài trợ hay xác nhận bởi WhatsApp hoặc Meta.'],
   tr: ['WhatsApp Nasıl Kullanılır', 'Adım adım kolay dersler', 'DigiStep365 bağımsız bir eğitim sitesidir; WhatsApp veya Meta ile bağlantılı değildir, onlar tarafından desteklenmez ya da onaylanmaz.'],
   fil: ['Paano Gamitin ang WhatsApp', 'Madaling aralin, hakbang-hakbang', 'Ang DigiStep365 ay isang malayang website pang-edukasyon at walang kaugnayan, sponsor, o pag-endorso mula sa WhatsApp o Meta.'],
