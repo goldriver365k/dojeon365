@@ -120,13 +120,12 @@ function picture(card, stepText) {
   return `<figure class="pic${card.done === 'practice' && t ? ' pic--practice' : ''}" role="img" aria-label="${esc(alt)}">${svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</figure>`;
 }
 
-function head({ title, desc, path, index, crumbs, alternates }) {
+function head({ title, desc, path, index, crumbs, alternates, ld: extra }) {
   const { UI } = L;
   const url = `${SITE_URL}${path}`;
-  const ld = crumbs && {
-    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-    itemListElement: crumbs.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${SITE_URL}${p}` })),
-  };
+  const crumbLd = crumbs && { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${SITE_URL}${p}` })) };
+  const nodes = [crumbLd, extra].filter(Boolean);
+  const ld = nodes.length ? { '@context': 'https://schema.org', '@graph': nodes } : null;
   const alts = alternates ?? { [L.code]: path };
   const xdef = alts[DEFAULT] ?? path;
   return `<!doctype html>
@@ -342,13 +341,16 @@ function waIndexPage() {
   const base = waPath(L.code);
   const alternates = Object.fromEntries(Object.keys(LOCALES).filter((c) => WA_ALL[c]?.count).map((c) => [c, waPath(c)]));
   const [title, sub, note] = WA.text;
-  return `${head({ title: `${title} — ${sub} | ${UI.brand}`, desc: `${title}: ${sub}. ${WA.count}.`, path: base, index: true, crumbs: [[UI.home, `/${seg(L.code)}/`], [title, base]], alternates })}
+  const desc = `${title}: ${sub}. ${WA.chapters.map((ch) => ch.title).join(', ')}.`.slice(0, 158);
+  const ld = { '@type': 'Course', name: title, description: desc, url: `${SITE_URL}${base}`, inLanguage: L.code, isAccessibleForFree: true, numberOfLessons: WA.count, provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` }, offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', category: 'Free' }, hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', courseWorkload: 'PT10M' } };
+  return `${head({ title: `${title} — ${sub} | ${UI.brand}`, desc, path: base, index: true, crumbs: [[UI.home, `/${seg(L.code)}/`], [title, base]], alternates, ld })}
 <body>
 ${header()}
 <main class="page" id="main">
 ${crumbNav([[UI.home, `/${seg(L.code)}/`], [title, base]])}
 <h1>${esc(title)}</h1>
 <p class="lead">${esc(sub)}</p>
+${WA.chapters.some((ch) => ch.lessons.some((l) => l.note)) ? `<p class="step__note">${esc(WA.chapters.flatMap((ch) => ch.lessons).find((l) => l.note).note)}</p>` : ''}
 ${WA.chapters.map((ch) => `<section class="cat" id="c${two(ch.num)}"><h3><span class="num">${two(ch.num)}</span> ${esc(ch.title)}</h3>
 <ul class="lessons">${ch.lessons.map((l) => `<li><a href="${waPath(L.code, l.slug)}">${esc(l.title)}<span>${l.steps.length}</span></a></li>`).join('')}</ul></section>`).join('\n')}
 </main>
@@ -366,12 +368,15 @@ function waLessonPage(ch, l) {
   const crumbs = [[UI.home, `/${seg(L.code)}/`], [title, base], [ch.title, `${base}#c${two(ch.num)}`], [l.title, path]];
   const n = l.steps.length;
   const all = ch.lessons; const next = all[all.findIndex((x) => x.id === l.id) + 1];
-  return `${head({ title: `${l.title} — ${title} | ${UI.brand}`, desc: `${l.title}: ${n} ${l.steps[0].text}`.slice(0, 155), path, index: true, crumbs, alternates })}
+  const desc = `${l.title} — ${title}. ${l.steps.map((x) => x.text).join(' ')}`.replace(/\s+/g, ' ').slice(0, 155);
+  const ld = { '@type': 'LearningResource', name: l.title, description: desc, url: `${SITE_URL}${path}`, inLanguage: L.code, isAccessibleForFree: true, educationalLevel: l.level, learningResourceType: 'Step-by-step guide', teaches: title, provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` } };
+  return `${head({ title: `${l.title} — ${title} | ${UI.brand}`, desc, path, index: true, crumbs, alternates, ld })}
 <body>
 ${header()}
 <main class="page" id="main">
 ${crumbNav(crumbs)}
 <h1>${esc(l.title)}</h1>
+${l.note ? `<p class="step__note">${esc(l.note)}</p>` : ''}
 <ol class="steps" data-steps>
 ${l.steps.map((st, i) => `<li class="step" id="step-${i + 1}">
   <p class="step__no">${UI.stepOf(i + 1, n)}</p>
@@ -387,7 +392,7 @@ ${l.steps.map((st, i) => `<li class="step" id="step-${i + 1}">
 ${l.caution ? `<p class="step__note">${esc(l.caution)}</p>` : ''}
 <p class="finish" data-finish hidden>${UI.finished}${next ? ` ${UI.nextLesson} <a href="${waPath(L.code, next.slug)}">${esc(next.title)}</a>` : ''}</p>
 <details class="meta"><summary>${UI.sources}</summary>
-  <p>WhatsApp ${esc(l.appVersion)} · Android · ${UI.reviewed}: ${esc(l.checked)}</p>
+  <p>WhatsApp (Android) · ${UI.reviewed}: ${esc(l.checked)}</p>
   <ul>${(l.sources ?? []).map((x) => `<li><a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(x.label)}</a></li>`).join('')}</ul>
 </details>
 </main>

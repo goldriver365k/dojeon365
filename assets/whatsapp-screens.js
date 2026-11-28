@@ -482,6 +482,45 @@ V.store = (c, s) => {
   navBar(c);
 };
 
+/** Status: mode 'text' (write a text status) | 'view' (watch a status) */
+V.status = (c, s) => {
+  const bg = s.mode === 'text' ? (s.color ?? '#5E3FA8') : '#2F3A43';
+  c.rect(0, 0, W, H, bg); statusBar(c, true);
+  if (s.mode === 'view') {
+    for (let i = 0; i < (s.count ?? 2); i++) c.rect(10 + i * ((W - 20) / (s.count ?? 2)), 38, (W - 20) / (s.count ?? 2) - 4, 3, i === 0 ? '#fff' : 'rgba(255,255,255,.4)', 2);
+    c.add(I.back(22, 66, '#fff')); c.reg('Back', 2, 46, 40, 40); avatar(c, 44, 48, s.name ?? 'Maria', 36); c.text(88, 64, s.name ?? 'Maria', { size: 15, weight: 700, fill: '#fff', raw: true }); c.text(88, 82, s.time ?? 'Today, 09:12', { size: 12, fill: '#ddd' });
+    c.add(I.dots(W - 22, 66, '#fff')); c.reg('More options', W - 42, 46, 40, 40);
+    if (s.photo) { c.rect(0, 120, W, 360, '#9CC3A0'); c.add(`<path d="M30 460 l90 -110 l60 60 l40 -36 l80 86z" fill="#fff" opacity=".55"/>`); }
+    else for (const [i, l] of wrap(s.text ?? 'Good morning!', 18).entries()) c.text(W / 2, 300 + i * 34, l, { size: 26, weight: 700, fill: '#fff', anchor: 'middle', raw: true });
+    if (s.mine) { c.add(`<path d="M${W / 2 - 10} 540 l10 -8 l10 8" stroke="#fff" stroke-width="2" fill="none"/>`); c.text(W / 2, 562, s.views ?? '2 views', { size: 13, fill: '#fff', anchor: 'middle' }); c.reg('Views', W / 2 - 50, 528, 100, 44); }
+    else { c.rect(14, 540, W - 28, 44, 'rgba(255,255,255,.15)', 22); c.text(36, 568, 'Reply…', { size: 15, fill: '#fff' }); c.reg('Reply', 14, 540, W - 28, 44); }
+  } else {
+    c.add(I.close(26, 62, '#fff')); c.reg('Close', 4, 40, 44, 44);
+    c.add(I.smile(W - 112, 62, '#fff')); c.text(W - 70, 68, 'T', { size: 20, weight: 800, fill: '#fff', anchor: 'middle', raw: true }); c.reg('Font', W - 88, 44, 36, 40);
+    c.add(`<circle cx="${W - 28}" cy="62" r="11" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="${W - 28}" cy="62" r="5" fill="#fff"/>`); c.reg('Colour', W - 48, 42, 40, 40);
+    const lines = s.text ? wrap(s.text, 16) : [tr('Type a status')];
+    lines.forEach((l, i) => c.text(W / 2, 300 + i * 38, l, { size: 30, weight: 600, fill: s.text ? '#fff' : 'rgba(255,255,255,.6)', anchor: 'middle', raw: true }));
+    c.reg('Status text', 20, 250, W - 40, 120);
+    c.rect(14, 544, 140, 36, 'rgba(0,0,0,.25)', 18); c.text(84, 567, s.audience ?? 'Status (Contacts)', { size: 12.5, fill: '#fff', anchor: 'middle' }); c.reg('Status audience', 14, 544, 140, 36);
+    if (s.text) { c.add(`<circle cx="${W - 38}" cy="562" r="25" fill="${C.green}"/>`); c.add(I.send(W - 36, 562)); c.reg('Send', W - 64, 536, 52, 52); }
+  }
+  navBar(c, true);
+};
+
+/** Location picker: map + options */
+V.map = (c, s) => {
+  c.rect(0, 0, W, H, C.bg); statusBar(c);
+  topBar(c, { title: tr(s.title ?? 'Send location'), right: [{ icon: 'search', label: 'Search' }] });
+  c.rect(0, 90, W, 250, '#DDE8D6');
+  for (let i = 0; i < 6; i++) c.add(`<line x1="0" y1="${110 + i * 40}" x2="${W}" y2="${100 + i * 46}" stroke="#fff" stroke-width="6"/>`);
+  c.add(`<line x1="120" y1="90" x2="170" y2="340" stroke="#fff" stroke-width="8"/><circle cx="${W / 2}" cy="215" r="10" fill="#1A73E8" stroke="#fff" stroke-width="3"/>`);
+  let y = 352;
+  const rows = s.rows ?? [['Share live location', 'live'], ['Send your current location', 'pin']];
+  for (const [label, ic] of rows) { c.add(`<circle cx="38" cy="${y + 26}" r="20" fill="${ic === 'live' ? C.green : C.teal}"/>`); c.add(ic === 'live' ? `<circle cx="38" cy="${y + 26}" r="6" fill="#fff"/><circle cx="38" cy="${y + 26}" r="12" fill="none" stroke="#fff" stroke-width="2"/>` : `<path d="M38 ${y + 36} l-6 -9 a7 7 0 1 1 12 0z" fill="#fff"/>`); c.text(72, y + 26, label, { size: 16, weight: 600 }); if (ic === 'pin') c.text(72, y + 44, 'Accurate to 10 metres', { size: 12.5, fill: C.sub }); c.reg(label, 0, y, W, 56); y += 62; }
+  if (s.duration) { dim(c); c.rect(26, 200, W - 52, 230, '#fff', 24); c.text(48, 240, 'Share live location', { size: 18, weight: 600 }); ['15 minutes', '1 hour', '8 hours'].forEach((o, i) => { const yy = 262 + i * 46; const on = i === (s.selected ?? 0); c.add(`<circle cx="58" cy="${yy + 10}" r="10" fill="none" stroke="${on ? C.teal : '#8696A0'}" stroke-width="2"/>${on ? `<circle cx="58" cy="${yy + 10}" r="5.5" fill="${C.teal}"/>` : ''}`); c.text(80, yy + 16, o, { size: 16 }); c.reg(o, 30, yy - 12, W - 60, 44); }); c.text(W - 48, 410, 'Send', { size: 15.5, weight: 700, fill: C.teal, anchor: 'end' }); c.reg('Send', W - 110, 388, 70, 40); }
+  navBar(c);
+};
+
 function draw(c, spec) { (V[spec.v] ?? V.info)(c, spec); }
 
 export function renderWhatsApp(spec = { v: 'info' }, target, action) {

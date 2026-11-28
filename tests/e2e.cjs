@@ -531,7 +531,15 @@ async function main() {
     check('WhatsApp 관리자: 160개 목록·재현 화면 미리보기', (await pw.textContent('[data-sum]')).includes('사용법 160개') && (await pw.locator('.kshot--svg svg').count()) >= 5);
     check('WhatsApp 관리자: 언어별 진행률 표', (await pw.locator('.kprog tbody tr').count()) === 19);
     await pw.goto(`${BASE}en/`); await pw.waitForSelector('h1');
-    check('WhatsApp: 공개 전에는 영어 홈에 카드 없음', (await pw.locator('.cat--wa').count()) === 0);
+    check('WhatsApp: 영어 홈에 카드(공개된 수업)', (await pw.locator('.cat--wa a[href="/en/whatsapp/"]').count()) === 1);
+    await pw.setViewportSize({ width: 360, height: 760 });
+    await pw.goto(`${BASE}en/whatsapp/send-photo/`); await pw.waitForSelector('.step.is-on svg');
+    check('WhatsApp: 수업 한 단계씩·빨간 표시·안내 문구', (await pw.locator('.step.is-on .target-ring').count()) === 1 && (await pw.textContent('main')).includes('drawings of the WhatsApp screen') && (await pw.textContent('.sfoot')).includes('not affiliated with, sponsored, or endorsed by WhatsApp or Meta'));
+    await pw.click('[data-next]'); await pw.waitForTimeout(150);
+    check('WhatsApp: 다음 단계로 이동', (await pw.textContent('.step.is-on .step__no')).includes('Step 2'));
+    check('WhatsApp: 360px 가로 스크롤 없음', (await pw.evaluate(() => document.documentElement.scrollWidth)) <= 360);
+    await pw.goto(BASE); await pw.waitForSelector('.cat-list');
+    check('WhatsApp: 국내 홈에는 없음', !(await pw.textContent('body')).includes('WhatsApp'));
     check('WhatsApp: 화면 오류 없음', errsW.length === 0, errsW.join(' | '));
     await cw.close();
   }
@@ -557,11 +565,12 @@ async function main() {
       await fbPage.close();
       await p3.evaluate(() => { window.open = (u) => { window.__opened.push(u); return {}; }; });
       await p3.click('[data-share="facebook"]');
-      await p3.click('[data-share="whatsapp"]');
+      if (url === BASE) check(`${tag} ${where} 하단: 국내 사이트에는 WhatsApp 공유 없음`, (await p3.locator('[data-share="whatsapp"]').count()) === 0);
+      else await p3.click('[data-share="whatsapp"]');
       const opened = await p3.evaluate(() => window.__opened);
       const home = url === BASE ? 'https://digistep365.com/' : 'https://digistep365.com/en/';
       check(`${tag} ${where} 공유: 페이스북 공유 창`, opened[0] === `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(home)}`);
-      check(`${tag} ${where} 공유: WhatsApp 공유 창(주소 포함)`, opened[1]?.startsWith('https://wa.me/?text=') && decodeURIComponent(opened[1]).includes(home));
+      if (url !== BASE) check(`${tag} ${where} 공유: WhatsApp 공유 창(주소 포함)`, opened[1]?.startsWith('https://wa.me/?text=') && decodeURIComponent(opened[1]).includes(home));
       await p3.click('[data-share="copy"]');
       check(`${tag} ${where} 공유: 주소 복사`, (await p3.evaluate(() => navigator.clipboard.readText())) === home && await p3.isVisible('[data-toast]'));
       await p3.click('[data-share="qr"]');

@@ -7,7 +7,9 @@
 //   after a person compares it with the real WhatsApp app and approves it in /admin/whatsapp/ (status + review record).
 // - Unpublished lessons get no page, no sitemap entry and no link.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { LESSONS_EN } from '../data/whatsapp/lessons-en.mjs';
+import { LESSONS_EN as PART1 } from '../data/whatsapp/lessons-en.mjs';
+import { LESSONS_EN_2 } from '../data/whatsapp/lessons-en-2.mjs';
+export const LESSONS_EN = { ...PART1, ...LESSONS_EN_2 };
 import { renderWhatsApp } from '../assets/whatsapp-screens.js';
 import { STATUS, PUBLIC_STATUS, adminPage } from './build-kakaotalk.mjs';
 import { LANGUAGES } from '../i18n/languages.js';
@@ -41,6 +43,10 @@ export const WA_TEXT = {
   ar: ['طريقة استخدام WhatsApp', 'دروس سهلة خطوة بخطوة', 'DigiStep365 موقع تعليمي مستقل، ولا يرتبط بـ WhatsApp أو Meta ولا يحظى برعايتهما أو تأييدهما.'],
 };
 
+/** Shown on lessons published before comparison with the real app (operator decision) */
+export const WA_NOTE = {
+  en: 'These pictures are drawings of the WhatsApp screen. Menu names and positions may differ slightly from the real app.',
+};
 /** draw one step screen (English labels; other languages pass a translator) */
 export const draw = (screen, target) => renderWhatsApp(screen, target ?? undefined, 'tap');
 
@@ -97,7 +103,7 @@ export function waCourse(lang, catalog = loadCatalog()) {
       const t = lang === 'en' ? null : l.i18n[lang];
       return { id: l.id, slug: l.slug, level: l.level, title: t?.title ?? l.title, caution: t?.caution ?? l.caution,
         steps: l.steps.map((s, i) => ({ text: t?.steps?.[i] ?? s.text, hint: t?.hints?.[i] ?? s.hint, target: s.targetLabel || null, screen: s.image.screen, alt: t?.alts?.[i] ?? s.image.alt })),
-        appVersion: l.appVersion, checked: l.lastChecked, approvedWithoutCompare: l.approvedWithoutCompare, sources: l.sources };
+        appVersion: l.appVersion, checked: l.lastChecked, note: l.approvedWithoutCompare ? (WA_NOTE[lang] ?? WA_NOTE.en) : '', sources: l.sources };
     }),
   })).filter((ch) => ch.lessons.length && ch.title);
   return { chapters, count: chapters.reduce((a, ch) => a + ch.lessons.length, 0), text: WA_TEXT[lang] ?? WA_TEXT.en };

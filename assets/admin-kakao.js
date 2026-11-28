@@ -1,9 +1,9 @@
 // DigiStep365 관리자: 카카오톡 사용법(국내 전용) — 목차·수업·단계 카드·실제 화면 이미지·버전·검수·공개 상태
 // 저장: ① catalog.json 내려받기  ② GitHub API로 이미지(images/kakaotalk/…)와 data/kakaotalk/catalog.json 커밋(토큰은 sessionStorage에만)
 // 공개 조건은 scripts/build-kakaotalk.mjs의 publishProblems()와 같다(빌드가 한 번 더 검사해 미달이면 공개하지 않는다).
-import { renderKakao } from './kakao-screens.js?v=20261128.0002';
-import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0002';
-import { renderScreen } from './screens.js?v=20261128.0002';
+import { renderKakao } from './kakao-screens.js?v=20261128.0038';
+import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0038';
+import { renderScreen } from './screens.js?v=20261128.0038';
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const root = $('[data-kadmin]');
