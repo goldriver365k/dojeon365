@@ -1,0 +1,2284 @@
+1|{x} öğesine dokunun.
+2|{x} özelliğini açın.
+3|{x} özelliğini kapatın.
+4|{x} seçeneğini seçin.
+5|iPhone ekranı çizimi. {x}
+6|iPhone Nasıl Kullanılır
+7|Kolay, Adım Adım Dersler
+8|DigiStep365 bağımsız bir eğitim sitesidir; Apple Inc. ile bağlantılı değildir, Apple Inc. tarafından desteklenmez veya onaylanmaz. Apple ve iPhone, Apple Inc. şirketinin ticari markalarıdır.
+9|Bu resimler iPhone ekranının çizimleridir. Menü adları ve yerleri iPhone’unuzda biraz farklı olabilir.
+10|Ana Ekran düğmeli iPhone (SE, 8 ve öncesi)
+11|iPhone’unuzu seçin
+12|iPhone’unuza uygun dersleri önce görmek için modelinizi ve iOS sürümünüzü seçin. Bunu atlayıp tüm dersleri de görebilirsiniz.
+13|iPhone modeli
+14|iOS sürümü
+15|iPhone modelimi bilmiyorum
+16|iOS sürümümü bilmiyorum
+17|Tüm iPhone’lar için derslerle başla
+18|Kaydet
+19|Değiştir
+20|Bu site
+21|Türkçe · Uluslararası
+22|iPhone modelinizi nasıl bulursunuz
+23|iOS sürümünüzü nasıl bulursunuz
+24|Yakında
+25|{n}
+26|{t} dersten {n} tanesi yayında
+27|Dersler, gerçek iPhone ekranları çekilip kontrol edildikten sonra tek tek yayımlanır. Asla uydurma ekran kullanmayız.
+28|Tüm dersler yayında. Resimler iPhone ekranının çizimleridir, bu yüzden iPhone’unuzdan biraz farklı olabilir.
+29|Temel
+30|Bu modelde var
+31|Bu modelde yok
+32|Model listesi kontrol edildi
+33|{n} adım
+34|Ana sayfa
+35|Tüm dersler
+36|Seç
+37|Seçmek için JavaScript gerekir. Aşağıdaki ders listesini yine de okuyabilirsiniz.
+38|Ana Ekran düğmesi
+39|Touch ID (parmak izi)
+40|Face ID (yüz tanıma)
+41|Eylem düğmesi
+42|Kamera Denetimi
+43|Dynamic Island
+44|Apple Intelligence (dil ve bölgeyi kontrol edin)
+45|Uydu üzerinden Acil SOS (bazı ülkelerde)
+46|MagSafe
+47|Şarj girişi: Lightning
+48|Şarj girişi: USB-C
+49|iPhone temelleri
+50|Telefon aramaları
+51|Kişiler
+52|Mesajlar ve iMessage
+53|Klavye ve dikte
+54|Kamera ve video
+55|Fotoğraflar ve albümler
+56|Safari ile web’de gezinme
+57|Wi-Fi, Bluetooth ve veri
+58|Ekran ve metin boyutu
+59|Sesler, zil sesleri ve bildirimler
+60|App Store ve uygulamalar
+61|Pil ve şarj
+62|Saat, alarm, hesap makinesi ve hava durumu
+63|Takvim, Notlar ve Sesli Notlar
+64|Face ID, Touch ID ve güvenlik
+65|Yaşlılar için kolay ve erişilebilirlik özellikleri
+66|Dosyalar, saklama alanı ve AirDrop
+67|Apple Hesabı, iCloud ve yedekleme
+68|Apple Pay, Sağlık ve Haritalar
+69|Siri ve Apple Intelligence
+70|Sorun giderme ve kayıp iPhone
+71|iPhone’unuzu açın
+72|iPhone’unuzu kapatın
+73|iPhone’unuzu yeniden başlatın
+74|iPhone’unuzu zorla yeniden başlatın
+75|iPhone’unuzu uyandırın ve kilidini açın
+76|iPhone’unuzu kilitleyin
+77|Ana Ekran’a gidin
+78|Dokunma, dokunup basılı tutma ve kaydırmayı öğrenin
+79|Bir uygulamayı açın
+80|Açık uygulamalar arasında geçiş yapın
+81|Bir uygulamayı kapatın
+82|Denetim Merkezi’ni açın
+83|Bildirim Merkezi’ni görüntüleyin
+84|Durum simgelerini anlayın
+85|Ses düğmelerini kullanın
+86|Sessiz modu açın veya kapatın
+87|Eylem düğmesini kullanın
+88|Ana Ekran’da uygulamaları taşıyın
+89|Uygulamalar için klasör oluşturun
+90|Uygulama Arşivi’ni kullanın
+91|Ana Ekran’dan arama yapın
+92|Araç takımı ekleyin
+93|Kilitli Ekran duvar kâğıdını değiştirin
+94|iPhone modelinizi bulun
+95|iOS sürümünüzü bulun
+96|Telefonla arama yapın
+97|Aramayı yanıtlayın
+98|Aramayı reddedin
+99|Aramayı bitirin
+100|Arama sırasında hoparlörü kullanın
+101|Arama sırasında sesinizi kapatın
+102|Son Aramalar’dan geri arayın
+103|Sık kullanılanlara ekleyip arayın
+104|Sesli mesajı dinleyin
+105|Arama sırasında tuş takımını kullanın
+106|Bir telefon numarasını engelleyin
+107|Bilinmeyen arayanları susturun
+108|Konferans araması yapın
+109|FaceTime görüntülü araması yapın
+110|Canlı Sesli Mesaj’ı kullanın
+111|Yeni kişi ekleyin
+112|Son Aramalar’dan numara kaydedin
+113|Kişiyi düzenleyin
+114|Kişiyi silin
+115|Kişilerinizde arama yapın
+116|Kişiye fotoğraf ekleyin
+117|Kişiyi paylaşın
+118|Kişi kartınızı ayarlayın
+119|Kişi Posteri oluşturun
+120|Acil durum kişisi ekleyin
+121|Kişileri Sık Kullanılanlar’a ekleyin
+122|Yinelenen kişileri birleştirin
+123|Metin mesajı gönderin
+124|Mesajı okuyun
+125|Mesajı yanıtlayın
+126|Fotoğraf gönderin
+127|Gelen fotoğrafı kaydedin
+128|Grup mesajı gönderin
+129|Mavi ve yeşil mesaj balonlarını tanıyın
+130|Tapback ile tepki verin
+131|Mesajı silin
+132|Yazışmayı silin
+133|Sesli mesaj gönderin
+134|Mesajlar’da konumunuzu paylaşın
+135|Yazışmayı sabitleyin
+136|Bir yazışmanın uyarılarını gizleyin
+137|Mesajlar’daki doğrulama kodunu kullanın
+138|Gönderilen iMessage’ı düzenleyin
+139|iMessage gönderimini geri alın
+140|Bilinmeyen gönderenleri süzün
+141|İstenmeyen mesajları bildirin
+142|Mesajlarınızda arama yapın
+143|Klavyeyle yazın
+144|Klavye dilini değiştirin
+145|Klavye ekleyin
+146|Rakam ve sembol yazın
+147|Sesinizle metin dikte edin
+148|Emoji ekleyin
+149|İmleci taşıyın
+150|Metin seçin
+151|Kopyalayın ve yapıştırın
+152|Yazmayı geri alın
+153|Otomatik düzeltmeyi açın veya kapatın
+154|Metin değiştirmeyi kullanın
+155|Tek elle klavyeyi kullanın
+156|El yazısı girişini kullanın
+157|Klavye seslerini ve dokunuşlarını değiştirin
+158|Kamera’yı açın
+159|Fotoğraf çekin
+160|Kilitli Ekran’dan Kamera’yı açın
+161|Kamera’da yakınlaştırın
+162|Odağı ve pozlamayı ayarlayın
+163|Selfie çekin
+164|Video kaydedin
+165|Video kaydı sırasında duraklatın
+166|Flaşı açın veya kapatın
+167|Portre modunu kullanın
+168|Panorama fotoğraf çekin
+169|Gece modunu kullanın
+170|Kamera zamanlayıcısını kullanın
+171|Seri fotoğraf çekin
+172|Live Photos’u açın veya kapatın
+173|Izgarayı açın
+174|Makro fotoğraf çekin
+175|Ağır çekim video kaydedin
+176|Hızlandırılmış video kaydedin
+177|Sinematik modda kaydedin
+178|Fotoğraf Stilleri’ni kullanın
+179|Kamera ile QR kodu tarayın
+180|Kamera’da Canlı Metin’i kullanın
+181|Kamera Denetimi’ni kullanın
+182|Ses düğmesiyle fotoğraf çekin
+183|Ön kamerayı aynalayın
+184|Video kalitesini değiştirin
+185|Kamera ayarlarını koruyun
+186|Kamera objektifini değiştirin
+187|QuickTake video kaydedin
+188|Fotoğraflarınızı görüntüleyin
+189|Fotoğrafı yakınlaştırın
+190|Video oynatın
+191|Fotoğrafı silin
+192|Silinen fotoğrafı kurtarın
+193|Fotoğrafı sık kullanılan olarak işaretleyin
+194|Albüm oluşturun
+195|Albüme fotoğraf ekleyin
+196|Fotoğrafı paylaşın
+197|Fotoğrafı kırpın
+198|Fotoğrafı döndürün
+199|Fotoğrafı otomatik iyileştirin
+200|Fotoğrafa filtre ekleyin
+201|Orijinal fotoğrafa dönün
+202|Videoyu kırpın
+203|Fotoğraflarınızda arama yapın
+204|İnsanlar ve Evcil Hayvanlar’ı görüntüleyin
+205|Anılar’ı izleyin
+206|Fotoğrafı gizleyin
+207|Birden fazla fotoğraf seçin
+208|Ekran görüntülerini bulun
+209|Fotoğraftaki nesneyi ayırın
+210|Yinelenen fotoğrafları birleştirin
+211|Paylaşılan albüm oluşturun
+212|Fotoğraf yazdırın
+213|Safari’yi açın
+214|Web’de arama yapın
+215|Bir web sitesi adresine gidin
+216|Önceki sayfaya dönün
+217|Yeni sekme açın
+218|Sekmeleri kapatın
+219|Web sitesine yer işareti koyun
+220|Yer işaretini açın
+221|Okuyucu’yu kullanın
+222|Web sayfasında metin boyutunu değiştirin
+223|Web sayfasını yakınlaştırın
+224|Okuma Listesi’ne ekleyin
+225|Bağlantıyı paylaşın
+226|Özel Dolaşma’yı kullanın
+227|Tarama geçmişini temizleyin
+228|Sayfada metin bulun
+229|Dosya indirin
+230|Web sayfasını çevirin
+231|Web sayfasını dinleyin
+232|Web sitesini Ana Ekran’a ekleyin
+233|Wi-Fi’ye bağlanın
+234|Wi-Fi ağını unutun
+235|Wi-Fi parolasını paylaşın
+236|QR kodla Wi-Fi’ye katılın
+237|Hücresel veriyi açın veya kapatın
+238|Hücresel veri kullanımını kontrol edin
+239|Uçak Modu’nu açın veya kapatın
+240|Bluetooth’u açın
+241|Bluetooth kulaklığı eşleyin
+242|Bluetooth aygıtının eşlemesini kaldırın
+243|AirPods’u bağlayın
+244|Kişisel Erişim Noktası’nı açın
+245|Düşük Veri Modu’nu kullanın
+246|Veri dolaşımını açın veya kapatın
+247|eSIM ekleyin
+248|Ağ ayarlarını sıfırlayın
+249|Bluetooth ile arabanıza bağlanın
+250|NFC etiketi okuyun
+251|Metni büyütün
+252|Metni kalın yapın
+253|Ekran Büyütme’yi kullanın
+254|Parlaklığı ayarlayın
+255|Otomatik parlaklığı açın veya kapatın
+256|Karanlık Mod’u kullanın
+257|Night Shift’i kullanın
+258|True Tone’u açın veya kapatın
+259|Otomatik Kilit süresini değiştirin
+260|Uyandırmak için Kaldır’ı kullanın
+261|Her Zaman Açık ekranı açın veya kapatın
+262|Duvar kâğıdını değiştirin
+263|Bir uygulama için metin boyutunu ayarlayın
+264|Ana Ekran simgelerini büyütün
+265|Hareketi azaltın
+266|Karşıtlığı artırın
+267|Düğme şekillerini açın
+268|Renk filtrelerini kullanın
+269|Beyaz noktayı azaltın
+270|Ekran yönünü kilitleyin
+271|Zil sesini yükseltin
+272|Zil sesini değiştirin
+273|Titreşimi açın veya kapatın
+274|Bir kişi için zil sesi ayarlayın
+275|Mesaj sesini değiştirin
+276|Uygulama bildirimlerini açın veya kapatın
+277|Bildirim önizlemelerini gizleyin
+278|Rahatsız Etme’yi kullanın
+279|Uyku odağını açın
+280|Belirli kişilerden aramalara izin verin
+281|Uyarılar için LED flaşı açın
+282|Yüksek kulaklık sesini azaltın
+283|Aramaları anons edin
+284|Mono Ses’i açın
+285|Ses Tanıma’yı kullanın
+286|Uygulama yükleyin
+287|App Store’da arama yapın
+288|Uygulamaları güncelleyin
+289|Otomatik uygulama güncellemelerini açın
+290|Uygulamayı silin
+291|Uygulamayı Ana Ekran’dan kaldırın
+292|Uygulamayı boşaltın
+293|Uygulamayı yeniden indirin
+294|Uygulama izinlerini değiştirin
+295|Abonelikleri kontrol edin veya iptal edin
+296|Satın alma geçmişini görüntüleyin
+297|Ekran Süresi’ni kontrol edin
+298|Uygulama sınırları ayarlayın
+299|Uygulamayı kilitleyin
+300|Uygulamayı gizleyin
+301|iPhone’unuzu şarj edin
+302|Pil yüzdesini gösterin
+303|Düşük Güç Modu’nu açın
+304|Pil sağlığını kontrol edin
+305|Uygulamalara göre pil kullanımını görün
+306|Kablosuz şarj edin
+307|MagSafe ile şarj edin
+308|Optimize Edilmiş Pil Şarjı’nı kullanın
+309|Şarj sınırı ayarlayın
+310|iPhone’unuzu hızlı şarj edin
+311|USB-C ile şarj edin
+312|Lightning kablosuyla şarj edin
+313|Pil araç takımı ekleyin
+314|Pil tasarrufu ipuçları
+315|iPhone’dan başka bir aygıtı şarj edin
+316|Alarm kurun
+317|Alarmı silin
+318|Alarm sesini değiştirin
+319|Alarmı erteleyin
+320|Zamanlayıcıyı kullanın
+321|Kronometreyi kullanın
+322|Dünya saatini görüntüleyin
+323|Uyku programı ayarlayın
+324|El fenerini açın
+325|Hesap Makinesi’ni kullanın
+326|Hesap makinesi geçmişini görüntüleyin
+327|Hesap Makinesi’nde birim dönüştürün
+328|Hava durumuna bakın
+329|Hava Durumu’na şehir ekleyin
+330|Hava durumu uyarıları alın
+331|Takvime etkinlik ekleyin
+332|Etkinlik uyarısı alın
+333|Etkinliği düzenleyin
+334|Etkinliği silin
+335|Yinelenen etkinlik oluşturun
+336|Takvim görünümünü değiştirin
+337|Tatilleri gösterin
+338|Not oluşturun
+339|Kontrol listesi yapın
+340|Nota fotoğraf ekleyin
+341|Notlar’da belge tarayın
+342|Notu kilitleyin
+343|Notu sabitleyin
+344|Notu paylaşın
+345|Notu silin ve geri getirin
+346|Sesli not kaydedin
+347|Kaydı oynatın
+348|Kaydı yeniden adlandırın
+349|Kaydı paylaşın
+350|Anımsatıcı oluşturun
+351|Parola ayarlayın
+352|Parolanızı değiştirin
+353|Face ID’yi ayarlayın
+354|Maskeyle Face ID’yi kullanın
+355|Alternatif görünüm ayarlayın
+356|Touch ID’yi ayarlayın
+357|Başka bir parmak izi ekleyin
+358|Uygulamalarda Face ID’yi kullanın
+359|Kayıtlı parolaları görüntüleyin
+360|Parola Otomatik Doldurma’yı kullanın
+361|İki faktörlü kimlik doğrulamayı kontrol edin
+362|Güvenlik Denetimi’ni kullanın
+363|Çalınan Aygıt Koruması’nı açın
+364|Kilitliyken nelerin kullanılabileceğini seçin
+365|10 hatalı paroladan sonra verileri silin
+366|Uygulamaların konum erişimini kontrol edin
+367|Uygulama izlemeyi kapatın
+368|Uygulama Gizlilik Raporu’nu görüntüleyin
+369|iOS’i güncelleyin
+370|Telefon ve mesaj dolandırıcılığından korunun
+371|Ekranı büyütmek için Büyütme’yi kullanın
+372|Büyüteç’i kullanın
+373|Ekranı Seslendir’i kullanın
+374|Seçimi Seslendir’i kullanın
+375|VoiceOver’ı açın veya kapatın
+376|Temel VoiceOver hareketlerini öğrenin
+377|AssistiveTouch’ı kullanın
+378|Yardımcı Erişim’i ayarlayın
+379|Yardımcı Erişim’den çıkın
+380|Erişilebilirlik Kestirmesi’ni ayarlayın
+381|Arkaya Dokun’u kullanın
+382|Dokunma Uyarlamaları’nı kullanın
+383|Haptic Touch süresini değiştirin
+384|Ulaşılabilirlik’i kullanın
+385|Canlı Altyazılar’ı kullanın
+386|İşitme aygıtını eşleyin
+387|Canlı Dinleme’yi kullanın
+388|RTT aramalarını kullanın
+389|Kişisel Ses oluşturun
+390|Canlı Konuşma’yı kullanın
+391|Sesle Denetim’i kullanın
+392|Göz İzleme’yi kullanın
+393|Arka Plan Sesleri’ni çalın
+394|Arama sesi yönlendirmesini ayarlayın
+395|Aramaları otomatik yanıtlayın
+396|Yan düğme tıklama hızını ayarlayın
+397|Klavye harflerini büyütün
+398|Algılama Modu’nu kullanın
+399|Rehberli Erişim’i kullanın
+400|İlk açılışta erişilebilirliği ayarlayın
+401|iPhone saklama alanını kontrol edin
+402|Saklama alanı açın
+403|Dosyalar uygulamasını kullanın
+404|İndirilen dosyaları bulun
+405|Dosyayı Dosyalar’a kaydedin
+406|PDF açın
+407|PDF imzalayın
+408|Dosyayı yeniden adlandırın
+409|Dosyayı silin
+410|Dosyayı arşivden çıkarın
+411|USB bellek bağlayın
+412|AirDrop ile fotoğraf gönderin
+413|AirDrop alımını ayarlayın
+414|NameDrop ile kişi paylaşın
+415|Ekran görüntüsü alın
+416|Tam sayfa ekran görüntüsü alın
+417|Ekranınızı kaydedin
+418|Ekran görüntüsüne işaret ekleyin
+419|iPhone’dan yazdırın
+420|Fotoğrafları bilgisayara aktarın
+421|Apple Hesabı oluşturun
+422|Apple Hesabınızla giriş yapın
+423|Apple Hesabı parolanızı değiştirin
+424|Apple Hesabı parolanızı unuttuysanız
+425|Kurtarma kişisi ekleyin
+426|Vasi Kişi ekleyin
+427|iCloud saklama alanını kontrol edin
+428|iCloud Fotoğrafları’nı açın
+429|iCloud ile yedekleyin
+430|Bilgisayarla yedekleyin
+431|Yedekten geri yükleyin
+432|Yeni iPhone’a aktarın
+433|Kişileri ve takvimleri iCloud ile eşzamanlayın
+434|Aile Paylaşımı’nı ayarlayın
+435|Satın Almak İçin Sor’u kullanın
+436|Ödeme yönteminizi değiştirin
+437|Güvenilir telefon numaranızı değiştirin
+438|Apple Hesabınızdan çıkış yapın
+439|iCloud+ hakkında bilgi edinin
+440|iPhone’unuzu silin
+441|Apple Pay’e kart ekleyin
+442|Mağazalarda Apple Pay ile ödeyin
+443|Ulaşım kartı kullanın
+444|Cüzdan’a kart ekleyin
+445|Apple Pay’den kartı kaldırın
+446|Tıbbi Kimlik’i ayarlayın
+447|Adımlarınızı kontrol edin
+448|İlaç anımsatıcıları alın
+449|Düşme Algılama hakkında bilgi edinin
+450|Sağlık verilerini aileyle paylaşın
+451|Yürüme dengesi uyarıları alın
+452|Haritalar’da yer arayın
+453|Yol tarifi alın
+454|Toplu taşıma yol tarifi alın
+455|Varış zamanınızı paylaşın
+456|Çevrimdışı harita indirin
+457|Bul ile iPhone’unuzu bulun
+458|Konumunuzu aileyle paylaşın
+459|AirTag ile eşyaları bulun
+460|Haber Ver’i kullanın
+461|Siri’yi açın
+462|Siri ile sesinizle konuşun
+463|Siri’yi düğmeyle etkinleştirin
+464|Siri’ye yazın
+465|Siri ile arama yapın
+466|Siri ile mesaj gönderin
+467|Siri ile alarm kurun
+468|Siri ile zamanlayıcı kurun
+469|Siri’ye hava durumunu sorun
+470|Siri ile uygulama açın
+471|Siri ile anımsatıcı oluşturun
+472|Siri ile müzik çalın
+473|Siri ile el fenerini açın
+474|Siri’nin sesini değiştirin
+475|Siri’nin dilini değiştirin
+476|Kilitliyken Siri’ye izin verin
+477|Bildirimleri anons edin
+478|Siri geçmişini silin
+479|Kestirme oluşturun
+480|Apple Intelligence’ı açın
+481|Yazma Araçları’nı kullanın
+482|Metni özetleyin
+483|Bildirim özetlerini görüntüleyin
+484|Fotoğraflar’da Temizle’yi kullanın
+485|Image Playground ile görüntü oluşturun
+486|Genmoji oluşturun
+487|Görsel Zekâ’yı kullanın
+488|ChatGPT uzantısını kullanın
+489|Canlı Çeviri’yi kullanın
+490|Apple Intelligence gizliliği hakkında bilgi edinin
+491|Acil SOS’u anlayın
+492|Acil SOS ayarlarını kontrol edin
+493|Uydu üzerinden Acil SOS hakkında bilgi edinin
+494|iPhone’unuzu kayıp olarak işaretleyin
+495|Kayıp iPhone’u uzaktan silin
+496|Ekranınız donduysa
+497|iPhone’unuz şarj olmuyorsa
+498|Ses yoksa
+499|Wi-Fi çalışmıyorsa
+500|Saklama alanınız doluysa
+501|Bir uygulama sürekli kapanıyorsa
+502|Parolanızı unuttuysanız
+503|iPhone kullanılamıyor diyorsa
+504|iPhone’unuz ıslandıysa
+505|iPhone’unuz ısındıysa
+506|Ekranınız çatladıysa
+507|Apple Destek uygulamasıyla onarım randevusu alın
+508|Tüm ayarları sıfırlayın
+509|iPhone SIM yok diyorsa
+510|Arama yapamıyorsanız
+511|Silme işlemi tüm fotoğrafları, kişileri ve uygulamaları kaldırır. Önce yedeğiniz olduğundan emin olun.
+512|Çıkış yapmak veya Apple Hesabınızı değiştirmek iCloud fotoğraflarını ve kişilerini bu iPhone’dan kaldırabilir.
+513|Silinen fotoğraflar 30 gün sonra kalıcı olarak kaldırılır.
+514|Yedekleme veya geri yükleme sırasında Wi-Fi ve şarj aletini bağlı tutun.
+515|Geri yükleme, iPhone’unuzdaki mevcut içeriğin yerine yedeği koyar.
+516|Ödemeler gerçek para harcar. Pratik yaparken Öde’ye dokunmayın.
+517|Konumunuzu yalnızca güvendiğiniz aile üyeleriyle paylaşın.
+518|Pratik yapmak için düğmelere asla basmayın. Gerçekten acil servisleri arar.
+519|Uzaktan silme iPhone’daki her şeyi siler.
+520|Sağdaki yan düğmeye basılı tutun.
+521|Apple logosu görününce bırakın.
+522|Kilitli Ekran görünene kadar bekleyin.
+523|Yan düğmeyi ve ses düğmelerinden birini birlikte basılı tutun.
+524|Kapatma sürgüsünü sağa sürükleyin.
+525|Ekran kararana kadar bekleyin.
+526|Yan düğmeyi basılı tutun.
+527|Önce iPhone’unuzu kapatın.
+528|Yaklaşık 30 saniye bekleyin.
+529|Apple logosu görünene kadar yan düğmeyi basılı tutun.
+530|Sesi açma düğmesine basıp hemen bırakın.
+531|Sesi kısma düğmesine basıp hemen bırakın.
+532|Apple logosu görününce bırakın.
+533|Ekrana dokunun veya yan düğmeye basın.
+534|iPhone’u yüzünüzün önünde tutup ona bakın.
+535|Ekranın altından yukarı kaydırın.
+536|Ana Ekran düğmesine basın.
+537|Kayıtlı parmağınızı Touch ID’nin üzerine koyun.
+538|Yan düğmeye bir kez basın.
+539|Ekran kapanır ve iPhone kilitlenir.
+540|Ekranın alt kenarından yukarı kaydırın.
+541|Artık Ana Ekran’ı görüyorsunuz.
+542|Ekranın altındaki yuvarlak Ana Ekran düğmesine basın.
+543|Dokunma: ekrana bir kez hafifçe dokunun.
+544|Dokunup basılı tutma: parmağınızı bir süre ekranda tutun.
+545|Kaydırma: parmağınızı ekranda kaydırın.
+546|Ana Ekran’da istediğiniz uygulamaya dokunun.
+547|Uygulama açılır.
+548|Alttan yukarı kaydırıp ortada durun.
+549|Uygulamalar arasında sola veya sağa kaydırın.
+550|İstediğiniz uygulamaya dokunun.
+551|Ana Ekran düğmesine iki kez basın.
+552|Kapatmak istediğiniz uygulamayı yukarı kaydırın.
+553|Sağ üst köşeden aşağı kaydırın.
+554|Denetim Merkezi açılır. Kapatmak için yukarı kaydırın.
+555|Denetim Merkezi açılır. Kapatmak için Ana Ekran düğmesine basın.
+556|Ekranın üst ortasından aşağı kaydırın.
+557|Açmak için bir bildirime dokunun.
+558|Kapatmak için yukarı kaydırın.
+559|Sağ üstteki pil şekli kalan şarjı gösterir.
+560|Yelpaze şekli Wi-Fi’ye bağlı olduğunuzu gösterir.
+561|4 çubuk hücresel sinyalinizi gösterir.
+562|Denetim Merkezi’ni açmak için sağ üstten aşağı kaydırın.
+563|Sesi açmak için soldaki üst düğmeye basın.
+564|Sesi kısmak için alttaki düğmeye basın.
+565|Denetim Merkezi’ni açın.
+566|Zil şeklindeki Sessiz Mod düğmesine dokunun.
+567|Sol taraftaki Zil/Sessiz anahtarını aşağı itin.
+568|Turuncu renk sessiz demektir. Sesi geri açmak için yukarı itin.
+569|Bir işlev seçmek için kaydırın, örneğin El Feneri.
+570|Kullanmak için Eylem düğmesini basılı tutun.
+571|Uygulamaya dokunup basılı tutun.
+572|Uygulamalar titremeye başlayınca uygulamayı yeni yerine sürükleyin.
+573|Sağ üstteki Bitti’ye dokunun.
+574|Ana Ekran’da boş bir alana dokunup basılı tutun.
+575|Bir uygulamayı başka bir uygulamanın üzerine sürükleyin.
+576|Klasörü yeniden adlandırmak için adına dokunup basılı tutun.
+577|Ana Ekran’da sola kaydırmaya devam edin.
+578|Üstteki arama alanına dokunun.
+579|Uygulamanın adını yazın.
+580|Ana Ekran’ın ortasından aşağı kaydırın.
+581|Bir uygulamanın veya kişinin adını yazın.
+582|Sonuca dokunun.
+583|Sol üstteki Düzenle’ye dokunun.
+584|Kilitli Ekran’a dokunup basılı tutun.
+585|Model Adı iPhone modelinizi gösterir.
+586|iOS Sürümü’nün yanındaki sayı iOS sürümünüzdür.
+587|Yeşil Telefon uygulamasına dokunun.
+588|Alttaki Tuş Takımı’na dokunun.
+589|Telefon numarasını tuşlayın.
+590|Yeşil arama düğmesine dokunun.
+591|Arama gelince yeşil düğmeye dokunun.
+592|iPhone kilitliyse yanıtlamak için sürgüyü sürükleyin.
+593|Arama gelince kırmızı Reddet düğmesine dokunun.
+594|iPhone kilitliyse yan düğmeye hızlıca iki kez basın.
+595|Arama ekranında kırmızı düğmeye dokunun.
+596|Arama sırasında Hoparlör’e dokunun.
+597|Ahizeyi kullanmak için yeniden dokunun.
+598|Arama ekranına bakın.
+599|Karşı tarafın sizi yeniden duyması için tekrar dokunun.
+600|Telefon uygulamasına dokunun.
+601|Alttaki Son Aramalar’a dokunun.
+602|Geri aramak istediğiniz ada dokunun.
+603|Alttaki Sık Kullanılanlar’a dokunun.
+604|Kişiye dokunun.
+605|Bir dahaki sefere aramak için ada dokunmanız yeterli.
+606|Sağ alttaki Sesli Mesaj’a dokunun.
+607|Bir mesaja dokunun.
+608|Oynat’a dokunun.
+609|Arama sırasında Tuş Takımı’na dokunun.
+610|İstenen rakamlara dokunun.
+611|Arama ekranına dönmek için Gizle’ye dokunun.
+612|Telefon’da Son Aramalar’a dokunun.
+613|Numaranın yanındaki bilgi düğmesine dokunun.
+614|Alttaki Bu Arayanı Engelle’ye dokunun.
+615|Onaylamak için Kişiyi Engelle’ye dokunun.
+616|Kişiler’de olmayan numaralardan gelen aramalar çalmadan sesli mesaja gider.
+617|İlk kişiyle aramayı başlatın.
+618|İkinci kişiye dokunun.
+619|FaceTime uygulamasına dokunun.
+620|Kişinin adını yazın.
+621|Yeşil FaceTime düğmesine dokunun.
+622|Aramayı kaçırırsanız mesaj ekranda yazı olarak görünür.
+623|Kişiler uygulamasına dokunun.
+624|Sağ üstteki ＋ simgesine dokunun.
+625|Adı yazın.
+626|Telefon numarasını yazın.
+627|Numaranın yanındaki ⓘ simgesine dokunun.
+628|Kişiler’de kişiye dokunun.
+629|Sağ üstteki Düzenle’ye dokunun.
+630|Bilgileri değiştirin.
+631|Alttaki Kişiyi Sil’e dokunun.
+632|Yeniden Kişiyi Sil’e dokunun.
+633|Kişiler’i açın.
+634|Üstteki Arama alanına dokunun.
+635|Bir fotoğrafa dokunun.
+636|Gönderilecek kişiye dokunun.
+637|Adı girin. Gönder düğmesine dokunun.
+638|Üstteki Kartım’a dokunun.
+639|Adınızı ve telefon numaranızı kontrol edin.
+640|Fotoğraflar’a dokunun. Fotoğrafınızı seçebilirsiniz.
+641|Sağ üstteki resminize dokunun.
+642|Üstteki Yinelenenler Bulundu’ya dokunun.
+643|Yeşil Mesajlar uygulamasına dokunun.
+644|Sağ üstteki yazma düğmesine dokunun.
+645|Adı veya numarayı yazın.
+646|Mesajınızı alttaki kutuya yazın.
+647|Göndermek için yukarı ok düğmesine dokunun.
+648|Mavi noktalı yazışmaya dokunun.
+649|Yeni mesajı okuyun.
+650|Yazışmayı açın.
+651|Alttaki metin alanına dokunun.
+652|Yanıtınızı yazın.
+653|Yukarı oka dokunun.
+654|Metin alanının yanındaki ＋ simgesine dokunun.
+655|Fotoğrafa dokunun.
+656|Göndermek için yukarı oka dokunun.
+657|Gelen fotoğrafa dokunun.
+658|Paylaş düğmesine dokunun.
+659|Yaz’a dokunun.
+660|Her kişiyi tek tek ekleyin.
+661|Mesajınızı yazın.
+662|Mavi balonlar internet üzerinden gönderilen iMessage’lardır (Apple aygıtları arasında).
+663|Yeşil balonlar normal metin mesajlarıdır (SMS). Operatör tarifeniz geçerlidir.
+664|Yazışmaya dokunun.
+665|Balona dokunup basılı tutun.
+666|Kalbe veya beğen simgesine dokunun.
+667|Mesaj balonuna dokunup basılı tutun.
+668|Çöp kutusu düğmesine dokunun.
+669|Yazışmayı sola kaydırın.
+670|Kırmızı Sil’e dokunun.
+671|Soldaki ＋ simgesine dokunun.
+672|Konuşun. Sesiniz kaydediliyor.
+673|Gönder düğmesine dokunun.
+674|Yazışmayı sağa kaydırın.
+675|Sarı raptiye düğmesine dokunun.
+676|Mor zil düğmesine dokunun.
+677|Kod geldiğinde klavyenin üstünde görünür.
+678|Doldurmak için koda dokunun.
+679|Kodunuzu asla kimseye söylemeyin.
+680|Mavi balona dokunup basılı tutun.
+681|Metni düzeltin. Mavi onay işaretine dokunun. 15 dakika içinde çalışır.
+682|Göndermeyi Geri Al’a dokunun. 2 dakika içinde çalışır.
+683|Mesajlar’da Bilinmeyen Gönderenler’i görmek için sol üstteki Filtreler’e dokunun.
+684|Bilinmeyen gönderenin mesajına dokunun.
+685|Alttaki İstenmeyen Olarak Bildir’e dokunun.
+686|Bir sözcük yazın, örneğin doktor.
+687|Klavyeyi göstermek için bir metin alanına dokunun.
+688|Harflere tek tek dokunun.
+689|Hatayı silmek için ⌫ simgesine dokunun.
+690|Klavyeyi açmak için bir metin alanına dokunun.
+691|Sol alttaki küre düğmesine dokunun.
+692|Her dokunuş klavyeyi değiştirir.
+693|Klavyeyi açın.
+694|Sol alttaki 123’e dokunun.
+695|Rakamlara dokunun. Harflere dönmek için ABC’ye dokunun.
+696|Metin alanına dokunun.
+697|Klavyedeki mikrofona dokunun.
+698|Yavaş konuşun. Sözleriniz yazı olarak görünür.
+699|Bitirince yeniden mikrofona dokunun.
+700|Sol alttaki gülen yüz (veya küre) tuşuna dokunun.
+701|İstediğiniz emojiye dokunun.
+702|Harflere dönmek için ABC’ye dokunun.
+703|İmleci yerleştirmek için metinde herhangi bir yere dokunun.
+704|Boşluk çubuğuna dokunup basılı tutun.
+705|Parmağınızı kaldırmadan hareket ettirerek imleci kaydırın.
+706|Sözcüğe iki kez dokunun.
+707|Daha fazlasını seçmek için tutamaçları sürükleyin.
+708|Metne dokunup basılı tutun.
+709|Yapıştırmak istediğiniz yere dokunup basılı tutun.
+710|Geri almak için üç parmakla sola kaydırın.
+711|iPhone’unuzu sallayarak da yapabilirsiniz.
+712|Tam ifadeyi ve kısa bir kestirmeyi yazın.
+713|Sağ üstteki Kaydet’e dokunun.
+714|Küre veya emoji düğmesine dokunup basılı tutun.
+715|Sağdaki klavye simgesine dokunun.
+716|Kamera uygulamasına dokunun.
+717|Kamera açılır.
+718|Kamera’yı açın.
+719|Fotoğraf’ın seçili olduğundan emin olun.
+720|Çekmek istediğiniz şeye doğrultun.
+721|Beyaz deklanşör düğmesine dokunun.
+722|Kilitli Ekran’a bakın.
+723|Kamera’yı açmak için ekranı sola kaydırın.
+724|Ya da sağ alttaki Kamera düğmesine dokunup basılı tutun.
+725|Kamera ekranında iki parmağınızı açın.
+726|Fotoğraf çekmek için deklanşöre dokunun.
+727|Odaklamak istediğiniz yere dokunun.
+728|Parlaklığı değiştirmek için sarı güneşi yukarı veya aşağı sürükleyin.
+729|Odağı kilitlemek için dokunup basılı tutun (AE/AF Kilidi).
+730|Kamera değiştirme düğmesine dokunun.
+731|Yüzünüzü kadraja alın.
+732|Deklanşöre dokunun.
+733|Kamera’da Video’ya dokunun.
+734|Başlatmak için kırmızı düğmeye dokunun.
+735|Durdurmak için kırmızı kareye dokunun.
+736|Kırmızı Kayıt düğmesine dokunun.
+737|Duraklatmak için soldaki duraklat düğmesine dokunun (iOS 18 veya sonrası).
+738|Bitirince Durdur’a dokunun.
+739|Üst ortadaki ⌃ simgesine dokunun.
+740|Flaş’a (şimşek) dokunun.
+741|Kapalı, Açık veya Otomatik’i seçin.
+742|Portre’ye dokunun.
+743|2.5 metre içinde kalın. Doğal Işık sarıya dönünce hazırsınız.
+744|Beyaz Deklanşör düğmesine dokunun.
+745|Pano’ya dokunun.
+746|Deklanşör düğmesine dokunun.
+747|Oku takip ederek iPhone’u yavaşça yana hareket ettirin.
+748|Bitirmek için yeniden Deklanşör düğmesine dokunun.
+749|Karanlık yerlerde sarı ay simgesi kendiliğinden açılır.
+750|iPhone’u birkaç saniye sabit tutun.
+751|Zamanlayıcı’ya dokunun.
+752|Deklanşör düğmesine dokunun. Fotoğraf 10 saniye sonra çekilir.
+753|Deklanşör düğmesini sola kaydırın.
+754|Basılı tutmaya devam edin.
+755|Durdurmak için parmağınızı kaldırın.
+756|Fotoğraflar’da en sevdiğiniz kareleri seçebilirsiniz.
+757|Sağ üstteki yuvarlak Live düğmesine dokunun.
+758|Üzerinde çizgi varsa kapalıdır.
+759|Fotoğrafları düz tutmayı kolaylaştıran çizgiler görünür.
+760|Nesneye 2 santimetreye kadar yaklaşın (Pro modeller).
+761|Çiçek simgesi Makro’nun açık olduğunu gösterir.
+762|Ağır Çekim’e dokunun.
+763|Kayıt düğmesine dokunun.
+764|Hızlandırılmış’a dokunun.
+765|iPhone’u kıpırdamaması için bir sehpaya koyun.
+766|Sinematik’e dokunun.
+767|Odaklanmak için bir kişiye dokunun. Arka plan bulanıklaşır.
+768|Stiller’e dokunun.
+769|Bir görünüm seçmek için kaydırın, örneğin Sıcak.
+770|Kamerayı QR koda doğrultun.
+771|Görünen bağlantıya dokunun.
+772|Bilinmeyen bir QR kodu açmadan önce adresi kontrol edin.
+773|Kamerayı bir metne doğrultun.
+774|Sağ alttaki metin düğmesine dokunun.
+775|Kamera’yı açmak için sağ alttaki Kamera Denetimi’ne basın (iPhone 16 ve sonrası).
+776|Fotoğraf çekmek için yeniden basın.
+777|Düğmeye hafifçe iki kez basın.
+778|Yakınlaştırmak için parmağınızı düğmede kaydırın.
+779|Fotoğraf çekmek için ses düğmelerinden birine basın.
+780|Video kaydetmek için basılı tutun.
+781|Selfie’ler aynada gördüğünüz gibi kaydedilir.
+782|Yüksek kalite daha fazla saklama alanı kullanır.
+783|Daha geniş görüntü için 0.5’e dokunun (Ultra Geniş).
+784|Yakınlaştırmak için 2’ye dokunun (Telefoto).
+785|Bir sayıya dokunup basılı tutun.
+786|Serbestçe yakınlaştırmak için yana kaydırın.
+787|Fotoğraf modunda Deklanşör düğmesine dokunup basılı tutun.
+788|Kaydı durdurmak için bırakın.
+789|Kayda devam etmek için sağdaki kilide kaydırın.
+790|Fotoğraflar uygulamasına dokunun.
+791|Sonraki fotoğrafı görmek için kaydırın.
+792|Fotoğrafta iki parmağınızı açın.
+793|Uzaklaştırmak için parmaklarınızı kıstırın.
+794|Fotoğraflar’da bir videoya dokunun.
+795|Fotoğrafı açın.
+796|Fotoğraflar’da Son Silinenler’e dokunun.
+797|Face ID veya parolanızla kilidi açın.
+798|Alttaki kalp düğmesine dokunun.
+799|Sık Kullanılanlar albümünde bulabilirsiniz.
+800|Alttaki Koleksiyonlar’a dokunun.
+801|Albümler’in yanındaki ＋ simgesine dokunun.
+802|Bir ad yazın, örneğin Torunlar.
+803|Sağ üstteki ••• düğmesine dokunun.
+804|Albüme dokunun.
+805|Nasıl veya kime göndereceğinize dokunun.
+806|Alttaki Kırp’a dokunun.
+807|Neyin kalacağını seçmek için köşeleri sürükleyin.
+808|Sol üstteki döndürme düğmesine dokunun.
+809|Üstteki Otomatik’e dokunun.
+810|Alttaki Filtreler’e dokunun.
+811|Bir filtreye dokunun, örneğin Mono.
+812|Üstteki kırmızı Orijinale Dön’e dokunun.
+813|Videoya dokunun.
+814|Neyin kalacağını seçmek için sarı çerçevenin uçlarını sürükleyin.
+815|Üstteki arama düğmesine dokunun.
+816|Bir sözcük yazın, örneğin plaj veya köpek.
+817|Yalnızca bir kişinin fotoğraflarını görmek için ona dokunun.
+818|Müzikle oynatmak için bir anıya dokunun.
+819|Gizli fotoğraflar Koleksiyonlar › İzlenceler › Gizli’dedir.
+820|Sağ üstteki Seç’e dokunun.
+821|Her fotoğrafa dokunun. Parmağınızı da sürükleyebilirsiniz.
+822|Sol alttaki Paylaş düğmesine dokunun.
+823|Ortam Türleri altında Ekran Görüntüleri’ne dokunun.
+824|Fotoğraftaki kişiye veya nesneye dokunup basılı tutun.
+825|Yalnızca nesneyi yapıştırmak için mesaj alanına dokunup basılı tutun.
+826|İzlenceler altında Yinelenenler’e dokunun.
+827|Bir ad yazın, örneğin Ailemiz.
+828|Aile üyelerini seçin.
+829|Yazıcıyı kontrol edin. Yazdır’a dokunun.
+830|Mavi pusula olan Safari’ye dokunun.
+831|Safari’de adres çubuğuna dokunun.
+832|Ne bulmak istediğinizi yazın.
+833|Klavyedeki Git’e dokunun.
+834|Alttaki adres çubuğuna dokunun.
+835|Adresi yazın, örneğin digistep365.com
+836|Mavi git tuşuna dokunun.
+837|Sol alttaki ‹ simgesine dokunun.
+838|Sağ alttaki Sekmeler düğmesine dokunun.
+839|Kapatmak için sekmedeki ✕ simgesine dokunun.
+840|Tümünü kapatmak için Bitti’ye dokunup basılı tutun.
+841|Kitap düğmesine dokunun.
+842|Web sitesine dokunun.
+843|Adres çubuğunun solundaki ᴬA simgesine dokunun.
+844|Reklamsız, yalnızca metni görürsünüz.
+845|Adres çubuğundaki sayfa menüsü düğmesine dokunun.
+846|Metni büyütmek için büyük A’ya dokunun.
+847|Metni büyütmek için büyük A’ya dokunun.
+848|İki parmağınızı açarak da büyütebilirsiniz.
+849|Sonra kitap düğmesi › gözlük simgesinden okuyun.
+850|Alttaki Özel’e dokunun.
+851|Burada geçmiş kaydedilmez.
+852|Bir sözcük yazın. Sarıyla vurgulanır.
+853|Dosya bağlantısına dokunup basılı tutun.
+854|Dosyalar › İndirilenler’de bulun.
+855|Dile dokunun.
+856|iPhone sayfayı sesli okur.
+857|Sağ üstteki Ekle’ye dokunun.
+858|Ağ adına dokunun.
+859|Parolayı yazın.
+860|Arkadaşınızdan kendi iPhone’unda Wi-Fi ağınıza dokunmasını isteyin.
+861|İki iPhone’u birbirine yakın tutun.
+862|Kendi iPhone’unuzda Parolayı Paylaş’a dokunun.
+863|Kamerayı Wi-Fi QR koduna doğrultun.
+864|Üstteki bildirime dokunun.
+865|Her uygulamanın ne kadar veri kullandığını görmek için aşağı kaydırın.
+866|O uygulamanın interneti yalnızca Wi-Fi’de kullanması için anahtarı kapatın.
+867|Uçak düğmesine dokunun.
+868|Anahtarı açın.
+869|Kulaklığı eşleme moduna alın (kılavuzuna bakın).
+870|Ayarlar › Bluetooth’u açın.
+871|Diğer Aygıtlar altında kulaklığa dokunun.
+872|iPhone’unuzun kilidini açın ve Ana Ekran’a gidin.
+873|AirPods kutusunu açın ve iPhone’unuzun yanında tutun.
+874|Diğer aygıtta Wi-Fi listesinden iPhone’unuzu seçin.
+875|O aygıtta bu parolayı girin.
+876|Yurt dışında veri pahalı olabilir. Önce operatörünüzün dolaşım tarifesini kontrol edin.
+877|Operatörünüzü izleyin: QR kodunu tarayın veya Yakındaki iPhone’dan Aktar’ı seçin.
+878|Parolanızı girin. Kayıtlı Wi-Fi parolaları silinir.
+879|Araba ekranında Bluetooth eşlemesini başlatın (araba kılavuzuna bakın).
+880|Ekranı uyandırın.
+881|iPhone’unuzun üst kısmını NFC etiketine yaklaştırın.
+882|Sürgüyü sağa sürükleyin.
+883|Ayarlar › Ekran ve Parlaklık’ı açın.
+884|Daha parlak yapmak için güneş sürgüsünü yukarı sürükleyin.
+885|Bir süre seçin.
+886|Beğendiğiniz bir fotoğrafa dokunun.
+887|Değiştirmek istediğiniz uygulamayı açın.
+888|Metin Boyutu’nda Yalnızca Hava Durumu’na dokunun.
+889|Metni büyütmek için sürgüyü yukarı sürükleyin.
+890|Kilit şeklindeki Yön Kilidi düğmesine dokunun.
+891|Ayarlar › Sesler ve Dokunuş’u açın.
+892|Zil Sesi ve Uyarılar sürgüsünü sağa sürükleyin.
+893|Beğendiğiniz bir zil sesine dokunun.
+894|Uygulamanın yanındaki Al’a dokunun.
+895|Onaylamak için yan düğmeye iki kez basın veya Face ID’yi kullanın.
+896|Alttaki Ara’ya dokunun.
+897|Ayrıntıları ve puanları görmek için uygulamanın adına dokunun.
+898|App Store’u açın.
+899|Sağ üstteki profil resminize dokunun.
+900|Onaylamak için Sil’e dokunun.
+901|Uygulamanın yanındaki bulut düğmesine dokunun.
+902|Üstteki adınıza dokunun.
+903|İptal edilecek aboneliğe dokunun.
+904|Bugün her uygulamayı ne kadar kullandığınızı görebilirsiniz.
+905|Sınırlanacak uygulama türünü seçin.
+906|Günlük süreyi ayarlayın.
+907|Gizli uygulamalar Uygulama Arşivi’nin altındaki Gizli klasöründedir.
+908|Kabloyu alttaki girişe takın.
+909|Diğer ucunu güç adaptörüne ve prize takın.
+910|Pilin üzerindeki şimşek şarj olduğunu gösterir.
+911|Ayarlar › Pil’i açın.
+912|Maksimum Kapasite pil sağlığını gösterir. 80%’in altındaysa değiştirmeyi düşünün.
+913|Her uygulamanın ne kadar pil kullandığını görmek için aşağı kaydırın.
+914|Kablosuz şarj aletini prize takın.
+915|iPhone’u ekranı yukarı bakacak şekilde şarj aletinin ortasına koyun.
+916|Şimşek şarj olduğunu gösterir.
+917|MagSafe şarj aletini prize takın.
+918|Şarj aletini iPhone’un arkasına tutun. Mıknatısla yerine oturur.
+919|Ekranda şarj simgesi görünür.
+920|Uygun kabloyla 20W veya daha güçlü bir adaptör kullanın.
+921|Kabloyu iPhone’unuza takın.
+922|Yaklaşık 30 dakikada yarıya kadar şarj olur.
+923|USB-C kablosunu alttaki girişe takın.
+924|Diğer ucunu adaptöre ve prize takın.
+925|Lightning kablosunu alttaki girişe takın.
+926|Pil azaldığında Düşük Güç Modu’nu açın.
+927|Ekran parlaklığını biraz azaltın.
+928|İhtiyacınız olmayan uygulamaların konumunu kapatın.
+929|iPhone’u ve kulaklığı USB-C kablosuyla bağlayın.
+930|Kulaklık, iPhone’unuzun pilinden şarj olur.
+931|Saat uygulamasına dokunun.
+932|Alttaki Alarmlar’a dokunun.
+933|Saati ve dakikayı ayarlamak için kaydırın.
+934|Alarmı sola kaydırın.
+935|Alarma dokunun.
+936|Alarm çalınca Ertele’ye dokunun.
+937|9 dakika sonra yeniden çalar.
+938|Alarmı düzenlerken Ertele’yi açıp kapatabilirsiniz.
+939|Saat › Zamanlayıcılar’ı açın.
+940|Süreyi ayarlayın.
+941|Alttaki Kronometre’ye dokunun.
+942|Duraklatmak için Durdur’a dokunun.
+943|Sol alttaki Dünya Saati’ne dokunun.
+944|Bir şehir yazın, örneğin New York.
+945|Uyku | Uyanma altında Alarm Yok’a dokunun.
+946|Yatma ve uyanma saatinizi ayarlayın.
+947|El feneri düğmesine dokunun. Kapatmak için yeniden dokunun.
+948|Denetim Merkezi’ni açmak için alttan yukarı kaydırın.
+949|Rakamlara dokunun, örneğin 1, 2, 0, 0, 0.
+950|＋ gibi bir işarete dokunun.
+951|Sonucu görmek için ＝ simgesine dokunun.
+952|Sol üstteki liste düğmesine dokunun.
+953|Geçmiş hesaplamalarınızı görürsünüz.
+954|Sol alttaki hesap makinesi düğmesine dokunun.
+955|Birimleri seçin. Bir sayı yazın, örneğin 1 mil = 1.6 km.
+956|Hava Durumu uygulamasına dokunun.
+957|Bugünün ve saatlik hava durumunu görün.
+958|Sağ alttaki liste düğmesine dokunun.
+959|Arama alanına bir şehir adı yazın.
+960|Bir başlık yazın, örneğin Doktor.
+961|Tarih ve saati seçmek için Başlangıç’a dokunun.
+962|Etkinliğe dokunun.
+963|Gerekeni değiştirin, örneğin saati.
+964|Alttaki Etkinliği Sil’e dokunun.
+965|Yeniden Etkinliği Sil’e dokunun.
+966|Tüm ayı görmek için sol üstteki < simgesine dokunun.
+967|O günü görmek için bir tarihe dokunun.
+968|Alttaki Takvimler’e dokunun.
+969|Notlar uygulamasına dokunun.
+970|Sağ alttaki yeni not düğmesine dokunun.
+971|Notunuzu yazın. Kendiliğinden kaydedilir.
+972|Kontrol listesi düğmesine dokunun.
+973|Bir öğe yazın. Sonraki satır için return’e basın.
+974|Bir nota dokunun.
+975|Ekle düğmesine dokunun.
+976|Kamerayı kâğıda doğrultun. Otomatik olarak tarar.
+977|Nota dokunun.
+978|iPhone parolanızı kullanmayı seçin.
+979|Notu sağa kaydırın.
+980|Raptiye düğmesine dokunun.
+981|Notu sola kaydırın.
+982|Kırmızı çöp kutusu düğmesine dokunun.
+983|Geri getirmek için Klasörler’de Son Silinenler’e dokunun.
+984|Geri taşımak için notu sola kaydırın. 30 gün içinde çalışır.
+985|Durdurmak için kırmızı düğmeye yeniden dokunun.
+986|Kayda dokunun.
+987|Ada dokunun.
+988|Yeni bir ad yazın.
+989|••• düğmesine dokunun.
+990|Sol alttaki Yeni Anımsatıcı’ya dokunun.
+991|Görevi yazın, örneğin İlaç iç.
+992|Sağdaki ⓘ simgesine dokunun.
+993|Ayarlar › Face ID ve Parola’yı (veya Touch ID ve Parola) açın.
+994|6 haneli parolayı iki kez girin.
+995|Mevcut parolanızı girin.
+996|Yeni parolanızı iki kez girin.
+997|Ayarlar › Face ID ve Parola’yı açın.
+998|Yüzünüzü çemberin içine alın ve başınızı yavaşça çevirin.
+999|Ayarlar › Touch ID ve Parola’yı açın.
+1000|Parmak İzi Ekle’ye dokunun.
+1001|Parmağınızla Ana Ekran düğmesine tekrar tekrar dokunun.
+1002|Web siteleri ve uygulamalar için kayıtlı parolaları görürsünüz.
+1003|İki Faktörlü Kimlik Doğrulama’nın Açık olduğunu kontrol edin.
+1004|Kiminle paylaştığınızı kontrol etmek için adımları izleyin.
+1005|10 hatalı paroladan sonra tüm veriler silinir. Yedek tutun.
+1006|Ayarlar › Genel’i açın.
+1007|Güncelleme varsa Şimdi Güncelle’ye dokunun.
+1008|Bilinmeyen numaralardan gelen bağlantılara dokunmayın.
+1009|“Aileden biri” mesajla para isterse önce onu arayın.
+1010|Kodları veya parolaları asla paylaşmayın.
+1011|İstenmeyen mesajlar için İstenmeyen Olarak Bildir’i kullanın.
+1012|Ayarlar › Erişilebilirlik’i açın.
+1013|Yakınlaştırmak için ekrana üç parmakla iki kez dokunun.
+1014|Büyüteç uygulamasını açın (gerekirse arayın).
+1015|Kamerayı metne doğrultun.
+1016|Yakınlaştırmak için sürgüyü sürükleyin.
+1017|Ayarlar › Erişilebilirlik › Seslendirilen İçerik’i açın.
+1018|Herhangi bir ekranda iki parmakla üstten aşağı kaydırın.
+1019|Ayarlar › Erişilebilirlik › VoiceOver’ı açın.
+1020|VoiceOver anahtarına dokunun.
+1021|Kapatmak için anahtarı seçin. Değiştirmek için herhangi bir yere iki kez dokunun.
+1022|Bir öğeyi dinlemek için bir kez dokunun.
+1023|Açmak için iki kez dokunun.
+1024|Sonraki sayfaya geçmek için üç parmakla kaydırın.
+1025|Ayarlar › Erişilebilirlik › Dokunma’yı açın.
+1026|Açın. Gri yuvarlak bir düğme görünür.
+1027|Ayarlar › Erişilebilirlik › Yardımcı Erişim’i açın.
+1028|Uygulamaları seçmek için adımları izleyin.
+1029|Bunu bir yardımcıyla ayarlamak en iyisidir.
+1030|Yan düğmeye üç kez basın.
+1031|Yardımcı Erişim parolasını girin.
+1032|Açmak veya kapatmak için yan düğmeye üç kez basın.
+1033|Ekranın üst kısmını aşağı indirmek için alt kenarda aşağı kaydırın.
+1034|Bulunabilir olması için işitme cihazınızın pil kapağını açıp kapatın.
+1035|İşitme altında Canlı Dinleme’ye dokunun.
+1036|iPhone’u konuşan kişinin yanına koyun ve kulaklığınızla dinleyin.
+1037|Sessiz bir yerde ekrandaki cümleleri yüksek sesle okuyun.
+1038|Söylemek istediğinizi yazın. iPhone sizin yerinize söyler.
+1039|“Ayarlar’ı aç” gibi bir komut söyleyin.
+1040|Ekrandaki noktayı gözlerinizle takip edin.
+1041|Klavye de büyür.
+1042|İnsanlara, kapılara veya metinlere doğrultun; iPhone size söyler.
+1043|Kullanmak istediğiniz uygulamayı açın.
+1044|İlk açtığınızda Merhaba ekranı görünür.
+1045|Erişilebilirlik düğmesine dokunun.
+1046|İhtiyacınız olanı seçin, örneğin Görme.
+1047|Boş alanı ve her uygulamanın ne kadar yer kapladığını görün.
+1048|Çubuk en çok yeri neyin kapladığını gösterir.
+1049|Büyük videoları veya eski mesajları silmek için önerileri izleyin.
+1050|Bir klasöre dokunun.
+1051|Açmak için bir dosyaya dokunun.
+1052|Safari’de indirilen dosyalar buradadır.
+1053|Dosyayı veya fotoğrafı açın.
+1054|Bir klasör seçin. Kaydet’e dokunun.
+1055|PDF dosyasına dokunun.
+1056|Sayfa çevirmek için yukarı veya aşağı kaydırın.
+1057|Yakınlaştırmak için iki parmağınızı açın.
+1058|PDF’e dokunun.
+1059|Alttaki İşaretleme’ye (kalem) dokunun.
+1060|Sağ alttaki ＋ simgesine dokunun.
+1061|Parmağınızla imzalayın.
+1062|Dosyaya dokunup basılı tutun.
+1063|Yeni adı yazın. Bitti’ye basın.
+1064|Silinen dosyalar 30 gün boyunca Son Silinenler’den kurtarılabilir.
+1065|.zip dosyasına dokunun.
+1066|Aynı yerde içinde dosyalar olan bir klasör görünür.
+1067|USB belleği şarj girişine takın (USB-C veya adaptörle).
+1068|Konumlar altında USB belleğe dokunun.
+1069|Kişinin aygıtına dokunun.
+1070|Yalnızca Kişiler en güvenlisidir; yabancılar size bir şey gönderemez.
+1071|İki iPhone’un da kilidini açın.
+1072|İki iPhone’un üst kısımlarını birbirine yaklaştırın.
+1073|Kendi kişi kartınızı da paylaşmak için Paylaş’a dokunun.
+1074|Yan düğmeye ve sesi açma düğmesine birlikte basıp bırakın.
+1075|Sol altta küçük bir resim görünür.
+1076|Yan düğmeye ve Ana Ekran düğmesine birlikte basıp bırakın.
+1077|Safari’de bir web sayfası açın.
+1078|Yan düğmeye ve sesi açma düğmesine birlikte basın.
+1079|Sol alttaki küçük resme dokunun.
+1080|Üstteki Tam Sayfa’ya dokunun.
+1081|Ekran Kaydı’na dokunun. 3 saniye sonra başlar.
+1082|Durdurmak için üstteki kırmızı göstergeye dokunun.
+1083|Kayıt Fotoğraflar’a kaydedilir.
+1084|Alttan bir kalem seçin. Parmağınızla yazın.
+1085|Fotoğrafı veya belgeyi açın.
+1086|Aynı Wi-Fi’deki bir yazıcıyı seçin (AirPrint).
+1087|Sağ üstteki Yazdır’a dokunun.
+1088|iPhone’unuzu kabloyla bilgisayara bağlayın.
+1089|iPhone’unuzda Güven’e dokunun.
+1090|Parolanızı girin.
+1091|Bilgisayarda Fotoğraflar uygulamasını açın ve İçe Aktar’ı seçin.
+1092|Üstteki iPhone’unuzda oturum açın’a dokunun.
+1093|Adınızı ve doğum tarihinizi girin.
+1094|Bir e-posta ve parola seçin. Bitirmek için adımları izleyin.
+1095|Apple Hesabı e-postanızı girin.
+1096|Parolanızı girin. Başka bir aygıtta kod görünürse onu girin.
+1097|iPhone parolanızı girin.
+1098|Yeni parolayı iki kez girin: büyük ve küçük harf ile rakam içeren 8+ karakter.
+1099|Giriş ekranında Parolanızı mı unuttunuz?’a dokunun.
+1100|Yeni parola oluşturmak için iPhone parolanızı girin.
+1101|Bu işe yaramazsa Hesap Kurtarma isteyin. Birkaç gün sürebilir.
+1102|Güvendiğiniz bir aile üyesini seçin.
+1103|Ölümünüzden sonra verilerinize erişebilecek kişiyi seçin.
+1104|Çubuk Fotoğraflar’ın ve Yedekler’in ne kadar yer kapladığını gösterir.
+1105|Mac’te Finder’ı kullanın. Windows’ta Apple Aygıtlar uygulamasını kullanın. iPhone’unuzu seçin.
+1106|Şimdi Yedekle’ye tıklayın.
+1107|Kurulum ekranlarında Uygulamalar ve Veriler’e gidin.
+1108|Apple Hesabınızla giriş yapın.
+1109|En yeni yedeğe dokunun.
+1110|Yeni iPhone’u açın.
+1111|Eski iPhone’unuzun yanına koyun.
+1112|Eski iPhone’da Devam’a dokunun.
+1113|Eski iPhone’un kamerasını yenisindeki mavi desene doğrultun.
+1114|Eski parolanızı yeni iPhone’a girin. Aktarım sırasında ikisini yakın tutun.
+1115|Çocuğunuzun adına dokunun.
+1116|Mevcut ödeme yönteminizi görürsünüz. Kart numaranızı asla kimseye göstermeyin.
+1117|Yeni numarayı girin. Mesajla gelen kodu yazın.
+1118|Apple Hesabı parolanızı girin.
+1119|Bu iPhone’da tutulacak verileri seçin.
+1120|Daha fazla saklama alanı ve E-postamı Gizle gibi özellikler edinin. Aylık ücreti vardır.
+1121|Devam’a dokunun. Önce yedeklediğinizden emin olun.
+1122|Her şeyi silmek için parolanızı ve Apple Hesabı parolanızı girin.
+1123|Kartı kamerayla tarayın veya elle girin.
+1124|Bankanızın doğrulamasını tamamlayın (örneğin mesajla).
+1125|Yan düğmeye iki kez basın.
+1126|Face ID için iPhone’unuza bakın.
+1127|iPhone’unuzun üst kısmını okuyucuya yaklaştırın.
+1128|Bitti ve onay işareti işlemin başarılı olduğunu gösterir.
+1129|Desteklenen yerlerde iPhone’u turnikeye tutmanız yeterli.
+1130|Havayolu veya etkinlik uygulamasında ya da e-postada Apple Cüzdan’a Ekle’ye dokunun.
+1131|Karta dokunun.
+1132|Alttaki Bu Kartı Kaldır’a dokunun.
+1133|Sağlık uygulamasına dokunun.
+1134|Başla’ya veya Düzenle’ye dokunun.
+1135|Hastalıklarınızı, ilaçlarınızı ve kan grubunuzu ekleyin.
+1136|Özet bugünkü adımları gösterir.
+1137|Haftalık ve aylık kayıtları görmek için Adımlar’a dokunun.
+1138|Göz At’ta İlaçlar’a dokunun.
+1139|İlacın adını ve saatini girin.
+1140|Apple Watch sert bir düşüşü algılayabilir. Bir dakika yanıt vermezseniz acil servisleri arar.
+1141|Paylaşma’da Biriyle Paylaş’a dokunun.
+1142|Bir aile üyesi seçin.
+1143|Neyi paylaşacağınızı seçin, örneğin Adımlar.
+1144|Göz At’ta Hareketlilik’e dokunun.
+1145|Yürüme Dengesi altında Ayarla’ya dokunun.
+1146|Haritalar uygulamasına dokunun.
+1147|Arama alanına dokunun.
+1148|Yerin adını yazın.
+1149|Yeri yazın, örneğin Seul İstasyonu.
+1150|Mavi Yol Tarifi düğmesine dokunun.
+1151|Yeşil Git düğmesine dokunun.
+1152|Yeri seçin.
+1153|Toplu Taşıma’ya (otobüs) dokunun.
+1154|Yol tarifini başlatın.
+1155|Kartı yukarı kaydırın. Varış Zamanını Paylaş’a dokunun.
+1156|Haber verilecek kişiye dokunun.
+1157|Arama alanının yanındaki resminize dokunun.
+1158|Bölgeyi seçin. İndir’e dokunun.
+1159|Bul uygulamasına dokunun.
+1160|Aygıta dokunun.
+1161|Kişiler’de Konumumu Paylaş’a dokunun.
+1162|Ne kadar süre için olduğunu seçin.
+1163|Nesneler’de eşyaya dokunun.
+1164|AirTag’in ses çıkarması için Ses Çal’a dokunun.
+1165|Ona doğru bir ok görmek için Bul’a dokunun.
+1166|Aile yazışmasına dokunun.
+1167|Yeri ve saati kontrol edin. Gönder düğmesine dokunun.
+1168|Ayarlar › Siri’yi (veya Siri ve Arama) açın.
+1169|Siri ile Konuş’a veya Dinle’ye dokunun.
+1170|Ekrandaki ifadeleri söyleyin.
+1171|“Siri” veya “Hey Siri” deyin (ayarladığınız gibi).
+1172|İstediğinizi söyleyin, örneğin “Yarın hava nasıl olacak?”
+1173|Siri’yi getirmek için yan düğmeyi basılı tutun.
+1174|Siri’ye yazmak için ekranın altına iki kez dokunun.
+1175|“Siri” deyin veya yan düğmeyi basılı tutun.
+1176|“Annemi ara” gibi bir şey söyleyin.
+1177|“Ahmet’e mesaj gönder” deyin.
+1178|Mesajınızı söyleyin.
+1179|“Gönder” deyin.
+1180|“Yarın sabah 6’da beni uyandır” deyin.
+1181|“10 dakikalık zamanlayıcı kur” deyin.
+1182|“Bugün hava nasıl?” deyin.
+1183|“Kamera’yı aç” gibi bir şey söyleyin.
+1184|“Akşam 8’de ilacımı içmemi hatırlat” deyin.
+1185|“Biraz caz çal” gibi bir şey söyleyin (müzik aboneliği gerekir).
+1186|“El fenerini aç” deyin.
+1187|Kapalıyken iPhone kilitliyken başkaları Siri’yi kullanamaz.
+1188|Yeniden dokunun.
+1189|Bir eylem seçin, örneğin Mesaj Gönder “Eve geliyorum”.
+1190|Yalnızca desteklenen modellerde (15 Pro ve sonrası) ve dillerde kullanılabilir. Kurulumun bitmesini bekleyin.
+1191|Metni seçin.
+1192|Uzun bir metin seçin veya bir web sayfası açın.
+1193|Ana noktaları birkaç satırda görürsünüz.
+1194|Birkaç bildirim Kilitli Ekran’da tek satırda özetlenir.
+1195|Kaldırmak istediğiniz şeyi parmağınızla daire içine alın.
+1196|İstediğinizi tarif edin, örneğin plajda bir kedi.
+1197|Bir stil seçin.
+1198|Mesajlar’da klavyedeki emoji düğmesine dokunun.
+1199|Sağ üstteki parıltılı emoji düğmesine dokunun.
+1200|Tarif edin, örneğin şapkalı köpek.
+1201|Kamera Denetimi’ni basılı tutun (desteklenen modeller).
+1202|Bir şeye doğrultun, örneğin bir çiçek veya dükkân tabelası.
+1203|Açıklama almak için Sor’a dokunun.
+1204|Kişisel bilgiler gönderilebilir, bu yüzden onay istemini açık tutun.
+1205|Üstte iki dili seçin.
+1206|Mikrofona dokunun.
+1207|Söylemek istediğinizi söyleyin.
+1208|Çeviri yazı ve ses olarak görünür.
+1209|Apple Intelligence verileri mümkün olduğunca iPhone’unuzda işler.
+1210|Büyük işler, verilerinizi saklamayan Private Cloud Compute ile yapılır.
+1211|Acil SOS düğmelerle acil servisleri arar.
+1212|Pratik için basmayın — bu resimlerle öğrenin.
+1213|Nasıl çalıştığını Ayarlar › Acil SOS’ta kontrol edin.
+1214|Hangi yöntemlerin açık olduğunu kontrol edin: basılı tutma veya 5 kez basma.
+1215|Hücresel ağ veya Wi-Fi yoksa gökyüzünü açıkça gören bir yere çıkın (desteklenen ülkeler ve modeller).
+1216|Acil servisleri arayın. Uydu Üzerinden Acil Mesaj görünür.
+1217|Soruları yanıtlayın. iPhone’u gösterildiği gibi uyduya doğrultun.
+1218|Başka bir aygıtta veya icloud.com/find adresinde Bul’u açın.
+1219|Kayıp iPhone’a dokunun.
+1220|Kayıp Olarak İşaretle altında Etkinleştir’e dokunun.
+1221|Ekranda gösterilecek bir telefon numarası ve mesaj girin.
+1222|Bul’da kayıp iPhone’a dokunun.
+1223|Alttaki Bu Aygıtı Sil’e dokunun.
+1224|Sildikten sonra artık yerini bulamazsınız. Bunu yalnızca son çare olarak kullanın.
+1225|Önce yan düğmeyle kapatmayı deneyin.
+1226|Kapanmazsa “Zorla yeniden başlatma” dersini izleyin.
+1227|Kablonun ve adaptörün sıkıca takılı olduğunu kontrol edin.
+1228|Başka bir priz veya kablo deneyin.
+1229|Girişte toz olup olmadığını nazikçe kontrol edin.
+1230|Hâlâ şarj olmuyorsa Apple Destek ile iletişime geçin.
+1231|Soldaki sessiz anahtarını veya Denetim Merkezi’ndeki zili kontrol edin.
+1232|Sesi açma düğmesine basın.
+1233|Odak açıksa kapatın.
+1234|Bluetooth kulaklığın bağlı olup olmadığını kontrol edin.
+1235|Denetim Merkezi’nde Wi-Fi’yi kapatıp yeniden açın.
+1236|Modemin fişini 30 saniye çekin. Yeniden takın.
+1237|iPhone’unuzu yeniden başlatın.
+1238|Hâlâ olmuyorsa ağı unutup yeniden katılın.
+1239|Önerileri izleyin.
+1240|Kullanmadığınız büyük uygulamaları boşaltın.
+1241|Fotoğrafları iCloud Fotoğrafları’na veya bilgisayara taşıyın.
+1242|Uygulamayı tamamen kapatın. Yeniden açın.
+1243|App Store’da uygulama güncellemesi olup olmadığına bakın.
+1244|Hâlâ olmuyorsa uygulamayı silip yeniden indirin.
+1245|Birkaç hatalı paroladan sonra iPhone Kullanılamıyor görünür.
+1246|Alttaki Parolanızı mı Unuttunuz?’a dokunun.
+1247|iPhone’u silmek için Apple Hesabı parolanızı girin. Yedekten geri yükleyebilirsiniz.
+1248|Gösterilen süre kadar bekleyin. Yeniden deneyin.
+1249|Parolayı değiştirdikten sonraki 72 saat içinde eski parolayı kullanabilirsiniz (iOS 17+).
+1250|Hatırlayamıyorsanız silmek için Parolanızı mı Unuttunuz?’u kullanın.
+1251|Hemen çıkarın. Yumuşak bir bezle silin.
+1252|Girişi aşağı bakacak şekilde avucunuza hafifçe vurun.
+1253|Sıvı Algılandı görünürse kuruyana kadar şarj etmeyin (en az 30 dakika).
+1254|Pirince koymayın veya saç kurutma makinesi kullanmayın.
+1255|Güneşten veya sıcak arabadan gölgeye alın.
+1256|Kalın kılıfı çıkarın. Şarjı durdurun.
+1257|Sıcaklık uyarısı görünürse soğuyana kadar bekleyin.
+1258|Kesilmemek için çatlak camı film veya bantla kapatın.
+1259|Önce iCloud’a veya bilgisayara yedekleyin.
+1260|Apple Destek uygulamasıyla veya yetkili servis sağlayıcıyla onarım randevusu alın.
+1261|Sorunu seçin.
+1262|Parolanızı girin. Fotoğraflar ve kişiler kalır. Yalnızca ayarlar varsayılana döner.
+1263|Uçak Modu’nu açıp kapatın.
+1264|eSIM için Ayarlar › Hücresel’de hattın açık olduğunu kontrol edin.
+1265|Hâlâ olmuyorsa operatörünüzle iletişime geçin.
+1266|Uçak Modu’nun kapalı olduğundan emin olun.
+1267|Üstteki sinyal çubuklarını kontrol edin.
+1268|Numaranın engelli olmadığını kontrol edin.
+=Settings|Ayarlar
+=Action Button|Eylem Düğmesi
+=Edit Home Screen|Ana Ekran’ı Düzenle
+=Add Widget|Araç Takımı Ekle
+=Weather|Hava Durumu
+=Customize|Özelleştir
+=Lock Screen|Kilitli Ekran
+=Done|Bitti
+=General|Genel
+=About|Hakkında
+=Mute|Sessiz
+=Phone|Telefon
+=Call|Ara
+=Apps|Uygulamalar
+=Silence Unknown Callers|Bilinmeyen Arayanları Sustur
+=Add|Ekle
+=Merge Calls|Aramaları Birleştir
+=New FaceTime|Yeni FaceTime
+=Live Voicemail|Canlı Sesli Mesaj
+=add phone|telefon ekle
+=Create New Contact|Yeni Kişi Oluştur
+=Contacts|Kişiler
+=Edit|Düzenle
+=Add Photo|Fotoğraf Ekle
+=Share Contact|Kişiyi Paylaş
+=Messages|Mesajlar
+=Contact Photo & Poster|Kişi Fotoğrafı ve Posteri
+=Health|Sağlık
+=Medical ID|Tıbbi Kimlik
+=add emergency contact|acil durum kişisi ekle
+=Add to Favorites|Sık Kullanılanlara Ekle
+=Merge All|Tümünü Birleştir
+=Photos|Fotoğraflar
+=Save Image|Görüntüyü Kaydet
+=More|Diğer
+=Delete Message|Mesajı Sil
+=Delete|Sil
+=Audio|Ses
+=Location|Konum
+=Send Pin|Raptiye Gönder
+=Filter Unknown Senders|Bilinmeyen Gönderenleri Süz
+=Delete and Report Junk|Sil ve İstenmeyen Olarak Bildir
+=Keyboard|Klavye
+=Keyboards|Klavyeler
+=Add New Keyboard...|Yeni Klavye Ekle...
+=Japanese|Japonca
+=Copy|Kopyala
+=Paste|Yapıştır
+=Undo|Geri Al
+=Auto-Correction|Otomatik Düzeltme
+=Text Replacement|Metin Değiştirme
+=Chinese (Simplified)|Çince (Basitleştirilmiş)
+=Handwriting|El Yazısı
+=Sounds & Haptics|Sesler ve Dokunuş
+=Keyboard Feedback|Klavye Geri Bildirimi
+=Haptic|Dokunuş
+=Camera|Kamera
+=Video|Video
+=10s|10 sn
+=Grid|Izgara
+=Stop|Durdur
+=Copy All|Tümünü Kopyala
+=Mirror Front Camera|Ön Kamerayı Aynala
+=Record Video|Video Kaydet
+=4K at 30 fps|4K, 30 fps
+=Preserve Settings|Ayarları Koru
+=Camera Mode|Kamera Modu
+=Delete Photo|Fotoğrafı Sil
+=Recover|Kurtar
+=New Album|Yeni Albüm
+=Add to Album|Albüme Ekle
+=Revert to Original|Orijinale Dön
+=Beach|Plaj
+=People & Pets|İnsanlar ve Evcil Hayvanlar
+=Memories|Anılar
+=Hide|Gizle
+=Merge|Birleştir
+=New Shared Album|Yeni Paylaşılan Albüm
+=Create|Oluştur
+=Print|Yazdır
+=Add Bookmark|Yer İşareti Ekle
+=Show Reader|Okuyucu’yu Göster
+=Add to Reading List|Okuma Listesine Ekle
+=Clear History and Website Data|Geçmişi ve Site Verilerini Temizle
+=All history|Tüm geçmiş
+=Clear History|Geçmişi Temizle
+=Find on Page|Sayfada Bul
+=Download Linked File|Bağlantılı Dosyayı İndir
+=Translate|Çevir
+=Listen to Page|Sayfayı Dinle
+=Add to Home Screen|Ana Ekrana Ekle
+=Join|Katıl
+=Home|Ev
+=Forget This Network|Bu Ağı Unut
+=Forget|Unut
+=Cellular|Hücresel
+=Cellular Data|Hücresel Veri
+=Forget This Device|Bu Aygıtı Unut
+=Forget Device|Aygıtı Unut
+=Connect|Bağlan
+=Personal Hotspot|Kişisel Erişim Noktası
+=Allow Others to Join|Başkalarının Katılmasına İzin Ver
+=Cellular Data Options|Hücresel Veri Seçenekleri
+=Low Data Mode|Düşük Veri Modu
+=Data Roaming|Veri Dolaşımı
+=Add eSIM|eSIM Ekle
+=Transfer or Reset iPhone|Aktar veya iPhone’u Sıfırla
+=Reset|Sıfırla
+=Reset Network Settings|Ağ Ayarlarını Sıfırla
+=My Car|Arabam
+=Display & Brightness|Ekran ve Parlaklık
+=Text Size|Metin Boyutu
+=Bold Text|Kalın Metin
+=Display Zoom|Ekran Büyütme
+=Larger Text|Daha Büyük Metin
+=Accessibility|Erişilebilirlik
+=Display & Text Size|Ekran ve Metin Boyutu
+=Auto-Brightness|Otomatik Parlaklık
+=Dark|Koyu
+=Manually Enable Until Tomorrow|Yarına Kadar Elle Etkinleştir
+=Auto-Lock|Otomatik Kilit
+=Raise to Wake|Uyandırmak İçin Kaldır
+=Always On Display|Her Zaman Açık Ekran
+=Wallpaper|Duvar Kâğıdı
+=Add New Wallpaper|Yeni Duvar Kâğıdı Ekle
+=Large|Büyük
+=Motion|Hareket
+=Reduce Motion|Hareketi Azalt
+=Increase Contrast|Karşıtlığı Artır
+=Button Shapes|Düğme Şekilleri
+=Color Filters|Renk Filtreleri
+=Grayscale|Gri Tonlama
+=Reduce White Point|Beyaz Noktayı Azalt
+=Ringtone|Zil Sesi
+=Haptics|Dokunuş
+=Always Play|Her Zaman Çal
+=Apex|Zirve
+=Text Tone|Mesaj Sesi
+=Chord|Akor
+=Notifications|Bildirimler
+=Allow Notifications|Bildirimlere İzin Ver
+=Show Previews|Önizlemeleri Göster
+=When Unlocked|Kilit Açıkken
+=Focus|Odak
+=Do Not Disturb|Rahatsız Etme
+=Sleep|Uyku
+=Emergency Bypass|Acil Durumda Geç
+=Audio & Visual|Ses ve Görsel
+=LED Flash for Alerts|Uyarılarda LED Flaş
+=Headphone Safety|Kulaklık Güvenliği
+=Reduce Loud Audio|Yüksek Sesi Azalt
+=Announce Calls|Aramaları Anons Et
+=Always|Her Zaman
+=Mono Audio|Mono Ses
+=Sound Recognition|Ses Tanıma
+=Sounds|Sesler
+=Doorbell|Kapı Zili
+=Search|Ara
+=Update All|Tümünü Güncelle
+=App Updates|Uygulama Güncellemeleri
+=Remove App|Uygulamayı Kaldır
+=Delete App|Uygulamayı Sil
+=Remove from Home Screen|Ana Ekran’dan Kaldır
+=iPhone Storage|iPhone Saklama Alanı
+=Offload App|Uygulamayı Boşalt
+=Account|Hesap
+=Purchased|Satın Alınanlar
+=Privacy & Security|Gizlilik ve Güvenlik
+=Location Services|Konum Servisleri
+=While Using the App|Uygulamayı Kullanırken
+=Subscriptions|Abonelikler
+=Cancel Subscription|Aboneliği İptal Et
+=Media & Purchases|Ortam ve Satın Almalar
+=View Account|Hesabı Görüntüle
+=Purchase History|Satın Alma Geçmişi
+=Screen Time|Ekran Süresi
+=See All App & Website Activity|Tüm Uygulama ve Web Sitesi Etkinliğini Gör
+=App Limits|Uygulama Sınırları
+=Add Limit|Sınır Ekle
+=Require Face ID|Face ID İste
+=Hide and Require Face ID|Gizle ve Face ID İste
+=Battery Percentage|Pil Yüzdesi
+=Low Power Mode|Düşük Güç Modu
+=Battery|Pil
+=Battery Health & Charging|Pil Sağlığı ve Şarj
+=Charging|Şarj
+=Optimized Battery Charging|Optimize Edilmiş Pil Şarjı
+=80% Limit|80% Sınırı
+=Batteries|Piller
+=Save|Kaydet
+=Clock|Saat
+=Sound|Ses
+=Chimes|Çanlar
+=Start|Başlat
+=New York, U.S.A.|New York, ABD
+=Calculator|Hesap Makinesi
+=Convert|Dönüştür
+=Busan|Busan
+=Severe Weather|Şiddetli Hava
+=Calendar|Takvim
+=Alert|Uyarı
+=1 hour before|1 saat önce
+=Repeat|Yinele
+=Every Week|Her Hafta
+=Holidays|Tatiller
+=Notes|Notlar
+=Choose Photo or Video|Fotoğraf veya Video Seç
+=Scan Documents|Belgeleri Tara
+=Lock|Kilitle
+=Voice Memos|Sesli Notlar
+=Share|Paylaş
+=Reminders|Anımsatıcılar
+=Time|Saat
+=Turn Passcode On|Parolayı Aç
+=Face ID & Passcode|Face ID ve Parola
+=Change Passcode|Parolayı Değiştir
+=Set Up Face ID|Face ID’yi Ayarla
+=Face ID with a Mask|Maskeyle Face ID
+=Set Up an Alternate Appearance|Alternatif Görünüm Ayarla
+=Touch ID & Passcode|Touch ID ve Parola
+=Add a Fingerprint...|Parmak İzi Ekle...
+=Password AutoFill|Parola Otomatik Doldurma
+=Passwords|Parolalar
+=AutoFill & Passwords|Otomatik Doldurma ve Parolalar
+=AutoFill Passwords and Passkeys|Parolaları ve Geçiş Anahtarlarını Doldur
+=Sign-In & Security|Giriş ve Güvenlik
+=Safety Check|Güvenlik Denetimi
+=Manage Sharing & Access|Paylaşma ve Erişimi Yönet
+=Stolen Device Protection|Çalınan Aygıt Koruması
+=Control Center|Denetim Merkezi
+=Erase Data|Verileri Sil
+=Tracking|İzleme
+=Allow Apps to Request to Track|Uygulamalar İzleme İzni İsteyebilsin
+=App Privacy Report|Uygulama Gizlilik Raporu
+=Turn On App Privacy Report|Uygulama Gizlilik Raporu’nu Aç
+=Software Update|Yazılım Güncelleme
+=Zoom|Büyütme
+=Speak Screen|Ekranı Seslendir
+=Spoken Content|Seslendirilen İçerik
+=Speak Selection|Seçimi Seslendir
+=Speak|Seslendir
+=Set Up Assistive Access|Yardımcı Erişim’i Ayarla
+=Exit Assistive Access|Yardımcı Erişim’den Çık
+=Accessibility Shortcut|Erişilebilirlik Kestirmesi
+=Touch|Dokunma
+=Back Tap|Arkaya Dokun
+=Double Tap|İki Kez Dokun
+=Screenshot|Ekran Görüntüsü
+=Touch Accommodations|Dokunma Uyarlamaları
+=Haptic Touch|Haptic Touch
+=Slow|Yavaş
+=Reachability|Ulaşılabilirlik
+=Live Captions|Canlı Altyazılar
+=Hearing Devices|İşitme Aygıtları
+=My Hearing Aids|İşitme Cihazlarım
+=Software RTT/TTY|Yazılım RTT/TTY
+=Personal Voice|Kişisel Ses
+=Create a Personal Voice|Kişisel Ses Oluştur
+=Live Speech|Canlı Konuşma
+=Voice Control|Sesle Denetim
+=Eye Tracking|Göz İzleme
+=Background Sounds|Arka Plan Sesleri
+=Call Audio Routing|Arama Sesi Yönlendirme
+=Speaker|Hoparlör
+=Auto-Answer Calls|Aramaları Otomatik Yanıtla
+=Side Button|Yan Düğme
+=Slowest|En Yavaş
+=Magnifier|Büyüteç
+=Detection Mode|Algılama Modu
+=Guided Access|Rehberli Erişim
+=Files|Dosyalar
+=On My iPhone|iPhone’umda
+=Downloads|İndirilenler
+=Save to Files|Dosyalar’a Kaydet
+=Add Signature|İmza Ekle
+=Rename|Yeniden Adlandır
+=Contacts Only|Yalnızca Kişiler
+=Don’t have an Apple Account?|Apple Hesabınız yok mu?
+=Change Password|Parolayı Değiştir
+=Account Recovery|Hesap Kurtarma
+=Add Recovery Contact...|Kurtarma Kişisi Ekle...
+=Legacy Contact|Vasi Kişi
+=Add Legacy Contact|Vasi Kişi Ekle
+=Manage Account Storage|Hesap Saklama Alanını Yönet
+=Sync this iPhone|Bu iPhone’u Eşzamanla
+=iCloud Backup|iCloud Yedekleme
+=Back Up Now|Şimdi Yedekle
+=From iCloud Backup|iCloud Yedeğinden
+=See All|Tümünü Gör
+=Family|Aile
+=Invite Others|Başkalarını Davet Et
+=Invite via Messages|Mesajlar ile Davet Et
+=Ask to Buy|Satın Almak İçin Sor
+=Payment & Shipping|Ödeme ve Gönderim
+=Add Payment Method|Ödeme Yöntemi Ekle
+=Add Trusted Phone Number|Güvenilir Telefon Numarası Ekle
+=Sign Out|Çıkış Yap
+=iCloud+ Features|iCloud+ Özellikleri
+=Erase All Content and Settings|Tüm İçerikleri ve Ayarları Sil
+=Wallet|Cüzdan
+=Debit or Credit Card|Banka veya Kredi Kartı
+=Transit Card|Ulaşım Kartı
+=Show When Locked|Kilitliyken Göster
+=Add Medication|İlaç Ekle
+=Emergency SOS|Acil SOS
+=Fall Detection|Düşme Algılama
+=Maps|Haritalar
+=Search Maps|Haritalar’da Ara
+=Offline Maps|Çevrimdışı Haritalar
+=Download New Map|Yeni Harita İndir
+=Devices|Aygıtlar
+=Play Sound|Ses Çal
+=Find My|Bul
+=Check In|Haber Ver
+=Press Side Button for Siri|Siri için Yan Düğmeye Bas
+=Type to Siri|Siri’ye Yaz
+=Siri Voice|Siri Sesi
+=Voice 2|Ses 2
+=Language|Dil
+=Korean|Korece
+=Allow Siri When Locked|Kilitliyken Siri’ye İzin Ver
+=Announce Notifications|Bildirimleri Anons Et
+=Siri & Dictation History|Siri ve Dikte Geçmişi
+=Delete Siri & Dictation History|Siri ve Dikte Geçmişini Sil
+=Shortcuts|Kestirmeler
+=Add Action|Eylem Ekle
+=Apple Intelligence & Siri|Apple Intelligence ve Siri
+=Turn On Apple Intelligence|Apple Intelligence’ı Aç
+=Writing Tools|Yazma Araçları
+=Proofread|Düzelt
+=Summarize|Özetle
+=Summarize Notifications|Bildirimleri Özetle
+=Clean Up|Temizle
+=Use ChatGPT|ChatGPT’yi Kullan
+=Apple Intelligence Report|Apple Intelligence Raporu
+=Emergency Contacts|Acil Durum Kişileri
+=Apple Support|Apple Destek
+=Repairs & Physical Damage|Onarımlar ve Fiziksel Hasar
+=Book a Repair|Onarım Randevusu Al
+=Reset All Settings|Tüm Ayarları Sıfırla
+=Tap|Dokun
+=Hold|Basılı tut
+=Swipe|Kaydır
+=Tuesday, September 9|9 Eylül Salı
+=Swipe up to open|Açmak için yukarı kaydırın
+=slide to power off|kapatmak için kaydırın
+=Cancel|Vazgeç
+=Seoul|Seul
+=Sunny|Güneşli
+=High 24°  Low 15°|En Yüksek 24°  En Düşük 15°
+=Share App|Uygulamayı Paylaş
+=Library|Arşiv
+=Select|Seç
+=Collections|Koleksiyonlar
+=Not Playing|Çalmıyor
+=Dinner at 7?|7’de akşam yemeği?
+=Tomorrow 10:00|Yarın 10:00
+=Apple Account, iCloud and more|Apple Hesabı, iCloud ve daha fazlası
+=Airplane Mode|Uçak Modu
+=On|Açık
+=Flashlight|El Feneri
+=Productivity|Verimlilik
+=App Library|Uygulama Arşivi
+=space|boşluk
+=return|return
+=Widgets|Araç Takımları
+=Home Screen|Ana Ekran
+=Date & Time|Tarih ve Saat
+=Language & Region|Dil ve Bölge
+=Shut Down|Kapat
+=Name|Ad
+=iOS Version|iOS Sürümü
+=Model Name|Model Adı
+=iPhone 16|iPhone 16
+=Model Number|Model Numarası
+=MYE73|MYE73
+=Serial Number|Seri Numarası
+=F2LXXXXXXX|F2LXXXXXXX
+=Applications|Uygulamalar
+=Capacity|Kapasite
+=Available|Kullanılabilir
+=Recents|Son Aramalar
+=mobile|cep
+=Yesterday|Dün
+=unknown|bilinmiyor
+=Monday|Pazartesi
+=Favorites|Sık Kullanılanlar
+=Keypad|Tuş Takımı
+=Voicemail|Sesli Mesaj
+=Decline|Reddet
+=Accept|Kabul Et
+=slide to answer|yanıtlamak için kaydırın
+=End|Bitir
+=Message|Mesaj
+=John  0:32|Ahmet  0:32
+=▶ Play|▶ Oynat
+=message|mesaj
+=call|ara
+=video|video
+=mail|posta
+=Send Message|Mesaj Gönder
+=Block this Caller|Bu Arayanı Engelle
+=You will not receive phone calls, messages or FaceTime from people on the block list.|Engellenenler listesindeki kişilerden telefon araması, mesaj veya FaceTime almazsınız.
+=Block Contact|Kişiyi Engelle
+=Home Screen & App Library|Ana Ekran ve Uygulama Arşivi
+=StandBy|Bekleme
+=Wallet & Apple Pay|Cüzdan ve Apple Pay
+=ALLOW PHONE TO ACCESS|TELEFON’UN ERİŞİMİNE İZİN VER
+=Siri & Search|Siri ve Arama
+=Call Blocking & Identification|Arama Engelleme ve Kimlik
+=Blocked Contacts|Engellenen Kişiler
+=Maria  On Hold|Maria  Beklemede
+=Create Link|Bağlantı Oluştur
+=To: |Kime: 
+=To: Maria|Kime: Maria
+=“Hi, it’s John. Call me back.”|“Merhaba, ben Ahmet. Beni geri ara.”
+=New Contact|Yeni Kişi
+=First name|Ad
+=Last name|Soyadı
+=Company|Şirket
+=Add to Existing Contact|Var Olan Kişiye Ekle
+=Delete Contact|Kişiyi Sil
+=New Message|Yeni Mesaj
+=To:|Kime:
+=Create New|Yeni Oluştur
+=Memoji|Memoji
+=Monogram|Monogram
+=Summary|Özet
+=Health Details|Sağlık Ayrıntıları
+=Duplicates|Yinelenenler
+=Maria (2)|Maria (2)
+=See you tomorrow|Yarın görüşürüz
+=Photo|Fotoğraf
+=Hello!|Merhaba!
+=Yes, see you!|Evet, görüşürüz!
+=Yes|Evet
+=Stickers|Çıkartmalar
+=Look!|Bak!
+=1 Photo Selected|1 Fotoğraf Seçildi
+=Add to Shared Album|Paylaşılan Albüme Ekle
+=Lunch?|Öğle yemeği?
+=Lunch on Saturday?|Cumartesi öğle yemeği?
+=Reply|Yanıtla
+=More...|Diğer...
+=Delete Conversation?|Yazışma silinsin mi?
+=📌 Pin|📌 Sabitle
+=🔕 Hide Alerts|🔕 Uyarıları Gizle
+=Your code is 123456. Do not share it.|Kodunuz 123456. Kimseyle paylaşmayın.
+=From Messages  123456|Mesajlar’dan  123456
+=Undo Send|Göndermeyi Geri Al
+=Yes, see you at 7!|Evet, 7’de görüşürüz!
+=Send Read Receipts|Okundu Bilgisi Gönder
+=Filters|Filtreler
+=All Messages|Tüm Mesajlar
+=Known Senders|Bilinen Gönderenler
+=Unknown Senders|Bilinmeyen Gönderenler
+=Report Junk|İstenmeyen Olarak Bildir
+=Maria: Doctor at 10?|Maria: 10’da doktor?
+=Helo|Merhba
+=Background App Refresh|Arka Planda Uygulama Yenileme
+=One-Handed Keyboard|Tek Elle Klavye
+=Off|Kapalı
+=Auto-Capitalization|Otomatik Büyük Harf
+=Enable Dictation|Dikteyi Etkinleştir
+=English (US)|İngilizce (ABD)
+=Add New Keyboard|Yeni Klavye Ekle
+=English (UK)|İngilizce (BK)
+=Spanish|İspanyolca
+=Thank you|Teşekkürler
+=Thank you 🙏|Teşekkürler 🙏
+=Hello Maria|Merhaba Maria
+=Hello |Maria|Merhaba |Maria
+=Cut|Kes
+=Hello Mar|Merhaba Mar
+=Undo Typing|Yazmayı Geri Al
+=On my way!|Yoldayım!
+=Phrase|İfade
+=I’ll call you back|Seni geri arayacağım
+=Shortcut|Kestirme
+=◧  Left|◧  Sol
+=▣  Center|▣  Orta
+=◨  Right|◨  Sağ
+=Pinyin – QWERTY|Pinyin – QWERTY
+=Silent Mode|Sessiz Mod
+=RINGTONE AND ALERTS|ZİL SESİ VE UYARILAR
+=Change with Buttons|Düğmelerle Değiştir
+=Reflection|Yansıma
+=Note|Nota
+=System Haptics|Sistem Dokunuşları
+=TIME-LAPSE|HIZLANDIRILMIŞ
+=SLO-MO|AĞIR ÇEKİM
+=CINEMATIC|SİNEMATİK
+=VIDEO|VİDEO
+=PHOTO|FOTOĞRAF
+=PORTRAIT|PORTRE
+=PANO|PANO
+=Auto|Otomatik
+=3s|3 sn
+=Formats|Formatlar
+=1080p at 30 fps|1080p, 30 fps
+=Level|Düzey
+=Standard|Standart
+=Warm|Sıcak
+=Cool|Soğuk
+=Open “example.com”|“example.com” adresini aç
+=Live Text|Canlı Metin
+=Scene Detection|Sahne Algılama
+=720p HD at 30 fps|720p HD, 30 fps
+=1080p HD at 30 fps|1080p HD, 30 fps
+=4K at 60 fps|4K, 60 fps
+=Creative Controls|Yaratıcı Denetimler
+=Utilities|İzlenceler
+=Hidden|Gizli
+=Recently Deleted|Son Silinenler
+=Videos|Videolar
+=Albums|Albümler
+=Grandkids|Torunlar
+=Duplicate|Çoğalt
+=Trip|Gezi
+=AUTO|OTOMATİK
+=Adjust|Ayarla
+=Crop|Kırp
+=Original|Orijinal
+=Vivid|Canlı
+=Mono|Mono
+=Revert|Orijinale Dön
+=Summer 2026|Yaz 2026
+={n} Photos Selected|{n} Fotoğraf Seçildi
+=Media Types|Ortam Türleri
+=Selfies|Selfie’ler
+=Screenshots|Ekran Görüntüleri
+=Screen Recordings|Ekran Kayıtları
+=2 Photos|2 Fotoğraf
+=Our Family|Ailemiz
+=Invite People|Kişileri Davet Et
+=John ✓|Ahmet ✓
+=Print Options|Yazdırma Seçenekleri
+=Printer|Yazıcı
+=Office Printer|Ofis Yazıcısı
+=Copies|Kopya
+=Search or enter website name|Arayın veya web sitesi adı girin
+=weather|hava durumu
+=go|git
+=Tabs|Sekmeler
+=Easy Lessons   ✕|Kolay Dersler   ✕
+=News|Haberler
+=Close All Tabs|Tüm Sekmeleri Kapat
+=Text only, larger and easier to read.|Yalnızca metin, daha büyük ve okunması kolay.
+=Reading List|Okuma Listesi
+=Private|Özel
+=2 Tabs|2 Sekme
+=Search Engine|Arama Motoru
+=Block Pop-ups|Açılır Pencereleri Engelle
+=Page Zoom|Sayfa Büyütme
+=Last hour|Son bir saat
+=Today|Bugün
+=Today and yesterday|Bugün ve dün
+=lesson|ders
+=Open in New Tab|Yeni Sekmede Aç
+=Copy Link|Bağlantıyı Kopyala
+=English|İngilizce
+=Page Menu|Sayfa Menüsü
+=NETWORKS|AĞLAR
+=Cafe_Free|Cafe_Free
+=Neighbor 5G|Neighbor 5G
+=Enter the password for “Home”|“Home” için parolayı girin
+=Password|Parola
+=Cafe Free WiFi|Cafe Free WiFi
+=Ask to Join Networks|Ağlara Katılmayı Sor
+=Notify|Bildir
+=Auto-Join|Otomatik Katıl
+=Forget Wi-Fi Network “Home”?|“Home” Wi-Fi ağı unutulsun mu?
+=Wi-Fi Password|Wi-Fi Parolası
+=Share Password|Parolayı Paylaş
+=Join “Home” Network|“Home” Ağına Katıl
+=Join Wi-Fi Network “Home”?|“Home” Wi-Fi ağına katılınsın mı?
+=CELLULAR DATA|HÜCRESEL VERİ
+=OTHER DEVICES|DİĞER AYGITLAR
+=MY DEVICES|AYGITLARIM
+=Connected|Bağlı
+=Not Connected|Bağlı Değil
+=Disconnect|Bağlantıyı Kes
+=Voice & Data|Ses ve Veri
+=5G Auto|5G Otomatik
+=Set Up eSIM|eSIM’i Ayarla
+=Transfer From Nearby iPhone|Yakındaki iPhone’dan Aktar
+=Use QR Code|QR Kodu Kullan
+=Prepare for New iPhone|Yeni iPhone için Hazırla
+=Reset Keyboard Dictionary|Klavye Sözlüğünü Sıfırla
+=Reset Home Screen Layout|Ana Ekran Yerleşimini Sıfırla
+=Reset Location & Privacy|Konum ve Gizliliği Sıfırla
+=Enter Passcode|Parolayı Girin
+=APPEARANCE|GÖRÜNÜM
+=Light|Açık
+=BRIGHTNESS|PARLAKLIK
+=30 seconds|30 saniye
+=DISPLAY|EKRAN
+=Default|Varsayılan
+=Apps that support Dynamic Type will adjust to your preferred reading size below.|Dinamik Yazıyı destekleyen uygulamalar aşağıdaki tercih ettiğiniz okuma boyutuna uyar.
+=VISION|GÖRME
+=PHYSICAL AND MOTOR|FİZİKSEL VE MOTOR
+=HEARING|İŞİTME
+=Smart Invert|Akıllı Ters Çevirme
+=Scheduled|Zamanlanmış
+=Color Temperature|Renk Sıcaklığı
+=1 minute|1 dakika
+=2 minutes|2 dakika
+=3 minutes|3 dakika
+=4 minutes|4 dakika
+=5 minutes|5 dakika
+=Never|Asla
+=Show Wallpaper|Duvar Kâğıdını Göster
+=Show Notifications|Bildirimleri Göster
+=People|Kişiler
+=Astronomy|Astronomi
+=Weather Only|Yalnızca Hava Durumu
+=All Apps|Tüm Uygulamalar
+=A  ▮▮▮▮▮  A|A  ▮▮▮▮▮  A
+=Small|Küçük
+=Auto-Play Message Effects|Mesaj Efektlerini Otomatik Oynat
+=Red/Green Filter|Kırmızı/Yeşil Filtresi
+=Green/Red Filter|Yeşil/Kırmızı Filtresi
+=Blue/Yellow Filter|Mavi/Sarı Filtresi
+=Color Tint|Renk Tonu
+=Ringtone and Alerts|Zil Sesi ve Uyarılar
+=Beacon|Fener
+=Bulletin|Bülten
+=Circuit|Devre
+=Play in Silent Mode|Sessiz Modda Çal
+=Don’t Play in Silent Mode|Sessiz Modda Çalma
+=Never Play|Asla Çalma
+=Aurora|Aurora
+=Bamboo|Bambu
+=Circles|Daireler
+=Notification Display|Bildirim Görüntüsü
+=Count|Sayı
+=Scheduled Summary|Zamanlanmış Özet
+=NOTIFICATION STYLE|BİLDİRİM STİLİ
+=ALERTS|UYARILAR
+=Notification Center|Bildirim Merkezi
+=Banners|Afişler
+=Personal|Kişisel
+=Work|İş
+=RINGTONES|ZİL SESLERİ
+=Headphone Accommodations|Kulaklık Uyarlamaları
+=Talk to Siri|Siri ile Konuş
+=American|Amerikan
+=Headphones & Car|Kulaklık ve Araba
+=Headphones Only|Yalnızca Kulaklık
+=ALARMS|ALARMLAR
+=Fire|Yangın
+=Siren|Siren
+=HOUSEHOLD|EV
+=Door Knock|Kapı Çalma
+=Games|Oyunlar
+=Arcade|Arcade
+=Get|Al
+=Double Click to Install|Yüklemek için İki Kez Bas
+=Upcoming Automatic Updates|Gelecek Otomatik Güncellemeler
+=Update|Güncelle
+=App Downloads|Uygulama İndirmeleri
+=Automatic Downloads|Otomatik İndirmeler
+=Video Autoplay|Videoları Otomatik Oynat
+=Remove “Weather”?|“Hava Durumu” kaldırılsın mı?
+=Deleting this app will also delete its data.|Bu uygulamayı silmek verilerini de siler.
+=Delete “Weather”?|“Hava Durumu” silinsin mi?
+=This will free up storage used by the app, but keep its documents and data.|Bu işlem uygulamanın kullandığı alanı boşaltır ama belgelerini ve verilerini korur.
+=Weather Pro  ☁|Weather Pro  ☁
+=Share My Location|Konumumu Paylaş
+=While Using|Kullanırken
+=Ask Next Time or When I Share|Sonraki Sefer veya Paylaştığımda Sor
+=Apple Account|Apple Hesabı
+=Personal Information|Kişisel Bilgiler
+=Music Plus  ₩8,900/month|Music Plus  ₩8,900/ay
+=Cloud Photos  ₩1,100/month|Cloud Photos  ₩1,100/ay
+=Music Plus|Music Plus
+=Downtime|Kapalı Kalma
+=Communication Limits|İletişim Sınırları
+=Lock Screen Time Settings|Ekran Süresi Ayarlarını Kilitle
+=Daily Average  2h 14m|Günlük Ortalama  2 sa 14 dk
+=YouTube  58m|YouTube  58 dk
+=Messages  31m|Mesajlar  31 dk
+=Choose Apps|Uygulamaları Seç
+=Social|Sosyal
+=Entertainment|Eğlence
+=1 hr 0 min|1 sa 0 dk
+=Suggestions|Öneriler
+=Low Power Mode temporarily reduces background activity until you can fully charge your iPhone.|Düşük Güç Modu, iPhone’unuzu tam şarj edene kadar arka plan etkinliğini geçici olarak azaltır.
+=Maximum Capacity|Maksimum Kapasite
+=Peak Performance Capability|En Yüksek Performans Kapasitesi
+=BATTERY USAGE BY APP|UYGULAMAYA GÖRE PİL KULLANIMI
+=Home & Lock Screen|Ana Ekran ve Kilitli Ekran
+=Optimized|Optimize Edilmiş
+=None|Yok
+=Alarms|Alarmlar
+=Alarm|Alarm
+=World Clock|Dünya Saati
+=Stopwatch|Kronometre
+=Timers|Zamanlayıcılar
+=Add Alarm|Alarm Ekle
+=Label|Etiket
+=Snooze|Ertele
+=Edit Alarm|Alarmı Düzenle
+=Radar|Radar
+=0 hours|0 saat
+=0 sec|0 sn
+=Lap|Tur
+=Seoul  9:41|Seul  9:41
+=Choose a City|Şehir Seçin
+=Sleep | Wake Up|Uyku | Uyanma
+=No Alarm|Alarm Yok
+=Full Schedule|Tüm Program
+=Bedtime  10:30 PM|Yatma Saati  22:30
+=Wake Up  6:30 AM|Uyanma  06:30
+=History|Geçmiş
+=Basic|Temel
+=Scientific|Bilimsel
+=Math Notes|Matematik Notları
+=mi  1|mil  1
+=km  1.609|km  1.609
+=Edit List|Listeyi Düzenle
+=Units|Birimler
+=Next-Hour Precipitation|Sonraki Saatte Yağış
+=September|Eylül
+=Calendars|Takvimler
+=Inbox|Gelen Kutusu
+=New Event|Yeni Etkinlik
+=Title|Başlık
+=Doctor|Doktor
+=Starts|Başlangıç
+=Sep 10  10:00 AM|10 Eyl  10:00
+=Ends|Bitiş
+=Doctor  10:00|Doktor  10:00
+=Event Details|Etkinlik Ayrıntıları
+=Edit Event|Etkinliği Düzenle
+=15 minutes before|15 dakika önce
+=1 day before|1 gün önce
+=Sep 10  11:00 AM|10 Eyl  11:00
+=Delete Event|Etkinliği Sil
+=Exercise|Egzersiz
+=Sep 10  7:00 AM|10 Eyl  07:00
+=Every Day|Her Gün
+=Every Month|Her Ay
+=Every Year|Her Yıl
+=Birthdays|Doğum Günleri
+=Shopping list|Alışveriş listesi
+=Doctor 10:00|Doktor 10:00
+=Buy milk and eggs|Süt ve yumurta al
+=Shopping|Alışveriş
+=○ Milk|○ Süt
+=○ Eggs|○ Yumurta
+=Garden|Bahçe
+=Take Photo or Video|Fotoğraf veya Video Çek
+=Papers|Belgeler
+=Scan|Tara
+=Bank memo|Banka notu
+=Pin|Sabitle
+=Lock Note|Notu Kilitle
+=Use iPhone Passcode|iPhone Parolasını Kullan
+=Trip plan|Gezi planı
+=Collaborate|Ortak Çalış
+=Old list|Eski liste
+=Folders|Klasörler
+=All Recordings|Tüm Kayıtlar
+=New Recording  0:12|Yeni Kayıt  0:12
+=Doctor advice|Doktor tavsiyesi
+=Doctor advice  0:12|Doktor tavsiyesi  0:12
+=Edit Recording|Kaydı Düzenle
+=＋ New Reminder|＋ Yeni Anımsatıcı
+=○ Take medicine|○ İlaç iç
+=○ Take medicine  ⓘ|○ İlaç iç  ⓘ
+=Details|Ayrıntılar
+=Date|Tarih
+=USE FACE ID FOR|FACE ID’Yİ ŞUNUN İÇİN KULLAN
+=iPhone Unlock|iPhone Kilidini Açma
+=Turn Passcode Off|Parolayı Kapat
+=FINGERPRINTS|PARMAK İZLERİ
+=USE TOUCH ID FOR|TOUCH ID’Yİ ŞUNUN İÇİN KULLAN
+=Finger 1|Parmak 1
+=All|Tümü
+=Passkeys|Geçiş Anahtarları
+=AUTOFILL FROM|ŞURADAN DOLDUR
+=Email & Phone Numbers|E-posta ve Telefon Numaraları
+=Two-Factor Authentication|İki Faktörlü Kimlik Doğrulama
+=Emergency Reset|Acil Durum Sıfırlaması
+=Information|Bilgi
+=ALLOW ACCESS WHEN LOCKED|KİLİTLİYKEN ERİŞİME İZİN VER
+=iOS 26.1|iOS 26.1
+=This update includes bug fixes and security updates.|Bu güncelleme hata düzeltmeleri ve güvenlik güncellemeleri içerir.
+=Update Now|Şimdi Güncelle
+=Your parcel is waiting. Pay here: parcel-check.example|Kargonuz bekliyor. Buradan ödeyin: parcel-check.example
+=Mom, I broke my phone. Please send money now.|Anne, telefonumu kırdım. Lütfen hemen para gönder.
+=GENERAL|GENEL
+=Assistive Access|Yardımcı Erişim
+=Double-tap three fingers to zoom. Drag three fingers to move around the screen.|Büyütmek için üç parmakla iki kez dokunun. Ekranda gezinmek için üç parmağı sürükleyin.
+=Swipe down with two fingers from the top of the screen to hear the content of the screen.|Ekranın içeriğini dinlemek için ekranın üstünden iki parmakla aşağı kaydırın.
+=Voices|Sesler
+=Speaking Rate|Konuşma Hızı
+=VoiceOver speaks items on the screen.|VoiceOver ekrandaki öğeleri seslendirir.
+=Tap to Wake|Uyandırmak İçin Dokun
+=AssistiveTouch allows you to use your iPhone if you have difficulty touching the screen.|Ekrana dokunmakta zorlanıyorsanız AssistiveTouch iPhone’unuzu kullanmanızı sağlar.
+=Assistive Access makes iPhone simpler, with larger buttons and only the apps you choose.|Yardımcı Erişim, büyük düğmeler ve yalnızca seçtiğiniz uygulamalarla iPhone’u sadeleştirir.
+=Calls|Aramalar
+=Automatic|Otomatik
+=Triple Tap|Üç Kez Dokun
+=Hold Duration|Basılı Tutma Süresi
+=Ignore Repeat|Yinelemeyi Yok Say
+=Fast|Hızlı
+=MFI HEARING DEVICES|MFI İŞİTME AYGITLARI
+=Hearing|İşitme
+=Live Listen|Canlı Dinleme
+=Relay Number|Aktarma Numarası
+=“The weather is lovely today.”|“Bugün hava çok güzel.”
+=Favorite Phrases|Sık Kullanılan İfadeler
+=English (U.S.)|İngilizce (ABD)
+=Rain|Yağmur
+=Bluetooth Headset|Bluetooth Kulaklık
+=Door, 2 meters|Kapı, 2 metre
+=Passcode Settings|Parola Ayarları
+=Vision|Görme
+=Motor|Motor
+=Cognitive|Bilişsel
+=iPhone: 66.8 GB of 128 GB Used|iPhone: 128 GB’ın 66.8 GB’ı Kullanıldı
+=Photos  42 GB|Fotoğraflar  42 GB
+=Apps  18 GB|Uygulamalar  18 GB
+=Messages  6 GB|Mesajlar  6 GB
+=Recommendations|Öneriler
+=Review Large Attachments|Büyük Ekleri Gözden Geçir
+=Review Personal Videos|Kişisel Videoları Gözden Geçir
+=Browse|Göz At
+=Shared|Paylaşılan
+=Documents|Belgeler
+=Page 1|Sayfa 1
+=Page 2|Sayfa 2
+=Markup|İşaretleme
+=Add Text|Metin Ekle
+=Shapes|Şekiller
+=Signature|İmza
+=USB DRIVE|USB BELLEK
+=Receiving Off|Alma Kapalı
+=Everyone for 10 Minutes|10 Dakikalığına Herkes
+=Receive Only|Yalnızca Al
+=Screen|Ekran
+=Full Page|Tam Sayfa
+=◉ Screen Recording|◉ Ekran Kaydı
+=Select Printer|Yazıcı Seç
+=Trust This Computer?|Bu bilgisayara güvenilsin mi?
+=Trust|Güven
+=Don’t Trust|Güvenme
+=Back|Geri
+=Next|İleri
+=Name and Birthday|Ad ve Doğum Günü
+=First Name|Ad
+=Last Name|Soyadı
+=Birthday|Doğum Günü
+=Email|E-posta
+=Continue|Devam
+=Change|Değiştir
+=New|Yeni
+=Verify|Doğrula
+=Forgot password?|Parolanızı mı unuttunuz?
+=Start Account Recovery|Hesap Kurtarmayı Başlat
+=RECOVERY CONTACTS|KURTARMA KİŞİLERİ
+=4.2 GB of 5 GB Used|5 GB’ın 4.2 GB’ı Kullanıldı
+=Photos  3.1 GB|Fotoğraflar  3.1 GB
+=Backups  0.9 GB|Yedekler  0.9 GB
+=SAVED TO ICLOUD|ICLOUD’A KAYDEDİLENLER
+=Optimize iPhone Storage|iPhone Saklama Alanını Optimize Et
+=Back Up This iPhone|Bu iPhone’u Yedekle
+=Last successful backup: Yesterday at 2:00 AM|Son başarılı yedekleme: Dün 02:00
+=Transfer Your Apps & Data|Uygulamalarınızı ve Verilerinizi Aktarın
+=From Mac or PC|Mac’ten veya PC’den
+=From Another iPhone|Başka Bir iPhone’dan
+=Choose Backup|Yedek Seçin
+=Today 2:00 AM|Bugün 02:00
+=Yesterday 2:00 AM|Dün 02:00
+=Quick Start|Hızlı Başlangıç
+=Apps Using iCloud|iCloud’u Kullanan Uygulamalar
+=Create Child Account|Çocuk Hesabı Oluştur
+=Invite|Davet Et
+=Invite in Person|Yüz Yüze Davet Et
+=Maria (Me)|Maria (Ben)
+=Minji (Child)|Minji (Çocuk)
+=Visa •••• 0000|Visa •••• 0000
+=TRUSTED PHONE NUMBERS|GÜVENİLİR TELEFON NUMARALARI
+=Keep a copy|Kopyasını sakla
+=Erase This iPhone|Bu iPhone’u Sil
+=Add to Wallet|Cüzdan’a Ekle
+=Card Added|Kart Eklendi
+=Done ✓|Bitti ✓
+=Your ticket|Biletiniz
+=Add to Apple Wallet|Apple Cüzdan’a Ekle
+=Boarding Pass|Biniş Kartı
+=My Bank Card|Banka Kartım
+=Card Details|Kart Ayrıntıları
+=Remove This Card|Bu Kartı Kaldır
+=Steps|Adımlar
+=Heart Rate|Nabız
+=72 BPM|72 ATIM/DK
+=Profile|Profil
+=Medical Conditions|Tıbbi Durumlar
+=Medications|İlaçlar
+=Blood Type|Kan Grubu
+=Diabetes|Diyabet
+=Metformin|Metformin
+=A+|A+
+=Your Medical ID can be viewed when iPhone is locked by tapping Emergency, then Medical ID.|iPhone kilitliyken Acil Durum’a, ardından Tıbbi Kimlik’e dokunularak Tıbbi Kimliğiniz görüntülenebilir.
+=Steps  6,214|Adımlar  6,214
+=Walking Distance  4.3 km|Yürüme Mesafesi  4.3 km
+=Activity|Etkinlik
+=Schedule|Program
+=Vitamin D|D Vitamini
+=Sharing|Paylaşma
+=Share with Someone|Biriyle Paylaş
+=Mobility|Hareketlilik
+=Walking Steadiness|Yürüme Dengesi
+=Set Up|Ayarla
+=Seoul Station|Seul İstasyonu
+=Seoul Station Exit 1|Seul İstasyonu Çıkış 1
+=Directions|Yol Tarifi
+=🚗 25 min|🚗 25 dk
+=Go|Git
+=Drive|Araba
+=Walk|Yürüme
+=Transit|Toplu Taşıma
+=Arrive 10:30|Varış 10:30
+=Share ETA|Varış Zamanını Paylaş
+=Places|Yerler
+=Ratings|Puanlar
+=Download|İndir
+=Items|Nesneler
+=Me|Ben
+=Maria’s iPhone|Maria’nın iPhone’u
+=Maria’s iPad|Maria’nın iPad’i
+=Mark As Lost|Kayıp Olarak İşaretle
+=Share for One Hour|Bir Saat Paylaş
+=Share Until End of Day|Gün Sonuna Kadar Paylaş
+=Share Indefinitely|Süresiz Paylaş
+=Keys|Anahtarlar
+=Find|Bul
+=Check In: Home 6:00 PM|Haber Ver: Ev 18:00
+=Say “Siri, what’s the weather today?”|“Siri, bugün hava nasıl?” deyin
+=Tomorrow will be sunny, with a high of 24°.|Yarın hava güneşli, en yüksek 24°.
+=Calling Mom…|Annen aranıyor…
+=What do you want to say?|Ne söylemek istiyorsunuz?
+=“I’ll be there at 7.”|“7’de orada olacağım.”
+=Sent.|Gönderildi.
+=Your alarm is set for 6 AM.|Alarmınız sabah 6 için kuruldu.
+=10 minutes, counting down.|10 dakika, geri sayım başladı.
+=It’s sunny, 21°.|Hava güneşli, 21°.
+=Opening Camera.|Kamera açılıyor.
+=OK, I’ll remind you.|Tamam, size hatırlatacağım.
+=Here’s some music.|İşte biraz müzik.
+=Your flashlight is on.|El feneriniz açık.
+=Voice 1|Ses 1
+=Voice 3|Ses 3
+=Voice 4|Ses 4
+=English (United States)|İngilizce (ABD)
+=Spanish (Spain)|İspanyolca (İspanya)
+=Headphones|Kulaklık
+=Tips|İpuçları
+=New Shortcut|Yeni Kestirme
+=Actions|Eylemler
+=Set Alarm|Alarm Kur
+=Downloading…|İndiriliyor…
+=i will come tomorow|yarn gelicem
+=Rewrite|Yeniden Yaz
+=Friendly|Samimi
+=I will come tomorrow.|Yarın geleceğim.
+=• Main point 1|• Ana nokta 1
+=• Main point 2|• Ana nokta 2
+=a cat at the beach|plajda bir kedi
+=Animation|Animasyon
+=Illustration|İllüstrasyon
+=Sketch|Eskiz
+=Emoji|Emoji
+=✨ Genmoji|✨ Genmoji
+=dog with a hat|şapkalı köpek
+=Visual Intelligence|Görsel Zekâ
+=Ask|Sor
+=EXTENSIONS|UZANTILAR
+=Confirm ChatGPT Requests|ChatGPT İsteklerini Onayla
+=Korean  ⇄  English|Korece  ⇄  İngilizce
+=안녕하세요|안녕하세요
+=On-Device Processing|Aygıtta İşleme
+=Private Cloud Compute|Private Cloud Compute
+=Call with Hold and Release|Basılı Tutup Bırakarak Ara
+=Call with 5 Button Presses|5 Kez Basarak Ara
+=Call Quietly|Sessizce Ara
+=Crash Detection|Kaza Algılama
+=No Connection|Bağlantı Yok
+=Emergency Text via Satellite|Uydu Üzerinden Acil Mesaj
+=Satellite|Uydu
+=Turn left ↺|Sola dönün ↺
+=Activate|Etkinleştir
+=Phone Number|Telefon Numarası
+=Please call me|Lütfen beni arayın
+=Erase This Device|Bu Aygıtı Sil
+=Erase This Device?|Bu aygıt silinsin mi?
+=Erase|Sil
+=Get Support|Destek Al
+=iPhone Unavailable|iPhone Kullanılamıyor
+=Try again in 15 minutes|15 dakika sonra yeniden deneyin
+=Forgot Passcode?|Parolanızı mı Unuttunuz?
+=Enter Previous Passcode|Önceki Parolayı Girin
+=Liquid Detected|Sıvı Algılandı
+=OK|Tamam
+=Temperature|Sıcaklık
+=iPhone needs to cool down before you can use it.|iPhone’u kullanabilmeniz için önce soğuması gerekiyor.
+=Repairs|Onarımlar
+=Cracked Screen|Çatlak Ekran
+=Other|Diğer
+=Options|Seçenekler
+=SIMS|SIM’LER
+=Primary|Birincil
+=TUE|SAL
