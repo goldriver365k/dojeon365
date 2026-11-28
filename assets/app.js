@@ -12,25 +12,25 @@
  *
  * 진행 상황과 글씨 크기는 이 기기의 localStorage 에만 저장한다(서버로 보내지 않음).
  */
-import { CATEGORIES } from '../data/categories.js?v=20261128.0957';
-import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261128.0957';
-import * as DIGITAL from '../data/digital/index.js?v=20261128.0957';
-import * as AI from '../data/ai/index.js?v=20261128.0957';
-import * as SCAM from '../data/scam/index.js?v=20261128.0957';
-import * as CREATIVE from '../data/creative/index.js?v=20261128.0957';
-import * as CAREER from '../data/career/index.js?v=20261128.0957';
+import { CATEGORIES } from '../data/categories.js?v=20261128.1009';
+import { CHAPTERS, GROUPS, findLesson as findGalaxyLesson, allLessons } from '../data/galaxy/index.js?v=20261128.1009';
+import * as DIGITAL from '../data/digital/index.js?v=20261128.1009';
+import * as AI from '../data/ai/index.js?v=20261128.1009';
+import * as SCAM from '../data/scam/index.js?v=20261128.1009';
+import * as CREATIVE from '../data/creative/index.js?v=20261128.1009';
+import * as CAREER from '../data/career/index.js?v=20261128.1009';
 /** 목차형 과정(생활 디지털 연습장·시니어 AI 교실): 주소 #/<키> */
-import * as KAKAO from '../data/kakaotalk/public.js?v=20261128.0957';
+import * as KAKAO from '../data/kakaotalk/public.js?v=20261128.1009';
 // 카카오톡 사용법: 국내 전용. 공개된(실제 화면·검수 완료) 수업만 카드가 있고 나머지는 ‘수업 준비 중’
 const COURSES = { kakaotalk: KAKAO, digital: DIGITAL, ai: AI, scam: SCAM, creative: CREATIVE, career: CAREER };
-import { BASE } from '../data/galaxy/helpers.js?v=20261128.0957';
-import { renderScreen } from './screens.js?v=20261128.0957';
-import { renderKakao } from './kakao-screens.js?v=20261128.0957';
-import { appInfo, appIconStandalone } from './apps.js?v=20261128.0957';
-import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261128.0957';
-import { VERSION } from './version.js?v=20261128.0957';
-import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261128.0957';
-import { metaOf } from '../data/galaxy/meta.js?v=20261128.0957';
+import { BASE } from '../data/galaxy/helpers.js?v=20261128.1009';
+import { renderScreen } from './screens.js?v=20261128.1009';
+import { renderKakao } from './kakao-screens.js?v=20261128.1009';
+import { appInfo, appIconStandalone } from './apps.js?v=20261128.1009';
+import { speechText, stepWords, pickVoice, koreanVoices, voiceLabel, SPEECH } from './speech.js?v=20261128.1009';
+import { VERSION } from './version.js?v=20261128.1009';
+import { SERIES, MODELS, ONEUI, BASE_ONEUI, modelOf, seriesOf, deviceLabel, supportFor, SUPPORT_LABEL } from '../data/devices.js?v=20261128.1009';
+import { metaOf } from '../data/galaxy/meta.js?v=20261128.1009';
 
 const STORE_KEY = 'dojeon365.galaxy.v1';
 // 목차 구분별 분야 색(디자인 시스템): 기초 파랑, 생활 초록, 응용 보라, 고급 및 문제 해결 남색
