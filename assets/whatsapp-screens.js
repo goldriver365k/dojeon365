@@ -46,8 +46,8 @@ const pieces = (t) => (SEG ? [...SEG.segment(t)].map((x) => x.segment) : t.split
 function wrap(s, max) {
   const t = tr(s); const out = []; let line = '';
   for (const p of pieces(t)) {
-    if (width(line + p) > max && line.trim()) { out.push(line.trim()); line = p.trimStart(); } else line += p;
-    while (width(line) > max) { let a = ''; for (const ch of line) { if (width(a + ch) > max) break; a += ch; } out.push(a); line = line.slice(a.length); }
+    if (width(line + p) > max && line.trim() && !/^[、。，．！？」』）,.!?)]+$/.test(p)) { out.push(line.trim()); line = p.trimStart(); } else line += p;
+    while (width(line.replace(/[、。，．！？」』）,.!?)]+$/, '')) > max) { let a = ''; for (const ch of line) { if (width(a + ch) > max) break; a += ch; } out.push(a); line = line.slice(a.length); }
   }
   if (line.trim()) out.push(line.trim());
   return out;
@@ -113,7 +113,7 @@ function topBar(c, { title = '', sub = '', back = true, closeX = false, right = 
   let x = W - 22;
   for (const r of [...right].reverse()) {
     if (I[r.icon]) { c.add(I[r.icon](x, 62, fg)); c.reg(r.label, x - 20, 42, 40, 40); x -= 42; } else {
-      const t = tr(r.text); const w = t.length * 9.5 + 22; x -= w - 22;
+      const t = tr(r.text); const w = width(t) * 9.5 + 22; x -= w - 22;
       c.text(x + w / 2 - 22, 68, t, { size: 15, weight: 700, fill: r.disabled ? '#B0B9BE' : C.teal, anchor: 'middle', raw: true });
       c.reg(r.label ?? r.text, x - 22, 44, w, 36); x -= 30;
     }
@@ -153,7 +153,7 @@ V.tab = (c, s) => {
   let y = 94;
   if (tab === 'chats') {
     c.rect(16, y, W - 32, 42, C.gray, 21); c.add(I.search(40, y + 21, C.sub)); c.text(58, y + 27, 'Ask Meta AI or Search', { size: 14, fill: C.sub }); c.reg('Search', 16, y, W - 32, 42); y += 52;
-    ['All', 'Unread', 'Favourites', 'Groups'].forEach((f, i) => { const t = tr(f); const w = t.length * 8 + 26; const x = 16 + [0, 52, 130, 236][i]; c.rect(x, y, w, 30, i === (s.filter ?? 0) ? '#D8FDD2' : C.gray, 15); c.text(x + w / 2, y + 20, t, { size: 13, weight: 600, anchor: 'middle', fill: i === (s.filter ?? 0) ? '#0A332C' : C.sub, raw: true }); c.reg(`${f} filter`, x, y, w, 30); });
+    ['All', 'Unread', 'Favourites', 'Groups'].forEach((f, i) => { const t = tr(f); const w = width(t) * 8 + 26; const x = 16 + [0, 52, 130, 236][i]; c.rect(x, y, w, 30, i === (s.filter ?? 0) ? '#D8FDD2' : C.gray, 15); c.text(x + w / 2, y + 20, t, { size: 13, weight: 600, anchor: 'middle', fill: i === (s.filter ?? 0) ? '#0A332C' : C.sub, raw: true }); c.reg(`${f} filter`, x, y, w, 30); });
     y += 44;
     if (s.archived) { c.add(`<rect x="22" y="${y + 8}" width="24" height="18" rx="2" fill="none" stroke="${C.sub}" stroke-width="2"/>`); c.text(70, y + 24, 'Archived', { size: 15, weight: 700 }); c.text(W - 18, y + 24, String(s.archived), { size: 13, fill: C.green, weight: 700, anchor: 'end', raw: true }); c.reg('Archived', 0, y, W, 36); y += 42; }
     for (const [n, last, time, unread] of s.chats ?? [['Maria', 'Did you eat dinner?', '18:20', 2], ['Family', 'Photo', '17:02', 5], ['John', 'See you tomorrow', '09:15', 0], ['Walking club', 'Meeting is on Saturday', 'Yesterday', 0]]) {
@@ -211,10 +211,10 @@ V.room = (c, s) => {
   c.add(`<clipPath id="wamsg"><rect x="0" y="90" width="${W}" height="${inputY - 90}"/></clipPath><g clip-path="url(#wamsg)">`);
   for (const m of s.msgs ?? [{ date: 'Today' }, { text: 'Did you eat dinner?' }, { me: true, text: 'Yes, I did. And you?', ticks: 'blue' }]) {
     if (y > inputY - 20) break;
-    if (m.date) { const t = tr(m.date); c.rect(W / 2 - t.length * 4.5 - 14, y, t.length * 9 + 28, 26, '#fff', 8); c.text(W / 2, y + 18, t, { size: 12.5, fill: C.sub, anchor: 'middle', raw: true }); y += 38; continue; }
+    if (m.date) { const t = tr(m.date); c.rect(W / 2 - width(t) * 4.5 - 14, y, width(t) * 9 + 28, 26, '#fff', 8); c.text(W / 2, y + 18, t, { size: 12.5, fill: C.sub, anchor: 'middle', raw: true }); y += 38; continue; }
     if (m.sys) { const ls = wrap(m.sys, 34); c.rect(30, y, W - 60, ls.length * 18 + 14, '#FFF5C4', 8); ls.forEach((l, i) => c.text(W / 2, y + 20 + i * 18, l, { size: 12.5, fill: '#54656F', anchor: 'middle', raw: true })); y += ls.length * 18 + 26; continue; }
     const lines = m.photo || m.voice || m.doc || m.location || m.contact || m.sticker !== undefined ? [] : wrap(m.text ?? '', 26);
-    const bw = m.photo ? 210 : m.voice ? 236 : m.doc || m.location || m.contact ? 236 : m.sticker !== undefined ? 110 : Math.min(260, Math.max(7, ...lines.map((l) => l.length)) * 8.6 + 64);
+    const bw = m.photo ? 210 : m.voice ? 236 : m.doc || m.location || m.contact ? 236 : m.sticker !== undefined ? 110 : Math.min(260, Math.max(7, ...lines.map((l) => width(l))) * 8.6 + 64);
     const bh = m.photo ? 170 : m.voice ? 52 : m.doc ? 64 : m.location ? 150 : m.contact ? 66 : m.sticker !== undefined ? 110 : lines.length * 20 + 26 + (m.from ? 18 : 0) + (m.quote ? 44 : 0);
     const bx = m.me ? W - 10 - bw : 10;
     const label = m.label ?? (m.me ? 'Sent message' : 'Received message');
@@ -279,7 +279,7 @@ V.list = (c, s) => {
   c.rect(0, 0, W, H, C.bg); statusBar(c);
   topBar(c, { title: tr(s.title ?? 'Settings'), back: s.back !== false, closeX: s.closeX, right: s.right ?? [] });
   let y = 96;
-  if (s.profile) { avatar(c, 16, y, s.profile, 60); c.text(90, y + 26, s.profile, { size: 18, weight: 600, raw: true }); c.text(90, y + 48, s.about ?? 'Hey there! I am using WhatsApp.', { size: 13.5, fill: C.sub }); c.add(I.qr(W - 34, y + 30, C.teal)); c.reg('QR code', W - 56, y + 8, 44, 44); c.reg('Profile', 0, y - 4, W - 60, 70); y += 84; c.add(`<line x1="0" y1="${y - 6}" x2="${W}" y2="${y - 6}" stroke="${C.line}"/>`); }
+  if (s.profile) { avatar(c, 16, y, s.profile, 60); c.text(90, y + 26, s.profile, { size: 18, weight: 600, raw: true }); c.text(90, y + 48, fit(s.about ?? 'Hey there! I am using WhatsApp.', 32), { size: 13.5, fill: C.sub, raw: true }); c.add(I.qr(W - 34, y + 30, C.teal)); c.reg('QR code', W - 56, y + 8, 44, 44); c.reg('Profile', 0, y - 4, W - 60, 70); y += 84; c.add(`<line x1="0" y1="${y - 6}" x2="${W}" y2="${y - 6}" stroke="${C.line}"/>`); }
   if (s.lead) { for (const l of wrap(s.lead, 40)) { c.text(18, y + 10, l, { size: 13.5, fill: C.sub, raw: true }); y += 20; } y += 10; }
   for (const r of s.rows ?? []) {
     if (y > 580) break;
@@ -322,7 +322,7 @@ V.dialog = (c, s) => {
   radio.forEach((o, i) => { const on = i === (s.selected ?? 0); c.add(`<circle cx="58" cy="${y + 10}" r="10" fill="none" stroke="${on ? C.teal : '#8696A0'}" stroke-width="2"/>${on ? `<circle cx="58" cy="${y + 10}" r="5.5" fill="${C.teal}"/>` : ''}`); c.text(80, y + 16, o, { size: 16 }); c.reg(o, 30, y - 12, W - 60, 44); y += 46; });
   const bs = s.buttons ?? ['Cancel', 'OK'];
   let x = W - 48;
-  [...bs].reverse().forEach((b) => { const t = tr(b); const w = t.length * 9 + 20; c.text(x, y0 + h - 26, t, { size: 15.5, weight: 700, fill: s.danger && b === bs[bs.length - 1] ? C.red : C.teal, anchor: 'end', raw: true }); c.reg(b, x - w + 8, y0 + h - 52, w + 4, 44); x -= w + 18; });
+  [...bs].reverse().forEach((b) => { const t = tr(b); const w = width(t) * 9 + 20; c.text(x, y0 + h - 26, t, { size: 15.5, weight: 700, fill: s.danger && b === bs[bs.length - 1] ? C.red : C.teal, anchor: 'end', raw: true }); c.reg(b, x - w + 8, y0 + h - 52, w + 4, 44); x -= w + 18; });
 };
 
 /** Contact / group info */
@@ -422,7 +422,7 @@ V.form = (c, s) => {
   for (const o of s.checks ?? []) { c.add(`<rect x="36" y="${y + 2}" width="18" height="18" rx="3" fill="${o.on ? C.teal : 'none'}" stroke="${o.on ? C.teal : '#8696A0'}" stroke-width="2"/>${o.on ? `<path d="M40 ${y + 11} l4 4 l7 -7" stroke="#fff" stroke-width="2" fill="none"/>` : ''}`); c.text(64, y + 17, o.label, { size: 14.5 }); c.reg(o.label, 30, y - 6, W - 60, 34); y += 38; }
   if (s.note) for (const l of wrap(s.note, 38)) { c.text(W / 2, y + 10, l, { size: 12.5, fill: C.red, anchor: 'middle', raw: true }); y += 18; }
   const bs = s.buttons ?? (s.button ? [s.button] : []);
-  bs.forEach((b, i) => { const t = tr(b); const bw = Math.max(110, t.length * 9 + 40); const by = 540 - (bs.length - 1 - i) * 56; c.rect(W / 2 - bw / 2, by, bw, 42, i === bs.length - 1 ? C.green : '#fff', 21, i === bs.length - 1 ? '' : `stroke="${C.line}"`); c.text(W / 2, by + 27, t, { size: 15, weight: 700, anchor: 'middle', fill: i === bs.length - 1 ? '#0A332C' : C.teal, raw: true }); c.reg(b, W / 2 - bw / 2, by, bw, 42); });
+  bs.forEach((b, i) => { const t = tr(b); const bw = Math.max(110, width(t) * 9 + 40); const by = 540 - (bs.length - 1 - i) * 56; c.rect(W / 2 - bw / 2, by, bw, 42, i === bs.length - 1 ? C.green : '#fff', 21, i === bs.length - 1 ? '' : `stroke="${C.line}"`); c.text(W / 2, by + 27, t, { size: 15, weight: 700, anchor: 'middle', fill: i === bs.length - 1 ? '#0A332C' : C.teal, raw: true }); c.reg(b, W / 2 - bw / 2, by, bw, 42); });
   navBar(c);
 };
 
@@ -557,7 +557,7 @@ export function renderWhatsApp(spec = { v: 'info' }, target, action) {
     const above = t.y > 150 || t.y + t.h > 520;
     const by = above ? t.y - 44 : t.y + t.h + 8;
     const label = tr(action === 'hold' ? 'Hold' : 'Tap');
-    const lw = Math.max(68, label.length * 10 + 24);
+    const lw = Math.max(68, width(label) * 10 + 24);
     const bx = Math.min(Math.max(t.x + t.w / 2 - lw / 2, 6), W - lw - 6);
     mark += `<g class="target-tag"><rect x="${bx}" y="${by}" width="${lw}" height="34" rx="17" fill="#D7263D"/><text x="${bx + lw / 2}" y="${by + 23}" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">${esc(label)}</text><path d="M${bx + lw / 2 - 8} ${above ? by + 34 : by} l8 ${above ? 9 : -9} l8 ${above ? -9 : 9}z" fill="#D7263D"/></g>`;
   }
