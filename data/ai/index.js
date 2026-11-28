@@ -4,8 +4,8 @@
  * - 연습 화면은 특정 앱을 그대로 옮긴 것이 아니라 AI 대화 앱의 공통 모양이다.
  * - AI 답은 틀릴 수 있다는 것, 개인정보를 넣지 않는 것을 수업마다 강조한다.
  */
-import { app as openApp } from '../galaxy/helpers.js?v=20261128.1333';
-import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261128.1333';
+import { app as openApp } from '../galaxy/helpers.js?v=20261128.1345';
+import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261128.1345';
 
 export const COURSE = {
   id: 'ai',
