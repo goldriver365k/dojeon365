@@ -1,0 +1,2263 @@
+1|轻点“{x}”。
+2|打开“{x}”。
+3|关闭“{x}”。
+4|选择“{x}”。
+5|iPhone 屏幕示意图。{x}
+6|iPhone 使用教程
+7|简单易学的分步课程
+8|DigiStep365 是独立的教育网站，与 Apple Inc. 没有任何关联，也未获得其赞助或认可。Apple 和 iPhone 是 Apple Inc. 的商标。
+9|这些图片是根据 iPhone 屏幕画的示意图。菜单名称和位置可能与你的 iPhone 略有不同。
+10|有主屏幕按钮的 iPhone（SE、8 及更早机型）
+11|选择你的 iPhone
+12|选择机型和 iOS 版本后，会先显示适合你的 iPhone 的课程。也可以跳过，查看全部课程。
+13|iPhone 机型
+14|iOS 版本
+15|我不知道自己的 iPhone 机型
+16|我不知道 iOS 版本
+17|从适用于所有 iPhone 的课程开始
+18|保存
+19|更改
+20|本网站
+21|简体中文 · 国际
+22|如何查看 iPhone 机型
+23|如何查看 iOS 版本
+24|即将推出
+25|{n}
+26|已发布 {n} 节 / 共 {t} 节
+27|课程会在拍摄并核对真实 iPhone 屏幕后逐一发布。我们绝不使用凭空编造的屏幕。
+28|全部课程已发布。图片是根据 iPhone 屏幕画的示意图，可能与你的 iPhone 略有不同。
+29|必学
+30|此机型具备
+31|此机型不具备
+32|机型列表核对日期
+33|{n} 步
+34|首页
+35|全部课程
+36|请选择
+37|选择功能需要 JavaScript。你仍可阅读下方的课程目录。
+38|主屏幕按钮
+39|触控 ID（指纹）
+40|面容 ID（人脸识别）
+41|操作按钮
+42|相机控制
+43|灵动岛
+44|Apple 智能（请确认语言和地区）
+45|卫星紧急求救（部分国家/地区）
+46|MagSafe
+47|充电接口：闪电接口
+48|充电接口：USB-C
+49|iPhone 基础
+50|打电话
+51|通讯录
+52|信息与 iMessage
+53|键盘与听写
+54|相机与视频
+55|照片与相簿
+56|用 Safari 浏览器上网
+57|无线局域网、蓝牙与数据
+58|显示与文字大小
+59|声音、铃声与通知
+60|App Store 与 App
+61|电池与充电
+62|时钟、闹钟、计算器与天气
+63|日历、备忘录与语音备忘录
+64|面容 ID、触控 ID 与安全
+65|适合长者的功能与辅助功能
+66|文件、储存空间与隔空投送
+67|Apple 账户、iCloud 与备份
+68|Apple Pay、健康与地图
+69|Siri 与 Apple 智能
+70|故障排除与丢失 iPhone
+71|开启 iPhone
+72|关闭 iPhone
+73|重启 iPhone
+74|强制重启 iPhone
+75|唤醒并解锁 iPhone
+76|锁定 iPhone
+77|回到主屏幕
+78|学会轻点、长按和轻扫
+79|打开 App
+80|在打开的 App 之间切换
+81|关闭 App
+82|打开控制中心
+83|查看通知中心
+84|了解顶部的状态图标
+85|使用音量按钮
+86|打开或关闭静音模式
+87|使用操作按钮
+88|移动主屏幕上的 App
+89|创建 App 文件夹
+90|使用 App 资源库
+91|在主屏幕上搜索
+92|添加小组件
+93|更换锁定屏幕墙纸
+94|查看你的 iPhone 机型
+95|查看 iOS 版本
+96|拨打电话
+97|接听来电
+98|拒接来电
+99|挂断电话
+100|通话时使用扬声器
+101|通话时将自己静音
+102|从最近通话回拨
+103|添加个人收藏并拨打
+104|收听语音留言
+105|通话时使用拨号键盘
+106|阻止电话号码
+107|将未知来电静音
+108|拨打多方通话
+109|拨打 FaceTime 视频通话
+110|使用实时语音留言
+111|添加新联系人
+112|将最近通话中的号码存入通讯录
+113|编辑联系人
+114|删除联系人
+115|搜索联系人
+116|为联系人添加照片
+117|发送联系人
+118|设置我的名片
+119|制作联系人海报
+120|设置紧急联系人
+121|将常用联系人添加到个人收藏
+122|合并重复的联系人
+123|发送短信
+124|阅读信息
+125|回复信息
+126|发送照片
+127|保存收到的照片
+128|发送群组信息
+129|了解蓝色和绿色气泡的区别
+130|用点按回应表达心情
+131|删除信息
+132|删除整个对话
+133|发送语音信息
+134|用信息发送我的位置
+135|置顶常用对话
+136|隐藏对话提醒
+137|使用信息中的验证码
+138|编辑已发送的 iMessage
+139|撤回已发送的 iMessage
+140|单独查看未知发件人的信息
+141|报告垃圾信息
+142|搜索信息内容
+143|用键盘输入文字
+144|切换键盘语言
+145|添加键盘
+146|输入数字和符号
+147|用声音输入文字
+148|添加表情符号
+149|移动光标
+150|选择文字
+151|拷贝和粘贴
+152|撤销刚输入的文字
+153|打开或关闭自动改正
+154|使用文本替换
+155|使用单手键盘
+156|手写输入（中文等）
+157|更改键盘声音和振动
+158|打开相机
+159|拍照
+160|从锁定屏幕打开相机
+161|用相机放大
+162|调整对焦和曝光
+163|自拍
+164|录制视频
+165|录像时暂停
+166|打开或关闭闪光灯
+167|使用人像模式
+168|拍摄全景照片
+169|在暗处拍照（夜间模式）
+170|使用相机定时器
+171|连拍
+172|打开或关闭实况照片
+173|显示网格线
+174|近距离拍摄（微距）
+175|录制慢动作视频
+176|录制延时摄影视频
+177|用电影效果模式录像
+178|使用摄影风格
+179|用相机扫描二维码
+180|用相机识别文字并拷贝
+181|使用相机控制
+182|用音量按钮拍照
+183|设置自拍镜像
+184|更改视频画质
+185|保留相机设置
+186|切换广角和长焦镜头
+187|在拍照模式下直接录像（QuickTake）
+188|查看照片
+189|放大照片
+190|播放视频
+191|删除照片
+192|恢复已删除的照片
+193|将照片标为个人收藏
+194|创建相簿
+195|将照片放入相簿
+196|分享照片
+197|裁剪照片
+198|旋转照片
+199|自动增强照片
+200|为照片添加滤镜
+201|恢复为编辑前的照片
+202|修剪视频前后
+203|搜索照片
+204|按人物和宠物查看照片
+205|观看回忆视频
+206|隐藏照片
+207|一次选择多张照片
+208|集中查看截屏
+209|从照片中提取主体
+210|整理重复的照片
+211|创建与家人共享的相簿
+212|打印照片
+213|打开 Safari 浏览器
+214|在网上搜索
+215|输入网址打开网站
+216|返回上一页
+217|打开新标签页
+218|关闭标签页
+219|添加书签
+220|打开书签
+221|使用阅读器
+222|更改网页文字大小
+223|放大网页
+224|添加到阅读列表
+225|发送网页链接
+226|使用无痕浏览
+227|清除浏览记录
+228|在网页中查找文字
+229|下载文件
+230|翻译网页
+231|收听网页朗读
+232|将网站添加到主屏幕
+233|连接无线局域网
+234|忽略无线局域网
+235|共享无线局域网密码
+236|扫描二维码连接无线局域网
+237|打开或关闭蜂窝数据
+238|查看蜂窝数据用量
+239|打开或关闭飞行模式
+240|打开蓝牙
+241|配对蓝牙耳机
+242|取消配对蓝牙设备
+243|连接 AirPods
+244|打开个人热点
+245|使用低数据模式
+246|打开或关闭数据漫游
+247|添加 eSIM
+248|还原网络设置
+249|用蓝牙连接汽车
+250|读取 NFC 标签
+251|放大文字
+252|加粗文字
+253|使用显示缩放
+254|调节亮度
+255|打开或关闭自动亮度
+256|使用深色模式
+257|使用夜览
+258|打开或关闭原彩显示
+259|更改自动锁定时间
+260|使用抬起唤醒
+261|打开或关闭全天候显示
+262|更换墙纸
+263|单独设置某个 App 的文字大小
+264|放大主屏幕图标
+265|减弱动态效果
+266|增强对比度
+267|打开按钮形状
+268|使用色彩滤镜
+269|降低白点值
+270|锁定屏幕方向
+271|调大铃声
+272|更换铃声
+273|打开或关闭振动
+274|为联系人设置专属铃声
+275|更换短信铃声
+276|打开或关闭 App 通知
+277|隐藏通知预览
+278|使用勿扰模式
+279|打开睡眠专注模式
+280|允许特定人员来电
+281|打开 LED 闪烁以示提醒
+282|降低耳机高音量
+283|播报来电
+284|打开单声道音频
+285|使用声音识别
+286|安装 App
+287|在 App Store 中搜索
+288|更新 App
+289|打开 App 自动更新
+290|删除 App
+291|从主屏幕移除 App
+292|卸载 App（保留数据）
+293|重新下载 App
+294|更改 App 权限
+295|查看或取消订阅
+296|查看购买记录
+297|查看屏幕使用时间
+298|设置 App 限额
+299|锁定 App
+300|隐藏 App
+301|给 iPhone 充电
+302|显示电池百分比
+303|打开低电量模式
+304|查看电池健康
+305|查看各 App 的耗电量
+306|无线充电
+307|用 MagSafe 充电
+308|使用优化电池充电
+309|设置充电上限
+310|快速充电
+311|用 USB-C 充电
+312|用闪电线充电
+313|添加电池小组件
+314|省电小技巧
+315|用 iPhone 给其他设备充电
+316|设置闹钟
+317|删除闹钟
+318|更换闹钟铃声
+319|使用稍后提醒
+320|使用计时器
+321|使用秒表
+322|查看世界时钟
+323|设置睡眠计划和起床闹钟
+324|打开手电筒
+325|使用计算器
+326|查看计算记录
+327|用计算器换算单位
+328|查看天气
+329|添加其他城市的天气
+330|接收天气提醒
+331|在日历中添加日程
+332|接收日程提醒
+333|编辑日程
+334|删除日程
+335|创建重复日程
+336|切换日/月视图
+337|显示节假日
+338|新建备忘录
+339|制作清单备忘录
+340|在备忘录中插入照片
+341|用备忘录扫描文稿
+342|锁定备忘录
+343|置顶备忘录
+344|共享备忘录
+345|删除并恢复备忘录
+346|录音
+347|收听录音
+348|重命名录音
+349|发送录音
+350|创建提醒事项
+351|设置密码
+352|更改密码
+353|设置面容 ID
+354|戴口罩时使用面容 ID
+355|设置另一种外貌
+356|设置触控 ID
+357|添加指纹
+358|在 App 中使用面容 ID
+359|查看已存储的密码
+360|使用密码自动填充
+361|检查双重认证
+362|使用安全检查
+363|打开失窃设备保护
+364|选择锁定时可用的功能
+365|输错 10 次密码后抹掉数据
+366|查看 App 的位置权限
+367|关闭 App 跟踪
+368|查看 App 隐私报告
+369|更新 iOS
+370|防范电话和短信诈骗
+371|用缩放放大屏幕
+372|使用放大器
+373|使用朗读屏幕
+374|使用朗读所选项
+375|打开或关闭旁白
+376|学习旁白基本手势
+377|使用辅助触控
+378|设置辅助访问
+379|退出辅助访问
+380|设置辅助功能快捷键
+381|使用轻点背面
+382|使用触控调节
+383|更改触感触控时长
+384|使用便捷访问
+385|使用实时字幕
+386|配对助听设备
+387|使用实时收听
+388|使用 RTT 通话
+389|创建个人声音
+390|使用实时语音
+391|使用语音控制
+392|使用眼动追踪
+393|播放背景音
+394|设置通话音频路由
+395|自动接听来电
+396|调节侧边按钮按压速度
+397|放大键盘字母
+398|使用检测模式
+399|使用引导式访问
+400|开机设置时使用辅助功能
+401|查看 iPhone 储存空间
+402|释放储存空间
+403|使用“文件”App
+404|查找下载的文件
+405|将文件存储到“文件”
+406|打开 PDF
+407|在 PDF 上签名
+408|重命名文件
+409|删除文件
+410|解压缩文件
+411|连接 U 盘
+412|用隔空投送发送照片
+413|设置隔空投送接收
+414|手机互碰交换联系人（NameDrop）
+415|截屏
+416|截取整个网页
+417|录制屏幕
+418|在截屏上写字
+419|从 iPhone 打印
+420|将照片传到电脑
+421|创建 Apple 账户
+422|登录 Apple 账户
+423|更改 Apple 账户密码
+424|忘记 Apple 账户密码时
+425|设置账户恢复联系人
+426|设置遗产联系人
+427|查看 iCloud 储存空间
+428|打开 iCloud 照片
+429|用 iCloud 备份
+430|用电脑备份
+431|从备份恢复
+432|迁移到新 iPhone
+433|用 iCloud 同步通讯录和日历
+434|设置家人共享
+435|使用购买前询问
+436|更改付款方式
+437|更改受信任电话号码
+438|退出 Apple 账户
+439|了解 iCloud+
+440|抹掉 iPhone
+441|将卡片添加到 Apple Pay
+442|在商店用 Apple Pay 付款
+443|使用交通卡（支持地区）
+444|添加登机牌和门票
+445|删除 Apple Pay 卡片
+446|设置医疗急救卡
+447|查看步数
+448|接收服药提醒
+449|了解摔倒检测（Apple Watch）
+450|与家人共享健康数据
+451|接收步行稳定性提醒
+452|在地图中搜索地点
+453|查看路线
+454|查看公共交通路线（支持地区）
+455|共享预计到达时间
+456|下载离线地图
+457|用“查找”找到 iPhone
+458|与家人共享位置
+459|用 AirTag 寻找物品
+460|发送平安到达确认
+461|打开 Siri
+462|用声音和 Siri 对话
+463|用按钮唤起 Siri
+464|用文字问 Siri
+465|用 Siri 打电话
+466|用 Siri 发信息
+467|用 Siri 设置闹钟
+468|用 Siri 设置计时器
+469|问 Siri 天气
+470|用 Siri 打开 App
+471|用 Siri 创建提醒事项
+472|用 Siri 播放音乐
+473|用 Siri 打开手电筒
+474|更改 Siri 声音
+475|更改 Siri 语言
+476|设置锁定时能否使用 Siri
+477|让 Siri 播报通知
+478|删除 Siri 记录
+479|用快捷指令完成常做的事
+480|打开 Apple 智能
+481|用写作工具润色文字
+482|总结长文
+483|查看通知摘要
+484|清除照片中不需要的东西（消除）
+485|用 Image Playground 生成图片
+486|制作专属表情（Genmoji）
+487|用视觉智能识别周围物品
+488|使用 ChatGPT 扩展
+489|使用实时翻译
+490|了解 Apple 智能的隐私保护
+491|了解紧急联络
+492|检查紧急联络设置
+493|了解卫星紧急求救（支持国家/地区）
+494|为丢失的 iPhone 开启丢失模式
+495|远程抹掉丢失的 iPhone
+496|屏幕卡住时
+497|无法充电时
+498|没有声音时
+499|无线局域网连不上时
+500|储存空间已满时
+501|App 总是自动关闭时
+502|忘记密码时
+503|显示“iPhone 不可用”时
+504|iPhone 进水时
+505|iPhone 发烫时
+506|屏幕碎了时（维修说明）
+507|用 Apple 支持 App 预约维修
+508|还原所有设置
+509|显示“无 SIM 卡”时
+510|无法打电话时
+511|抹掉后，照片、联系人和 App 都会被删除。请务必先确认已经备份。
+512|退出或更换 Apple 账户后，iCloud 照片和联系人可能会从这台 iPhone 上消失。
+513|删除的照片会在 30 天后彻底消失。
+514|备份和恢复期间，请保持连接无线局域网和充电器。
+515|恢复后，iPhone 上现在的内容会被备份内容替换。
+516|付款会真的花钱。练习时不要点付款按钮。
+517|只与你信任的家人共享位置。
+518|不要按按钮练习，会真的拨打紧急电话。
+519|远程抹掉会删除 iPhone 上的所有内容。
+520|按住右侧的侧边按钮。
+521|出现苹果标志后松开。
+522|等待锁定屏幕出现。
+523|同时按住侧边按钮和任意一个音量按钮。
+524|将关机滑块向右拖动。
+525|等待屏幕变黑。
+526|按住侧边按钮。
+527|先关闭 iPhone。
+528|等待大约 30 秒。
+529|按住侧边按钮，直到出现苹果标志。
+530|按一下调高音量按钮，然后马上松开。
+531|按一下调低音量按钮，然后马上松开。
+532|出现苹果标志时松开。
+533|轻点屏幕或按一下侧边按钮。
+534|把 iPhone 拿到面前，看着屏幕。
+535|从屏幕底部向上轻扫。
+536|按一下主屏幕按钮。
+537|把录入过的手指放在触控 ID 上。
+538|按一下侧边按钮。
+539|屏幕熄灭，iPhone 已锁定。
+540|从屏幕底部边缘向上轻扫。
+541|现在你看到的是主屏幕。
+542|按一下屏幕下方的圆形主屏幕按钮。
+543|轻点：用手指轻轻碰一下屏幕。
+544|长按：手指在屏幕上停留一会儿。
+545|轻扫：手指在屏幕上滑过。
+546|在主屏幕上，轻点想用的 App。
+547|App 打开了。
+548|从底部向上轻扫，在中间停住。
+549|向左或向右轻扫，浏览 App。
+550|轻点想用的 App。
+551|连按两下主屏幕按钮。
+552|把要关闭的 App 向上轻扫。
+553|从右上角向下轻扫。
+554|控制中心打开了。向上轻扫即可关闭。
+555|控制中心打开了。按主屏幕按钮即可关闭。
+556|从屏幕顶部中间向下轻扫。
+557|轻点通知即可打开。
+558|向上轻扫即可关闭。
+559|右上角的电池图标表示剩余电量。
+560|扇形图标表示已连接无线局域网。
+561|4 格信号表示手机信号强度。
+562|从右上角向下轻扫可打开控制中心。
+563|按左侧上方的按钮调高音量。
+564|按下方的按钮调低音量。
+565|打开控制中心。
+566|轻点铃铛形状的静音模式按钮。
+567|把左侧的响铃/静音开关拨到下方。
+568|看到橙色表示静音。往上拨即可恢复声音。
+569|左右轻扫选择功能，例如手电筒。
+570|按住操作按钮即可使用该功能。
+571|按住 App。
+572|App 开始晃动后，把它拖到新位置。
+573|轻点右上角的“完成”。
+574|按住主屏幕上的空白处。
+575|把一个 App 拖到另一个 App 上。
+576|要给文件夹改名，请按住它的名称。
+577|在主屏幕上一直向左轻扫。
+578|轻点顶部的搜索栏。
+579|输入 App 名称。
+580|从主屏幕中间向下轻扫。
+581|输入 App 或联系人的名字。
+582|轻点搜索结果。
+583|轻点左上角的“编辑”。
+584|按住锁定屏幕。
+585|“型号名称”显示你的 iPhone 机型。
+586|“iOS 版本”旁边的数字就是你的 iOS 版本。
+587|轻点绿色的“电话”App。
+588|轻点底部的“拨号键盘”。
+589|输入电话号码。
+590|轻点绿色的拨号按钮。
+591|来电时，轻点绿色按钮。
+592|如果 iPhone 已锁定，拖动滑块接听。
+593|来电时，轻点红色的“拒绝”按钮。
+594|如果 iPhone 已锁定，快速按两下侧边按钮。
+595|在通话界面轻点红色按钮。
+596|通话时轻点“扬声器”。
+597|再轻点一次即可换回听筒。
+598|看一下通话界面。
+599|再轻点一次，对方就能听到你的声音。
+600|轻点“电话”App。
+601|轻点底部的“最近通话”。
+602|轻点要回拨的人名。
+603|轻点底部的“个人收藏”。
+604|轻点这个人。
+605|下次只要轻点名字就能打电话。
+606|轻点右下角的“语音留言”。
+607|轻点一条留言。
+608|轻点“播放”。
+609|通话时轻点“拨号键盘”。
+610|按语音提示输入数字。
+611|轻点“隐藏”回到通话界面。
+612|在“电话”中轻点“最近通话”。
+613|轻点号码旁边的信息按钮。
+614|轻点底部的“阻止此来电号码”。
+615|轻点“阻止联系人”确认。
+616|不在通讯录中的号码来电时不会响铃，会直接转到语音留言。
+617|先和第一个人开始通话。
+618|轻点第二个人。
+619|轻点“FaceTime 通话”App。
+620|输入对方的名字。
+621|轻点绿色的 FaceTime 按钮。
+622|没接到电话时，对方的留言会以文字显示在屏幕上。
+623|轻点“通讯录”App。
+624|轻点右上角的＋。
+625|输入名字。
+626|输入电话号码。
+627|轻点号码旁边的ⓘ。
+628|在通讯录中轻点这个人。
+629|轻点右上角的“编辑”。
+630|修改信息。
+631|轻点底部的“删除联系人”。
+632|再轻点一次“删除联系人”。
+633|打开通讯录。
+634|轻点顶部的搜索栏。
+635|轻点一张照片。
+636|轻点要发送的联系人。
+637|输入收件人，然后轻点发送按钮。
+638|轻点顶部的“我的名片”。
+639|确认自己的姓名和电话号码。
+640|轻点“照片”。可以选择自己的照片。
+641|轻点右上角的头像。
+642|轻点顶部的“发现重复项”。
+643|轻点绿色的“信息”App。
+644|轻点右上角的新建按钮。
+645|输入名字或号码。
+646|在下方的输入框中输入信息。
+647|轻点向上箭头按钮发送。
+648|轻点带蓝点的对话。
+649|阅读新信息。
+650|打开对话。
+651|轻点底部的输入框。
+652|输入回复内容。
+653|轻点向上箭头。
+654|轻点输入框旁边的＋。
+655|轻点照片。
+656|轻点向上箭头发送。
+657|轻点收到的照片。
+658|轻点分享按钮。
+659|轻点“新建”。
+660|逐个添加联系人。
+661|输入信息。
+662|蓝色气泡是通过网络发送的 iMessage（Apple 设备之间）。
+663|绿色气泡是普通短信（SMS），按运营商套餐收费。
+664|轻点对话。
+665|按住气泡。
+666|轻点爱心或点赞。
+667|按住信息气泡。
+668|轻点废纸篓按钮。
+669|在对话上向左轻扫。
+670|轻点红色的“删除”。
+671|轻点左侧的＋。
+672|开始说话，声音会被录下来。
+673|轻点发送按钮。
+674|在对话上向右轻扫。
+675|轻点黄色的图钉按钮。
+676|轻点紫色的铃铛按钮。
+677|收到验证码时，它会出现在键盘上方。
+678|轻点验证码即可自动填入。
+679|千万不要把验证码告诉任何人。
+680|按住蓝色气泡。
+681|改好文字后轻点蓝色勾号。只能在 15 分钟内修改。
+682|轻点“撤回”。只能在 2 分钟内撤回。
+683|在信息左上角轻点“过滤”，即可查看未知发件人。
+684|轻点陌生人发来的信息。
+685|轻点底部的“报告垃圾信息”。
+686|输入要找的词，例如医院。
+687|轻点输入框，键盘就会出现。
+688|一个一个地轻点字母。
+689|输错时轻点⌫删除。
+690|轻点输入框打开键盘。
+691|轻点左下角的地球仪按钮。
+692|每轻点一次就会切换一种键盘。
+693|打开键盘。
+694|轻点左下角的“123”。
+695|轻点数字。轻点“ABC”回到字母。
+696|轻点输入框。
+697|轻点键盘上的麦克风。
+698|慢慢说话，说的话会变成文字。
+699|说完后再轻点一次麦克风。
+700|轻点左下角的笑脸（或地球仪）键。
+701|轻点想用的表情符号。
+702|轻点“ABC”回到字母。
+703|轻点文字中的任意位置即可放置光标。
+704|按住空格键。
+705|手指不要离开，移动手指即可移动光标。
+706|快速连点两下这个词。
+707|拖动两端的控制点扩大选择范围。
+708|按住文字。
+709|在要粘贴的位置按住。
+710|用三根手指向左轻扫即可撤销。
+711|也可以摇一摇 iPhone。
+712|输入完整的句子和简短的输入码。
+713|轻点右上角的“存储”。
+714|按住地球仪或表情符号按钮。
+715|轻点靠右的键盘图标。
+716|轻点“相机”App。
+717|相机打开了。
+718|打开相机。
+719|确认已选中“照片”。
+720|对准要拍的东西。
+721|轻点白色的快门按钮。
+722|看一下锁定屏幕。
+723|在屏幕上向左轻扫即可打开相机。
+724|也可以按住右下角的相机按钮。
+725|在相机画面上用两根手指张开。
+726|轻点快门拍照。
+727|轻点要对焦的位置。
+728|上下拖动黄色太阳图标来调整亮度。
+729|按住即可锁定对焦（AE/AF 锁定）。
+730|轻点切换镜头按钮。
+731|让脸出现在画面中。
+732|轻点快门。
+733|在相机中轻点“视频”。
+734|轻点红色按钮开始录制。
+735|轻点红色方块停止。
+736|轻点红色的录制按钮。
+737|要暂停时，轻点左侧的暂停按钮（iOS 18 或更高版本）。
+738|拍完后轻点停止按钮。
+739|轻点顶部中间的⌃。
+740|轻点“闪光灯”（闪电图标）。
+741|选择“关闭”“打开”或“自动”。
+742|轻点“人像”。
+743|离拍摄对象 2.5 米以内。“自然光”变成黄色就可以拍了。
+744|轻点白色的快门按钮。
+745|轻点“全景”。
+746|轻点快门按钮。
+747|按照箭头方向慢慢水平移动 iPhone。
+748|再轻点一次快门按钮即可结束。
+749|在暗处，黄色月亮图标会自动打开。
+750|拍摄的几秒钟内请保持 iPhone 不动。
+751|轻点“定时器”。
+752|轻点快门按钮，10 秒后拍照。
+753|把快门按钮向左滑动。
+754|手指不要松开。
+755|松开手指就会停止。
+756|可以在“照片”中挑选喜欢的照片。
+757|轻点右上角的圆形“实况”按钮。
+758|上面有斜线就表示已关闭。
+759|画面上会出现网格线，方便拍正。
+760|最近可以靠近拍摄对象 2 厘米（Pro 机型）。
+761|出现花朵图标表示微距已打开。
+762|轻点“慢动作”。
+763|轻点录制按钮。
+764|轻点“延时摄影”。
+765|把 iPhone 放在支架上，不要移动。
+766|轻点“电影效果”。
+767|轻点人物即可对焦此人，背景会变模糊。
+768|轻点“风格”。
+769|左右轻扫选择色调，例如暖色。
+770|把相机对准二维码。
+771|轻点出现的链接。
+772|打开陌生二维码前请先确认网址。
+773|把相机对准文字。
+774|轻点右下角的文字按钮。
+775|按一下右下方的相机控制即可打开相机（iPhone 16 及更新机型）。
+776|再按一下即可拍照。
+777|轻轻按两下按钮。
+778|在按钮上滑动手指即可缩放。
+779|按任意一个音量按钮即可拍照。
+780|按住即可录制视频。
+781|自拍会按镜子里看到的样子保存。
+782|画质越高，占用空间越多。
+783|轻点“0.5”拍得更广（超广角）。
+784|轻点“2”拉近拍摄（长焦）。
+785|按住一个数字。
+786|左右滑动即可随意缩放。
+787|在“照片”模式下按住快门按钮。
+788|松开即可停止录制。
+789|要继续录制，请向右滑到锁形图标。
+790|轻点“照片”App。
+791|轻扫即可查看下一张照片。
+792|在照片上用两根手指张开。
+793|两指捏合即可缩小。
+794|在照片中轻点一个视频。
+795|打开照片。
+796|在照片中轻点“最近删除”。
+797|用面容 ID 或密码解锁。
+798|轻点底部的爱心按钮。
+799|可以在“个人收藏”相簿中查看。
+800|轻点底部的“精选集”。
+801|轻点“相簿”旁边的＋。
+802|输入名称，例如孙子孙女。
+803|轻点右上角的•••按钮。
+804|轻点相簿。
+805|轻点发送方式或收件人。
+806|轻点底部的“裁剪”。
+807|拖动四角选择要保留的部分。
+808|轻点左上角的旋转按钮。
+809|轻点顶部的“自动”。
+810|轻点底部的“滤镜”。
+811|轻点喜欢的滤镜，例如单色。
+812|轻点顶部红色的“复原”。
+813|轻点视频。
+814|拖动黄色框的两端，选择要保留的部分。
+815|轻点顶部的搜索按钮。
+816|输入要找的词，例如海边、小狗。
+817|轻点人物即可只看此人的照片。
+818|轻点一段回忆，会配上音乐播放。
+819|隐藏的照片在“精选集 › 实用工具 › 已隐藏”中。
+820|轻点右上角的“选择”。
+821|逐张轻点照片，也可以用手指划过选择。
+822|轻点左下角的分享按钮。
+823|在“媒体类型”中轻点“截屏”。
+824|按住照片中的人或物品。
+825|在信息输入框中按住并粘贴，即可只发送主体。
+826|在“实用工具”中轻点“重复项”。
+827|输入名称，例如我们一家。
+828|选择家人。
+829|确认打印机，然后轻点“打印”。
+830|轻点蓝色指南针图标的 Safari 浏览器。
+831|在 Safari 中轻点地址栏。
+832|输入要搜索的内容。
+833|轻点键盘上的“前往”。
+834|轻点底部的地址栏。
+835|输入网址，例如 digistep365.com
+836|轻点蓝色的“前往”键。
+837|轻点左下角的‹。
+838|轻点右下角的标签页按钮。
+839|轻点要关闭的标签页上的✕。
+840|要全部关闭，请按住“完成”。
+841|轻点书本按钮。
+842|轻点网站。
+843|轻点地址栏左侧的ᴬA。
+844|没有广告，只显示文字。
+845|轻点地址栏中的页面菜单按钮。
+846|轻点较大的 A 即可放大文字。
+847|轻点大 A 即可放大文字。
+848|也可以用两根手指张开。
+849|之后可在书本按钮 › 眼镜中阅读。
+850|轻点底部的“无痕浏览”。
+851|这里不会留下浏览记录。
+852|输入要找的词，会以黄色标出。
+853|按住文件链接。
+854|可以在“文件”›“下载”中找到。
+855|轻点语言。
+856|iPhone 会朗读网页。
+857|轻点右上角的“添加”。
+858|轻点网络名称。
+859|输入密码。
+860|请朋友在他的 iPhone 上轻点你的无线局域网。
+861|让两台 iPhone 靠近。
+862|在你的 iPhone 上轻点“共享密码”。
+863|把相机对准无线局域网二维码。
+864|轻点顶部的通知。
+865|向下滚动可查看每个 App 用了多少数据。
+866|关闭开关后，该 App 只会在无线局域网下上网。
+867|轻点飞机按钮。
+868|打开开关。
+869|让耳机进入配对模式（请看说明书）。
+870|打开“设置”›“蓝牙”。
+871|在“其他设备”下轻点耳机。
+872|解锁 iPhone，回到主屏幕。
+873|打开 AirPods 充电盒，放在 iPhone 旁边。
+874|在另一台设备上，从无线局域网列表中选择你的 iPhone。
+875|在那台设备上输入这个密码。
+876|在国外使用数据可能很贵，请先确认运营商的漫游套餐。
+877|按照运营商的说明扫描二维码，或选择“从附近的 iPhone 转移”。
+878|输入密码。已存储的无线局域网密码会被清除。
+879|在汽车屏幕上开始蓝牙配对（请看汽车说明书）。
+880|唤醒屏幕。
+881|把 iPhone 顶部靠近 NFC 标签。
+882|把滑块向右拖动。
+883|打开“设置”›“显示与亮度”。
+884|把太阳滑块向上拖动即可调亮。
+885|选择时间。
+886|轻点喜欢的照片。
+887|打开要更改的 App。
+888|在“文字大小”中轻点“仅天气”。
+889|把滑块向上拖动即可放大文字。
+890|轻点锁形的“竖排方向锁定”按钮。
+891|打开“设置”›“声音与触感”。
+892|把“铃声和提醒”滑块向右拖动。
+893|轻点喜欢的铃声。
+894|轻点 App 旁边的“获取”。
+895|连按两下侧边按钮或用面容 ID 确认。
+896|轻点底部的“搜索”。
+897|轻点 App 名称即可查看介绍和评分。
+898|打开 App Store。
+899|轻点右上角的头像。
+900|轻点“删除”确认。
+901|轻点 App 旁边的云朵按钮。
+902|轻点顶部自己的名字。
+903|轻点要取消的订阅。
+904|可以看到今天每个 App 用了多久。
+905|选择要限制的 App 类别。
+906|设定每天的使用时间。
+907|隐藏的 App 在 App 资源库最下方的“已隐藏”文件夹中。
+908|把线插到底部的接口里。
+909|另一头接上电源适配器，插到插座上。
+910|电池上出现闪电图标表示正在充电。
+911|打开“设置”›“电池”。
+912|“最大容量”就是电池健康程度。低于 80% 时可以考虑更换。
+913|向下滚动可查看每个 App 用了多少电。
+914|把无线充电器插到插座上。
+915|把 iPhone 屏幕朝上放在充电器中间。
+916|出现闪电图标表示正在充电。
+917|把 MagSafe 充电器插到插座上。
+918|把充电器贴在 iPhone 背面中间，会用磁力吸住。
+919|屏幕上会出现充电图标。
+920|使用 20W 或以上的适配器和合适的线。
+921|把线插到 iPhone 上。
+922|大约 30 分钟可以充到一半左右。
+923|把 USB-C 线插到底部的接口里。
+924|另一头接上适配器，插到插座上。
+925|把闪电线插到底部的接口里。
+926|电量低时打开低电量模式。
+927|把屏幕亮度调低一点。
+928|关闭不需要的 App 的定位。
+929|用 USB-C 线连接 iPhone 和耳机。
+930|耳机会用 iPhone 的电池充电。
+931|轻点“时钟”App。
+932|轻点底部的“闹钟”。
+933|滚动设置小时和分钟。
+934|在闹钟上向左轻扫。
+935|轻点闹钟。
+936|闹钟响起时轻点“稍后提醒”。
+937|9 分钟后会再响一次。
+938|编辑闹钟时可以打开或关闭“稍后提醒”。
+939|打开“时钟”›“计时器”。
+940|设定时间。
+941|轻点底部的“秒表”。
+942|轻点“停止”即可暂停。
+943|轻点左下角的“世界时钟”。
+944|输入城市名称，例如纽约。
+945|在“睡眠 | 起床”下轻点“无闹钟”。
+946|设定睡觉和起床的时间。
+947|轻点手电筒按钮，再轻点一次即可关闭。
+948|从底部向上轻扫打开控制中心。
+949|轻点数字，例如 1、2、0、0、0。
+950|轻点＋等运算符号。
+951|轻点＝就会显示结果。
+952|轻点左上角的列表按钮。
+953|可以看到之前的计算。
+954|轻点左下角的计算器按钮。
+955|选择单位并输入数字，例如 1 英里 = 1.6 km。
+956|轻点“天气”App。
+957|可以看到今天和每小时的天气。
+958|轻点右下角的列表按钮。
+959|在搜索栏中输入城市名称。
+960|输入日程名称，例如看医生。
+961|轻点“开始”选择日期和时间。
+962|轻点日程。
+963|修改需要改的地方，例如时间。
+964|轻点底部的“删除日程”。
+965|再轻点一次“删除日程”。
+966|轻点左上角的<即可查看整月。
+967|轻点日期即可查看当天的日程。
+968|轻点底部的“日历”。
+969|轻点“备忘录”App。
+970|轻点右下角的新建备忘录按钮。
+971|输入内容，会自动保存。
+972|轻点清单按钮。
+973|输入一项，轻点“换行”进入下一行。
+974|轻点一条备忘录。
+975|轻点附件按钮。
+976|把相机对准纸张，会自动扫描。
+977|轻点这条备忘录。
+978|选择使用 iPhone 密码。
+979|在备忘录上向右轻扫。
+980|轻点图钉按钮。
+981|在备忘录上向左轻扫。
+982|轻点红色废纸篓按钮。
+983|要恢复时，在文件夹中轻点“最近删除”。
+984|在备忘录上向左轻扫并移回。只能在 30 天内恢复。
+985|再轻点一次红色按钮即可停止。
+986|轻点录音。
+987|轻点名称。
+988|输入新名称。
+989|轻点•••按钮。
+990|轻点左下角的“新提醒事项”。
+991|输入要做的事，例如吃药。
+992|轻点右侧的ⓘ。
+993|打开“设置”›“面容 ID 与密码”（或“触控 ID 与密码”）。
+994|输入两次 6 位数密码。
+995|输入现在的密码。
+996|输入两次新密码。
+997|打开“设置”›“面容 ID 与密码”。
+998|把脸放进圆圈里，慢慢转动头部。
+999|打开“设置”›“触控 ID 与密码”。
+1000|轻点“添加指纹”。
+1001|用手指反复轻触主屏幕按钮。
+1002|可以看到为网站和 App 存储的密码。
+1003|确认“双重认证”显示为“打开”。
+1004|按照提示检查你和谁共享了什么。
+1005|输错 10 次密码后，所有数据都会被抹掉。请做好备份。
+1006|打开“设置”›“通用”。
+1007|如果有更新，轻点“现在更新”。
+1008|不要轻点陌生号码发来的链接。
+1009|如果“家人”发短信要钱，请先打电话确认。
+1010|千万不要把验证码或密码告诉别人。
+1011|垃圾信息请用“报告垃圾信息”。
+1012|打开“设置”›“辅助功能”。
+1013|用三根手指连点两下屏幕即可放大。
+1014|打开“放大器”App（找不到可以搜索）。
+1015|把相机对准文字。
+1016|拖动滑块放大。
+1017|打开“设置”›“辅助功能”›“朗读内容”。
+1018|在任何界面，用两根手指从顶部向下轻扫。
+1019|打开“设置”›“辅助功能”›“旁白”。
+1020|轻点旁白开关。
+1021|要关闭时，先选中开关，再在任意位置连点两下。
+1022|轻点一下即可听到该项目。
+1023|连点两下即可打开。
+1024|用三根手指轻扫即可翻到下一页。
+1025|打开“设置”›“辅助功能”›“触控”。
+1026|打开它，会出现一个灰色圆形按钮。
+1027|打开“设置”›“辅助功能”›“辅助访问”。
+1028|按照提示选择 App。
+1029|最好请人帮忙一起设置。
+1030|快速按三下侧边按钮。
+1031|输入辅助访问的密码。
+1032|快速按三下侧边按钮即可打开或关闭。
+1033|在底部边缘向下轻扫，屏幕上方的内容就会降下来。
+1034|打开再关上助听器的电池仓，让它进入可被发现状态。
+1035|在“听觉”中轻点“实时收听”。
+1036|把 iPhone 放在说话的人旁边，用耳机收听。
+1037|在安静的地方大声读出屏幕上的句子。
+1038|输入想说的话，iPhone 会替你说出来。
+1039|说一个指令，例如“打开设置”。
+1040|用眼睛跟着屏幕上的圆点移动。
+1041|键盘文字也会一起变大。
+1042|对准人、门或文字，iPhone 会用声音告诉你。
+1043|打开要用的 App。
+1044|第一次开机时会出现“你好”画面。
+1045|轻点“辅助功能”按钮。
+1046|选择你需要的类别，例如视觉。
+1047|可以看到剩余空间和每个 App 占用的空间。
+1048|条形图显示什么最占空间。
+1049|按照建议删除大视频或旧信息。
+1050|轻点文件夹。
+1051|轻点文件即可打开。
+1052|在 Safari 浏览器中下载的文件都在这里。
+1053|打开文件或照片。
+1054|选择文件夹，然后轻点“存储”。
+1055|轻点 PDF 文件。
+1056|上下轻扫翻页。
+1057|用两根手指张开即可放大。
+1058|轻点 PDF。
+1059|轻点底部的“标记”（钢笔图标）。
+1060|轻点右下角的＋。
+1061|用手指签名。
+1062|按住文件。
+1063|输入新名称，然后轻点“完成”。
+1064|删除的文件在 30 天内可从“最近删除”中恢复。
+1065|轻点 .zip 文件。
+1066|同一位置会出现一个文件夹，里面就是文件。
+1067|把 U 盘插到 iPhone 的充电接口（USB-C 或转接头）。
+1068|在“位置”下轻点 U 盘。
+1069|轻点对方的设备。
+1070|选择“仅限联系人”最安全，陌生人无法给你发送东西。
+1071|解锁两台 iPhone。
+1072|让两台 iPhone 的顶部靠近。
+1073|如果也要给对方你的联系方式，请轻点“共享”。
+1074|同时按下侧边按钮和调高音量按钮，然后马上松开。
+1075|左下角会出现一张缩略图。
+1076|同时按下侧边按钮和主屏幕按钮，然后马上松开。
+1077|在 Safari 浏览器中打开网页。
+1078|同时按下侧边按钮和调高音量按钮。
+1079|轻点左下角的小图片。
+1080|轻点顶部的“整页”。
+1081|轻点“屏幕录制”，3 秒后开始。
+1082|要停止时，轻点顶部的红色标志。
+1083|录好的视频会保存在“照片”中。
+1084|在底部选择一支笔，用手指书写。
+1085|打开照片或文稿。
+1086|选择连接同一无线局域网的打印机（隔空打印）。
+1087|轻点右上角的“打印”。
+1088|用数据线连接 iPhone 和电脑。
+1089|在 iPhone 上轻点“信任”。
+1090|输入密码。
+1091|在电脑上打开“照片”App，选择“导入”。
+1092|轻点顶部的“登录 iPhone”。
+1093|输入姓名和出生日期。
+1094|设定电子邮件地址和密码，按照提示完成。
+1095|输入 Apple 账户的电子邮件地址。
+1096|输入密码。如果其他设备上出现验证码，请输入该数字。
+1097|输入 iPhone 密码。
+1098|输入两次新密码：至少 8 个字符，包含大写字母、小写字母和数字。
+1099|在登录界面轻点“忘记密码？”。
+1100|输入 iPhone 密码即可设置新密码。
+1101|如果还是不行，请申请“账户恢复”，可能需要几天时间。
+1102|选择你信任的家人。
+1103|选择在你去世后可以访问你数据的人。
+1104|条形图显示照片和备份占用了多少空间。
+1105|Mac 上用“访达”，Windows 上用“Apple 设备”App，然后选择你的 iPhone。
+1106|点按“立即备份”。
+1107|在设置画面中前往“App 与数据”。
+1108|登录你的 Apple 账户。
+1109|轻点最新的备份。
+1110|打开新 iPhone。
+1111|把它放在旧 iPhone 旁边。
+1112|在旧 iPhone 上轻点“继续”。
+1113|用旧 iPhone 的相机对准新 iPhone 上的蓝色图案。
+1114|在新 iPhone 上输入旧密码。迁移期间让两台 iPhone 保持靠近。
+1115|轻点孩子的名字。
+1116|可以看到现在的付款方式。千万不要把卡号给别人看。
+1117|输入新号码，再输入短信收到的验证码。
+1118|输入 Apple 账户密码。
+1119|选择要保留在这台 iPhone 上的数据。
+1120|可以获得更多空间和“隐藏邮件地址”等功能，需要按月付费。
+1121|轻点“继续”。请先确认已经备份。
+1122|输入密码和 Apple 账户密码后，所有内容都会被抹掉。
+1123|用相机扫描卡片，或手动输入。
+1124|完成银行的验证（例如短信）。
+1125|快速按两下侧边按钮。
+1126|看着 iPhone 进行面容 ID 验证。
+1127|把 iPhone 顶部靠近读卡器。
+1128|出现“完成”和勾号就表示成功了。
+1129|在支持的地区，只要把 iPhone 靠近闸机即可。
+1130|在航空公司或活动的 App、邮件中轻点“添加到 Apple 钱包”。
+1131|轻点卡片。
+1132|轻点底部的“移除此卡”。
+1133|轻点“健康”App。
+1134|轻点“开始使用”或“编辑”。
+1135|填写病症、用药和血型。
+1136|“摘要”中会显示今天的步数。
+1137|轻点“步数”即可查看每周和每月的记录。
+1138|在“浏览”中轻点“用药”。
+1139|输入药名和服药时间。
+1140|Apple Watch 能检测到严重摔倒。如果一分钟没有回应，会拨打紧急电话。
+1141|在“共享”中轻点“与他人共享”。
+1142|选择一位家人。
+1143|选择要共享的内容，例如步数。
+1144|在“浏览”中轻点“行动能力”。
+1145|在“步行稳定性”下轻点“设置”。
+1146|轻点“地图”App。
+1147|轻点搜索栏。
+1148|输入地点名称。
+1149|输入地点，例如首尔站。
+1150|轻点蓝色的“路线”按钮。
+1151|轻点绿色的“出发”按钮。
+1152|选择地点。
+1153|轻点巴士图标的“公交”。
+1154|开始导航。
+1155|向上轻扫卡片，然后轻点“共享预计到达时间”。
+1156|轻点要通知的人。
+1157|轻点搜索栏旁边的头像。
+1158|选择区域，然后轻点“下载”。
+1159|轻点“查找”App。
+1160|轻点设备。
+1161|在“联系人”中轻点“共享我的位置”。
+1162|选择共享多久。
+1163|在“物品”中轻点那个物品。
+1164|轻点“播放声音”，AirTag 就会响。
+1165|轻点“查找”，会有箭头为你指路。
+1166|轻点家人的对话。
+1167|确认地点和时间，然后轻点发送按钮。
+1168|打开“设置”›“Siri”（或“Siri 与搜索”）。
+1169|轻点“与 Siri 对话”或“聆听”。
+1170|说出屏幕上的句子。
+1171|说“Siri”或“嘿 Siri”（按你的设置）。
+1172|说出你想做的事，例如“明天天气怎么样？”
+1173|按住侧边按钮即可唤起 Siri。
+1174|连点两下屏幕底部即可用文字问 Siri。
+1175|说“Siri”或按住侧边按钮。
+1176|例如说“给妈妈打电话”。
+1177|说“给 John 发信息”。
+1178|说出要发送的内容。
+1179|说“发送”。
+1180|说“明天早上 6 点叫我起床”。
+1181|说“计时 10 分钟”。
+1182|说“今天天气怎么样？”
+1183|例如说“打开相机”。
+1184|说“晚上 8 点提醒我吃药”。
+1185|例如说“播放爵士乐”（需要音乐订阅）。
+1186|说“打开手电筒”。
+1187|关闭后，iPhone 锁定时别人无法使用 Siri。
+1188|再轻点一次。
+1189|选择一个动作，例如发送信息“我在回家路上”。
+1190|仅支持的机型（15 Pro 及更新机型）和语言可用。请等待准备完成。
+1191|选择文字。
+1192|选择一段长文字，或打开网页。
+1193|几行就能看到重点。
+1194|多条通知会在锁定屏幕上汇总成一行。
+1195|用手指圈出想要去掉的东西。
+1196|用文字描述想要的图片，例如海边的猫。
+1197|选择图片风格。
+1198|在信息的键盘上轻点表情符号按钮。
+1199|轻点右上角闪闪发光的表情符号按钮。
+1200|描述你想要的样子，例如戴帽子的小狗。
+1201|按住相机控制（支持的机型）。
+1202|对准想了解的东西，例如花或店铺招牌。
+1203|轻点“提问”即可获得说明。
+1204|可能会发送个人信息，所以请保持每次发送前确认的设置为打开。
+1205|在顶部选择两种语言。
+1206|轻点麦克风。
+1207|说出你想对对方说的话。
+1208|翻译结果会以文字和语音显示。
+1209|Apple 智能会尽量在你的 iPhone 上处理数据。
+1210|较大的任务使用“私有云计算”，不会保存你的数据。
+1211|紧急联络可以用按钮拨打紧急电话。
+1212|不要按按钮练习，用这些示意图学习即可。
+1213|在“设置”›“紧急联络”中查看它的工作方式。
+1214|确认已打开的方式：按住，或按 5 次。
+1215|没有手机信号和无线局域网时，请到能看见天空的室外（支持的国家/地区和机型）。
+1216|拨打紧急电话后会出现“通过卫星发送紧急文本”。
+1217|回答问题，并按照提示把 iPhone 对准卫星。
+1218|在其他设备上打开“查找”，或前往 icloud.com/find。
+1219|轻点丢失的 iPhone。
+1220|在“标记为丢失”下轻点“激活”。
+1221|输入要显示在屏幕上的电话号码和留言。
+1222|在“查找”中轻点丢失的 iPhone。
+1223|轻点底部的“抹掉此设备”。
+1224|抹掉后就无法再定位它。请只在万不得已时使用。
+1225|先试着用侧边按钮关机。
+1226|如果关不了机，请看“强制重启 iPhone”这节课。
+1227|确认数据线和适配器都插紧了。
+1228|换一个插座或换一根线试试。
+1229|轻轻检查接口里有没有灰尘。
+1230|如果还是无法充电，请联系 Apple 支持。
+1231|检查左侧的静音开关或控制中心里的铃铛。
+1232|按调高音量按钮。
+1233|如果打开了专注模式，请关闭它。
+1234|检查是否连接了蓝牙耳机。
+1235|在控制中心里关闭无线局域网，再重新打开。
+1236|拔掉路由器电源 30 秒，再重新插上。
+1237|重启 iPhone。
+1238|如果还是不行，请忽略这个网络再重新连接。
+1239|按照建议整理。
+1240|用“卸载 App”清理不用的大 App。
+1241|把照片移到 iCloud 照片或电脑。
+1242|彻底关闭 App，再重新打开。
+1243|在 App Store 中查看 App 有没有更新。
+1244|如果还是不行，删除 App 后重新下载。
+1245|多次输错密码后会显示“iPhone 不可用”。
+1246|轻点底部的“忘记密码？”。
+1247|输入 Apple 账户密码后 iPhone 会被抹掉。可以从备份恢复。
+1248|等显示的时间过去后再试一次。
+1249|修改密码后 72 小时内仍可使用旧密码（iOS 17 或更高版本）。
+1250|如果想不起来，请用“忘记密码？”抹掉 iPhone。
+1251|马上拿出来，用软布擦干。
+1252|让接口朝下，轻轻在手掌上拍一拍。
+1253|出现“检测到液体”时，请等完全干了（至少 30 分钟）再充电。
+1254|不要放进米里，也不要用吹风机。
+1255|从阳光下或很热的车里拿出来，放到阴凉处。
+1256|取下厚保护壳，暂时停止充电。
+1257|出现温度警告时，请等它冷却下来。
+1258|在破碎的玻璃上贴保护膜或胶带，以免割伤。
+1259|先备份到 iCloud 或电脑。
+1260|用 Apple 支持 App 或到授权服务提供商预约维修。
+1261|选择故障情况。
+1262|输入密码。照片和联系人不会被删除，只有设置会恢复到初始状态。
+1263|打开再关闭飞行模式。
+1264|如果使用 eSIM，请在“设置”›“蜂窝网络”中确认该号码已打开。
+1265|如果还是不行，请联系运营商。
+1266|确认飞行模式已关闭。
+1267|看一下顶部的信号格。
+1268|确认这个号码没有被阻止。
+=Settings|设置
+=Action Button|操作按钮
+=Edit Home Screen|编辑主屏幕
+=Add Widget|添加小组件
+=Weather|天气
+=Customize|自定义
+=Lock Screen|锁定屏幕
+=Done|完成
+=General|通用
+=About|关于本机
+=Mute|静音
+=Phone|电话
+=Call|呼叫
+=Apps|App
+=Silence Unknown Callers|将未知来电静音
+=Add|添加
+=Merge Calls|合并通话
+=New FaceTime|新建 FaceTime 通话
+=Live Voicemail|实时语音留言
+=add phone|添加电话
+=Create New Contact|新建联系人
+=Contacts|通讯录
+=Edit|编辑
+=Add Photo|添加照片
+=Share Contact|共享联系人
+=Messages|信息
+=Contact Photo & Poster|联系人照片和海报
+=Health|健康
+=Medical ID|医疗急救卡
+=add emergency contact|添加紧急联系人
+=Add to Favorites|添加到个人收藏
+=Merge All|全部合并
+=Photos|照片
+=Save Image|存储图像
+=More|更多
+=Delete Message|删除信息
+=Delete|删除
+=Audio|音频
+=Location|位置
+=Send Pin|发送大头针
+=Filter Unknown Senders|过滤未知发件人
+=Delete and Report Junk|删除并报告垃圾信息
+=Keyboard|键盘
+=Keyboards|键盘
+=Add New Keyboard...|添加新键盘…
+=Japanese|日语
+=Copy|拷贝
+=Paste|粘贴
+=Undo|撤销
+=Auto-Correction|自动改正
+=Text Replacement|文本替换
+=Chinese (Simplified)|简体中文
+=Handwriting|手写
+=Sounds & Haptics|声音与触感
+=Keyboard Feedback|键盘反馈
+=Haptic|触感
+=Camera|相机
+=Video|视频
+=10s|10 秒
+=Grid|网格
+=Stop|停止
+=Copy All|全部拷贝
+=Mirror Front Camera|镜像前置镜头
+=Record Video|录制视频
+=4K at 30 fps|4K，30 fps
+=Preserve Settings|保留设置
+=Camera Mode|相机模式
+=Delete Photo|删除照片
+=Recover|恢复
+=New Album|新建相簿
+=Add to Album|添加到相簿
+=Revert to Original|复原到原始状态
+=Beach|海边
+=People & Pets|人物和宠物
+=Memories|回忆
+=Hide|隐藏
+=Merge|合并
+=New Shared Album|新建共享相簿
+=Create|创建
+=Print|打印
+=Add Bookmark|添加书签
+=Show Reader|显示阅读器
+=Add to Reading List|添加到阅读列表
+=Clear History and Website Data|清除历史记录与网站数据
+=All history|所有历史记录
+=Clear History|清除历史记录
+=Find on Page|在页面上查找
+=Download Linked File|下载链接文件
+=Translate|翻译
+=Listen to Page|收听页面
+=Add to Home Screen|添加到主屏幕
+=Join|加入
+=Home|我的家
+=Forget This Network|忽略此网络
+=Forget|忽略
+=Cellular|蜂窝网络
+=Cellular Data|蜂窝数据
+=Forget This Device|忽略此设备
+=Forget Device|忽略设备
+=Connect|连接
+=Personal Hotspot|个人热点
+=Allow Others to Join|允许其他人加入
+=Cellular Data Options|蜂窝数据选项
+=Low Data Mode|低数据模式
+=Data Roaming|数据漫游
+=Add eSIM|添加 eSIM
+=Transfer or Reset iPhone|传输或还原 iPhone
+=Reset|还原
+=Reset Network Settings|还原网络设置
+=My Car|我的车
+=Display & Brightness|显示与亮度
+=Text Size|文字大小
+=Bold Text|粗体文本
+=Display Zoom|显示缩放
+=Larger Text|更大字体
+=Accessibility|辅助功能
+=Display & Text Size|显示与文字大小
+=Auto-Brightness|自动亮度调节
+=Dark|深色
+=Manually Enable Until Tomorrow|手动启用到明天
+=Auto-Lock|自动锁定
+=Raise to Wake|抬起唤醒
+=Always On Display|全天候显示
+=Wallpaper|墙纸
+=Add New Wallpaper|添加新墙纸
+=Large|大
+=Motion|动态效果
+=Reduce Motion|减弱动态效果
+=Increase Contrast|增强对比度
+=Button Shapes|按钮形状
+=Color Filters|色彩滤镜
+=Grayscale|灰度
+=Reduce White Point|降低白点值
+=Ringtone|电话铃声
+=Haptics|触感
+=Always Play|始终播放
+=Text Tone|短信铃声
+=Chord|和弦
+=Notifications|通知
+=Allow Notifications|允许通知
+=Show Previews|显示预览
+=When Unlocked|解锁时
+=Focus|专注模式
+=Do Not Disturb|勿扰模式
+=Sleep|睡眠
+=Emergency Bypass|紧急情况例外
+=Audio & Visual|音频与视觉
+=LED Flash for Alerts|LED 闪烁以示提醒
+=Headphone Safety|耳机安全
+=Reduce Loud Audio|降低高音量
+=Announce Calls|播报来电
+=Always|始终
+=Mono Audio|单声道音频
+=Sound Recognition|声音识别
+=Sounds|声音
+=Doorbell|门铃
+=Search|搜索
+=Update All|全部更新
+=App Updates|App 更新
+=Remove App|移除 App
+=Delete App|删除 App
+=Remove from Home Screen|从主屏幕上移除
+=iPhone Storage|iPhone 储存空间
+=Offload App|卸载 App
+=Account|账户
+=Purchased|已购项目
+=Privacy & Security|隐私与安全性
+=Location Services|定位服务
+=While Using the App|使用 App 期间
+=Subscriptions|订阅
+=Cancel Subscription|取消订阅
+=Media & Purchases|媒体与购买项目
+=View Account|查看账户
+=Purchase History|购买记录
+=Screen Time|屏幕使用时间
+=See All App & Website Activity|查看所有活动
+=App Limits|App 限额
+=Add Limit|添加限额
+=Require Face ID|需要面容 ID
+=Hide and Require Face ID|隐藏并需要面容 ID
+=Battery Percentage|电池百分比
+=Low Power Mode|低电量模式
+=Battery|电池
+=Battery Health & Charging|电池健康与充电
+=Charging|充电
+=Optimized Battery Charging|优化电池充电
+=80% Limit|80% 上限
+=Batteries|电池
+=Save|存储
+=Clock|时钟
+=Sound|声音
+=Chimes|编钟
+=Start|开始
+=New York, U.S.A.|美国纽约
+=Calculator|计算器
+=Convert|换算
+=Busan|釜山
+=Severe Weather|恶劣天气
+=Calendar|日历
+=Alert|提醒
+=1 hour before|1 小时前
+=Repeat|重复
+=Every Week|每周
+=Holidays|节假日
+=Notes|备忘录
+=Choose Photo or Video|选取照片或视频
+=Scan Documents|扫描文稿
+=Lock|锁定
+=Voice Memos|语音备忘录
+=Share|共享
+=Reminders|提醒事项
+=Time|时间
+=Turn Passcode On|打开密码
+=Face ID & Passcode|面容 ID 与密码
+=Change Passcode|更改密码
+=Set Up Face ID|设置面容 ID
+=Face ID with a Mask|戴口罩时使用面容 ID
+=Set Up an Alternate Appearance|设置另一种外貌
+=Touch ID & Passcode|触控 ID 与密码
+=Add a Fingerprint...|添加指纹…
+=Password AutoFill|密码自动填充
+=Passwords|密码
+=AutoFill & Passwords|自动填充与密码
+=AutoFill Passwords and Passkeys|自动填充密码和通行密钥
+=Sign-In & Security|登录与安全性
+=Safety Check|安全检查
+=Manage Sharing & Access|管理共享与访问权限
+=Stolen Device Protection|失窃设备保护
+=Control Center|控制中心
+=Erase Data|抹掉数据
+=Tracking|跟踪
+=Allow Apps to Request to Track|允许 App 请求跟踪
+=App Privacy Report|App 隐私报告
+=Turn On App Privacy Report|打开 App 隐私报告
+=Software Update|软件更新
+=Zoom|缩放
+=Speak Screen|朗读屏幕
+=Spoken Content|朗读内容
+=Speak Selection|朗读所选项
+=Speak|朗读
+=Set Up Assistive Access|设置辅助访问
+=Exit Assistive Access|退出辅助访问
+=Accessibility Shortcut|辅助功能快捷键
+=Touch|触控
+=Back Tap|轻点背面
+=Double Tap|轻点两下
+=Screenshot|截屏
+=Touch Accommodations|触控调节
+=Haptic Touch|触感触控
+=Slow|慢
+=Reachability|便捷访问
+=Live Captions|实时字幕
+=Hearing Devices|助听设备
+=My Hearing Aids|我的助听器
+=Software RTT/TTY|软件 RTT/TTY
+=Personal Voice|个人声音
+=Create a Personal Voice|创建个人声音
+=Live Speech|实时语音
+=Voice Control|语音控制
+=Eye Tracking|眼动追踪
+=Background Sounds|背景音
+=Call Audio Routing|通话音频路由
+=Speaker|扬声器
+=Auto-Answer Calls|自动接听来电
+=Side Button|侧边按钮
+=Slowest|最慢
+=Magnifier|放大器
+=Detection Mode|检测模式
+=Guided Access|引导式访问
+=Files|文件
+=On My iPhone|我的 iPhone
+=Downloads|下载
+=Save to Files|存储到“文件”
+=Add Signature|添加签名
+=Rename|重新命名
+=Contacts Only|仅限联系人
+=Don’t have an Apple Account?|没有 Apple 账户？
+=Change Password|更改密码
+=Account Recovery|账户恢复
+=Add Recovery Contact...|添加恢复联系人…
+=Legacy Contact|遗产联系人
+=Add Legacy Contact|添加遗产联系人
+=Manage Account Storage|管理账户储存空间
+=Sync this iPhone|同步此 iPhone
+=iCloud Backup|iCloud 云备份
+=Back Up Now|立即备份
+=From iCloud Backup|从 iCloud 云备份
+=See All|查看全部
+=Family|家人共享
+=Invite Others|邀请他人
+=Invite via Messages|通过信息邀请
+=Ask to Buy|购买前询问
+=Payment & Shipping|付款与配送
+=Add Payment Method|添加付款方式
+=Add Trusted Phone Number|添加受信任电话号码
+=Sign Out|退出登录
+=iCloud+ Features|iCloud+ 功能
+=Erase All Content and Settings|抹掉所有内容和设置
+=Wallet|钱包
+=Debit or Credit Card|借记卡或信用卡
+=Transit Card|交通卡
+=Show When Locked|锁定时显示
+=Add Medication|添加药物
+=Emergency SOS|紧急联络
+=Fall Detection|摔倒检测
+=Maps|地图
+=Search Maps|搜索地图
+=Offline Maps|离线地图
+=Download New Map|下载新地图
+=Devices|设备
+=Play Sound|播放声音
+=Find My|查找
+=Check In|平安确认
+=Press Side Button for Siri|按下侧边按钮使用 Siri
+=Type to Siri|键入以使用 Siri
+=Siri Voice|Siri 声音
+=Voice 2|声音 2
+=Language|语言
+=Korean|韩语
+=Allow Siri When Locked|锁定时允许使用 Siri
+=Announce Notifications|播报通知
+=Siri & Dictation History|Siri 与听写历史记录
+=Delete Siri & Dictation History|删除 Siri 与听写历史记录
+=Shortcuts|快捷指令
+=Add Action|添加操作
+=Apple Intelligence & Siri|Apple 智能与 Siri
+=Turn On Apple Intelligence|打开 Apple 智能
+=Writing Tools|写作工具
+=Proofread|校对
+=Summarize|总结
+=Summarize Notifications|总结通知
+=Clean Up|消除
+=Use ChatGPT|使用 ChatGPT
+=Apple Intelligence Report|Apple 智能报告
+=Emergency Contacts|紧急联系人
+=Apple Support|Apple 支持
+=Repairs & Physical Damage|维修与物理损坏
+=Book a Repair|预约维修
+=Reset All Settings|还原所有设置
+=Tap|轻点
+=Hold|长按
+=Swipe|轻扫
+=Tuesday, September 9|9月9日 星期二
+=Swipe up to open|向上轻扫以打开
+=slide to power off|滑动来关机
+=Cancel|取消
+=Seoul|首尔
+=Sunny|晴
+=High 24°  Low 15°|最高 24°  最低 15°
+=Share App|共享 App
+=Library|图库
+=Select|选择
+=Collections|精选集
+=Not Playing|未在播放
+=Dinner at 7?|7 点吃晚饭？
+=Tomorrow 10:00|明天 10:00
+=Apple Account, iCloud and more|Apple 账户、iCloud 等
+=Airplane Mode|飞行模式
+=On|打开
+=Flashlight|手电筒
+=Productivity|效率
+=App Library|App 资源库
+=space|空格
+=return|换行
+=Widgets|小组件
+=Home Screen|主屏幕
+=Date & Time|日期与时间
+=Language & Region|语言与地区
+=Shut Down|关机
+=Name|名称
+=iOS Version|iOS 版本
+=Model Name|型号名称
+=Model Number|型号号码
+=Serial Number|序列号
+=Applications|应用程序
+=Capacity|总容量
+=Available|可用容量
+=Recents|最近通话
+=mobile|手机
+=Yesterday|昨天
+=unknown|未知
+=Monday|星期一
+=Favorites|个人收藏
+=Keypad|拨号键盘
+=Voicemail|语音留言
+=Decline|拒绝
+=Accept|接听
+=slide to answer|滑动来接听
+=End|结束
+=Message|信息
+=▶ Play|▶ 播放
+=message|信息
+=call|电话
+=video|视频
+=mail|邮件
+=Send Message|发送信息
+=Block this Caller|阻止此来电号码
+=You will not receive phone calls, messages or FaceTime from people on the block list.|你将不会收到阻止名单中的人的来电、信息或 FaceTime 通话。
+=Block Contact|阻止联系人
+=Home Screen & App Library|主屏幕与 App 资源库
+=StandBy|待机显示
+=Wallet & Apple Pay|钱包与 Apple Pay
+=ALLOW PHONE TO ACCESS|允许“电话”访问
+=Siri & Search|Siri 与搜索
+=Call Blocking & Identification|来电阻止与身份识别
+=Blocked Contacts|已阻止的联系人
+=Maria  On Hold|Maria  保持中
+=Create Link|创建链接
+=To: |收件人：
+=To: Maria|收件人：Maria
+=“Hi, it’s John. Call me back.”|“你好，我是 John，请回电。”
+=New Contact|新建联系人
+=First name|名字
+=Last name|姓氏
+=Company|公司
+=Add to Existing Contact|添加到现有联系人
+=Delete Contact|删除联系人
+=New Message|新信息
+=To:|收件人：
+=Create New|新建
+=Memoji|拟我表情
+=Monogram|字母组合
+=Summary|摘要
+=Health Details|健康详细信息
+=Duplicates|重复项
+=See you tomorrow|明天见
+=Photo|照片
+=Hello!|你好！
+=Yes, see you!|好的，到时见！
+=Yes|好
+=Stickers|贴纸
+=Look!|看！
+=1 Photo Selected|已选择 1 张照片
+=Add to Shared Album|添加到共享相簿
+=Lunch?|一起吃午饭？
+=Lunch on Saturday?|周六一起吃午饭？
+=Reply|回复
+=More...|更多…
+=Delete Conversation?|要删除对话吗？
+=📌 Pin|📌 置顶
+=🔕 Hide Alerts|🔕 隐藏提醒
+=Your code is 123456. Do not share it.|你的验证码是 123456，请勿告诉他人。
+=From Messages  123456|来自信息  123456
+=Undo Send|撤回
+=Yes, see you at 7!|好的，7 点见！
+=Send Read Receipts|发送已读回执
+=Filters|过滤
+=All Messages|所有信息
+=Known Senders|已知发件人
+=Unknown Senders|未知发件人
+=Report Junk|报告垃圾信息
+=Maria: Doctor at 10?|Maria：10 点看医生？
+=Helo|你号
+=Background App Refresh|后台 App 刷新
+=One-Handed Keyboard|单手键盘
+=Off|关闭
+=Auto-Capitalization|自动大写
+=Enable Dictation|启用听写
+=English (US)|英语（美国）
+=Add New Keyboard|添加新键盘
+=English (UK)|英语（英国）
+=Spanish|西班牙语
+=Thank you|谢谢
+=Thank you 🙏|谢谢 🙏
+=Hello Maria|你好 Maria
+=Hello |Maria|你好 |Maria
+=Cut|剪切
+=Hello Mar|你好 Ma
+=Undo Typing|撤销键入
+=On my way!|我在路上！
+=Phrase|短语
+=I’ll call you back|稍后回电
+=Shortcut|输入码
+=◧  Left|◧  左侧
+=▣  Center|▣  居中
+=◨  Right|◨  右侧
+=Pinyin – QWERTY|拼音 – 全键盘
+=Silent Mode|静音模式
+=RINGTONE AND ALERTS|铃声和提醒
+=Change with Buttons|用按钮调整
+=Reflection|倒影
+=Note|音符
+=System Haptics|系统触感反馈
+=TIME-LAPSE|延时摄影
+=SLO-MO|慢动作
+=CINEMATIC|电影效果
+=VIDEO|视频
+=PHOTO|照片
+=PORTRAIT|人像
+=PANO|全景
+=Auto|自动
+=3s|3 秒
+=Formats|格式
+=1080p at 30 fps|1080p，30 fps
+=Level|水平仪
+=Standard|标准
+=Warm|暖色
+=Cool|冷色
+=Open “example.com”|打开“example.com”
+=Live Text|实况文本
+=Scene Detection|场景检测
+=720p HD at 30 fps|720p HD，30 fps
+=1080p HD at 30 fps|1080p HD，30 fps
+=4K at 60 fps|4K，60 fps
+=Creative Controls|创意控制
+=Utilities|实用工具
+=Hidden|已隐藏
+=Recently Deleted|最近删除
+=Videos|视频
+=Albums|相簿
+=Grandkids|孙子孙女
+=Duplicate|复制
+=Trip|旅行
+=AUTO|自动
+=Adjust|调整
+=Crop|裁剪
+=Original|原片
+=Vivid|鲜明
+=Mono|单色
+=Revert|复原
+=Summer 2026|2026 年夏天
+={n} Photos Selected|已选择 {n} 张照片
+=Media Types|媒体类型
+=Selfies|自拍
+=Screenshots|截屏
+=Screen Recordings|屏幕录制
+=2 Photos|2 张照片
+=Our Family|我们一家
+=Invite People|邀请他人
+=Print Options|打印选项
+=Printer|打印机
+=Office Printer|办公室打印机
+=Copies|份数
+=Search or enter website name|搜索或输入网站名称
+=weather|天气
+=go|前往
+=Tabs|标签页
+=News|新闻
+=Close All Tabs|关闭所有标签页
+=Text only, larger and easier to read.|只显示文字，更大更易读。
+=Reading List|阅读列表
+=Private|无痕浏览
+=2 Tabs|2 个标签页
+=Search Engine|搜索引擎
+=Block Pop-ups|阻止弹出式窗口
+=Page Zoom|页面缩放
+=Last hour|过去一小时
+=Today|今天
+=Today and yesterday|今天和昨天
+=lesson|课程
+=Open in New Tab|在新标签页中打开
+=Copy Link|拷贝链接
+=English|英语
+=Page Menu|页面菜单
+=NETWORKS|网络
+=Neighbor 5G|邻居 5G
+=Enter the password for “Home”|输入“我的家”的密码
+=Password|密码
+=Cafe Free WiFi|咖啡馆免费 WiFi
+=Ask to Join Networks|询问是否加入网络
+=Notify|通知
+=Auto-Join|自动加入
+=Forget Wi-Fi Network “Home”?|要忽略无线局域网“我的家”吗？
+=Wi-Fi Password|无线局域网密码
+=Share Password|共享密码
+=Join “Home” Network|加入“我的家”网络
+=Join Wi-Fi Network “Home”?|要加入无线局域网“我的家”吗？
+=CELLULAR DATA|蜂窝数据
+=OTHER DEVICES|其他设备
+=MY DEVICES|我的设备
+=Connected|已连接
+=Not Connected|未连接
+=Disconnect|断开连接
+=Voice & Data|语音与数据
+=5G Auto|5G 自动
+=Set Up eSIM|设置 eSIM
+=Transfer From Nearby iPhone|从附近的 iPhone 转移
+=Use QR Code|使用二维码
+=Prepare for New iPhone|为新 iPhone 做准备
+=Reset Keyboard Dictionary|还原键盘词典
+=Reset Home Screen Layout|还原主屏幕布局
+=Reset Location & Privacy|还原位置与隐私
+=Enter Passcode|输入密码
+=APPEARANCE|外观
+=Light|浅色
+=BRIGHTNESS|亮度
+=30 seconds|30 秒钟
+=DISPLAY|显示
+=Default|默认
+=Apps that support Dynamic Type will adjust to your preferred reading size below.|支持动态字体的 App 将调整为你在下方选择的阅读大小。
+=VISION|视觉
+=PHYSICAL AND MOTOR|肢体与动作
+=HEARING|听觉
+=Smart Invert|智能反转
+=Scheduled|定时
+=Color Temperature|色温
+=1 minute|1 分钟
+=2 minutes|2 分钟
+=3 minutes|3 分钟
+=4 minutes|4 分钟
+=5 minutes|5 分钟
+=Never|永不
+=Show Wallpaper|显示墙纸
+=Show Notifications|显示通知
+=People|人物
+=Astronomy|天文
+=Weather Only|仅天气
+=All Apps|所有 App
+=A  ▮▮▮▮▮  A|字  ▮▮▮▮▮  字
+=Small|小
+=Auto-Play Message Effects|自动播放信息效果
+=Red/Green Filter|红/绿滤镜
+=Green/Red Filter|绿/红滤镜
+=Blue/Yellow Filter|蓝/黄滤镜
+=Color Tint|色调
+=Ringtone and Alerts|铃声和提醒
+=Play in Silent Mode|静音模式下播放
+=Don’t Play in Silent Mode|静音模式下不播放
+=Never Play|永不播放
+=Aurora|极光
+=Bamboo|竹林
+=Circles|圆圈
+=Notification Display|通知显示方式
+=Count|数量
+=Scheduled Summary|定时推送摘要
+=NOTIFICATION STYLE|通知风格
+=ALERTS|提醒
+=Notification Center|通知中心
+=Banners|横幅
+=Personal|个人
+=Work|工作
+=RINGTONES|电话铃声
+=Headphone Accommodations|耳机调节
+=Talk to Siri|与 Siri 对话
+=American|声音 1
+=Headphones & Car|耳机与车辆
+=Headphones Only|仅耳机
+=ALARMS|警报
+=Fire|火警
+=Siren|警笛
+=HOUSEHOLD|家居
+=Door Knock|敲门声
+=Games|游戏
+=Get|获取
+=Double Click to Install|连按两次以安装
+=Upcoming Automatic Updates|即将自动更新
+=Update|更新
+=App Downloads|App 下载
+=Automatic Downloads|自动下载
+=Video Autoplay|视频自动播放
+=Remove “Weather”?|要移除“天气”吗？
+=Deleting this app will also delete its data.|删除此 App 也将删除其数据。
+=Delete “Weather”?|要删除“天气”吗？
+=This will free up storage used by the app, but keep its documents and data.|这将释放 App 占用的空间，但会保留其文稿和数据。
+=Share My Location|共享我的位置
+=While Using|使用期间
+=Ask Next Time or When I Share|下次询问或在我共享时
+=Apple Account|Apple 账户
+=Personal Information|个人信息
+=Music Plus  ₩8,900/month|Music Plus  每月 ₩8,900
+=Cloud Photos  ₩1,100/month|Cloud Photos  每月 ₩1,100
+=Downtime|停用时间
+=Communication Limits|通信限制
+=Lock Screen Time Settings|锁定屏幕使用时间设置
+=Daily Average  2h 14m|每日平均  2 小时 14 分钟
+=YouTube  58m|YouTube  58 分钟
+=Messages  31m|信息  31 分钟
+=Choose Apps|选取 App
+=Social|社交
+=Entertainment|娱乐
+=1 hr 0 min|1 小时 0 分钟
+=Suggestions|建议
+=Low Power Mode temporarily reduces background activity until you can fully charge your iPhone.|低电量模式会暂时减少后台活动，直到你可以为 iPhone 充满电。
+=Maximum Capacity|最大容量
+=Peak Performance Capability|峰值性能容量
+=BATTERY USAGE BY APP|App 电池用量
+=Home & Lock Screen|主屏幕与锁定屏幕
+=Optimized|已优化
+=None|无
+=Alarms|闹钟
+=Alarm|闹钟
+=World Clock|世界时钟
+=Stopwatch|秒表
+=Timers|计时器
+=Add Alarm|添加闹钟
+=Label|标签
+=Snooze|稍后提醒
+=Edit Alarm|编辑闹钟
+=Radar|雷达
+=0 hours|0 小时
+=0 sec|0 秒
+=Lap|计次
+=Seoul  9:41|首尔  9:41
+=Choose a City|选取城市
+=Sleep | Wake Up|睡眠 | 起床
+=No Alarm|无闹钟
+=Full Schedule|完整计划
+=Bedtime  10:30 PM|就寝  22:30
+=Wake Up  6:30 AM|起床  6:30
+=History|历史记录
+=Basic|基本
+=Scientific|科学
+=Math Notes|数学备忘录
+=Edit List|编辑列表
+=Units|单位
+=Next-Hour Precipitation|未来一小时降水
+=September|9月
+=Calendars|日历
+=Inbox|收件箱
+=New Event|新建日程
+=Title|标题
+=Doctor|看医生
+=Starts|开始
+=Sep 10  10:00 AM|9月10日  10:00
+=Ends|结束
+=Doctor  10:00|看医生  10:00
+=Event Details|日程详细信息
+=Edit Event|编辑日程
+=15 minutes before|15 分钟前
+=1 day before|1 天前
+=Sep 10  11:00 AM|9月10日  11:00
+=Delete Event|删除日程
+=Exercise|运动
+=Sep 10  7:00 AM|9月10日  7:00
+=Every Day|每天
+=Every Month|每月
+=Every Year|每年
+=Birthdays|生日
+=Shopping list|购物清单
+=Doctor 10:00|看医生 10:00
+=Buy milk and eggs|买牛奶和鸡蛋
+=Shopping|购物
+=○ Milk|○ 牛奶
+=○ Eggs|○ 鸡蛋
+=Garden|花园
+=Take Photo or Video|拍照或录像
+=Papers|文件
+=Scan|扫描
+=Bank memo|银行备忘
+=Pin|置顶
+=Lock Note|锁定备忘录
+=Use iPhone Passcode|使用 iPhone 密码
+=Trip plan|旅行计划
+=Collaborate|协作
+=Old list|旧清单
+=Folders|文件夹
+=All Recordings|所有录音
+=New Recording  0:12|新录音  0:12
+=Doctor advice|医生嘱咐
+=Doctor advice  0:12|医生嘱咐  0:12
+=Edit Recording|编辑录音
+=＋ New Reminder|＋ 新提醒事项
+=○ Take medicine|○ 吃药
+=○ Take medicine  ⓘ|○ 吃药  ⓘ
+=Details|详细信息
+=Date|日期
+=USE FACE ID FOR|面容 ID 用于
+=iPhone Unlock|iPhone 解锁
+=Turn Passcode Off|关闭密码
+=FINGERPRINTS|指纹
+=USE TOUCH ID FOR|触控 ID 用于
+=Finger 1|指纹 1
+=All|全部
+=Passkeys|通行密钥
+=AUTOFILL FROM|自动填充来源
+=Email & Phone Numbers|电子邮件与电话号码
+=Two-Factor Authentication|双重认证
+=Emergency Reset|紧急重置
+=Information|信息
+=ALLOW ACCESS WHEN LOCKED|锁定时允许访问
+=This update includes bug fixes and security updates.|此更新包括错误修复和安全性更新。
+=Update Now|现在更新
+=Your parcel is waiting. Pay here: parcel-check.example|你的包裹待领取，请在此付款：parcel-check.example
+=Mom, I broke my phone. Please send money now.|妈，我手机坏了，快给我转钱。
+=GENERAL|通用
+=Assistive Access|辅助访问
+=Double-tap three fingers to zoom. Drag three fingers to move around the screen.|用三指连点两下进行缩放，用三指拖移来移动屏幕。
+=Swipe down with two fingers from the top of the screen to hear the content of the screen.|用两指从屏幕顶部向下轻扫，即可听到屏幕内容。
+=Voices|声音
+=Speaking Rate|朗读速率
+=VoiceOver speaks items on the screen.|旁白会朗读屏幕上的项目。
+=Tap to Wake|轻点唤醒
+=AssistiveTouch allows you to use your iPhone if you have difficulty touching the screen.|如果你难以触摸屏幕，辅助触控可以帮助你使用 iPhone。
+=Assistive Access makes iPhone simpler, with larger buttons and only the apps you choose.|辅助访问让 iPhone 更简单，按钮更大，只显示你选择的 App。
+=Calls|通话
+=Automatic|自动
+=Triple Tap|轻点三下
+=Hold Duration|按住持续时间
+=Ignore Repeat|忽略重复
+=Fast|快
+=MFI HEARING DEVICES|MFI 助听设备
+=Hearing|听觉
+=Live Listen|实时收听
+=Relay Number|中继号码
+=“The weather is lovely today.”|“今天天气真好。”
+=Favorite Phrases|常用短语
+=English (U.S.)|英语（美国）
+=Rain|雨声
+=Bluetooth Headset|蓝牙耳机
+=Door, 2 meters|门，2 米
+=Passcode Settings|密码设置
+=Vision|视觉
+=Motor|肢体
+=Cognitive|认知
+=iPhone: 66.8 GB of 128 GB Used|iPhone：已使用 66.8 GB（共 128 GB）
+=Photos  42 GB|照片  42 GB
+=Apps  18 GB|App  18 GB
+=Messages  6 GB|信息  6 GB
+=Recommendations|建议
+=Review Large Attachments|检查大附件
+=Review Personal Videos|检查个人视频
+=Browse|浏览
+=Shared|共享
+=Documents|文稿
+=Page 1|第 1 页
+=Page 2|第 2 页
+=Markup|标记
+=Add Text|添加文本
+=Shapes|形状
+=Signature|签名
+=USB DRIVE|U 盘
+=Receiving Off|接收关闭
+=Everyone for 10 Minutes|所有人（10 分钟）
+=Receive Only|仅接收
+=Screen|屏幕
+=Full Page|整页
+=◉ Screen Recording|◉ 屏幕录制
+=Select Printer|选择打印机
+=Trust This Computer?|要信任此电脑吗？
+=Trust|信任
+=Don’t Trust|不信任
+=Back|返回
+=Next|下一步
+=Name and Birthday|姓名和生日
+=First Name|名字
+=Last Name|姓氏
+=Birthday|生日
+=Email|电子邮件
+=Continue|继续
+=Change|更改
+=New|新密码
+=Verify|验证
+=Forgot password?|忘记密码？
+=Start Account Recovery|开始账户恢复
+=RECOVERY CONTACTS|恢复联系人
+=4.2 GB of 5 GB Used|已使用 4.2 GB（共 5 GB）
+=Photos  3.1 GB|照片  3.1 GB
+=Backups  0.9 GB|备份  0.9 GB
+=SAVED TO ICLOUD|已存储到 ICLOUD
+=Optimize iPhone Storage|优化 iPhone 储存空间
+=Back Up This iPhone|备份此 iPhone
+=Last successful backup: Yesterday at 2:00 AM|上次成功备份：昨天 2:00
+=Transfer Your Apps & Data|传输 App 与数据
+=From Mac or PC|从 Mac 或 PC
+=From Another iPhone|从另一台 iPhone
+=Choose Backup|选择备份
+=Today 2:00 AM|今天 2:00
+=Yesterday 2:00 AM|昨天 2:00
+=Quick Start|快速开始
+=Apps Using iCloud|使用 iCloud 的 App
+=Create Child Account|创建儿童账户
+=Invite|邀请
+=Invite in Person|当面邀请
+=Maria (Me)|Maria（我）
+=Minji (Child)|敏智（孩子）
+=TRUSTED PHONE NUMBERS|受信任电话号码
+=Keep a copy|保留副本
+=Erase This iPhone|抹掉此 iPhone
+=Add to Wallet|添加到钱包
+=Card Added|卡片已添加
+=Done ✓|完成 ✓
+=Your ticket|你的门票
+=Add to Apple Wallet|添加到 Apple 钱包
+=Boarding Pass|登机牌
+=My Bank Card|我的银行卡
+=Card Details|卡片详细信息
+=Remove This Card|移除此卡
+=Steps|步数
+=Heart Rate|心率
+=72 BPM|72 次/分
+=Profile|个人资料
+=Medical Conditions|病症
+=Medications|用药
+=Blood Type|血型
+=Diabetes|糖尿病
+=Metformin|二甲双胍
+=A+|A 型（Rh+）
+=Your Medical ID can be viewed when iPhone is locked by tapping Emergency, then Medical ID.|iPhone 锁定时，轻点“紧急情况”，再轻点“医疗急救卡”即可查看。
+=Steps  6,214|步数  6,214
+=Walking Distance  4.3 km|步行距离  4.3 km
+=Activity|活动
+=Schedule|计划
+=Vitamin D|维生素 D
+=Sharing|共享
+=Share with Someone|与他人共享
+=Mobility|行动能力
+=Walking Steadiness|步行稳定性
+=Set Up|设置
+=Seoul Station|首尔站
+=Seoul Station Exit 1|首尔站 1 号出口
+=Directions|路线
+=🚗 25 min|🚗 25 分钟
+=Go|出发
+=Drive|驾车
+=Walk|步行
+=Transit|公交
+=Arrive 10:30|10:30 到达
+=Share ETA|共享预计到达时间
+=Places|地点
+=Ratings|评分
+=Download|下载
+=Items|物品
+=Me|我
+=Maria’s iPhone|Maria 的 iPhone
+=Maria’s iPad|Maria 的 iPad
+=Mark As Lost|标记为丢失
+=Share for One Hour|共享一小时
+=Share Until End of Day|共享到今天结束
+=Share Indefinitely|始终共享
+=Keys|钥匙
+=Find|查找
+=Check In: Home 6:00 PM|平安确认：家 18:00
+=Say “Siri, what’s the weather today?”|说“嘿 Siri，今天天气怎么样？”
+=Tomorrow will be sunny, with a high of 24°.|明天晴，最高气温 24°。
+=Calling Mom…|正在呼叫妈妈…
+=What do you want to say?|你要说什么？
+=“I’ll be there at 7.”|“我 7 点到。”
+=Sent.|已发送。
+=Your alarm is set for 6 AM.|闹钟已设为上午 6 点。
+=10 minutes, counting down.|10 分钟，开始倒计时。
+=It’s sunny, 21°.|晴，21°。
+=Opening Camera.|正在打开相机。
+=OK, I’ll remind you.|好的，我会提醒你。
+=Here’s some music.|为你播放音乐。
+=Your flashlight is on.|手电筒已打开。
+=Voice 1|声音 1
+=Voice 3|声音 3
+=Voice 4|声音 4
+=English (United States)|英语（美国）
+=Spanish (Spain)|西班牙语（西班牙）
+=Headphones|耳机
+=Tips|提示
+=New Shortcut|新建快捷指令
+=Actions|操作
+=Set Alarm|设置闹钟
+=Downloading…|正在下载…
+=i will come tomorow|我明天回来去
+=Rewrite|改写
+=Friendly|友好
+=I will come tomorrow.|我明天去。
+=• Main point 1|• 要点 1
+=• Main point 2|• 要点 2
+=a cat at the beach|海边的猫
+=Animation|动画
+=Illustration|插画
+=Sketch|素描
+=Emoji|表情符号
+=dog with a hat|戴帽子的小狗
+=Visual Intelligence|视觉智能
+=Ask|提问
+=EXTENSIONS|扩展
+=Confirm ChatGPT Requests|确认 ChatGPT 请求
+=Korean  ⇄  English|韩语  ⇄  英语
+=On-Device Processing|设备端处理
+=Private Cloud Compute|私有云计算
+=Call with Hold and Release|按住后松开即拨打
+=Call with 5 Button Presses|按 5 次即拨打
+=Call Quietly|静音拨打
+=Crash Detection|车祸检测
+=No Connection|无连接
+=Emergency Text via Satellite|通过卫星发送紧急文本
+=Satellite|卫星
+=Turn left ↺|向左转 ↺
+=Activate|激活
+=Phone Number|电话号码
+=Please call me|请给我打电话
+=Erase This Device|抹掉此设备
+=Erase This Device?|要抹掉此设备吗？
+=Erase|抹掉
+=Get Support|获取支持
+=iPhone Unavailable|iPhone 不可用
+=Try again in 15 minutes|请在 15 分钟后重试
+=Forgot Passcode?|忘记密码？
+=Enter Previous Passcode|输入之前的密码
+=Liquid Detected|检测到液体
+=OK|好
+=Temperature|温度
+=iPhone needs to cool down before you can use it.|iPhone 需要冷却后才能使用。
+=Repairs|维修
+=Cracked Screen|屏幕碎裂
+=Other|其他
+=Options|选项
+=SIMS|SIM 卡
+=Primary|主号
+=TUE|星期二

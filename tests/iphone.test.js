@@ -139,7 +139,7 @@ test('과정 첫 화면: 한국어·영어에 내 아이폰 선택(모를 때·�
   assert.match(lesson, /아이폰 화면을 보고 그린 그림/); assert.match(lesson, /target-ring/); assert.match(lesson, /hreflang="en"/);
   assert.match(readFileSync('en/iphone/text-size/index.html', 'utf8'), /drawings of the iPhone screen/);
   // 번역 파일이 있는 언어만 아이폰 페이지가 생긴다
-  for (const lang of IP_LANGS) { assert.ok(existsSync(`${lang}/iphone/index.html`), lang); assert.ok(sm.includes(`/${lang}/iphone/text-size/`), lang); }
+  for (const lang of IP_LANGS) { const seg = lang.toLowerCase(); assert.ok(existsSync(`${seg}/iphone/index.html`), lang); assert.ok(sm.includes(`/${seg}/iphone/text-size/`), lang); }
   assert.match(readFileSync('en/index.html', 'utf8'), /href="\/en\/iphone\/"/);
   assert.match(readFileSync('index.html', 'utf8'), /href="\/learn\/iphone\/"/);
   assert.match(readFileSync('admin/iphone/index.html', 'utf8'), /data-course="iphone"/);
