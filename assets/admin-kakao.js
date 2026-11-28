@@ -1,20 +1,25 @@
 // DigiStep365 관리자: 카카오톡 사용법(국내 전용) — 목차·수업·단계 카드·실제 화면 이미지·버전·검수·공개 상태
 // 저장: ① catalog.json 내려받기  ② GitHub API로 이미지(images/kakaotalk/…)와 data/kakaotalk/catalog.json 커밋(토큰은 sessionStorage에만)
 // 공개 조건은 scripts/build-kakaotalk.mjs의 publishProblems()와 같다(빌드가 한 번 더 검사해 미달이면 공개하지 않는다).
-import { renderKakao } from './kakao-screens.js?v=20261128.0353';
-import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0353';
-import { renderScreen } from './screens.js?v=20261128.0353';
+import { renderKakao } from './kakao-screens.js?v=20261128.0646';
+import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0646';
+import { renderScreen } from './screens.js?v=20261128.0646';
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const root = $('[data-kadmin]');
 // 과정별 설정(카카오톡: 국내 / WhatsApp: 해외)
 const CFG = {
   kakaotalk: { app: '카카오톡', file: 'data/kakaotalk/catalog.json', img: 'images/kakaotalk', prefix: 'k', render: renderKakao, view: (l) => `/#/lesson/${l.id}/1`, versionHint: '더보기 › 설정 › 전체 설정 › 기타 › 앱 버전', altHint: '예: 채팅방 아래 ＋ 버튼이 보이는 카카오톡 화면', sources: [{ label: '카카오 더 쉬운 카톡설명서', url: 'https://talktips.kakao.com/' }, { label: '카카오 고객센터', url: 'https://cs.kakao.com/' }] },
+  iphone: { app: '아이폰', file: 'data/iphone/catalog.json', img: 'images/iphone', prefix: 'i', render: null, view: (l) => `/learn/iphone/${l.slug}/`, versionHint: '설정 › 일반 › 정보 › iOS 버전', altHint: '예: 설정 화면에서 ‘디스플레이 및 밝기’가 보이는 아이폰 화면', sources: [{ label: 'Apple iPhone 사용 설명서', url: 'https://support.apple.com/ko-kr/guide/iphone/welcome/ios' }],
+    langs: ['ko', 'en'],
+    verFields: [['iphoneModel', '아이폰 모델', '예: iPhone 16'], ['ios', 'iOS 버전', '예: 26.1'], ['lastChecked', '마지막 확인 날짜', 'type=date'], ['reviewedBy', '검수자', '']],
+    metaFields: [['iphoneModel', '아이폰 모델'], ['ios', 'iOS'], ['lang', '화면 언어'], ['country', '국가'], ['captured', '캡처 날짜', 'date'], ['reviewed', '검수 날짜', 'date'], ['license', '사용 권한']],
+    imageSources: ['직접 캡처(교육용 아이폰)', 'Xcode iOS 시뮬레이터 캡처', '사용 권한을 받은 Apple 공식 이미지'] },
   whatsapp: { app: 'WhatsApp', file: 'data/whatsapp/catalog.json', img: 'images/whatsapp', prefix: 'w', render: renderWhatsApp, view: (l) => `/en/whatsapp/${l.slug}/`, versionHint: 'Settings › Help › App info', altHint: 'e.g. WhatsApp chat screen with the paper clip button highlighted', sources: [{ label: 'WhatsApp Help Center', url: 'https://faq.whatsapp.com/' }] },
 }[root.dataset.course ?? 'kakaotalk'];
 const STATUS = JSON.parse(root.dataset.statuses);
 const PUBLIC = JSON.parse(root.dataset.public);
-const KEY = root.dataset.course === 'whatsapp' ? 'digistep365.wadmin.v1' : 'digistep365.kadmin.v1';
+const KEY = { whatsapp: 'digistep365.wadmin.v1', iphone: 'digistep365.iadmin.v1' }[root.dataset.course] ?? 'digistep365.kadmin.v1';
 const KEY_TOKEN = 'digistep365.admin.token';
 const KEY_SETTINGS = 'digistep365.admin.settings';
 const store = {
@@ -22,7 +27,10 @@ const store = {
   set(k, v, s = localStorage) { try { s.setItem(k, JSON.stringify(v)); return true; } catch { return false; } },
   del(k, s = localStorage) { try { s.removeItem(k); } catch { /* ignore */ } },
 };
-const state = { catalog: null, base: '', sel: null, images: new Map(), filter: 'all', q: '' };
+const state = { catalog: null, base: '', sel: null, images: new Map(), filter: 'all', q: '', lang: 'ko' };
+// 언어별 필드(아이폰: 한국어 = text·image·imageMeta, 영어 = textEn·imageEn·imageMetaEn)
+const K = (name) => (state.lang === 'en' ? ({ text: 'textEn', image: 'imageEn', imageMeta: 'imageMetaEn', targetLabel: 'targetEn', title: 'titleEn' }[name] ?? name) : name);
+const VER = CFG.verFields ?? [['appVersion', `${CFG.app} 앱 버전`], ['android', '안드로이드 버전'], ['galaxyModel', '갤럭시 모델'], ['lastChecked', '마지막 확인 날짜'], ['reviewedBy', '검수자']];
 const today = () => new Date().toISOString().slice(0, 10);
 const dirty = () => JSON.stringify(state.catalog) !== state.base || state.images.size > 0;
 const lessons = () => state.catalog.chapters.flatMap((ch) => ch.lessons.map((l) => ({ l, ch })));
@@ -32,17 +40,25 @@ const setMsg = (t, bad = false) => { const m = $('[data-msg]'); m.textContent = 
 /** 공개 조건(빌드와 같은 규칙; 아직 커밋 안 한 이미지는 있는 것으로 본다) */
 function problems(l) {
   const p = [];
-  for (const [k, label] of [['appVersion', `${CFG.app} 앱 버전`], ['android', '안드로이드 버전'], ['galaxyModel', '갤럭시 모델'], ['lastChecked', '마지막 확인 날짜'], ['reviewedBy', '검수자']]) if (!String(l[k] ?? '').trim()) p.push(`${label} 없음`);
+  for (const [k, label] of VER) if (!String(l[k] ?? '').trim()) p.push(`${label} 없음`);
   if (!l.sources?.length) p.push('공식 참고 자료 없음');
   if (!l.steps?.length) p.push('단계 없음');
   (l.steps ?? []).forEach((s, i) => {
     const n = `${i + 1}단계`;
-    if (!String(s.text ?? '').trim()) p.push(`${n} 설명 없음`);
-    if (!s.image?.src && !s.image?.screen) p.push(`${n} 실제 화면 이미지 없음`);
-    if (!String(s.image?.alt ?? '').trim()) p.push(`${n} 이미지 설명(alt) 없음`);
-    if (!s.imageMeta?.source) p.push(`${n} 이미지 출처 없음`);
-    if (!s.imageMeta?.reviewed) p.push(`${n} 이미지 검수 날짜 없음`);
-    if (s.imageMeta?.privacyChecked !== true) p.push(`${n} 개인정보 노출 확인 안 됨`);
+    // 공개 상태는 한국어 기준으로 판단하고, 영어는 영어 화면이 다 갖춰지면 빌드가 따로 공개한다
+    for (const g of CFG.langs ? ['ko'] : [null]) {
+      // 아이폰: 언어마다 그 언어 화면 캡처가 따로 필요(코드로 그린 화면은 공개 불가)
+      const tx = g === 'en' ? s.textEn : s.text; const img = (g === 'en' ? s.imageEn : s.image) ?? {}; const m = (g === 'en' ? s.imageMetaEn : s.imageMeta) ?? {};
+      const pre = g ? `${n}(${g === 'en' ? '영어' : '한국어'})` : n;
+      if (!String(tx ?? '').trim()) p.push(`${pre} 설명 없음`);
+      if (!img.src && (CFG.langs || !img.screen)) p.push(`${pre} 실제 화면 이미지 없음`);
+      if (!String(img.alt ?? '').trim()) p.push(`${pre} 이미지 설명(alt) 없음`);
+      if (!m.source) p.push(`${pre} 이미지 출처 없음`);
+      else if (CFG.imageSources && !CFG.imageSources.includes(m.source)) p.push(`${pre} 이미지 출처가 실제 캡처가 아님`);
+      for (const [k, label] of CFG.metaFields ?? []) if (!String(m[k] ?? '').trim()) p.push(`${pre} 이미지 ${label} 없음`);
+      if (!m.reviewed) p.push(`${pre} 이미지 검수 날짜 없음`);
+      if (m.privacyChecked !== true) p.push(`${pre} 개인정보 노출 확인 안 됨`);
+    }
   });
   return p;
 }
@@ -94,6 +110,7 @@ function renderEditor() {
   const opts = state.catalog.chapters.map((c, i) => `<option value="${i}" ${c === ch ? 'selected' : ''}>${String(c.num).padStart(2, '0')}. ${esc(c.title)}</option>`).join('');
   pane.innerHTML = `<header class="kedit__head"><p class="eyebrow">${String(ch.num).padStart(2, '0')}. ${esc(ch.title)} · <code>${esc(l.id)}</code></p>
   <h2>${esc(l.title)}</h2>
+  ${CFG.langs ? `<p class="kedit__lang"><label>편집 언어(이 언어의 실제 화면을 올려요) <select data-lang>${CFG.langs.map((g) => `<option value="${g}" ${state.lang === g ? 'selected' : ''}>${g === 'ko' ? '한국어' : 'English'}</option>`).join('')}</select></label> ${l.titleEn ? `<span class="hint">영어 제목: ${esc(l.titleEn)}</span>` : ''}</p>` : ''}
   <p class="kedit__tools"><button type="button" data-l-up>↑ 위로</button><button type="button" data-l-down>↓ 아래로</button><label>대분류 이동 <select data-l-move>${opts}</select></label><button type="button" data-l-del>사용법 삭제</button>${!PUBLIC.includes(l.status) ? ' <button type="button" class="kbtn-ok" data-l-approve>실제 앱과 대조 완료 → 검수·공개</button>' : ''}${PUBLIC.includes(l.status) && !prob.length ? ` <a href="${esc(CFG.view(l))}" target="_blank" rel="noopener">홈페이지에서 보기</a>` : ''}</p></header>
   ${l.existing ? `<p class="step__note">이 주제는 기존 <a href="/learn/${esc(l.existing.course)}/${esc(l.existing.id)}/" target="_blank">갤럭시 수업(${esc(l.existing.id)})</a>에도 그림(실제 화면 아님)으로 있어요. 실제 화면 수업을 공개하면 그 수업의 그림을 교체·연결할지 정하세요.</p>` : ''}
   <div class="kgrid">
@@ -105,12 +122,12 @@ function renderEditor() {
     ${field('주의사항(중요 기능)', 'caution', l.caution)}
   </div>
   <fieldset class="kbox"><legend>버전·검수</legend><div class="kgrid">
-    ${field(`${CFG.app} 앱 버전`, 'appVersion', l.appVersion, 'placeholder="예: 25.10.1"')}
+    ${CFG.verFields ? CFG.verFields.map(([k, label, ph]) => field(label, k, l[k], ph === 'type=date' ? 'type="date"' : ph ? `placeholder="${esc(ph)}"` : '')).join('') : `${field(`${CFG.app} 앱 버전`, 'appVersion', l.appVersion, 'placeholder="예: 25.10.1"')}
     ${field('갤럭시 모델', 'galaxyModel', l.galaxyModel, 'placeholder="예: 갤럭시 S26"')}
     ${field('안드로이드 버전', 'android', l.android, 'placeholder="예: 17"')}
     ${field('One UI 버전', 'oneui', l.oneui, 'placeholder="예: 9"')}
     ${field('마지막 확인 날짜', 'lastChecked', l.lastChecked, 'type="date"')}
-    ${field('검수자', 'reviewedBy', l.reviewedBy)}
+    ${field('검수자', 'reviewedBy', l.reviewedBy)}`}
     <label class="kf kf--check"><input type="checkbox" data-f="needsUpdate" ${l.needsUpdate ? 'checked' : ''}> 업데이트 필요(메뉴가 바뀜)</label>
     ${field('메뉴 변경사항 기록', 'changes', l.changes)}
   </div>
@@ -122,8 +139,8 @@ function renderEditor() {
   <p><button type="button" class="btn" data-step-add>+ 단계 추가</button></p>`;
 }
 function stepCard(s, i, n) {
-  const img = s.image ?? {};
-  const m = s.imageMeta ?? {};
+  const img = s[K('image')] ?? {};
+  const m = s[K('imageMeta')] ?? {};
   const t = img.target;
   return `<li class="kstep" data-step="${i}">
   <div class="kstep__pic">${img.screen && !img.src ? `<div class="kshot kshot--svg" title="코드로 그린 재현 화면">${(img.screen.galaxy ? renderScreen(img.screen.galaxy, s.targetLabel || undefined, 'tap') : CFG.render(img.screen, s.targetLabel || undefined, 'tap')).svg}</div><p class="hint">재현 화면 — 실제 앱과 대조하세요. 실제 캡처로 바꾸려면 아래에서 올리세요.</p>` : img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
@@ -132,19 +149,19 @@ function stepCard(s, i, n) {
   </div>
   <div class="kstep__body">
     <p class="step__no">${i + 1}단계 / ${n}</p>
-    <label class="kf">설명(한 가지 동작)<textarea data-s="text" rows="2">${esc(s.text)}</textarea></label>
+    <label class="kf">설명(한 가지 동작)<textarea data-s="text" rows="2">${esc(s[K('text')])}</textarea></label>
     <label class="kf">음성 안내(비우면 설명을 읽어요)<input data-s="voice" value="${esc(s.voice)}"></label>
     <label class="kf">도움말(선택)<input data-s="hint" value="${esc(s.hint)}"></label>
-    <label class="kf">누를 곳 이름(화면에 보이는 글자)<input data-s="targetLabel" value="${esc(s.targetLabel)}"></label>
+    <label class="kf">누를 곳 이름(화면에 보이는 글자)<input data-s="targetLabel" value="${esc(s[K('targetLabel')])}">${s.shot ? `<span class="hint">캡처할 화면: ${esc(s.shot)}</span>` : ''}</label>
     <label class="kf">이미지 설명(alt)<input data-i="alt" value="${esc(img.alt)}" placeholder="${esc(CFG.altHint)}"></label>
     <fieldset class="kbox kbox--s"><legend>이미지 기록</legend><div class="kgrid">
-      <label class="kf">출처<select data-m="source"><option value="">고르세요</option>${['직접 캡처(교육용 계정)', '권한을 받은 공식 화면', '원본 화면 기준 재현(검수 필수)'].map((o) => `<option ${m.source === o ? 'selected' : ''}>${o}</option>`).join('')}</select></label>
-      <label class="kf">${CFG.app} 버전<input data-m="appVersion" value="${esc(m.appVersion)}"></label>
+      <label class="kf">출처<select data-m="source"><option value="">고르세요</option>${(CFG.imageSources ?? ['직접 캡처(교육용 계정)', '권한을 받은 공식 화면', '원본 화면 기준 재현(검수 필수)']).map((o) => `<option ${m.source === o ? 'selected' : ''}>${o}</option>`).join('')}</select></label>
+      ${CFG.metaFields ? CFG.metaFields.map(([k, label, type]) => `<label class="kf">${label}<input ${type === 'date' ? 'type="date"' : ''} data-m="${k}" value="${esc(m[k])}"></label>`).join('') : `<label class="kf">${CFG.app} 버전<input data-m="appVersion" value="${esc(m.appVersion)}"></label>
       <label class="kf">갤럭시 모델<input data-m="galaxyModel" value="${esc(m.galaxyModel)}"></label>
       <label class="kf">Android<input data-m="android" value="${esc(m.android)}"></label>
       <label class="kf">One UI<input data-m="oneui" value="${esc(m.oneui)}"></label>
       <label class="kf">제작 날짜<input type="date" data-m="created" value="${esc(m.created)}"></label>
-      <label class="kf">최종 검수 날짜<input type="date" data-m="reviewed" value="${esc(m.reviewed)}"></label>
+      <label class="kf">최종 검수 날짜<input type="date" data-m="reviewed" value="${esc(m.reviewed)}"></label>`}
       <label class="kf kf--check"><input type="checkbox" data-m="privacyChecked" ${m.privacyChecked ? 'checked' : ''}> 실제 개인정보(번호·계정·인증번호·결제·실제 대화)가 보이지 않음을 확인</label>
     </div></fieldset>
     <p class="kstep__tools"><button type="button" data-s-up ${i === 0 ? 'disabled' : ''}>↑</button><button type="button" data-s-down ${i === n - 1 ? 'disabled' : ''}>↓</button><button type="button" data-s-del>단계 삭제</button></p>
@@ -177,18 +194,19 @@ async function upload(input) {
   if (!dim) { alert('그림 파일을 읽지 못했어요.'); return; }
   if (dim.h < dim.w) alert('가로가 더 긴 그림이에요. 휴대폰 화면 캡처(세로)가 맞는지 확인하세요.');
   const ext = file.type === 'image/jpeg' ? 'jpg' : file.type === 'image/webp' ? 'webp' : 'png';
-  const src = `${CFG.img}/${l.id}/${i + 1}-${Date.now().toString(36)}.${ext}`;
+  const src = `${CFG.img}/${CFG.langs ? `${state.lang}/` : ''}${l.id}/${i + 1}-${Date.now().toString(36)}.${ext}`;
   const b64 = await new Promise((res) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.readAsDataURL(file); });
-  const old = l.steps[i].image?.src;
+  const IM = K('image'); const IMM = K('imageMeta');
+  const old = l.steps[i][IM]?.src;
   if (old && state.images.has(old)) state.images.delete(old);
   state.images.set(src, { url, b64 });
-  l.steps[i].image = { ...(l.steps[i].image ?? {}), src, w: dim.w, h: dim.h, target: undefined };
-  l.steps[i].imageMeta = { ...(l.steps[i].imageMeta ?? {}), created: today(), reviewed: '', privacyChecked: false };
+  l.steps[i][IM] = { ...(l.steps[i][IM] ?? {}), src, w: dim.w, h: dim.h, target: undefined };
+  l.steps[i][IMM] = { ...(l.steps[i][IMM] ?? {}), created: today(), ...(CFG.langs ? { captured: today(), lang: state.lang } : {}), reviewed: '', privacyChecked: false };
   save(); renderEditor();
 }
 function placeRing(shot, e) {
   const [l, i] = stepOf(shot);
-  const img = l.steps[i].image;
+  const img = l.steps[i][K('image')];
   const r = shot.getBoundingClientRect();
   const w = img.target?.w ?? 14;
   const h = w * (img.w / img.h);
@@ -228,10 +246,10 @@ root.addEventListener('click', (e) => {
       // 사람이 실제 갤럭시 카카오톡과 모든 단계를 대조한 뒤에만 누른다
       const who = prompt('검수자 이름(실제 앱과 모든 단계를 대조했어요)', l.reviewedBy || '');
       if (!who) return;
-      const ver = prompt(`대조한 ${CFG.app} 앱 버전(${CFG.versionHint})`, l.appVersion || '');
+      const ver = prompt(CFG.verFields ? `대조한 iOS 버전(${CFG.versionHint})` : `대조한 ${CFG.app} 앱 버전(${CFG.versionHint})`, (CFG.verFields ? l.ios : l.appVersion) || '');
       if (!ver) return;
-      Object.assign(l, { reviewedBy: who.trim(), appVersion: ver.trim(), lastChecked: today() });
-      l.steps.forEach((st) => { st.imageMeta = { ...(st.imageMeta ?? {}), reviewed: today(), appVersion: ver.trim() }; });
+      Object.assign(l, { reviewedBy: who.trim(), lastChecked: today(), ...(CFG.verFields ? { ios: ver.trim() } : { appVersion: ver.trim() }) });
+      l.steps.forEach((st) => { const IMM = K('imageMeta'); st[IMM] = { ...(st[IMM] ?? {}), reviewed: today(), ...(CFG.verFields ? { ios: st[IMM]?.ios || ver.trim() } : { appVersion: ver.trim() }) }; });
       const prob = problems(l);
       if (prob.length) { alert(`아직 공개할 수 없어요:\n- ${prob.join('\n- ')}`); l.status = 'review'; } else l.status = 'published';
       l.edited = true;
@@ -242,7 +260,7 @@ root.addEventListener('click', (e) => {
       if (b.matches('[data-s-up]')) [l.steps[i - 1], l.steps[i]] = [l.steps[i], l.steps[i - 1]];
       if (b.matches('[data-s-down]')) [l.steps[i + 1], l.steps[i]] = [l.steps[i], l.steps[i + 1]];
       if (b.matches('[data-s-del]')) { if (!confirm(`${i + 1}단계를 지울까요?`)) return; l.steps.splice(i, 1); }
-      if (b.matches('[data-ring-del]')) delete l.steps[i].image.target;
+      if (b.matches('[data-ring-del]')) delete l.steps[i][K('image')].target;
     } else return;
     if (PUBLIC.includes(l.status) && problems(l).length) l.status = 'review';
   } else return;
@@ -258,19 +276,20 @@ root.addEventListener('change', (e) => {
     return;
   }
   if (el.matches('[data-f]')) setLesson(el.dataset.f, el.type === 'checkbox' ? el.checked : el.value);
-  if (el.matches('[data-m]')) { const [l, i] = stepOf(el); l.steps[i].imageMeta = { ...(l.steps[i].imageMeta ?? {}), [el.dataset.m]: el.type === 'checkbox' ? el.checked : el.value }; if (PUBLIC.includes(l.status) && problems(l).length) l.status = 'review'; save(); renderEditor(); }
+  if (el.matches('[data-lang]')) { state.lang = el.value; renderEditor(); return; }
+  if (el.matches('[data-m]')) { const [l, i] = stepOf(el); const IMM = K('imageMeta'); l.steps[i][IMM] = { ...(l.steps[i][IMM] ?? {}), [el.dataset.m]: el.type === 'checkbox' ? el.checked : el.value }; if (PUBLIC.includes(l.status) && problems(l).length) l.status = 'review'; save(); renderEditor(); }
 });
 root.addEventListener('input', (e) => {
   const el = e.target;
   if (el.matches('[data-search]')) { state.q = el.value; renderList(); return; }
   if (el.matches('[data-s], [data-i]')) {
     const [l, i] = stepOf(el);
-    if (el.dataset.s) l.steps[i][el.dataset.s] = el.value; else l.steps[i].image = { ...(l.steps[i].image ?? {}), alt: el.value };
+    if (el.dataset.s) l.steps[i][K(el.dataset.s)] = el.value; else l.steps[i][K('image')] = { ...(l.steps[i][K('image')] ?? {}), alt: el.value };
     if (PUBLIC.includes(l.status) && problems(l).length) l.status = 'review';
     save();
   }
   if (el.matches('[data-ring]')) {
-    const [l, i] = stepOf(el); const img = l.steps[i].image; const t = img.target;
+    const [l, i] = stepOf(el); const img = l.steps[i][K('image')]; const t = img.target;
     const cx = t.x + t.w / 2; const cy = t.y + t.h / 2; const w = +el.value; const h = w * (img.w / img.h);
     img.target = { x: +(cx - w / 2).toFixed(2), y: +(cy - h / 2).toFixed(2), w, h: +h.toFixed(2) };
     const ring = el.closest('.kstep').querySelector('.photo-ring');

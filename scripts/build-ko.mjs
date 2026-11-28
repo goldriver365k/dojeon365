@@ -20,6 +20,7 @@ import { siteFooter, CONTACT_EMAIL, SITE_HOME, TERMS_DATE } from '../i18n/footer
 import { TOPIC, DESC_TAIL, COURSE_SEO, HUB_SEO, HOME_SEO } from '../i18n/ko-seo.js';
 import { metaOf } from '../data/galaxy/meta.js';
 import { kakaoCourse, DISCLAIMER as KAKAO_DISCLAIMER } from './build-kakaotalk.mjs';
+import { iphoneCourse, landingMain, lessonMain, lessonDesc as ipLessonDesc, IP_TEXT } from './build-iphone.mjs';
 import { SITE_CONFIG } from '../i18n/site-config.js';
 
 const GA = SITE_CONFIG.ga4Id;
@@ -48,7 +49,8 @@ const HANGUL = /[가-힣]/;
 // 카카오톡 사용법: 실제 화면·검수를 마친 ‘공개’ 수업만 정적 페이지·사이트맵에 넣는다(없으면 과정 자체를 뺀다)
 const KAKAO = kakaoCourse({ onlyPublic: true });
 const COURSE_DATA = { galaxy: { CHAPTERS: GALAXY }, kakaotalk: KAKAO, scam: SCAM, digital: DIGITAL, ai: AI, creative: CREATIVE, career: CAREER };
-export const KO_COURSES = CATEGORIES.map((c) => {
+// 아이폰 사용법은 별도 자료(build-iphone.mjs)로 만들므로 여기서는 뺀다
+export const KO_COURSES = CATEGORIES.filter((c) => c.href.startsWith('#/')).map((c) => {
   const key = c.href.replace('#/', '');
   return { key, title: c.title, desc: c.desc, chapters: COURSE_DATA[key].CHAPTERS, lead: COURSE_DATA[key].COURSE?.lead ?? '' };
 }).filter((c) => c.chapters.length);
@@ -110,7 +112,7 @@ function josa(word) {
   return code % 28 ? '을' : '를';
 }
 
-function head({ title, desc, path, crumbs, alternates, ld: extra }) {
+function head({ title, desc, path, crumbs, alternates, ld: extra, index = true }) {
   const url = `${SITE_URL}${path}`;
   const crumbLd = crumbs && { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${SITE_URL}${p}` })) };
   const nodes = [crumbLd, ...[extra ?? []].flat()].filter(Boolean);
@@ -123,7 +125,7 @@ function head({ title, desc, path, crumbs, alternates, ld: extra }) {
 <meta name="speech-lang" content="ko-KR">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="${koCsp("default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'")}">
-${koSeoMeta()}<title>${esc(title)}</title>
+${koSeoMeta()}${index ? '' : '<meta name="robots" content="noindex, follow">\n'}<title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
 ${Object.keys(alts).length ? `<link rel="alternate" hreflang="ko" href="${url}">\n${Object.entries(alts).map(([c, p]) => `<link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}">`).join('\n')}\n${alts.en ? `<link rel="alternate" hreflang="x-default" href="${SITE_URL}${alts.en}">\n` : ''}` : ''}<meta property="og:type" content="article">
@@ -337,6 +339,43 @@ function termsPage() {
   });
 }
 
+/* ---------- 아이폰 사용법(국내·해외 공통): 과정 첫 화면 + 공개 수업 ---------- */
+const IP_UI = { stepOf: (i, n) => `${i}단계 / ${n}`, restart: '처음부터 다시 보기', all: '전체 단계 보기', finished: '수업을 마쳤어요!', nextLesson: '다음 수업:', sources: '기준과 참고 자료', reviewed: '마지막 확인', prev: '이전', listen: '듣기', next: '다음', done: '완료', stepsNav: '단계 이동' };
+const ipFooter = () => `${koFooter({ extra: `<p class="draft brand-note">${esc(IP_TEXT.ko.disclaimer)}</p>` })}\n${koConsent()}`;
+function ipKoLanding(ip, enOpen) {
+  const path = '/learn/iphone/';
+  const crumbs = [['처음 화면', '/'], ['모든 수업', '/learn/'], [ip.text.title, path]];
+  const alternates = ip.count && enOpen('') ? { en: '/en/iphone/' } : {};
+  const desc = `${ip.text.title}: ${ip.text.sub}. 아이폰 전원 켜기, 전화·문자, 사진, 글자 크게, Siri까지 ${ip.total}가지 사용법을 실제 화면으로 한 단계씩 배워요.`.slice(0, 158);
+  return `${head({ title: `${ip.text.title} — ${ip.text.sub} | DigiStep365`, desc, path, crumbs, alternates, index: ip.count > 0 })}
+<body>
+${header()}
+<main class="page" id="main">
+${landingMain(ip, { href: (l) => `/learn/iphone/${l.slug}/`, crumbs: crumbNav(crumbs) })}
+</main>
+${ipFooter()}
+</body>
+</html>
+`;
+}
+function ipKoLesson(ip, ch, item, enOpen) {
+  const path = `/learn/iphone/${item.slug}/`;
+  const crumbs = [['처음 화면', '/'], ['모든 수업', '/learn/'], [ip.text.title, '/learn/iphone/'], [ch.title, `/learn/iphone/#c${two(ch.num)}`], [item.title, path]];
+  const open = ch.lessons.filter((x) => x.open); const nx = open[open.findIndex((x) => x.id === item.id) + 1];
+  const alternates = enOpen(item.slug) ? { en: `/en/iphone/${item.slug}/` } : {};
+  const desc = ipLessonDesc(ip, item);
+  const ld = { '@type': 'LearningResource', name: `아이폰 ${item.title}`, description: desc, url: `${SITE_URL}${path}`, inLanguage: 'ko', isAccessibleForFree: true, learningResourceType: '단계별 실제 화면 안내', teaches: '아이폰 사용법', provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` } };
+  return `${head({ title: `아이폰 ${item.title} — 실제 화면으로 쉽게 | DigiStep365`, desc, path, crumbs, alternates, ld })}
+<body>
+${header()}
+<main class="page" id="main">
+${lessonMain(ip, item, { crumbs: crumbNav(crumbs), ui: IP_UI, next: nx ? { href: `/learn/iphone/${nx.slug}/`, title: nx.title } : null })}
+${ipFooter()}
+</body>
+</html>
+`;
+}
+
 /** 국내 첫 화면(index.html)에 검색 등록 태그·보안 정책·자바스크립트 없이도 읽히는 과정 목록을 넣는다(앱이 뜨면 앱 화면으로 바뀐다) */
 export function updateKoIndex() {
   const f = new URL('../index.html', import.meta.url);
@@ -362,7 +401,7 @@ export function updateKoIndex() {
 <div class="ssr"><h1>DigiStep365 어르신 무료 스마트폰 교육</h1>
 <p>스마트폰 사용법을 처음 배우는 50대·60대·70대와 어르신을 위해 갤럭시 사용법, 카카오톡·키오스크, 챗GPT, 보이스피싱 예방까지 수업 ${total}개를 그림을 보며 한 단계씩 따라 해요.</p>
 <h2>배울 수 있는 과정</h2>
-<ul>${KO_COURSES.map((c) => `<li><a href="/learn/${c.key}/">${esc(c.title)}</a> — ${esc(c.desc)} (수업 ${c.chapters.reduce((a, ch) => a + ch.lessons.length, 0)}개)</li>`).join('')}</ul>
+<ul>${KO_COURSES.map((c) => `<li><a href="/learn/${c.key}/">${esc(c.title)}</a> — ${esc(c.desc)} (수업 ${c.chapters.reduce((a, ch) => a + ch.lessons.length, 0)}개)</li>`).join('')}<li><a href="/learn/iphone/">아이폰 사용법</a> — 처음부터 하나씩 쉽게 배우는 아이폰</li></ul>
 <noscript><p>연습 화면은 자바스크립트를 켜야 볼 수 있어요. 위 과정을 누르면 수업을 글과 그림으로 볼 수 있어요.</p></noscript></div>
 <!-- ssr:end --></div>`;
   html = html.replace(/<div id="app">(?:<!-- ssr:start -->[\s\S]*?<!-- ssr:end -->|<noscript>[\s\S]*?<\/noscript>)<\/div>/, ssr);
@@ -391,6 +430,12 @@ export function buildKo({ version, alternatesFor }) {
   out('/privacy/', privacyPage()); paths.push({ path: '/privacy/' });
   out('/terms/', termsPage()); paths.push({ path: '/terms/' });
   updateKoIndex();
+  // 아이폰 사용법: 과정 첫 화면은 늘, 수업은 공개된 것만. 공개 수업이 없으면 첫 화면은 검색 제외(사이트맵에도 넣지 않음)
+  const ip = { ...iphoneCourse('ko'), version };
+  const ipEn = iphoneCourse('en');
+  const enOpen = (slug) => (slug ? ipEn.chapters.some((c) => c.lessons.some((l) => l.slug === slug && l.open)) : ipEn.count > 0);
+  out('/learn/iphone/', ipKoLanding(ip, enOpen)); if (ip.count) paths.push({ path: '/learn/iphone/', alts: enOpen('') ? { en: '/en/iphone/' } : {} });
+  for (const ch of ip.chapters) for (const item of ch.lessons) if (item.open) { out(`/learn/iphone/${item.slug}/`, ipKoLesson(ip, ch, item, enOpen)); paths.push({ path: `/learn/iphone/${item.slug}/`, alts: enOpen(item.slug) ? { en: `/en/iphone/${item.slug}/` } : {} }); }
   for (const course of KO_COURSES) {
     out(`/learn/${course.key}/`, coursePage(course)); paths.push({ path: `/learn/${course.key}/` });
     for (const ch of course.chapters) {

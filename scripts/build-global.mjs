@@ -15,6 +15,7 @@ import { siteFooter, FOOTER, CONTACT_EMAIL, TERMS_DATE } from '../i18n/footer.js
 import { buildKakaotalk } from './build-kakaotalk.mjs';
 import { buildWhatsapp, waCourse, loadCatalog as loadWaCatalog } from './build-whatsapp.mjs';
 import { renderWhatsApp, setWaTranslator } from '../assets/whatsapp-screens.js';
+import { iphoneCourse, landingMain, lessonMain, lessonDesc, buildIphone, IP_TEXT } from './build-iphone.mjs';
 import { hasCourse } from '../i18n/regions.js';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
@@ -316,12 +317,54 @@ ${header()}
 <p class="lead">${UI.homeLead}</p>
 <a class="btn btn--primary btn--block" href="/${seg(L.code)}/galaxy/">${UI.homeCta}</a>
 ${homeShowcase()}
+${IP ? `<section class="cat cat--ip"><h3><a href="${ipPath(L.code)}">${esc(IP.text.title)}</a></h3><p class="cat__desc">${esc(IP.text.sub)}</p></section>` : ''}
 ${WA && WA.count ? `<section class="cat cat--wa"><h3><a href="/${seg(L.code)}/whatsapp/">${esc(WA.text[0])}</a></h3><p class="cat__desc">${esc(WA.text[1])}</p></section>` : ''}
 <ul class="points">
 ${UI.homePoints.map(([b, t]) => `  <li><b>${b}</b> — ${t}</li>`).join('\n')}
 </ul>
 </main>
 ${footer(true, alternates)}
+</body>
+</html>
+`;
+}
+
+/* ---------- iPhone (all regions; languages with lesson text; published lessons only) ---------- */
+let IP = null; let IP_ALL = {};
+const ipPath = (code, slug = '') => `/${seg(code)}/iphone/${slug ? `${slug}/` : ''}`;
+const ipAlts = (slug = '') => Object.fromEntries([...(IP_KO_OPEN(slug) ? [['ko', `/learn/iphone/${slug ? `${slug}/` : ''}`]] : []), ...Object.keys(IP_ALL).filter((c) => (slug ? IP_ALL[c].chapters.some((ch) => ch.lessons.some((l) => l.slug === slug && l.open)) : IP_ALL[c].count)).map((c) => [c, ipPath(c, slug)])]);
+let IP_KO_OPEN = () => false;
+function ipIndexPage() {
+  const { UI } = L;
+  const base = ipPath(L.code);
+  const alternates = IP.count ? ipAlts() : {};
+  const crumbs = [[UI.home, `/${seg(L.code)}/`], [IP.text.title, base]];
+  const desc = `${IP.text.title}: ${IP.text.sub}. ${IP.chapters.map((ch) => ch.title).join(', ')}.`.slice(0, 158);
+  return `${head({ title: `${IP.text.title} — ${IP.text.sub} | ${UI.brand}`, desc, path: base, index: IP.count > 0, crumbs, alternates })}
+<body>
+${header()}
+<main class="page" id="main">
+${landingMain(IP, { href: (l) => ipPath(L.code, l.slug), crumbs: crumbNav(crumbs) })}
+</main>
+${footer(false, alternates, IP.text.disclaimer)}
+</body>
+</html>
+`;
+}
+function ipLessonPage(ch, item) {
+  const { UI } = L;
+  const base = ipPath(L.code); const path = ipPath(L.code, item.slug);
+  const alternates = ipAlts(item.slug);
+  const crumbs = [[UI.home, `/${seg(L.code)}/`], [IP.text.title, base], [ch.title, `${base}#c${two(ch.num)}`], [item.title, path]];
+  const open = ch.lessons.filter((x) => x.open); const nx = open[open.findIndex((x) => x.id === item.id) + 1];
+  const desc = lessonDesc(IP, item);
+  const ld = { '@type': 'LearningResource', name: item.title, description: desc, url: `${SITE_URL}${path}`, inLanguage: L.code, isAccessibleForFree: true, learningResourceType: 'Step-by-step guide', teaches: IP.text.title, provider: { '@type': 'Organization', name: 'DigiStep365', url: `${SITE_URL}/` } };
+  return `${head({ title: `${item.title} — ${IP.text.title} | ${UI.brand}`, desc, path, index: true, crumbs, alternates, ld })}
+<body>
+${header()}
+<main class="page" id="main">
+${lessonMain(IP, item, { crumbs: crumbNav(crumbs), ui: UI, next: nx ? { href: ipPath(L.code, nx.slug), title: nx.title } : null })}
+${footer(false, alternates, IP.text.disclaimer)}
 </body>
 </html>
 `;
@@ -469,7 +512,7 @@ function adminPage(rows) {
 <a class="brand admin__brand" href="/admin/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${BRAND_TAGLINE}</small></span></a>
 <h1>콘텐츠 현황</h1>
 <p class="lead">빌드할 때 자동으로 만들어지는 현황표입니다. 검색엔진에는 노출되지 않습니다.</p>
-<p><a class="btn btn--primary" href="/admin/edit/">수업 편집·검수하기</a> <a class="btn" href="/admin/kakaotalk/">카카오톡 수업 관리(국내 전용)</a></p>
+<p><a class="btn btn--primary" href="/admin/edit/">수업 편집·검수하기</a> <a class="btn" href="/admin/kakaotalk/">카카오톡 수업 관리(국내 전용)</a> <a class="btn" href="/admin/whatsapp/">WhatsApp 수업 관리(해외 전용)</a> <a class="btn" href="/admin/iphone/">아이폰 수업 관리(국내·해외)</a></p>
 <table class="sum"><thead><tr><th>항목</th>${codes.map((c) => `<th>${c}</th>`).join('')}</tr></thead><tbody>
 <tr><th>해외용 갤럭시 수업(한국 전용 제외)</th>${codes.map(() => `<td>${total}</td>`).join('')}</tr>
 <tr><th>단계 작성</th>${codes.map((c) => `<td>${count(c, (x) => x)} / ${total}</td>`).join('')}</tr>
@@ -599,10 +642,14 @@ export function build() {
   const waSitemap = [];
   const result = {};
   const whatsapp = buildWhatsapp({ version: VERSION, brandTagline: BRAND_TAGLINE });
+  const iphone = buildIphone({ version: VERSION, brandTagline: BRAND_TAGLINE });
+  IP_ALL = Object.fromEntries(Object.keys(LOCALES).filter((c) => hasCourse(c, 'iphone') && IP_TEXT[c]).map((c) => [c, { ...iphoneCourse(c), version: VERSION }]));
+  { const ko = iphoneCourse('ko'); IP_KO_OPEN = (slug) => (slug ? ko.chapters.some((ch) => ch.lessons.some((l) => l.slug === slug && l.open)) : ko.count > 0); }
   const waCatalog = loadWaCatalog();
   WA_ALL = Object.fromEntries(Object.keys(LOCALES).filter((c) => hasCourse(c, 'whatsapp')).map((c) => { const w = waCourse(c, waCatalog); return [c, { ...w, byId: new Map(w.chapters.flatMap((ch) => ch.lessons).map((l) => [l.id, l])) }]; }));
   for (const code of Object.keys(LOCALES)) {
     WA = WA_ALL[code] ?? null;
+    IP = IP_ALL[code] ?? null;
     // WhatsApp screens drawn in this language (Arabic right-to-left)
     setWaTranslator(WA?.tr ?? null, { dir: LANGUAGES.find((x) => x.code === code)?.dir ?? 'ltr' });
     L = LOCALES[code];
@@ -615,6 +662,11 @@ export function build() {
     out(`/${seg(code)}/galaxy/`, galaxyIndex(groups));
     out(`/${seg(code)}/privacy/`, privacyPage());
     out(`/${seg(code)}/terms/`, termsPage());
+    if (IP) {
+      out(ipPath(code), ipIndexPage());
+      if (IP.count) waSitemap.push({ path: ipPath(code), alts: ipAlts() });
+      for (const ch of IP.chapters) for (const item of ch.lessons) if (item.open) { out(ipPath(code, item.slug), ipLessonPage(ch, item)); waSitemap.push({ path: ipPath(code, item.slug), alts: ipAlts(item.slug) }); }
+    }
     if (WA?.count) {
       out(waPath(code), waIndexPage());
       waSitemap.push({ path: waPath(code), alts: Object.fromEntries(Object.keys(WA_ALL).filter((c) => WA_ALL[c].count).map((c) => [c, waPath(c)])) });
@@ -664,7 +716,7 @@ ${waSitemap.map(({ path, alts }) => `  <url><loc>${SITE_URL}${path}</loc>${lm(pa
   mkdirSync(new URL('../admin/data/', import.meta.url), { recursive: true });
   for (const code of Object.keys(LOCALES)) writeFileSync(new URL(`../admin/data/${code}.json`, import.meta.url), JSON.stringify(editData(code)));
   writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
-  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length, kakaotalk, whatsapp };
+  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length, kakaotalk, whatsapp, iphone };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) console.log(build());

@@ -55,7 +55,7 @@ async function main() {
   /* 1. 홈·목차 */
   await go('#/');
   const cats = await page.locator('.cat').allTextContents();
-  check('홈 카테고리 7개', cats.length === 7, cats.length);
+  check('홈 카테고리 8개(아이폰 추가)', cats.length === 8, cats.length);
   check('첫 카테고리 = 갤럭시 휴대폰 사용방법', cats[0]?.includes('갤럭시 휴대폰 사용방법'), cats[0]);
   await shot('01-home-360');
   await page.locator('.cat').first().click();
@@ -497,8 +497,8 @@ async function main() {
     const pk = await ck.newPage();
     const errsK = []; pk.on('pageerror', (e) => errsK.push(e.message));
     await pk.goto(BASE); await pk.waitForSelector('.cat-list');
-    check('카카오톡: 홈 두 번째 카테고리(노란색)', (await pk.locator('.cat-list li').nth(1).textContent()).includes('카카오톡 사용법') && await pk.locator('.cat-list li:nth-child(2) .cat.cat-5').count() === 1);
-    await pk.click('.cat-list li:nth-child(2) a'); await pk.waitForSelector('.toc__row');
+    check('카카오톡: 홈 세 번째 카테고리(노란색)', (await pk.locator('.cat-list li').nth(2).textContent()).includes('카카오톡 사용법') && await pk.locator('.cat-list li:nth-child(3) .cat.cat-5').count() === 1);
+    await pk.click('.cat-list li:nth-child(3) a'); await pk.waitForSelector('.toc__row');
     check('카카오톡: 목차 15개', (await pk.locator('.toc__row').count()) === 15);
     await pk.fill('#q', '카톡 사진 보내기'); await pk.press('#q', 'Enter'); await pk.waitForTimeout(200);
     check('카카오톡: ‘카톡 사진 보내기’ 검색', (await pk.locator('#results .lesson-row__title').first().textContent()).includes('사진'));
@@ -521,6 +521,36 @@ async function main() {
     check('카카오톡 관리자: 162개 목록', (await ad.textContent('[data-sum]')).includes('사용법 162개'));
     check('카카오톡: 화면 오류 없음', errsK.length === 0, errsK.join(' | '));
     await ck.close();
+  }
+
+  // 아이폰(국내·해외 공통): 내 아이폰 선택(저장·기종별 기능·없는 기능 흐리게), 관리자 화면(한국어·영어 편집 언어)
+  {
+    const ci = await browser.newContext({ viewport: { width: 360, height: 760 } });
+    const pi = await ci.newPage(); const errsI = []; pi.on('pageerror', (e) => errsI.push(e.message));
+    await pi.goto(BASE); await pi.waitForSelector('.cat-list');
+    check('아이폰: 국내 홈 두 번째 카테고리', (await pi.locator('.cat-list li:nth-child(2) a[href="/learn/iphone/"]').count()) === 1);
+    await pi.goto(`${BASE}learn/iphone/`); await pi.waitForSelector('[data-ip-model]');
+    await pi.selectOption('[data-ip-model]', 'se2'); await pi.waitForTimeout(100);
+    check('아이폰: 기종 고르면 기능 표시(홈 버튼)', (await pi.textContent('[data-ip-out]')).includes('홈 버튼'));
+    check('아이폰: 기종에 없는 수업은 흐리게(Face ID 설정)', await pi.locator('li.is-na:has-text("Face ID 설정하기")').count() === 1);
+    check('아이폰: SE(2세대)는 iOS 15~26만 고를 수 있음', await pi.evaluate(() => [...document.querySelectorAll('[data-ip-ios] option')].filter((o) => !o.disabled && /^\d/.test(o.value)).length) === 5);
+    await pi.reload(); await pi.waitForSelector('[data-ip-model]');
+    check('아이폰: 선택이 저장됨(새로고침 후에도)', (await pi.inputValue('[data-ip-model]')) === 'se2');
+    await pi.click('[data-ip-common]'); await pi.waitForTimeout(100);
+    check('아이폰: 공통 사용법으로 시작하면 선택 지움', (await pi.inputValue('[data-ip-model]')) === '' && (await pi.locator('li.is-na').count()) === 0);
+    await pi.selectOption('[data-ip-model]', 'unknown'); await pi.waitForTimeout(100);
+    check('아이폰: 기종을 모르면 확인 방법 펼침', await pi.evaluate(() => document.querySelector('#how-model').open));
+    check('아이폰: 360px 가로 스크롤 없음', (await pi.evaluate(() => document.documentElement.scrollWidth)) <= 360);
+    await pi.goto(`${BASE}en/iphone/`); await pi.waitForSelector('[data-ip-model]');
+    check('아이폰: 영어 첫 화면과 Apple 안내 문구', (await pi.textContent('h1')).includes('How to Use iPhone') && (await pi.textContent('.sfoot')).includes('not affiliated with, sponsored, or endorsed by Apple Inc'));
+    await pi.setViewportSize({ width: 1280, height: 900 });
+    await pi.goto(`${BASE}admin/iphone/`); await pi.waitForSelector('[data-sum]');
+    await pi.click('[data-pick="i10-text-size"]'); await pi.waitForSelector('[data-lang]');
+    check('아이폰 관리자: 440개 목록·실제 캡처 없음 표시', (await pi.textContent('[data-sum]')).includes('사용법 440개') && (await pi.locator('.kshot--empty').count()) >= 1);
+    await pi.selectOption('[data-lang]', 'en'); await pi.waitForTimeout(100);
+    check('아이폰 관리자: 영어 편집 언어로 바꾸면 영어 설명', (await pi.inputValue('[data-s="text"]')).includes('Settings'));
+    check('아이폰: 화면 오류 없음', errsI.length === 0, errsI.join(' | '));
+    await ci.close();
   }
 
   // WhatsApp(해외 전용): 관리자 화면·재현 화면 미리보기, 공개 전에는 해외 홈에 없음

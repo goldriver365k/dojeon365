@@ -224,3 +224,22 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 /* WhatsApp lessons card on global home (green accent, no WhatsApp branding) */
 .cat--wa { border-color: #7fd8a3; background: #f1fbf5; }
 .cat--wa h3 a { color: #0b6b3a; }
+/* 아이폰 사용법: 내 아이폰 선택·준비 중 수업 */
+.iphone-pick { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 16px; margin: 0 0 16px; }
+.iphone-pick h2 { margin-top: 0; }
+.iphone-pick__row { display: grid; gap: 6px; margin: 0 0 12px; }
+.iphone-pick__row label { font-weight: 800; }
+.iphone-pick__row select { min-height: 56px; width: 100%; padding: 0 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 1.1rem; }
+.iphone-pick__out:not(:empty) { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; margin: 0 0 12px; }
+.iphone-pick__out p { margin: 4px 0; }
+.iphone-pick__meta, .iphone-pick__region { color: var(--ink-2); font-size: .9rem; }
+.iphone-how { margin: 8px 0; }
+.iphone-how summary { min-height: 48px; display: flex; align-items: center; font-weight: 800; cursor: pointer; }
+.iphone-count { font-weight: 800; }
+.lessons .lessons__soon { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; align-items: center; overflow-wrap: anywhere; min-height: 52px; padding: 8px 12px; border-radius: 10px; border: 1.5px dashed var(--line); color: var(--ink-2); font-weight: 600; }
+.lessons .lessons__soon em { font-style: normal; font-size: .8rem; font-weight: 800; color: var(--primary); }
+.lessons li.is-na { opacity: .45; }
+.cat h3 small { font-size: .8rem; color: var(--ink-2); font-weight: 600; }
+.lessons .lessons__soon > span { margin-left: auto; }
+.lessons .lessons__soon { white-space: normal; font-size: 1rem; }
+.lessons .lessons__t { flex: 1 1 12em; min-width: 0; font-weight: 600; }
