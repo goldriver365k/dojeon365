@@ -3,8 +3,8 @@
  * 갤럭시 기본 앱(카메라·갤러리·노트·크리에이티브 스튜디오)과 Gemini를 쓴다.
  * 메뉴 이름은 갤럭시 S26 사용 설명서(One UI 9) 기준이며, 설명서에 없는 편집 메뉴는 실제 화면 확인이 필요하다.
  */
-import { app as openApp, M } from '../galaxy/helpers.js?v=20261128.1227';
-import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261128.1227';
+import { app as openApp, M } from '../galaxy/helpers.js?v=20261128.1248';
+import { L as baseL, T, S, LK, SRC, list, sheet } from '../digital/kit.js?v=20261128.1248';
 
 export const COURSE = {
   id: 'creative',
