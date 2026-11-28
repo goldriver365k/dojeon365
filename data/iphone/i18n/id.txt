@@ -1,0 +1,2237 @@
+1|Ketuk {x}.
+2|Nyalakan {x}.
+3|Matikan {x}.
+4|Pilih {x}.
+5|Gambar layar iPhone. {x}
+6|Cara Menggunakan iPhone
+7|Pelajaran Mudah Langkah demi Langkah
+8|DigiStep365 adalah situs web edukasi independen dan tidak berafiliasi, disponsori, atau didukung oleh Apple Inc. Apple dan iPhone adalah merek dagang Apple Inc.
+9|Gambar-gambar ini adalah lukisan layar iPhone. Nama dan letak menu bisa sedikit berbeda di iPhone Anda.
+10|iPhone dengan tombol Utama (SE, 8 dan sebelumnya)
+11|Pilih iPhone Anda
+12|Pilih model dan versi iOS untuk melihat pelajaran yang cocok dengan iPhone Anda lebih dulu. Anda juga bisa melewatinya dan melihat semua pelajaran.
+13|Model iPhone
+14|Versi iOS
+15|Saya tidak tahu model iPhone saya
+16|Saya tidak tahu versi iOS saya
+17|Mulai dengan pelajaran untuk semua iPhone
+18|Simpan
+19|Ubah
+20|Situs ini
+21|Bahasa Indonesia · Internasional
+22|Cara mengetahui model iPhone
+23|Cara mengetahui versi iOS
+24|Segera hadir
+25|{n}
+26|{n} dari {t} pelajaran terbit
+27|Pelajaran diterbitkan satu per satu setelah layar iPhone asli diambil dan diperiksa. Kami tidak pernah memakai layar karangan.
+28|Semua pelajaran sudah terbit. Gambar adalah lukisan layar iPhone sehingga bisa sedikit berbeda dengan iPhone Anda.
+29|Penting
+30|Model ini punya
+31|Model ini tidak punya
+32|Daftar model diperiksa
+33|{n} langkah
+34|Beranda
+35|Semua pelajaran
+36|Pilih
+37|Memilih memerlukan JavaScript. Anda tetap bisa membaca daftar pelajaran di bawah.
+38|Tombol Utama
+39|Touch ID (sidik jari)
+40|Face ID (pengenalan wajah)
+41|Tombol Tindakan
+42|Kontrol Kamera
+43|Dynamic Island
+44|Apple Intelligence (periksa bahasa dan wilayah)
+45|SOS Darurat via satelit (beberapa negara)
+46|MagSafe
+47|Port pengisian: Lightning
+48|Port pengisian: USB-C
+49|Dasar-dasar iPhone
+50|Telepon
+51|Kontak
+52|Pesan dan iMessage
+53|Papan ketik dan dikte
+54|Kamera dan video
+55|Foto dan album
+56|Menjelajah web dengan Safari
+57|Wi-Fi, Bluetooth, dan data
+58|Layar dan ukuran teks
+59|Suara, nada dering, dan pemberitahuan
+60|App Store dan app
+61|Baterai dan pengisian daya
+62|Jam, alarm, kalkulator, dan cuaca
+63|Kalender, Catatan, dan Memo Suara
+64|Face ID, Touch ID, dan keamanan
+65|Fitur untuk lansia dan aksesibilitas
+66|File, penyimpanan, dan AirDrop
+67|Akun Apple, iCloud, dan cadangan
+68|Apple Pay, Kesehatan, dan Peta
+69|Siri dan Apple Intelligence
+70|Mengatasi masalah dan iPhone hilang
+71|Menyalakan iPhone
+72|Mematikan iPhone
+73|Memulai ulang iPhone
+74|Memaksa iPhone memulai ulang
+75|Membangunkan dan membuka kunci iPhone
+76|Mengunci iPhone
+77|Kembali ke Layar Utama
+78|Belajar ketuk, sentuh lama, dan gesek
+79|Membuka app
+80|Berpindah antar-app yang terbuka
+81|Menutup app
+82|Membuka Pusat Kontrol
+83|Melihat Pusat Pemberitahuan
+84|Memahami ikon status
+85|Menggunakan tombol volume
+86|Menyalakan atau mematikan mode senyap
+87|Menggunakan tombol Tindakan
+88|Memindahkan app di Layar Utama
+89|Membuat folder app
+90|Menggunakan Perpustakaan App
+91|Mencari dari Layar Utama
+92|Menambahkan widget
+93|Mengganti wallpaper Layar Terkunci
+94|Mengetahui model iPhone Anda
+95|Mengetahui versi iOS Anda
+96|Menelepon
+97|Menjawab panggilan
+98|Menolak panggilan
+99|Mengakhiri panggilan
+100|Memakai speaker saat menelepon
+101|Membisukan suara sendiri saat menelepon
+102|Menelepon balik dari Terbaru
+103|Menambahkan favorit dan meneleponnya
+104|Mendengarkan pesan suara
+105|Memakai papan angka saat menelepon
+106|Memblokir nomor telepon
+107|Membisukan penelepon tak dikenal
+108|Melakukan panggilan konferensi
+109|Melakukan panggilan video FaceTime
+110|Menggunakan Pesan Suara Langsung
+111|Menambahkan kontak baru
+112|Menyimpan nomor dari Terbaru
+113|Mengedit kontak
+114|Menghapus kontak
+115|Mencari kontak
+116|Menambahkan foto ke kontak
+117|Membagikan kontak
+118|Mengatur kartu kontak Anda
+119|Membuat Poster Kontak
+120|Menambahkan kontak darurat
+121|Menambahkan kontak ke Favorit
+122|Menggabungkan kontak ganda
+123|Mengirim SMS
+124|Membaca pesan
+125|Membalas pesan
+126|Mengirim foto
+127|Menyimpan foto yang diterima
+128|Mengirim pesan grup
+129|Mengenal gelembung biru dan hijau
+130|Bereaksi dengan Tapback
+131|Menghapus pesan
+132|Menghapus percakapan
+133|Mengirim pesan audio
+134|Membagikan lokasi di Pesan
+135|Menyematkan percakapan
+136|Menyembunyikan peringatan percakapan
+137|Memakai kode verifikasi dari Pesan
+138|Mengedit iMessage yang terkirim
+139|Membatalkan kiriman iMessage
+140|Menyaring pengirim tak dikenal
+141|Melaporkan pesan sampah
+142|Mencari pesan
+143|Mengetik dengan papan ketik
+144|Mengganti bahasa papan ketik
+145|Menambahkan papan ketik
+146|Mengetik angka dan simbol
+147|Mendikte teks dengan suara
+148|Menambahkan emoji
+149|Memindahkan kursor
+150|Memilih teks
+151|Menyalin dan menempel
+152|Membatalkan ketikan
+153|Menyalakan atau mematikan koreksi otomatis
+154|Menggunakan penggantian teks
+155|Menggunakan papan ketik satu tangan
+156|Menulis dengan tulisan tangan
+157|Mengubah suara dan getar papan ketik
+158|Membuka Kamera
+159|Mengambil foto
+160|Membuka Kamera dari Layar Terkunci
+161|Memperbesar di Kamera
+162|Mengatur fokus dan eksposur
+163|Berswafoto
+164|Merekam video
+165|Menjeda saat merekam video
+166|Menyalakan atau mematikan lampu kilat
+167|Menggunakan mode Potret
+168|Mengambil foto panorama
+169|Menggunakan mode Malam
+170|Menggunakan pewaktu Kamera
+171|Mengambil foto beruntun
+172|Menyalakan atau mematikan Live Photos
+173|Menyalakan kisi
+174|Mengambil foto makro
+175|Merekam video gerak lambat
+176|Merekam selang waktu
+177|Merekam dalam mode Sinematik
+178|Menggunakan Gaya Fotografi
+179|Memindai kode QR dengan Kamera
+180|Menggunakan Teks Langsung di Kamera
+181|Menggunakan Kontrol Kamera
+182|Mengambil foto dengan tombol volume
+183|Mencerminkan kamera depan
+184|Mengubah kualitas video
+185|Mempertahankan pengaturan Kamera
+186|Mengganti lensa kamera
+187|Merekam video QuickTake
+188|Melihat foto
+189|Memperbesar foto
+190|Memutar video
+191|Menghapus foto
+192|Memulihkan foto yang dihapus
+193|Menandai foto sebagai favorit
+194|Membuat album
+195|Menambahkan foto ke album
+196|Membagikan foto
+197|Memotong foto
+198|Memutar foto
+199|Menyempurnakan foto otomatis
+200|Menambahkan filter ke foto
+201|Kembali ke foto asli
+202|Memangkas video
+203|Mencari foto
+204|Melihat Orang dan Hewan Peliharaan
+205|Menonton Kenangan
+206|Menyembunyikan foto
+207|Memilih beberapa foto
+208|Menemukan jepretan layar
+209|Mengangkat subjek dari foto
+210|Menggabungkan foto ganda
+211|Membuat album bersama
+212|Mencetak foto
+213|Membuka Safari
+214|Mencari di web
+215|Membuka alamat situs web
+216|Kembali ke halaman sebelumnya
+217|Membuka tab baru
+218|Menutup tab
+219|Menandai situs web
+220|Membuka penanda
+221|Menggunakan Pembaca
+222|Mengubah ukuran teks halaman web
+223|Memperbesar halaman web
+224|Menambahkan ke Daftar Bacaan
+225|Membagikan tautan
+226|Menggunakan Penelusuran Pribadi
+227|Menghapus riwayat penelusuran
+228|Mencari teks di halaman
+229|Mengunduh file
+230|Menerjemahkan halaman web
+231|Mendengarkan halaman web
+232|Menambahkan situs web ke Layar Utama
+233|Terhubung ke Wi-Fi
+234|Melupakan jaringan Wi-Fi
+235|Membagikan kata sandi Wi-Fi
+236|Terhubung ke Wi-Fi dengan kode QR
+237|Menyalakan atau mematikan data seluler
+238|Memeriksa pemakaian data seluler
+239|Menyalakan atau mematikan Mode Pesawat
+240|Menyalakan Bluetooth
+241|Memasangkan headphone Bluetooth
+242|Melepas pasangan perangkat Bluetooth
+243|Menghubungkan AirPods
+244|Menyalakan Hotspot Pribadi
+245|Menggunakan Mode Data Rendah
+246|Menyalakan atau mematikan roaming data
+247|Menambahkan eSIM
+248|Mengatur ulang pengaturan jaringan
+249|Menghubungkan mobil lewat Bluetooth
+250|Membaca tag NFC
+251|Memperbesar teks
+252|Menebalkan teks
+253|Menggunakan Zoom Layar
+254|Mengatur kecerahan
+255|Menyalakan atau mematikan kecerahan otomatis
+256|Menggunakan Mode Gelap
+257|Menggunakan Night Shift
+258|Menyalakan atau mematikan True Tone
+259|Mengubah waktu Kunci Otomatis
+260|Menggunakan Angkat untuk Membangunkan
+261|Menyalakan atau mematikan layar Selalu Menyala
+262|Mengganti wallpaper
+263|Mengatur ukuran teks untuk satu app
+264|Memperbesar ikon Layar Utama
+265|Mengurangi gerakan
+266|Menambah kontras
+267|Menyalakan bentuk tombol
+268|Menggunakan filter warna
+269|Mengurangi titik putih
+270|Mengunci orientasi layar
+271|Mengeraskan nada dering
+272|Mengganti nada dering
+273|Menyalakan atau mematikan getar
+274|Mengatur nada dering untuk kontak
+275|Mengganti nada pesan
+276|Menyalakan atau mematikan pemberitahuan app
+277|Menyembunyikan pratinjau pemberitahuan
+278|Menggunakan Jangan Ganggu
+279|Menyalakan fokus Tidur
+280|Mengizinkan panggilan dari orang tertentu
+281|Menyalakan Kilat LED untuk Peringatan
+282|Mengurangi audio headphone yang keras
+283|Mengumumkan panggilan
+284|Menyalakan Audio Mono
+285|Menggunakan Pengenalan Suara
+286|Memasang app
+287|Mencari di App Store
+288|Memperbarui app
+289|Menyalakan pembaruan app otomatis
+290|Menghapus app
+291|Menghapus app dari Layar Utama
+292|Membongkar app (data tetap)
+293|Mengunduh ulang app
+294|Mengubah izin app
+295|Memeriksa atau membatalkan langganan
+296|Melihat riwayat pembelian
+297|Memeriksa Durasi Layar
+298|Mengatur batas app
+299|Mengunci app
+300|Menyembunyikan app
+301|Mengisi daya iPhone
+302|Menampilkan persentase baterai
+303|Menyalakan Mode Daya Rendah
+304|Memeriksa kesehatan baterai
+305|Melihat pemakaian baterai per app
+306|Mengisi daya nirkabel
+307|Mengisi daya dengan MagSafe
+308|Menggunakan Pengisian Daya Baterai yang Dioptimalkan
+309|Mengatur batas pengisian daya
+310|Mengisi daya iPhone dengan cepat
+311|Mengisi daya dengan USB-C
+312|Mengisi daya dengan kabel Lightning
+313|Menambahkan widget baterai
+314|Tips menghemat baterai
+315|Mengisi daya perangkat lain dari iPhone
+316|Mengatur alarm
+317|Menghapus alarm
+318|Mengganti suara alarm
+319|Menunda alarm
+320|Menggunakan pewaktu
+321|Menggunakan stopwatch
+322|Melihat jam dunia
+323|Mengatur jadwal tidur
+324|Menyalakan senter
+325|Menggunakan Kalkulator
+326|Melihat riwayat Kalkulator
+327|Mengonversi satuan di Kalkulator
+328|Melihat cuaca
+329|Menambahkan kota di Cuaca
+330|Menerima peringatan cuaca
+331|Menambahkan acara ke kalender
+332|Menerima peringatan acara
+333|Mengedit acara
+334|Menghapus acara
+335|Membuat acara berulang
+336|Mengubah tampilan kalender
+337|Menampilkan hari libur
+338|Membuat catatan
+339|Membuat daftar periksa
+340|Menambahkan foto ke catatan
+341|Memindai dokumen di Catatan
+342|Mengunci catatan
+343|Menyematkan catatan
+344|Membagikan catatan
+345|Menghapus dan memulihkan catatan
+346|Merekam memo suara
+347|Memutar rekaman
+348|Mengganti nama rekaman
+349|Membagikan rekaman
+350|Membuat pengingat
+351|Mengatur kode sandi
+352|Mengubah kode sandi
+353|Mengatur Face ID
+354|Menggunakan Face ID dengan masker
+355|Mengatur penampilan alternatif
+356|Mengatur Touch ID
+357|Menambahkan sidik jari lain
+358|Menggunakan Face ID di app
+359|Melihat kata sandi tersimpan
+360|Menggunakan Isi Otomatis kata sandi
+361|Memeriksa autentikasi dua faktor
+362|Menggunakan Pemeriksaan Keamanan
+363|Menyalakan Perlindungan Perangkat Dicuri
+364|Memilih yang tersedia saat terkunci
+365|Menghapus data setelah 10 kali salah kode sandi
+366|Memeriksa akses lokasi app
+367|Mematikan pelacakan app
+368|Melihat Laporan Privasi App
+369|Memperbarui iOS
+370|Menghindari penipuan lewat telepon dan SMS
+371|Menggunakan Zoom untuk memperbesar layar
+372|Menggunakan Kaca Pembesar
+373|Menggunakan Ucapkan Layar
+374|Menggunakan Ucapkan Pilihan
+375|Menyalakan atau mematikan VoiceOver
+376|Belajar gerakan dasar VoiceOver
+377|Menggunakan AssistiveTouch
+378|Mengatur Akses Bantuan
+379|Keluar dari Akses Bantuan
+380|Mengatur Pintasan Aksesibilitas
+381|Menggunakan Ketuk Belakang
+382|Menggunakan Akomodasi Sentuh
+383|Mengubah durasi Haptic Touch
+384|Menggunakan Jangkauan
+385|Menggunakan Teks Langsung (takarir)
+386|Memasangkan alat bantu dengar
+387|Menggunakan Dengar Langsung
+388|Menggunakan panggilan RTT
+389|Membuat Suara Pribadi
+390|Menggunakan Ucapan Langsung
+391|Menggunakan Kontrol Suara
+392|Menggunakan Pelacakan Mata
+393|Memutar Suara Latar
+394|Mengatur rute audio panggilan
+395|Menjawab panggilan otomatis
+396|Mengatur kecepatan klik tombol samping
+397|Memperbesar huruf papan ketik
+398|Menggunakan Mode Deteksi
+399|Menggunakan Akses Terpandu
+400|Mengatur aksesibilitas saat memulai
+401|Memeriksa penyimpanan iPhone
+402|Mengosongkan penyimpanan
+403|Menggunakan app File
+404|Menemukan file unduhan
+405|Menyimpan file ke File
+406|Membuka PDF
+407|Menandatangani PDF
+408|Mengganti nama file
+409|Menghapus file
+410|Mengekstrak file zip
+411|Menghubungkan flashdisk USB
+412|Mengirim foto dengan AirDrop
+413|Mengatur penerimaan AirDrop
+414|Berbagi kontak dengan NameDrop
+415|Mengambil jepretan layar
+416|Mengambil jepretan satu halaman penuh
+417|Merekam layar
+418|Mencoret jepretan layar
+419|Mencetak dari iPhone
+420|Memindahkan foto ke komputer
+421|Membuat Akun Apple
+422|Masuk dengan Akun Apple
+423|Mengubah kata sandi Akun Apple
+424|Jika lupa kata sandi Akun Apple
+425|Menambahkan kontak pemulihan
+426|Menambahkan Kontak Warisan
+427|Memeriksa penyimpanan iCloud
+428|Menyalakan Foto iCloud
+429|Mencadangkan dengan iCloud
+430|Mencadangkan dengan komputer
+431|Memulihkan dari cadangan
+432|Pindah ke iPhone baru
+433|Menyelaraskan kontak dan kalender dengan iCloud
+434|Mengatur Berbagi Keluarga
+435|Menggunakan Minta untuk Membeli
+436|Mengubah metode pembayaran
+437|Mengubah nomor telepon tepercaya
+438|Keluar dari Akun Apple
+439|Mengenal iCloud+
+440|Menghapus iPhone
+441|Menambahkan kartu ke Apple Pay
+442|Membayar di toko dengan Apple Pay
+443|Menggunakan kartu transportasi
+444|Menambahkan tiket ke Dompet
+445|Menghapus kartu dari Apple Pay
+446|Mengatur ID Medis
+447|Melihat jumlah langkah
+448|Menerima pengingat obat
+449|Mengenal Pendeteksian Jatuh (Apple Watch)
+450|Membagikan data kesehatan dengan keluarga
+451|Menerima peringatan kestabilan berjalan
+452|Mencari tempat di Peta
+453|Mendapatkan petunjuk arah
+454|Melihat rute transportasi umum
+455|Membagikan perkiraan waktu tiba
+456|Mengunduh peta offline
+457|Menemukan iPhone dengan Lacak
+458|Membagikan lokasi dengan keluarga
+459|Menemukan barang dengan AirTag
+460|Menggunakan Check In
+461|Menyalakan Siri
+462|Berbicara dengan Siri
+463|Memanggil Siri dengan tombol
+464|Mengetik ke Siri
+465|Menelepon dengan Siri
+466|Mengirim pesan dengan Siri
+467|Mengatur alarm dengan Siri
+468|Mengatur pewaktu dengan Siri
+469|Bertanya cuaca ke Siri
+470|Membuka app dengan Siri
+471|Membuat pengingat dengan Siri
+472|Memutar musik dengan Siri
+473|Menyalakan senter dengan Siri
+474|Mengubah suara Siri
+475|Mengubah bahasa Siri
+476|Mengizinkan Siri saat terkunci
+477|Mengumumkan pemberitahuan
+478|Menghapus riwayat Siri
+479|Membuat pintasan
+480|Menyalakan Apple Intelligence
+481|Menggunakan Alat Tulis
+482|Meringkas teks
+483|Melihat ringkasan pemberitahuan
+484|Menggunakan Bersihkan di Foto
+485|Membuat gambar dengan Image Playground
+486|Membuat Genmoji
+487|Menggunakan Kecerdasan Visual
+488|Menggunakan ekstensi ChatGPT
+489|Menggunakan Terjemahan Langsung
+490|Mengenal privasi Apple Intelligence
+491|Memahami SOS Darurat
+492|Memeriksa pengaturan SOS Darurat
+493|Mengenal SOS Darurat via satelit
+494|Menandai iPhone sebagai hilang
+495|Menghapus iPhone hilang dari jauh
+496|Jika layar macet
+497|Jika iPhone tidak mau mengisi daya
+498|Jika tidak ada suara
+499|Jika Wi-Fi tidak berfungsi
+500|Jika penyimpanan penuh
+501|Jika app terus menutup sendiri
+502|Jika lupa kode sandi
+503|Jika iPhone bilang tidak tersedia
+504|Jika iPhone terkena air
+505|Jika iPhone panas
+506|Jika layar retak
+507|Memesan perbaikan dengan app Dukungan Apple
+508|Mengatur ulang semua pengaturan
+509|Jika iPhone bilang tidak ada SIM
+510|Jika tidak bisa menelepon
+511|Menghapus akan menghilangkan semua foto, kontak, dan app. Pastikan Anda sudah punya cadangan.
+512|Keluar atau mengganti Akun Apple dapat menghapus foto dan kontak iCloud dari iPhone ini.
+513|Foto yang dihapus hilang selamanya setelah 30 hari.
+514|Biarkan Wi-Fi dan pengisi daya tersambung selama mencadangkan atau memulihkan.
+515|Memulihkan akan mengganti isi iPhone saat ini dengan cadangan.
+516|Pembayaran memakai uang sungguhan. Jangan ketuk Bayar saat berlatih.
+517|Bagikan lokasi hanya kepada keluarga yang Anda percayai.
+518|Jangan pernah menekan tombol untuk berlatih. Ini benar-benar menelepon layanan darurat.
+519|Menghapus dari jauh akan menghapus semua isi iPhone.
+520|Tekan dan tahan tombol samping di sebelah kanan.
+521|Saat logo Apple muncul, lepaskan.
+522|Tunggu sampai Layar Terkunci muncul.
+523|Tekan dan tahan tombol samping bersama salah satu tombol volume.
+524|Seret penggeser mati ke kanan.
+525|Tunggu sampai layar gelap.
+526|Tekan dan tahan tombol samping.
+527|Pertama, matikan iPhone.
+528|Tunggu sekitar 30 detik.
+529|Tekan dan tahan tombol samping sampai logo Apple muncul.
+530|Tekan lalu cepat lepaskan tombol volume naik.
+531|Tekan lalu cepat lepaskan tombol volume turun.
+532|Lepaskan saat logo Apple muncul.
+533|Ketuk layar atau tekan tombol samping.
+534|Pegang iPhone di depan wajah dan lihat layarnya.
+535|Gesek ke atas dari bawah layar.
+536|Tekan tombol Utama.
+537|Letakkan jari yang terdaftar di Touch ID.
+538|Tekan tombol samping sekali.
+539|Layar mati dan iPhone terkunci.
+540|Gesek ke atas dari tepi bawah layar.
+541|Sekarang Anda melihat Layar Utama.
+542|Tekan tombol Utama bundar di bawah layar.
+543|Ketuk: sentuh layar sekali dengan ringan.
+544|Sentuh lama: biarkan jari di layar sebentar.
+545|Gesek: geser jari di atas layar.
+546|Di Layar Utama, ketuk app yang Anda inginkan.
+547|App terbuka.
+548|Gesek ke atas dari bawah dan berhenti di tengah.
+549|Gesek ke kiri atau kanan untuk melihat app.
+550|Ketuk app yang Anda inginkan.
+551|Tekan tombol Utama dua kali.
+552|Gesek ke atas app yang ingin ditutup.
+553|Gesek ke bawah dari pojok kanan atas.
+554|Pusat Kontrol terbuka. Gesek ke atas untuk menutupnya.
+555|Pusat Kontrol terbuka. Tekan tombol Utama untuk menutupnya.
+556|Gesek ke bawah dari tengah atas layar.
+557|Ketuk pemberitahuan untuk membukanya.
+558|Gesek ke atas untuk menutup.
+559|Bentuk baterai di kanan atas menunjukkan sisa baterai.
+560|Bentuk kipas berarti Anda terhubung ke Wi-Fi.
+561|4 batang menunjukkan kekuatan sinyal seluler.
+562|Gesek ke bawah dari kanan atas untuk membuka Pusat Kontrol.
+563|Tekan tombol atas di kiri untuk menaikkan volume.
+564|Tekan tombol bawah untuk menurunkan volume.
+565|Buka Pusat Kontrol.
+566|Ketuk tombol Mode Senyap berbentuk lonceng.
+567|Geser sakelar Dering/Senyap di sisi kiri ke bawah.
+568|Warna oranye berarti senyap. Geser ke atas untuk menyalakan suara lagi.
+569|Gesek untuk memilih fungsi, misalnya Senter.
+570|Tekan dan tahan tombol Tindakan untuk memakainya.
+571|Sentuh lama app.
+572|Saat app bergoyang, seret app ke tempat baru.
+573|Ketuk Selesai di kanan atas.
+574|Sentuh lama area kosong di Layar Utama.
+575|Seret satu app ke atas app lain.
+576|Untuk mengganti nama folder, sentuh lama namanya.
+577|Terus gesek ke kiri di Layar Utama.
+578|Ketuk kolom pencarian di atas.
+579|Ketik nama app.
+580|Gesek ke bawah dari tengah Layar Utama.
+581|Ketik nama app atau kontak.
+582|Ketuk hasilnya.
+583|Ketuk Edit di kiri atas.
+584|Sentuh lama Layar Terkunci.
+585|Nama Model menunjukkan model iPhone Anda.
+586|Angka di samping Versi iOS adalah versi iOS Anda.
+587|Ketuk app Telepon yang hijau.
+588|Ketuk Papan Angka di bawah.
+589|Ketik nomor telepon.
+590|Ketuk tombol panggil hijau.
+591|Saat ada panggilan masuk, ketuk tombol hijau.
+592|Jika iPhone terkunci, seret penggeser untuk menjawab.
+593|Saat ada panggilan masuk, ketuk tombol merah Tolak.
+594|Jika iPhone terkunci, tekan tombol samping dua kali dengan cepat.
+595|Di layar panggilan, ketuk tombol merah.
+596|Saat menelepon, ketuk Speaker.
+597|Ketuk lagi untuk memakai pengeras suara telinga.
+598|Lihat layar panggilan.
+599|Ketuk lagi agar lawan bicara bisa mendengar Anda.
+600|Ketuk app Telepon.
+601|Ketuk Terbaru di bawah.
+602|Ketuk nama orang yang ingin Anda telepon balik.
+603|Ketuk Favorit di bawah.
+604|Ketuk orang tersebut.
+605|Lain kali, cukup ketuk namanya untuk menelepon.
+606|Ketuk Pesan Suara di kanan bawah.
+607|Ketuk sebuah pesan.
+608|Ketuk Putar.
+609|Saat menelepon, ketuk Papan Angka.
+610|Ketuk angka yang diminta.
+611|Ketuk Sembunyikan untuk kembali ke layar panggilan.
+612|Di Telepon, ketuk Terbaru.
+613|Ketuk tombol info di samping nomor.
+614|Ketuk Blokir Penelepon Ini di bawah.
+615|Ketuk Blokir Kontak untuk konfirmasi.
+616|Panggilan dari nomor yang tidak ada di Kontak masuk ke pesan suara tanpa berdering.
+617|Mulai panggilan dengan orang pertama.
+618|Ketuk orang kedua.
+619|Ketuk app FaceTime.
+620|Ketik nama orangnya.
+621|Ketuk tombol FaceTime hijau.
+622|Jika Anda tidak sempat menjawab, pesannya muncul sebagai teks di layar.
+623|Ketuk app Kontak.
+624|Ketuk ＋ di kanan atas.
+625|Ketik nama.
+626|Ketik nomor telepon.
+627|Ketuk ⓘ di samping nomor.
+628|Di Kontak, ketuk orang tersebut.
+629|Ketuk Edit di kanan atas.
+630|Ubah datanya.
+631|Ketuk Hapus Kontak di bawah.
+632|Ketuk Hapus Kontak sekali lagi.
+633|Buka Kontak.
+634|Ketuk kolom Cari di atas.
+635|Ketuk sebuah foto.
+636|Ketuk kontak yang ingin dikirim.
+637|Ketik nama penerima. Ketuk tombol Kirim.
+638|Ketuk Kartu Saya di atas.
+639|Periksa nama dan nomor telepon Anda.
+640|Ketuk Foto. Anda bisa memilih foto Anda.
+641|Ketuk foto Anda di kanan atas.
+642|Ketuk Duplikat Ditemukan di atas.
+643|Ketuk app Pesan yang hijau.
+644|Ketuk tombol tulis di kanan atas.
+645|Ketik nama atau nomor.
+646|Ketik pesan Anda di kotak bawah.
+647|Ketuk tombol panah ke atas untuk mengirim.
+648|Ketuk percakapan yang ada titik birunya.
+649|Baca pesan baru.
+650|Buka percakapan.
+651|Ketuk kolom teks di bawah.
+652|Ketik balasan Anda.
+653|Ketuk panah ke atas.
+654|Ketuk ＋ di samping kolom teks.
+655|Ketuk fotonya.
+656|Ketuk panah ke atas untuk mengirim.
+657|Ketuk foto yang Anda terima.
+658|Ketuk tombol Bagikan.
+659|Ketuk Tulis.
+660|Tambahkan orang satu per satu.
+661|Ketik pesan Anda.
+662|Gelembung biru adalah iMessage yang dikirim lewat internet (antarperangkat Apple).
+663|Gelembung hijau adalah SMS biasa. Tarif operator Anda berlaku.
+664|Ketuk percakapan.
+665|Sentuh lama gelembung pesan.
+666|Ketuk hati atau jempol.
+667|Sentuh lama gelembung pesan.
+668|Ketuk tombol tempat sampah.
+669|Gesek ke kiri pada percakapan.
+670|Ketuk Hapus yang merah.
+671|Ketuk ＋ di kiri.
+672|Bicaralah. Suara Anda direkam.
+673|Ketuk tombol Kirim.
+674|Gesek ke kanan pada percakapan.
+675|Ketuk tombol pin kuning.
+676|Ketuk tombol lonceng ungu.
+677|Saat kode tiba, kode muncul di atas papan ketik.
+678|Ketuk kode untuk mengisinya.
+679|Jangan pernah memberi tahu kode Anda kepada siapa pun.
+680|Sentuh lama gelembung biru.
+681|Perbaiki teksnya. Ketuk tanda centang biru. Bisa dalam 15 menit.
+682|Ketuk Batalkan Kiriman. Bisa dalam 2 menit.
+683|Di Pesan, ketuk Filter di kiri atas untuk melihat Pengirim Tak Dikenal.
+684|Ketuk pesan dari pengirim tak dikenal.
+685|Ketuk Laporkan Sampah di bawah.
+686|Ketik kata, misalnya dokter.
+687|Ketuk kolom teks agar papan ketik muncul.
+688|Ketuk huruf satu per satu.
+689|Ketuk ⌫ untuk menghapus kesalahan.
+690|Ketuk kolom teks untuk membuka papan ketik.
+691|Ketuk tombol bola dunia di kiri bawah.
+692|Setiap ketukan mengganti papan ketik.
+693|Buka papan ketik.
+694|Ketuk 123 di kiri bawah.
+695|Ketuk angkanya. Ketuk ABC untuk kembali ke huruf.
+696|Ketuk kolom teks.
+697|Ketuk mikrofon di papan ketik.
+698|Bicaralah pelan-pelan. Kata-kata Anda muncul sebagai teks.
+699|Ketuk mikrofon lagi setelah selesai.
+700|Ketuk tombol wajah tersenyum (atau bola dunia) di kiri bawah.
+701|Ketuk emoji yang Anda inginkan.
+702|Ketuk ABC untuk kembali ke huruf.
+703|Ketuk di mana saja dalam teks untuk menaruh kursor.
+704|Sentuh lama tombol spasi.
+705|Tanpa mengangkat jari, gerakkan untuk memindahkan kursor.
+706|Ketuk dua kali kata tersebut.
+707|Seret pegangan untuk memilih lebih banyak.
+708|Sentuh lama teksnya.
+709|Sentuh lama tempat Anda ingin menempel.
+710|Gesek ke kiri dengan tiga jari untuk membatalkan.
+711|Anda juga bisa mengguncang iPhone.
+712|Ketik frasa lengkap dan singkatannya.
+713|Ketuk Simpan di kanan atas.
+714|Sentuh lama tombol bola dunia atau emoji.
+715|Ketuk ikon papan ketik di sisi kanan.
+716|Ketuk app Kamera.
+717|Kamera terbuka.
+718|Buka Kamera.
+719|Pastikan Foto terpilih.
+720|Arahkan ke yang ingin Anda foto.
+721|Ketuk tombol rana putih.
+722|Lihat Layar Terkunci.
+723|Gesek ke kiri di layar untuk membuka Kamera.
+724|Atau sentuh lama tombol Kamera di kanan bawah.
+725|Rentangkan dua jari di layar Kamera.
+726|Ketuk rana untuk mengambil foto.
+727|Ketuk tempat yang ingin difokuskan.
+728|Seret matahari kuning ke atas atau ke bawah untuk mengubah kecerahan.
+729|Sentuh lama untuk mengunci fokus (Kunci AE/AF).
+730|Ketuk tombol ganti kamera.
+731|Posisikan wajah Anda di layar.
+732|Ketuk rana.
+733|Di Kamera, ketuk Video.
+734|Ketuk tombol merah untuk mulai.
+735|Ketuk kotak merah untuk berhenti.
+736|Ketuk tombol Rekam merah.
+737|Untuk menjeda, ketuk tombol jeda di kiri (iOS 18 atau lebih baru).
+738|Ketuk Berhenti setelah selesai.
+739|Ketuk ⌃ di tengah atas.
+740|Ketuk Lampu Kilat (gambar petir).
+741|Pilih Mati, Nyala, atau Otomatis.
+742|Ketuk Potret.
+743|Tetap dalam jarak 2,5 meter. Saat Cahaya Alami menjadi kuning, Anda siap.
+744|Ketuk tombol rana putih.
+745|Ketuk Pano.
+746|Ketuk tombol rana.
+747|Gerakkan iPhone perlahan ke samping mengikuti panah.
+748|Ketuk tombol rana lagi untuk selesai.
+749|Di tempat gelap, ikon bulan kuning menyala sendiri.
+750|Tahan iPhone diam beberapa detik.
+751|Ketuk Pewaktu.
+752|Ketuk tombol rana. Foto diambil setelah 10 detik.
+753|Geser tombol rana ke kiri.
+754|Tetap tahan.
+755|Angkat jari untuk berhenti.
+756|Di Foto, Anda bisa memilih foto favorit.
+757|Ketuk tombol Live bundar di kanan atas.
+758|Jika dicoret, artinya mati.
+759|Muncul garis agar foto lebih mudah lurus.
+760|Dekati objek hingga 2 sentimeter (model Pro).
+761|Ikon bunga berarti Makro menyala.
+762|Ketuk Slo-mo.
+763|Ketuk tombol Rekam.
+764|Ketuk Selang Waktu.
+765|Letakkan iPhone di dudukan agar tidak bergerak.
+766|Ketuk Sinematik.
+767|Ketuk seseorang untuk memfokuskannya. Latar menjadi buram.
+768|Ketuk Gaya.
+769|Gesek untuk memilih tampilan, misalnya Hangat.
+770|Arahkan kamera ke kode QR.
+771|Ketuk tautan yang muncul.
+772|Periksa alamatnya sebelum membuka kode QR yang tidak dikenal.
+773|Arahkan kamera ke teks.
+774|Ketuk tombol teks di kanan bawah.
+775|Klik Kontrol Kamera di kanan bawah untuk membuka Kamera (iPhone 16 dan lebih baru).
+776|Klik lagi untuk mengambil foto.
+777|Tekan tombol dengan ringan dua kali.
+778|Geser jari di tombol untuk memperbesar.
+779|Tekan salah satu tombol volume untuk mengambil foto.
+780|Tekan dan tahan untuk merekam video.
+781|Swafoto disimpan seperti yang Anda lihat di cermin.
+782|Kualitas lebih tinggi memakai lebih banyak ruang.
+783|Ketuk 0.5 untuk tampilan lebih lebar (Ultra Wide).
+784|Ketuk 2 untuk mendekat (Telefoto).
+785|Sentuh lama sebuah angka.
+786|Geser ke samping untuk memperbesar sesuka hati.
+787|Di mode Foto, sentuh lama tombol rana.
+788|Lepaskan untuk berhenti merekam.
+789|Untuk terus merekam, geser ke kanan sampai ke gembok.
+790|Ketuk app Foto.
+791|Gesek untuk melihat foto berikutnya.
+792|Rentangkan dua jari di foto.
+793|Cubit untuk memperkecil.
+794|Di Foto, ketuk sebuah video.
+795|Buka fotonya.
+796|Di Foto, ketuk Baru Dihapus.
+797|Buka kunci dengan Face ID atau kode sandi.
+798|Ketuk tombol hati di bawah.
+799|Anda bisa menemukannya di album Favorit.
+800|Ketuk Koleksi di bawah.
+801|Ketuk ＋ di samping Album.
+802|Ketik nama, misalnya Cucu.
+803|Ketuk tombol ••• di kanan atas.
+804|Ketuk albumnya.
+805|Ketuk cara atau kepada siapa mengirim.
+806|Ketuk Pangkas di bawah.
+807|Seret sudut-sudutnya untuk memilih bagian yang disimpan.
+808|Ketuk tombol putar di kiri atas.
+809|Ketuk Otomatis di atas.
+810|Ketuk Filter di bawah.
+811|Ketuk filter, misalnya Mono.
+812|Ketuk Kembalikan yang merah di atas.
+813|Ketuk videonya.
+814|Seret ujung bingkai kuning untuk memilih bagian yang disimpan.
+815|Ketuk tombol cari di atas.
+816|Ketik kata, misalnya pantai atau anjing.
+817|Ketuk seseorang untuk melihat foto orang itu saja.
+818|Ketuk kenangan untuk memutarnya dengan musik.
+819|Foto tersembunyi ada di Koleksi › Utilitas › Tersembunyi.
+820|Ketuk Pilih di kanan atas.
+821|Ketuk setiap foto. Anda juga bisa menyeret jari.
+822|Ketuk tombol Bagikan di kiri bawah.
+823|Di Jenis Media, ketuk Jepretan Layar.
+824|Sentuh lama orang atau benda di foto.
+825|Sentuh lama kolom pesan untuk menempel subjeknya saja.
+826|Di Utilitas, ketuk Duplikat.
+827|Ketik nama, misalnya Keluarga Kita.
+828|Pilih anggota keluarga.
+829|Periksa printernya. Ketuk Cetak.
+830|Ketuk Safari, kompas biru.
+831|Di Safari, ketuk bar alamat.
+832|Ketik yang ingin dicari.
+833|Ketuk Buka di papan ketik.
+834|Ketuk bar alamat di bawah.
+835|Ketik alamatnya, misalnya digistep365.com
+836|Ketuk tombol Buka yang biru.
+837|Ketuk ‹ di kiri bawah.
+838|Ketuk tombol Tab di kanan bawah.
+839|Ketuk ✕ pada tab yang ingin ditutup.
+840|Untuk menutup semua, sentuh lama Selesai.
+841|Ketuk tombol buku.
+842|Ketuk situs webnya.
+843|Ketuk ᴬA di kiri bar alamat.
+844|Anda hanya melihat teks, tanpa iklan.
+845|Ketuk tombol menu halaman di bar alamat.
+846|Ketuk A yang lebih besar untuk memperbesar teks.
+847|Ketuk A besar untuk memperbesar teks.
+848|Anda juga bisa merentangkan dua jari.
+849|Baca nanti dari tombol buku › kacamata.
+850|Ketuk Pribadi di bawah.
+851|Riwayat tidak disimpan di sini.
+852|Ketik kata. Kata itu disorot kuning.
+853|Sentuh lama tautan file.
+854|Temukan di File › Unduhan.
+855|Ketuk bahasanya.
+856|iPhone membacakan halaman itu.
+857|Ketuk Tambah di kanan atas.
+858|Ketuk nama jaringan.
+859|Ketik kata sandinya.
+860|Minta teman Anda mengetuk jaringan Wi-Fi Anda di iPhone mereka.
+861|Dekatkan kedua iPhone.
+862|Di iPhone Anda, ketuk Bagikan Kata Sandi.
+863|Arahkan kamera ke kode QR Wi-Fi.
+864|Ketuk pemberitahuan di atas.
+865|Gulir ke bawah untuk melihat berapa banyak data yang dipakai tiap app.
+866|Matikan sakelar agar app itu hanya memakai internet lewat Wi-Fi.
+867|Ketuk tombol pesawat.
+868|Nyalakan sakelarnya.
+869|Masukkan headphone ke mode pemasangan (lihat panduannya).
+870|Buka Pengaturan › Bluetooth.
+871|Di Perangkat Lain, ketuk headphone.
+872|Buka kunci iPhone dan buka Layar Utama.
+873|Buka wadah AirPods dan dekatkan ke iPhone.
+874|Di perangkat lain, pilih iPhone Anda di daftar Wi-Fi.
+875|Masukkan kata sandi ini di perangkat tersebut.
+876|Data di luar negeri bisa mahal. Periksa dulu paket roaming operator Anda.
+877|Ikuti operator Anda: pindai kode QR-nya atau pilih Transfer dari iPhone Terdekat.
+878|Masukkan kode sandi. Kata sandi Wi-Fi tersimpan akan dihapus.
+879|Mulai pemasangan Bluetooth di layar mobil (lihat panduan mobil).
+880|Bangunkan layar.
+881|Dekatkan bagian atas iPhone ke tag NFC.
+882|Seret penggeser ke kanan.
+883|Buka Pengaturan › Layar & Kecerahan.
+884|Seret penggeser matahari ke atas agar lebih terang.
+885|Pilih waktunya.
+886|Ketuk foto yang Anda suka.
+887|Buka app yang ingin diubah.
+888|Di Ukuran Teks, ketuk Hanya Cuaca.
+889|Seret penggeser ke atas untuk memperbesar teks.
+890|Ketuk tombol Kunci Orientasi berbentuk gembok.
+891|Buka Pengaturan › Suara & Haptik.
+892|Seret penggeser Nada Dering dan Peringatan ke kanan.
+893|Ketuk nada dering yang Anda suka.
+894|Ketuk Dapatkan di samping app.
+895|Klik dua kali tombol samping atau gunakan Face ID untuk konfirmasi.
+896|Ketuk Cari di bawah.
+897|Ketuk nama app untuk melihat detail dan rating.
+898|Buka App Store.
+899|Ketuk foto profil Anda di kanan atas.
+900|Ketuk Hapus untuk konfirmasi.
+901|Ketuk tombol awan di samping app.
+902|Ketuk nama Anda di atas.
+903|Ketuk langganan yang ingin dibatalkan.
+904|Anda bisa melihat berapa lama tiap app dipakai hari ini.
+905|Pilih jenis app yang ingin dibatasi.
+906|Atur waktu per hari.
+907|App tersembunyi ada di folder Tersembunyi di bagian bawah Perpustakaan App.
+908|Colokkan kabel ke port di bawah.
+909|Sambungkan ujung lainnya ke adaptor daya dan stopkontak.
+910|Petir di baterai berarti sedang mengisi daya.
+911|Buka Pengaturan › Baterai.
+912|Kapasitas Maksimum menunjukkan kesehatan baterai. Di bawah 80%, pertimbangkan untuk menggantinya.
+913|Gulir ke bawah untuk melihat berapa banyak baterai yang dipakai tiap app.
+914|Colokkan pengisi daya nirkabel ke stopkontak.
+915|Letakkan iPhone menghadap ke atas di tengah pengisi daya.
+916|Petir berarti sedang mengisi daya.
+917|Colokkan pengisi daya MagSafe ke stopkontak.
+918|Tempelkan pengisi daya ke punggung iPhone. Ia menempel dengan magnet.
+919|Simbol pengisian daya muncul di layar.
+920|Gunakan adaptor 20W atau lebih dengan kabel yang sesuai.
+921|Colokkan kabel ke iPhone.
+922|Dalam sekitar 30 menit, terisi kira-kira setengah.
+923|Colokkan kabel USB-C ke port di bawah.
+924|Sambungkan ujung lainnya ke adaptor dan stopkontak.
+925|Colokkan kabel Lightning ke port di bawah.
+926|Nyalakan Mode Daya Rendah saat baterai lemah.
+927|Turunkan kecerahan layar sedikit.
+928|Matikan lokasi untuk app yang tidak memerlukannya.
+929|Sambungkan iPhone dan earbud dengan kabel USB-C.
+930|Earbud terisi dari baterai iPhone.
+931|Ketuk app Jam.
+932|Ketuk Alarm di bawah.
+933|Gulir untuk mengatur jam dan menit.
+934|Gesek ke kiri pada alarm.
+935|Ketuk alarmnya.
+936|Saat alarm berbunyi, ketuk Tunda.
+937|Alarm berbunyi lagi dalam 9 menit.
+938|Anda bisa menyalakan atau mematikan Tunda saat mengedit alarm.
+939|Buka Jam › Pewaktu.
+940|Atur waktunya.
+941|Ketuk Stopwatch di bawah.
+942|Ketuk Berhenti untuk menjeda.
+943|Ketuk Jam Dunia di kiri bawah.
+944|Ketik nama kota, misalnya New York.
+945|Di Tidur | Bangun, ketuk Tanpa Alarm.
+946|Atur waktu tidur dan bangun.
+947|Ketuk tombol senter. Ketuk lagi untuk mematikannya.
+948|Gesek ke atas dari bawah untuk membuka Pusat Kontrol.
+949|Ketuk angkanya, misalnya 1, 2, 0, 0, 0.
+950|Ketuk tanda seperti ＋.
+951|Ketuk ＝ untuk melihat hasilnya.
+952|Ketuk tombol daftar di kiri atas.
+953|Anda melihat perhitungan sebelumnya.
+954|Ketuk tombol kalkulator di kiri bawah.
+955|Pilih satuannya. Ketik angka, misalnya 1 mil = 1.6 km.
+956|Ketuk app Cuaca.
+957|Lihat cuaca hari ini dan per jam.
+958|Ketuk tombol daftar di kanan bawah.
+959|Ketik nama kota di kolom pencarian.
+960|Ketik judul, misalnya Dokter.
+961|Ketuk Mulai untuk memilih tanggal dan waktu.
+962|Ketuk acaranya.
+963|Ubah yang perlu, misalnya waktunya.
+964|Ketuk Hapus Acara di bawah.
+965|Ketuk Hapus Acara sekali lagi.
+966|Ketuk < di kiri atas untuk melihat satu bulan penuh.
+967|Ketuk tanggal untuk melihat hari itu.
+968|Ketuk Kalender di bawah.
+969|Ketuk app Catatan.
+970|Ketuk tombol catatan baru di kanan bawah.
+971|Ketik catatan Anda. Tersimpan otomatis.
+972|Ketuk tombol daftar periksa.
+973|Ketik satu item. Tekan return untuk baris berikutnya.
+974|Ketuk sebuah catatan.
+975|Ketuk tombol lampirkan.
+976|Arahkan kamera ke kertas. Dipindai otomatis.
+977|Ketuk catatannya.
+978|Pilih untuk memakai kode sandi iPhone.
+979|Gesek ke kanan pada catatan.
+980|Ketuk tombol pin.
+981|Gesek ke kiri pada catatan.
+982|Ketuk tombol tempat sampah merah.
+983|Untuk memulihkannya, ketuk Baru Dihapus di Folder.
+984|Gesek ke kiri pada catatan untuk memindahkannya kembali. Bisa dalam 30 hari.
+985|Ketuk tombol merah lagi untuk berhenti.
+986|Ketuk rekamannya.
+987|Ketuk namanya.
+988|Ketik nama baru.
+989|Ketuk tombol •••.
+990|Ketuk Pengingat Baru di kiri bawah.
+991|Ketik tugasnya, misalnya Minum obat.
+992|Ketuk ⓘ di kanan.
+993|Buka Pengaturan › Face ID & Kode Sandi (atau Touch ID & Kode Sandi).
+994|Masukkan kode sandi 6 digit dua kali.
+995|Masukkan kode sandi saat ini.
+996|Masukkan kode sandi baru dua kali.
+997|Buka Pengaturan › Face ID & Kode Sandi.
+998|Masukkan wajah ke dalam lingkaran dan gerakkan kepala perlahan.
+999|Buka Pengaturan › Touch ID & Kode Sandi.
+1000|Ketuk Tambah Sidik Jari.
+1001|Sentuhkan jari ke tombol Utama berulang kali.
+1002|Anda melihat kata sandi yang tersimpan untuk situs web dan app.
+1003|Periksa bahwa Autentikasi Dua Faktor Nyala.
+1004|Ikuti langkahnya untuk memeriksa dengan siapa Anda berbagi.
+1005|Semua data dihapus setelah 10 kali salah kode sandi. Simpan cadangan.
+1006|Buka Pengaturan › Umum.
+1007|Jika ada pembaruan, ketuk Perbarui Sekarang.
+1008|Jangan ketuk tautan dari nomor tak dikenal.
+1009|Jika "keluarga" meminta uang lewat SMS, telepon mereka dulu.
+1010|Jangan pernah membagikan kode atau kata sandi.
+1011|Untuk spam, gunakan Laporkan Sampah.
+1012|Buka Pengaturan › Aksesibilitas.
+1013|Ketuk dua kali layar dengan tiga jari untuk memperbesar.
+1014|Buka app Kaca Pembesar (cari jika perlu).
+1015|Arahkan kamera ke teks.
+1016|Seret penggeser untuk memperbesar.
+1017|Buka Pengaturan › Aksesibilitas › Konten Ucapan.
+1018|Di layar mana pun, gesek ke bawah dari atas dengan dua jari.
+1019|Buka Pengaturan › Aksesibilitas › VoiceOver.
+1020|Ketuk sakelar VoiceOver.
+1021|Untuk mematikannya, pilih sakelarnya. Ketuk dua kali di mana saja untuk mengubahnya.
+1022|Ketuk sekali untuk mendengar sebuah item.
+1023|Ketuk dua kali untuk membukanya.
+1024|Gesek dengan tiga jari untuk ke halaman berikutnya.
+1025|Buka Pengaturan › Aksesibilitas › Sentuh.
+1026|Nyalakan. Muncul tombol bundar abu-abu.
+1027|Buka Pengaturan › Aksesibilitas › Akses Bantuan.
+1028|Ikuti langkahnya untuk memilih app.
+1029|Sebaiknya atur bersama orang yang membantu.
+1030|Klik tiga kali tombol samping.
+1031|Masukkan kode sandi Akses Bantuan.
+1032|Klik tiga kali tombol samping untuk menyalakan atau mematikannya.
+1033|Gesek ke bawah di tepi bawah untuk menurunkan bagian atas layar.
+1034|Buka dan tutup pintu baterai alat bantu dengar agar bisa ditemukan.
+1035|Di Pendengaran, ketuk Dengar Langsung.
+1036|Letakkan iPhone dekat orang yang bicara dan dengarkan dengan earbud.
+1037|Di tempat yang tenang, bacakan kalimat di layar dengan suara keras.
+1038|Ketik yang ingin Anda katakan. iPhone mengucapkannya untuk Anda.
+1039|Ucapkan perintah seperti "Buka Pengaturan".
+1040|Ikuti titik di layar dengan mata Anda.
+1041|Papan ketik juga menjadi lebih besar.
+1042|Arahkan ke orang, pintu, atau teks dan iPhone akan memberi tahu Anda.
+1043|Buka app yang ingin dipakai.
+1044|Saat pertama kali dinyalakan, layar Halo muncul.
+1045|Ketuk tombol Aksesibilitas.
+1046|Pilih yang Anda perlukan, misalnya Penglihatan.
+1047|Lihat ruang kosong dan berapa yang dipakai tiap app.
+1048|Batang menunjukkan apa yang paling banyak memakai ruang.
+1049|Ikuti rekomendasi untuk menghapus video besar atau pesan lama.
+1050|Ketuk sebuah folder.
+1051|Ketuk file untuk membukanya.
+1052|File yang diunduh di Safari ada di sini.
+1053|Buka file atau fotonya.
+1054|Pilih folder. Ketuk Simpan.
+1055|Ketuk file PDF.
+1056|Gesek ke atas atau ke bawah untuk membalik halaman.
+1057|Rentangkan dua jari untuk memperbesar.
+1058|Ketuk PDF-nya.
+1059|Ketuk Markah (gambar pena) di bawah.
+1060|Ketuk ＋ di kanan bawah.
+1061|Tanda tangani dengan jari.
+1062|Sentuh lama file.
+1063|Ketik nama baru. Tekan Selesai.
+1064|File yang dihapus bisa dipulihkan dari Baru Dihapus selama 30 hari.
+1065|Ketuk file .zip.
+1066|Folder muncul di tempat yang sama berisi file-filenya.
+1067|Colokkan flashdisk USB ke port pengisian daya (USB-C atau adaptor).
+1068|Di Lokasi, ketuk flashdisk USB.
+1069|Ketuk perangkat orang tersebut.
+1070|Hanya Kontak paling aman agar orang asing tidak bisa mengirimi Anda apa pun.
+1071|Buka kunci kedua iPhone.
+1072|Dekatkan bagian atas kedua iPhone.
+1073|Ketuk Bagikan untuk bertukar kontak Anda juga.
+1074|Tekan dan lepaskan tombol samping dan volume naik bersamaan.
+1075|Gambar kecil muncul di kiri bawah.
+1076|Tekan dan lepaskan tombol samping dan tombol Utama bersamaan.
+1077|Buka halaman web di Safari.
+1078|Tekan tombol samping dan volume naik bersamaan.
+1079|Ketuk gambar kecil di kiri bawah.
+1080|Ketuk Halaman Penuh di atas.
+1081|Ketuk Perekaman Layar. Mulai dalam 3 detik.
+1082|Untuk berhenti, ketuk tanda merah di atas.
+1083|Rekaman disimpan di Foto.
+1084|Pilih pena di bawah. Menulislah dengan jari.
+1085|Buka foto atau dokumennya.
+1086|Pilih printer di Wi-Fi yang sama (AirPrint).
+1087|Ketuk Cetak di kanan atas.
+1088|Sambungkan iPhone ke komputer dengan kabel.
+1089|Di iPhone, ketuk Percayai.
+1090|Masukkan kode sandi.
+1091|Di komputer, buka app Foto dan pilih Impor.
+1092|Ketuk Masuk ke iPhone di atas.
+1093|Masukkan nama dan tanggal lahir.
+1094|Pilih email dan kata sandi. Ikuti langkahnya sampai selesai.
+1095|Masukkan email Akun Apple Anda.
+1096|Masukkan kata sandi. Jika kode muncul di perangkat lain, masukkan kodenya.
+1097|Masukkan kode sandi iPhone Anda.
+1098|Masukkan kata sandi baru dua kali: 8 karakter atau lebih dengan huruf besar, huruf kecil, dan angka.
+1099|Di layar masuk, ketuk Lupa kata sandi?
+1100|Masukkan kode sandi iPhone untuk membuat kata sandi baru.
+1101|Jika tidak berhasil, minta Pemulihan Akun. Bisa memakan waktu beberapa hari.
+1102|Pilih anggota keluarga yang Anda percayai.
+1103|Pilih orang yang boleh mengakses data Anda setelah Anda meninggal.
+1104|Batang menunjukkan berapa yang dipakai Foto dan Cadangan.
+1105|Di Mac gunakan Finder. Di Windows gunakan app Perangkat Apple. Pilih iPhone Anda.
+1106|Klik Cadangkan Sekarang.
+1107|Di layar pengaturan awal, buka App & Data.
+1108|Masuk dengan Akun Apple Anda.
+1109|Ketuk cadangan terbaru.
+1110|Nyalakan iPhone baru.
+1111|Letakkan di samping iPhone lama.
+1112|Di iPhone lama, ketuk Lanjutkan.
+1113|Arahkan kamera iPhone lama ke pola biru di iPhone baru.
+1114|Masukkan kode sandi lama di iPhone baru. Dekatkan keduanya selama transfer.
+1115|Ketuk nama anak Anda.
+1116|Anda melihat metode pembayaran saat ini. Jangan tunjukkan nomor kartu kepada siapa pun.
+1117|Masukkan nomor baru. Ketik kode yang Anda terima lewat SMS.
+1118|Masukkan kata sandi Akun Apple Anda.
+1119|Pilih data yang tetap ada di iPhone ini.
+1120|Dapatkan ruang lebih dan fitur seperti Sembunyikan Email Saya. Ada biaya bulanan.
+1121|Ketuk Lanjutkan. Pastikan Anda sudah mencadangkan.
+1122|Masukkan kode sandi dan kata sandi Akun Apple untuk menghapus semuanya.
+1123|Pindai kartu dengan kamera atau masukkan secara manual.
+1124|Selesaikan verifikasi bank Anda (misalnya SMS).
+1125|Klik dua kali tombol samping.
+1126|Lihat iPhone untuk Face ID.
+1127|Dekatkan bagian atas iPhone ke mesin pembaca.
+1128|Selesai dan tanda centang berarti berhasil.
+1129|Di wilayah yang didukung, cukup dekatkan iPhone ke gerbang.
+1130|Di app atau email maskapai atau acara, ketuk Tambahkan ke Apple Wallet.
+1131|Ketuk kartunya.
+1132|Ketuk Hapus Kartu Ini di bawah.
+1133|Ketuk app Kesehatan.
+1134|Ketuk Mulai atau Edit.
+1135|Tambahkan kondisi, obat, dan golongan darah Anda.
+1136|Ringkasan menunjukkan langkah hari ini.
+1137|Ketuk Langkah untuk melihat catatan mingguan dan bulanan.
+1138|Di Telusuri, ketuk Obat.
+1139|Masukkan nama obat dan waktunya.
+1140|Apple Watch bisa mendeteksi jatuh yang keras. Jika Anda tidak merespons selama satu menit, ia menelepon layanan darurat.
+1141|Di Berbagi, ketuk Bagikan dengan Seseorang.
+1142|Pilih anggota keluarga.
+1143|Pilih yang dibagikan, misalnya Langkah.
+1144|Di Telusuri, ketuk Mobilitas.
+1145|Di Kestabilan Berjalan, ketuk Atur.
+1146|Ketuk app Peta.
+1147|Ketuk kolom pencarian.
+1148|Ketik nama tempat.
+1149|Ketik tempatnya, misalnya Stasiun Seoul.
+1150|Ketuk tombol Petunjuk Arah yang biru.
+1151|Ketuk tombol Jalan yang hijau.
+1152|Pilih tempatnya.
+1153|Ketuk Transportasi Umum (gambar bus).
+1154|Mulai petunjuk arah.
+1155|Gesek kartu ke atas. Ketuk Bagikan Waktu Tiba.
+1156|Ketuk orang yang ingin diberi tahu.
+1157|Ketuk foto Anda di samping kolom pencarian.
+1158|Pilih areanya. Ketuk Unduh.
+1159|Ketuk app Lacak.
+1160|Ketuk perangkatnya.
+1161|Di Orang, ketuk Bagikan Lokasi Saya.
+1162|Pilih berapa lama.
+1163|Di Barang, ketuk barangnya.
+1164|Ketuk Putar Suara agar AirTag berbunyi.
+1165|Ketuk Cari untuk mendapatkan panah yang menunjuk ke arahnya.
+1166|Ketuk percakapan keluarga.
+1167|Periksa tempat dan waktunya. Ketuk tombol Kirim.
+1168|Buka Pengaturan › Siri (atau Siri & Pencarian).
+1169|Ketuk Bicara dengan Siri atau Dengarkan.
+1170|Ucapkan kalimat di layar.
+1171|Ucapkan "Siri" atau "Hai Siri" (sesuai pengaturan).
+1172|Ucapkan yang Anda inginkan, misalnya "Bagaimana cuaca besok?"
+1173|Tekan dan tahan tombol samping untuk memanggil Siri.
+1174|Ketuk dua kali bagian bawah layar untuk mengetik ke Siri.
+1175|Ucapkan "Siri" atau tekan dan tahan tombol samping.
+1176|Ucapkan misalnya "Telepon Ibu".
+1177|Ucapkan "Kirim pesan ke John".
+1178|Ucapkan pesan Anda.
+1179|Ucapkan "Kirim".
+1180|Ucapkan "Bangunkan saya jam 6 pagi besok".
+1181|Ucapkan "Setel pewaktu 10 menit".
+1182|Ucapkan "Bagaimana cuaca hari ini?"
+1183|Ucapkan misalnya "Buka Kamera".
+1184|Ucapkan "Ingatkan saya minum obat jam 8 malam".
+1185|Ucapkan misalnya "Putar musik jazz" (perlu langganan musik).
+1186|Ucapkan "Nyalakan senter".
+1187|Jika mati, orang lain tidak bisa memakai Siri saat iPhone terkunci.
+1188|Ketuk lagi.
+1189|Pilih tindakan, misalnya Kirim Pesan "Saya sedang pulang".
+1190|Hanya di model yang didukung (15 Pro dan lebih baru) dan bahasa yang didukung. Tunggu sampai pengaturan selesai.
+1191|Pilih teksnya.
+1192|Pilih teks panjang atau buka halaman web.
+1193|Anda melihat poin utama dalam beberapa baris.
+1194|Beberapa pemberitahuan diringkas jadi satu baris di Layar Terkunci.
+1195|Lingkari dengan jari yang ingin Anda hapus.
+1196|Gambarkan yang Anda mau, misalnya kucing di pantai.
+1197|Pilih gaya.
+1198|Di Pesan, ketuk tombol emoji di papan ketik.
+1199|Ketuk tombol emoji berkilau di kanan atas.
+1200|Gambarkan, misalnya anjing bertopi.
+1201|Tekan dan tahan Kontrol Kamera (model yang didukung).
+1202|Arahkan ke sesuatu, misalnya bunga atau papan nama toko.
+1203|Ketuk Tanya untuk mendapat penjelasan.
+1204|Informasi pribadi bisa terkirim, jadi biarkan permintaan konfirmasi tetap menyala.
+1205|Pilih dua bahasa di atas.
+1206|Ketuk mikrofon.
+1207|Ucapkan yang ingin Anda katakan.
+1208|Terjemahan muncul sebagai teks dan suara.
+1209|Apple Intelligence memproses data di iPhone Anda bila memungkinkan.
+1210|Tugas lebih besar memakai Private Cloud Compute, yang tidak menyimpan data Anda.
+1211|SOS Darurat menelepon layanan darurat lewat tombol.
+1212|Jangan menekannya untuk berlatih — belajarlah dari gambar ini.
+1213|Lihat cara kerjanya di Pengaturan › SOS Darurat.
+1214|Periksa metode mana yang menyala: tahan atau tekan 5 kali.
+1215|Tanpa seluler atau Wi-Fi, pergilah ke luar dengan pandangan langit yang terbuka (negara dan model yang didukung).
+1216|Telepon layanan darurat. Teks Darurat via Satelit muncul.
+1217|Jawab pertanyaannya. Arahkan iPhone ke satelit seperti yang ditunjukkan.
+1218|Buka Lacak di perangkat lain atau di icloud.com/find.
+1219|Ketuk iPhone yang hilang.
+1220|Di Tandai sebagai Hilang, ketuk Aktifkan.
+1221|Masukkan nomor telepon dan pesan untuk ditampilkan di layar.
+1222|Di Lacak, ketuk iPhone yang hilang.
+1223|Ketuk Hapus Perangkat Ini di bawah.
+1224|Setelah dihapus, Anda tidak bisa melacaknya lagi. Gunakan hanya sebagai jalan terakhir.
+1225|Pertama, coba matikan dengan tombol samping.
+1226|Jika tidak mau mati, ikuti pelajaran "Memaksa memulai ulang".
+1227|Periksa kabel dan adaptor tercolok dengan kuat.
+1228|Coba stopkontak atau kabel lain.
+1229|Periksa port dengan hati-hati dari serat atau debu.
+1230|Jika tetap tidak mau mengisi, hubungi Dukungan Apple.
+1231|Periksa sakelar senyap di kiri atau lonceng di Pusat Kontrol.
+1232|Tekan tombol volume naik.
+1233|Matikan Fokus jika menyala.
+1234|Periksa apakah earbud Bluetooth terhubung.
+1235|Matikan lalu nyalakan lagi Wi-Fi di Pusat Kontrol.
+1236|Cabut router selama 30 detik. Colokkan lagi.
+1237|Mulai ulang iPhone Anda.
+1238|Jika masih gagal, lupakan jaringan dan sambungkan lagi.
+1239|Ikuti rekomendasinya.
+1240|Bongkar app besar yang tidak Anda pakai.
+1241|Pindahkan foto ke Foto iCloud atau komputer.
+1242|Tutup app sepenuhnya. Buka lagi.
+1243|Periksa pembaruan app di App Store.
+1244|Jika masih gagal, hapus app dan unduh lagi.
+1245|Setelah beberapa kali salah kode sandi, iPhone Tidak Tersedia muncul.
+1246|Ketuk Lupa Kode Sandi? di bawah.
+1247|Masukkan kata sandi Akun Apple untuk menghapus iPhone. Anda bisa memulihkan dari cadangan.
+1248|Tunggu waktu yang ditampilkan. Coba lagi.
+1249|Anda bisa memakai kode sandi lama dalam 72 jam setelah menggantinya (iOS 17 atau lebih baru).
+1250|Jika tidak ingat, gunakan Lupa Kode Sandi? untuk menghapus.
+1251|Segera keluarkan. Lap dengan kain lembut.
+1252|Ketuk-ketukkan pelan ke telapak tangan dengan port menghadap ke bawah.
+1253|Jika Cairan Terdeteksi muncul, jangan isi daya sampai kering (minimal 30 menit).
+1254|Jangan masukkan ke beras atau memakai pengering rambut.
+1255|Pindahkan dari sinar matahari atau mobil panas ke tempat teduh.
+1256|Lepas casing tebal. Hentikan pengisian sebentar.
+1257|Jika peringatan suhu muncul, tunggu sampai dingin.
+1258|Tutup kaca yang retak dengan pelindung atau selotip agar tidak tergores.
+1259|Cadangkan dulu ke iCloud atau komputer.
+1260|Pesan perbaikan dengan app Dukungan Apple atau di penyedia layanan resmi.
+1261|Pilih masalahnya.
+1262|Masukkan kode sandi. Foto dan kontak tetap ada. Hanya pengaturan yang kembali ke awal.
+1263|Nyalakan lalu matikan Mode Pesawat.
+1264|Untuk eSIM, periksa jalurnya menyala di Pengaturan › Seluler.
+1265|Jika masih gagal, hubungi operator Anda.
+1266|Pastikan Mode Pesawat mati.
+1267|Periksa batang sinyal di atas.
+1268|Periksa bahwa nomor itu tidak diblokir.
+=Settings|Pengaturan
+=Action Button|Tombol Tindakan
+=Edit Home Screen|Edit Layar Utama
+=Add Widget|Tambah Widget
+=Weather|Cuaca
+=Customize|Sesuaikan
+=Lock Screen|Layar Terkunci
+=Done|Selesai
+=General|Umum
+=About|Mengenai
+=Mute|Bisu
+=Phone|Telepon
+=Call|Panggil
+=Silence Unknown Callers|Bisukan Penelepon Tak Dikenal
+=Add|Tambah
+=Merge Calls|Gabungkan Panggilan
+=New FaceTime|FaceTime Baru
+=Live Voicemail|Pesan Suara Langsung
+=add phone|tambah telepon
+=Create New Contact|Buat Kontak Baru
+=Contacts|Kontak
+=Edit|Edit
+=Add Photo|Tambah Foto
+=Share Contact|Bagikan Kontak
+=Messages|Pesan
+=Contact Photo & Poster|Foto & Poster Kontak
+=Health|Kesehatan
+=Medical ID|ID Medis
+=add emergency contact|tambah kontak darurat
+=Add to Favorites|Tambah ke Favorit
+=Merge All|Gabungkan Semua
+=Photos|Foto
+=Save Image|Simpan Gambar
+=More|Lainnya
+=Delete Message|Hapus Pesan
+=Delete|Hapus
+=Location|Lokasi
+=Send Pin|Kirim Pin
+=Filter Unknown Senders|Saring Pengirim Tak Dikenal
+=Delete and Report Junk|Hapus dan Laporkan Sampah
+=Keyboard|Papan Ketik
+=Keyboards|Papan Ketik
+=Add New Keyboard...|Tambah Papan Ketik Baru...
+=Japanese|Jepang
+=Copy|Salin
+=Paste|Tempel
+=Undo|Urungkan
+=Auto-Correction|Koreksi Otomatis
+=Text Replacement|Penggantian Teks
+=Chinese (Simplified)|Tionghoa (Sederhana)
+=Handwriting|Tulisan Tangan
+=Sounds & Haptics|Suara & Haptik
+=Keyboard Feedback|Umpan Balik Papan Ketik
+=Haptic|Haptik
+=Camera|Kamera
+=Grid|Kisi
+=Stop|Berhenti
+=Copy All|Salin Semua
+=Mirror Front Camera|Cerminkan Kamera Depan
+=Record Video|Rekam Video
+=4K at 30 fps|4K pada 30 fps
+=Preserve Settings|Pertahankan Pengaturan
+=Camera Mode|Mode Kamera
+=Delete Photo|Hapus Foto
+=Recover|Pulihkan
+=New Album|Album Baru
+=Add to Album|Tambah ke Album
+=Revert to Original|Kembalikan ke Asli
+=Beach|Pantai
+=People & Pets|Orang & Hewan Peliharaan
+=Memories|Kenangan
+=Hide|Sembunyikan
+=Merge|Gabungkan
+=New Shared Album|Album Bersama Baru
+=Create|Buat
+=Print|Cetak
+=Add Bookmark|Tambah Penanda
+=Show Reader|Tampilkan Pembaca
+=Add to Reading List|Tambah ke Daftar Bacaan
+=Clear History and Website Data|Hapus Riwayat & Data Situs Web
+=All history|Semua riwayat
+=Clear History|Hapus Riwayat
+=Find on Page|Cari di Halaman
+=Download Linked File|Unduh File Tertaut
+=Translate|Terjemahkan
+=Listen to Page|Dengarkan Halaman
+=Add to Home Screen|Tambah ke Layar Utama
+=Join|Gabung
+=Home|Rumah
+=Forget This Network|Lupakan Jaringan Ini
+=Forget|Lupakan
+=Cellular|Seluler
+=Cellular Data|Data Seluler
+=Forget This Device|Lupakan Perangkat Ini
+=Forget Device|Lupakan Perangkat
+=Connect|Sambungkan
+=Personal Hotspot|Hotspot Pribadi
+=Allow Others to Join|Izinkan Orang Lain Bergabung
+=Cellular Data Options|Pilihan Data Seluler
+=Low Data Mode|Mode Data Rendah
+=Data Roaming|Roaming Data
+=Add eSIM|Tambah eSIM
+=Transfer or Reset iPhone|Transfer atau Atur Ulang iPhone
+=Reset|Atur Ulang
+=Reset Network Settings|Atur Ulang Pengaturan Jaringan
+=My Car|Mobil Saya
+=Display & Brightness|Layar & Kecerahan
+=Text Size|Ukuran Teks
+=Bold Text|Teks Tebal
+=Display Zoom|Zoom Layar
+=Larger Text|Teks Lebih Besar
+=Accessibility|Aksesibilitas
+=Display & Text Size|Layar & Ukuran Teks
+=Auto-Brightness|Kecerahan Otomatis
+=Dark|Gelap
+=Manually Enable Until Tomorrow|Aktifkan Manual Hingga Besok
+=Auto-Lock|Kunci Otomatis
+=Raise to Wake|Angkat untuk Membangunkan
+=Always On Display|Layar Selalu Menyala
+=Wallpaper|Wallpaper
+=Add New Wallpaper|Tambah Wallpaper Baru
+=Large|Besar
+=Motion|Gerakan
+=Reduce Motion|Kurangi Gerakan
+=Increase Contrast|Tambah Kontras
+=Button Shapes|Bentuk Tombol
+=Color Filters|Filter Warna
+=Grayscale|Skala Abu-abu
+=Reduce White Point|Kurangi Titik Putih
+=Ringtone|Nada Dering
+=Haptics|Haptik
+=Always Play|Selalu Putar
+=Text Tone|Nada Pesan
+=Chord|Akor
+=Notifications|Pemberitahuan
+=Allow Notifications|Izinkan Pemberitahuan
+=Show Previews|Tampilkan Pratinjau
+=When Unlocked|Saat Tidak Terkunci
+=Focus|Fokus
+=Do Not Disturb|Jangan Ganggu
+=Sleep|Tidur
+=Emergency Bypass|Lewati Darurat
+=Audio & Visual|Audio & Visual
+=LED Flash for Alerts|Kilat LED untuk Peringatan
+=Headphone Safety|Keamanan Headphone
+=Reduce Loud Audio|Kurangi Audio Keras
+=Announce Calls|Umumkan Panggilan
+=Always|Selalu
+=Mono Audio|Audio Mono
+=Sound Recognition|Pengenalan Suara
+=Sounds|Suara
+=Doorbell|Bel Pintu
+=Search|Cari
+=Update All|Perbarui Semua
+=App Updates|Pembaruan App
+=Remove App|Hapus App
+=Delete App|Hapus App
+=Remove from Home Screen|Hapus dari Layar Utama
+=iPhone Storage|Penyimpanan iPhone
+=Offload App|Bongkar App
+=Account|Akun
+=Purchased|Dibeli
+=Privacy & Security|Privasi & Keamanan
+=Location Services|Layanan Lokasi
+=While Using the App|Saat Menggunakan App
+=Subscriptions|Langganan
+=Cancel Subscription|Batalkan Langganan
+=Media & Purchases|Media & Pembelian
+=View Account|Lihat Akun
+=Purchase History|Riwayat Pembelian
+=Screen Time|Durasi Layar
+=See All App & Website Activity|Lihat Semua Aktivitas
+=App Limits|Batas App
+=Add Limit|Tambah Batas
+=Require Face ID|Wajibkan Face ID
+=Hide and Require Face ID|Sembunyikan dan Wajibkan Face ID
+=Battery Percentage|Persentase Baterai
+=Low Power Mode|Mode Daya Rendah
+=Battery|Baterai
+=Battery Health & Charging|Kesehatan & Pengisian Baterai
+=Charging|Pengisian Daya
+=Optimized Battery Charging|Pengisian Daya yang Dioptimalkan
+=80% Limit|Batas 80%
+=Batteries|Baterai
+=Save|Simpan
+=Clock|Jam
+=Sound|Suara
+=Chimes|Lonceng
+=Start|Mulai
+=New York, U.S.A.|New York, AS
+=Calculator|Kalkulator
+=Convert|Konversi
+=Severe Weather|Cuaca Ekstrem
+=Calendar|Kalender
+=Alert|Peringatan
+=1 hour before|1 jam sebelumnya
+=Repeat|Ulangi
+=Every Week|Setiap Minggu
+=Holidays|Hari Libur
+=Notes|Catatan
+=Choose Photo or Video|Pilih Foto atau Video
+=Scan Documents|Pindai Dokumen
+=Lock|Kunci
+=Voice Memos|Memo Suara
+=Share|Bagikan
+=Reminders|Pengingat
+=Time|Waktu
+=Turn Passcode On|Nyalakan Kode Sandi
+=Face ID & Passcode|Face ID & Kode Sandi
+=Change Passcode|Ubah Kode Sandi
+=Set Up Face ID|Atur Face ID
+=Face ID with a Mask|Face ID dengan Masker
+=Set Up an Alternate Appearance|Atur Penampilan Alternatif
+=Touch ID & Passcode|Touch ID & Kode Sandi
+=Add a Fingerprint...|Tambah Sidik Jari...
+=Password AutoFill|Isi Otomatis Kata Sandi
+=Passwords|Kata Sandi
+=AutoFill & Passwords|Isi Otomatis & Kata Sandi
+=AutoFill Passwords and Passkeys|Isi Otomatis Kata Sandi dan Kunci Sandi
+=Sign-In & Security|Masuk & Keamanan
+=Safety Check|Pemeriksaan Keamanan
+=Manage Sharing & Access|Kelola Berbagi & Akses
+=Stolen Device Protection|Perlindungan Perangkat Dicuri
+=Control Center|Pusat Kontrol
+=Erase Data|Hapus Data
+=Tracking|Pelacakan
+=Allow Apps to Request to Track|Izinkan App Meminta Pelacakan
+=App Privacy Report|Laporan Privasi App
+=Turn On App Privacy Report|Nyalakan Laporan Privasi App
+=Software Update|Pembaruan Perangkat Lunak
+=Speak Screen|Ucapkan Layar
+=Spoken Content|Konten Ucapan
+=Speak Selection|Ucapkan Pilihan
+=Speak|Ucapkan
+=Set Up Assistive Access|Atur Akses Bantuan
+=Exit Assistive Access|Keluar Akses Bantuan
+=Accessibility Shortcut|Pintasan Aksesibilitas
+=Touch|Sentuh
+=Back Tap|Ketuk Belakang
+=Double Tap|Ketuk Dua Kali
+=Screenshot|Jepretan Layar
+=Touch Accommodations|Akomodasi Sentuh
+=Slow|Lambat
+=Reachability|Jangkauan
+=Live Captions|Teks Langsung
+=Hearing Devices|Perangkat Pendengaran
+=My Hearing Aids|Alat Bantu Dengar Saya
+=Software RTT/TTY|RTT/TTY Perangkat Lunak
+=Personal Voice|Suara Pribadi
+=Create a Personal Voice|Buat Suara Pribadi
+=Live Speech|Ucapan Langsung
+=Voice Control|Kontrol Suara
+=Eye Tracking|Pelacakan Mata
+=Background Sounds|Suara Latar
+=Call Audio Routing|Rute Audio Panggilan
+=Speaker|Speaker
+=Auto-Answer Calls|Jawab Panggilan Otomatis
+=Side Button|Tombol Samping
+=Slowest|Paling Lambat
+=Magnifier|Kaca Pembesar
+=Detection Mode|Mode Deteksi
+=Guided Access|Akses Terpandu
+=Files|File
+=On My iPhone|Di iPhone Saya
+=Downloads|Unduhan
+=Save to Files|Simpan ke File
+=Add Signature|Tambah Tanda Tangan
+=Rename|Ganti Nama
+=Contacts Only|Hanya Kontak
+=Don’t have an Apple Account?|Belum punya Akun Apple?
+=Change Password|Ubah Kata Sandi
+=Account Recovery|Pemulihan Akun
+=Add Recovery Contact...|Tambah Kontak Pemulihan...
+=Legacy Contact|Kontak Warisan
+=Add Legacy Contact|Tambah Kontak Warisan
+=Manage Account Storage|Kelola Penyimpanan Akun
+=Sync this iPhone|Selaraskan iPhone ini
+=iCloud Backup|Cadangan iCloud
+=Back Up Now|Cadangkan Sekarang
+=From iCloud Backup|Dari Cadangan iCloud
+=See All|Lihat Semua
+=Family|Keluarga
+=Invite Others|Undang Orang Lain
+=Invite via Messages|Undang lewat Pesan
+=Ask to Buy|Minta untuk Membeli
+=Payment & Shipping|Pembayaran & Pengiriman
+=Add Payment Method|Tambah Metode Pembayaran
+=Add Trusted Phone Number|Tambah Nomor Tepercaya
+=Sign Out|Keluar
+=iCloud+ Features|Fitur iCloud+
+=Erase All Content and Settings|Hapus Semua Konten dan Pengaturan
+=Wallet|Dompet
+=Debit or Credit Card|Kartu Debit atau Kredit
+=Transit Card|Kartu Transportasi
+=Show When Locked|Tampilkan Saat Terkunci
+=Add Medication|Tambah Obat
+=Emergency SOS|SOS Darurat
+=Fall Detection|Pendeteksian Jatuh
+=Maps|Peta
+=Search Maps|Cari di Peta
+=Offline Maps|Peta Offline
+=Download New Map|Unduh Peta Baru
+=Devices|Perangkat
+=Play Sound|Putar Suara
+=Find My|Lacak
+=Check In|Check In
+=Press Side Button for Siri|Tekan Tombol Samping untuk Siri
+=Type to Siri|Ketik ke Siri
+=Siri Voice|Suara Siri
+=Voice 2|Suara 2
+=Language|Bahasa
+=Korean|Korea
+=Allow Siri When Locked|Izinkan Siri Saat Terkunci
+=Announce Notifications|Umumkan Pemberitahuan
+=Siri & Dictation History|Riwayat Siri & Dikte
+=Delete Siri & Dictation History|Hapus Riwayat Siri & Dikte
+=Shortcuts|Pintasan
+=Add Action|Tambah Tindakan
+=Apple Intelligence & Siri|Apple Intelligence & Siri
+=Turn On Apple Intelligence|Nyalakan Apple Intelligence
+=Writing Tools|Alat Tulis
+=Proofread|Periksa Ejaan
+=Summarize|Ringkas
+=Summarize Notifications|Ringkas Pemberitahuan
+=Clean Up|Bersihkan
+=Use ChatGPT|Gunakan ChatGPT
+=Apple Intelligence Report|Laporan Apple Intelligence
+=Emergency Contacts|Kontak Darurat
+=Apple Support|Dukungan Apple
+=Repairs & Physical Damage|Perbaikan & Kerusakan Fisik
+=Book a Repair|Pesan Perbaikan
+=Reset All Settings|Atur Ulang Semua Pengaturan
+=Tap|Ketuk
+=Hold|Tahan
+=Swipe|Gesek
+=Tuesday, September 9|Selasa, 9 September
+=Swipe up to open|Gesek ke atas untuk membuka
+=slide to power off|geser untuk mematikan
+=Cancel|Batalkan
+=Sunny|Cerah
+=High 24°  Low 15°|T: 24°  R: 15°
+=Share App|Bagikan App
+=Library|Pustaka
+=Select|Pilih
+=Collections|Koleksi
+=Not Playing|Tidak Diputar
+=Dinner at 7?|Makan malam jam 7?
+=Tomorrow 10:00|Besok 10:00
+=Apple Account, iCloud and more|Akun Apple, iCloud, dan lainnya
+=Airplane Mode|Mode Pesawat
+=On|Nyala
+=Flashlight|Senter
+=Productivity|Produktivitas
+=App Library|Perpustakaan App
+=space|spasi
+=return|return
+=Home Screen|Layar Utama
+=Date & Time|Tanggal & Waktu
+=Language & Region|Bahasa & Wilayah
+=Shut Down|Matikan
+=Name|Nama
+=iOS Version|Versi iOS
+=Model Name|Nama Model
+=Model Number|Nomor Model
+=Serial Number|Nomor Seri
+=Applications|Aplikasi
+=Capacity|Kapasitas
+=Available|Tersedia
+=Recents|Terbaru
+=mobile|seluler
+=Yesterday|Kemarin
+=unknown|tidak dikenal
+=Monday|Senin
+=Favorites|Favorit
+=Keypad|Papan Angka
+=Voicemail|Pesan Suara
+=Decline|Tolak
+=Accept|Terima
+=slide to answer|geser untuk menjawab
+=End|Akhiri
+=Message|Pesan
+=▶ Play|▶ Putar
+=message|pesan
+=call|panggil
+=mail|email
+=Send Message|Kirim Pesan
+=Block this Caller|Blokir Penelepon Ini
+=You will not receive phone calls, messages or FaceTime from people on the block list.|Anda tidak akan menerima panggilan, pesan, atau FaceTime dari orang yang diblokir.
+=Block Contact|Blokir Kontak
+=Home Screen & App Library|Layar Utama & Perpustakaan App
+=StandBy|Siaga
+=Wallet & Apple Pay|Dompet & Apple Pay
+=ALLOW PHONE TO ACCESS|IZINKAN TELEPON MENGAKSES
+=Siri & Search|Siri & Pencarian
+=Call Blocking & Identification|Pemblokiran & Identifikasi
+=Blocked Contacts|Kontak Diblokir
+=Maria  On Hold|Maria  Ditahan
+=Create Link|Buat Tautan
+=To: |Ke: 
+=To: Maria|Ke: Maria
+=“Hi, it’s John. Call me back.”|“Halo, ini John. Telepon saya balik.”
+=New Contact|Kontak Baru
+=First name|Nama depan
+=Last name|Nama belakang
+=Company|Perusahaan
+=Add to Existing Contact|Tambah ke Kontak yang Ada
+=Delete Contact|Hapus Kontak
+=New Message|Pesan Baru
+=To:|Ke:
+=Create New|Buat Baru
+=Monogram|Monogram
+=Summary|Ringkasan
+=Health Details|Detail Kesehatan
+=Duplicates|Duplikat
+=See you tomorrow|Sampai besok
+=Photo|Foto
+=Hello!|Halo!
+=Yes, see you!|Ya, sampai nanti!
+=Yes|Ya
+=Stickers|Stiker
+=Look!|Lihat!
+=1 Photo Selected|1 Foto Dipilih
+=Add to Shared Album|Tambah ke Album Bersama
+=Lunch?|Makan siang?
+=Lunch on Saturday?|Makan siang hari Sabtu?
+=Reply|Balas
+=More...|Lainnya...
+=Delete Conversation?|Hapus Percakapan?
+=📌 Pin|📌 Sematkan
+=🔕 Hide Alerts|🔕 Sembunyikan Peringatan
+=Your code is 123456. Do not share it.|Kode Anda 123456. Jangan bagikan.
+=From Messages  123456|Dari Pesan  123456
+=Undo Send|Batalkan Kiriman
+=Yes, see you at 7!|Ya, sampai jam 7!
+=Send Read Receipts|Kirim Tanda Terbaca
+=Filters|Filter
+=All Messages|Semua Pesan
+=Known Senders|Pengirim Dikenal
+=Unknown Senders|Pengirim Tak Dikenal
+=Report Junk|Laporkan Sampah
+=Maria: Doctor at 10?|Maria: Ke dokter jam 10?
+=Helo|Hallo
+=Background App Refresh|Penyegaran App di Latar
+=One-Handed Keyboard|Papan Ketik Satu Tangan
+=Off|Mati
+=Auto-Capitalization|Huruf Besar Otomatis
+=Enable Dictation|Aktifkan Dikte
+=English (US)|Inggris (AS)
+=Add New Keyboard|Tambah Papan Ketik Baru
+=English (UK)|Inggris (UK)
+=Spanish|Spanyol
+=Thank you|Terima kasih
+=Thank you 🙏|Terima kasih 🙏
+=Hello Maria|Halo Maria
+=Hello |Maria|Halo |Maria
+=Cut|Potong
+=Hello Mar|Halo Mar
+=Undo Typing|Urungkan Ketikan
+=On my way!|Sedang di jalan!
+=Phrase|Frasa
+=I’ll call you back|Nanti saya telepon balik
+=Shortcut|Pintasan
+=◧  Left|◧  Kiri
+=▣  Center|▣  Tengah
+=◨  Right|◨  Kanan
+=Silent Mode|Mode Senyap
+=RINGTONE AND ALERTS|NADA DERING DAN PERINGATAN
+=Change with Buttons|Ubah dengan Tombol
+=Reflection|Pantulan
+=Note|Not
+=System Haptics|Haptik Sistem
+=TIME-LAPSE|SELANG WAKTU
+=SLO-MO|SLO-MO
+=CINEMATIC|SINEMATIK
+=PHOTO|FOTO
+=PORTRAIT|POTRET
+=Auto|Otomatis
+=Formats|Format
+=1080p at 30 fps|1080p pada 30 fps
+=Level|Level
+=Standard|Standar
+=Warm|Hangat
+=Cool|Sejuk
+=Open “example.com”|Buka “example.com”
+=Live Text|Teks Langsung
+=Scene Detection|Deteksi Adegan
+=720p HD at 30 fps|720p HD pada 30 fps
+=1080p HD at 30 fps|1080p HD pada 30 fps
+=4K at 60 fps|4K pada 60 fps
+=Creative Controls|Kontrol Kreatif
+=Utilities|Utilitas
+=Hidden|Tersembunyi
+=Recently Deleted|Baru Dihapus
+=Videos|Video
+=Albums|Album
+=Grandkids|Cucu
+=Duplicate|Duplikat
+=Trip|Perjalanan
+=AUTO|OTOMATIS
+=Adjust|Sesuaikan
+=Crop|Pangkas
+=Original|Asli
+=Vivid|Cerah
+=Revert|Kembalikan
+=Summer 2026|Musim Panas 2026
+={n} Photos Selected|{n} Foto Dipilih
+=Media Types|Jenis Media
+=Selfies|Swafoto
+=Screenshots|Jepretan Layar
+=Screen Recordings|Rekaman Layar
+=2 Photos|2 Foto
+=Our Family|Keluarga Kita
+=Invite People|Undang Orang
+=Print Options|Pilihan Cetak
+=Printer|Printer
+=Office Printer|Printer Kantor
+=Copies|Salinan
+=Search or enter website name|Cari atau masukkan nama situs web
+=weather|cuaca
+=go|buka
+=Tabs|Tab
+=News|Berita
+=Close All Tabs|Tutup Semua Tab
+=Text only, larger and easier to read.|Hanya teks, lebih besar dan mudah dibaca.
+=Reading List|Daftar Bacaan
+=Private|Pribadi
+=2 Tabs|2 Tab
+=Search Engine|Mesin Pencari
+=Block Pop-ups|Blokir Pop-up
+=Page Zoom|Zoom Halaman
+=Last hour|Jam terakhir
+=Today|Hari ini
+=Today and yesterday|Hari ini dan kemarin
+=lesson|pelajaran
+=Open in New Tab|Buka di Tab Baru
+=Copy Link|Salin Tautan
+=English|Inggris
+=Page Menu|Menu Halaman
+=NETWORKS|JARINGAN
+=Neighbor 5G|Tetangga 5G
+=Enter the password for “Home”|Masukkan kata sandi untuk “Rumah”
+=Password|Kata Sandi
+=Cafe Free WiFi|WiFi Gratis Kafe
+=Ask to Join Networks|Minta Gabung ke Jaringan
+=Notify|Beri Tahu
+=Auto-Join|Gabung Otomatis
+=Forget Wi-Fi Network “Home”?|Lupakan Jaringan Wi-Fi “Rumah”?
+=Wi-Fi Password|Kata Sandi Wi-Fi
+=Share Password|Bagikan Kata Sandi
+=Join “Home” Network|Gabung ke Jaringan “Rumah”
+=Join Wi-Fi Network “Home”?|Gabung ke Jaringan Wi-Fi “Rumah”?
+=CELLULAR DATA|DATA SELULER
+=OTHER DEVICES|PERANGKAT LAIN
+=MY DEVICES|PERANGKAT SAYA
+=Connected|Terhubung
+=Not Connected|Tidak Terhubung
+=Disconnect|Putuskan
+=Voice & Data|Suara & Data
+=5G Auto|5G Otomatis
+=Set Up eSIM|Atur eSIM
+=Transfer From Nearby iPhone|Transfer dari iPhone Terdekat
+=Use QR Code|Gunakan Kode QR
+=Prepare for New iPhone|Siapkan untuk iPhone Baru
+=Reset Keyboard Dictionary|Atur Ulang Kamus Papan Ketik
+=Reset Home Screen Layout|Atur Ulang Tata Letak Layar Utama
+=Reset Location & Privacy|Atur Ulang Lokasi & Privasi
+=Enter Passcode|Masukkan Kode Sandi
+=APPEARANCE|TAMPILAN
+=Light|Terang
+=BRIGHTNESS|KECERAHAN
+=30 seconds|30 detik
+=DISPLAY|LAYAR
+=Default|Default
+=Apps that support Dynamic Type will adjust to your preferred reading size below.|App yang mendukung Teks Dinamis akan menyesuaikan ke ukuran baca pilihan Anda di bawah.
+=VISION|PENGLIHATAN
+=PHYSICAL AND MOTOR|FISIK DAN MOTORIK
+=HEARING|PENDENGARAN
+=Smart Invert|Balik Pintar
+=Scheduled|Terjadwal
+=Color Temperature|Suhu Warna
+=1 minute|1 menit
+=2 minutes|2 menit
+=3 minutes|3 menit
+=4 minutes|4 menit
+=5 minutes|5 menit
+=Never|Tidak Pernah
+=Show Wallpaper|Tampilkan Wallpaper
+=Show Notifications|Tampilkan Pemberitahuan
+=People|Orang
+=Astronomy|Astronomi
+=Weather Only|Hanya Cuaca
+=All Apps|Semua App
+=Small|Kecil
+=Auto-Play Message Effects|Putar Efek Pesan Otomatis
+=Red/Green Filter|Filter Merah/Hijau
+=Green/Red Filter|Filter Hijau/Merah
+=Blue/Yellow Filter|Filter Biru/Kuning
+=Color Tint|Rona Warna
+=Ringtone and Alerts|Nada Dering dan Peringatan
+=Play in Silent Mode|Putar dalam Mode Senyap
+=Don’t Play in Silent Mode|Jangan Putar dalam Mode Senyap
+=Never Play|Jangan Pernah Putar
+=Bamboo|Bambu
+=Circles|Lingkaran
+=Notification Display|Tampilan Pemberitahuan
+=Count|Jumlah
+=Scheduled Summary|Ringkasan Terjadwal
+=NOTIFICATION STYLE|GAYA PEMBERITAHUAN
+=ALERTS|PERINGATAN
+=Notification Center|Pusat Pemberitahuan
+=Banners|Banner
+=Personal|Pribadi
+=Work|Kerja
+=RINGTONES|NADA DERING
+=Headphone Accommodations|Akomodasi Headphone
+=Talk to Siri|Bicara dengan Siri
+=American|Suara 1
+=Headphones & Car|Headphone & Mobil
+=Headphones Only|Hanya Headphone
+=ALARMS|ALARM
+=Fire|Kebakaran
+=Siren|Sirene
+=HOUSEHOLD|RUMAH TANGGA
+=Door Knock|Ketukan Pintu
+=Games|Game
+=Get|Dapatkan
+=Double Click to Install|Klik Dua Kali untuk Memasang
+=Upcoming Automatic Updates|Pembaruan Otomatis Mendatang
+=Update|Perbarui
+=App Downloads|Unduhan App
+=Automatic Downloads|Unduhan Otomatis
+=Video Autoplay|Putar Otomatis Video
+=Remove “Weather”?|Hapus “Cuaca”?
+=Deleting this app will also delete its data.|Menghapus app ini juga akan menghapus datanya.
+=Delete “Weather”?|Hapus “Cuaca”?
+=This will free up storage used by the app, but keep its documents and data.|Ini akan mengosongkan ruang yang dipakai app, tetapi menyimpan dokumen dan datanya.
+=Share My Location|Bagikan Lokasi Saya
+=While Using|Saat Digunakan
+=Ask Next Time or When I Share|Tanya Lain Kali atau Saat Saya Berbagi
+=Apple Account|Akun Apple
+=Personal Information|Informasi Pribadi
+=Music Plus  ₩8,900/month|Music Plus  ₩8,900/bulan
+=Cloud Photos  ₩1,100/month|Cloud Photos  ₩1,100/bulan
+=Downtime|Waktu Henti
+=Communication Limits|Batas Komunikasi
+=Lock Screen Time Settings|Kunci Pengaturan Durasi Layar
+=Daily Average  2h 14m|Rata-rata Harian  2j 14m
+=YouTube  58m|YouTube  58m
+=Messages  31m|Pesan  31m
+=Choose Apps|Pilih App
+=Social|Sosial
+=Entertainment|Hiburan
+=1 hr 0 min|1 j 0 mnt
+=Suggestions|Saran
+=Low Power Mode temporarily reduces background activity until you can fully charge your iPhone.|Mode Daya Rendah mengurangi aktivitas latar untuk sementara hingga Anda bisa mengisi penuh iPhone.
+=Maximum Capacity|Kapasitas Maksimum
+=Peak Performance Capability|Kemampuan Performa Puncak
+=BATTERY USAGE BY APP|PEMAKAIAN BATERAI PER APP
+=Home & Lock Screen|Layar Utama & Terkunci
+=Optimized|Dioptimalkan
+=None|Tidak Ada
+=Alarms|Alarm
+=Alarm|Alarm
+=World Clock|Jam Dunia
+=Stopwatch|Stopwatch
+=Timers|Pewaktu
+=Add Alarm|Tambah Alarm
+=Label|Label
+=Snooze|Tunda
+=Edit Alarm|Edit Alarm
+=0 hours|0 jam
+=0 sec|0 dtk
+=Lap|Putaran
+=Choose a City|Pilih Kota
+=Sleep | Wake Up|Tidur | Bangun
+=No Alarm|Tanpa Alarm
+=Full Schedule|Jadwal Lengkap
+=Bedtime  10:30 PM|Waktu Tidur  22.30
+=Wake Up  6:30 AM|Bangun  06.30
+=History|Riwayat
+=Basic|Dasar
+=Scientific|Ilmiah
+=Math Notes|Catatan Matematika
+=Edit List|Edit Daftar
+=Units|Satuan
+=Next-Hour Precipitation|Hujan Satu Jam ke Depan
+=September|September
+=Calendars|Kalender
+=Inbox|Kotak Masuk
+=New Event|Acara Baru
+=Title|Judul
+=Doctor|Dokter
+=Starts|Mulai
+=Sep 10  10:00 AM|10 Sep  10.00
+=Ends|Selesai
+=Doctor  10:00|Dokter  10.00
+=Event Details|Detail Acara
+=Edit Event|Edit Acara
+=15 minutes before|15 menit sebelumnya
+=1 day before|1 hari sebelumnya
+=Sep 10  11:00 AM|10 Sep  11.00
+=Delete Event|Hapus Acara
+=Exercise|Olahraga
+=Sep 10  7:00 AM|10 Sep  07.00
+=Every Day|Setiap Hari
+=Every Month|Setiap Bulan
+=Every Year|Setiap Tahun
+=Birthdays|Ulang Tahun
+=Shopping list|Daftar belanja
+=Doctor 10:00|Dokter 10.00
+=Buy milk and eggs|Beli susu dan telur
+=Shopping|Belanja
+=○ Milk|○ Susu
+=○ Eggs|○ Telur
+=Garden|Kebun
+=Take Photo or Video|Ambil Foto atau Video
+=Papers|Dokumen
+=Scan|Pindai
+=Bank memo|Catatan bank
+=Pin|Sematkan
+=Lock Note|Kunci Catatan
+=Use iPhone Passcode|Gunakan Kode Sandi iPhone
+=Trip plan|Rencana perjalanan
+=Collaborate|Berkolaborasi
+=Old list|Daftar lama
+=Folders|Folder
+=All Recordings|Semua Rekaman
+=New Recording  0:12|Rekaman Baru  0:12
+=Doctor advice|Nasihat dokter
+=Doctor advice  0:12|Nasihat dokter  0:12
+=Edit Recording|Edit Rekaman
+=＋ New Reminder|＋ Pengingat Baru
+=○ Take medicine|○ Minum obat
+=○ Take medicine  ⓘ|○ Minum obat  ⓘ
+=Details|Detail
+=Date|Tanggal
+=USE FACE ID FOR|GUNAKAN FACE ID UNTUK
+=iPhone Unlock|Buka Kunci iPhone
+=Turn Passcode Off|Matikan Kode Sandi
+=FINGERPRINTS|SIDIK JARI
+=USE TOUCH ID FOR|GUNAKAN TOUCH ID UNTUK
+=Finger 1|Jari 1
+=All|Semua
+=Passkeys|Kunci Sandi
+=AUTOFILL FROM|ISI OTOMATIS DARI
+=Email & Phone Numbers|Email & Nomor Telepon
+=Two-Factor Authentication|Autentikasi Dua Faktor
+=Emergency Reset|Atur Ulang Darurat
+=Information|Informasi
+=ALLOW ACCESS WHEN LOCKED|IZINKAN AKSES SAAT TERKUNCI
+=This update includes bug fixes and security updates.|Pembaruan ini mencakup perbaikan bug dan pembaruan keamanan.
+=Update Now|Perbarui Sekarang
+=Your parcel is waiting. Pay here: parcel-check.example|Paket Anda menunggu. Bayar di sini: parcel-check.example
+=Mom, I broke my phone. Please send money now.|Bu, HP-ku rusak. Tolong kirim uang sekarang.
+=GENERAL|UMUM
+=Assistive Access|Akses Bantuan
+=Double-tap three fingers to zoom. Drag three fingers to move around the screen.|Ketuk dua kali dengan tiga jari untuk memperbesar. Seret tiga jari untuk bergeser.
+=Swipe down with two fingers from the top of the screen to hear the content of the screen.|Gesek ke bawah dengan dua jari dari atas layar untuk mendengar isi layar.
+=Voices|Suara
+=Speaking Rate|Kecepatan Bicara
+=VoiceOver speaks items on the screen.|VoiceOver mengucapkan item di layar.
+=Tap to Wake|Ketuk untuk Membangunkan
+=AssistiveTouch allows you to use your iPhone if you have difficulty touching the screen.|AssistiveTouch membantu Anda memakai iPhone jika sulit menyentuh layar.
+=Assistive Access makes iPhone simpler, with larger buttons and only the apps you choose.|Akses Bantuan membuat iPhone lebih sederhana, dengan tombol besar dan hanya app pilihan Anda.
+=Calls|Panggilan
+=Automatic|Otomatis
+=Triple Tap|Ketuk Tiga Kali
+=Hold Duration|Durasi Tahan
+=Ignore Repeat|Abaikan Pengulangan
+=Fast|Cepat
+=MFI HEARING DEVICES|PERANGKAT PENDENGARAN MFI
+=Hearing|Pendengaran
+=Live Listen|Dengar Langsung
+=Relay Number|Nomor Relai
+=“The weather is lovely today.”|“Cuaca hari ini indah sekali.”
+=Favorite Phrases|Frasa Favorit
+=English (U.S.)|Inggris (AS)
+=Rain|Hujan
+=Bluetooth Headset|Headset Bluetooth
+=Door, 2 meters|Pintu, 2 meter
+=Passcode Settings|Pengaturan Kode Sandi
+=Vision|Penglihatan
+=Motor|Motorik
+=Cognitive|Kognitif
+=iPhone: 66.8 GB of 128 GB Used|iPhone: 66.8 GB dari 128 GB Terpakai
+=Photos  42 GB|Foto  42 GB
+=Messages  6 GB|Pesan  6 GB
+=Recommendations|Rekomendasi
+=Review Large Attachments|Tinjau Lampiran Besar
+=Review Personal Videos|Tinjau Video Pribadi
+=Browse|Telusuri
+=Shared|Dibagikan
+=Documents|Dokumen
+=Page 1|Halaman 1
+=Page 2|Halaman 2
+=Markup|Markah
+=Add Text|Tambah Teks
+=Shapes|Bentuk
+=Signature|Tanda Tangan
+=USB DRIVE|FLASHDISK USB
+=Receiving Off|Penerimaan Mati
+=Everyone for 10 Minutes|Semua Orang selama 10 Menit
+=Receive Only|Hanya Menerima
+=Screen|Layar
+=Full Page|Halaman Penuh
+=◉ Screen Recording|◉ Perekaman Layar
+=Select Printer|Pilih Printer
+=Trust This Computer?|Percayai Komputer Ini?
+=Trust|Percayai
+=Don’t Trust|Jangan Percayai
+=Back|Kembali
+=Next|Berikutnya
+=Name and Birthday|Nama dan Tanggal Lahir
+=First Name|Nama Depan
+=Last Name|Nama Belakang
+=Birthday|Tanggal Lahir
+=Continue|Lanjutkan
+=Change|Ubah
+=New|Baru
+=Verify|Verifikasi
+=Forgot password?|Lupa kata sandi?
+=Start Account Recovery|Mulai Pemulihan Akun
+=RECOVERY CONTACTS|KONTAK PEMULIHAN
+=4.2 GB of 5 GB Used|4.2 GB dari 5 GB Terpakai
+=Photos  3.1 GB|Foto  3.1 GB
+=Backups  0.9 GB|Cadangan  0.9 GB
+=SAVED TO ICLOUD|TERSIMPAN DI ICLOUD
+=Optimize iPhone Storage|Optimalkan Penyimpanan iPhone
+=Back Up This iPhone|Cadangkan iPhone Ini
+=Last successful backup: Yesterday at 2:00 AM|Cadangan terakhir: Kemarin pukul 02.00
+=Transfer Your Apps & Data|Transfer App & Data
+=From Mac or PC|Dari Mac atau PC
+=From Another iPhone|Dari iPhone Lain
+=Choose Backup|Pilih Cadangan
+=Today 2:00 AM|Hari ini 02.00
+=Yesterday 2:00 AM|Kemarin 02.00
+=Quick Start|Mulai Cepat
+=Apps Using iCloud|App yang Menggunakan iCloud
+=Create Child Account|Buat Akun Anak
+=Invite|Undang
+=Invite in Person|Undang Langsung
+=Maria (Me)|Maria (Saya)
+=Minji (Child)|Minji (Anak)
+=TRUSTED PHONE NUMBERS|NOMOR TELEPON TEPERCAYA
+=Keep a copy|Simpan salinan
+=Erase This iPhone|Hapus iPhone Ini
+=Add to Wallet|Tambah ke Dompet
+=Card Added|Kartu Ditambahkan
+=Done ✓|Selesai ✓
+=Your ticket|Tiket Anda
+=Add to Apple Wallet|Tambahkan ke Apple Wallet
+=Boarding Pass|Pas Naik Pesawat
+=My Bank Card|Kartu Bank Saya
+=Card Details|Detail Kartu
+=Remove This Card|Hapus Kartu Ini
+=Steps|Langkah
+=Heart Rate|Detak Jantung
+=72 BPM|72 BPM
+=Profile|Profil
+=Medical Conditions|Kondisi Medis
+=Medications|Obat
+=Blood Type|Golongan Darah
+=Diabetes|Diabetes
+=Your Medical ID can be viewed when iPhone is locked by tapping Emergency, then Medical ID.|ID Medis bisa dilihat saat iPhone terkunci dengan mengetuk Darurat, lalu ID Medis.
+=Steps  6,214|Langkah  6,214
+=Walking Distance  4.3 km|Jarak Berjalan  4.3 km
+=Activity|Aktivitas
+=Schedule|Jadwal
+=Vitamin D|Vitamin D
+=Sharing|Berbagi
+=Share with Someone|Bagikan dengan Seseorang
+=Mobility|Mobilitas
+=Walking Steadiness|Kestabilan Berjalan
+=Set Up|Atur
+=Seoul Station|Stasiun Seoul
+=Seoul Station Exit 1|Stasiun Seoul Pintu Keluar 1
+=Directions|Petunjuk Arah
+=🚗 25 min|🚗 25 mnt
+=Go|Jalan
+=Drive|Mobil
+=Walk|Jalan Kaki
+=Transit|Transportasi Umum
+=Arrive 10:30|Tiba 10.30
+=Share ETA|Bagikan Waktu Tiba
+=Places|Tempat
+=Ratings|Rating
+=Download|Unduh
+=Items|Barang
+=Me|Saya
+=Maria’s iPhone|iPhone Maria
+=Maria’s iPad|iPad Maria
+=Mark As Lost|Tandai sebagai Hilang
+=Share for One Hour|Bagikan Selama Satu Jam
+=Share Until End of Day|Bagikan Hingga Akhir Hari
+=Share Indefinitely|Bagikan Tanpa Batas
+=Keys|Kunci
+=Find|Cari
+=Check In: Home 6:00 PM|Check In: Rumah 18.00
+=Say “Siri, what’s the weather today?”|Ucapkan “Siri, bagaimana cuaca hari ini?”
+=Tomorrow will be sunny, with a high of 24°.|Besok cerah, suhu tertinggi 24°.
+=Calling Mom…|Menelepon Ibu…
+=What do you want to say?|Anda ingin bilang apa?
+=“I’ll be there at 7.”|“Saya sampai jam 7.”
+=Sent.|Terkirim.
+=Your alarm is set for 6 AM.|Alarm diatur untuk jam 6 pagi.
+=10 minutes, counting down.|10 menit, mulai menghitung mundur.
+=It’s sunny, 21°.|Cerah, 21°.
+=Opening Camera.|Membuka Kamera.
+=OK, I’ll remind you.|Baik, saya akan mengingatkan Anda.
+=Here’s some music.|Ini musik untuk Anda.
+=Your flashlight is on.|Senter sudah menyala.
+=Voice 1|Suara 1
+=Voice 3|Suara 3
+=Voice 4|Suara 4
+=English (United States)|Inggris (Amerika Serikat)
+=Spanish (Spain)|Spanyol (Spanyol)
+=Headphones|Headphone
+=Tips|Tips
+=New Shortcut|Pintasan Baru
+=Actions|Tindakan
+=Set Alarm|Atur Alarm
+=Downloading…|Mengunduh…
+=i will come tomorow|saya akan datang bsok
+=Rewrite|Tulis Ulang
+=Friendly|Ramah
+=I will come tomorrow.|Saya akan datang besok.
+=• Main point 1|• Poin utama 1
+=• Main point 2|• Poin utama 2
+=a cat at the beach|kucing di pantai
+=Animation|Animasi
+=Illustration|Ilustrasi
+=Sketch|Sketsa
+=Emoji|Emoji
+=dog with a hat|anjing bertopi
+=Visual Intelligence|Kecerdasan Visual
+=Ask|Tanya
+=EXTENSIONS|EKSTENSI
+=Confirm ChatGPT Requests|Konfirmasi Permintaan ChatGPT
+=Korean  ⇄  English|Korea  ⇄  Inggris
+=On-Device Processing|Pemrosesan di Perangkat
+=Call with Hold and Release|Panggil dengan Tahan lalu Lepas
+=Call with 5 Button Presses|Panggil dengan 5 Kali Tekan
+=Call Quietly|Panggil Diam-diam
+=Crash Detection|Pendeteksian Tabrakan
+=No Connection|Tidak Ada Koneksi
+=Emergency Text via Satellite|Teks Darurat via Satelit
+=Satellite|Satelit
+=Turn left ↺|Putar ke kiri ↺
+=Activate|Aktifkan
+=Phone Number|Nomor Telepon
+=Please call me|Mohon telepon saya
+=Erase This Device|Hapus Perangkat Ini
+=Erase This Device?|Hapus Perangkat Ini?
+=Erase|Hapus
+=Get Support|Dapatkan Dukungan
+=iPhone Unavailable|iPhone Tidak Tersedia
+=Try again in 15 minutes|Coba lagi dalam 15 menit
+=Forgot Passcode?|Lupa Kode Sandi?
+=Enter Previous Passcode|Masukkan Kode Sandi Sebelumnya
+=Liquid Detected|Cairan Terdeteksi
+=OK|OK
+=Temperature|Suhu
+=iPhone needs to cool down before you can use it.|iPhone perlu mendingin sebelum bisa digunakan.
+=Repairs|Perbaikan
+=Cracked Screen|Layar Retak
+=Other|Lainnya
+=Options|Pilihan
+=Primary|Utama
+=TUE|SEL

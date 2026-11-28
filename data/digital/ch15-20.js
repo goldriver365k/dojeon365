@@ -1,5 +1,5 @@
 /** [관공서와 생활 서비스] 15~17, [쇼핑과 여가] 18~20 */
-import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats } from './kit.js?v=20261128.1307';
+import { L, T, S, LK, SRC, app, list, tiles, pad, sheet, pop, kb, seats } from './kit.js?v=20261128.1319';
 
 const MONEY = '실제로 돈이 오가는 일이에요. 먼저 연습 화면으로 끝까지 해 보세요. 연습 화면에서는 돈이 나가지 않아요.';
 
