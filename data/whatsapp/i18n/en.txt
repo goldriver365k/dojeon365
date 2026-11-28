@@ -1,0 +1,972 @@
+1|Tap “{x}”.
+2|On the Chats screen, tap the chat with {x}.
+3|WhatsApp screen. {x}
+4|These pictures are drawings of the WhatsApp screen. Menu names and positions may differ slightly from the real app.
+5|lessons
+6|Install and register
+7|Friends and contacts
+8|Chats and messages
+9|Photos, videos and files
+10|Voice messages
+11|Voice and video calls
+12|Group chats
+13|Profile and status
+14|Emoji and stickers
+15|Channels and communities
+16|Text, screen and notifications
+17|Privacy and security
+18|Backup, restore and new phone
+19|Location and contact sharing
+20|Spam, scams and troubleshooting
+21|Download WhatsApp
+22|Install WhatsApp
+23|Open WhatsApp
+24|Choose your language
+25|Enter your country and phone number
+26|Verify your phone number
+27|Add your profile name
+28|Add a profile photo
+29|Update WhatsApp
+30|Understand the main screen
+31|Add a contact by phone number
+32|Add an international number
+33|Add a new contact
+34|Search your contacts
+35|Add a contact with a QR code
+36|See your own QR code
+37|Invite a friend to WhatsApp
+38|Edit a contact name
+39|Block a contact
+40|Unblock a contact
+41|Start a new chat
+42|Send a text message
+43|Type a message with your voice
+44|Read new messages
+45|Reply to a message
+46|Copy a message
+47|Paste a message
+48|Forward a message
+49|Edit a sent message
+50|Delete a sent message
+51|Understand the tick marks
+52|Search inside a chat
+53|Send a website link
+54|Star an important message
+55|Turn on disappearing messages
+56|Send one photo
+57|Send several photos
+58|Send a photo in HD
+59|Take a photo and send it
+60|View a photo you received
+61|Save a photo you received
+62|Send a video
+63|Send a video in HD
+64|Save a video you received
+65|Send a document
+66|Open a document you received
+67|See all photos and files in a chat
+68|Record a voice message
+69|Send a voice message
+70|Listen to a voice message
+71|Cancel a voice recording
+72|Record hands-free
+73|Pause a recording
+74|Listen before you send
+75|Change the playback speed
+76|Make a voice call
+77|Answer a voice call
+78|End a call
+79|Make a video call
+80|Answer a video call
+81|Switch the camera during a video call
+82|Turn off your microphone
+83|Use the speaker
+84|Call several people at once
+85|Share your screen in a video call
+86|Create a group
+87|Add people to a group
+88|Create a group invite link
+89|Join a group with a link
+90|Change the group name
+91|Change the group photo
+92|See who is in a group
+93|Make someone a group admin
+94|Mute a group
+95|Mention someone in a group
+96|Pin a message in a group
+97|Leave a group
+98|See your profile
+99|Change your profile photo
+100|Change your profile name
+101|Change your About
+102|Post a text status
+103|Share a photo as a status
+104|Share a video as a status
+105|View a friend’s status
+106|Choose who sees your status
+107|Delete your status
+108|Send an emoji
+109|React to a message with an emoji
+110|Send a sticker
+111|Search for stickers
+112|Add new stickers
+113|Manage favourite stickers
+114|Send a GIF
+115|Make your own sticker
+116|What WhatsApp Channels are
+117|Find a channel
+118|Follow a channel
+119|Read channel updates
+120|Set channel notifications
+121|Unfollow a channel
+122|What Communities are
+123|Create a community
+124|Join a community
+125|Leave a community
+126|Make the text bigger
+127|Adjust the font size
+128|Use the light theme
+129|Use the dark theme
+130|Change the chat theme
+131|Change the chat wallpaper
+132|Set message notifications
+133|Change the notification sound
+134|Mute a chat
+135|Pin an important chat
+136|Archive a chat
+137|Show an archived chat again
+138|Check your privacy settings
+139|Who can see your last seen
+140|Who can see when you are online
+141|Who can see your profile photo
+142|Turn read receipts on or off
+143|Turn on two-step verification
+144|Lock WhatsApp with your fingerprint
+145|Lock a chat
+146|Check linked devices
+147|Log out an unknown device
+148|Silence unknown callers
+149|Do a privacy checkup
+150|What chat backup does
+151|Connect your Google account
+152|Back up your chats
+153|Set automatic backups
+154|Turn on end-to-end encrypted backup
+155|Check your last backup
+156|Restore chats on a new phone
+157|Transfer chats from your old phone
+158|Change your phone number
+159|Fix backup and restore problems
+160|Send your current location
+161|Share your live location
+162|Stop sharing live location
+163|Send a contact to a friend
+164|Save a contact you received
+165|Keep your location private
+166|Messages from people you don’t know
+167|Spot a fake “family member” message
+168|Spot dangerous links
+169|Avoid investment scams
+170|Avoid money request scams
+171|Never share your 6-digit code
+172|Report spam
+173|If you think your account was stolen
+174|WhatsApp won’t open
+175|A message won’t send
+176|A photo won’t send
+177|Calls won’t connect
+178|Notifications don’t arrive
+179|Free up storage
+180|Use the WhatsApp Help Center
+181|On your home screen, tap “Play Store”.
+182|Tap the search bar at the top.
+183|Check that the developer is “WhatsApp LLC”.
+184|On the WhatsApp Messenger page, tap “Install”.
+185|Wait while it downloads and installs.
+186|When it is finished, the button changes to “Open”.
+187|Find the green WhatsApp icon on your home screen.
+188|Tap it once to open WhatsApp.
+189|When WhatsApp opens for the first time, a list of languages appears.
+190|Tap your language.
+191|On the welcome screen, tap “Agree and continue”.
+192|Tap the country name to choose your country.
+193|Type your phone number.
+194|WhatsApp sends a 6-digit code by text message.
+195|Type the 6 numbers into the code boxes.
+196|Tap the name box.
+197|Type the name your friends know you by.
+198|On the Profile info screen, tap the round camera picture.
+199|Tap the photo you want.
+200|Open “Play Store” from your home screen.
+201|Search for “WhatsApp” and open WhatsApp Messenger.
+202|“Chats” shows all your conversations.
+203|“Updates” shows friends’ status updates and channels.
+204|“Communities” groups related groups together.
+205|“Calls” shows your recent calls.
+206|Tap the green New chat button.
+207|Type the name.
+208|Type the phone number.
+209|Tap the country code to choose the friend’s country.
+210|Type the number without the first 0.
+211|On the Chats screen, tap the green New chat button.
+212|Type the first name.
+213|Tap the magnifying glass at the top.
+214|Type a name. Matching contacts appear.
+215|Tap the QR code picture to scan.
+216|Point the camera at your friend’s QR code.
+217|On the Chats screen, tap the three dots at the top right.
+218|Tap the small QR icon next to your name.
+219|Show this code to a friend so they can add you.
+220|Near the bottom, tap “Invite a friend”.
+221|Tap how you want to send the invitation, for example “Messages”.
+222|Tap the name at the top.
+223|Tap the three dots at the top right.
+224|Change the name.
+225|Tap the contact’s name at the top.
+226|Scroll down to the bottom of the contact info.
+227|Tap “Block” again to confirm.
+228|Tap “Blocked contacts” near the bottom.
+229|Tap the person you want to unblock.
+230|Tap the person you want to message.
+231|The chat opens. Type in the message box at the bottom.
+232|Tap the message box at the bottom.
+233|Type your message.
+234|Tap the green send arrow.
+235|Tap the message box so the keyboard opens.
+236|Tap the microphone on your keyboard and speak slowly.
+237|Check that the words are right.
+238|A green number shows how many new messages a chat has.
+239|Tap the chat to read the new messages.
+240|Touch and hold the message you want to answer.
+241|Tap the reply arrow at the top.
+242|Type your answer.
+243|Touch and hold the message you want to copy.
+244|Tap the copy icon at the top.
+245|Touch and hold the message box.
+246|Touch and hold the message you want to share.
+247|Tap the forward arrow at the top.
+248|Tap the person you want to send it to.
+249|Tap the green send button.
+250|Touch and hold a message you sent.
+251|Tap the three dots at the top.
+252|Change the words in the message box.
+253|Tap the green tick to save.
+254|Touch and hold the message you sent.
+255|Tap the bin icon at the top.
+256|One grey tick: the message was sent.
+257|Two grey ticks: it arrived on their phone.
+258|Two blue ticks: they have read it.
+259|Type a word. WhatsApp jumps to messages with that word.
+260|Tap “Paste” to insert the copied link.
+261|Touch and hold the important message.
+262|Tap the star at the top.
+263|Find starred messages in the three-dot menu › “Starred”.
+264|Choose how long messages stay, for example “24 hours”.
+265|Tap the paper clip in the message box.
+266|Tap the photo you want to send.
+267|Check that the photo appears in the chat.
+268|Touch and hold the first photo.
+269|Tap the other photos you want. Each gets a number.
+270|Tap the green arrow at the bottom.
+271|Tap “HD” at the top.
+272|Tap the camera icon in the message box.
+273|Take the photo with the round white button.
+274|Tap the photo in the chat.
+275|The photo fills the screen. Spread two fingers to zoom in.
+276|Tap the photo you received.
+277|Tap a video. Videos show their length in the corner.
+278|Tap a video.
+279|Tap the video you received.
+280|Tap the file you want to send.
+281|Tap the document in the chat.
+282|It opens in an app that can show it.
+283|Photos, links and documents are on separate tabs.
+284|Touch and hold the green microphone.
+285|Speak while you hold it. You will see a red dot and the time.
+286|Hold the microphone and speak.
+287|Lift your finger. The voice message is sent.
+288|Tap the play button on the voice message.
+289|While recording, keep holding and slide your finger to the left.
+290|Lift your finger. The recording is deleted and not sent.
+291|Slide your finger up to the lock.
+292|Now you can let go and keep talking. Tap send when finished.
+293|While recording hands-free, tap the pause button.
+294|Tap it again to continue recording.
+295|Tap play to hear your message before sending.
+296|Start playing the voice message.
+297|Tap “1×” to play faster (1.5× or 2×).
+298|Tap the phone icon at the top.
+299|Wait for your friend to answer.
+300|When WhatsApp rings, tap the green “Accept” button.
+301|You are connected. Start talking.
+302|Tap the red button to end the call.
+303|Tap the video camera icon at the top.
+304|Hold the phone so your face is on the screen and wait.
+305|Tap the green “Accept” button.
+306|Your friend fills the screen. You appear in the small box.
+307|During a video call, tap “Flip camera”.
+308|During a call, tap “Mute”. Your friend can’t hear you.
+309|Tap it again to talk again.
+310|During a voice call, tap “Speaker” to hear without holding the phone.
+311|Tap the phone icon at the top of the group chat.
+312|Tap the people you want to call.
+313|Tap the call button.
+314|During a video call, tap “Share screen”.
+315|Tap “Start now” to confirm.
+316|Tap each person you want in the group.
+317|Tap the green arrow.
+318|Type a group name.
+319|Tap the green tick to create the group.
+320|Tap the group name at the top.
+321|Tap the person you want to add.
+322|Tap the green tick.
+323|Tap the group invite link someone sent you.
+324|Tap the group name.
+325|Type the new name.
+326|Tap the group photo.
+327|Scroll down to see everyone in the group.
+328|Tap the person you want to make an admin.
+329|Choose how long, for example “Always”.
+330|Type “@” in the message box.
+331|Tap the person’s name in the list.
+332|Type the rest of your message.
+333|Touch and hold the message you want to pin.
+334|The message stays at the top of the chat.
+335|Tap “Exit” to confirm.
+336|Tap your name at the top.
+337|Here you see your photo, name, About and phone number.
+338|Tap your photo.
+339|Type your new name.
+340|Tap a ready-made line, for example “Available”.
+341|Tap “Updates” at the bottom.
+342|Type a short message.
+343|Tap the camera button at the bottom right.
+344|Tap a photo from your gallery.
+345|Tap a video from your gallery.
+346|Tap a friend with a green ring around their photo.
+347|Their status plays. Tap the right side to skip ahead.
+348|Choose who can see your status.
+349|Tap the smiley face in the message box.
+350|Tap an emoji to add it.
+351|Touch and hold the message.
+352|Tap an emoji in the row that appears.
+353|Your reaction shows under the message.
+354|Tap a sticker. It is sent right away.
+355|Type a word such as “thank you”.
+356|Tap the “+” to see more sticker packs.
+357|Tap “Add” next to a pack you like.
+358|Touch and hold a sticker in the chat.
+359|Tap a GIF to choose it.
+360|Tap the “+” box to create a sticker.
+361|Tap a photo to turn into a sticker.
+362|Channels are one-way news feeds from people or organisations.
+363|You find channels in the “Updates” tab.
+364|Tap “Explore” next to Channels.
+365|Tap the search icon and type a topic.
+366|In the Updates tab, tap “Explore”.
+367|Tap “Follow” next to the channel.
+368|Tap the channel’s name.
+369|Read the newest updates at the bottom.
+370|Open the channel from the Updates tab.
+371|Tap “Mute” or “Unmute” to choose alerts.
+372|Tap “Unfollow” again to confirm.
+373|A community brings several related groups together, like a neighbourhood or club.
+374|Find communities in the “Communities” tab.
+375|Tap “Communities” at the bottom.
+376|Type a name and short description.
+377|Tap the green arrow to continue.
+378|Tap the community invite link someone sent you.
+379|Tap the community.
+380|Choose “Small”, “Medium” or “Large”.
+381|Tap a colour theme you like.
+382|Tap a picture you like.
+383|Check “Use high priority notifications” is on so messages pop up.
+384|Choose a sound.
+385|Choose “Always”.
+386|Touch and hold a chat in the Chats list.
+387|Tap the pin at the top.
+388|The chat stays at the top of your list.
+389|Touch and hold the chat you want to hide.
+390|Tap the archive box at the top.
+391|Tap “Archived” at the top of the Chats list.
+392|Touch and hold the chat.
+393|Tap the unarchive box at the top.
+394|Check each line. It shows who can see your information.
+395|Choose who can see when you were last on WhatsApp.
+396|Under “Who can see when I’m online”, choose “Same as last seen”.
+397|Choose “My contacts”.
+398|Tap the “Read receipts” switch.
+399|Type a 6-digit PIN you will remember.
+400|Turn on “Unlock with biometric”.
+401|Touch the fingerprint sensor to confirm.
+402|Turn on the switch.
+403|Check the list. Every computer or tablet using your WhatsApp is here.
+404|Tap the device you don’t recognise.
+405|Turn on “Silence unknown callers”.
+406|Go through each topic and choose what suits you.
+407|A backup copies your chats to your Google account.
+408|Tap your Google account.
+409|Choose “Daily”.
+410|Create a password and keep it safe.
+411|Look at “Last backup” to see when your chats were last saved.
+412|On the new phone, install WhatsApp and verify the same phone number.
+413|When WhatsApp finds a backup, tap “Restore”.
+414|On the old phone, open Settings.
+415|Tap “Start”. The new phone will show the next steps.
+416|Type your old number and your new number.
+417|If backup or restore does not work, check these things.
+418|Choose how long, for example “1 hour”.
+419|Tap “Stop sharing” under your live location.
+420|Tap “Stop” to confirm.
+421|Tap the contact you want to share.
+422|Tap the contact card you received.
+423|Your location shows where you are, so be careful.
+424|A message from a number not in your contacts shows a warning.
+425|Do not reply. Tap “Block” at the bottom.
+426|Scammers write “Hi Mum, I lost my phone, this is my new number.”
+427|Before sending money, call your child on their old number.
+428|Be careful with links that promise prizes or urgent problems.
+429|Do not tap the link. Delete the message.
+430|Someone promises big profits with no risk.
+431|Do not send money. Leave the group and report it.
+432|A friend’s account asks you to send money urgently.
+433|Call your friend first. Their account may be stolen.
+434|Someone asks for the 6-digit code you just received.
+435|Never share it. WhatsApp will never ask you for this code.
+436|Open the chat with the unknown number.
+437|Tap “Report” to confirm.
+438|If friends get strange messages from you, act quickly.
+439|After you are back in, turn on two-step verification.
+440|If WhatsApp won’t open, try these steps in order.
+441|In the Play Store, tap “Update” if you see it.
+442|A clock instead of ticks means the message is still waiting.
+443|Check your internet connection.
+444|If a photo won’t send, check these things.
+445|If calls won’t connect, check these things.
+446|If notifications don’t arrive, check these things.
+447|Turn on “Use high priority notifications”.
+448|Tap a chat to review and delete big files.
+449|Type your question to find an answer.
+450|Only install the official app. Never install WhatsApp from a link someone sends you.
+451|Use Wi-Fi if you can. It saves mobile data.
+452|You can change it later in Settings › App language.
+453|This is a practice number. Use your own number on your phone.
+454|Often the code is filled in by itself.
+455|Your photo is optional. You can add it later.
+456|If you only see “Open”, you already have the newest version.
+457|Every country has a code, for example +39 for Italy.
+458|Messages forwarded many times are marked “Forwarded many times”. Be careful — they may be rumours.
+459|You can edit a message for a short time after sending it.
+460|“Delete for everyone” only works for a while after sending.
+461|If someone turned off read receipts, the ticks stay grey.
+462|Never open links from people you don’t know.
+463|New messages will disappear after that time. Old messages stay.
+464|HD photos use more mobile data. Wi-Fi is best.
+465|Many phones save received photos automatically.
+466|Do not open files from people you don’t know.
+467|Keep your finger on the button while you talk.
+468|Hold the phone to your ear to hear it quietly.
+469|Tap the bin to delete it if you want to try again.
+470|WhatsApp calls use the internet (Wi-Fi or mobile data).
+471|On some phones you swipe the button up instead.
+472|Now your friend sees what you see — the garden, the grandkids…
+473|Close private apps first. Your friend sees everything on your screen.
+474|Only group admins may be able to add people.
+475|Only join groups from people you know.
+476|Admins can add and remove people and change group settings.
+477|The person you mention gets a notification.
+478|A status disappears after 24 hours.
+479|Favourite stickers appear under the star in the sticker panel.
+480|For even bigger text, also make the text bigger in your phone’s Settings › Display.
+481|A dark screen can be easier on the eyes at night.
+482|Your phone’s own Settings › Notifications must also allow WhatsApp.
+483|Archived chats are hidden, not deleted.
+484|If you turn it off, you also won’t see blue ticks from others.
+485|Never tell this PIN to anyone.
+486|Connect to Wi-Fi first. Backups can be large.
+487|Use the same Google account that holds the backup.
+488|Deleted photos can’t come back. Save the ones you want first.
+489|Official help: faq.whatsapp.com
+490|Deleted messages and chats you leave may not come back. Check before you tap.
+491|This changes your account security. Never share your 6-digit code or PIN with anyone.
+492|Chat backups can include private messages. Keep your Google account and backup password safe, and never delete a backup unless you are sure.
+493|Your location shows where you are. Share it only with people you trust, and stop sharing when you no longer need it.
+494|Phone
+495|Messages
+496|Camera
+497|Gallery
+498|Play Store
+499|Settings
+500|Tap
+501|Install
+502|About this app
+503|Simple. Reliable. Private.
+504|Installing…
+505|Cancel
+506|Uninstall
+507|Open
+508|Ask Meta AI or Search
+509|All
+510|Unread
+511|Favourites
+512|Groups
+513|Did you eat dinner?
+514|Family
+515|Photo
+516|See you tomorrow
+517|Walking club
+518|Meeting is on Saturday
+519|Chats
+520|Updates
+521|Communities
+522|Calls
+523|Choose your language
+524|Next
+525|Welcome to WhatsApp
+526|Read our Privacy Policy. Tap “Agree and continue” to accept the Terms of Service.
+527|Agree and continue
+528|Enter your phone number
+529|WhatsApp will need to verify your phone number.
+530|Phone number
+531|Your code is only for you
+532|Look for a text message from WhatsApp.
+533|Never tell this code to anyone — not even someone who says they work for WhatsApp.
+534|Verifying your number
+535|Waiting to automatically detect a 6-digit code sent by SMS.
+536|Didn’t receive code?
+537|Profile info
+538|Please provide your name and an optional profile photo.
+539|Type your name here
+540|Profile photo
+541|Recents
+542|Done
+543|Update
+544|Status
+545|My status
+546|Tap to add status update
+547|Recent updates
+548|Today, 09:12
+549|Channels
+550|Explore
+551|New community
+552|Add favourite
+553|Recent
+554|Select contact
+555|New group
+556|New contact
+557|Contacts on WhatsApp
+558|First name
+559|Save
+560|5 contacts
+561|Last name
+562|Hey there! I am using WhatsApp.
+563|QR code
+564|My code
+565|Scan code
+566|WhatsApp contact
+567|Share code
+568|Scan a WhatsApp QR code
+569|Add to contacts
+570|Broadcast lists
+571|Linked devices
+572|Starred
+573|Account
+574|Security notifications, change number
+575|Privacy
+576|Block contacts, disappearing messages
+577|Theme, wallpapers, chat history
+578|Notifications
+579|Message, group & call tones
+580|Storage and data
+581|Network usage, auto-download
+582|App language
+583|English (device’s language)
+584|Help
+585|Help center, contact us
+586|Invite a friend
+587|Email
+588|More
+589|online
+590|Today
+591|Yes, I did. And you?
+592|Message
+593|Audio
+594|Video
+595|Pay
+596|Search
+597|Media visibility
+598|Disappearing messages
+599|Off
+600|Block
+601|Share
+602|Edit
+603|View in address book
+604|Verify security code
+605|Edit contact
+606|Blocked contacts will no longer be able to call you or send you messages.
+607|Block John?
+608|Last seen and online
+609|Everyone
+610|Read receipts
+611|Blocked contacts
+612|Unblock John
+613|Speak instead of typing
+614|Your keyboard has a small microphone key.
+615|Speak slowly. Your words appear as text.
+616|The keyboard looks a little different on each phone.
+617|Paste
+618|Clipboard
+619|Forward to…
+620|Info
+621|Copy
+622|Pin
+623|Delete message?
+624|Delete for me
+625|Delete for everyone
+626|Are you home?
+627|View contact
+628|Add to list
+629|Media, links, and docs
+630|Mute notifications
+631|What time is the doctor?
+632|24 hours
+633|7 days
+634|90 days
+635|Location
+636|Contact
+637|Document
+638|Poll
+639|Event
+640|Add a caption…
+641|selected
+642|Media quality
+643|Standard quality
+644|HD quality
+645|Take the photo
+646|Hold the phone steady.
+647|Tap the big round button once.
+648|Look at the garden!
+649|Today, 18:20
+650|Look at the grandkids!
+651|All media
+652|Show in chat
+653|View in gallery
+654|Send to Maria
+655|Doctor appointment.pdf
+656|240 kB · PDF
+657|Garden plan.pdf
+658|1 MB · PDF
+659|Send “Doctor appointment.pdf” to Maria?
+660|Send
+661|Opening a document
+662|PDF files open in a PDF viewer.
+663|If your phone asks which app to use, choose one you know.
+664|‹ Slide to cancel
+665|End-to-end encrypted
+666|Ringing
+667|Speaker
+668|Mute
+669|Add people
+670|WhatsApp voice call
+671|Decline
+672|Accept
+673|Flip camera
+674|Camera off
+675|Share screen
+676|WhatsApp video call
+677|You
+678|Maria, John, Tom, You
+679|Lunch together on Saturday?
+680|Yes, see you!
+681|Start group call
+682|WhatsApp will have access to everything on your screen.
+683|Start recording or casting with WhatsApp?
+684|Start now
+685|Add members
+686|Create
+687|Group
+688|members
+689|Add
+690|Group permissions
+691|Invite via link
+692|Send link via WhatsApp
+693|Copy link
+694|Share link
+695|Reset link
+696|Join our group: chat.whatsapp.com/example
+697|Group · 12 members
+698|Join group
+699|Enter group name
+700|OK
+701|Group icon
+702|Emoji & stickers
+703|Group admin
+704|Message Maria
+705|View Maria
+706|Make group admin
+707|Remove Maria
+708|Group info
+709|Group media
+710|Other members will not see that you muted this chat.
+711|8 hours
+712|1 week
+713|Always
+714|Mention
+715|Report
+716|Exit group
+717|Clear chat
+718|Export chat
+719|Only group admins will be notified that you left the group.
+720|Exit “Walking club”?
+721|Exit
+722|Profile
+723|Name
+724|About
+725|Hey there!
+726|Avatar
+727|Remove photo
+728|Select About
+729|Available
+730|Busy
+731|At work
+732|Good morning, everyone!
+733|Status (Contacts)
+734|Lovely walk in the park today
+735|Reply…
+736|Create channel
+737|Status privacy
+738|My contacts
+739|My contacts except…
+740|Only share with…
+741|2 views
+742|It will also be deleted for everyone who received it.
+743|Delete this status update?
+744|Delete
+745|Emoji
+746|Stickers
+747|Search stickers
+748|Thank you stickers
+749|Sticker pack
+750|Sticker packs
+751|Happy faces
+752|Free
+753|Flowers
+754|Add to favourites
+755|View sticker pack
+756|What are channels?
+757|You read updates; you cannot reply in the channel.
+758|Your phone number is not shown to the channel.
+759|Follow only channels you trust.
+760|Garden Tips
+761|12K followers
+762|Follow
+763|Find channels
+764|Health News
+765|48K followers
+766|Water your tomatoes early in the morning.
+767|This week: planting tulip bulbs.
+768|Channel info
+769|Unfollow
+770|Unfollow Garden Tips?
+771|What are communities?
+772|Admins can send announcements to everyone.
+773|Members can join the groups they like.
+774|Your number is visible to group members.
+775|Join our community: chat.whatsapp.com/example
+776|Grandparents club
+777|Community · 3 groups
+778|Join community
+779|Neighbourhood
+780|Announcements
+781|General
+782|Garden group
+783|Community info
+784|Exit community
+785|Display
+786|Theme
+787|System default
+788|Default chat theme
+789|Chat settings
+790|Enter is send
+791|Font size
+792|Medium
+793|Small
+794|Large
+795|Chat backup
+796|Transfer chats
+797|Choose theme
+798|Light
+799|Dark
+800|Wallpaper
+801|Conversation tones
+802|Notification tone
+803|Default
+804|Vibrate
+805|Use high priority notifications
+806|Group notification tone
+807|Chime
+808|Bell
+809|Silent
+810|Archived
+811|App lock
+812|None
+813|Privacy checkup
+814|Who can see my last seen
+815|Nobody
+816|Who can see when I’m online
+817|Same as last seen
+818|Security notifications
+819|Passkeys
+820|Email address
+821|Two-step verification
+822|Change number
+823|Request account info
+824|Delete account
+825|For extra security, turn on two-step verification, which will require a PIN when registering your phone number with WhatsApp again.
+826|Turn on
+827|Enter a 6-digit PIN which you’ll be asked for when you register your phone number with WhatsApp.
+828|Unlock with biometric
+829|Automatically lock
+830|Immediately
+831|Confirm your fingerprint
+832|Place your registered finger on the sensor.
+833|From now on WhatsApp opens only with your fingerprint.
+834|Chat lock
+835|Lock this chat with fingerprint
+836|Device status
+837|Active now
+838|Last active 3 days ago
+839|Link a device
+840|Unknown browser
+841|Last active 1 hour ago
+842|Log out
+843|Close
+844|Silence unknown callers
+845|Calls from unknown numbers will be silenced
+846|Choose who can contact you
+847|Control your personal info
+848|Add more privacy to your chats
+849|Add more protection to your account
+850|What chat backup does
+851|Your messages and photos can be saved to Google Drive.
+852|If you lose your phone, you can restore them.
+853|You need the same phone number and Google account.
+854|Back up
+855|Last backup: Yesterday 02:00
+856|Google Account
+857|Frequency
+858|Daily
+859|End-to-end encrypted backup
+860|Include videos
+861|Choose an account
+862|Add account
+863|Weekly
+864|Monthly
+865|Add a layer of protection to your backup.
+866|Create password
+867|If you forget this password, you cannot restore your backup.
+868|Restore backup
+869|Backup found. Last backup: Yesterday 02:00.
+870|Skip
+871|Restore
+872|Keep both phones close together and connected to Wi-Fi.
+873|Start
+874|Changing your phone number will migrate your account info, groups and settings.
+875|Backup and restore problems
+876|Same phone number and same Google account?
+877|Enough space in Google Drive and on the phone?
+878|Connected to Wi-Fi?
+879|For encrypted backups: the right password?
+880|Send location
+881|Share live location
+882|Send your current location
+883|Accurate to 10 metres
+884|15 minutes
+885|1 hour
+886|Live location
+887|Stop sharing
+888|Stop sharing live location?
+889|Stop
+890|Share contacts
+891|Add contact
+892|Keep your location private
+893|Share it only with family and close friends.
+894|Live location stops after the time you chose — stop it earlier if you like.
+895|Never share it with strangers or in big groups.
+896|Not a contact
+897|This sender is not in your contacts.
+898|Hello dear, I have a great offer for you
+899|Not a contact · No groups in common
+900|Hi Mum, I broke my phone. This is my new number.
+901|Can you send money? It is urgent.
+902|Spot a fake family message
+903|A new number, and an urgent request for money.
+904|They say they cannot talk on the phone.
+905|Always call the old number and hear their voice first.
+906|Your parcel is waiting! Pay the fee here: parcel-check.example
+907|Spot dangerous links
+908|Strange spelling, prizes, or “pay a small fee”.
+909|If a link asks for passwords or card numbers, stop.
+910|Check with the company using its official app.
+911|Investment Club
+912|300 members
+913|Join today and double your money in one week!
+914|Avoid investment scams
+915|No real investment guarantees quick, big profits.
+916|Scammers use groups full of fake “happy members”.
+917|Ask your bank or family before investing.
+918|I’m stuck abroad, can you send me 500 right now?
+919|Avoid money request scams
+920|Call the person on the phone.
+921|Do not send money only because of a message.
+922|If the account is fake, report it.
+923|WhatsApp Support?
+924|Your account will be closed. Send me the 6-digit code from your SMS.
+925|Your code is a key to your account
+926|Anyone with the code can take over your WhatsApp.
+927|Do not reply. Block and report.
+928|Turn on two-step verification for extra safety.
+929|You won a prize!
+930|The most recent messages will be forwarded to WhatsApp.
+931|Report this contact to WhatsApp?
+932|If your account was stolen
+933|Open WhatsApp and register your number again with the SMS code.
+934|Turn on two-step verification.
+935|Tell family and friends not to send money.
+936|Contact WhatsApp support from Settings › Help.
+937|WhatsApp won’t open
+938|Restart your phone.
+939|Update WhatsApp in the Play Store.
+940|Check that your phone has free storage.
+941|Are you coming?
+942|A message won’t send
+943|Turn Wi-Fi or mobile data on.
+944|Turn airplane mode off.
+945|Restart your phone if it still waits.
+946|A photo won’t send
+947|Is your internet working?
+948|Is the date and time on your phone correct?
+949|Does WhatsApp have permission to use photos? (phone Settings › Apps › WhatsApp › Permissions)
+950|Calls won’t connect
+951|Both phones need a good internet connection.
+952|Try Wi-Fi instead of mobile data.
+953|Check that WhatsApp may use the microphone and camera.
+954|Notifications don’t arrive
+955|Is the chat muted?
+956|Are WhatsApp notifications on in your phone’s Settings?
+957|Is battery saver stopping WhatsApp?
+958|Manage storage
+959|2.1 GB used
+960|Network usage
+961|Use less data for calls
+962|Help center
+963|Contact us
+964|Terms and Privacy Policy
+965|App info
+966|Search Help Center
+967|How to back up chats
+968|Help Center
+969|How to stay safe
+970|Yesterday
+971|Today, 18:40
+972|Yesterday, 10:02

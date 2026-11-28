@@ -144,7 +144,7 @@ V.tab = (c, s) => {
     for (const [n, last, time, unread] of s.chats ?? [['Maria', 'Did you eat dinner?', '18:20', 2], ['Family', 'Photo', '17:02', 5], ['John', 'See you tomorrow', '09:15', 0], ['Walking club', 'Meeting is on Saturday', 'Yesterday', 0]]) {
       if (y > 470) break;
       avatar(c, 16, y, n, 50); c.text(78, y + 21, fit(n, 18), { size: 16.5, weight: 600, raw: true }); c.text(78, y + 43, fit(last, 26), { size: 14, fill: C.sub, raw: true });
-      c.text(W - 18, y + 20, time, { size: 12, fill: unread ? C.unread : C.sub, anchor: 'end', raw: true });
+      c.text(W - 18, y + 20, time, { size: 12, fill: unread ? C.unread : C.sub, anchor: 'end' });
       if (unread) { c.add(`<circle cx="${W - 28}" cy="${y + 38}" r="10" fill="${C.unread}"/>`); c.text(W - 28, y + 42, String(unread), { size: 11.5, fill: '#fff', weight: 700, anchor: 'middle', raw: true }); }
       if (s.pinned === n) c.add(I.pin(W - 56, y + 38));
       if (s.muted === n) c.add(`<path d="M${W - 64} ${y + 34} h6 l6 -5 v14 l-6 -5 h-6z" fill="${C.sub}"/><line x1="${W - 66}" y1="${y + 30}" x2="${W - 50}" y2="${y + 46}" stroke="${C.sub}" stroke-width="2"/>`);
@@ -168,7 +168,7 @@ V.tab = (c, s) => {
     c.text(18, y + 20, 'Favourites', { size: 15, weight: 700 }); y += 34;
     c.rect(16, y, 52, 52, '#D8FDD2', 26); c.add(I.phone(42, y + 26, C.teal)); c.text(84, y + 32, 'Add favourite', { size: 15 }); c.reg('Add favourite', 0, y - 4, W, 60); y += 70;
     c.text(18, y + 16, 'Recent', { size: 15, weight: 700 }); y += 28;
-    for (const [n, d, miss] of s.calls ?? [['Maria', 'Today, 18:40', false], ['John', 'Yesterday, 10:02', true]]) { avatar(c, 16, y, n, 48); c.text(78, y + 22, n, { size: 16, weight: 600, fill: miss ? C.red : C.dark, raw: true }); c.text(78, y + 42, d, { size: 13, fill: C.sub, raw: true }); c.add(I.phone(W - 30, y + 24, C.dark)); c.reg(`Call ${n}`, W - 52, y, 44, 48); c.reg(n, 0, y - 4, W - 60, 58); y += 64; }
+    for (const [n, d, miss] of s.calls ?? [['Maria', 'Today, 18:40', false], ['John', 'Yesterday, 10:02', true]]) { avatar(c, 16, y, n, 48); c.text(78, y + 22, n, { size: 16, weight: 600, fill: miss ? C.red : C.dark, raw: true }); c.text(78, y + 42, d, { size: 13, fill: C.sub }); c.add(I.phone(W - 30, y + 24, C.dark)); c.reg(`Call ${n}`, W - 52, y, 44, 48); c.reg(n, 0, y - 4, W - 60, 58); y += 64; }
     fab(c, 'New call', 'phone');
   }
   tabBar(c, tab);

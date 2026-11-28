@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import { loadCatalog, publishProblems, isPublic, draw, TWO_EN, WA_TEXT, waCourse } from '../scripts/build-whatsapp.mjs';
+import { loadCatalog, publishProblems, isPublic, draw, TWO_EN, WA_TEXT, waCourse, loadLang, translateLesson } from '../scripts/build-whatsapp.mjs';
 import { LESSONS_EN } from '../data/whatsapp/lessons-en.mjs';
 import { LANGUAGES } from '../i18n/languages.js';
 import { hasCourse, regionOf } from '../i18n/regions.js';
@@ -50,7 +50,18 @@ test('검수·공개하지 않은 수업은 공개하지 않는다(지금 공개
   assert.equal((sm.match(/\/en\/whatsapp\//g) ?? []).length > 0, pubEn > 0);
   const l = all.find((x) => x.essential);
   assert.ok(publishProblems({ ...l, status: 'published', appVersion: '2.25', lastChecked: '2026-11-28', reviewedBy: 'x', steps: l.steps.map((s) => ({ ...s, imageMeta: { ...s.imageMeta, reviewed: '2026-11-28' } })) }, 'en').length === 0, '검수 기록이 다 있으면 공개 가능');
-  assert.ok(publishProblems({ ...l, status: 'published', appVersion: '2.25', lastChecked: '2026-11-28', reviewedBy: 'x' }, 'es').some((p) => p.includes('not translated')), '번역 없으면 그 언어는 공개 안 함');
+  const noFile = LANGUAGES.find((x) => x.code !== 'ko' && x.code !== 'en' && !loadLang(x.code));
+  if (noFile) assert.ok(publishProblems({ ...l, status: 'published', appVersion: '2.25', lastChecked: '2026-11-28', reviewedBy: 'x' }, noFile.code).some((p) => p.includes('not translated')), '번역 없으면 그 언어는 공개 안 함');
+});
+
+test('번역 파일이 있는 언어는 빠진 문장 없이 160개 모두 공개, 화면 글자도 그 언어', () => {
+  for (const { code } of LANGUAGES.filter((x) => x.code !== 'ko' && x.code !== 'en')) {
+    const d = loadLang(code); if (!d) continue;
+    assert.equal(d.missing, 0, `${code} missing`);
+    assert.equal(waCourse(code, cat).count, all.length, code);
+    for (const l of all) { const t = translateLesson(l, code); assert.ok(t, `${code} ${l.id}`); for (const s of t.steps) assert.doesNotMatch(s, /\{x\}/, code); }
+    assert.ok(existsSync(`${code.toLowerCase()}/whatsapp/index.html`), code);
+  }
 });
 
 test('국가 설정: 한국 사이트는 카카오톡·WhatsApp 없음 / 해외는 WhatsApp·카카오톡 없음', () => {

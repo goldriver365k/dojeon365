@@ -77,6 +77,52 @@ export function fill(catalog, lessons = LESSONS_EN) {
 }
 
 /** Is this lesson ready to publish in this language? */
+/* ---------- translations: data/whatsapp/i18n/<lang>.txt ("N|text", numbers from en.txt / keys.txt) ---------- */
+const I18N_DIR = new URL('../data/whatsapp/i18n/', import.meta.url);
+const TAP = /^Tap “([^”]+)”\.$/; const CHAT = /^On the Chats screen, tap the chat with (.+)\.$/;
+const DICT = new Map();
+/** Load one language: { fixed, ch, t, s, h, c, w, missing, total } (null if no file) */
+export function loadLang(lang) {
+  if (DICT.has(lang)) return DICT.get(lang);
+  let raw;
+  try { raw = readFileSync(new URL(`${lang}.txt`, I18N_DIR), 'utf8'); } catch { DICT.set(lang, null); return null; }
+  const keys = readFileSync(new URL('keys.txt', I18N_DIR), 'utf8').trim().split('\n').map((x) => x.split('|')[1]);
+  const en = readFileSync(new URL('en.txt', I18N_DIR), 'utf8').trim().split('\n').map((x) => x.slice(x.indexOf('|') + 1));
+  const tr = new Map(raw.trim().split('\n').map((x) => { const i = x.indexOf('|'); return [Number(x.slice(0, i)), x.slice(i + 1).trim()]; }).filter(([n, v]) => n && v));
+  const d = { fixed: {}, ch: {}, t: {}, s: {}, h: {}, c: {}, w: {}, missing: 0, total: keys.length };
+  keys.forEach((k, i) => {
+    const v = tr.get(i + 1); if (!v) { d.missing++; return; }
+    if (k.startsWith('@')) d.fixed[k.slice(1)] = v;
+    else if (k.startsWith('#ch:')) d.ch[k.slice(4)] = v;
+    else if (k.startsWith('#t:')) d.t[k.slice(3)] = v;
+    else d[k[1]][en[i]] = v;
+  });
+  DICT.set(lang, d);
+  return d;
+}
+/** Screen-word translator for one language (names and numbers pass through) */
+export const screenTr = (lang) => { const d = loadLang(lang); return d ? (x) => d.w[x] ?? x : null; };
+/** Translate one lesson; null when any string is missing */
+export function translateLesson(l, lang) {
+  const d = loadLang(lang); if (!d) return null;
+  const title = d.t[l.id]; if (!title) return null;
+  const steps = []; const hints = []; const alts = [];
+  for (const st of l.steps) {
+    let text;
+    const a = st.text.match(TAP); const b = st.text.match(CHAT);
+    if (a && d.fixed.tap) text = d.fixed.tap.replace('{x}', d.w[a[1]] ?? a[1]);
+    else if (b && d.fixed.chat) text = d.fixed.chat.replace('{x}', d.w[b[1]] ?? b[1]);
+    else text = d.s[st.text];
+    if (!text) return null;
+    if (st.hint && !d.h[st.hint]) return null;
+    steps.push(text); hints.push(st.hint ? d.h[st.hint] : '');
+    alts.push((d.fixed.alt ?? 'WhatsApp: {x}').replace('{x}', text));
+  }
+  if (l.caution && !d.c[l.caution]) return null;
+  return { title, steps, hints, alts, caution: l.caution ? d.c[l.caution] : '', note: d.fixed.note ?? '' };
+}
+
+/** Is this lesson ready to publish in this language? */
 export function publishProblems(l, lang = 'en') {
   const p = [];
   if (!PUBLIC_STATUS.includes(l.status)) p.push(`status “${STATUS[l.status] ?? l.status}”`);
@@ -84,12 +130,10 @@ export function publishProblems(l, lang = 'en') {
   if (!l.steps?.length) p.push('no steps');
   l.steps?.forEach((s, i) => { if (!s.imageMeta?.reviewed) p.push(`step ${i + 1} not reviewed`); });
   if (lang !== 'en') {
-    const t = l.i18n?.[lang];
-    if (!t) p.push(`${lang}: not translated`);
-    else {
-      if (t.status !== 'published') p.push(`${lang}: translation not reviewed`);
-      if (!t.title || (t.steps ?? []).length !== l.steps.length || t.steps.some((x) => !String(x ?? '').trim())) p.push(`${lang}: translation incomplete`);
-    }
+    if (!loadLang(lang)) p.push(`${lang}: not translated`);
+    else if (!translateLesson(l, lang)) p.push(`${lang}: translation incomplete`);
+    // published before comparing with the real app → translation follows the same operator decision (note shown)
+    if (!l.approvedWithoutCompare && l.i18n?.[lang]?.status !== 'published') p.push(`${lang}: translation not reviewed`);
   }
   return p;
 }
@@ -97,16 +141,17 @@ export const isPublic = (l, lang = 'en') => publishProblems(l, lang).length === 
 
 /** Lessons for one language: only published ones, with that language's text */
 export function waCourse(lang, catalog = loadCatalog()) {
+  const d = lang === 'en' ? null : loadLang(lang);
   const chapters = catalog.chapters.map((ch) => ({
-    num: ch.num, key: ch.key, title: lang === 'en' ? ch.title : (ch.i18n?.[lang] ?? null),
+    num: ch.num, key: ch.key, title: lang === 'en' ? ch.title : (d?.ch[ch.key] ?? null),
     lessons: ch.lessons.filter((l) => isPublic(l, lang)).map((l) => {
-      const t = lang === 'en' ? null : l.i18n[lang];
-      return { id: l.id, slug: l.slug, level: l.level, title: t?.title ?? l.title, caution: t?.caution ?? l.caution,
-        steps: l.steps.map((s, i) => ({ text: t?.steps?.[i] ?? s.text, hint: t?.hints?.[i] ?? s.hint, target: s.targetLabel || null, screen: s.image.screen, alt: t?.alts?.[i] ?? s.image.alt })),
-        appVersion: l.appVersion, checked: l.lastChecked, note: l.approvedWithoutCompare ? (WA_NOTE[lang] ?? WA_NOTE.en) : '', sources: l.sources };
+      const t = lang === 'en' ? null : translateLesson(l, lang);
+      return { id: l.id, slug: l.slug, level: l.level, title: t?.title ?? l.title, caution: t ? t.caution : l.caution,
+        steps: l.steps.map((s, i) => ({ text: t?.steps[i] ?? s.text, hint: t ? t.hints[i] : s.hint, target: s.targetLabel || null, screen: s.image.screen, alt: t?.alts[i] ?? s.image.alt })),
+        appVersion: l.appVersion, checked: l.lastChecked, note: l.approvedWithoutCompare ? (t ? t.note : WA_NOTE.en) : '', sources: l.sources };
     }),
   })).filter((ch) => ch.lessons.length && ch.title);
-  return { chapters, count: chapters.reduce((a, ch) => a + ch.lessons.length, 0), text: WA_TEXT[lang] ?? WA_TEXT.en };
+  return { chapters, count: chapters.reduce((a, ch) => a + ch.lessons.length, 0), text: WA_TEXT[lang] ?? WA_TEXT.en, tr: lang === 'en' ? null : screenTr(lang) };
 }
 
 /** Progress per language for the admin page */
@@ -114,7 +159,7 @@ export function progress(catalog = loadCatalog()) {
   const all = catalog.chapters.flatMap((c) => c.lessons);
   const langs = LANGUAGES.filter((x) => x.code !== 'ko');
   return langs.map(({ code, name }) => {
-    const withText = code === 'en' ? all.filter((l) => l.steps.length).length : all.filter((l) => l.i18n?.[code]?.steps?.length).length;
+    const withText = code === 'en' ? all.filter((l) => l.steps.length).length : all.filter((l) => l.steps.length && translateLesson(l, code)).length;
     return { code, name, lessons: all.length, withText, published: all.filter((l) => isPublic(l, code)).length, images: code === 'en' ? all.reduce((a, l) => a + l.steps.length, 0) : 0 };
   });
 }

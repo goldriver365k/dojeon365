@@ -14,7 +14,7 @@ import { createHash } from 'node:crypto';
 import { siteFooter, FOOTER, CONTACT_EMAIL, TERMS_DATE } from '../i18n/footer.js';
 import { buildKakaotalk } from './build-kakaotalk.mjs';
 import { buildWhatsapp, waCourse, loadCatalog as loadWaCatalog } from './build-whatsapp.mjs';
-import { renderWhatsApp } from '../assets/whatsapp-screens.js';
+import { renderWhatsApp, setWaTranslator } from '../assets/whatsapp-screens.js';
 import { hasCourse } from '../i18n/regions.js';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
@@ -603,6 +603,8 @@ export function build() {
   WA_ALL = Object.fromEntries(Object.keys(LOCALES).filter((c) => hasCourse(c, 'whatsapp')).map((c) => { const w = waCourse(c, waCatalog); return [c, { ...w, byId: new Map(w.chapters.flatMap((ch) => ch.lessons).map((l) => [l.id, l])) }]; }));
   for (const code of Object.keys(LOCALES)) {
     WA = WA_ALL[code] ?? null;
+    // WhatsApp screens drawn in this language (Arabic right-to-left)
+    setWaTranslator(WA?.tr ?? null, { dir: LANGUAGES.find((x) => x.code === code)?.dir ?? 'ltr' });
     L = LOCALES[code];
     stats[code] = { pictures: 0, steps: 0 };
     setTranslator(L.tr, { locale: code, ...(L.wrap ?? {}) });
@@ -638,7 +640,7 @@ export function build() {
     result[code] = { pages, ...stats[code] };
   }
   setTranslator(null);
-  WA = null;
+  WA = null; setWaTranslator(null);
   const kakaotalk = buildKakaotalk({ version: VERSION, brandTagline: BRAND_TAGLINE });
   const koPages = buildKo({ version: VERSION, alternatesFor: (id) => { const a = lessonAlternates(id); delete a.ko; return a; } });
   const lastmod = lastmodFor(['/', ...koPages.map((x) => x.path), ...sitemap.map((x) => x.path), ...waSitemap.map((x) => x.path)]);

@@ -1,5 +1,5 @@
 /** [생활] 07~13 */
-import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, openQuick, openNoti, M, SRC, MENUS, SIDE, HOME, APPS, QUICK, NOTI, PRACTICE_ONLY } from './helpers.js?v=20261128.0038';
+import { lesson, app, tap, menu, path, toggle, self, look, swipe, hold, back, goHome, openQuick, openNoti, M, SRC, MENUS, SIDE, HOME, APPS, QUICK, NOTI, PRACTICE_ONLY } from './helpers.js?v=20261128.0146';
 
 const Q = (on) => ({ ...QUICK, on });
 
