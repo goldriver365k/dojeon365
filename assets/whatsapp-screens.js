@@ -153,7 +153,7 @@ V.tab = (c, s) => {
   let y = 94;
   if (tab === 'chats') {
     c.rect(16, y, W - 32, 42, C.gray, 21); c.add(I.search(40, y + 21, C.sub)); c.text(58, y + 27, 'Ask Meta AI or Search', { size: 14, fill: C.sub }); c.reg('Search', 16, y, W - 32, 42); y += 52;
-    ['All', 'Unread', 'Favourites', 'Groups'].forEach((f, i) => { const t = tr(f); const w = width(t) * 8 + 26; const x = 16 + [0, 52, 130, 236][i]; c.rect(x, y, w, 30, i === (s.filter ?? 0) ? '#D8FDD2' : C.gray, 15); c.text(x + w / 2, y + 20, t, { size: 13, weight: 600, anchor: 'middle', fill: i === (s.filter ?? 0) ? '#0A332C' : C.sub, raw: true }); c.reg(`${f} filter`, x, y, w, 30); });
+    let fx = 16; ['All', 'Unread', 'Favourites', 'Groups'].forEach((f, i) => { const t = tr(f); const w = width(t) * 8 + 26; const x = fx; fx += w + 6; if (x + w > W - 8) return; c.rect(x, y, w, 30, i === (s.filter ?? 0) ? '#D8FDD2' : C.gray, 15); c.text(x + w / 2, y + 20, t, { size: 13, weight: 600, anchor: 'middle', fill: i === (s.filter ?? 0) ? '#0A332C' : C.sub, raw: true }); c.reg(`${f} filter`, x, y, w, 30); });
     y += 44;
     if (s.archived) { c.add(`<rect x="22" y="${y + 8}" width="24" height="18" rx="2" fill="none" stroke="${C.sub}" stroke-width="2"/>`); c.text(70, y + 24, 'Archived', { size: 15, weight: 700 }); c.text(W - 18, y + 24, String(s.archived), { size: 13, fill: C.green, weight: 700, anchor: 'end', raw: true }); c.reg('Archived', 0, y, W, 36); y += 42; }
     for (const [n, last, time, unread] of s.chats ?? [['Maria', 'Did you eat dinner?', '18:20', 2], ['Family', 'Photo', '17:02', 5], ['John', 'See you tomorrow', '09:15', 0], ['Walking club', 'Meeting is on Saturday', 'Yesterday', 0]]) {
