@@ -27,7 +27,12 @@ function canvas() {
     reg(n, x, y, w, h) { if (n && !targets[n]) targets[n] = { x, y, w, h }; },
     regLast(n, x, y, w, h) { if (n) targets[n] = { x, y, w, h }; },
     rect(x, y, w, h, fill, r = 0, extra = '') { parts.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" ${extra}/>`); },
-    text(x, y, s, { size = 15, fill = C.dark, weight = 500, anchor = 'start', raw = false } = {}) { parts.push(`<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${anchor}">${esc(raw ? s : tr(s))}</text>`); },
+    text(x, y, s, { size = 15, fill = C.dark, weight = 500, anchor = 'start', raw = false } = {}) {
+      // RTL: the whole screen is mirrored; each text is flipped back around its own x and its anchor swapped
+      const a = RTL ? ({ start: 'end', end: 'start' }[anchor] ?? anchor) : anchor;
+      const flip = RTL ? ` transform="matrix(-1 0 0 1 ${2 * x} 0)"` : '';
+      parts.push(`<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${a}"${flip}>${esc(raw ? s : tr(s))}</text>`);
+    },
     out() { return { body: parts.join(''), targets }; },
   };
 }
@@ -527,7 +532,13 @@ export function renderWhatsApp(spec = { v: 'info' }, target, action) {
   const c = canvas();
   draw(c, spec);
   c.reg('Screen', 0, 40, W, 560);
-  const { body, targets } = c.out();
+  const out = c.out();
+  let { body, targets } = out;
+  if (RTL) {
+    // Mirror the layout like the real app in Arabic; red ring and labels are drawn on the mirrored positions
+    body = `<g transform="matrix(-1 0 0 1 ${W} 0)">${body}</g>`;
+    targets = Object.fromEntries(Object.entries(targets).map(([k, r]) => [k, { ...r, x: W - r.x - r.w }]));
+  }
   const t = target ? targets[target] : null;
   let mark = '';
   if (t) {
@@ -540,7 +551,7 @@ export function renderWhatsApp(spec = { v: 'info' }, target, action) {
     const bx = Math.min(Math.max(t.x + t.w / 2 - lw / 2, 6), W - lw - 6);
     mark += `<g class="target-tag"><rect x="${bx}" y="${by}" width="${lw}" height="34" rx="17" fill="#D7263D"/><text x="${bx + lw / 2}" y="${by + 23}" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">${esc(label)}</text><path d="M${bx + lw / 2 - 8} ${above ? by + 34 : by} l8 ${above ? 9 : -9} l8 ${above ? -9 : 9}z" fill="#D7263D"/></g>`;
   }
-  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"${RTL ? ' direction="rtl"' : ''} font-family="Roboto, Pretendard Variable, Noto Sans, sans-serif">${body}${mark}</svg>`;
+  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" font-family="Roboto, Pretendard Variable, Noto Sans, sans-serif">${body}${mark}</svg>`;
   return { svg, width: W, height: H, targets, target: t };
 }
 export const WA_VIEWS = Object.keys(V);
