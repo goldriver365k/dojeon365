@@ -24,7 +24,7 @@ for (const lang of langs) {
     const e = en.get(n); if (e == null) { out.push(`${n}: 영어에 없는 번호`); continue; }
     { const te = sig(t).split(' '); const missing = sig(e).split(' ').filter((x) => x && !te.includes(x)); if (missing.length && !/[٠-٩০-৯०-९๐-๙]/.test(t)) out.push(`${n}: 숫자·기호 빠짐(${missing.join(',')}) | ${e} | ${t}`); }
     const k = keys.get(n);
-    if ((k === '#s' || k.startsWith('#c')) && /[.!?。]$/.test(e) && !/[.!?。！？।۔]$|[.!?。」』”»"“]$/.test(t.trim())) out.push(`${n}: 문장 끝 없음 | ${e} | ${t}`);
+    if (lang !== 'th' && (k === '#s' || k.startsWith('#c')) && /[.!?。]$/.test(e) && !/[.!?。！？।۔]$|[.!?。」』”»"“]$/.test(t.trim())) out.push(`${n}: 문장 끝 없음 | ${e} | ${t}`);
     if (k === '#w' && /[.。]$/.test(t.trim()) && !/[.]$/.test(e)) out.push(`${n}: 낱말인데 마침표 | ${e} | ${t}`);
   }
   console.log(`${lang}: ${tr.size}줄, 문제 ${out.length}`); out.slice(0, 40).forEach((x) => console.log('  ' + x)); bad += out.length;
