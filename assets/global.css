@@ -221,3 +221,6 @@ h1, h2, h3, .step__text { hyphens: auto; -webkit-hyphens: auto; }
 .photo-ring--circle { border-radius: 50%; border-width: 6px; box-shadow: 0 0 0 3px rgb(255 255 255 / .85); }
 .brand-note { font-size: .9rem; }
 .pic__ring { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+/* WhatsApp lessons card on global home (green accent, no WhatsApp branding) */
+.cat--wa { border-color: #7fd8a3; background: #f1fbf5; }
+.cat--wa h3 a { color: #0b6b3a; }

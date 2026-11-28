@@ -36,3 +36,10 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
     Cache-Control = "no-cache"
+
+# WhatsApp 교육 원본 목록(관리자용): 검색에 나오지 않게
+[[headers]]
+  for = "/data/whatsapp/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"

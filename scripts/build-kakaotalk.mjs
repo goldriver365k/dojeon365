@@ -138,18 +138,19 @@ export function allLessons() {
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
 
 /** 관리자 화면: /admin/kakaotalk/ */
-export function adminPage({ version, brandTagline }) {
+export function adminPage({ version, brandTagline, course = 'kakaotalk', heading = '카카오톡 사용법 관리 (국내 전용)', lead, extra = '' }) {
   const statusOpts = Object.entries(STATUS).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('');
   return `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:">
-<title>카카오톡 수업 관리 | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${version}"><link rel="stylesheet" href="/assets/admin-kakao.css?v=${version}"></head>
-<body><main class="page admin kadmin" data-kadmin data-statuses='${esc(JSON.stringify(STATUS))}' data-public='${esc(JSON.stringify(PUBLIC_STATUS))}'>
+<title>${esc(heading)} | DigiStep365 관리</title><link rel="stylesheet" href="/assets/global.css?v=${version}"><link rel="stylesheet" href="/assets/admin-kakao.css?v=${version}"></head>
+<body><main class="page admin kadmin" data-kadmin data-course="${course}" data-statuses='${esc(JSON.stringify(STATUS))}' data-public='${esc(JSON.stringify(PUBLIC_STATUS))}'>
 <a class="brand admin__brand" href="/admin/"><img src="/assets/logo-mark.png" alt="" width="40" height="43"><span><b>Digi<i>Step</i>365</b><small lang="en">${esc(brandTagline)}</small></span></a>
 <p><a href="/admin/">← 콘텐츠 현황</a></p>
-<h1>카카오톡 사용법 관리 (국내 전용)</h1>
-<p class="lead">목차·수업·단계 카드·실제 화면 이미지·버전·검수 기록을 관리합니다. <b>실제 갤럭시 카카오톡 화면 캡처</b>와 검수 기록이 모두 갖춰지고 상태가 ‘공개’인 수업만 홈페이지에 나옵니다.</p>
+<h1>${esc(heading)}</h1>
+<p class="lead">${lead ?? '목차·수업·단계 카드·실제 화면 이미지·버전·검수 기록을 관리합니다. <b>실제 갤럭시 카카오톡 화면 캡처</b>와 검수 기록이 모두 갖춰지고 상태가 ‘공개’인 수업만 홈페이지에 나옵니다.'}</p>
+${extra}
 <details class="edit__help"><summary>사용 방법과 원칙</summary>
 <ol>
 <li><b>이미지</b>: 교육용 카카오톡 계정(가상 이름·가상 대화)으로 실제 갤럭시에서 캡처한 화면만 올립니다. AI로 만든 화면·비슷하게 그린 화면은 쓰지 않습니다. 화면은 고치지 말고, 그림을 눌러 <b>누를 곳(빨간 원)</b>만 표시합니다.</li>

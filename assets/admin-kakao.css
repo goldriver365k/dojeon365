@@ -48,3 +48,5 @@
 .kshot--svg { cursor: default; background: #fff; }
 .kshot--svg svg { display: block; width: 100%; height: auto; }
 .kbtn-ok { background: #e1f9ef !important; border-color: #00a35c !important; font-weight: 800; }
+.kprog { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.kprog th, .kprog td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: start; }

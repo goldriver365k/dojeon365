@@ -523,6 +523,19 @@ async function main() {
     await ck.close();
   }
 
+  // WhatsApp(해외 전용): 관리자 화면·재현 화면 미리보기, 공개 전에는 해외 홈에 없음
+  {
+    const cw = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    const pw = await cw.newPage(); const errsW = []; pw.on('pageerror', (e) => errsW.push(e.message));
+    await pw.goto(`${BASE}admin/whatsapp/?id=w04-send-photo`); await pw.waitForSelector('.kshot--svg svg');
+    check('WhatsApp 관리자: 160개 목록·재현 화면 미리보기', (await pw.textContent('[data-sum]')).includes('사용법 160개') && (await pw.locator('.kshot--svg svg').count()) >= 5);
+    check('WhatsApp 관리자: 언어별 진행률 표', (await pw.locator('.kprog tbody tr').count()) === 19);
+    await pw.goto(`${BASE}en/`); await pw.waitForSelector('h1');
+    check('WhatsApp: 공개 전에는 영어 홈에 카드 없음', (await pw.locator('.cat--wa').count()) === 0);
+    check('WhatsApp: 화면 오류 없음', errsW.length === 0, errsW.join(' | '));
+    await cw.close();
+  }
+
   // 하단 공유 아이콘: 6개 모두 실제로 동작(밖으로 나가는 주소는 가로채서 확인만)
   for (const mobile of [false, true]) {
     const c3 = await browser.newContext({ viewport: mobile ? { width: 390, height: 844 } : { width: 1280, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'], userAgent: mobile ? 'Mozilla/5.0 (Linux; Android 15; SM-S942N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Mobile Safari/537.36' : undefined });

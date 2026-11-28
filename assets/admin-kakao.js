@@ -1,14 +1,20 @@
 // DigiStep365 관리자: 카카오톡 사용법(국내 전용) — 목차·수업·단계 카드·실제 화면 이미지·버전·검수·공개 상태
 // 저장: ① catalog.json 내려받기  ② GitHub API로 이미지(images/kakaotalk/…)와 data/kakaotalk/catalog.json 커밋(토큰은 sessionStorage에만)
 // 공개 조건은 scripts/build-kakaotalk.mjs의 publishProblems()와 같다(빌드가 한 번 더 검사해 미달이면 공개하지 않는다).
-import { renderKakao } from './kakao-screens.js?v=20261127.2333';
-import { renderScreen } from './screens.js?v=20261127.2333';
+import { renderKakao } from './kakao-screens.js?v=20261128.0002';
+import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0002';
+import { renderScreen } from './screens.js?v=20261128.0002';
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const root = $('[data-kadmin]');
+// 과정별 설정(카카오톡: 국내 / WhatsApp: 해외)
+const CFG = {
+  kakaotalk: { app: '카카오톡', file: 'data/kakaotalk/catalog.json', img: 'images/kakaotalk', prefix: 'k', render: renderKakao, view: (l) => `/#/lesson/${l.id}/1`, versionHint: '더보기 › 설정 › 전체 설정 › 기타 › 앱 버전', altHint: '예: 채팅방 아래 ＋ 버튼이 보이는 카카오톡 화면', sources: [{ label: '카카오 더 쉬운 카톡설명서', url: 'https://talktips.kakao.com/' }, { label: '카카오 고객센터', url: 'https://cs.kakao.com/' }] },
+  whatsapp: { app: 'WhatsApp', file: 'data/whatsapp/catalog.json', img: 'images/whatsapp', prefix: 'w', render: renderWhatsApp, view: (l) => `/en/whatsapp/${l.slug}/`, versionHint: 'Settings › Help › App info', altHint: 'e.g. WhatsApp chat screen with the paper clip button highlighted', sources: [{ label: 'WhatsApp Help Center', url: 'https://faq.whatsapp.com/' }] },
+}[root.dataset.course ?? 'kakaotalk'];
 const STATUS = JSON.parse(root.dataset.statuses);
 const PUBLIC = JSON.parse(root.dataset.public);
-const KEY = 'digistep365.kadmin.v1';
+const KEY = root.dataset.course === 'whatsapp' ? 'digistep365.wadmin.v1' : 'digistep365.kadmin.v1';
 const KEY_TOKEN = 'digistep365.admin.token';
 const KEY_SETTINGS = 'digistep365.admin.settings';
 const store = {
@@ -26,7 +32,7 @@ const setMsg = (t, bad = false) => { const m = $('[data-msg]'); m.textContent = 
 /** 공개 조건(빌드와 같은 규칙; 아직 커밋 안 한 이미지는 있는 것으로 본다) */
 function problems(l) {
   const p = [];
-  for (const [k, label] of [['appVersion', '카카오톡 앱 버전'], ['android', '안드로이드 버전'], ['galaxyModel', '갤럭시 모델'], ['lastChecked', '마지막 확인 날짜'], ['reviewedBy', '검수자']]) if (!String(l[k] ?? '').trim()) p.push(`${label} 없음`);
+  for (const [k, label] of [['appVersion', `${CFG.app} 앱 버전`], ['android', '안드로이드 버전'], ['galaxyModel', '갤럭시 모델'], ['lastChecked', '마지막 확인 날짜'], ['reviewedBy', '검수자']]) if (!String(l[k] ?? '').trim()) p.push(`${label} 없음`);
   if (!l.sources?.length) p.push('공식 참고 자료 없음');
   if (!l.steps?.length) p.push('단계 없음');
   (l.steps ?? []).forEach((s, i) => {
@@ -88,7 +94,7 @@ function renderEditor() {
   const opts = state.catalog.chapters.map((c, i) => `<option value="${i}" ${c === ch ? 'selected' : ''}>${String(c.num).padStart(2, '0')}. ${esc(c.title)}</option>`).join('');
   pane.innerHTML = `<header class="kedit__head"><p class="eyebrow">${String(ch.num).padStart(2, '0')}. ${esc(ch.title)} · <code>${esc(l.id)}</code></p>
   <h2>${esc(l.title)}</h2>
-  <p class="kedit__tools"><button type="button" data-l-up>↑ 위로</button><button type="button" data-l-down>↓ 아래로</button><label>대분류 이동 <select data-l-move>${opts}</select></label><button type="button" data-l-del>사용법 삭제</button>${!PUBLIC.includes(l.status) ? ' <button type="button" class="kbtn-ok" data-l-approve>실제 앱과 대조 완료 → 검수·공개</button>' : ''}${PUBLIC.includes(l.status) && !prob.length ? ` <a href="/#/lesson/${esc(l.id)}/1" target="_blank" rel="noopener">홈페이지에서 보기</a>` : ''}</p></header>
+  <p class="kedit__tools"><button type="button" data-l-up>↑ 위로</button><button type="button" data-l-down>↓ 아래로</button><label>대분류 이동 <select data-l-move>${opts}</select></label><button type="button" data-l-del>사용법 삭제</button>${!PUBLIC.includes(l.status) ? ' <button type="button" class="kbtn-ok" data-l-approve>실제 앱과 대조 완료 → 검수·공개</button>' : ''}${PUBLIC.includes(l.status) && !prob.length ? ` <a href="${esc(CFG.view(l))}" target="_blank" rel="noopener">홈페이지에서 보기</a>` : ''}</p></header>
   ${l.existing ? `<p class="step__note">이 주제는 기존 <a href="/learn/${esc(l.existing.course)}/${esc(l.existing.id)}/" target="_blank">갤럭시 수업(${esc(l.existing.id)})</a>에도 그림(실제 화면 아님)으로 있어요. 실제 화면 수업을 공개하면 그 수업의 그림을 교체·연결할지 정하세요.</p>` : ''}
   <div class="kgrid">
     ${field('사용법 제목', 'title', l.title)}
@@ -99,7 +105,7 @@ function renderEditor() {
     ${field('주의사항(중요 기능)', 'caution', l.caution)}
   </div>
   <fieldset class="kbox"><legend>버전·검수</legend><div class="kgrid">
-    ${field('카카오톡 앱 버전', 'appVersion', l.appVersion, 'placeholder="예: 25.10.1"')}
+    ${field(`${CFG.app} 앱 버전`, 'appVersion', l.appVersion, 'placeholder="예: 25.10.1"')}
     ${field('갤럭시 모델', 'galaxyModel', l.galaxyModel, 'placeholder="예: 갤럭시 S26"')}
     ${field('안드로이드 버전', 'android', l.android, 'placeholder="예: 17"')}
     ${field('One UI 버전', 'oneui', l.oneui, 'placeholder="예: 9"')}
@@ -120,7 +126,7 @@ function stepCard(s, i, n) {
   const m = s.imageMeta ?? {};
   const t = img.target;
   return `<li class="kstep" data-step="${i}">
-  <div class="kstep__pic">${img.screen && !img.src ? `<div class="kshot kshot--svg" title="코드로 그린 재현 화면">${(img.screen.galaxy ? renderScreen(img.screen.galaxy, s.targetLabel || undefined, 'tap') : renderKakao(img.screen, s.targetLabel || undefined, 'tap')).svg}</div><p class="hint">재현 화면 — 실제 앱과 대조하세요. 실제 캡처로 바꾸려면 아래에서 올리세요.</p>` : img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
+  <div class="kstep__pic">${img.screen && !img.src ? `<div class="kshot kshot--svg" title="코드로 그린 재현 화면">${(img.screen.galaxy ? renderScreen(img.screen.galaxy, s.targetLabel || undefined, 'tap') : CFG.render(img.screen, s.targetLabel || undefined, 'tap')).svg}</div><p class="hint">재현 화면 — 실제 앱과 대조하세요. 실제 캡처로 바꾸려면 아래에서 올리세요.</p>` : img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
     <label class="kfile">실제 화면 올리기<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="${i}"></label>
     ${t ? `<label class="kf">빨간 원 크기 <input type="range" min="6" max="40" value="${Math.round(t.w)}" data-ring="${i}"></label><button type="button" data-ring-del="${i}">빨간 원 지우기</button>` : img.src ? '<p class="hint">그림에서 누를 곳을 누르세요.</p>' : ''}
   </div>
@@ -130,10 +136,10 @@ function stepCard(s, i, n) {
     <label class="kf">음성 안내(비우면 설명을 읽어요)<input data-s="voice" value="${esc(s.voice)}"></label>
     <label class="kf">도움말(선택)<input data-s="hint" value="${esc(s.hint)}"></label>
     <label class="kf">누를 곳 이름(화면에 보이는 글자)<input data-s="targetLabel" value="${esc(s.targetLabel)}"></label>
-    <label class="kf">이미지 설명(alt)<input data-i="alt" value="${esc(img.alt)}" placeholder="예: 채팅방 아래 ＋ 버튼이 보이는 카카오톡 화면"></label>
+    <label class="kf">이미지 설명(alt)<input data-i="alt" value="${esc(img.alt)}" placeholder="${esc(CFG.altHint)}"></label>
     <fieldset class="kbox kbox--s"><legend>이미지 기록</legend><div class="kgrid">
       <label class="kf">출처<select data-m="source"><option value="">고르세요</option>${['직접 캡처(교육용 계정)', '권한을 받은 공식 화면', '원본 화면 기준 재현(검수 필수)'].map((o) => `<option ${m.source === o ? 'selected' : ''}>${o}</option>`).join('')}</select></label>
-      <label class="kf">카카오톡 버전<input data-m="appVersion" value="${esc(m.appVersion)}"></label>
+      <label class="kf">${CFG.app} 버전<input data-m="appVersion" value="${esc(m.appVersion)}"></label>
       <label class="kf">갤럭시 모델<input data-m="galaxyModel" value="${esc(m.galaxyModel)}"></label>
       <label class="kf">Android<input data-m="android" value="${esc(m.android)}"></label>
       <label class="kf">One UI<input data-m="oneui" value="${esc(m.oneui)}"></label>
@@ -171,7 +177,7 @@ async function upload(input) {
   if (!dim) { alert('그림 파일을 읽지 못했어요.'); return; }
   if (dim.h < dim.w) alert('가로가 더 긴 그림이에요. 휴대폰 화면 캡처(세로)가 맞는지 확인하세요.');
   const ext = file.type === 'image/jpeg' ? 'jpg' : file.type === 'image/webp' ? 'webp' : 'png';
-  const src = `images/kakaotalk/${l.id}/${i + 1}-${Date.now().toString(36)}.${ext}`;
+  const src = `${CFG.img}/${l.id}/${i + 1}-${Date.now().toString(36)}.${ext}`;
   const b64 = await new Promise((res) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.readAsDataURL(file); });
   const old = l.steps[i].image?.src;
   if (old && state.images.has(old)) state.images.delete(old);
@@ -208,9 +214,9 @@ root.addEventListener('click', (e) => {
   else if (d.addLesson) {
     const c = cs[+d.addLesson]; const t = prompt('새 사용법 제목'); if (!t) return;
     const slug = (prompt('주소용 영문 이름(소문자·숫자·-)', 'new-lesson') ?? '').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 40) || `new-${Date.now().toString(36)}`;
-    const id = `k${String(c.num).padStart(2, '0')}-${slug}`;
+    const id = `${CFG.prefix}${String(c.num).padStart(2, '0')}-${slug}`;
     if (find(id)) { alert('같은 주소가 이미 있어요.'); return; }
-    c.lessons.push({ id, title: t.trim(), status: 'draft', q: [], caution: '', menuPath: '', features: '', steps: [], platform: 'android', appVersion: '', android: '', oneui: '', galaxyModel: '', sources: [{ label: '카카오 더 쉬운 카톡설명서', url: 'https://talktips.kakao.com/' }, { label: '카카오 고객센터', url: 'https://cs.kakao.com/' }], lastChecked: '', reviewedBy: '', needsUpdate: false, changes: '' });
+    c.lessons.push({ id, slug, title: t.trim(), status: 'draft', q: [], caution: '', menuPath: '', features: '', steps: [], platform: 'android', appVersion: '', android: '', oneui: '', galaxyModel: '', sources: CFG.sources, lastChecked: '', reviewedBy: '', needsUpdate: false, changes: '' });
     state.sel = id;
   } else if (state.sel) {
     const { l, ch } = find(state.sel);
@@ -222,7 +228,7 @@ root.addEventListener('click', (e) => {
       // 사람이 실제 갤럭시 카카오톡과 모든 단계를 대조한 뒤에만 누른다
       const who = prompt('검수자 이름(실제 앱과 모든 단계를 대조했어요)', l.reviewedBy || '');
       if (!who) return;
-      const ver = prompt('대조한 카카오톡 앱 버전(더보기 › 설정 › 전체 설정 › 기타 › 앱 버전)', l.appVersion || '');
+      const ver = prompt(`대조한 ${CFG.app} 앱 버전(${CFG.versionHint})`, l.appVersion || '');
       if (!ver) return;
       Object.assign(l, { reviewedBy: who.trim(), appVersion: ver.trim(), lastChecked: today() });
       l.steps.forEach((st) => { st.imageMeta = { ...(st.imageMeta ?? {}), reviewed: today(), appVersion: ver.trim() }; });
@@ -305,18 +311,18 @@ async function commit() {
     let k = 0;
     for (const [path, { b64 }] of state.images) {
       setMsg(`이미지 저장 중… (${++k}/${state.images.size})`);
-      const put = await fetch(api(path), { method: 'PUT', headers, body: JSON.stringify({ message: `카카오톡 교육 이미지: ${path}`, content: b64, branch }) });
+      const put = await fetch(api(path), { method: 'PUT', headers, body: JSON.stringify({ message: `${CFG.app} 교육 이미지: ${path}`, content: b64, branch }) });
       if (!put.ok && put.status !== 422) throw new Error(explain(put.status));
     }
     setMsg('목록(catalog.json) 저장 중…');
-    const file = 'data/kakaotalk/catalog.json';
+    const file = CFG.file;
     const get = await fetch(`${api(file)}?ref=${encodeURIComponent(branch)}`, { headers, cache: 'no-store' });
     if (!get.ok) throw new Error(explain(get.status));
     const j = await get.json();
     if (JSON.stringify(JSON.parse(b64decode(j.content))) !== state.base && !confirm('그 사이 다른 곳에서 목록이 바뀌었어요. 내 변경으로 덮어쓸까요?')) throw new Error('저장을 멈췄습니다.');
     state.catalog.meta.updated = today();
     const content = pretty(state.catalog);
-    const put = await fetch(api(file), { method: 'PUT', headers, body: JSON.stringify({ message: '카카오톡 교육 관리: 목록·단계·검수 수정', content: b64encode(content), branch, sha: j.sha }) });
+    const put = await fetch(api(file), { method: 'PUT', headers, body: JSON.stringify({ message: `${CFG.app} 교육 관리: 목록·단계·검수 수정`, content: b64encode(content), branch, sha: j.sha }) });
     if (!put.ok) throw new Error(explain(put.status));
     state.base = JSON.stringify(state.catalog);
     state.images.clear();
@@ -331,7 +337,7 @@ $('[data-download]').addEventListener('click', () => {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([pretty(state.catalog)], { type: 'application/json' }));
   a.download = 'catalog.json'; a.click();
-  if (state.images.size) setMsg(`새 이미지 ${state.images.size}장은 내려받기에 들어가지 않아요. GitHub 저장을 쓰거나 이미지를 images/kakaotalk/에 직접 넣으세요.`, true);
+  if (state.images.size) setMsg(`새 이미지 ${state.images.size}장은 내려받기에 들어가지 않아요. GitHub 저장을 쓰거나 이미지를 ${CFG.img}/에 직접 넣으세요.`, true);
 });
 $('[data-reset]').addEventListener('click', () => { if (!confirm('저장 안 한 변경을 모두 버릴까요?')) return; store.del(KEY); location.reload(); });
 window.addEventListener('beforeunload', (e) => { if (state.images.size) { e.preventDefault(); e.returnValue = ''; } });
@@ -342,7 +348,7 @@ window.addEventListener('beforeunload', (e) => { if (state.images.size) { e.prev
   if (settings.repo) $('[data-repo]').value = settings.repo;
   if (settings.branch) $('[data-branch]').value = settings.branch;
   $('[data-token]').value = store.get(KEY_TOKEN, '', sessionStorage);
-  const res = await fetch('/data/kakaotalk/catalog.json', { cache: 'no-store' });
+  const res = await fetch(`/${CFG.file}`, { cache: 'no-store' });
   const fresh = await res.json();
   const saved = store.get(KEY, null);
   const freshText = JSON.stringify(fresh);

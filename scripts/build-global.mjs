@@ -13,6 +13,9 @@ import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { siteFooter, FOOTER, CONTACT_EMAIL, TERMS_DATE } from '../i18n/footer.js';
 import { buildKakaotalk } from './build-kakaotalk.mjs';
+import { buildWhatsapp, waCourse, loadCatalog as loadWaCatalog } from './build-whatsapp.mjs';
+import { renderWhatsApp } from '../assets/whatsapp-screens.js';
+import { hasCourse } from '../i18n/regions.js';
 import { deviceSection } from '../i18n/device-strings.js';
 import { applyEdits } from '../i18n/edits.js';
 import { UI_EXTRA, SEO } from '../i18n/ui-extra.js';
@@ -162,7 +165,7 @@ function header() {
 </header>`;
 }
 
-function footer(draft, alternates = {}) {
+function footer(draft, alternates = {}, note = '') {
   const { UI } = L;
   const langs = LANGUAGES.filter((x) => x.code !== 'ko').map((x) => {
     if (x.code === L.code) return `<b>${esc(x.name)}</b>`;
@@ -176,7 +179,7 @@ function footer(draft, alternates = {}) {
     shareUrl: `${SITE_URL}/${seg(L.code)}/`,
     languagesLabel: UI.languages,
     langLinks: `${langs.join(' · ')} · <a href="${alternates.ko ?? '/'}" hreflang="ko" lang="ko">한국어</a>`,
-    extra: draft ? `<p class="draft">${UI.draft}</p>` : '',
+    extra: `${draft ? `<p class="draft">${UI.draft}</p>` : ''}${note ? `<p class="draft brand-note">${esc(note)}</p>` : ''}`,
   })}
 ${AN ? `<div class="consent" data-consent hidden role="region" aria-label="${UI.consentLabel}"><p>${UI.consent}</p><div><button type="button" class="btn btn--primary" data-consent-yes>${UI.consentYes}</button><button type="button" class="btn" data-consent-no>${UI.consentNo}</button></div></div>` : ''}`;
 }
@@ -314,11 +317,86 @@ ${header()}
 <p class="lead">${UI.homeLead}</p>
 <a class="btn btn--primary btn--block" href="/${seg(L.code)}/galaxy/">${UI.homeCta}</a>
 ${homeShowcase()}
+${WA && WA.count ? `<section class="cat cat--wa"><h3><a href="/${seg(L.code)}/whatsapp/">${esc(WA.text[0])}</a></h3><p class="cat__desc">${esc(WA.text[1])}</p></section>` : ''}
 <ul class="points">
 ${UI.homePoints.map(([b, t]) => `  <li><b>${b}</b> — ${t}</li>`).join('\n')}
 </ul>
 </main>
 ${footer(true, alternates)}
+</body>
+</html>
+`;
+}
+
+/* ---------- WhatsApp (global sites only; published lessons only) ---------- */
+let WA = null;
+const waPath = (code, slug = '') => `/${seg(code)}/whatsapp/${slug ? `${slug}/` : ''}`;
+function waAlternates(id) {
+  const out = {};
+  for (const code of Object.keys(LOCALES)) { const l = WA_ALL[code]?.byId.get(id); if (l) out[code] = waPath(code, l.slug); }
+  return out;
+}
+let WA_ALL = {};
+function waIndexPage() {
+  const { UI } = L;
+  const base = waPath(L.code);
+  const alternates = Object.fromEntries(Object.keys(LOCALES).filter((c) => WA_ALL[c]?.count).map((c) => [c, waPath(c)]));
+  const [title, sub, note] = WA.text;
+  return `${head({ title: `${title} — ${sub} | ${UI.brand}`, desc: `${title}: ${sub}. ${WA.count}.`, path: base, index: true, crumbs: [[UI.home, `/${seg(L.code)}/`], [title, base]], alternates })}
+<body>
+${header()}
+<main class="page" id="main">
+${crumbNav([[UI.home, `/${seg(L.code)}/`], [title, base]])}
+<h1>${esc(title)}</h1>
+<p class="lead">${esc(sub)}</p>
+${WA.chapters.map((ch) => `<section class="cat" id="c${two(ch.num)}"><h3><span class="num">${two(ch.num)}</span> ${esc(ch.title)}</h3>
+<ul class="lessons">${ch.lessons.map((l) => `<li><a href="${waPath(L.code, l.slug)}">${esc(l.title)}<span>${l.steps.length}</span></a></li>`).join('')}</ul></section>`).join('\n')}
+</main>
+${footer(false, alternates, note)}
+</body>
+</html>
+`;
+}
+function waLessonPage(ch, l) {
+  const { UI } = L;
+  const [title, , note] = WA.text;
+  const base = waPath(L.code);
+  const path = waPath(L.code, l.slug);
+  const alternates = waAlternates(l.id);
+  const crumbs = [[UI.home, `/${seg(L.code)}/`], [title, base], [ch.title, `${base}#c${two(ch.num)}`], [l.title, path]];
+  const n = l.steps.length;
+  const all = ch.lessons; const next = all[all.findIndex((x) => x.id === l.id) + 1];
+  return `${head({ title: `${l.title} — ${title} | ${UI.brand}`, desc: `${l.title}: ${n} ${l.steps[0].text}`.slice(0, 155), path, index: true, crumbs, alternates })}
+<body>
+${header()}
+<main class="page" id="main">
+${crumbNav(crumbs)}
+<h1>${esc(l.title)}</h1>
+<ol class="steps" data-steps>
+${l.steps.map((st, i) => `<li class="step" id="step-${i + 1}">
+  <p class="step__no">${UI.stepOf(i + 1, n)}</p>
+  <h2 class="step__text">${esc(st.text)}</h2>
+  ${st.hint ? `<p class="step__hint">${esc(st.hint)}</p>` : ''}
+  <figure class="pic" role="img" aria-label="${esc(st.alt)}">${renderWhatsApp(st.screen, st.target ?? undefined, 'tap').svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</figure>
+</li>`).join('\n')}
+</ol>
+<div class="tools" hidden>
+  <button type="button" class="btn" data-restart>${UI.restart}</button>
+  <button type="button" class="btn" data-all aria-pressed="false">${UI.all}</button>
+</div>
+${l.caution ? `<p class="step__note">${esc(l.caution)}</p>` : ''}
+<p class="finish" data-finish hidden>${UI.finished}${next ? ` ${UI.nextLesson} <a href="${waPath(L.code, next.slug)}">${esc(next.title)}</a>` : ''}</p>
+<details class="meta"><summary>${UI.sources}</summary>
+  <p>WhatsApp ${esc(l.appVersion)} · Android · ${UI.reviewed}: ${esc(l.checked)}</p>
+  <ul>${(l.sources ?? []).map((x) => `<li><a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(x.label)}</a></li>`).join('')}</ul>
+</details>
+</main>
+<nav class="bar" aria-label="${UI.stepsNav}" hidden>
+  <button type="button" class="btn" data-prev>${UI.prev}</button>
+  <button type="button" class="btn" data-listen>${UI.listen}</button>
+  <button type="button" class="btn btn--primary" data-next data-next-label="${UI.next}" data-done-label="${UI.done}">${UI.next}</button>
+</nav>
+${footer(false, alternates, note)}
 </body>
 </html>
 `;
@@ -513,8 +591,13 @@ export function build() {
   const out = (p, html) => { const f = new URL(`..${p}index.html`, import.meta.url); mkdirSync(new URL('.', f), { recursive: true }); writeFileSync(f, html); };
   const rowsById = new Map();
   const sitemap = [];
+  const waSitemap = [];
   const result = {};
+  const whatsapp = buildWhatsapp({ version: VERSION, brandTagline: BRAND_TAGLINE });
+  const waCatalog = loadWaCatalog();
+  WA_ALL = Object.fromEntries(Object.keys(LOCALES).filter((c) => hasCourse(c, 'whatsapp')).map((c) => { const w = waCourse(c, waCatalog); return [c, { ...w, byId: new Map(w.chapters.flatMap((ch) => ch.lessons).map((l) => [l.id, l])) }]; }));
   for (const code of Object.keys(LOCALES)) {
+    WA = WA_ALL[code] ?? null;
     L = LOCALES[code];
     stats[code] = { pictures: 0, steps: 0 };
     setTranslator(L.tr, { locale: code, ...(L.wrap ?? {}) });
@@ -525,6 +608,11 @@ export function build() {
     out(`/${seg(code)}/galaxy/`, galaxyIndex(groups));
     out(`/${seg(code)}/privacy/`, privacyPage());
     out(`/${seg(code)}/terms/`, termsPage());
+    if (WA?.count) {
+      out(waPath(code), waIndexPage());
+      waSitemap.push({ path: waPath(code), alts: Object.fromEntries(Object.keys(WA_ALL).filter((c) => WA_ALL[c].count).map((c) => [c, waPath(c)])) });
+      for (const ch of WA.chapters) for (const l of ch.lessons) { out(waPath(code, l.slug), waLessonPage(ch, l)); waSitemap.push({ path: waPath(code, l.slug), alts: waAlternates(l.id) }); }
+    }
     let pages = 0;
     for (const { ch, lessons } of groups) {
       for (const x of lessons) {
@@ -545,9 +633,10 @@ export function build() {
     result[code] = { pages, ...stats[code] };
   }
   setTranslator(null);
+  WA = null;
   const kakaotalk = buildKakaotalk({ version: VERSION, brandTagline: BRAND_TAGLINE });
   const koPages = buildKo({ version: VERSION, alternatesFor: (id) => { const a = lessonAlternates(id); delete a.ko; return a; } });
-  const lastmod = lastmodFor(['/', ...koPages.map((x) => x.path), ...sitemap.map((x) => x.path)]);
+  const lastmod = lastmodFor(['/', ...koPages.map((x) => x.path), ...sitemap.map((x) => x.path), ...waSitemap.map((x) => x.path)]);
   const lm = (path) => (lastmod[path] ? `<lastmod>${lastmod[path]}</lastmod>` : '');
   const reviewedAlt = (id) => Object.entries(lessonAlternates(id)).filter(([c]) => c === 'ko' || LOCALES[c].REVIEWED[id]);
   writeFileSync(new URL('../sitemap.xml', import.meta.url), `<?xml version="1.0" encoding="UTF-8"?>
@@ -560,6 +649,7 @@ ${koPages.map(({ path }) => {
     return `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}${alts.length > 1 ? alts.map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('') : ''}</url>`;
   }).join('\n')}
 ${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}${reviewedAlt(id).map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('')}</url>`).join('\n')}
+${waSitemap.map(({ path, alts }) => `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}${Object.keys(alts).length > 1 ? Object.entries(alts).map(([c, p]) => `<xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}${p}"/>`).join('') : ''}</url>`).join('\n')}
 </urlset>
 `);
   out('/admin/', adminPage([...rowsById.values()]));
@@ -567,7 +657,7 @@ ${sitemap.map(({ path, id }) => `  <url><loc>${SITE_URL}${path}</loc>${lm(path)}
   mkdirSync(new URL('../admin/data/', import.meta.url), { recursive: true });
   for (const code of Object.keys(LOCALES)) writeFileSync(new URL(`../admin/data/${code}.json`, import.meta.url), JSON.stringify(editData(code)));
   writeFileSync(new URL('../robots.txt', import.meta.url), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
-  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length, kakaotalk };
+  return { ...result, indexed: sitemap.length, total: rowsById.size, koPages: koPages.length, kakaotalk, whatsapp };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) console.log(build());
