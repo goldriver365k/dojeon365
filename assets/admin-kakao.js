@@ -1,16 +1,18 @@
 // DigiStep365 관리자: 카카오톡 사용법(국내 전용) — 목차·수업·단계 카드·실제 화면 이미지·버전·검수·공개 상태
 // 저장: ① catalog.json 내려받기  ② GitHub API로 이미지(images/kakaotalk/…)와 data/kakaotalk/catalog.json 커밋(토큰은 sessionStorage에만)
 // 공개 조건은 scripts/build-kakaotalk.mjs의 publishProblems()와 같다(빌드가 한 번 더 검사해 미달이면 공개하지 않는다).
-import { renderKakao } from './kakao-screens.js?v=20261128.0646';
-import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0646';
-import { renderScreen } from './screens.js?v=20261128.0646';
+import { renderKakao } from './kakao-screens.js?v=20261128.0725';
+import { renderWhatsApp } from './whatsapp-screens.js?v=20261128.0725';
+import { renderScreen } from './screens.js?v=20261128.0725';
+import { renderIphone, setIpLang } from './iphone-screens.js?v=20261128.0725';
+import { KO_SCREEN } from '../data/iphone/ko-screen.js?v=20261128.0725';
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const root = $('[data-kadmin]');
 // 과정별 설정(카카오톡: 국내 / WhatsApp: 해외)
 const CFG = {
   kakaotalk: { app: '카카오톡', file: 'data/kakaotalk/catalog.json', img: 'images/kakaotalk', prefix: 'k', render: renderKakao, view: (l) => `/#/lesson/${l.id}/1`, versionHint: '더보기 › 설정 › 전체 설정 › 기타 › 앱 버전', altHint: '예: 채팅방 아래 ＋ 버튼이 보이는 카카오톡 화면', sources: [{ label: '카카오 더 쉬운 카톡설명서', url: 'https://talktips.kakao.com/' }, { label: '카카오 고객센터', url: 'https://cs.kakao.com/' }] },
-  iphone: { app: '아이폰', file: 'data/iphone/catalog.json', img: 'images/iphone', prefix: 'i', render: null, view: (l) => `/learn/iphone/${l.slug}/`, versionHint: '설정 › 일반 › 정보 › iOS 버전', altHint: '예: 설정 화면에서 ‘디스플레이 및 밝기’가 보이는 아이폰 화면', sources: [{ label: 'Apple iPhone 사용 설명서', url: 'https://support.apple.com/ko-kr/guide/iphone/welcome/ios' }],
+  iphone: { app: '아이폰', file: 'data/iphone/catalog.json', img: 'images/iphone', prefix: 'i', render: (sc, t, a) => { setIpLang(state.lang === 'en' ? 'en' : 'ko', KO_SCREEN); return renderIphone(sc, t, a); }, drawnSource: '원본 화면 기준 재현(운영자 승인)', view: (l) => `/learn/iphone/${l.slug}/`, versionHint: '설정 › 일반 › 정보 › iOS 버전', altHint: '예: 설정 화면에서 ‘디스플레이 및 밝기’가 보이는 아이폰 화면', sources: [{ label: 'Apple iPhone 사용 설명서', url: 'https://support.apple.com/ko-kr/guide/iphone/welcome/ios' }],
     langs: ['ko', 'en'],
     verFields: [['iphoneModel', '아이폰 모델', '예: iPhone 16'], ['ios', 'iOS 버전', '예: 26.1'], ['lastChecked', '마지막 확인 날짜', 'type=date'], ['reviewedBy', '검수자', '']],
     metaFields: [['iphoneModel', '아이폰 모델'], ['ios', 'iOS'], ['lang', '화면 언어'], ['country', '국가'], ['captured', '캡처 날짜', 'date'], ['reviewed', '검수 날짜', 'date'], ['license', '사용 권한']],
@@ -51,6 +53,9 @@ function problems(l) {
       const tx = g === 'en' ? s.textEn : s.text; const img = (g === 'en' ? s.imageEn : s.image) ?? {}; const m = (g === 'en' ? s.imageMetaEn : s.imageMeta) ?? {};
       const pre = g ? `${n}(${g === 'en' ? '영어' : '한국어'})` : n;
       if (!String(tx ?? '').trim()) p.push(`${pre} 설명 없음`);
+      // 아이폰: 운영자가 승인한 재현 그림(approvedWithoutCompare)은 실제 캡처 대신 쓸 수 있음
+      const drawnOk = CFG.langs && l.approvedWithoutCompare && !img.src && img.screen && m.source === CFG.drawnSource;
+      if (drawnOk) { if (m.privacyChecked !== true) p.push(`${pre} 개인정보 노출 확인 안 됨`); continue; }
       if (!img.src && (CFG.langs || !img.screen)) p.push(`${pre} 실제 화면 이미지 없음`);
       if (!String(img.alt ?? '').trim()) p.push(`${pre} 이미지 설명(alt) 없음`);
       if (!m.source) p.push(`${pre} 이미지 출처 없음`);
@@ -143,7 +148,7 @@ function stepCard(s, i, n) {
   const m = s[K('imageMeta')] ?? {};
   const t = img.target;
   return `<li class="kstep" data-step="${i}">
-  <div class="kstep__pic">${img.screen && !img.src ? `<div class="kshot kshot--svg" title="코드로 그린 재현 화면">${(img.screen.galaxy ? renderScreen(img.screen.galaxy, s.targetLabel || undefined, 'tap') : CFG.render(img.screen, s.targetLabel || undefined, 'tap')).svg}</div><p class="hint">재현 화면 — 실제 앱과 대조하세요. 실제 캡처로 바꾸려면 아래에서 올리세요.</p>` : img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
+  <div class="kstep__pic">${img.screen && !img.src ? `<div class="kshot kshot--svg" title="코드로 그린 재현 화면">${(img.screen.galaxy ? renderScreen(img.screen.galaxy, s.targetLabel || undefined, 'tap') : CFG.render(img.screen, (CFG.langs ? s.targetKey : s.targetLabel) || undefined, s.action ?? 'tap')).svg}</div><p class="hint">재현 화면 — 실제 앱과 대조하세요. 실제 캡처로 바꾸려면 아래에서 올리세요.</p>` : img.src ? `<div class="kshot" data-shot="${i}" title="그림을 누르면 그 자리에 빨간 원을 놓아요"><img src="${esc(imgURL(img.src))}" alt="" draggable="false">${t ? `<span class="photo-ring photo-ring--circle" style="left:${t.x}%;top:${t.y}%;width:${t.w}%;height:${t.h}%"></span>` : ''}</div>` : '<div class="kshot kshot--empty">실제 화면 캡처 없음</div>'}
     <label class="kfile">실제 화면 올리기<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="${i}"></label>
     ${t ? `<label class="kf">빨간 원 크기 <input type="range" min="6" max="40" value="${Math.round(t.w)}" data-ring="${i}"></label><button type="button" data-ring-del="${i}">빨간 원 지우기</button>` : img.src ? '<p class="hint">그림에서 누를 곳을 누르세요.</p>' : ''}
   </div>

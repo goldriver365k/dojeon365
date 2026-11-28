@@ -546,9 +546,17 @@ async function main() {
     await pi.setViewportSize({ width: 1280, height: 900 });
     await pi.goto(`${BASE}admin/iphone/`); await pi.waitForSelector('[data-sum]');
     await pi.click('[data-pick="i10-text-size"]'); await pi.waitForSelector('[data-lang]');
-    check('아이폰 관리자: 440개 목록·실제 캡처 없음 표시', (await pi.textContent('[data-sum]')).includes('사용법 440개') && (await pi.locator('.kshot--empty').count()) >= 1);
+    check('아이폰 관리자: 440개 목록·재현 그림 미리보기', (await pi.textContent('[data-sum]')).includes('사용법 440개') && (await pi.locator('.kshot--svg svg').count()) === 4);
     await pi.selectOption('[data-lang]', 'en'); await pi.waitForTimeout(100);
     check('아이폰 관리자: 영어 편집 언어로 바꾸면 영어 설명', (await pi.inputValue('[data-s="text"]')).includes('Settings'));
+    await pi.setViewportSize({ width: 360, height: 760 });
+    await pi.goto(`${BASE}learn/iphone/text-size/`); await pi.waitForSelector('.step.is-on svg');
+    check('아이폰 수업: 한 단계씩·빨간 표시·그림 안내·한국어 화면', (await pi.locator('.step.is-on .target-ring').count()) === 1 && (await pi.textContent('main')).includes('아이폰 화면을 보고 그린 그림') && (await pi.textContent('.step.is-on svg')).includes('설정'));
+    await pi.click('[data-next]'); await pi.waitForTimeout(150);
+    check('아이폰 수업: 다음 단계', (await pi.textContent('.step.is-on .step__no')).includes('2단계'));
+    check('아이폰 수업: 360px 가로 스크롤 없음', (await pi.evaluate(() => document.documentElement.scrollWidth)) <= 360);
+    await pi.goto(`${BASE}en/iphone/power-off/`); await pi.waitForSelector('.step.is-on svg');
+    check('아이폰 수업(영어): 영어 화면·홈 버튼 기종 단계', (await pi.textContent('.step.is-on')).includes('Press and hold') && (await pi.locator('details.iphone-how .step').count()) === 3);
     check('아이폰: 화면 오류 없음', errsI.length === 0, errsI.join(' | '));
     await ci.close();
   }

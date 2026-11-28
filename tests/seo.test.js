@@ -40,7 +40,7 @@ test('사이트맵의 모든 페이지: 고유한 제목·설명, 자기 주소 
     assert.ok(!descs.has(desc), `설명 중복: ${p} = ${descs.get(desc)}`); descs.set(desc, p);
     assert.match(html, new RegExp(`<link rel="canonical" href="${SITE}${p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">`), p);
     assert.doesNotMatch(html, /noindex/, p);
-    if (p.startsWith('/learn/') && p.split('/').length === 5) assert.match(html, /<li class="step">[\s\S]*<h2 class="step__text">[^<]{5,}/, `${p} 단계 글이 HTML에 있음`);
+    if (p.startsWith('/learn/') && p.split('/').length === 5) assert.match(html, /<li class="step"[^>]*>[\s\S]*<h2 class="step__text">[^<]{5,}/, `${p} 단계 글이 HTML에 있음`);
   }
 });
 

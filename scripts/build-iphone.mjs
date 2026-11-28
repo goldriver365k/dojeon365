@@ -9,6 +9,9 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { CHAPTERS as OUTLINE } from '../data/iphone/outline.mjs';
 import { STEPS } from '../data/iphone/steps-essential.mjs';
+import { SCREENS } from '../data/iphone/screens-essential.mjs';
+import { KO_SCREEN } from '../data/iphone/ko-screen.js';
+import { renderIphone, setIpLang, setIpModel } from '../assets/iphone-screens.js';
 import { IPHONE_MODELS, IOS_VERSIONS, SERIES, FEATURE_LABELS, PORT_LABELS, MODELS_LAST_CHECKED } from '../data/iphone/models.js';
 import { STATUS, PUBLIC_STATUS, adminPage } from './build-kakaotalk.mjs';
 
@@ -32,6 +35,7 @@ const UI = {
     save: '이대로 저장', change: '바꾸기', region: '지금 보는 홈페이지', regionKo: '한국어 · 대한민국', howModel: '내 아이폰 모델 확인하는 방법', howIos: 'iOS 버전 확인하는 방법',
     prep: '준비 중', lessons: (n) => `${n}개`, ready: (n, t) => `공개된 수업 ${n}개 / 전체 ${t}개`,
     notice: '실제 아이폰 화면을 캡처하고 검수한 수업부터 차례로 공개합니다. 그림 없이 짐작으로 만든 화면은 쓰지 않아요.',
+    noticeOpen: '어르신 필수 수업부터 공개했어요. 그림은 아이폰 화면을 보고 그린 것이라 실제 화면과 조금 다를 수 있어요. 나머지 수업은 차례로 준비하고 있어요.',
     essential: '어르신 필수', features: '이 기종에 있는 것', noFeature: '이 기종에 없는 것', models: '기종 자료 확인일', steps: (n) => `${n}단계`,
     home: '처음 화면', all: '모든 수업', choose: '고르세요', noJs: '선택 기능은 자바스크립트가 필요해요. 아래 목차는 그대로 볼 수 있어요.',
   },
@@ -41,6 +45,7 @@ const UI = {
     save: 'Save', change: 'Change', region: 'This website', regionKo: 'English · International', howModel: 'How to find your iPhone model', howIos: 'How to find your iOS version',
     prep: 'Coming soon', lessons: (n) => `${n}`, ready: (n, t) => `${n} of ${t} lessons published`,
     notice: 'Lessons are published one by one after real iPhone screens are captured and checked. We never use made-up screens.',
+    noticeOpen: 'Essential lessons are published first. The pictures are drawings of the iPhone screen, so they may differ slightly from your iPhone. More lessons are on the way.',
     essential: 'Essential', features: 'This model has', noFeature: 'This model does not have', models: 'Model list checked', steps: (n) => `${n} steps`,
     home: 'Home', all: 'All lessons', choose: 'Choose', noJs: 'Choosing needs JavaScript. You can still read the lesson list below.',
   },
@@ -71,13 +76,29 @@ export const SOURCES = [
 const ASSIST = [{ label: '보조 접근 사용 설명서', url: 'https://support.apple.com/guide/assistive-access-iphone/welcome/ios' }];
 /** 이미지 출처 중 공개할 수 있는 것(재현·생성 화면은 공개 불가) */
 export const IMAGE_SOURCES = ['직접 캡처(교육용 아이폰)', 'Xcode iOS 시뮬레이터 캡처', '사용 권한을 받은 Apple 공식 이미지'];
+/** 운영자 결정(2026-11-28 “직접 실제와 같이 만들어라”): 코드로 그린 재현 화면으로 공개하고, 수업마다 안내 문구를 단다 */
+export const DRAWN_SOURCE = '원본 화면 기준 재현(운영자 승인)';
+export const OPERATOR = 'Operator decision (drawn screens, before comparing with a real iPhone)';
+export const IP_NOTE = {
+  ko: '이 그림은 아이폰 화면을 보고 그린 그림이에요. 실제 아이폰과 메뉴 이름·위치가 조금 다를 수 있어요.',
+  en: 'These pictures are drawings of the iPhone screen. Menu names and positions may differ slightly from your iPhone.',
+};
 
 const parseOutline = () => OUTLINE.map(([key, ko, en, rows], i) => ({
   key, num: i + 1, title: ko, titleEn: en,
   rows: rows.trim().split('\n').map((r) => { const [s, k, e] = r.split('|'); return { slug: s.replace(/^\*/, ''), ko: k, en: e, essential: s.startsWith('*') }; }),
 }));
 const blankMeta = (lang) => ({ source: '', iphoneModel: '', ios: '', country: lang === 'ko' ? 'KR' : 'ALL', lang, captured: '', reviewed: '', license: '', privacyChecked: false });
-const toSteps = (rows) => rows.map(([ko, en, tko, ten, shot]) => ({ text: ko, textEn: en, targetLabel: tko, targetEn: ten, shot, voice: '', hint: '', image: { src: '', alt: '' }, imageMeta: blankMeta('ko'), imageEn: { src: '', alt: '' }, imageMetaEn: blankMeta('en') }));
+const toSteps = (rows, screens, today) => rows.map(([ko, en, tko, ten, shot], i) => {
+  const sc = screens?.[i];
+  const meta = (lang) => (sc ? { ...blankMeta(lang), source: DRAWN_SOURCE, iphoneModel: sc.model === 'home' ? 'iPhone SE (3rd generation) — drawing' : 'iPhone 16 — drawing', ios: '26', captured: today, reviewed: today, license: '자체 제작 그림(DigiStep365)', privacyChecked: true } : blankMeta(lang));
+  const { t, a, ...spec } = sc ?? {};
+  return {
+    text: ko, textEn: en, targetLabel: tko, targetEn: ten, targetKey: sc ? (t ?? ten) : '', action: a ?? 'tap', shot, voice: '', hint: '',
+    image: { src: '', alt: `${sc ? '아이폰 화면 그림' : ''}${tko ? `, ‘${tko}’에 빨간 원` : ''}. ${ko}`.replace(/^, /, '').slice(0, 160), ...(sc ? { screen: spec } : {}) }, imageMeta: meta('ko'),
+    imageEn: { src: '', alt: `${sc ? 'iPhone screen drawing' : ''}${ten ? ` with “${ten}” circled in red` : ''}. ${en}`.slice(0, 160), ...(sc ? { screen: spec } : {}) }, imageMetaEn: meta('en'),
+  };
+});
 
 /** 목차(outline)와 단계 원고(steps)로 catalog를 만들거나 채운다. 사람이 고친 수업(edited)·이미지가 있는 수업은 덮어쓰지 않는다. */
 export function fill(catalog = loadCatalog()) {
@@ -92,13 +113,17 @@ export function fill(catalog = loadCatalog()) {
       if (prev && (prev.edited || hasImg || PUBLIC_STATUS.includes(prev.status))) return prev;
       const face = src ? (Array.isArray(src) ? src : src.face) : null;
       const home = src && !Array.isArray(src) ? src.home : null;
+      const sc = SCREENS[r.slug]; const scFace = sc ? (Array.isArray(sc) ? sc : sc.face) : null; const scHome = sc && !Array.isArray(sc) ? sc.home : null;
+      const today = new Date().toISOString().slice(0, 10);
+      const drawn = Boolean(face && scFace && scFace.length === face.length);
       return {
         id, slug: r.slug, title: r.ko, titleEn: r.en, essential: r.essential,
-        status: face ? 'image' : 'draft', requires: REQUIRES[r.slug] ?? {},
-        steps: face ? toSteps(face) : [], ...(home ? { stepsHome: toSteps(home) } : {}),
+        status: drawn ? 'published' : face ? 'image' : 'draft', requires: REQUIRES[r.slug] ?? {},
+        steps: face ? toSteps(face, drawn ? scFace : null, today) : [], ...(home ? { stepsHome: toSteps(home, drawn ? scHome : null, today) } : {}),
+        ...(drawn ? { approvedWithoutCompare: true } : {}),
         caution: CAUTION.ko[r.slug] ?? '', cautionEn: CAUTION.en[r.slug] ?? '',
         sources: /assistive-access/.test(r.slug) ? [...SOURCES, ...ASSIST] : SOURCES,
-        iphoneModel: '', ios: '', lastChecked: '', reviewedBy: '', menuPath: '', needsUpdate: false, changes: '',
+        iphoneModel: drawn ? 'iPhone 16 (drawing)' : '', ios: drawn ? '26' : '', lastChecked: drawn ? today : '', reviewedBy: drawn ? OPERATOR : '', menuPath: '', needsUpdate: false, changes: '',
       };
     }),
   }));
@@ -120,6 +145,8 @@ export function publishProblems(l, lang = 'ko', { root = ROOT } = {}) {
     const img = (lang === 'en' ? s.imageEn : s.image) ?? {};
     const m = (lang === 'en' ? s.imageMetaEn : s.imageMeta) ?? {};
     if (!String(text ?? '').trim()) p.push(`${n} 설명 없음`);
+    const drawnOk = l.approvedWithoutCompare === true && !img.src && img.screen && m.source === DRAWN_SOURCE;
+    if (drawnOk) { if (!String(img.alt ?? '').trim()) p.push(`${n} 이미지 설명(alt) 없음`); if (m.privacyChecked !== true) p.push(`${n} 개인정보 노출 확인 안 됨`); return; }
     if (!img.src) p.push(`${n} 실제 화면 이미지 없음(${lang})`);
     else if (!new RegExp(`^images/iphone/${lang}/[\\w./-]+\\.(png|jpe?g|webp)$`, 'i').test(img.src)) p.push(`${n} 이미지 경로가 images/iphone/${lang}/ 밖`);
     else if (!existsSync(new URL(img.src, root))) p.push(`${n} 이미지 파일 없음(${img.src})`);
@@ -188,7 +215,7 @@ export function landingMain(course, { href, crumbs }) {
 <p class="eyebrow" lang="en">${esc(course.text.slogan)}</p>
 <h1>${esc(course.text.title)}</h1>
 <p class="lead">${esc(course.text.sub)}</p>
-<p class="step__note">${u.notice}</p>
+<p class="step__note">${course.count ? u.noticeOpen : u.notice}</p>
 <p class="iphone-count">${u.ready(course.count, course.total)}</p>
 ${picker(course.lang)}
 ${course.chapters.map((ch) => `<section class="cat" id="c${two(ch.num)}"><h3><span class="num">${two(ch.num)}</span> ${esc(ch.title)} <small>${u.lessons(ch.lessons.length)}</small></h3>
@@ -218,6 +245,12 @@ export function buildIphone({ version, brandTagline }) {
 }
 
 /* ---------- 수업 페이지 본문(공개 수업만; 한국어·영어 공통) ---------- */
+const drawing = (img, st, lang, model) => {
+  setIpLang(lang === 'ko' ? 'ko' : 'en', lang === 'ko' ? KO_SCREEN : null); setIpModel(model);
+  const r = renderIphone(img.screen, st.targetKey || undefined, st.action);
+  setIpLang('en'); setIpModel('face');
+  return `<figure class="pic" role="img" aria-label="${esc(img.alt)}">${r.svg.replace('aria-hidden="true"', 'aria-hidden="true" class="pic__svg"')}</figure>`;
+};
 const photo = (img) => {
   const t = img.target;
   return `<figure class="pic pic--photo" role="img" aria-label="${esc(img.alt)}"><img src="/${esc(img.src)}" alt="" loading="lazy">${t ? `<svg class="pic__ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="${t.x + t.w / 2}" cy="${t.y + t.h / 2}" rx="${t.w / 2}" ry="${t.h / 2}" fill="none" stroke="#d7263d" stroke-width="6" vector-effect="non-scaling-stroke"/></svg>` : ''}</figure>`;
@@ -229,21 +262,22 @@ const HOME_VARIANT = { ko: '홈 버튼이 있는 아이폰(SE·8 이전)', en: '
  */
 export function lessonMain(course, item, { crumbs, ui, next }) {
   const l = item.src; const en = course.lang === 'en';
-  const view = (s) => ({ text: en ? s.textEn : s.text, img: en ? s.imageEn : s.image, hint: s.hint });
+  const view = (s) => ({ text: en ? s.textEn : s.text, img: en ? s.imageEn : s.image, hint: s.hint, targetKey: s.targetKey, action: s.action });
   const steps = l.steps.map(view); const n = steps.length;
-  const card = (st, i, total) => `<li class="step" id="step-${i + 1}">
+  const card = (st, i, total, model = 'face') => `<li class="step" id="step-${i + 1}">
   <p class="step__no">${ui.stepOf(i + 1, total)}</p>
   <h2 class="step__text">${esc(st.text)}</h2>
   ${st.hint ? `<p class="step__hint">${esc(st.hint)}</p>` : ''}
-  ${photo(st.img)}
+  ${st.img.src ? photo(st.img) : drawing(st.img, st, course.lang, st.img.screen?.model ?? model)}
 </li>`;
   const caution = en ? l.cautionEn : l.caution;
   return `${crumbs}
 <h1>${esc(item.title)}</h1>
+${l.approvedWithoutCompare ? `<p class="step__note">${esc(IP_NOTE[course.lang])}</p>` : ''}
 <ol class="steps" data-steps>
 ${steps.map((st, i) => card(st, i, n)).join('\n')}
 </ol>
-${l.stepsHome ? `<details class="iphone-how"><summary>${HOME_VARIANT[course.lang]}</summary><ol class="steps">${l.stepsHome.map(view).map((st, i, a) => card(st, i, a.length)).join('')}</ol></details>` : ''}
+${l.stepsHome ? `<details class="iphone-how"><summary>${HOME_VARIANT[course.lang]}</summary><ol class="steps">${l.stepsHome.map(view).map((st, i, a) => card(st, i, a.length, 'home')).join('')}</ol></details>` : ''}
 <div class="tools" hidden>
   <button type="button" class="btn" data-restart>${ui.restart}</button>
   <button type="button" class="btn" data-all aria-pressed="false">${ui.all}</button>

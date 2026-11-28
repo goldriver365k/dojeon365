@@ -58,20 +58,41 @@ test('기종 자료: 기종별 차이(홈 버튼·Face ID·동작 버튼·카메
   assert.deepEqual(IOS_VERSIONS.map((x) => x.v), ['15', '16', '17', '18', '26']);
 });
 
-test('실제 화면 캡처가 없는 수업은 공개하지 않는다(코드로 그린 화면·출처 없는 화면 불가)', () => {
+test('공개 규칙: 실제 캡처 또는 운영자가 승인한 재현 그림만 공개, 필수 100개는 한국어·영어 공개', () => {
   const cat = loadCatalog();
   const lessons = cat.chapters.flatMap((c) => c.lessons);
   assert.equal(lessons.length, 440);
-  assert.equal(lessons.filter((l) => isPublic(l, 'ko') || isPublic(l, 'en')).length, 0, '지금 공개된 수업 없음');
+  for (const g of ['ko', 'en']) assert.equal(lessons.filter((l) => isPublic(l, g)).length, 100, g);
+  assert.ok(lessons.filter((l) => isPublic(l, 'ko')).every((l) => l.essential && l.approvedWithoutCompare));
   const l = lessons.find((x) => x.slug === 'text-size');
-  const done = { ...l, status: 'published', iphoneModel: 'iPhone 16', ios: '26.1', lastChecked: '2026-11-28', reviewedBy: 'x' };
-  assert.ok(publishProblems(done, 'ko').some((p) => p.includes('실제 화면 이미지 없음')));
-  const drawn = { ...done, steps: done.steps.map((s) => ({ ...s, image: { screen: { v: 'settings' }, alt: 'x' }, imageMeta: { ...s.imageMeta, source: '원본 화면 기준 재현(검수 필수)', reviewed: '2026-11-28', privacyChecked: true } })) };
-  assert.ok(publishProblems(drawn, 'ko').some((p) => p.includes('실제 캡처')), '재현 화면은 출처 조건에서 막힘');
+  // 운영자 승인 표시가 없으면 같은 그림이라도 공개 불가
+  const noApproval = { ...l, approvedWithoutCompare: false };
+  assert.ok(publishProblems(noApproval, 'ko').some((p) => p.includes('실제 화면 이미지 없음')));
+  // 출처가 승인된 재현 그림이 아니면 공개 불가
+  const other = { ...l, steps: l.steps.map((s) => ({ ...s, imageMeta: { ...s.imageMeta, source: '원본 화면 기준 재현(검수 필수)' } })) };
+  assert.ok(publishProblems(other, 'ko').length > 0);
+  // 그림이 없는 수업(필수 외)은 공개 안 됨
+  assert.ok(!isPublic(lessons.find((x) => !x.essential), 'ko'));
   const p = progress(cat);
   assert.equal(p.withText, 100);
-  assert.equal(p.images.ko + p.images.en, 0);
   assert.ok(REQUIRES['camera-control'].feature === 'cameraControl' && REQUIRES['assistive-access'].ios === '17');
+});
+
+test('재현 그림: 모든 단계의 빨간 원 위치가 그 화면에 있고, 한국어 화면 글자가 한국어', async () => {
+  const { SCREENS } = await import('../data/iphone/screens-essential.mjs');
+  const { renderIphone, setIpLang, setIpModel } = await import('../assets/iphone-screens.js');
+  const { KO_SCREEN } = await import('../data/iphone/ko-screen.js');
+  for (const [slug, st] of Object.entries(STEPS)) {
+    const sc = SCREENS[slug]; assert.ok(sc, slug);
+    for (const [m, steps, scr] of Array.isArray(st) ? [['face', st, sc]] : [['face', st.face, sc.face], ['home', st.home, sc.home]]) {
+      assert.equal(scr.length, steps.length, `${slug} ${m}`);
+      setIpModel(m);
+      steps.forEach((s, i) => { const t = scr[i].t ?? s[3]; if (t) assert.ok(renderIphone(scr[i], t).target, `${slug} ${m} ${i + 1}: ${t}`); });
+    }
+  }
+  setIpLang('ko', KO_SCREEN); setIpModel('face');
+  assert.match(renderIphone({ v: 'list', title: 'Settings', groups: [{ rows: ['General'] }] }).svg, /일반/);
+  setIpLang('en');
 });
 
 test('국가 설정: 아이폰은 한국·해외 모두, 카카오톡은 한국만, WhatsApp은 해외만', () => {
@@ -90,11 +111,15 @@ test('과정 첫 화면: 한국어·영어에 내 아이폰 선택(모를 때·�
     assert.match(h, /id="how-model"/); assert.match(h, /id="how-ios"/);
     assert.match(h, /not affiliated with, sponsored, or endorsed by Apple Inc|Apple Inc\.와 제휴하거나/);
     assert.equal((h.match(/class="cat" id="c\d\d"/g) ?? []).length, 22);
-    if (!c.count) assert.match(h, /<meta name="robots" content="noindex, follow">/);
+    if (!c.count) assert.match(h, /<meta name="robots" content="noindex, follow">/); else assert.doesNotMatch(h, /noindex/);
   }
   const sm = readFileSync('sitemap.xml', 'utf8');
-  if (!iphoneCourse('ko').count) assert.doesNotMatch(sm, /\/learn\/iphone\//);
-  if (!iphoneCourse('en').count) assert.doesNotMatch(sm, /\/en\/iphone\//);
+  assert.match(sm, /\/learn\/iphone\/text-size\//); assert.match(sm, /\/en\/iphone\/text-size\//);
+  assert.doesNotMatch(sm, /\/iphone\/restart-iphone|\/iphone\/app-folder\//, '그림 없는 수업은 사이트맵에 없음');
+  const lesson = readFileSync('learn/iphone/text-size/index.html', 'utf8');
+  assert.match(lesson, /아이폰 화면을 보고 그린 그림/); assert.match(lesson, /target-ring/); assert.match(lesson, /hreflang="en"/);
+  assert.match(readFileSync('en/iphone/text-size/index.html', 'utf8'), /drawings of the iPhone screen/);
+  assert.ok(!existsSync('learn/iphone/app-folder'), '그림 없는 수업은 페이지 없음');
   assert.ok(!existsSync('es/iphone'), '스페인어 글이 생기기 전에는 스페인어 아이폰 페이지 없음');
   assert.match(readFileSync('en/index.html', 'utf8'), /href="\/en\/iphone\/"/);
   assert.match(readFileSync('index.html', 'utf8'), /href="\/learn\/iphone\/"/);
